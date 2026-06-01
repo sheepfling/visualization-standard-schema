@@ -1,0 +1,107 @@
+[
+  {
+    "id": "document",
+    "name": "celestial",
+    "version": "1.0"
+  },
+  {
+    "id": ".Earth CR Observer",
+    "name": ".Earth CR Observer",
+    "position": {
+      "cartographicDegrees": [
+        -46.00000000000002,
+        -23.999427042204868,
+        63781.369999999995
+      ]
+    },
+    "properties": {
+      "platform_type": "ECR_FIXED",
+      "orbArchiveMember": "orb_format_collection/soap15/scenarios/celestial.orb",
+      "source": "orb-scenario"
+    },
+    "point": {
+      "pixelSize": 10,
+      "outlineWidth": 1
+    }
+  },
+  {
+    "id": ".Earth Ground",
+    "name": ".Earth Ground",
+    "position": {
+      "cartographicDegrees": [
+        -99.0,
+        38.0,
+        0.0
+      ]
+    },
+    "properties": {
+      "platform_type": "ECR_FIXED",
+      "orbArchiveMember": "orb_format_collection/soap15/scenarios/celestial.orb",
+      "source": "orb-scenario"
+    },
+    "point": {
+      "pixelSize": 10,
+      "outlineWidth": 1
+    }
+  },
+  {
+    "id": ".Earth Ground Observer",
+    "name": ".Earth Ground Observer",
+    "position": {
+      "cartographicDegrees": [
+        1.9999999999974738,
+        19.999994270421958,
+        0.0
+      ]
+    },
+    "properties": {
+      "platform_type": "ECR_FIXED",
+      "orbArchiveMember": "orb_format_collection/soap15/scenarios/celestial.orb",
+      "source": "orb-scenario"
+    },
+    "point": {
+      "pixelSize": 10,
+      "outlineWidth": 1
+    }
+  },
+  {
+    "id": ".Earth Ground Observer 0001",
+    "name": ".Earth Ground Observer 0001",
+    "position": {
+      "cartographicDegrees": [
+        1.9999999999974738,
+        19.999994270421958,
+        0.0
+      ]
+    },
+    "properties": {
+      "platform_type": "ECR_FIXED",
+      "orbArchiveMember": "orb_format_collection/soap15/scenarios/celestial.orb",
+      "source": "orb-scenario"
+    },
+    "point": {
+      "pixelSize": 10,
+      "outlineWidth": 1
+    }
+  },
+  {
+    "id": ".Earth Polar Observer",
+    "name": ".Earth Polar Observer",
+    "position": {
+      "cartographicDegrees": [
+        0.0,
+        90.0,
+        63781.369999999995
+      ]
+    },
+    "properties": {
+      "platform_type": "ECR_FIXED",
+      "orbArchiveMember": "orb_format_collection/soap15/scenarios/celestial.orb",
+      "source": "orb-scenario"
+    },
+    "point": {
+      "pixelSize": 10,
+      "outlineWidth": 1
+    }
+  }
+]

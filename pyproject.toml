@@ -1,0 +1,33 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "visualization-standard-schema"
+version = "0.1.0"
+description = "Pydantic models and target adapters for the Visualization Standard Schema."
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+  "pydantic>=2.11,<3",
+]
+
+[project.optional-dependencies]
+dev = [
+  "ruff>=0.8.0",
+  "pyright>=1.1.400",
+]
+
+[project.scripts]
+vss = "vss.cli:main"
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+cache-dir = ".ruff_cache_local"
+
+[tool.ruff.lint]
+select = ["F", "I"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/vss"]

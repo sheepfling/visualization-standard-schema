@@ -1,0 +1,127 @@
+[
+  {
+    "id": "document",
+    "name": "planet_local_time",
+    "version": "1.0"
+  },
+  {
+    "id": ".Earth CR Observer",
+    "name": ".Earth CR Observer",
+    "position": {
+      "cartographicDegrees": [
+        0.0,
+        0.0005729577951308,
+        63781.369999999995
+      ]
+    },
+    "properties": {
+      "platform_type": "ECR_FIXED",
+      "orbArchiveMember": "orb_format_collection/soap15/scenarios/planet_local_time.orb",
+      "source": "orb-scenario"
+    },
+    "point": {
+      "pixelSize": 10,
+      "outlineWidth": 1
+    }
+  },
+  {
+    "id": ".Earth Ground",
+    "name": ".Earth Ground",
+    "position": {
+      "cartographicDegrees": [
+        -99.0,
+        38.0,
+        0.0
+      ]
+    },
+    "properties": {
+      "platform_type": "ECR_FIXED",
+      "orbArchiveMember": "orb_format_collection/soap15/scenarios/planet_local_time.orb",
+      "source": "orb-scenario"
+    },
+    "point": {
+      "pixelSize": 10,
+      "outlineWidth": 1
+    }
+  },
+  {
+    "id": ".Earth Ground Observer",
+    "name": ".Earth Ground Observer",
+    "position": {
+      "cartographicDegrees": [
+        90.0,
+        0.0005729577951308,
+        0.0
+      ]
+    },
+    "properties": {
+      "platform_type": "ECR_FIXED",
+      "orbArchiveMember": "orb_format_collection/soap15/scenarios/planet_local_time.orb",
+      "source": "orb-scenario"
+    },
+    "point": {
+      "pixelSize": 10,
+      "outlineWidth": 1
+    }
+  },
+  {
+    "id": ".Earth Polar Observer",
+    "name": ".Earth Polar Observer",
+    "position": {
+      "cartographicDegrees": [
+        0.0,
+        90.0,
+        63781.369999999995
+      ]
+    },
+    "properties": {
+      "platform_type": "ECR_FIXED",
+      "orbArchiveMember": "orb_format_collection/soap15/scenarios/planet_local_time.orb",
+      "source": "orb-scenario"
+    },
+    "point": {
+      "pixelSize": 10,
+      "outlineWidth": 1
+    }
+  },
+  {
+    "id": "GS",
+    "name": "GS",
+    "position": {
+      "cartographicDegrees": [
+        -45.0,
+        14.999999999999998,
+        0.0
+      ]
+    },
+    "properties": {
+      "platform_type": "ECR_FIXED",
+      "orbArchiveMember": "orb_format_collection/soap15/scenarios/planet_local_time.orb",
+      "source": "orb-scenario"
+    },
+    "point": {
+      "pixelSize": 10,
+      "outlineWidth": 1
+    }
+  },
+  {
+    "id": "GS2",
+    "name": "GS2",
+    "position": {
+      "cartographicDegrees": [
+        -45.0,
+        59.99999999999999,
+        0.0
+      ]
+    },
+    "properties": {
+      "platform_type": "ECR_FIXED",
+      "orbArchiveMember": "orb_format_collection/soap15/scenarios/planet_local_time.orb",
+      "source": "orb-scenario"
+    },
+    "point": {
+      "pixelSize": 10,
+      "outlineWidth": 1
+    }
+  }
+]

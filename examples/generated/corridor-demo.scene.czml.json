@@ -1,0 +1,82 @@
+[
+  {
+    "id": "document",
+    "name": "Corridor Demo",
+    "version": "1.0",
+    "clock": {
+      "interval": "2026-06-01T12:00:00+00:00/2026-06-01T12:00:00+00:00",
+      "currentTime": "2026-06-01T12:00:00+00:00",
+      "multiplier": 1,
+      "range": "CLAMPED",
+      "step": "SYSTEM_CLOCK_MULTIPLIER"
+    }
+  },
+  {
+    "id": "corridor-001",
+    "name": "Corridor 001",
+    "position": {
+      "cartographicDegrees": [
+        -97.68,
+        30.32,
+        4600.0
+      ]
+    },
+    "properties": {
+      "routeType": "air-corridor",
+      "status": "planned",
+      "objectType": "overlay",
+      "source": "sim.example.geo-sim",
+      "timestamp": "2026-06-01T12:00:00+00:00",
+      "category": "overlay"
+    },
+    "label": {
+      "text": "Corridor 001",
+      "horizontalOrigin": "LEFT",
+      "pixelOffset": {
+        "cartesian2": [
+          12,
+          0
+        ]
+      },
+      "fillColor": {
+        "rgba": [
+          173,
+          114,
+          255,
+          220
+        ]
+      }
+    },
+    "corridor": {
+      "positions": {
+        "cartographicDegrees": [
+          -97.78,
+          30.26,
+          4500.0,
+          -97.68,
+          30.32,
+          4600.0,
+          -97.56,
+          30.39,
+          4700.0
+        ]
+      },
+      "width": 75000.0,
+      "clampToGround": false,
+      "height": 4500.0,
+      "cornerType": "ROUNDED",
+      "material": {
+        "solidColor": {
+          "color": {
+            "rgba": [
+              173,
+              114,
+              255,
+              220
+            ]
+          }
+        }
+      }
+    }
+  }
+]

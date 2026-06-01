@@ -1,0 +1,57 @@
+{
+  "schemaVersion": "1.0.0-scene",
+  "document": {
+    "id": "corridor-demo",
+    "name": "Corridor Demo",
+    "description": "A corridor overlay used to exercise the Cesium corridor emitter.",
+    "created": "2026-06-01T12:00:00Z",
+    "generator": "visualization-standard-schema",
+    "source": "sim.example.geo-sim"
+  },
+  "objects": [
+    {
+      "objectType": "overlay",
+      "id": "corridor-001",
+      "name": "Corridor 001",
+      "geometryType": "corridor",
+      "position": {
+        "longitudeDeg": -97.680,
+        "latitudeDeg": 30.320,
+        "altitudeM": 4600.0
+      },
+      "style": {
+        "label": "Corridor 001",
+        "colorRgba": [173, 114, 255, 220]
+      },
+      "corridor": {
+        "positions": [
+          {
+            "longitudeDeg": -97.780,
+            "latitudeDeg": 30.260,
+            "altitudeM": 4500.0
+          },
+          {
+            "longitudeDeg": -97.680,
+            "latitudeDeg": 30.320,
+            "altitudeM": 4600.0
+          },
+          {
+            "longitudeDeg": -97.560,
+            "latitudeDeg": 30.390,
+            "altitudeM": 4700.0
+          }
+        ],
+        "widthMeters": 75000.0,
+        "heightMeters": 4500.0,
+        "cornerType": "rounded",
+        "clampToGround": false
+      },
+      "attributes": {
+        "routeType": "air-corridor",
+        "status": "planned"
+      },
+      "source": "sim.example.geo-sim",
+      "timestamp": "2026-06-01T12:00:00Z"
+    }
+  ]
+}

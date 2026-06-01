@@ -1,0 +1,115 @@
+{
+  "schemaVersion": "1.0.0-scene",
+  "document": {
+    "id": "orb-format-collection__soap15__scenarios__batchmode-example__process-and-quit",
+    "name": "process_and_quit",
+    "source": "orb_format_collection/soap15/scenarios/batchmode_example/process_and_quit.orb"
+  },
+  "objects": [
+    {
+      "id": ".Earth CR Observer",
+      "name": ".Earth CR Observer",
+      "attributes": {
+        "platform_type": "ECR_FIXED",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/batchmode_example/process_and_quit.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": -94.0,
+        "latitudeDeg": 36.0005729578,
+        "altitudeM": 63781.369999999995
+      }
+    },
+    {
+      "id": ".Earth CR Observer 1",
+      "name": ".Earth CR Observer 1",
+      "attributes": {
+        "platform_type": "ECR_FIXED",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/batchmode_example/process_and_quit.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": -136.0,
+        "latitudeDeg": -10.0005729578,
+        "altitudeM": 63781.369999999995
+      }
+    },
+    {
+      "id": ".Earth CR Observer 2",
+      "name": ".Earth CR Observer 2",
+      "attributes": {
+        "platform_type": "ECR_FIXED",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/batchmode_example/process_and_quit.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": -102.0,
+        "latitudeDeg": 27.9994270422,
+        "altitudeM": 63781.369999999995
+      }
+    },
+    {
+      "id": ".Earth Ground Observer",
+      "name": ".Earth Ground Observer",
+      "attributes": {
+        "platform_type": "ECR_FIXED",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/batchmode_example/process_and_quit.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": 90.0,
+        "latitudeDeg": 0.0005729577951308,
+        "altitudeM": 0.0
+      }
+    },
+    {
+      "id": ".Earth Polar Observer",
+      "name": ".Earth Polar Observer",
+      "attributes": {
+        "platform_type": "ECR_FIXED",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/batchmode_example/process_and_quit.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": -32.0,
+        "latitudeDeg": 89.9994270422,
+        "altitudeM": 63781.369999999995
+      }
+    },
+    {
+      "id": "GTS",
+      "name": "GTS",
+      "attributes": {
+        "platform_type": "ECR_FIXED",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/batchmode_example/process_and_quit.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": 144.856,
+        "latitudeDeg": 13.6152,
+        "altitudeM": 0.0
+      }
+    },
+    {
+      "id": "IOS",
+      "name": "IOS",
+      "attributes": {
+        "platform_type": "ECR_FIXED",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/batchmode_example/process_and_quit.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": 55.4778,
+        "latitudeDeg": -4.6717,
+        "altitudeM": 0.0
+      }
+    }
+  ]
+}

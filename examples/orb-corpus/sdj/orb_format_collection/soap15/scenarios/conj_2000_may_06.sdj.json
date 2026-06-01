@@ -1,0 +1,40 @@
+{
+  "schemaVersion": "1.0.0-scene",
+  "document": {
+    "id": "orb-format-collection__soap15__scenarios__conj-2000-may-06",
+    "name": "conj_2000_may_06",
+    "source": "orb_format_collection/soap15/scenarios/conj_2000_may_06.orb"
+  },
+  "objects": [
+    {
+      "id": ".Earth Ground Observer",
+      "name": ".Earth Ground Observer",
+      "attributes": {
+        "platform_type": "ECR_FIXED",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/conj_2000_may_06.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": 116.00000000000001,
+        "latitudeDeg": 10.0005729578,
+        "altitudeM": 0.0
+      }
+    },
+    {
+      "id": ".Earth Polar Observer",
+      "name": ".Earth Polar Observer",
+      "attributes": {
+        "platform_type": "ECR_FIXED",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/conj_2000_may_06.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": 0.0,
+        "latitudeDeg": 90.0,
+        "altitudeM": 63781.369999999995
+      }
+    }
+  ]
+}

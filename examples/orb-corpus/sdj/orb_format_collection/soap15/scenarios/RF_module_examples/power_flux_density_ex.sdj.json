@@ -1,0 +1,55 @@
+{
+  "schemaVersion": "1.0.0-scene",
+  "document": {
+    "id": "orb-format-collection__soap15__scenarios__rf-module-examples__power-flux-density-ex",
+    "name": "power_flux_density_ex",
+    "source": "orb_format_collection/soap15/scenarios/RF_module_examples/power_flux_density_ex.orb"
+  },
+  "objects": [
+    {
+      "id": ".Earth Ground",
+      "name": ".Earth Ground",
+      "attributes": {
+        "platform_type": "ECR_FIXED",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/RF_module_examples/power_flux_density_ex.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": -122.21000000000001,
+        "latitudeDeg": 37.87,
+        "altitudeM": 0.0
+      }
+    },
+    {
+      "id": ".Earth Ground Observer",
+      "name": ".Earth Ground Observer",
+      "attributes": {
+        "platform_type": "ECR_FIXED",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/RF_module_examples/power_flux_density_ex.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": 90.0,
+        "latitudeDeg": 0.0005729577951308,
+        "altitudeM": 0.0
+      }
+    },
+    {
+      "id": ".Earth Polar Observer",
+      "name": ".Earth Polar Observer",
+      "attributes": {
+        "platform_type": "ECR_FIXED",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/RF_module_examples/power_flux_density_ex.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": 0.0,
+        "latitudeDeg": 90.0,
+        "altitudeM": 63781.369999999995
+      }
+    }
+  ]
+}

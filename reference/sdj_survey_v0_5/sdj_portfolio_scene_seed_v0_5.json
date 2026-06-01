@@ -1,0 +1,2681 @@
+{
+  "schemaVersion": "sdj-0.5-portfolio-seed",
+  "document": {
+    "id": "sdj-portfolio-seed-v0-5",
+    "name": "SDJ portfolio seed scene"
+  },
+  "units": {
+    "linear": "meter",
+    "angular": "degree",
+    "time": "iso8601"
+  },
+  "clock": {
+    "startTime": "2026-05-29T16:00:00Z",
+    "stopTime": "2026-05-29T16:10:00Z",
+    "currentTime": "2026-05-29T16:00:00Z",
+    "multiplier": 1,
+    "shouldAnimate": true
+  },
+  "assets": {
+    "demoGlb": {
+      "kind": "glbModel",
+      "uri": "assets/demo.glb"
+    },
+    "demoTileset": {
+      "kind": "tileset3d",
+      "uri": "assets/tileset.json"
+    },
+    "demoSplat": {
+      "kind": "gaussianSplatTileset",
+      "ionAssetId": 4547222
+    }
+  },
+  "objects": [
+    {
+      "id": "portfolio-point",
+      "kind": "point",
+      "name": "Portfolio example: point",
+      "show": true,
+      "pose": {
+        "position": {
+          "cartographicDegrees": [
+            -117.92,
+            33.92,
+            1000.0
+          ]
+        }
+      },
+      "style": {
+        "material": {
+          "type": "solidColor",
+          "rgba": [
+            0.0,
+            0.8,
+            1.0,
+            0.45
+          ]
+        },
+        "outline": true
+      },
+      "rendererHints": {
+        "semanticKind": "point",
+        "preferredBackends": [
+          "cesium",
+          "simdis",
+          "soap"
+        ]
+      }
+    },
+    {
+      "id": "portfolio-billboard",
+      "kind": "billboard",
+      "name": "Portfolio example: billboard",
+      "show": true,
+      "pose": {
+        "position": {
+          "cartographicDegrees": [
+            -117.89,
+            33.92,
+            1000.0
+          ]
+        }
+      },
+      "style": {
+        "material": {
+          "type": "solidColor",
+          "rgba": [
+            0.0,
+            0.8,
+            1.0,
+            0.45
+          ]
+        },
+        "outline": true
+      },
+      "rendererHints": {
+        "semanticKind": "billboard",
+        "preferredBackends": [
+          "cesium",
+          "simdis",
+          "soap"
+        ]
+      }
+    },
+    {
+      "id": "portfolio-label",
+      "kind": "label",
+      "name": "Portfolio example: label",
+      "show": true,
+      "pose": {
+        "position": {
+          "cartographicDegrees": [
+            -117.86,
+            33.92,
+            1000.0
+          ]
+        }
+      },
+      "style": {
+        "material": {
+          "type": "solidColor",
+          "rgba": [
+            0.0,
+            0.8,
+            1.0,
+            0.45
+          ]
+        },
+        "outline": true
+      },
+      "rendererHints": {
+        "semanticKind": "label",
+        "preferredBackends": [
+          "cesium",
+          "simdis",
+          "soap"
+        ]
+      }
+    },
+    {
+      "id": "portfolio-polyline",
+      "kind": "polyline",
+      "name": "Portfolio example: polyline",
+      "show": true,
+      "pose": {
+        "position": {
+          "cartographicDegrees": [
+            -117.83,
+            33.92,
+            1000.0
+          ]
+        }
+      },
+      "style": {
+        "material": {
+          "type": "solidColor",
+          "rgba": [
+            0.0,
+            0.8,
+            1.0,
+            0.45
+          ]
+        },
+        "outline": true
+      },
+      "rendererHints": {
+        "semanticKind": "polyline",
+        "preferredBackends": [
+          "cesium",
+          "simdis",
+          "soap"
+        ]
+      },
+      "geometry": {
+        "positions": [
+          {
+            "cartographicDegrees": [
+              -117.83,
+              33.92,
+              1000
+            ]
+          },
+          {
+            "cartographicDegrees": [
+              -117.78,
+              33.940000000000005,
+              1500
+            ]
+          }
+        ],
+        "widthMeters": 250
+      }
+    },
+    {
+      "id": "portfolio-polygon",
+      "kind": "polygon",
+      "name": "Portfolio example: polygon",
+      "show": true,
+      "pose": {
+        "position": {
+          "cartographicDegrees": [
+            -117.8,
+            33.92,
+            1000.0
+          ]
+        }
+      },
+      "style": {
+        "material": {
+          "type": "solidColor",
+          "rgba": [
+            0.0,
+            0.8,
+            1.0,
+            0.45
+          ]
+        },
+        "outline": true
+      },
+      "rendererHints": {
+        "semanticKind": "polygon",
+        "preferredBackends": [
+          "cesium",
+          "simdis",
+          "soap"
+        ]
+      },
+      "geometry": {
+        "rings": [
+          [
+            {
+              "cartographicDegrees": [
+                -117.8,
+                33.92,
+                0
+              ]
+            },
+            {
+              "cartographicDegrees": [
+                -117.78,
+                33.92,
+                0
+              ]
+            },
+            {
+              "cartographicDegrees": [
+                -117.78,
+                33.940000000000005,
+                0
+              ]
+            },
+            {
+              "cartographicDegrees": [
+                -117.8,
+                33.940000000000005,
+                0
+              ]
+            }
+          ]
+        ],
+        "extrudedHeightMeters": 1200
+      }
+    },
+    {
+      "id": "portfolio-rectangle",
+      "kind": "rectangle",
+      "name": "Portfolio example: rectangle",
+      "show": true,
+      "pose": {
+        "position": {
+          "cartographicDegrees": [
+            -117.77,
+            33.92,
+            1000.0
+          ]
+        }
+      },
+      "style": {
+        "material": {
+          "type": "solidColor",
+          "rgba": [
+            0.0,
+            0.8,
+            1.0,
+            0.45
+          ]
+        },
+        "outline": true
+      },
+      "rendererHints": {
+        "semanticKind": "rectangle",
+        "preferredBackends": [
+          "cesium",
+          "simdis",
+          "soap"
+        ]
+      },
+      "geometry": {
+        "westSouthEastNorthDegrees": [
+          -117.77,
+          33.92,
+          -117.74,
+          33.940000000000005
+        ]
+      }
+    },
+    {
+      "id": "portfolio-ellipse",
+      "kind": "ellipse",
+      "name": "Portfolio example: ellipse",
+      "show": true,
+      "pose": {
+        "position": {
+          "cartographicDegrees": [
+            -117.74,
+            33.92,
+            1000.0
+          ]
+        }
+      },
+      "style": {
+        "material": {
+          "type": "solidColor",
+          "rgba": [
+            0.0,
+            0.8,
+            1.0,
+            0.45
+          ]
+        },
+        "outline": true
+      },
+      "rendererHints": {
+        "semanticKind": "ellipse",
+        "preferredBackends": [
+          "cesium",
+          "simdis",
+          "soap"
+        ]
+      },
+      "geometry": {
+        "semiMajorAxisMeters": 5000,
+        "semiMinorAxisMeters": 2500,
+        "rotationDegrees": 35
+      }
+    },
+    {
+      "id": "portfolio-circle",
+      "kind": "circle",
+      "name": "Portfolio example: circle",
+      "show": true,
+      "pose": {
+        "position": {
+          "cartographicDegrees": [
+            -117.71,
+            33.92,
+            1000.0
+          ]
+        }
+      },
+      "style": {
+        "material": {
+          "type": "solidColor",
+          "rgba": [
+            0.0,
+            0.8,
+            1.0,
+            0.45
+          ]
+        },
+        "outline": true
+      },
+      "rendererHints": {
+        "semanticKind": "circle",
+        "preferredBackends": [
+          "cesium",
+          "simdis",
+          "soap"
+        ]
+      },
+      "geometry": {
+        "radiusMeters": 6000
+      }
+    },
+    {
+      "id": "portfolio-box",
+      "kind": "box",
+      "name": "Portfolio example: box",
+      "show": true,
+      "pose": {
+        "position": {
+          "cartographicDegrees": [
+            -117.68,
+            33.92,
+            1000.0
+          ]
+        }
+      },
+      "style": {
+        "material": {
+          "type": "solidColor",
+          "rgba": [
+            0.0,
+            0.8,
+            1.0,
+            0.45
+          ]
+        },
+        "outline": true
+      },
+      "rendererHints": {
+        "semanticKind": "box",
+        "preferredBackends": [
+          "cesium",
+          "simdis",
+          "soap"
+        ]
+      },
+      "geometry": {
+        "dimensionsMeters": [
+          3000,
+          2000,
+          1000
+        ]
+      }
+    },
+    {
+      "id": "portfolio-cylinder",
+      "kind": "cylinder",
+      "name": "Portfolio example: cylinder",
+      "show": true,
+      "pose": {
+        "position": {
+          "cartographicDegrees": [
+            -117.65,
+            33.92,
+            1000.0
+          ]
+        }
+      },
+      "style": {
+        "material": {
+          "type": "solidColor",
+          "rgba": [
+            0.0,
+            0.8,
+            1.0,
+            0.45
+          ]
+        },
+        "outline": true
+      },
+      "rendererHints": {
+        "semanticKind": "cylinder",
+        "preferredBackends": [
+          "cesium",
+          "simdis",
+          "soap"
+        ]
+      },
+      "geometry": {
+        "lengthMeters": 5000,
+        "topRadiusMeters": 1500,
+        "bottomRadiusMeters": 2000
+      }
+    },
+    {
+      "id": "portfolio-cone",
+      "kind": "cone",
+      "name": "Portfolio example: cone",
+      "show": true,
+      "pose": {
+        "position": {
+          "cartographicDegrees": [
+            -117.92,
+            33.95,
+            1000.0
+          ]
+        }
+      },
+      "style": {
+        "material": {
+          "type": "solidColor",
+          "rgba": [
+            0.0,
+            0.8,
+            1.0,
+            0.45
+          ]
+        },
+        "outline": true
+      },
+      "rendererHints": {
+        "semanticKind": "cone",
+        "preferredBackends": [
+          "cesium",
+          "simdis",
+          "soap"
+        ]
+      },
+      "geometry": {
+        "lengthMeters": 5000,
+        "topRadiusMeters": 0,
+        "bottomRadiusMeters": 2000
+      }
+    },
+    {
+      "id": "portfolio-ellipsoid",
+      "kind": "ellipsoid",
+      "name": "Portfolio example: ellipsoid",
+      "show": true,
+      "pose": {
+        "position": {
+          "cartographicDegrees": [
+            -117.89,
+            33.95,
+            1000.0
+          ]
+        }
+      },
+      "style": {
+        "material": {
+          "type": "solidColor",
+          "rgba": [
+            0.0,
+            0.8,
+            1.0,
+            0.45
+          ]
+        },
+        "outline": true
+      },
+      "rendererHints": {
+        "semanticKind": "ellipsoid",
+        "preferredBackends": [
+          "cesium",
+          "simdis",
+          "soap"
+        ]
+      },
+      "geometry": {
+        "radiiMeters": [
+          3000,
+          2500,
+          2000
+        ]
+      }
+    },
+    {
+      "id": "portfolio-sphere",
+      "kind": "sphere",
+      "name": "Portfolio example: sphere",
+      "show": true,
+      "pose": {
+        "position": {
+          "cartographicDegrees": [
+            -117.86,
+            33.95,
+            1000.0
+          ]
+        }
+      },
+      "style": {
+        "material": {
+          "type": "solidColor",
+          "rgba": [
+            0.0,
+            0.8,
+            1.0,
+            0.45
+          ]
+        },
+        "outline": true
+      },
+      "rendererHints": {
+        "semanticKind": "sphere",
+        "preferredBackends": [
+          "cesium",
+          "simdis",
+          "soap"
+        ]
+      },
+      "geometry": {
+        "radiiMeters": [
+          3000,
+          2500,
+          2000
+        ]
+      }
+    },
+    {
+      "id": "portfolio-wall",
+      "kind": "wall",
+      "name": "Portfolio example: wall",
+      "show": true,
+      "pose": {
+        "position": {
+          "cartographicDegrees": [
+            -117.83,
+            33.95,
+            1000.0
+          ]
+        }
+      },
+      "style": {
+        "material": {
+          "type": "solidColor",
+          "rgba": [
+            0.0,
+            0.8,
+            1.0,
+            0.45
+          ]
+        },
+        "outline": true
+      },
+      "rendererHints": {
+        "semanticKind": "wall",
+        "preferredBackends": [
+          "cesium",
+          "simdis",
+          "soap"
+        ]
+      },
+      "geometry": {
+        "positions": [
+          {
+            "cartographicDegrees": [
+              -117.83,
+              33.95,
+              1000
+            ]
+          },
+          {
+            "cartographicDegrees": [
+              -117.78,
+              33.970000000000006,
+              1500
+            ]
+          }
+        ],
+        "widthMeters": 250
+      }
+    },
+    {
+      "id": "portfolio-corridor",
+      "kind": "corridor",
+      "name": "Portfolio example: corridor",
+      "show": true,
+      "pose": {
+        "position": {
+          "cartographicDegrees": [
+            -117.8,
+            33.95,
+            1000.0
+          ]
+        }
+      },
+      "style": {
+        "material": {
+          "type": "solidColor",
+          "rgba": [
+            0.0,
+            0.8,
+            1.0,
+            0.45
+          ]
+        },
+        "outline": true
+      },
+      "rendererHints": {
+        "semanticKind": "corridor",
+        "preferredBackends": [
+          "cesium",
+          "simdis",
+          "soap"
+        ]
+      },
+      "geometry": {
+        "positions": [
+          {
+            "cartographicDegrees": [
+              -117.8,
+              33.95,
+              1000
+            ]
+          },
+          {
+            "cartographicDegrees": [
+              -117.75,
+              33.970000000000006,
+              1500
+            ]
+          }
+        ],
+        "widthMeters": 250
+      }
+    },
+    {
+      "id": "portfolio-polylineVolume",
+      "kind": "polylineVolume",
+      "name": "Portfolio example: polylineVolume",
+      "show": true,
+      "pose": {
+        "position": {
+          "cartographicDegrees": [
+            -117.77,
+            33.95,
+            1000.0
+          ]
+        }
+      },
+      "style": {
+        "material": {
+          "type": "solidColor",
+          "rgba": [
+            0.0,
+            0.8,
+            1.0,
+            0.45
+          ]
+        },
+        "outline": true
+      },
+      "rendererHints": {
+        "semanticKind": "polylineVolume",
+        "preferredBackends": [
+          "cesium",
+          "simdis",
+          "soap"
+        ]
+      }
+    },
+    {
+      "id": "portfolio-plane",
+      "kind": "plane",
+      "name": "Portfolio example: plane",
+      "show": true,
+      "pose": {
+        "position": {
+          "cartographicDegrees": [
+            -117.74,
+            33.95,
+            1000.0
+          ]
+        }
+      },
+      "style": {
+        "material": {
+          "type": "solidColor",
+          "rgba": [
+            0.0,
+            0.8,
+            1.0,
+            0.45
+          ]
+        },
+        "outline": true
+      },
+      "rendererHints": {
+        "semanticKind": "plane",
+        "preferredBackends": [
+          "cesium",
+          "simdis",
+          "soap"
+        ]
+      }
+    },
+    {
+      "id": "portfolio-track",
+      "kind": "track",
+      "name": "Portfolio example: track",
+      "show": true,
+      "pose": {
+        "position": {
+          "samples": {
+            "epoch": "2026-05-29T16:00:00Z",
+            "timeFormat": "secondsSinceEpoch",
+            "valueFormat": "cartographicDegrees",
+            "referenceFrame": "FIXED",
+            "interpolation": "linear",
+            "values": [
+              [
+                0,
+                -117.71000000000001,
+                33.95,
+                10000
+              ],
+              [
+                30,
+                -117.61000000000001,
+                34.0,
+                12000
+              ]
+            ]
+          }
+        },
+        "orientation": {
+          "computed": {
+            "operation": "velocityOrientation",
+            "source": "portfolio-track#pose.position"
+          }
+        }
+      },
+      "style": {
+        "material": {
+          "type": "solidColor",
+          "rgba": [
+            0.0,
+            0.8,
+            1.0,
+            0.45
+          ]
+        },
+        "outline": true
+      },
+      "rendererHints": {
+        "semanticKind": "track",
+        "preferredBackends": [
+          "cesium",
+          "simdis",
+          "soap"
+        ]
+      },
+      "path": {
+        "show": true,
+        "trailTimeSeconds": 120,
+        "leadTimeSeconds": 60,
+        "width": 2
+      }
+    },
+    {
+      "id": "portfolio-model",
+      "kind": "model",
+      "name": "Portfolio example: model",
+      "show": true,
+      "pose": {
+        "position": {
+          "cartographicDegrees": [
+            -117.68,
+            33.95,
+            1000.0
+          ]
+        }
+      },
+      "style": {
+        "material": {
+          "type": "solidColor",
+          "rgba": [
+            0.0,
+            0.8,
+            1.0,
+            0.45
+          ]
+        },
+        "outline": true
+      },
+      "rendererHints": {
+        "semanticKind": "model",
+        "preferredBackends": [
+          "cesium",
+          "simdis",
+          "soap"
+        ]
+      },
+      "asset": "demoGlb",
+      "model": {
+        "scale": 1,
+        "modelFrameCorrection": {
+          "bodyFromModel": {
+            "rotationDegrees": [
+              0,
+              0,
+              0
+            ],
+            "translationMeters": [
+              0,
+              0,
+              0
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "portfolio-tileset",
+      "kind": "tileset",
+      "name": "Portfolio example: tileset",
+      "show": false,
+      "pose": {
+        "position": {
+          "cartographicDegrees": [
+            -117.65,
+            33.95,
+            1000.0
+          ]
+        }
+      },
+      "style": {
+        "material": {
+          "type": "solidColor",
+          "rgba": [
+            0.0,
+            0.8,
+            1.0,
+            0.45
+          ]
+        },
+        "outline": true
+      },
+      "rendererHints": {
+        "semanticKind": "tileset",
+        "preferredBackends": [
+          "cesium",
+          "simdis",
+          "soap"
+        ]
+      },
+      "asset": "demoTileset",
+      "tileset": {
+        "maximumScreenSpaceError": 16
+      }
+    },
+    {
+      "id": "portfolio-gaussianSplatTileset",
+      "kind": "tileset",
+      "name": "Portfolio example: gaussianSplatTileset",
+      "show": false,
+      "pose": {
+        "position": {
+          "cartographicDegrees": [
+            -117.92,
+            33.98,
+            1000.0
+          ]
+        }
+      },
+      "style": {
+        "material": {
+          "type": "solidColor",
+          "rgba": [
+            0.0,
+            0.8,
+            1.0,
+            0.45
+          ]
+        },
+        "outline": true
+      },
+      "rendererHints": {
+        "semanticKind": "gaussianSplatTileset",
+        "preferredBackends": [
+          "cesium",
+          "simdis",
+          "soap"
+        ]
+      },
+      "asset": "demoSplat",
+      "tileset": {
+        "maximumScreenSpaceError": 16
+      }
+    },
+    {
+      "id": "portfolio-sector2d",
+      "kind": "sector2d",
+      "name": "Portfolio example: sector2d",
+      "show": true,
+      "pose": {
+        "position": {
+          "cartographicDegrees": [
+            -117.89,
+            33.98,
+            1000.0
+          ]
+        }
+      },
+      "style": {
+        "material": {
+          "type": "solidColor",
+          "rgba": [
+            0.0,
+            0.8,
+            1.0,
+            0.45
+          ]
+        },
+        "outline": true
+      },
+      "rendererHints": {
+        "semanticKind": "sector2d",
+        "preferredBackends": [
+          "cesium",
+          "simdis",
+          "soap"
+        ]
+      },
+      "geometry": {
+        "innerRadiusMeters": 0,
+        "outerRadiusMeters": 50000,
+        "azimuthStartDegrees": -30,
+        "azimuthStopDegrees": 30,
+        "segments": 48
+      }
+    },
+    {
+      "id": "portfolio-sectorVolume",
+      "kind": "sectorVolume",
+      "name": "Portfolio example: sectorVolume",
+      "show": true,
+      "pose": {
+        "position": {
+          "cartographicDegrees": [
+            -117.86,
+            33.98,
+            1000.0
+          ]
+        }
+      },
+      "style": {
+        "material": {
+          "type": "solidColor",
+          "rgba": [
+            0.0,
+            0.8,
+            1.0,
+            0.45
+          ]
+        },
+        "outline": true
+      },
+      "rendererHints": {
+        "semanticKind": "sectorVolume",
+        "preferredBackends": [
+          "cesium",
+          "simdis",
+          "soap"
+        ]
+      },
+      "geometry": {
+        "innerRadiusMeters": 0,
+        "outerRadiusMeters": 50000,
+        "azimuthStartDegrees": -30,
+        "azimuthStopDegrees": 30,
+        "elevationStartDegrees": 0,
+        "elevationStopDegrees": 45,
+        "azimuthSegments": 36,
+        "elevationSegments": 8
+      }
+    },
+    {
+      "id": "portfolio-keyhole",
+      "kind": "keyhole",
+      "name": "Portfolio example: keyhole",
+      "show": true,
+      "pose": {
+        "position": {
+          "cartographicDegrees": [
+            -117.83,
+            33.98,
+            1000.0
+          ]
+        }
+      },
+      "style": {
+        "material": {
+          "type": "solidColor",
+          "rgba": [
+            0.0,
+            0.8,
+            1.0,
+            0.45
+          ]
+        },
+        "outline": true
+      },
+      "rendererHints": {
+        "semanticKind": "keyhole",
+        "preferredBackends": [
+          "cesium",
+          "simdis",
+          "soap"
+        ]
+      },
+      "geometry": {
+        "innerRadiusMeters": 1000,
+        "outerRadiusMeters": 50000,
+        "azimuthStartDegrees": -30,
+        "azimuthStopDegrees": 30,
+        "elevationStartDegrees": 0,
+        "elevationStopDegrees": 45,
+        "azimuthSegments": 36,
+        "elevationSegments": 8
+      }
+    },
+    {
+      "id": "portfolio-rangeRing",
+      "kind": "rangeRing",
+      "name": "Portfolio example: rangeRing",
+      "show": true,
+      "pose": {
+        "position": {
+          "cartographicDegrees": [
+            -117.8,
+            33.98,
+            1000.0
+          ]
+        }
+      },
+      "style": {
+        "material": {
+          "type": "solidColor",
+          "rgba": [
+            0.0,
+            0.8,
+            1.0,
+            0.45
+          ]
+        },
+        "outline": true
+      },
+      "rendererHints": {
+        "semanticKind": "rangeRing",
+        "preferredBackends": [
+          "cesium",
+          "simdis",
+          "soap"
+        ]
+      },
+      "geometry": {
+        "radiusMeters": 6000
+      }
+    },
+    {
+      "id": "portfolio-bearingFan",
+      "kind": "bearingFan",
+      "name": "Portfolio example: bearingFan",
+      "show": true,
+      "pose": {
+        "position": {
+          "cartographicDegrees": [
+            -117.77,
+            33.98,
+            1000.0
+          ]
+        }
+      },
+      "style": {
+        "material": {
+          "type": "solidColor",
+          "rgba": [
+            0.0,
+            0.8,
+            1.0,
+            0.45
+          ]
+        },
+        "outline": true
+      },
+      "rendererHints": {
+        "semanticKind": "bearingFan",
+        "preferredBackends": [
+          "cesium",
+          "simdis",
+          "soap"
+        ]
+      },
+      "geometry": {
+        "innerRadiusMeters": 0,
+        "outerRadiusMeters": 50000,
+        "azimuthStartDegrees": -30,
+        "azimuthStopDegrees": 30,
+        "segments": 48
+      }
+    },
+    {
+      "id": "portfolio-hemisphere",
+      "kind": "hemisphere",
+      "name": "Portfolio example: hemisphere",
+      "show": true,
+      "pose": {
+        "position": {
+          "cartographicDegrees": [
+            -117.74,
+            33.98,
+            1000.0
+          ]
+        }
+      },
+      "style": {
+        "material": {
+          "type": "solidColor",
+          "rgba": [
+            0.0,
+            0.8,
+            1.0,
+            0.45
+          ]
+        },
+        "outline": true
+      },
+      "rendererHints": {
+        "semanticKind": "hemisphere",
+        "preferredBackends": [
+          "cesium",
+          "simdis",
+          "soap"
+        ]
+      },
+      "geometry": {
+        "innerRadiusMeters": 0,
+        "outerRadiusMeters": 50000,
+        "azimuthStartDegrees": -30,
+        "azimuthStopDegrees": 30,
+        "elevationStartDegrees": 0,
+        "elevationStopDegrees": 45,
+        "azimuthSegments": 36,
+        "elevationSegments": 8
+      }
+    },
+    {
+      "id": "portfolio-sphericalCap",
+      "kind": "sphericalCap",
+      "name": "Portfolio example: sphericalCap",
+      "show": true,
+      "pose": {
+        "position": {
+          "cartographicDegrees": [
+            -117.71,
+            33.98,
+            1000.0
+          ]
+        }
+      },
+      "style": {
+        "material": {
+          "type": "solidColor",
+          "rgba": [
+            0.0,
+            0.8,
+            1.0,
+            0.45
+          ]
+        },
+        "outline": true
+      },
+      "rendererHints": {
+        "semanticKind": "sphericalCap",
+        "preferredBackends": [
+          "cesium",
+          "simdis",
+          "soap"
+        ]
+      },
+      "geometry": {
+        "innerRadiusMeters": 0,
+        "outerRadiusMeters": 50000,
+        "azimuthStartDegrees": -30,
+        "azimuthStopDegrees": 30,
+        "elevationStartDegrees": 0,
+        "elevationStopDegrees": 45,
+        "azimuthSegments": 36,
+        "elevationSegments": 8
+      }
+    },
+    {
+      "id": "portfolio-frustum",
+      "kind": "frustum",
+      "name": "Portfolio example: frustum",
+      "show": true,
+      "pose": {
+        "position": {
+          "cartographicDegrees": [
+            -117.68,
+            33.98,
+            1000.0
+          ]
+        }
+      },
+      "style": {
+        "material": {
+          "type": "solidColor",
+          "rgba": [
+            0.0,
+            0.8,
+            1.0,
+            0.45
+          ]
+        },
+        "outline": true
+      },
+      "rendererHints": {
+        "semanticKind": "frustum",
+        "preferredBackends": [
+          "cesium",
+          "simdis",
+          "soap"
+        ]
+      },
+      "geometry": {
+        "nearMeters": 1000,
+        "farMeters": 50000,
+        "fovYDegrees": 30,
+        "aspectRatio": 1.2
+      }
+    },
+    {
+      "id": "portfolio-conicSensor",
+      "kind": "conicSensor",
+      "name": "Portfolio example: conicSensor",
+      "show": true,
+      "pose": {
+        "position": {
+          "cartographicDegrees": [
+            -117.65,
+            33.98,
+            1000.0
+          ]
+        }
+      },
+      "style": {
+        "material": {
+          "type": "solidColor",
+          "rgba": [
+            0.0,
+            0.8,
+            1.0,
+            0.45
+          ]
+        },
+        "outline": true
+      },
+      "rendererHints": {
+        "semanticKind": "conicSensor",
+        "preferredBackends": [
+          "cesium",
+          "simdis",
+          "soap"
+        ]
+      },
+      "geometry": {
+        "innerRadiusMeters": 0,
+        "outerRadiusMeters": 50000,
+        "azimuthStartDegrees": -30,
+        "azimuthStopDegrees": 30,
+        "elevationStartDegrees": 0,
+        "elevationStopDegrees": 45,
+        "azimuthSegments": 36,
+        "elevationSegments": 8
+      }
+    },
+    {
+      "id": "portfolio-rectangularSensor",
+      "kind": "rectangularSensor",
+      "name": "Portfolio example: rectangularSensor",
+      "show": true,
+      "pose": {
+        "position": {
+          "cartographicDegrees": [
+            -117.92,
+            34.01,
+            1000.0
+          ]
+        }
+      },
+      "style": {
+        "material": {
+          "type": "solidColor",
+          "rgba": [
+            0.0,
+            0.8,
+            1.0,
+            0.45
+          ]
+        },
+        "outline": true
+      },
+      "rendererHints": {
+        "semanticKind": "rectangularSensor",
+        "preferredBackends": [
+          "cesium",
+          "simdis",
+          "soap"
+        ]
+      },
+      "geometry": {
+        "innerRadiusMeters": 0,
+        "outerRadiusMeters": 50000,
+        "azimuthStartDegrees": -30,
+        "azimuthStopDegrees": 30,
+        "elevationStartDegrees": 0,
+        "elevationStopDegrees": 45,
+        "azimuthSegments": 36,
+        "elevationSegments": 8
+      }
+    },
+    {
+      "id": "portfolio-customPatternSensor",
+      "kind": "customPatternSensor",
+      "name": "Portfolio example: customPatternSensor",
+      "show": true,
+      "pose": {
+        "position": {
+          "cartographicDegrees": [
+            -117.89,
+            34.01,
+            1000.0
+          ]
+        }
+      },
+      "style": {
+        "material": {
+          "type": "solidColor",
+          "rgba": [
+            0.0,
+            0.8,
+            1.0,
+            0.45
+          ]
+        },
+        "outline": true
+      },
+      "rendererHints": {
+        "semanticKind": "customPatternSensor",
+        "preferredBackends": [
+          "cesium",
+          "simdis",
+          "soap"
+        ]
+      },
+      "geometry": {
+        "innerRadiusMeters": 0,
+        "outerRadiusMeters": 50000,
+        "azimuthStartDegrees": -30,
+        "azimuthStopDegrees": 30,
+        "elevationStartDegrees": 0,
+        "elevationStopDegrees": 45,
+        "azimuthSegments": 36,
+        "elevationSegments": 8
+      }
+    },
+    {
+      "id": "portfolio-fan",
+      "kind": "fan",
+      "name": "Portfolio example: fan",
+      "show": true,
+      "pose": {
+        "position": {
+          "cartographicDegrees": [
+            -117.86,
+            34.01,
+            1000.0
+          ]
+        }
+      },
+      "style": {
+        "material": {
+          "type": "solidColor",
+          "rgba": [
+            0.0,
+            0.8,
+            1.0,
+            0.45
+          ]
+        },
+        "outline": true
+      },
+      "rendererHints": {
+        "semanticKind": "fan",
+        "preferredBackends": [
+          "cesium",
+          "simdis",
+          "soap"
+        ]
+      },
+      "geometry": {
+        "innerRadiusMeters": 0,
+        "outerRadiusMeters": 50000,
+        "azimuthStartDegrees": -30,
+        "azimuthStopDegrees": 30,
+        "segments": 48
+      }
+    },
+    {
+      "id": "portfolio-uncertaintyEllipsoid",
+      "kind": "uncertaintyEllipsoid",
+      "name": "Portfolio example: uncertaintyEllipsoid",
+      "show": true,
+      "pose": {
+        "position": {
+          "cartographicDegrees": [
+            -117.83,
+            34.01,
+            1000.0
+          ]
+        }
+      },
+      "style": {
+        "material": {
+          "type": "solidColor",
+          "rgba": [
+            0.0,
+            0.8,
+            1.0,
+            0.45
+          ]
+        },
+        "outline": true
+      },
+      "rendererHints": {
+        "semanticKind": "uncertaintyEllipsoid",
+        "preferredBackends": [
+          "cesium",
+          "simdis",
+          "soap"
+        ]
+      },
+      "geometry": {
+        "radiiMeters": [
+          3000,
+          2500,
+          2000
+        ]
+      }
+    },
+    {
+      "id": "portfolio-covarianceEllipse",
+      "kind": "covarianceEllipse",
+      "name": "Portfolio example: covarianceEllipse",
+      "show": true,
+      "pose": {
+        "position": {
+          "cartographicDegrees": [
+            -117.8,
+            34.01,
+            1000.0
+          ]
+        }
+      },
+      "style": {
+        "material": {
+          "type": "solidColor",
+          "rgba": [
+            0.0,
+            0.8,
+            1.0,
+            0.45
+          ]
+        },
+        "outline": true
+      },
+      "rendererHints": {
+        "semanticKind": "covarianceEllipse",
+        "preferredBackends": [
+          "cesium",
+          "simdis",
+          "soap"
+        ]
+      },
+      "geometry": {
+        "semiMajorAxisMeters": 5000,
+        "semiMinorAxisMeters": 2500,
+        "rotationDegrees": 35
+      }
+    },
+    {
+      "id": "portfolio-velocityVector",
+      "kind": "velocityVector",
+      "name": "Portfolio example: velocityVector",
+      "show": true,
+      "pose": {
+        "position": {
+          "cartographicDegrees": [
+            -117.77,
+            34.01,
+            1000.0
+          ]
+        }
+      },
+      "style": {
+        "material": {
+          "type": "solidColor",
+          "rgba": [
+            0.0,
+            0.8,
+            1.0,
+            0.45
+          ]
+        },
+        "outline": true
+      },
+      "rendererHints": {
+        "semanticKind": "velocityVector",
+        "preferredBackends": [
+          "cesium",
+          "simdis",
+          "soap"
+        ]
+      },
+      "geometry": {
+        "source": "portfolio-track#pose.position",
+        "scale": 5.0
+      }
+    },
+    {
+      "id": "portfolio-accelerationVector",
+      "kind": "accelerationVector",
+      "name": "Portfolio example: accelerationVector",
+      "show": true,
+      "pose": {
+        "position": {
+          "cartographicDegrees": [
+            -117.74,
+            34.01,
+            1000.0
+          ]
+        }
+      },
+      "style": {
+        "material": {
+          "type": "solidColor",
+          "rgba": [
+            0.0,
+            0.8,
+            1.0,
+            0.45
+          ]
+        },
+        "outline": true
+      },
+      "rendererHints": {
+        "semanticKind": "accelerationVector",
+        "preferredBackends": [
+          "cesium",
+          "simdis",
+          "soap"
+        ]
+      },
+      "geometry": {
+        "source": "portfolio-track#pose.position",
+        "scale": 5.0
+      }
+    },
+    {
+      "id": "portfolio-bodyAxes",
+      "kind": "bodyAxes",
+      "name": "Portfolio example: bodyAxes",
+      "show": true,
+      "pose": {
+        "position": {
+          "cartographicDegrees": [
+            -117.71,
+            34.01,
+            1000.0
+          ]
+        }
+      },
+      "style": {
+        "material": {
+          "type": "solidColor",
+          "rgba": [
+            0.0,
+            0.8,
+            1.0,
+            0.45
+          ]
+        },
+        "outline": true
+      },
+      "rendererHints": {
+        "semanticKind": "bodyAxes",
+        "preferredBackends": [
+          "cesium",
+          "simdis",
+          "soap"
+        ]
+      },
+      "geometry": {
+        "source": "portfolio-track#pose.position",
+        "scale": 5.0
+      }
+    },
+    {
+      "id": "portfolio-principalAxes",
+      "kind": "principalAxes",
+      "name": "Portfolio example: principalAxes",
+      "show": true,
+      "pose": {
+        "position": {
+          "cartographicDegrees": [
+            -117.68,
+            34.01,
+            1000.0
+          ]
+        }
+      },
+      "style": {
+        "material": {
+          "type": "solidColor",
+          "rgba": [
+            0.0,
+            0.8,
+            1.0,
+            0.45
+          ]
+        },
+        "outline": true
+      },
+      "rendererHints": {
+        "semanticKind": "principalAxes",
+        "preferredBackends": [
+          "cesium",
+          "simdis",
+          "soap"
+        ]
+      },
+      "geometry": {
+        "source": "portfolio-track#pose.position",
+        "scale": 5.0
+      }
+    },
+    {
+      "id": "portfolio-lineOfSight",
+      "kind": "lineOfSight",
+      "name": "Portfolio example: lineOfSight",
+      "show": true,
+      "pose": {
+        "position": {
+          "cartographicDegrees": [
+            -117.65,
+            34.01,
+            1000.0
+          ]
+        }
+      },
+      "style": {
+        "material": {
+          "type": "solidColor",
+          "rgba": [
+            0.0,
+            0.8,
+            1.0,
+            0.45
+          ]
+        },
+        "outline": true
+      },
+      "rendererHints": {
+        "semanticKind": "lineOfSight",
+        "preferredBackends": [
+          "cesium",
+          "simdis",
+          "soap"
+        ]
+      },
+      "geometry": {
+        "source": "portfolio-track#pose.position",
+        "scale": 5.0
+      }
+    },
+    {
+      "id": "portfolio-relativeLine",
+      "kind": "relativeLine",
+      "name": "Portfolio example: relativeLine",
+      "show": true,
+      "pose": {
+        "position": {
+          "cartographicDegrees": [
+            -117.92,
+            34.04,
+            1000.0
+          ]
+        }
+      },
+      "style": {
+        "material": {
+          "type": "solidColor",
+          "rgba": [
+            0.0,
+            0.8,
+            1.0,
+            0.45
+          ]
+        },
+        "outline": true
+      },
+      "rendererHints": {
+        "semanticKind": "relativeLine",
+        "preferredBackends": [
+          "cesium",
+          "simdis",
+          "soap"
+        ]
+      },
+      "geometry": {
+        "source": "portfolio-track#pose.position",
+        "scale": 5.0
+      }
+    },
+    {
+      "id": "portfolio-interceptLine",
+      "kind": "interceptLine",
+      "name": "Portfolio example: interceptLine",
+      "show": true,
+      "pose": {
+        "position": {
+          "cartographicDegrees": [
+            -117.89,
+            34.04,
+            1000.0
+          ]
+        }
+      },
+      "style": {
+        "material": {
+          "type": "solidColor",
+          "rgba": [
+            0.0,
+            0.8,
+            1.0,
+            0.45
+          ]
+        },
+        "outline": true
+      },
+      "rendererHints": {
+        "semanticKind": "interceptLine",
+        "preferredBackends": [
+          "cesium",
+          "simdis",
+          "soap"
+        ]
+      },
+      "geometry": {
+        "source": "portfolio-track#pose.position",
+        "scale": 5.0
+      }
+    },
+    {
+      "id": "portfolio-particleSystem",
+      "kind": "particleSystem",
+      "name": "Portfolio example: particleSystem",
+      "show": true,
+      "pose": {
+        "position": {
+          "cartographicDegrees": [
+            -117.86,
+            34.04,
+            1000.0
+          ]
+        }
+      },
+      "style": {
+        "material": {
+          "type": "solidColor",
+          "rgba": [
+            0.0,
+            0.8,
+            1.0,
+            0.45
+          ]
+        },
+        "outline": true
+      },
+      "rendererHints": {
+        "semanticKind": "particleSystem",
+        "preferredBackends": [
+          "cesium",
+          "simdis",
+          "soap"
+        ]
+      },
+      "particleSystem": {
+        "emissionRate": 10,
+        "particleLife": 2,
+        "speed": 5,
+        "image": "assets/particle.png"
+      }
+    },
+    {
+      "id": "portfolio-customPrimitive",
+      "kind": "customPrimitive",
+      "name": "Portfolio example: customPrimitive",
+      "show": true,
+      "pose": {
+        "position": {
+          "cartographicDegrees": [
+            -117.83,
+            34.04,
+            1000.0
+          ]
+        }
+      },
+      "style": {
+        "material": {
+          "type": "solidColor",
+          "rgba": [
+            0.0,
+            0.8,
+            1.0,
+            0.45
+          ]
+        },
+        "outline": true
+      },
+      "rendererHints": {
+        "semanticKind": "customPrimitive",
+        "preferredBackends": [
+          "cesium",
+          "simdis",
+          "soap"
+        ]
+      },
+      "geometry": {
+        "primitiveType": "triangles",
+        "coordinateFrame": "local",
+        "positions": [
+          [
+            -1000,
+            -1000,
+            0
+          ],
+          [
+            1000,
+            -1000,
+            0
+          ],
+          [
+            0,
+            1000,
+            0
+          ]
+        ],
+        "indices": [
+          0,
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "id": "portfolio-clippingPlane",
+      "kind": "clippingPlane",
+      "name": "Portfolio example: clippingPlane",
+      "show": false,
+      "pose": {
+        "position": {
+          "cartographicDegrees": [
+            -117.8,
+            34.04,
+            1000.0
+          ]
+        }
+      },
+      "style": {
+        "material": {
+          "type": "solidColor",
+          "rgba": [
+            0.0,
+            0.8,
+            1.0,
+            0.45
+          ]
+        },
+        "outline": true
+      },
+      "rendererHints": {
+        "semanticKind": "clippingPlane",
+        "preferredBackends": [
+          "cesium",
+          "simdis",
+          "soap"
+        ]
+      },
+      "target": "portfolio-tileset",
+      "options": {
+        "reserved": true,
+        "implementationNote": "Portfolio placeholder for SDJ v0.5 adapter work."
+      }
+    },
+    {
+      "id": "portfolio-clippingPolygon",
+      "kind": "clippingPolygon",
+      "name": "Portfolio example: clippingPolygon",
+      "show": false,
+      "pose": {
+        "position": {
+          "cartographicDegrees": [
+            -117.77,
+            34.04,
+            1000.0
+          ]
+        }
+      },
+      "style": {
+        "material": {
+          "type": "solidColor",
+          "rgba": [
+            0.0,
+            0.8,
+            1.0,
+            0.45
+          ]
+        },
+        "outline": true
+      },
+      "rendererHints": {
+        "semanticKind": "clippingPolygon",
+        "preferredBackends": [
+          "cesium",
+          "simdis",
+          "soap"
+        ]
+      },
+      "target": "portfolio-tileset",
+      "options": {
+        "reserved": true,
+        "implementationNote": "Portfolio placeholder for SDJ v0.5 adapter work."
+      }
+    },
+    {
+      "id": "portfolio-classificationPrimitive",
+      "kind": "classificationPrimitive",
+      "name": "Portfolio example: classificationPrimitive",
+      "show": false,
+      "pose": {
+        "position": {
+          "cartographicDegrees": [
+            -117.74,
+            34.04,
+            1000.0
+          ]
+        }
+      },
+      "style": {
+        "material": {
+          "type": "solidColor",
+          "rgba": [
+            0.0,
+            0.8,
+            1.0,
+            0.45
+          ]
+        },
+        "outline": true
+      },
+      "rendererHints": {
+        "semanticKind": "classificationPrimitive",
+        "preferredBackends": [
+          "cesium",
+          "simdis",
+          "soap"
+        ]
+      },
+      "target": "portfolio-tileset",
+      "options": {
+        "reserved": true,
+        "implementationNote": "Portfolio placeholder for SDJ v0.5 adapter work."
+      }
+    },
+    {
+      "id": "portfolio-groundPrimitive",
+      "kind": "groundPrimitive",
+      "name": "Portfolio example: groundPrimitive",
+      "show": false,
+      "pose": {
+        "position": {
+          "cartographicDegrees": [
+            -117.71,
+            34.04,
+            1000.0
+          ]
+        }
+      },
+      "style": {
+        "material": {
+          "type": "solidColor",
+          "rgba": [
+            0.0,
+            0.8,
+            1.0,
+            0.45
+          ]
+        },
+        "outline": true
+      },
+      "rendererHints": {
+        "semanticKind": "groundPrimitive",
+        "preferredBackends": [
+          "cesium",
+          "simdis",
+          "soap"
+        ]
+      },
+      "target": "portfolio-tileset",
+      "options": {
+        "reserved": true,
+        "implementationNote": "Portfolio placeholder for SDJ v0.5 adapter work."
+      }
+    },
+    {
+      "id": "portfolio-groundPolyline",
+      "kind": "groundPolyline",
+      "name": "Portfolio example: groundPolyline",
+      "show": false,
+      "pose": {
+        "position": {
+          "cartographicDegrees": [
+            -117.68,
+            34.04,
+            1000.0
+          ]
+        }
+      },
+      "style": {
+        "material": {
+          "type": "solidColor",
+          "rgba": [
+            0.0,
+            0.8,
+            1.0,
+            0.45
+          ]
+        },
+        "outline": true
+      },
+      "rendererHints": {
+        "semanticKind": "groundPolyline",
+        "preferredBackends": [
+          "cesium",
+          "simdis",
+          "soap"
+        ]
+      },
+      "geometry": {
+        "positions": [
+          {
+            "cartographicDegrees": [
+              -117.68,
+              34.04,
+              1000
+            ]
+          },
+          {
+            "cartographicDegrees": [
+              -117.63000000000001,
+              34.06,
+              1500
+            ]
+          }
+        ],
+        "widthMeters": 250
+      }
+    },
+    {
+      "id": "portfolio-voxel",
+      "kind": "voxel",
+      "name": "Portfolio example: voxel",
+      "show": false,
+      "pose": {
+        "position": {
+          "cartographicDegrees": [
+            -117.65,
+            34.04,
+            1000.0
+          ]
+        }
+      },
+      "style": {
+        "material": {
+          "type": "solidColor",
+          "rgba": [
+            0.0,
+            0.8,
+            1.0,
+            0.45
+          ]
+        },
+        "outline": true
+      },
+      "rendererHints": {
+        "semanticKind": "voxel",
+        "preferredBackends": [
+          "cesium",
+          "simdis",
+          "soap"
+        ]
+      },
+      "target": "portfolio-tileset",
+      "options": {
+        "reserved": true,
+        "implementationNote": "Portfolio placeholder for SDJ v0.5 adapter work."
+      }
+    },
+    {
+      "id": "portfolio-postProcessStage",
+      "kind": "postProcessStage",
+      "name": "Portfolio example: postProcessStage",
+      "show": false,
+      "pose": {
+        "position": {
+          "cartographicDegrees": [
+            -117.92,
+            34.07,
+            1000.0
+          ]
+        }
+      },
+      "style": {
+        "material": {
+          "type": "solidColor",
+          "rgba": [
+            0.0,
+            0.8,
+            1.0,
+            0.45
+          ]
+        },
+        "outline": true
+      },
+      "rendererHints": {
+        "semanticKind": "postProcessStage",
+        "preferredBackends": [
+          "cesium",
+          "simdis",
+          "soap"
+        ]
+      },
+      "target": "portfolio-tileset",
+      "options": {
+        "reserved": true,
+        "implementationNote": "Portfolio placeholder for SDJ v0.5 adapter work."
+      }
+    },
+    {
+      "id": "portfolio-terrain",
+      "kind": "terrain",
+      "name": "Portfolio example: terrain",
+      "show": false,
+      "pose": {
+        "position": {
+          "cartographicDegrees": [
+            -117.89,
+            34.07,
+            1000.0
+          ]
+        }
+      },
+      "style": {
+        "material": {
+          "type": "solidColor",
+          "rgba": [
+            0.0,
+            0.8,
+            1.0,
+            0.45
+          ]
+        },
+        "outline": true
+      },
+      "rendererHints": {
+        "semanticKind": "terrain",
+        "preferredBackends": [
+          "cesium",
+          "simdis",
+          "soap"
+        ]
+      },
+      "target": "portfolio-tileset",
+      "options": {
+        "reserved": true,
+        "implementationNote": "Portfolio placeholder for SDJ v0.5 adapter work."
+      }
+    },
+    {
+      "id": "portfolio-imageryLayer",
+      "kind": "imageryLayer",
+      "name": "Portfolio example: imageryLayer",
+      "show": false,
+      "pose": {
+        "position": {
+          "cartographicDegrees": [
+            -117.86,
+            34.07,
+            1000.0
+          ]
+        }
+      },
+      "style": {
+        "material": {
+          "type": "solidColor",
+          "rgba": [
+            0.0,
+            0.8,
+            1.0,
+            0.45
+          ]
+        },
+        "outline": true
+      },
+      "rendererHints": {
+        "semanticKind": "imageryLayer",
+        "preferredBackends": [
+          "cesium",
+          "simdis",
+          "soap"
+        ]
+      },
+      "target": "portfolio-tileset",
+      "options": {
+        "reserved": true,
+        "implementationNote": "Portfolio placeholder for SDJ v0.5 adapter work."
+      }
+    },
+    {
+      "id": "portfolio-cloudCollection",
+      "kind": "cloudCollection",
+      "name": "Portfolio example: cloudCollection",
+      "show": false,
+      "pose": {
+        "position": {
+          "cartographicDegrees": [
+            -117.83,
+            34.07,
+            1000.0
+          ]
+        }
+      },
+      "style": {
+        "material": {
+          "type": "solidColor",
+          "rgba": [
+            0.0,
+            0.8,
+            1.0,
+            0.45
+          ]
+        },
+        "outline": true
+      },
+      "rendererHints": {
+        "semanticKind": "cloudCollection",
+        "preferredBackends": [
+          "cesium",
+          "simdis",
+          "soap"
+        ]
+      },
+      "target": "portfolio-tileset",
+      "options": {
+        "reserved": true,
+        "implementationNote": "Portfolio placeholder for SDJ v0.5 adapter work."
+      }
+    },
+    {
+      "id": "portfolio-skyBox",
+      "kind": "skyBox",
+      "name": "Portfolio example: skyBox",
+      "show": false,
+      "pose": {
+        "position": {
+          "cartographicDegrees": [
+            -117.8,
+            34.07,
+            1000.0
+          ]
+        }
+      },
+      "style": {
+        "material": {
+          "type": "solidColor",
+          "rgba": [
+            0.0,
+            0.8,
+            1.0,
+            0.45
+          ]
+        },
+        "outline": true
+      },
+      "rendererHints": {
+        "semanticKind": "skyBox",
+        "preferredBackends": [
+          "cesium",
+          "simdis",
+          "soap"
+        ]
+      },
+      "target": "portfolio-tileset",
+      "options": {
+        "reserved": true,
+        "implementationNote": "Portfolio placeholder for SDJ v0.5 adapter work."
+      }
+    },
+    {
+      "id": "portfolio-atmosphere",
+      "kind": "atmosphere",
+      "name": "Portfolio example: atmosphere",
+      "show": false,
+      "pose": {
+        "position": {
+          "cartographicDegrees": [
+            -117.77,
+            34.07,
+            1000.0
+          ]
+        }
+      },
+      "style": {
+        "material": {
+          "type": "solidColor",
+          "rgba": [
+            0.0,
+            0.8,
+            1.0,
+            0.45
+          ]
+        },
+        "outline": true
+      },
+      "rendererHints": {
+        "semanticKind": "atmosphere",
+        "preferredBackends": [
+          "cesium",
+          "simdis",
+          "soap"
+        ]
+      },
+      "target": "portfolio-tileset",
+      "options": {
+        "reserved": true,
+        "implementationNote": "Portfolio placeholder for SDJ v0.5 adapter work."
+      }
+    },
+    {
+      "id": "portfolio-czmlDataSource",
+      "kind": "czmlDataSource",
+      "name": "Portfolio example: czmlDataSource",
+      "show": false,
+      "pose": {
+        "position": {
+          "cartographicDegrees": [
+            -117.74,
+            34.07,
+            1000.0
+          ]
+        }
+      },
+      "style": {
+        "material": {
+          "type": "solidColor",
+          "rgba": [
+            0.0,
+            0.8,
+            1.0,
+            0.45
+          ]
+        },
+        "outline": true
+      },
+      "rendererHints": {
+        "semanticKind": "czmlDataSource",
+        "preferredBackends": [
+          "cesium",
+          "simdis",
+          "soap"
+        ]
+      },
+      "target": "portfolio-tileset",
+      "options": {
+        "reserved": true,
+        "implementationNote": "Portfolio placeholder for SDJ v0.5 adapter work."
+      }
+    },
+    {
+      "id": "portfolio-geoJsonDataSource",
+      "kind": "geoJsonDataSource",
+      "name": "Portfolio example: geoJsonDataSource",
+      "show": false,
+      "pose": {
+        "position": {
+          "cartographicDegrees": [
+            -117.71,
+            34.07,
+            1000.0
+          ]
+        }
+      },
+      "style": {
+        "material": {
+          "type": "solidColor",
+          "rgba": [
+            0.0,
+            0.8,
+            1.0,
+            0.45
+          ]
+        },
+        "outline": true
+      },
+      "rendererHints": {
+        "semanticKind": "geoJsonDataSource",
+        "preferredBackends": [
+          "cesium",
+          "simdis",
+          "soap"
+        ]
+      },
+      "target": "portfolio-tileset",
+      "options": {
+        "reserved": true,
+        "implementationNote": "Portfolio placeholder for SDJ v0.5 adapter work."
+      }
+    },
+    {
+      "id": "portfolio-kmlDataSource",
+      "kind": "kmlDataSource",
+      "name": "Portfolio example: kmlDataSource",
+      "show": false,
+      "pose": {
+        "position": {
+          "cartographicDegrees": [
+            -117.68,
+            34.07,
+            1000.0
+          ]
+        }
+      },
+      "style": {
+        "material": {
+          "type": "solidColor",
+          "rgba": [
+            0.0,
+            0.8,
+            1.0,
+            0.45
+          ]
+        },
+        "outline": true
+      },
+      "rendererHints": {
+        "semanticKind": "kmlDataSource",
+        "preferredBackends": [
+          "cesium",
+          "simdis",
+          "soap"
+        ]
+      },
+      "target": "portfolio-tileset",
+      "options": {
+        "reserved": true,
+        "implementationNote": "Portfolio placeholder for SDJ v0.5 adapter work."
+      }
+    },
+    {
+      "id": "portfolio-tilesetStyle",
+      "kind": "tilesetStyle",
+      "name": "Portfolio example: tilesetStyle",
+      "show": false,
+      "pose": {
+        "position": {
+          "cartographicDegrees": [
+            -117.65,
+            34.07,
+            1000.0
+          ]
+        }
+      },
+      "style": {
+        "material": {
+          "type": "solidColor",
+          "rgba": [
+            0.0,
+            0.8,
+            1.0,
+            0.45
+          ]
+        },
+        "outline": true
+      },
+      "rendererHints": {
+        "semanticKind": "tilesetStyle",
+        "preferredBackends": [
+          "cesium",
+          "simdis",
+          "soap"
+        ]
+      },
+      "target": "portfolio-tileset",
+      "options": {
+        "reserved": true,
+        "implementationNote": "Portfolio placeholder for SDJ v0.5 adapter work."
+      }
+    },
+    {
+      "id": "portfolio-customShader",
+      "kind": "customShader",
+      "name": "Portfolio example: customShader",
+      "show": false,
+      "pose": {
+        "position": {
+          "cartographicDegrees": [
+            -117.92,
+            34.1,
+            1000.0
+          ]
+        }
+      },
+      "style": {
+        "material": {
+          "type": "solidColor",
+          "rgba": [
+            0.0,
+            0.8,
+            1.0,
+            0.45
+          ]
+        },
+        "outline": true
+      },
+      "rendererHints": {
+        "semanticKind": "customShader",
+        "preferredBackends": [
+          "cesium",
+          "simdis",
+          "soap"
+        ]
+      },
+      "target": "portfolio-tileset",
+      "options": {
+        "reserved": true,
+        "implementationNote": "Portfolio placeholder for SDJ v0.5 adapter work."
+      }
+    }
+  ],
+  "analysis": [
+    {
+      "id": "portfolio-access",
+      "kind": "accessIntervals",
+      "participants": [
+        "portfolio-point",
+        "portfolio-track"
+      ],
+      "intervals": [
+        {
+          "start": "2026-05-29T16:00:00Z",
+          "stop": "2026-05-29T16:05:00Z",
+          "access": true
+        }
+      ]
+    },
+    {
+      "id": "portfolio-rf",
+      "kind": "rfLinkBudget",
+      "participants": [
+        "portfolio-conicSensor",
+        "portfolio-track"
+      ],
+      "metrics": {
+        "frequencyHz": 1000000000.0,
+        "eirpDbw": 10
+      }
+    }
+  ],
+  "presentation": [
+    {
+      "id": "portfolio-view",
+      "kind": "view",
+      "target": "portfolio-track"
+    },
+    {
+      "id": "portfolio-slide",
+      "kind": "slide",
+      "title": "Portfolio coverage slide",
+      "views": [
+        "portfolio-view"
+      ]
+    }
+  ],
+  "notes": [
+    "This is a seed portfolio scene, not a fully renderable regression scene. Some objects are placeholders for adapters."
+  ]
+}

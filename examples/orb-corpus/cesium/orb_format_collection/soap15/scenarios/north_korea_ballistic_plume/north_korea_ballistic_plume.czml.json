@@ -1,0 +1,167 @@
+[
+  {
+    "id": "document",
+    "name": "north_korea_ballistic_plume",
+    "version": "1.0"
+  },
+  {
+    "id": ".Earth CR Observer",
+    "name": ".Earth CR Observer",
+    "position": {
+      "cartographicDegrees": [
+        -102.0,
+        34.0005729578,
+        63781.369999999995
+      ]
+    },
+    "properties": {
+      "platform_type": "ECR_FIXED",
+      "orbArchiveMember": "orb_format_collection/soap15/scenarios/north_korea_ballistic_plume/north_korea_ballistic_plume.orb",
+      "source": "orb-scenario"
+    },
+    "point": {
+      "pixelSize": 10,
+      "outlineWidth": 1
+    }
+  },
+  {
+    "id": ".Earth Ground",
+    "name": ".Earth Ground",
+    "position": {
+      "cartographicDegrees": [
+        -99.0,
+        38.0,
+        0.0
+      ]
+    },
+    "properties": {
+      "platform_type": "ECR_FIXED",
+      "orbArchiveMember": "orb_format_collection/soap15/scenarios/north_korea_ballistic_plume/north_korea_ballistic_plume.orb",
+      "source": "orb-scenario"
+    },
+    "point": {
+      "pixelSize": 10,
+      "outlineWidth": 1
+    }
+  },
+  {
+    "id": ".Earth Ground Observer",
+    "name": ".Earth Ground Observer",
+    "position": {
+      "cartographicDegrees": [
+        90.0,
+        0.0005729577951308,
+        0.0
+      ]
+    },
+    "properties": {
+      "platform_type": "ECR_FIXED",
+      "orbArchiveMember": "orb_format_collection/soap15/scenarios/north_korea_ballistic_plume/north_korea_ballistic_plume.orb",
+      "source": "orb-scenario"
+    },
+    "point": {
+      "pixelSize": 10,
+      "outlineWidth": 1
+    }
+  },
+  {
+    "id": ".Earth Polar Observer",
+    "name": ".Earth Polar Observer",
+    "position": {
+      "cartographicDegrees": [
+        0.0,
+        90.0,
+        63781.369999999995
+      ]
+    },
+    "properties": {
+      "platform_type": "ECR_FIXED",
+      "orbArchiveMember": "orb_format_collection/soap15/scenarios/north_korea_ballistic_plume/north_korea_ballistic_plume.orb",
+      "source": "orb-scenario"
+    },
+    "point": {
+      "pixelSize": 10,
+      "outlineWidth": 1
+    }
+  },
+  {
+    "id": "00",
+    "name": "00",
+    "position": {
+      "cartographicDegrees": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "properties": {
+      "platform_type": "ECR_FIXED",
+      "orbArchiveMember": "orb_format_collection/soap15/scenarios/north_korea_ballistic_plume/north_korea_ballistic_plume.orb",
+      "source": "orb-scenario"
+    },
+    "point": {
+      "pixelSize": 10,
+      "outlineWidth": 1
+    }
+  },
+  {
+    "id": "DC",
+    "name": "DC",
+    "position": {
+      "cartographicDegrees": [
+        -77.04,
+        38.85,
+        0.0
+      ]
+    },
+    "properties": {
+      "platform_type": "ECR_FIXED",
+      "orbArchiveMember": "orb_format_collection/soap15/scenarios/north_korea_ballistic_plume/north_korea_ballistic_plume.orb",
+      "source": "orb-scenario"
+    },
+    "point": {
+      "pixelSize": 10,
+      "outlineWidth": 1
+    }
+  },
+  {
+    "id": "LA",
+    "name": "LA",
+    "position": {
+      "cartographicDegrees": [
+        -118.40000000000002,
+        33.93,
+        0.0
+      ]
+    },
+    "properties": {
+      "platform_type": "ECR_FIXED",
+      "orbArchiveMember": "orb_format_collection/soap15/scenarios/north_korea_ballistic_plume/north_korea_ballistic_plume.orb",
+      "source": "orb-scenario"
+    },
+    "point": {
+      "pixelSize": 10,
+      "outlineWidth": 1
+    }
+  },
+  {
+    "id": "Pyongyang",
+    "name": "Pyongyang",
+    "position": {
+      "cartographicDegrees": [
+        125.78330000000001,
+        39.0,
+        0.0
+      ]
+    },
+    "properties": {
+      "platform_type": "ECR_FIXED",
+      "orbArchiveMember": "orb_format_collection/soap15/scenarios/north_korea_ballistic_plume/north_korea_ballistic_plume.orb",
+      "source": "orb-scenario"
+    },
+    "point": {
+      "pixelSize": 10,
+      "outlineWidth": 1
+    }
+  }
+]

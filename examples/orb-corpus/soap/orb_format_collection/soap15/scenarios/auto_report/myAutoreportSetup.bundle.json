@@ -1,0 +1,259 @@
+{
+  "target": "soap",
+  "source": "orb-format-collection__soap15__scenarios__auto-report__myautoreportsetup",
+  "manifest": {
+    "target": "soap",
+    "source": "orb-format-collection__soap15__scenarios__auto-report__myautoreportsetup",
+    "mode": "scene-to-scenario+scene-to-analysis+scene-to-presentation",
+    "profiles": [],
+    "artifacts": [
+      {
+        "kind": "manifest",
+        "path": "soap/manifest.json"
+      },
+      {
+        "kind": "scenario",
+        "path": "soap/scenario.json"
+      },
+      {
+        "kind": "views",
+        "path": "soap/views.json"
+      },
+      {
+        "kind": "analysis",
+        "path": "soap/analysis.json"
+      },
+      {
+        "kind": "presentation",
+        "path": "soap/presentation.json"
+      },
+      {
+        "kind": "assetManifest",
+        "path": "soap/assets.json"
+      },
+      {
+        "kind": "diagnostics",
+        "path": "soap/diagnostics.json"
+      }
+    ],
+    "totals": {
+      "platforms": 7,
+      "trajectories": 0,
+      "models": 0,
+      "sensorSwaths": 0,
+      "overlays": 0
+    }
+  },
+  "scenario": {
+    "id": "orb-format-collection__soap15__scenarios__auto-report__myautoreportsetup",
+    "name": "myAutoreportSetup",
+    "clock": {},
+    "units": {},
+    "platforms": [
+      {
+        "id": ".Earth CR Observer",
+        "name": ".Earth CR Observer",
+        "kind": "Platform",
+        "initialState": {
+          "frame": "cartographicDegrees",
+          "lon": -118.00000000000011,
+          "lat": 4.00057295779513,
+          "alt": 63781.369999999995
+        },
+        "properties": {
+          "platform_type": "ECR_FIXED",
+          "orbArchiveMember": "orb_format_collection/soap15/scenarios/auto_report/myAutoreportSetup.orb",
+          "source": "orb-scenario"
+        }
+      },
+      {
+        "id": ".Earth Ground",
+        "name": ".Earth Ground",
+        "kind": "Platform",
+        "initialState": {
+          "frame": "cartographicDegrees",
+          "lon": -99.0,
+          "lat": 38.0,
+          "alt": 0.0
+        },
+        "properties": {
+          "platform_type": "ECR_FIXED",
+          "orbArchiveMember": "orb_format_collection/soap15/scenarios/auto_report/myAutoreportSetup.orb",
+          "source": "orb-scenario"
+        }
+      },
+      {
+        "id": ".Earth Ground Observer",
+        "name": ".Earth Ground Observer",
+        "kind": "Platform",
+        "initialState": {
+          "frame": "cartographicDegrees",
+          "lon": 90.0,
+          "lat": 0.0005729577951308233,
+          "alt": 0.0
+        },
+        "properties": {
+          "platform_type": "ECR_FIXED",
+          "orbArchiveMember": "orb_format_collection/soap15/scenarios/auto_report/myAutoreportSetup.orb",
+          "source": "orb-scenario"
+        }
+      },
+      {
+        "id": ".Earth Polar Observer",
+        "name": ".Earth Polar Observer",
+        "kind": "Platform",
+        "initialState": {
+          "frame": "cartographicDegrees",
+          "lon": 1.244392019122601e-12,
+          "lat": 7.999994270421964,
+          "alt": 63781.369999999995
+        },
+        "properties": {
+          "platform_type": "ECR_FIXED",
+          "orbArchiveMember": "orb_format_collection/soap15/scenarios/auto_report/myAutoreportSetup.orb",
+          "source": "orb-scenario"
+        }
+      },
+      {
+        "id": "Ground 1",
+        "name": "Ground 1",
+        "kind": "Platform",
+        "initialState": {
+          "frame": "cartographicDegrees",
+          "lon": 0.0,
+          "lat": 10.0,
+          "alt": 0.0
+        },
+        "properties": {
+          "platform_type": "ECR_FIXED",
+          "orbArchiveMember": "orb_format_collection/soap15/scenarios/auto_report/myAutoreportSetup.orb",
+          "source": "orb-scenario"
+        }
+      },
+      {
+        "id": "Ground 2",
+        "name": "Ground 2",
+        "kind": "Platform",
+        "initialState": {
+          "frame": "cartographicDegrees",
+          "lon": 90.0,
+          "lat": -10.0,
+          "alt": 0.0
+        },
+        "properties": {
+          "platform_type": "ECR_FIXED",
+          "orbArchiveMember": "orb_format_collection/soap15/scenarios/auto_report/myAutoreportSetup.orb",
+          "source": "orb-scenario"
+        }
+      },
+      {
+        "id": "Ground 3",
+        "name": "Ground 3",
+        "kind": "Platform",
+        "initialState": {
+          "frame": "cartographicDegrees",
+          "lon": 180.0,
+          "lat": 5.0,
+          "alt": 0.0
+        },
+        "properties": {
+          "platform_type": "ECR_FIXED",
+          "orbArchiveMember": "orb_format_collection/soap15/scenarios/auto_report/myAutoreportSetup.orb",
+          "source": "orb-scenario"
+        }
+      }
+    ],
+    "trajectories": [],
+    "models": [],
+    "sensorSwaths": [],
+    "overlays": [],
+    "extensions": {}
+  },
+  "views": {
+    "views": [
+      {
+        "id": "orb-format-collection__soap15__scenarios__auto-report__myautoreportsetup-overview",
+        "name": "myAutoreportSetup Overview",
+        "kind": "View",
+        "target": ".Earth CR Observer",
+        "camera": {
+          "frame": "cartographicDegrees",
+          "lon": -118.00000000000011,
+          "lat": 4.00057295779513,
+          "alt": 63781.369999999995
+        }
+      }
+    ],
+    "palettes": [
+      {
+        "id": "orb-format-collection__soap15__scenarios__auto-report__myautoreportsetup-default-palette",
+        "name": "Default Palette",
+        "entries": [
+          {
+            "kind": "entity-count",
+            "value": 7
+          },
+          {
+            "kind": "overlay-count",
+            "value": 0
+          }
+        ]
+      }
+    ]
+  },
+  "analysis": {
+    "results": []
+  },
+  "presentation": {
+    "slides": [],
+    "actions": []
+  },
+  "assets": {
+    "assets": []
+  },
+  "diagnostics": [
+    {
+      "severity": "warning",
+      "code": "SOAP-SCENE-MISSING-TIMESTAMP",
+      "path": "entities/.Earth CR Observer",
+      "message": "Entity '.Earth CR Observer' has no timestamp; SOAP trajectory export was omitted."
+    },
+    {
+      "severity": "warning",
+      "code": "SOAP-SCENE-MISSING-TIMESTAMP",
+      "path": "entities/.Earth Ground",
+      "message": "Entity '.Earth Ground' has no timestamp; SOAP trajectory export was omitted."
+    },
+    {
+      "severity": "warning",
+      "code": "SOAP-SCENE-MISSING-TIMESTAMP",
+      "path": "entities/.Earth Ground Observer",
+      "message": "Entity '.Earth Ground Observer' has no timestamp; SOAP trajectory export was omitted."
+    },
+    {
+      "severity": "warning",
+      "code": "SOAP-SCENE-MISSING-TIMESTAMP",
+      "path": "entities/.Earth Polar Observer",
+      "message": "Entity '.Earth Polar Observer' has no timestamp; SOAP trajectory export was omitted."
+    },
+    {
+      "severity": "warning",
+      "code": "SOAP-SCENE-MISSING-TIMESTAMP",
+      "path": "entities/Ground 1",
+      "message": "Entity 'Ground 1' has no timestamp; SOAP trajectory export was omitted."
+    },
+    {
+      "severity": "warning",
+      "code": "SOAP-SCENE-MISSING-TIMESTAMP",
+      "path": "entities/Ground 2",
+      "message": "Entity 'Ground 2' has no timestamp; SOAP trajectory export was omitted."
+    },
+    {
+      "severity": "warning",
+      "code": "SOAP-SCENE-MISSING-TIMESTAMP",
+      "path": "entities/Ground 3",
+      "message": "Entity 'Ground 3' has no timestamp; SOAP trajectory export was omitted."
+    }
+  ],
+  "overlays": []
+}

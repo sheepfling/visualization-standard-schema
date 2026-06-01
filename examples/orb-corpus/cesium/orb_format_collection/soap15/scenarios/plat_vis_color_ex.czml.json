@@ -1,0 +1,227 @@
+[
+  {
+    "id": "document",
+    "name": "plat_vis_color_ex",
+    "version": "1.0"
+  },
+  {
+    "id": ".Earth CR Observer",
+    "name": ".Earth CR Observer",
+    "position": {
+      "cartographicDegrees": [
+        -29.999999999999993,
+        50.00057295779516,
+        63781.369999999995
+      ]
+    },
+    "properties": {
+      "platform_type": "ECR_FIXED",
+      "orbArchiveMember": "orb_format_collection/soap15/scenarios/plat_vis_color_ex.orb",
+      "source": "orb-scenario"
+    },
+    "point": {
+      "pixelSize": 10,
+      "outlineWidth": 1
+    }
+  },
+  {
+    "id": ".Earth Ground",
+    "name": ".Earth Ground",
+    "position": {
+      "cartographicDegrees": [
+        -99.0,
+        38.0,
+        0.0
+      ]
+    },
+    "properties": {
+      "platform_type": "ECR_FIXED",
+      "orbArchiveMember": "orb_format_collection/soap15/scenarios/plat_vis_color_ex.orb",
+      "source": "orb-scenario"
+    },
+    "point": {
+      "pixelSize": 10,
+      "outlineWidth": 1
+    }
+  },
+  {
+    "id": ".Earth Ground Observer",
+    "name": ".Earth Ground Observer",
+    "position": {
+      "cartographicDegrees": [
+        90.0,
+        0.0005729577951308233,
+        0.0
+      ]
+    },
+    "properties": {
+      "platform_type": "ECR_FIXED",
+      "orbArchiveMember": "orb_format_collection/soap15/scenarios/plat_vis_color_ex.orb",
+      "source": "orb-scenario"
+    },
+    "point": {
+      "pixelSize": 10,
+      "outlineWidth": 1
+    }
+  },
+  {
+    "id": ".Earth Polar Observer",
+    "name": ".Earth Polar Observer",
+    "position": {
+      "cartographicDegrees": [
+        0.0,
+        90.0,
+        63781.369999999995
+      ]
+    },
+    "properties": {
+      "platform_type": "ECR_FIXED",
+      "orbArchiveMember": "orb_format_collection/soap15/scenarios/plat_vis_color_ex.orb",
+      "source": "orb-scenario"
+    },
+    "point": {
+      "pixelSize": 10,
+      "outlineWidth": 1
+    }
+  },
+  {
+    "id": "Diego Garcia",
+    "name": "Diego Garcia",
+    "position": {
+      "cartographicDegrees": [
+        72.41667,
+        -7.333,
+        0.0
+      ]
+    },
+    "properties": {
+      "platform_type": "ECR_FIXED",
+      "orbArchiveMember": "orb_format_collection/soap15/scenarios/plat_vis_color_ex.orb",
+      "source": "orb-scenario"
+    },
+    "point": {
+      "pixelSize": 10,
+      "outlineWidth": 1
+    }
+  },
+  {
+    "id": "Feltwell",
+    "name": "Feltwell",
+    "position": {
+      "cartographicDegrees": [
+        0.5333,
+        52.4833,
+        0.021
+      ]
+    },
+    "properties": {
+      "platform_type": "ECR_FIXED",
+      "orbArchiveMember": "orb_format_collection/soap15/scenarios/plat_vis_color_ex.orb",
+      "source": "orb-scenario"
+    },
+    "point": {
+      "pixelSize": 10,
+      "outlineWidth": 1
+    }
+  },
+  {
+    "id": "G1",
+    "name": "G1",
+    "position": {
+      "cartographicDegrees": [
+        -20.0,
+        0.0,
+        0.0
+      ]
+    },
+    "properties": {
+      "platform_type": "ECR_FIXED",
+      "orbArchiveMember": "orb_format_collection/soap15/scenarios/plat_vis_color_ex.orb",
+      "source": "orb-scenario"
+    },
+    "point": {
+      "pixelSize": 10,
+      "outlineWidth": 1
+    }
+  },
+  {
+    "id": "Guam",
+    "name": "Guam",
+    "position": {
+      "cartographicDegrees": [
+        144.857,
+        13.615,
+        0.0
+      ]
+    },
+    "properties": {
+      "platform_type": "ECR_FIXED",
+      "orbArchiveMember": "orb_format_collection/soap15/scenarios/plat_vis_color_ex.orb",
+      "source": "orb-scenario"
+    },
+    "point": {
+      "pixelSize": 10,
+      "outlineWidth": 1
+    }
+  },
+  {
+    "id": "KAFB",
+    "name": "KAFB",
+    "position": {
+      "cartographicDegrees": [
+        -106.6,
+        35.04,
+        1.6145255999999995
+      ]
+    },
+    "properties": {
+      "platform_type": "ECR_FIXED",
+      "orbArchiveMember": "orb_format_collection/soap15/scenarios/plat_vis_color_ex.orb",
+      "source": "orb-scenario"
+    },
+    "point": {
+      "pixelSize": 10,
+      "outlineWidth": 1
+    }
+  },
+  {
+    "id": "Kiruna",
+    "name": "Kiruna",
+    "position": {
+      "cartographicDegrees": [
+        21.0516,
+        67.8895,
+        0.0
+      ]
+    },
+    "properties": {
+      "platform_type": "ECR_FIXED",
+      "orbArchiveMember": "orb_format_collection/soap15/scenarios/plat_vis_color_ex.orb",
+      "source": "orb-scenario"
+    },
+    "point": {
+      "pixelSize": 10,
+      "outlineWidth": 1
+    }
+  },
+  {
+    "id": "NP",
+    "name": "NP",
+    "position": {
+      "cartographicDegrees": [
+        -147.499,
+        64.805,
+        0.0
+      ]
+    },
+    "properties": {
+      "platform_type": "ECR_FIXED",
+      "orbArchiveMember": "orb_format_collection/soap15/scenarios/plat_vis_color_ex.orb",
+      "source": "orb-scenario"
+    },
+    "point": {
+      "pixelSize": 10,
+      "outlineWidth": 1
+    }
+  }
+]

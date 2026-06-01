@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "sdj-survey-0.5",
+  "recommendedSdjVersion": "sdj-0.5",
+  "moduleFamilies": [
+    {
+      "id": "sdj-core",
+      "purpose": "Document identity, units, clock, layers, assets, materials, common object envelope, extension policy.",
+      "required": true,
+      "sections": ["document", "units", "clock", "layers", "assets", "materials", "objects", "views", "extensions"]
+    },
+    {
+      "id": "sdj-temporal-properties",
+      "purpose": "Constant, interval, sampled, reference, computed, and callback-like property descriptions.",
+      "required": true,
+      "sections": ["availability", "temporalBoolean", "temporalNumber", "temporalColor", "temporalPosition", "temporalOrientation", "computed"]
+    },
+    {
+      "id": "sdj-frames-and-pose",
+      "purpose": "Coordinate frames and transform conventions for Earth-fixed, inertial, ENU, body, model, and platform-relative data.",
+      "required": true,
+      "sections": ["pose", "position", "orientation", "transform", "frame", "modelFrameCorrection"]
+    },
+    {
+      "id": "sdj-czml-parity",
+      "purpose": "Entity-like objects corresponding to historical CZML and Cesium Entity API coverage.",
+      "required": true,
+      "objectKinds": ["point", "billboard", "label", "polyline", "polygon", "rectangle", "ellipse", "circle", "box", "cylinder", "cone", "ellipsoid", "sphere", "wall", "corridor", "polylineVolume", "plane", "model", "path", "track"]
+    },
+    {
+      "id": "sdj-cesium-advanced",
+      "purpose": "Modern CesiumJS scene, tileset, model, primitive, clipping, shader, voxel, and effect features not covered by old CZML.",
+      "required": false,
+      "objectKinds": ["tileset", "gaussianSplatTileset", "pointCloudTileset", "photogrammetryTileset", "tilesetStyle", "customShader", "voxel", "particleSystem", "postProcessStage", "clippingPlane", "clippingPolygon", "classificationPrimitive", "classificationVolume", "groundPrimitive", "groundPolyline", "cloudCollection", "atmosphere", "skyBox", "imageryLayer", "terrain", "dataSource"]
+    },
+    {
+      "id": "sdj-tactical-geometry",
+      "purpose": "Mission/tactical volumes, sectors, fans, keyholes, coverage and uncertainty geometry.",
+      "required": false,
+      "objectKinds": ["sector2d", "sectorVolume", "keyhole", "rangeRing", "bearingFan", "hemisphere", "sphericalCap", "frustum", "fan", "conicSensor", "rectangularSensor", "customPatternSensor", "sensorSwath", "footprint", "antennaPattern", "uncertaintyEllipsoid", "covarianceEllipse"]
+    },
+    {
+      "id": "sdj-trajectory-diagnostics",
+      "purpose": "Tracks plus derived or authored vector/line diagnostics.",
+      "required": false,
+      "objectKinds": ["velocityVector", "accelerationVector", "bodyAxes", "principalAxes", "lineOfSight", "relativeLine", "interceptLine", "tetherLine", "formationLine", "predictionPath", "trackHistory"]
+    },
+    {
+      "id": "sdj-analysis-products",
+      "purpose": "Analysis results that may render as overlays, reports, plots, tables, swaths, access intervals, or backend-native analysis objects.",
+      "required": false,
+      "analysisKinds": ["accessIntervals", "lineOfSightSamples", "rfLinkBudget", "coverageGrid", "sensorSwath", "closeApproach", "rangeReport", "rangePlot", "platformDataTable", "communicationLink", "parametricStudy", "deltaV", "isochrones", "contours"]
+    },
+    {
+      "id": "sdj-presentation",
+      "purpose": "View, viewport, palette, slide, presentation, camera action, popups, banners, HUDs, movies, and reports.",
+      "required": false,
+      "presentationKinds": ["view", "viewport", "palette", "slide", "presentation", "cameraAction", "bookmark", "popup", "banner", "hudOverlay", "movie", "reportView", "plotView", "dataView"]
+    },
+    {
+      "id": "sdj-backend-bindings",
+      "purpose": "Capability matrix, rendererHints, native escape hatches, diagnostics, artifact manifests, and target compiler options for Cesium, SIMDIS, SOAP, Unreal, TGx, and future renderers.",
+      "required": true,
+      "sections": ["backend", "backendCapabilities", "rendererHints", "backendNative", "compileDiagnostics", "artifactManifest"]
+    }
+  ]
+}

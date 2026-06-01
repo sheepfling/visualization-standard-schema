@@ -1,0 +1,107 @@
+[
+  {
+    "id": "document",
+    "name": "gravity_demo_sounds",
+    "version": "1.0"
+  },
+  {
+    "id": ".Earth CR Observer",
+    "name": ".Earth CR Observer",
+    "position": {
+      "cartographicDegrees": [
+        -66.00000000000004,
+        5.999994270421965,
+        63781.369999999995
+      ]
+    },
+    "properties": {
+      "platform_type": "ECR_FIXED",
+      "orbArchiveMember": "orb_format_collection/soap15/scenarios/Penguin Gravity Demo/gravity_demo_sounds.orb",
+      "source": "orb-scenario"
+    },
+    "point": {
+      "pixelSize": 10,
+      "outlineWidth": 1
+    }
+  },
+  {
+    "id": ".Earth Ground",
+    "name": ".Earth Ground",
+    "position": {
+      "cartographicDegrees": [
+        -99.0,
+        38.0,
+        0.0019999999999999996
+      ]
+    },
+    "properties": {
+      "platform_type": "ECR_FIXED",
+      "orbArchiveMember": "orb_format_collection/soap15/scenarios/Penguin Gravity Demo/gravity_demo_sounds.orb",
+      "source": "orb-scenario"
+    },
+    "point": {
+      "pixelSize": 10,
+      "outlineWidth": 1
+    }
+  },
+  {
+    "id": ".Earth Ground Observer",
+    "name": ".Earth Ground Observer",
+    "position": {
+      "cartographicDegrees": [
+        90.0,
+        0.0,
+        0.0
+      ]
+    },
+    "properties": {
+      "platform_type": "ECR_FIXED",
+      "orbArchiveMember": "orb_format_collection/soap15/scenarios/Penguin Gravity Demo/gravity_demo_sounds.orb",
+      "source": "orb-scenario"
+    },
+    "point": {
+      "pixelSize": 10,
+      "outlineWidth": 1
+    }
+  },
+  {
+    "id": ".Earth Polar Observer",
+    "name": ".Earth Polar Observer",
+    "position": {
+      "cartographicDegrees": [
+        0.0,
+        90.0,
+        63781.369999999995
+      ]
+    },
+    "properties": {
+      "platform_type": "ECR_FIXED",
+      "orbArchiveMember": "orb_format_collection/soap15/scenarios/Penguin Gravity Demo/gravity_demo_sounds.orb",
+      "source": "orb-scenario"
+    },
+    "point": {
+      "pixelSize": 10,
+      "outlineWidth": 1
+    }
+  },
+  {
+    "id": "Tower",
+    "name": "Tower",
+    "position": {
+      "cartographicDegrees": [
+        -14.999999999999998,
+        89.8,
+        497.0
+      ]
+    },
+    "properties": {
+      "platform_type": "ECR_FIXED",
+      "orbArchiveMember": "orb_format_collection/soap15/scenarios/Penguin Gravity Demo/gravity_demo_sounds.orb",
+      "source": "orb-scenario"
+    },
+    "point": {
+      "pixelSize": 10,
+      "outlineWidth": 1
+    }
+  }
+]

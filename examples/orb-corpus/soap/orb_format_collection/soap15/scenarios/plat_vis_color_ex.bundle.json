@@ -1,0 +1,347 @@
+{
+  "target": "soap",
+  "source": "orb-format-collection__soap15__scenarios__plat-vis-color-ex",
+  "manifest": {
+    "target": "soap",
+    "source": "orb-format-collection__soap15__scenarios__plat-vis-color-ex",
+    "mode": "scene-to-scenario+scene-to-analysis+scene-to-presentation",
+    "profiles": [],
+    "artifacts": [
+      {
+        "kind": "manifest",
+        "path": "soap/manifest.json"
+      },
+      {
+        "kind": "scenario",
+        "path": "soap/scenario.json"
+      },
+      {
+        "kind": "views",
+        "path": "soap/views.json"
+      },
+      {
+        "kind": "analysis",
+        "path": "soap/analysis.json"
+      },
+      {
+        "kind": "presentation",
+        "path": "soap/presentation.json"
+      },
+      {
+        "kind": "assetManifest",
+        "path": "soap/assets.json"
+      },
+      {
+        "kind": "diagnostics",
+        "path": "soap/diagnostics.json"
+      }
+    ],
+    "totals": {
+      "platforms": 11,
+      "trajectories": 0,
+      "models": 0,
+      "sensorSwaths": 0,
+      "overlays": 0
+    }
+  },
+  "scenario": {
+    "id": "orb-format-collection__soap15__scenarios__plat-vis-color-ex",
+    "name": "plat_vis_color_ex",
+    "clock": {},
+    "units": {},
+    "platforms": [
+      {
+        "id": ".Earth CR Observer",
+        "name": ".Earth CR Observer",
+        "kind": "Platform",
+        "initialState": {
+          "frame": "cartographicDegrees",
+          "lon": -29.999999999999993,
+          "lat": 50.00057295779516,
+          "alt": 63781.369999999995
+        },
+        "properties": {
+          "platform_type": "ECR_FIXED",
+          "orbArchiveMember": "orb_format_collection/soap15/scenarios/plat_vis_color_ex.orb",
+          "source": "orb-scenario"
+        }
+      },
+      {
+        "id": ".Earth Ground",
+        "name": ".Earth Ground",
+        "kind": "Platform",
+        "initialState": {
+          "frame": "cartographicDegrees",
+          "lon": -99.0,
+          "lat": 38.0,
+          "alt": 0.0
+        },
+        "properties": {
+          "platform_type": "ECR_FIXED",
+          "orbArchiveMember": "orb_format_collection/soap15/scenarios/plat_vis_color_ex.orb",
+          "source": "orb-scenario"
+        }
+      },
+      {
+        "id": ".Earth Ground Observer",
+        "name": ".Earth Ground Observer",
+        "kind": "Platform",
+        "initialState": {
+          "frame": "cartographicDegrees",
+          "lon": 90.0,
+          "lat": 0.0005729577951308233,
+          "alt": 0.0
+        },
+        "properties": {
+          "platform_type": "ECR_FIXED",
+          "orbArchiveMember": "orb_format_collection/soap15/scenarios/plat_vis_color_ex.orb",
+          "source": "orb-scenario"
+        }
+      },
+      {
+        "id": ".Earth Polar Observer",
+        "name": ".Earth Polar Observer",
+        "kind": "Platform",
+        "initialState": {
+          "frame": "cartographicDegrees",
+          "lon": 0.0,
+          "lat": 90.0,
+          "alt": 63781.369999999995
+        },
+        "properties": {
+          "platform_type": "ECR_FIXED",
+          "orbArchiveMember": "orb_format_collection/soap15/scenarios/plat_vis_color_ex.orb",
+          "source": "orb-scenario"
+        }
+      },
+      {
+        "id": "Diego Garcia",
+        "name": "Diego Garcia",
+        "kind": "Platform",
+        "initialState": {
+          "frame": "cartographicDegrees",
+          "lon": 72.41667,
+          "lat": -7.333,
+          "alt": 0.0
+        },
+        "properties": {
+          "platform_type": "ECR_FIXED",
+          "orbArchiveMember": "orb_format_collection/soap15/scenarios/plat_vis_color_ex.orb",
+          "source": "orb-scenario"
+        }
+      },
+      {
+        "id": "Feltwell",
+        "name": "Feltwell",
+        "kind": "Platform",
+        "initialState": {
+          "frame": "cartographicDegrees",
+          "lon": 0.5333,
+          "lat": 52.4833,
+          "alt": 0.021
+        },
+        "properties": {
+          "platform_type": "ECR_FIXED",
+          "orbArchiveMember": "orb_format_collection/soap15/scenarios/plat_vis_color_ex.orb",
+          "source": "orb-scenario"
+        }
+      },
+      {
+        "id": "G1",
+        "name": "G1",
+        "kind": "Platform",
+        "initialState": {
+          "frame": "cartographicDegrees",
+          "lon": -20.0,
+          "lat": 0.0,
+          "alt": 0.0
+        },
+        "properties": {
+          "platform_type": "ECR_FIXED",
+          "orbArchiveMember": "orb_format_collection/soap15/scenarios/plat_vis_color_ex.orb",
+          "source": "orb-scenario"
+        }
+      },
+      {
+        "id": "Guam",
+        "name": "Guam",
+        "kind": "Platform",
+        "initialState": {
+          "frame": "cartographicDegrees",
+          "lon": 144.857,
+          "lat": 13.615,
+          "alt": 0.0
+        },
+        "properties": {
+          "platform_type": "ECR_FIXED",
+          "orbArchiveMember": "orb_format_collection/soap15/scenarios/plat_vis_color_ex.orb",
+          "source": "orb-scenario"
+        }
+      },
+      {
+        "id": "KAFB",
+        "name": "KAFB",
+        "kind": "Platform",
+        "initialState": {
+          "frame": "cartographicDegrees",
+          "lon": -106.6,
+          "lat": 35.04,
+          "alt": 1.6145255999999995
+        },
+        "properties": {
+          "platform_type": "ECR_FIXED",
+          "orbArchiveMember": "orb_format_collection/soap15/scenarios/plat_vis_color_ex.orb",
+          "source": "orb-scenario"
+        }
+      },
+      {
+        "id": "Kiruna",
+        "name": "Kiruna",
+        "kind": "Platform",
+        "initialState": {
+          "frame": "cartographicDegrees",
+          "lon": 21.0516,
+          "lat": 67.8895,
+          "alt": 0.0
+        },
+        "properties": {
+          "platform_type": "ECR_FIXED",
+          "orbArchiveMember": "orb_format_collection/soap15/scenarios/plat_vis_color_ex.orb",
+          "source": "orb-scenario"
+        }
+      },
+      {
+        "id": "NP",
+        "name": "NP",
+        "kind": "Platform",
+        "initialState": {
+          "frame": "cartographicDegrees",
+          "lon": -147.499,
+          "lat": 64.805,
+          "alt": 0.0
+        },
+        "properties": {
+          "platform_type": "ECR_FIXED",
+          "orbArchiveMember": "orb_format_collection/soap15/scenarios/plat_vis_color_ex.orb",
+          "source": "orb-scenario"
+        }
+      }
+    ],
+    "trajectories": [],
+    "models": [],
+    "sensorSwaths": [],
+    "overlays": [],
+    "extensions": {}
+  },
+  "views": {
+    "views": [
+      {
+        "id": "orb-format-collection__soap15__scenarios__plat-vis-color-ex-overview",
+        "name": "plat_vis_color_ex Overview",
+        "kind": "View",
+        "target": ".Earth CR Observer",
+        "camera": {
+          "frame": "cartographicDegrees",
+          "lon": -29.999999999999993,
+          "lat": 50.00057295779516,
+          "alt": 63781.369999999995
+        }
+      }
+    ],
+    "palettes": [
+      {
+        "id": "orb-format-collection__soap15__scenarios__plat-vis-color-ex-default-palette",
+        "name": "Default Palette",
+        "entries": [
+          {
+            "kind": "entity-count",
+            "value": 11
+          },
+          {
+            "kind": "overlay-count",
+            "value": 0
+          }
+        ]
+      }
+    ]
+  },
+  "analysis": {
+    "results": []
+  },
+  "presentation": {
+    "slides": [],
+    "actions": []
+  },
+  "assets": {
+    "assets": []
+  },
+  "diagnostics": [
+    {
+      "severity": "warning",
+      "code": "SOAP-SCENE-MISSING-TIMESTAMP",
+      "path": "entities/.Earth CR Observer",
+      "message": "Entity '.Earth CR Observer' has no timestamp; SOAP trajectory export was omitted."
+    },
+    {
+      "severity": "warning",
+      "code": "SOAP-SCENE-MISSING-TIMESTAMP",
+      "path": "entities/.Earth Ground",
+      "message": "Entity '.Earth Ground' has no timestamp; SOAP trajectory export was omitted."
+    },
+    {
+      "severity": "warning",
+      "code": "SOAP-SCENE-MISSING-TIMESTAMP",
+      "path": "entities/.Earth Ground Observer",
+      "message": "Entity '.Earth Ground Observer' has no timestamp; SOAP trajectory export was omitted."
+    },
+    {
+      "severity": "warning",
+      "code": "SOAP-SCENE-MISSING-TIMESTAMP",
+      "path": "entities/.Earth Polar Observer",
+      "message": "Entity '.Earth Polar Observer' has no timestamp; SOAP trajectory export was omitted."
+    },
+    {
+      "severity": "warning",
+      "code": "SOAP-SCENE-MISSING-TIMESTAMP",
+      "path": "entities/Diego Garcia",
+      "message": "Entity 'Diego Garcia' has no timestamp; SOAP trajectory export was omitted."
+    },
+    {
+      "severity": "warning",
+      "code": "SOAP-SCENE-MISSING-TIMESTAMP",
+      "path": "entities/Feltwell",
+      "message": "Entity 'Feltwell' has no timestamp; SOAP trajectory export was omitted."
+    },
+    {
+      "severity": "warning",
+      "code": "SOAP-SCENE-MISSING-TIMESTAMP",
+      "path": "entities/G1",
+      "message": "Entity 'G1' has no timestamp; SOAP trajectory export was omitted."
+    },
+    {
+      "severity": "warning",
+      "code": "SOAP-SCENE-MISSING-TIMESTAMP",
+      "path": "entities/Guam",
+      "message": "Entity 'Guam' has no timestamp; SOAP trajectory export was omitted."
+    },
+    {
+      "severity": "warning",
+      "code": "SOAP-SCENE-MISSING-TIMESTAMP",
+      "path": "entities/KAFB",
+      "message": "Entity 'KAFB' has no timestamp; SOAP trajectory export was omitted."
+    },
+    {
+      "severity": "warning",
+      "code": "SOAP-SCENE-MISSING-TIMESTAMP",
+      "path": "entities/Kiruna",
+      "message": "Entity 'Kiruna' has no timestamp; SOAP trajectory export was omitted."
+    },
+    {
+      "severity": "warning",
+      "code": "SOAP-SCENE-MISSING-TIMESTAMP",
+      "path": "entities/NP",
+      "message": "Entity 'NP' has no timestamp; SOAP trajectory export was omitted."
+    }
+  ],
+  "overlays": []
+}

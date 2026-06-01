@@ -1,0 +1,117 @@
+{
+  "ok": true,
+  "semanticErrors": 0,
+  "semanticWarnings": 34,
+  "objectCount": 79,
+  "analysisCount": 11,
+  "presentationCount": 13,
+  "targetTotals": {
+    "cesium": {
+      "strong": 65,
+      "partial": 14,
+      "weak": 0,
+      "reserved": 0,
+      "unsupported": 0,
+      "unknown": 0,
+      "hidden": 34
+    },
+    "simdis": {
+      "strong": 54,
+      "partial": 25,
+      "weak": 0,
+      "reserved": 0,
+      "unsupported": 0,
+      "unknown": 0,
+      "hidden": 34
+    },
+    "soap": {
+      "strong": 41,
+      "partial": 38,
+      "weak": 0,
+      "reserved": 0,
+      "unsupported": 0,
+      "unknown": 0,
+      "hidden": 34
+    }
+  },
+  "cesiumFiles": 5,
+  "simdisFiles": 8,
+  "soapFiles": 19,
+  "allFiles": 36,
+  "inspector": {
+    "firstObject": {
+      "id": "sensor-site-a",
+      "kind": "point",
+      "targets": [
+        {
+          "target": "cesium",
+          "support": "strong",
+          "targetNative": "Entity API or scene primitive",
+          "lossiness": "low",
+          "artifact": "viewer.entities/Entity",
+          "artifactPath": "cesium/scene.sdj.json#objects/sensor-site-a",
+          "artifactPaths": [
+            "cesium/scene.sdj.json",
+            "cesium/compile-plan.json"
+          ],
+          "action": "cesium can represent point directly or with low-loss native constructs.",
+          "diagnostics": []
+        },
+        {
+          "target": "simdis",
+          "support": "strong",
+          "targetNative": "SIMDIS package artifact or extension",
+          "lossiness": "low",
+          "artifact": "entities.json",
+          "artifactPath": "simdis/entities.json#annotations/sensor-site-a",
+          "artifactPaths": [
+            "simdis/entities.json"
+          ],
+          "action": "simdis can represent point directly or with low-loss native constructs.",
+          "diagnostics": []
+        },
+        {
+          "target": "soap",
+          "support": "strong",
+          "targetNative": "SOAP view/model/overlay artifact",
+          "lossiness": "low",
+          "artifact": "scenario.json/extensions",
+          "artifactPath": "soap/scenario.json#extensions/sensor-site-a",
+          "artifactPaths": [
+            "soap/scenario.json"
+          ],
+          "action": "soap can represent point directly or with low-loss native constructs.",
+          "diagnostics": []
+        }
+      ]
+    },
+    "sampleObject": {
+      "id": "sensor-a-keyhole",
+      "kind": "keyhole",
+      "visible": true,
+      "targetCount": 3
+    }
+  },
+  "sampleFiles": [
+    "compile-plan-all-targets.json",
+    "cesium/manifest.json",
+    "cesium/scene.sdj.json",
+    "cesium/compile-plan.json",
+    "cesium/diagnostics.json",
+    "cesium/README.md",
+    "cesium/bundle-summary.json",
+    "simdis/manifest.json",
+    "simdis/entities.json",
+    "simdis/overlays.gog",
+    "simdis/analysis.json",
+    "simdis/presentation.json",
+    "simdis/assets.json",
+    "simdis/diagnostics.json",
+    "simdis/generated/simdis-example-bundle.json",
+    "simdis/bundle-summary.json",
+    "soap/manifest.json",
+    "soap/scenario.json",
+    "soap/views.json",
+    "soap/analysis.json"
+  ]
+}

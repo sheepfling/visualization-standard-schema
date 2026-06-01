@@ -1,0 +1,115 @@
+{
+  "schemaVersion": "1.0.0-scene",
+  "document": {
+    "id": "orb-format-collection__soap15__scenarios__contour-min-max-ex",
+    "name": "contour_min_max_ex",
+    "source": "orb_format_collection/soap15/scenarios/contour_min_max_ex.orb"
+  },
+  "objects": [
+    {
+      "id": ".Earth CR Observer",
+      "name": ".Earth CR Observer",
+      "attributes": {
+        "platform_type": "ECR_FIXED",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/contour_min_max_ex.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": -119.99999999999999,
+        "latitudeDeg": 20.0005729578,
+        "altitudeM": 63781.369999999995
+      }
+    },
+    {
+      "id": ".Earth CR Observer 1",
+      "name": ".Earth CR Observer 1",
+      "attributes": {
+        "platform_type": "ECR_FIXED",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/contour_min_max_ex.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": -128.0,
+        "latitudeDeg": 30.0005729578,
+        "altitudeM": 63781.369999999995
+      }
+    },
+    {
+      "id": ".Earth CR Observer 2",
+      "name": ".Earth CR Observer 2",
+      "attributes": {
+        "platform_type": "ECR_FIXED",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/contour_min_max_ex.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": -101.99947200000011,
+        "latitudeDeg": 22.0005969578,
+        "altitudeM": 63781.369999999995
+      }
+    },
+    {
+      "id": ".Earth CR Observer 3",
+      "name": ".Earth CR Observer 3",
+      "attributes": {
+        "platform_type": "ECR_FIXED",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/contour_min_max_ex.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": -105.99956822450005,
+        "latitudeDeg": 20.0005729578,
+        "altitudeM": 63781.369999999995
+      }
+    },
+    {
+      "id": ".Earth Ground Observer",
+      "name": ".Earth Ground Observer",
+      "attributes": {
+        "platform_type": "ECR_FIXED",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/contour_min_max_ex.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": 81.99999999998,
+        "latitudeDeg": 0.0005729577951306,
+        "altitudeM": 0.0
+      }
+    },
+    {
+      "id": ".Earth Polar Observer",
+      "name": ".Earth Polar Observer",
+      "attributes": {
+        "platform_type": "ECR_FIXED",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/contour_min_max_ex.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": 0.0,
+        "latitudeDeg": 89.99942704221,
+        "altitudeM": 63781.369999999995
+      }
+    },
+    {
+      "id": "User",
+      "name": "User",
+      "attributes": {
+        "platform_type": "ECR_FIXED",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/contour_min_max_ex.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": -116.5,
+        "latitudeDeg": 19.5,
+        "altitudeM": 0.0
+      }
+    }
+  ]
+}

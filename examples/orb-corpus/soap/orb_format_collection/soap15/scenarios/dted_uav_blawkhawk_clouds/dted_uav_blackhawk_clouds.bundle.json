@@ -1,0 +1,237 @@
+{
+  "target": "soap",
+  "source": "orb-format-collection__soap15__scenarios__dted-uav-blawkhawk-clouds__dted-uav-blackhawk-clouds",
+  "manifest": {
+    "target": "soap",
+    "source": "orb-format-collection__soap15__scenarios__dted-uav-blawkhawk-clouds__dted-uav-blackhawk-clouds",
+    "mode": "scene-to-scenario+scene-to-analysis+scene-to-presentation",
+    "profiles": [],
+    "artifacts": [
+      {
+        "kind": "manifest",
+        "path": "soap/manifest.json"
+      },
+      {
+        "kind": "scenario",
+        "path": "soap/scenario.json"
+      },
+      {
+        "kind": "views",
+        "path": "soap/views.json"
+      },
+      {
+        "kind": "analysis",
+        "path": "soap/analysis.json"
+      },
+      {
+        "kind": "presentation",
+        "path": "soap/presentation.json"
+      },
+      {
+        "kind": "assetManifest",
+        "path": "soap/assets.json"
+      },
+      {
+        "kind": "diagnostics",
+        "path": "soap/diagnostics.json"
+      }
+    ],
+    "totals": {
+      "platforms": 6,
+      "trajectories": 0,
+      "models": 0,
+      "sensorSwaths": 0,
+      "overlays": 0
+    }
+  },
+  "scenario": {
+    "id": "orb-format-collection__soap15__scenarios__dted-uav-blawkhawk-clouds__dted-uav-blackhawk-clouds",
+    "name": "dted_uav_blackhawk_clouds",
+    "clock": {},
+    "units": {},
+    "platforms": [
+      {
+        "id": "+33.13755119_-115.31250000_+35.46066995_-112.500000001_Ctr",
+        "name": "+33.13755119_-115.31250000_+35.46066995_-112.500000001_Ctr",
+        "kind": "Platform",
+        "initialState": {
+          "frame": "cartographicDegrees",
+          "lon": -113.90625000050002,
+          "lat": 34.29911057,
+          "alt": 0.0
+        },
+        "properties": {
+          "platform_type": "ECR_FIXED",
+          "orbArchiveMember": "orb_format_collection/soap15/scenarios/dted_uav_blawkhawk_clouds/dted_uav_blackhawk_clouds.orb",
+          "source": "orb-scenario"
+        }
+      },
+      {
+        "id": "+33.13755119_-118.12500000_+35.46066995_-115.312500000_Ctr",
+        "name": "+33.13755119_-118.12500000_+35.46066995_-115.312500000_Ctr",
+        "kind": "Platform",
+        "initialState": {
+          "frame": "cartographicDegrees",
+          "lon": -116.71875000000001,
+          "lat": 34.29911057,
+          "alt": 0.0
+        },
+        "properties": {
+          "platform_type": "ECR_FIXED",
+          "orbArchiveMember": "orb_format_collection/soap15/scenarios/dted_uav_blawkhawk_clouds/dted_uav_blackhawk_clouds.orb",
+          "source": "orb-scenario"
+        }
+      },
+      {
+        "id": ".Earth CR Observer",
+        "name": ".Earth CR Observer",
+        "kind": "Platform",
+        "initialState": {
+          "frame": "cartographicDegrees",
+          "lon": -74.0,
+          "lat": -3.9994270422000002,
+          "alt": 63781370.000002064
+        },
+        "properties": {
+          "platform_type": "ECR_FIXED",
+          "orbArchiveMember": "orb_format_collection/soap15/scenarios/dted_uav_blawkhawk_clouds/dted_uav_blackhawk_clouds.orb",
+          "source": "orb-scenario"
+        }
+      },
+      {
+        "id": ".Earth Ground Observer",
+        "name": ".Earth Ground Observer",
+        "kind": "Platform",
+        "initialState": {
+          "frame": "cartographicDegrees",
+          "lon": 90.0,
+          "lat": 0.0005729577951308,
+          "alt": 0.0
+        },
+        "properties": {
+          "platform_type": "ECR_FIXED",
+          "orbArchiveMember": "orb_format_collection/soap15/scenarios/dted_uav_blawkhawk_clouds/dted_uav_blackhawk_clouds.orb",
+          "source": "orb-scenario"
+        }
+      },
+      {
+        "id": ".Earth Polar Observer",
+        "name": ".Earth Polar Observer",
+        "kind": "Platform",
+        "initialState": {
+          "frame": "cartographicDegrees",
+          "lon": 0.0,
+          "lat": 90.0,
+          "alt": 63781370.000002064
+        },
+        "properties": {
+          "platform_type": "ECR_FIXED",
+          "orbArchiveMember": "orb_format_collection/soap15/scenarios/dted_uav_blawkhawk_clouds/dted_uav_blackhawk_clouds.orb",
+          "source": "orb-scenario"
+        }
+      },
+      {
+        "id": "Bunker",
+        "name": "Bunker",
+        "kind": "Platform",
+        "initialState": {
+          "frame": "cartographicDegrees",
+          "lon": -116.81000000000002,
+          "lat": 33.921,
+          "alt": 18.000000000129866
+        },
+        "properties": {
+          "platform_type": "ECR_FIXED",
+          "orbArchiveMember": "orb_format_collection/soap15/scenarios/dted_uav_blawkhawk_clouds/dted_uav_blackhawk_clouds.orb",
+          "source": "orb-scenario"
+        }
+      }
+    ],
+    "trajectories": [],
+    "models": [],
+    "sensorSwaths": [],
+    "overlays": [],
+    "extensions": {}
+  },
+  "views": {
+    "views": [
+      {
+        "id": "orb-format-collection__soap15__scenarios__dted-uav-blawkhawk-clouds__dted-uav-blackhawk-clouds-overview",
+        "name": "dted_uav_blackhawk_clouds Overview",
+        "kind": "View",
+        "target": "+33.13755119_-115.31250000_+35.46066995_-112.500000001_Ctr",
+        "camera": {
+          "frame": "cartographicDegrees",
+          "lon": -113.90625000050002,
+          "lat": 34.29911057,
+          "alt": 0.0
+        }
+      }
+    ],
+    "palettes": [
+      {
+        "id": "orb-format-collection__soap15__scenarios__dted-uav-blawkhawk-clouds__dted-uav-blackhawk-clouds-default-palette",
+        "name": "Default Palette",
+        "entries": [
+          {
+            "kind": "entity-count",
+            "value": 6
+          },
+          {
+            "kind": "overlay-count",
+            "value": 0
+          }
+        ]
+      }
+    ]
+  },
+  "analysis": {
+    "results": []
+  },
+  "presentation": {
+    "slides": [],
+    "actions": []
+  },
+  "assets": {
+    "assets": []
+  },
+  "diagnostics": [
+    {
+      "severity": "warning",
+      "code": "SOAP-SCENE-MISSING-TIMESTAMP",
+      "path": "entities/+33.13755119_-115.31250000_+35.46066995_-112.500000001_Ctr",
+      "message": "Entity '+33.13755119_-115.31250000_+35.46066995_-112.500000001_Ctr' has no timestamp; SOAP trajectory export was omitted."
+    },
+    {
+      "severity": "warning",
+      "code": "SOAP-SCENE-MISSING-TIMESTAMP",
+      "path": "entities/+33.13755119_-118.12500000_+35.46066995_-115.312500000_Ctr",
+      "message": "Entity '+33.13755119_-118.12500000_+35.46066995_-115.312500000_Ctr' has no timestamp; SOAP trajectory export was omitted."
+    },
+    {
+      "severity": "warning",
+      "code": "SOAP-SCENE-MISSING-TIMESTAMP",
+      "path": "entities/.Earth CR Observer",
+      "message": "Entity '.Earth CR Observer' has no timestamp; SOAP trajectory export was omitted."
+    },
+    {
+      "severity": "warning",
+      "code": "SOAP-SCENE-MISSING-TIMESTAMP",
+      "path": "entities/.Earth Ground Observer",
+      "message": "Entity '.Earth Ground Observer' has no timestamp; SOAP trajectory export was omitted."
+    },
+    {
+      "severity": "warning",
+      "code": "SOAP-SCENE-MISSING-TIMESTAMP",
+      "path": "entities/.Earth Polar Observer",
+      "message": "Entity '.Earth Polar Observer' has no timestamp; SOAP trajectory export was omitted."
+    },
+    {
+      "severity": "warning",
+      "code": "SOAP-SCENE-MISSING-TIMESTAMP",
+      "path": "entities/Bunker",
+      "message": "Entity 'Bunker' has no timestamp; SOAP trajectory export was omitted."
+    }
+  ],
+  "overlays": []
+}

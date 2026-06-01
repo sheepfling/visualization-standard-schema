@@ -1,0 +1,175 @@
+{
+  "schemaVersion": "1.0.0-scene",
+  "document": {
+    "id": "orb-format-collection__soap15__scenarios__rpo-cases",
+    "name": "rpo_cases",
+    "source": "orb_format_collection/soap15/scenarios/rpo_cases.orb"
+  },
+  "objects": [
+    {
+      "id": ".Earth CR Observer",
+      "name": ".Earth CR Observer",
+      "attributes": {
+        "platform_type": "ECR_FIXED",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/rpo_cases.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": 1.0122909661567117,
+        "latitudeDeg": 1.22173037639603,
+        "altitudeM": 70159.507
+      }
+    },
+    {
+      "id": ".Earth Ground",
+      "name": ".Earth Ground",
+      "attributes": {
+        "platform_type": "ECR_FIXED",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/rpo_cases.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": -1.7278759594743862,
+        "latitudeDeg": 0.6632251157578453,
+        "altitudeM": 0.002
+      }
+    },
+    {
+      "id": ".Earth Ground Observer",
+      "name": ".Earth Ground Observer",
+      "attributes": {
+        "platform_type": "ECR_FIXED",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/rpo_cases.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": 1.5707963267948966,
+        "latitudeDeg": 0.0,
+        "altitudeM": 0.0
+      }
+    },
+    {
+      "id": ".Earth Polar Observer",
+      "name": ".Earth Polar Observer",
+      "attributes": {
+        "platform_type": "ECR_FIXED",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/rpo_cases.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": 0.0,
+        "latitudeDeg": 1.5707963267948966,
+        "altitudeM": 70159.507
+      }
+    },
+    {
+      "id": "P1_Boom",
+      "name": "P1_Boom",
+      "attributes": {
+        "platform_type": "RPO",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/rpo_cases.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": 2.0,
+        "latitudeDeg": 1.0,
+        "altitudeM": 3.0
+      }
+    },
+    {
+      "id": "P2_FC",
+      "name": "P2_FC",
+      "attributes": {
+        "platform_type": "RPO",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/rpo_cases.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": 2.0,
+        "latitudeDeg": 1.0,
+        "altitudeM": 3.0
+      }
+    },
+    {
+      "id": "P3_TR",
+      "name": "P3_TR",
+      "attributes": {
+        "platform_type": "RPO",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/rpo_cases.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": 2.0,
+        "latitudeDeg": 1.0,
+        "altitudeM": 3.0
+      }
+    },
+    {
+      "id": "P4_OC",
+      "name": "P4_OC",
+      "attributes": {
+        "platform_type": "RPO",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/rpo_cases.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": 2.0,
+        "latitudeDeg": 1.0,
+        "altitudeM": 3.0
+      }
+    },
+    {
+      "id": "W1_S",
+      "name": "W1_S",
+      "attributes": {
+        "platform_type": "RPO",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/rpo_cases.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": 2.0,
+        "latitudeDeg": 1.0,
+        "altitudeM": 3.0
+      }
+    },
+    {
+      "id": "W2_ATC",
+      "name": "W2_ATC",
+      "attributes": {
+        "platform_type": "RPO",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/rpo_cases.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": 2.0,
+        "latitudeDeg": 1.0,
+        "altitudeM": 3.0
+      }
+    },
+    {
+      "id": "W3_QTC",
+      "name": "W3_QTC",
+      "attributes": {
+        "platform_type": "RPO",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/rpo_cases.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": 2.0,
+        "latitudeDeg": 1.0,
+        "altitudeM": 3.0
+      }
+    }
+  ]
+}

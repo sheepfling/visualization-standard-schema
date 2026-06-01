@@ -1,0 +1,9 @@
+{
+  "schemaVersion": "1.0.0-scene",
+  "document": {
+    "id": "orb-format-collection__soap15__scenarios__auto-load-examples__autoload1",
+    "name": "autoload1",
+    "source": "orb_format_collection/soap15/scenarios/auto-load-examples/autoload1.orb"
+  },
+  "objects": []
+}

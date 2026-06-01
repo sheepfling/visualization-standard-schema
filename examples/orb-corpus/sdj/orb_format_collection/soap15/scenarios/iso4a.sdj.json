@@ -1,0 +1,55 @@
+{
+  "schemaVersion": "1.0.0-scene",
+  "document": {
+    "id": "orb-format-collection__soap15__scenarios__iso4a",
+    "name": "iso4a",
+    "source": "orb_format_collection/soap15/scenarios/iso4a.orb"
+  },
+  "objects": [
+    {
+      "id": "-F0",
+      "name": "-F0",
+      "attributes": {
+        "platform_type": "ECR_FIXED",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/iso4a.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": -175.0,
+        "latitudeDeg": 19.9994270422,
+        "altitudeM": 210848000.0
+      }
+    },
+    {
+      "id": "-G0",
+      "name": "-G0",
+      "attributes": {
+        "platform_type": "ECR_FIXED",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/iso4a.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": 90.0,
+        "latitudeDeg": 0.0,
+        "altitudeM": 0.0
+      }
+    },
+    {
+      "id": "LAAFB",
+      "name": "LAAFB",
+      "attributes": {
+        "platform_type": "ECR_FIXED",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/iso4a.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": -119.0,
+        "latitudeDeg": 32.0,
+        "altitudeM": 0.0
+      }
+    }
+  ]
+}

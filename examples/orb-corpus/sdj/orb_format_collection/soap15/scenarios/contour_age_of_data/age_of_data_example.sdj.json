@@ -1,0 +1,85 @@
+{
+  "schemaVersion": "1.0.0-scene",
+  "document": {
+    "id": "orb-format-collection__soap15__scenarios__contour-age-of-data__age-of-data-example",
+    "name": "age_of_data_example",
+    "source": "orb_format_collection/soap15/scenarios/contour_age_of_data/age_of_data_example.orb"
+  },
+  "objects": [
+    {
+      "id": ".Earth CR Observer",
+      "name": ".Earth CR Observer",
+      "attributes": {
+        "platform_type": "ECR_FIXED",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/contour_age_of_data/age_of_data_example.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": -112.00000000000011,
+        "latitudeDeg": 6.000000000000009,
+        "altitudeM": 63781.369999999995
+      }
+    },
+    {
+      "id": ".Earth CR Observer 0001",
+      "name": ".Earth CR Observer 0001",
+      "attributes": {
+        "platform_type": "ECR_FIXED",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/contour_age_of_data/age_of_data_example.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": 0.0,
+        "latitudeDeg": 0.0,
+        "altitudeM": 63781.369999999995
+      }
+    },
+    {
+      "id": ".Earth Ground",
+      "name": ".Earth Ground",
+      "attributes": {
+        "platform_type": "ECR_FIXED",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/contour_age_of_data/age_of_data_example.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": -99.0,
+        "latitudeDeg": 38.0,
+        "altitudeM": 0.002
+      }
+    },
+    {
+      "id": ".Earth Ground Observer",
+      "name": ".Earth Ground Observer",
+      "attributes": {
+        "platform_type": "ECR_FIXED",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/contour_age_of_data/age_of_data_example.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": 90.0,
+        "latitudeDeg": 0.0,
+        "altitudeM": 0.0
+      }
+    },
+    {
+      "id": ".Earth Polar Observer",
+      "name": ".Earth Polar Observer",
+      "attributes": {
+        "platform_type": "ECR_FIXED",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/contour_age_of_data/age_of_data_example.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": 0.0,
+        "latitudeDeg": 90.0,
+        "altitudeM": 63781.369999999995
+      }
+    }
+  ]
+}

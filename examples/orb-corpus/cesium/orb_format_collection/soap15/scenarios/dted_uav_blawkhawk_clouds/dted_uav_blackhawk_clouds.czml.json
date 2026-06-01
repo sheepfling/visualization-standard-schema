@@ -1,0 +1,127 @@
+[
+  {
+    "id": "document",
+    "name": "dted_uav_blackhawk_clouds",
+    "version": "1.0"
+  },
+  {
+    "id": "+33.13755119_-115.31250000_+35.46066995_-112.500000001_Ctr",
+    "name": "+33.13755119_-115.31250000_+35.46066995_-112.500000001_Ctr",
+    "position": {
+      "cartographicDegrees": [
+        -113.90625000050002,
+        34.29911057,
+        0.0
+      ]
+    },
+    "properties": {
+      "platform_type": "ECR_FIXED",
+      "orbArchiveMember": "orb_format_collection/soap15/scenarios/dted_uav_blawkhawk_clouds/dted_uav_blackhawk_clouds.orb",
+      "source": "orb-scenario"
+    },
+    "point": {
+      "pixelSize": 10,
+      "outlineWidth": 1
+    }
+  },
+  {
+    "id": "+33.13755119_-118.12500000_+35.46066995_-115.312500000_Ctr",
+    "name": "+33.13755119_-118.12500000_+35.46066995_-115.312500000_Ctr",
+    "position": {
+      "cartographicDegrees": [
+        -116.71875000000001,
+        34.29911057,
+        0.0
+      ]
+    },
+    "properties": {
+      "platform_type": "ECR_FIXED",
+      "orbArchiveMember": "orb_format_collection/soap15/scenarios/dted_uav_blawkhawk_clouds/dted_uav_blackhawk_clouds.orb",
+      "source": "orb-scenario"
+    },
+    "point": {
+      "pixelSize": 10,
+      "outlineWidth": 1
+    }
+  },
+  {
+    "id": ".Earth CR Observer",
+    "name": ".Earth CR Observer",
+    "position": {
+      "cartographicDegrees": [
+        -74.0,
+        -3.9994270422000002,
+        63781370.000002064
+      ]
+    },
+    "properties": {
+      "platform_type": "ECR_FIXED",
+      "orbArchiveMember": "orb_format_collection/soap15/scenarios/dted_uav_blawkhawk_clouds/dted_uav_blackhawk_clouds.orb",
+      "source": "orb-scenario"
+    },
+    "point": {
+      "pixelSize": 10,
+      "outlineWidth": 1
+    }
+  },
+  {
+    "id": ".Earth Ground Observer",
+    "name": ".Earth Ground Observer",
+    "position": {
+      "cartographicDegrees": [
+        90.0,
+        0.0005729577951308,
+        0.0
+      ]
+    },
+    "properties": {
+      "platform_type": "ECR_FIXED",
+      "orbArchiveMember": "orb_format_collection/soap15/scenarios/dted_uav_blawkhawk_clouds/dted_uav_blackhawk_clouds.orb",
+      "source": "orb-scenario"
+    },
+    "point": {
+      "pixelSize": 10,
+      "outlineWidth": 1
+    }
+  },
+  {
+    "id": ".Earth Polar Observer",
+    "name": ".Earth Polar Observer",
+    "position": {
+      "cartographicDegrees": [
+        0.0,
+        90.0,
+        63781370.000002064
+      ]
+    },
+    "properties": {
+      "platform_type": "ECR_FIXED",
+      "orbArchiveMember": "orb_format_collection/soap15/scenarios/dted_uav_blawkhawk_clouds/dted_uav_blackhawk_clouds.orb",
+      "source": "orb-scenario"
+    },
+    "point": {
+      "pixelSize": 10,
+      "outlineWidth": 1
+    }
+  },
+  {
+    "id": "Bunker",
+    "name": "Bunker",
+    "position": {
+      "cartographicDegrees": [
+        -116.81000000000002,
+        33.921,
+        18.000000000129866
+      ]
+    },
+    "properties": {
+      "platform_type": "ECR_FIXED",
+      "orbArchiveMember": "orb_format_collection/soap15/scenarios/dted_uav_blawkhawk_clouds/dted_uav_blackhawk_clouds.orb",
+      "source": "orb-scenario"
+    },
+    "point": {
+      "pixelSize": 10,
+      "outlineWidth": 1
+    }
+  }
+]

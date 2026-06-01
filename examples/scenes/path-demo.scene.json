@@ -1,0 +1,55 @@
+{
+  "schemaVersion": "1.0.0-scene",
+  "document": {
+    "id": "path-demo",
+    "name": "Path Demo",
+    "description": "A sampled-motion path object used to exercise the Cesium path emitter.",
+    "created": "2026-06-01T12:00:00Z",
+    "generator": "visualization-standard-schema",
+    "source": "sim.example.flight-sim"
+  },
+  "objects": [
+    {
+      "objectType": "path",
+      "id": "track-001-path",
+      "name": "Track 001 Path",
+      "style": {
+        "label": "Track 001",
+        "colorRgba": [69, 142, 255, 255]
+      },
+      "samples": [
+        {
+          "timestamp": "2026-06-01T12:00:00Z",
+          "position": {
+            "longitudeDeg": -97.740,
+            "latitudeDeg": 30.260,
+            "altitudeM": 9000.0
+          }
+        },
+        {
+          "timestamp": "2026-06-01T12:03:00Z",
+          "position": {
+            "longitudeDeg": -97.620,
+            "latitudeDeg": 30.340,
+            "altitudeM": 9200.0
+          }
+        },
+        {
+          "timestamp": "2026-06-01T12:06:00Z",
+          "position": {
+            "longitudeDeg": -97.510,
+            "latitudeDeg": 30.410,
+            "altitudeM": 9600.0
+          }
+        }
+      ],
+      "widthPx": 3.5,
+      "clampToGround": false,
+      "attributes": {
+        "callsign": "PATH1",
+        "sourceTrack": "aircraft-001"
+      },
+      "source": "sim.example.flight-sim"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+from __future__ import annotations
+
+import sys
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
+
+from vss.models import EntityUpsertMessage
+from vss.util import dumps_json, write_text_file
+
+
+def main() -> None:
+    schema = EntityUpsertMessage.export_json_schema()
+    destination = Path("schemas/vss-message.pydantic.schema.json")
+    write_text_file(destination, dumps_json(schema, indent=2), encoding="utf-8")
+    print(destination)
+
+
+if __name__ == "__main__":
+    main()

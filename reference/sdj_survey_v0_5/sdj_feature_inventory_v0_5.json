@@ -1,0 +1,2167 @@
+{
+  "schemaVersion": "sdj-survey-0.5",
+  "generatedFor": "Spatial Display JSON coverage survey",
+  "featureCount": 144,
+  "features": [
+    {
+      "id": "entity.point",
+      "category": "CZML parity / Entity core",
+      "sdjKind": "point",
+      "description": "Point marker / pixel marker",
+      "status": {
+        "schema": "existing",
+        "example": "existing",
+        "cesiumRuntime": "strong",
+        "simdisExport": "strong",
+        "soapExport": "partial"
+      },
+      "priority": "P0",
+      "notes": "Entity PointGraphics"
+    },
+    {
+      "id": "entity.billboard",
+      "category": "CZML parity / Entity core",
+      "sdjKind": "billboard",
+      "description": "Screen-facing image/icon",
+      "status": {
+        "schema": "existing",
+        "example": "existing",
+        "cesiumRuntime": "strong",
+        "simdisExport": "partial",
+        "soapExport": "partial"
+      },
+      "priority": "P0",
+      "notes": "Entity BillboardGraphics"
+    },
+    {
+      "id": "entity.label",
+      "category": "CZML parity / Entity core",
+      "sdjKind": "label",
+      "description": "Screen-facing text label",
+      "status": {
+        "schema": "existing",
+        "example": "existing",
+        "cesiumRuntime": "strong",
+        "simdisExport": "strong",
+        "soapExport": "partial"
+      },
+      "priority": "P0",
+      "notes": "Entity LabelGraphics"
+    },
+    {
+      "id": "entity.polyline",
+      "category": "CZML parity / Entity core",
+      "sdjKind": "polyline",
+      "description": "3D line string",
+      "status": {
+        "schema": "existing",
+        "example": "existing",
+        "cesiumRuntime": "strong",
+        "simdisExport": "strong",
+        "soapExport": "strong"
+      },
+      "priority": "P0",
+      "notes": "Entity PolylineGraphics"
+    },
+    {
+      "id": "entity.path",
+      "category": "CZML parity / Entity core",
+      "sdjKind": "path",
+      "description": "Time-dynamic trail/lead path",
+      "status": {
+        "schema": "existing",
+        "example": "existing",
+        "cesiumRuntime": "strong",
+        "simdisExport": "partial",
+        "soapExport": "partial"
+      },
+      "priority": "P0",
+      "notes": "Entity PathGraphics"
+    },
+    {
+      "id": "entity.polygon",
+      "category": "CZML parity / Entity core",
+      "sdjKind": "polygon",
+      "description": "Surface or extruded polygon",
+      "status": {
+        "schema": "existing",
+        "example": "existing",
+        "cesiumRuntime": "strong",
+        "simdisExport": "strong",
+        "soapExport": "strong"
+      },
+      "priority": "P0",
+      "notes": "Entity PolygonGraphics"
+    },
+    {
+      "id": "entity.rectangle",
+      "category": "CZML parity / Entity core",
+      "sdjKind": "rectangle",
+      "description": "Cartographic rectangle",
+      "status": {
+        "schema": "existing",
+        "example": "existing",
+        "cesiumRuntime": "strong",
+        "simdisExport": "partial",
+        "soapExport": "partial"
+      },
+      "priority": "P0",
+      "notes": "Entity RectangleGraphics"
+    },
+    {
+      "id": "entity.ellipse",
+      "category": "CZML parity / Entity core",
+      "sdjKind": "ellipse",
+      "description": "Ellipse on ellipsoid or at height",
+      "status": {
+        "schema": "existing",
+        "example": "existing",
+        "cesiumRuntime": "strong",
+        "simdisExport": "strong",
+        "soapExport": "strong"
+      },
+      "priority": "P0",
+      "notes": "Entity EllipseGraphics"
+    },
+    {
+      "id": "entity.circle",
+      "category": "CZML parity / Entity core",
+      "sdjKind": "circle",
+      "description": "Circle as ellipse specialization",
+      "status": {
+        "schema": "existing",
+        "example": "existing",
+        "cesiumRuntime": "strong",
+        "simdisExport": "strong",
+        "soapExport": "strong"
+      },
+      "priority": "P0",
+      "notes": "Entity EllipseGraphics"
+    },
+    {
+      "id": "entity.box",
+      "category": "CZML parity / Entity core",
+      "sdjKind": "box",
+      "description": "Oriented box volume",
+      "status": {
+        "schema": "existing",
+        "example": "existing",
+        "cesiumRuntime": "strong",
+        "simdisExport": "partial",
+        "soapExport": "partial"
+      },
+      "priority": "P0",
+      "notes": "Entity BoxGraphics"
+    },
+    {
+      "id": "entity.cylinder",
+      "category": "CZML parity / Entity core",
+      "sdjKind": "cylinder",
+      "description": "Cylinder volume",
+      "status": {
+        "schema": "existing",
+        "example": "existing",
+        "cesiumRuntime": "strong",
+        "simdisExport": "partial",
+        "soapExport": "partial"
+      },
+      "priority": "P0",
+      "notes": "Entity CylinderGraphics"
+    },
+    {
+      "id": "entity.cone",
+      "category": "CZML parity / Entity core",
+      "sdjKind": "cone",
+      "description": "Cone as cylinder specialization",
+      "status": {
+        "schema": "existing",
+        "example": "existing",
+        "cesiumRuntime": "strong",
+        "simdisExport": "partial",
+        "soapExport": "partial"
+      },
+      "priority": "P0",
+      "notes": "Entity CylinderGraphics"
+    },
+    {
+      "id": "entity.ellipsoid",
+      "category": "CZML parity / Entity core",
+      "sdjKind": "ellipsoid",
+      "description": "Ellipsoid/sphere/cap shell",
+      "status": {
+        "schema": "existing",
+        "example": "existing",
+        "cesiumRuntime": "strong",
+        "simdisExport": "partial",
+        "soapExport": "partial"
+      },
+      "priority": "P0",
+      "notes": "Entity EllipsoidGraphics"
+    },
+    {
+      "id": "entity.sphere",
+      "category": "CZML parity / Entity core",
+      "sdjKind": "sphere",
+      "description": "Sphere specialization",
+      "status": {
+        "schema": "existing",
+        "example": "existing",
+        "cesiumRuntime": "strong",
+        "simdisExport": "partial",
+        "soapExport": "partial"
+      },
+      "priority": "P0",
+      "notes": "Entity EllipsoidGraphics"
+    },
+    {
+      "id": "entity.wall",
+      "category": "CZML parity / Entity core",
+      "sdjKind": "wall",
+      "description": "Vertical wall surface",
+      "status": {
+        "schema": "existing",
+        "example": "existing",
+        "cesiumRuntime": "strong",
+        "simdisExport": "partial",
+        "soapExport": "partial"
+      },
+      "priority": "P0",
+      "notes": "Entity WallGraphics"
+    },
+    {
+      "id": "entity.corridor",
+      "category": "CZML parity / Entity core",
+      "sdjKind": "corridor",
+      "description": "Corridor / buffered path",
+      "status": {
+        "schema": "existing",
+        "example": "existing",
+        "cesiumRuntime": "strong",
+        "simdisExport": "partial",
+        "soapExport": "partial"
+      },
+      "priority": "P0",
+      "notes": "Entity CorridorGraphics"
+    },
+    {
+      "id": "entity.polylineVolume",
+      "category": "CZML parity / Entity core",
+      "sdjKind": "polylineVolume",
+      "description": "Swept cross-section tube/volume",
+      "status": {
+        "schema": "existing",
+        "example": "existing",
+        "cesiumRuntime": "strong",
+        "simdisExport": "partial",
+        "soapExport": "partial"
+      },
+      "priority": "P0",
+      "notes": "Entity PolylineVolumeGraphics"
+    },
+    {
+      "id": "entity.plane",
+      "category": "CZML parity / Entity core",
+      "sdjKind": "plane",
+      "description": "Plane graphic",
+      "status": {
+        "schema": "existing",
+        "example": "existing",
+        "cesiumRuntime": "strong",
+        "simdisExport": "partial",
+        "soapExport": "partial"
+      },
+      "priority": "P0",
+      "notes": "Entity PlaneGraphics"
+    },
+    {
+      "id": "entity.model",
+      "category": "CZML parity / Entity core",
+      "sdjKind": "model",
+      "description": "GLB/glTF model entity",
+      "status": {
+        "schema": "existing",
+        "example": "existing",
+        "cesiumRuntime": "strong",
+        "simdisExport": "strong",
+        "soapExport": "strong"
+      },
+      "priority": "P0",
+      "notes": "Entity ModelGraphics"
+    },
+    {
+      "id": "entity.track",
+      "category": "CZML parity / Entity core",
+      "sdjKind": "track",
+      "description": "Moving platform / sampled object",
+      "status": {
+        "schema": "existing",
+        "example": "existing",
+        "cesiumRuntime": "strong",
+        "simdisExport": "strong",
+        "soapExport": "strong"
+      },
+      "priority": "P0",
+      "notes": "Entity + SampledPositionProperty"
+    },
+    {
+      "id": "property.constantProperty",
+      "category": "Temporal/frames/properties",
+      "sdjKind": "constantProperty",
+      "description": "Constant property value",
+      "status": {
+        "schema": "proposed",
+        "example": "mixed",
+        "cesiumRuntime": "strong",
+        "simdisExport": "strong",
+        "soapExport": "strong"
+      },
+      "priority": "P0",
+      "notes": ""
+    },
+    {
+      "id": "property.intervalProperty",
+      "category": "Temporal/frames/properties",
+      "sdjKind": "intervalProperty",
+      "description": "Interval-bounded values",
+      "status": {
+        "schema": "proposed",
+        "example": "mixed",
+        "cesiumRuntime": "strong",
+        "simdisExport": "strong",
+        "soapExport": "strong"
+      },
+      "priority": "P0",
+      "notes": ""
+    },
+    {
+      "id": "property.sampledProperty",
+      "category": "Temporal/frames/properties",
+      "sdjKind": "sampledProperty",
+      "description": "Sampled scalar/vector/color/property",
+      "status": {
+        "schema": "existing",
+        "example": "mixed",
+        "cesiumRuntime": "strong",
+        "simdisExport": "strong",
+        "soapExport": "strong"
+      },
+      "priority": "P0",
+      "notes": ""
+    },
+    {
+      "id": "property.referenceProperty",
+      "category": "Temporal/frames/properties",
+      "sdjKind": "referenceProperty",
+      "description": "Property reference to another SDJ object",
+      "status": {
+        "schema": "existing",
+        "example": "mixed",
+        "cesiumRuntime": "strong",
+        "simdisExport": "strong",
+        "soapExport": "strong"
+      },
+      "priority": "P0",
+      "notes": ""
+    },
+    {
+      "id": "property.computedProperty",
+      "category": "Temporal/frames/properties",
+      "sdjKind": "computedProperty",
+      "description": "Derived properties such as velocity/acceleration/orientation",
+      "status": {
+        "schema": "existing",
+        "example": "mixed",
+        "cesiumRuntime": "strong",
+        "simdisExport": "strong",
+        "soapExport": "strong"
+      },
+      "priority": "P0",
+      "notes": ""
+    },
+    {
+      "id": "property.availability",
+      "category": "Temporal/frames/properties",
+      "sdjKind": "availability",
+      "description": "Time interval visibility/existence",
+      "status": {
+        "schema": "proposed",
+        "example": "mixed",
+        "cesiumRuntime": "strong",
+        "simdisExport": "strong",
+        "soapExport": "strong"
+      },
+      "priority": "P0",
+      "notes": ""
+    },
+    {
+      "id": "property.cartographicDegrees",
+      "category": "Temporal/frames/properties",
+      "sdjKind": "cartographicDegrees",
+      "description": "lon/lat/height position",
+      "status": {
+        "schema": "existing",
+        "example": "mixed",
+        "cesiumRuntime": "strong",
+        "simdisExport": "strong",
+        "soapExport": "strong"
+      },
+      "priority": "P0",
+      "notes": ""
+    },
+    {
+      "id": "property.ecefMeters",
+      "category": "Temporal/frames/properties",
+      "sdjKind": "ecefMeters",
+      "description": "Earth-fixed Cartesian position",
+      "status": {
+        "schema": "existing",
+        "example": "mixed",
+        "cesiumRuntime": "strong",
+        "simdisExport": "strong",
+        "soapExport": "strong"
+      },
+      "priority": "P0",
+      "notes": ""
+    },
+    {
+      "id": "property.enuMeters",
+      "category": "Temporal/frames/properties",
+      "sdjKind": "enuMeters",
+      "description": "Local tangent-plane coordinate",
+      "status": {
+        "schema": "proposed",
+        "example": "mixed",
+        "cesiumRuntime": "strong",
+        "simdisExport": "strong",
+        "soapExport": "strong"
+      },
+      "priority": "P0",
+      "notes": ""
+    },
+    {
+      "id": "property.inertialFrame",
+      "category": "Temporal/frames/properties",
+      "sdjKind": "inertialFrame",
+      "description": "Inertial/reference-frame state",
+      "status": {
+        "schema": "proposed",
+        "example": "mixed",
+        "cesiumRuntime": "partial",
+        "simdisExport": "strong",
+        "soapExport": "strong"
+      },
+      "priority": "P0",
+      "notes": ""
+    },
+    {
+      "id": "property.bodyFrame",
+      "category": "Temporal/frames/properties",
+      "sdjKind": "bodyFrame",
+      "description": "Body axes and body-relative transforms",
+      "status": {
+        "schema": "proposed",
+        "example": "mixed",
+        "cesiumRuntime": "strong",
+        "simdisExport": "strong",
+        "soapExport": "strong"
+      },
+      "priority": "P0",
+      "notes": ""
+    },
+    {
+      "id": "property.modelFrameCorrection",
+      "category": "Temporal/frames/properties",
+      "sdjKind": "modelFrameCorrection",
+      "description": "GLB/glTF orientation and origin correction",
+      "status": {
+        "schema": "existing",
+        "example": "mixed",
+        "cesiumRuntime": "strong",
+        "simdisExport": "strong",
+        "soapExport": "strong"
+      },
+      "priority": "P0",
+      "notes": ""
+    },
+    {
+      "id": "asset.tileset",
+      "category": "Modern assets / tiles / models",
+      "sdjKind": "tileset",
+      "description": "3D Tileset asset",
+      "status": {
+        "schema": "existing",
+        "example": "existing",
+        "cesiumRuntime": "strong",
+        "simdisExport": "partial",
+        "soapExport": "partial"
+      },
+      "priority": "P0",
+      "notes": "Cesium3DTileset"
+    },
+    {
+      "id": "asset.gaussianSplatTileset",
+      "category": "Modern assets / tiles / models",
+      "sdjKind": "gaussianSplatTileset",
+      "description": "Gaussian splat tileset asset/object",
+      "status": {
+        "schema": "partial",
+        "example": "existing-hidden",
+        "cesiumRuntime": "partial",
+        "simdisExport": "weak",
+        "soapExport": "weak"
+      },
+      "priority": "P0",
+      "notes": "Cesium3DTileset experimental splat pipeline"
+    },
+    {
+      "id": "asset.pointCloudTileset",
+      "category": "Modern assets / tiles / models",
+      "sdjKind": "pointCloudTileset",
+      "description": "3D Tiles point cloud",
+      "status": {
+        "schema": "existing",
+        "example": "existing-hidden",
+        "cesiumRuntime": "strong",
+        "simdisExport": "partial",
+        "soapExport": "partial"
+      },
+      "priority": "P1",
+      "notes": "Cesium3DTileset"
+    },
+    {
+      "id": "asset.photogrammetryTileset",
+      "category": "Modern assets / tiles / models",
+      "sdjKind": "photogrammetryTileset",
+      "description": "Photogrammetry / reality mesh tileset",
+      "status": {
+        "schema": "proposed",
+        "example": "needed",
+        "cesiumRuntime": "strong",
+        "simdisExport": "partial",
+        "soapExport": "partial"
+      },
+      "priority": "P1",
+      "notes": "Cesium3DTileset"
+    },
+    {
+      "id": "asset.cesium3DTileStyle",
+      "category": "Modern assets / tiles / models",
+      "sdjKind": "cesium3DTileStyle",
+      "description": "Feature styling/filtering for 3D Tiles",
+      "status": {
+        "schema": "proposed",
+        "example": "needed",
+        "cesiumRuntime": "reserved",
+        "simdisExport": "weak",
+        "soapExport": "weak"
+      },
+      "priority": "P0",
+      "notes": "Cesium3DTileStyle"
+    },
+    {
+      "id": "asset.featureMetadata",
+      "category": "Modern assets / tiles / models",
+      "sdjKind": "featureMetadata",
+      "description": "3D Tiles feature metadata/picking",
+      "status": {
+        "schema": "proposed",
+        "example": "needed",
+        "cesiumRuntime": "reserved",
+        "simdisExport": "weak",
+        "soapExport": "partial"
+      },
+      "priority": "P1",
+      "notes": "Cesium3DTileFeature / metadata"
+    },
+    {
+      "id": "asset.customShader",
+      "category": "Modern assets / tiles / models",
+      "sdjKind": "customShader",
+      "description": "Custom shader attached to model/tileset",
+      "status": {
+        "schema": "proposed",
+        "example": "needed",
+        "cesiumRuntime": "reserved",
+        "simdisExport": "unsupported",
+        "soapExport": "partial"
+      },
+      "priority": "P0",
+      "notes": "CustomShader"
+    },
+    {
+      "id": "asset.pbrAsset",
+      "category": "Modern assets / tiles / models",
+      "sdjKind": "pbrAsset",
+      "description": "PBR material via glTF/GLB",
+      "status": {
+        "schema": "partial",
+        "example": "needed",
+        "cesiumRuntime": "strong",
+        "simdisExport": "partial",
+        "soapExport": "strong"
+      },
+      "priority": "P1",
+      "notes": "glTF material + ModelGraphics"
+    },
+    {
+      "id": "asset.modelAnimation",
+      "category": "Modern assets / tiles / models",
+      "sdjKind": "modelAnimation",
+      "description": "Model animations",
+      "status": {
+        "schema": "partial",
+        "example": "needed",
+        "cesiumRuntime": "partial",
+        "simdisExport": "partial",
+        "soapExport": "strong"
+      },
+      "priority": "P1",
+      "notes": "ModelGraphics animations"
+    },
+    {
+      "id": "asset.modelArticulation",
+      "category": "Modern assets / tiles / models",
+      "sdjKind": "modelArticulation",
+      "description": "Model articulations/node transforms",
+      "status": {
+        "schema": "partial",
+        "example": "needed",
+        "cesiumRuntime": "reserved",
+        "simdisExport": "partial",
+        "soapExport": "strong"
+      },
+      "priority": "P1",
+      "notes": "ModelGraphics articulations/nodeTransformations"
+    },
+    {
+      "id": "asset.imageBasedLighting",
+      "category": "Modern assets / tiles / models",
+      "sdjKind": "imageBasedLighting",
+      "description": "IBL/environment map model controls",
+      "status": {
+        "schema": "proposed",
+        "example": "needed",
+        "cesiumRuntime": "reserved",
+        "simdisExport": "unsupported",
+        "soapExport": "partial"
+      },
+      "priority": "P2",
+      "notes": "ModelGraphics imageBasedLighting"
+    },
+    {
+      "id": "primitive.customPrimitive",
+      "category": "Primitive / clipping / classification",
+      "sdjKind": "customPrimitive",
+      "description": "Explicit geometry primitive with vertices/indices",
+      "status": {
+        "schema": "existing",
+        "example": "existing-hidden",
+        "cesiumRuntime": "strong",
+        "simdisExport": "partial",
+        "soapExport": "partial"
+      },
+      "priority": "P1",
+      "notes": ""
+    },
+    {
+      "id": "primitive.primitiveMesh",
+      "category": "Primitive / clipping / classification",
+      "sdjKind": "primitiveMesh",
+      "description": "Generated or explicit custom mesh",
+      "status": {
+        "schema": "existing",
+        "example": "needed",
+        "cesiumRuntime": "strong",
+        "simdisExport": "partial",
+        "soapExport": "partial"
+      },
+      "priority": "P1",
+      "notes": ""
+    },
+    {
+      "id": "primitive.groundPrimitive",
+      "category": "Primitive / clipping / classification",
+      "sdjKind": "groundPrimitive",
+      "description": "Terrain-draped primitive",
+      "status": {
+        "schema": "proposed",
+        "example": "needed",
+        "cesiumRuntime": "reserved",
+        "simdisExport": "partial",
+        "soapExport": "partial"
+      },
+      "priority": "P0",
+      "notes": ""
+    },
+    {
+      "id": "primitive.groundPolyline",
+      "category": "Primitive / clipping / classification",
+      "sdjKind": "groundPolyline",
+      "description": "Terrain/tiles draped polyline",
+      "status": {
+        "schema": "proposed",
+        "example": "needed",
+        "cesiumRuntime": "reserved",
+        "simdisExport": "strong",
+        "soapExport": "partial"
+      },
+      "priority": "P0",
+      "notes": ""
+    },
+    {
+      "id": "primitive.classificationPrimitive",
+      "category": "Primitive / clipping / classification",
+      "sdjKind": "classificationPrimitive",
+      "description": "Classifies terrain/3D Tiles",
+      "status": {
+        "schema": "existing",
+        "example": "needed",
+        "cesiumRuntime": "reserved",
+        "simdisExport": "partial",
+        "soapExport": "weak"
+      },
+      "priority": "P0",
+      "notes": ""
+    },
+    {
+      "id": "primitive.classificationVolume",
+      "category": "Primitive / clipping / classification",
+      "sdjKind": "classificationVolume",
+      "description": "Semantic classification volume",
+      "status": {
+        "schema": "existing",
+        "example": "needed",
+        "cesiumRuntime": "reserved",
+        "simdisExport": "partial",
+        "soapExport": "weak"
+      },
+      "priority": "P1",
+      "notes": ""
+    },
+    {
+      "id": "primitive.clippingPlane",
+      "category": "Primitive / clipping / classification",
+      "sdjKind": "clippingPlane",
+      "description": "Planar clipping attachment",
+      "status": {
+        "schema": "existing",
+        "example": "existing-hidden",
+        "cesiumRuntime": "reserved",
+        "simdisExport": "weak",
+        "soapExport": "partial"
+      },
+      "priority": "P0",
+      "notes": ""
+    },
+    {
+      "id": "primitive.clippingPolygon",
+      "category": "Primitive / clipping / classification",
+      "sdjKind": "clippingPolygon",
+      "description": "Cartographic clipping region",
+      "status": {
+        "schema": "existing",
+        "example": "existing-hidden",
+        "cesiumRuntime": "reserved",
+        "simdisExport": "weak",
+        "soapExport": "partial"
+      },
+      "priority": "P0",
+      "notes": ""
+    },
+    {
+      "id": "primitive.appearanceMaterial",
+      "category": "Primitive / clipping / classification",
+      "sdjKind": "appearanceMaterial",
+      "description": "Primitive appearance/material definitions",
+      "status": {
+        "schema": "proposed",
+        "example": "needed",
+        "cesiumRuntime": "partial",
+        "simdisExport": "partial",
+        "soapExport": "partial"
+      },
+      "priority": "P1",
+      "notes": ""
+    },
+    {
+      "id": "primitive.geometryInstanceBatching",
+      "category": "Primitive / clipping / classification",
+      "sdjKind": "geometryInstanceBatching",
+      "description": "Batched geometry instances",
+      "status": {
+        "schema": "proposed",
+        "example": "needed",
+        "cesiumRuntime": "reserved",
+        "simdisExport": "partial",
+        "soapExport": "weak"
+      },
+      "priority": "P1",
+      "notes": ""
+    },
+    {
+      "id": "tactical.sector2d",
+      "category": "Tactical geometry / sensors",
+      "sdjKind": "sector2d",
+      "description": "2D sector/fan polygon",
+      "status": {
+        "schema": "existing",
+        "example": "existing",
+        "cesiumRuntime": "strong",
+        "simdisExport": "strong",
+        "soapExport": "partial"
+      },
+      "priority": "P1",
+      "notes": ""
+    },
+    {
+      "id": "tactical.sectorVolume",
+      "category": "Tactical geometry / sensors",
+      "sdjKind": "sectorVolume",
+      "description": "3D spherical sector volume",
+      "status": {
+        "schema": "existing",
+        "example": "existing",
+        "cesiumRuntime": "strong",
+        "simdisExport": "partial",
+        "soapExport": "partial"
+      },
+      "priority": "P1",
+      "notes": ""
+    },
+    {
+      "id": "tactical.keyhole",
+      "category": "Tactical geometry / sensors",
+      "sdjKind": "keyhole",
+      "description": "Inner/outer keyhole wedge",
+      "status": {
+        "schema": "existing",
+        "example": "existing",
+        "cesiumRuntime": "strong",
+        "simdisExport": "partial",
+        "soapExport": "partial"
+      },
+      "priority": "P1",
+      "notes": ""
+    },
+    {
+      "id": "tactical.rangeRing",
+      "category": "Tactical geometry / sensors",
+      "sdjKind": "rangeRing",
+      "description": "Range ring/circle",
+      "status": {
+        "schema": "existing",
+        "example": "existing",
+        "cesiumRuntime": "strong",
+        "simdisExport": "strong",
+        "soapExport": "partial"
+      },
+      "priority": "P1",
+      "notes": ""
+    },
+    {
+      "id": "tactical.bearingFan",
+      "category": "Tactical geometry / sensors",
+      "sdjKind": "bearingFan",
+      "description": "Bearing fan",
+      "status": {
+        "schema": "existing",
+        "example": "existing",
+        "cesiumRuntime": "strong",
+        "simdisExport": "strong",
+        "soapExport": "partial"
+      },
+      "priority": "P1",
+      "notes": ""
+    },
+    {
+      "id": "tactical.hemisphere",
+      "category": "Tactical geometry / sensors",
+      "sdjKind": "hemisphere",
+      "description": "Hemisphere/dome",
+      "status": {
+        "schema": "existing",
+        "example": "existing",
+        "cesiumRuntime": "strong",
+        "simdisExport": "partial",
+        "soapExport": "partial"
+      },
+      "priority": "P1",
+      "notes": ""
+    },
+    {
+      "id": "tactical.sphericalCap",
+      "category": "Tactical geometry / sensors",
+      "sdjKind": "sphericalCap",
+      "description": "Spherical cap/shell",
+      "status": {
+        "schema": "existing",
+        "example": "existing",
+        "cesiumRuntime": "strong",
+        "simdisExport": "partial",
+        "soapExport": "partial"
+      },
+      "priority": "P1",
+      "notes": ""
+    },
+    {
+      "id": "tactical.frustum",
+      "category": "Tactical geometry / sensors",
+      "sdjKind": "frustum",
+      "description": "Rectangular frustum/FOV",
+      "status": {
+        "schema": "existing",
+        "example": "existing",
+        "cesiumRuntime": "strong",
+        "simdisExport": "partial",
+        "soapExport": "strong"
+      },
+      "priority": "P1",
+      "notes": ""
+    },
+    {
+      "id": "tactical.fan",
+      "category": "Tactical geometry / sensors",
+      "sdjKind": "fan",
+      "description": "Generic fan",
+      "status": {
+        "schema": "existing",
+        "example": "existing-hidden",
+        "cesiumRuntime": "partial",
+        "simdisExport": "strong",
+        "soapExport": "partial"
+      },
+      "priority": "P0",
+      "notes": ""
+    },
+    {
+      "id": "tactical.conicSensor",
+      "category": "Tactical geometry / sensors",
+      "sdjKind": "conicSensor",
+      "description": "Conic sensor/FOV",
+      "status": {
+        "schema": "existing",
+        "example": "existing-hidden",
+        "cesiumRuntime": "partial",
+        "simdisExport": "strong",
+        "soapExport": "strong"
+      },
+      "priority": "P0",
+      "notes": ""
+    },
+    {
+      "id": "tactical.rectangularSensor",
+      "category": "Tactical geometry / sensors",
+      "sdjKind": "rectangularSensor",
+      "description": "Rectangular sensor/FOV",
+      "status": {
+        "schema": "existing",
+        "example": "existing-hidden",
+        "cesiumRuntime": "partial",
+        "simdisExport": "strong",
+        "soapExport": "strong"
+      },
+      "priority": "P0",
+      "notes": ""
+    },
+    {
+      "id": "tactical.customPatternSensor",
+      "category": "Tactical geometry / sensors",
+      "sdjKind": "customPatternSensor",
+      "description": "Pattern/antenna sensor",
+      "status": {
+        "schema": "existing",
+        "example": "existing-hidden",
+        "cesiumRuntime": "partial",
+        "simdisExport": "strong",
+        "soapExport": "partial"
+      },
+      "priority": "P0",
+      "notes": ""
+    },
+    {
+      "id": "tactical.sensorSwath",
+      "category": "Tactical geometry / sensors",
+      "sdjKind": "sensorSwath",
+      "description": "Sensor swath footprint",
+      "status": {
+        "schema": "proposed",
+        "example": "needed",
+        "cesiumRuntime": "reserved",
+        "simdisExport": "strong",
+        "soapExport": "strong"
+      },
+      "priority": "P0",
+      "notes": ""
+    },
+    {
+      "id": "tactical.footprint",
+      "category": "Tactical geometry / sensors",
+      "sdjKind": "footprint",
+      "description": "Ground footprint",
+      "status": {
+        "schema": "proposed",
+        "example": "needed",
+        "cesiumRuntime": "reserved",
+        "simdisExport": "partial",
+        "soapExport": "strong"
+      },
+      "priority": "P1",
+      "notes": ""
+    },
+    {
+      "id": "tactical.antennaPattern",
+      "category": "Tactical geometry / sensors",
+      "sdjKind": "antennaPattern",
+      "description": "Antenna pattern/lobes",
+      "status": {
+        "schema": "proposed",
+        "example": "needed",
+        "cesiumRuntime": "reserved",
+        "simdisExport": "strong",
+        "soapExport": "strong"
+      },
+      "priority": "P0",
+      "notes": ""
+    },
+    {
+      "id": "tactical.rfPropagationVolume",
+      "category": "Tactical geometry / sensors",
+      "sdjKind": "rfPropagationVolume",
+      "description": "RF propagation/result volume",
+      "status": {
+        "schema": "proposed",
+        "example": "needed",
+        "cesiumRuntime": "reserved",
+        "simdisExport": "strong",
+        "soapExport": "strong"
+      },
+      "priority": "P0",
+      "notes": ""
+    },
+    {
+      "id": "tactical.gate",
+      "category": "Tactical geometry / sensors",
+      "sdjKind": "gate",
+      "description": "SIMDIS-like gate",
+      "status": {
+        "schema": "proposed",
+        "example": "needed",
+        "cesiumRuntime": "reserved",
+        "simdisExport": "strong",
+        "soapExport": "partial"
+      },
+      "priority": "P0",
+      "notes": ""
+    },
+    {
+      "id": "tactical.laser",
+      "category": "Tactical geometry / sensors",
+      "sdjKind": "laser",
+      "description": "Laser/ray sensor",
+      "status": {
+        "schema": "proposed",
+        "example": "needed",
+        "cesiumRuntime": "reserved",
+        "simdisExport": "strong",
+        "soapExport": "partial"
+      },
+      "priority": "P0",
+      "notes": ""
+    },
+    {
+      "id": "tactical.lob",
+      "category": "Tactical geometry / sensors",
+      "sdjKind": "lob",
+      "description": "Line of bearing",
+      "status": {
+        "schema": "proposed",
+        "example": "needed",
+        "cesiumRuntime": "reserved",
+        "simdisExport": "strong",
+        "soapExport": "partial"
+      },
+      "priority": "P0",
+      "notes": ""
+    },
+    {
+      "id": "tactical.projector",
+      "category": "Tactical geometry / sensors",
+      "sdjKind": "projector",
+      "description": "Image/video projector",
+      "status": {
+        "schema": "proposed",
+        "example": "needed",
+        "cesiumRuntime": "reserved",
+        "simdisExport": "strong",
+        "soapExport": "partial"
+      },
+      "priority": "P0",
+      "notes": ""
+    },
+    {
+      "id": "tactical.uncertaintyEllipsoid",
+      "category": "Tactical geometry / sensors",
+      "sdjKind": "uncertaintyEllipsoid",
+      "description": "3D uncertainty",
+      "status": {
+        "schema": "existing",
+        "example": "existing",
+        "cesiumRuntime": "strong",
+        "simdisExport": "partial",
+        "soapExport": "partial"
+      },
+      "priority": "P1",
+      "notes": ""
+    },
+    {
+      "id": "tactical.covarianceEllipse",
+      "category": "Tactical geometry / sensors",
+      "sdjKind": "covarianceEllipse",
+      "description": "2D covariance ellipse",
+      "status": {
+        "schema": "existing",
+        "example": "existing",
+        "cesiumRuntime": "strong",
+        "simdisExport": "partial",
+        "soapExport": "partial"
+      },
+      "priority": "P1",
+      "notes": ""
+    },
+    {
+      "id": "trajectory.velocityVector",
+      "category": "Trajectory diagnostics",
+      "sdjKind": "velocityVector",
+      "description": "Velocity vector overlay",
+      "status": {
+        "schema": "existing",
+        "example": "existing",
+        "cesiumRuntime": "strong",
+        "simdisExport": "strong",
+        "soapExport": "strong"
+      },
+      "priority": "P1",
+      "notes": ""
+    },
+    {
+      "id": "trajectory.accelerationVector",
+      "category": "Trajectory diagnostics",
+      "sdjKind": "accelerationVector",
+      "description": "Acceleration vector overlay",
+      "status": {
+        "schema": "existing",
+        "example": "existing",
+        "cesiumRuntime": "strong",
+        "simdisExport": "strong",
+        "soapExport": "strong"
+      },
+      "priority": "P1",
+      "notes": ""
+    },
+    {
+      "id": "trajectory.jerkVector",
+      "category": "Trajectory diagnostics",
+      "sdjKind": "jerkVector",
+      "description": "Jerk vector overlay",
+      "status": {
+        "schema": "proposed",
+        "example": "needed",
+        "cesiumRuntime": "reserved",
+        "simdisExport": "strong",
+        "soapExport": "strong"
+      },
+      "priority": "P1",
+      "notes": ""
+    },
+    {
+      "id": "trajectory.bodyAxes",
+      "category": "Trajectory diagnostics",
+      "sdjKind": "bodyAxes",
+      "description": "Body-frame x/y/z axes",
+      "status": {
+        "schema": "existing",
+        "example": "existing",
+        "cesiumRuntime": "strong",
+        "simdisExport": "strong",
+        "soapExport": "partial"
+      },
+      "priority": "P1",
+      "notes": ""
+    },
+    {
+      "id": "trajectory.principalAxes",
+      "category": "Trajectory diagnostics",
+      "sdjKind": "principalAxes",
+      "description": "Covariance/principal component axes",
+      "status": {
+        "schema": "existing",
+        "example": "existing",
+        "cesiumRuntime": "strong",
+        "simdisExport": "strong",
+        "soapExport": "partial"
+      },
+      "priority": "P1",
+      "notes": ""
+    },
+    {
+      "id": "trajectory.lineOfSight",
+      "category": "Trajectory diagnostics",
+      "sdjKind": "lineOfSight",
+      "description": "Line of sight link",
+      "status": {
+        "schema": "existing",
+        "example": "existing",
+        "cesiumRuntime": "strong",
+        "simdisExport": "strong",
+        "soapExport": "strong"
+      },
+      "priority": "P1",
+      "notes": ""
+    },
+    {
+      "id": "trajectory.relativeLine",
+      "category": "Trajectory diagnostics",
+      "sdjKind": "relativeLine",
+      "description": "Relative/reference line",
+      "status": {
+        "schema": "existing",
+        "example": "existing",
+        "cesiumRuntime": "strong",
+        "simdisExport": "strong",
+        "soapExport": "strong"
+      },
+      "priority": "P1",
+      "notes": ""
+    },
+    {
+      "id": "trajectory.interceptLine",
+      "category": "Trajectory diagnostics",
+      "sdjKind": "interceptLine",
+      "description": "Predicted intercept/closure line",
+      "status": {
+        "schema": "existing",
+        "example": "existing",
+        "cesiumRuntime": "strong",
+        "simdisExport": "strong",
+        "soapExport": "strong"
+      },
+      "priority": "P1",
+      "notes": ""
+    },
+    {
+      "id": "trajectory.tetherLine",
+      "category": "Trajectory diagnostics",
+      "sdjKind": "tetherLine",
+      "description": "Tether/attachment line",
+      "status": {
+        "schema": "proposed",
+        "example": "needed",
+        "cesiumRuntime": "reserved",
+        "simdisExport": "strong",
+        "soapExport": "strong"
+      },
+      "priority": "P1",
+      "notes": ""
+    },
+    {
+      "id": "trajectory.formationLine",
+      "category": "Trajectory diagnostics",
+      "sdjKind": "formationLine",
+      "description": "Formation geometry",
+      "status": {
+        "schema": "proposed",
+        "example": "needed",
+        "cesiumRuntime": "reserved",
+        "simdisExport": "strong",
+        "soapExport": "strong"
+      },
+      "priority": "P1",
+      "notes": ""
+    },
+    {
+      "id": "trajectory.predictionPath",
+      "category": "Trajectory diagnostics",
+      "sdjKind": "predictionPath",
+      "description": "Predicted future path",
+      "status": {
+        "schema": "proposed",
+        "example": "needed",
+        "cesiumRuntime": "reserved",
+        "simdisExport": "strong",
+        "soapExport": "strong"
+      },
+      "priority": "P1",
+      "notes": ""
+    },
+    {
+      "id": "trajectory.trackHistory",
+      "category": "Trajectory diagnostics",
+      "sdjKind": "trackHistory",
+      "description": "Historical track trail",
+      "status": {
+        "schema": "existing",
+        "example": "existing",
+        "cesiumRuntime": "strong",
+        "simdisExport": "strong",
+        "soapExport": "strong"
+      },
+      "priority": "P1",
+      "notes": ""
+    },
+    {
+      "id": "trajectory.timeTicks",
+      "category": "Trajectory diagnostics",
+      "sdjKind": "timeTicks",
+      "description": "Time tick marks along path",
+      "status": {
+        "schema": "proposed",
+        "example": "needed",
+        "cesiumRuntime": "reserved",
+        "simdisExport": "strong",
+        "soapExport": "strong"
+      },
+      "priority": "P1",
+      "notes": ""
+    },
+    {
+      "id": "trajectory.maneuverMarker",
+      "category": "Trajectory diagnostics",
+      "sdjKind": "maneuverMarker",
+      "description": "Burn/maneuver event marker",
+      "status": {
+        "schema": "proposed",
+        "example": "needed",
+        "cesiumRuntime": "reserved",
+        "simdisExport": "strong",
+        "soapExport": "strong"
+      },
+      "priority": "P1",
+      "notes": ""
+    },
+    {
+      "id": "scene.terrain",
+      "category": "Scene environment / effects",
+      "sdjKind": "terrain",
+      "description": "Terrain provider/reference",
+      "status": {
+        "schema": "existing",
+        "example": "needed",
+        "cesiumRuntime": "reserved",
+        "simdisExport": "partial",
+        "soapExport": "partial"
+      },
+      "priority": "P0",
+      "notes": ""
+    },
+    {
+      "id": "scene.imageryLayer",
+      "category": "Scene environment / effects",
+      "sdjKind": "imageryLayer",
+      "description": "Imagery provider/layer",
+      "status": {
+        "schema": "existing",
+        "example": "needed",
+        "cesiumRuntime": "reserved",
+        "simdisExport": "partial",
+        "soapExport": "partial"
+      },
+      "priority": "P0",
+      "notes": ""
+    },
+    {
+      "id": "scene.globe",
+      "category": "Scene environment / effects",
+      "sdjKind": "globe",
+      "description": "Globe options",
+      "status": {
+        "schema": "proposed",
+        "example": "needed",
+        "cesiumRuntime": "reserved",
+        "simdisExport": "partial",
+        "soapExport": "partial"
+      },
+      "priority": "P2",
+      "notes": ""
+    },
+    {
+      "id": "scene.skyBox",
+      "category": "Scene environment / effects",
+      "sdjKind": "skyBox",
+      "description": "Skybox",
+      "status": {
+        "schema": "existing",
+        "example": "needed",
+        "cesiumRuntime": "reserved",
+        "simdisExport": "partial",
+        "soapExport": "partial"
+      },
+      "priority": "P2",
+      "notes": ""
+    },
+    {
+      "id": "scene.atmosphere",
+      "category": "Scene environment / effects",
+      "sdjKind": "atmosphere",
+      "description": "Atmosphere/sky atmosphere",
+      "status": {
+        "schema": "existing",
+        "example": "needed",
+        "cesiumRuntime": "reserved",
+        "simdisExport": "partial",
+        "soapExport": "partial"
+      },
+      "priority": "P2",
+      "notes": ""
+    },
+    {
+      "id": "scene.fog",
+      "category": "Scene environment / effects",
+      "sdjKind": "fog",
+      "description": "Fog",
+      "status": {
+        "schema": "proposed",
+        "example": "needed",
+        "cesiumRuntime": "reserved",
+        "simdisExport": "partial",
+        "soapExport": "partial"
+      },
+      "priority": "P2",
+      "notes": ""
+    },
+    {
+      "id": "scene.lighting",
+      "category": "Scene environment / effects",
+      "sdjKind": "lighting",
+      "description": "Sun/light/shadows",
+      "status": {
+        "schema": "proposed",
+        "example": "needed",
+        "cesiumRuntime": "reserved",
+        "simdisExport": "partial",
+        "soapExport": "partial"
+      },
+      "priority": "P2",
+      "notes": ""
+    },
+    {
+      "id": "scene.shadows",
+      "category": "Scene environment / effects",
+      "sdjKind": "shadows",
+      "description": "Shadow modes",
+      "status": {
+        "schema": "proposed",
+        "example": "needed",
+        "cesiumRuntime": "reserved",
+        "simdisExport": "partial",
+        "soapExport": "partial"
+      },
+      "priority": "P2",
+      "notes": ""
+    },
+    {
+      "id": "scene.cloudCollection",
+      "category": "Scene environment / effects",
+      "sdjKind": "cloudCollection",
+      "description": "Clouds",
+      "status": {
+        "schema": "existing",
+        "example": "needed",
+        "cesiumRuntime": "reserved",
+        "simdisExport": "partial",
+        "soapExport": "partial"
+      },
+      "priority": "P0",
+      "notes": ""
+    },
+    {
+      "id": "scene.particleSystem",
+      "category": "Scene environment / effects",
+      "sdjKind": "particleSystem",
+      "description": "Particle effects",
+      "status": {
+        "schema": "existing",
+        "example": "existing-hidden",
+        "cesiumRuntime": "strong",
+        "simdisExport": "partial",
+        "soapExport": "partial"
+      },
+      "priority": "P2",
+      "notes": ""
+    },
+    {
+      "id": "scene.postProcessStage",
+      "category": "Scene environment / effects",
+      "sdjKind": "postProcessStage",
+      "description": "Post-process shader stage",
+      "status": {
+        "schema": "existing",
+        "example": "needed",
+        "cesiumRuntime": "reserved",
+        "simdisExport": "partial",
+        "soapExport": "partial"
+      },
+      "priority": "P0",
+      "notes": ""
+    },
+    {
+      "id": "scene.debugInspector",
+      "category": "Scene environment / effects",
+      "sdjKind": "debugInspector",
+      "description": "Debug inspector/helpers",
+      "status": {
+        "schema": "existing",
+        "example": "needed",
+        "cesiumRuntime": "reserved",
+        "simdisExport": "partial",
+        "soapExport": "partial"
+      },
+      "priority": "P2",
+      "notes": ""
+    },
+    {
+      "id": "scene.videoPlane",
+      "category": "Scene environment / effects",
+      "sdjKind": "videoPlane",
+      "description": "Video textured plane",
+      "status": {
+        "schema": "existing",
+        "example": "needed",
+        "cesiumRuntime": "reserved",
+        "simdisExport": "partial",
+        "soapExport": "partial"
+      },
+      "priority": "P2",
+      "notes": ""
+    },
+    {
+      "id": "scene.panorama",
+      "category": "Scene environment / effects",
+      "sdjKind": "panorama",
+      "description": "Panorama/cube map panorama",
+      "status": {
+        "schema": "existing",
+        "example": "needed",
+        "cesiumRuntime": "reserved",
+        "simdisExport": "partial",
+        "soapExport": "partial"
+      },
+      "priority": "P2",
+      "notes": ""
+    },
+    {
+      "id": "datasource.czmlDataSource",
+      "category": "External data sources / interop",
+      "sdjKind": "czmlDataSource",
+      "description": "Import/load external CZML",
+      "status": {
+        "schema": "existing",
+        "example": "needed",
+        "cesiumRuntime": "reserved",
+        "simdisExport": "partial",
+        "soapExport": "partial"
+      },
+      "priority": "P1",
+      "notes": ""
+    },
+    {
+      "id": "datasource.geoJsonDataSource",
+      "category": "External data sources / interop",
+      "sdjKind": "geoJsonDataSource",
+      "description": "Import/load GeoJSON",
+      "status": {
+        "schema": "existing",
+        "example": "needed",
+        "cesiumRuntime": "reserved",
+        "simdisExport": "partial",
+        "soapExport": "partial"
+      },
+      "priority": "P1",
+      "notes": ""
+    },
+    {
+      "id": "datasource.kmlDataSource",
+      "category": "External data sources / interop",
+      "sdjKind": "kmlDataSource",
+      "description": "Import/load KML/KMZ",
+      "status": {
+        "schema": "existing",
+        "example": "needed",
+        "cesiumRuntime": "reserved",
+        "simdisExport": "partial",
+        "soapExport": "partial"
+      },
+      "priority": "P1",
+      "notes": ""
+    },
+    {
+      "id": "datasource.customDataSource",
+      "category": "External data sources / interop",
+      "sdjKind": "customDataSource",
+      "description": "Custom entity data source",
+      "status": {
+        "schema": "existing",
+        "example": "needed",
+        "cesiumRuntime": "reserved",
+        "simdisExport": "partial",
+        "soapExport": "partial"
+      },
+      "priority": "P1",
+      "notes": ""
+    },
+    {
+      "id": "datasource.dataSourceCollection",
+      "category": "External data sources / interop",
+      "sdjKind": "dataSourceCollection",
+      "description": "Collection of data source references",
+      "status": {
+        "schema": "existing",
+        "example": "needed",
+        "cesiumRuntime": "reserved",
+        "simdisExport": "partial",
+        "soapExport": "partial"
+      },
+      "priority": "P1",
+      "notes": ""
+    },
+    {
+      "id": "datasource.assetManifest",
+      "category": "External data sources / interop",
+      "sdjKind": "assetManifest",
+      "description": "Asset manifests for backend bundles",
+      "status": {
+        "schema": "existing",
+        "example": "needed",
+        "cesiumRuntime": "reserved",
+        "simdisExport": "partial",
+        "soapExport": "partial"
+      },
+      "priority": "P1",
+      "notes": ""
+    },
+    {
+      "id": "analysis.accessIntervals",
+      "category": "Analysis products",
+      "sdjKind": "accessIntervals",
+      "description": "Visibility/access intervals",
+      "status": {
+        "schema": "existing",
+        "example": "mixed",
+        "cesiumRuntime": "partial",
+        "simdisExport": "strong",
+        "soapExport": "strong"
+      },
+      "priority": "P1",
+      "notes": ""
+    },
+    {
+      "id": "analysis.lineOfSightSamples",
+      "category": "Analysis products",
+      "sdjKind": "lineOfSightSamples",
+      "description": "LOS sampled results",
+      "status": {
+        "schema": "existing",
+        "example": "mixed",
+        "cesiumRuntime": "partial",
+        "simdisExport": "strong",
+        "soapExport": "strong"
+      },
+      "priority": "P1",
+      "notes": ""
+    },
+    {
+      "id": "analysis.rfLinkBudget",
+      "category": "Analysis products",
+      "sdjKind": "rfLinkBudget",
+      "description": "RF link budget result",
+      "status": {
+        "schema": "existing",
+        "example": "mixed",
+        "cesiumRuntime": "partial",
+        "simdisExport": "strong",
+        "soapExport": "strong"
+      },
+      "priority": "P1",
+      "notes": ""
+    },
+    {
+      "id": "analysis.coverageGrid",
+      "category": "Analysis products",
+      "sdjKind": "coverageGrid",
+      "description": "Coverage grid/raster/vector result",
+      "status": {
+        "schema": "existing",
+        "example": "mixed",
+        "cesiumRuntime": "partial",
+        "simdisExport": "strong",
+        "soapExport": "strong"
+      },
+      "priority": "P1",
+      "notes": ""
+    },
+    {
+      "id": "analysis.sensorSwath",
+      "category": "Analysis products",
+      "sdjKind": "sensorSwath",
+      "description": "Sensor swath analysis",
+      "status": {
+        "schema": "existing",
+        "example": "mixed",
+        "cesiumRuntime": "partial",
+        "simdisExport": "strong",
+        "soapExport": "strong"
+      },
+      "priority": "P1",
+      "notes": ""
+    },
+    {
+      "id": "analysis.closeApproach",
+      "category": "Analysis products",
+      "sdjKind": "closeApproach",
+      "description": "Closest approach report",
+      "status": {
+        "schema": "existing",
+        "example": "mixed",
+        "cesiumRuntime": "partial",
+        "simdisExport": "strong",
+        "soapExport": "strong"
+      },
+      "priority": "P1",
+      "notes": ""
+    },
+    {
+      "id": "analysis.rangeReport",
+      "category": "Analysis products",
+      "sdjKind": "rangeReport",
+      "description": "Range report",
+      "status": {
+        "schema": "existing",
+        "example": "mixed",
+        "cesiumRuntime": "partial",
+        "simdisExport": "strong",
+        "soapExport": "strong"
+      },
+      "priority": "P1",
+      "notes": ""
+    },
+    {
+      "id": "analysis.rangePlot",
+      "category": "Analysis products",
+      "sdjKind": "rangePlot",
+      "description": "Range plot",
+      "status": {
+        "schema": "existing",
+        "example": "mixed",
+        "cesiumRuntime": "partial",
+        "simdisExport": "strong",
+        "soapExport": "strong"
+      },
+      "priority": "P1",
+      "notes": ""
+    },
+    {
+      "id": "analysis.platformDataTable",
+      "category": "Analysis products",
+      "sdjKind": "platformDataTable",
+      "description": "Platform/state data table",
+      "status": {
+        "schema": "existing",
+        "example": "mixed",
+        "cesiumRuntime": "partial",
+        "simdisExport": "strong",
+        "soapExport": "strong"
+      },
+      "priority": "P1",
+      "notes": ""
+    },
+    {
+      "id": "analysis.communicationLink",
+      "category": "Analysis products",
+      "sdjKind": "communicationLink",
+      "description": "Comms link",
+      "status": {
+        "schema": "existing",
+        "example": "mixed",
+        "cesiumRuntime": "partial",
+        "simdisExport": "strong",
+        "soapExport": "strong"
+      },
+      "priority": "P1",
+      "notes": ""
+    },
+    {
+      "id": "analysis.parametricStudy",
+      "category": "Analysis products",
+      "sdjKind": "parametricStudy",
+      "description": "Parametric study",
+      "status": {
+        "schema": "existing",
+        "example": "mixed",
+        "cesiumRuntime": "partial",
+        "simdisExport": "strong",
+        "soapExport": "strong"
+      },
+      "priority": "P1",
+      "notes": ""
+    },
+    {
+      "id": "analysis.deltaV",
+      "category": "Analysis products",
+      "sdjKind": "deltaV",
+      "description": "Delta-v/maneuver output",
+      "status": {
+        "schema": "proposed",
+        "example": "mixed",
+        "cesiumRuntime": "partial",
+        "simdisExport": "strong",
+        "soapExport": "strong"
+      },
+      "priority": "P1",
+      "notes": ""
+    },
+    {
+      "id": "analysis.isochrones",
+      "category": "Analysis products",
+      "sdjKind": "isochrones",
+      "description": "Isochrone regions",
+      "status": {
+        "schema": "proposed",
+        "example": "mixed",
+        "cesiumRuntime": "partial",
+        "simdisExport": "strong",
+        "soapExport": "strong"
+      },
+      "priority": "P1",
+      "notes": ""
+    },
+    {
+      "id": "analysis.contours",
+      "category": "Analysis products",
+      "sdjKind": "contours",
+      "description": "Contour output",
+      "status": {
+        "schema": "proposed",
+        "example": "mixed",
+        "cesiumRuntime": "partial",
+        "simdisExport": "strong",
+        "soapExport": "strong"
+      },
+      "priority": "P1",
+      "notes": ""
+    },
+    {
+      "id": "presentation.view",
+      "category": "Presentation / debrief UI",
+      "sdjKind": "view",
+      "description": "World/camera view",
+      "status": {
+        "schema": "existing",
+        "example": "mixed",
+        "cesiumRuntime": "partial",
+        "simdisExport": "strong",
+        "soapExport": "strong"
+      },
+      "priority": "P1",
+      "notes": ""
+    },
+    {
+      "id": "presentation.viewport",
+      "category": "Presentation / debrief UI",
+      "sdjKind": "viewport",
+      "description": "Viewport inside a UI/palette",
+      "status": {
+        "schema": "proposed",
+        "example": "mixed",
+        "cesiumRuntime": "partial",
+        "simdisExport": "strong",
+        "soapExport": "strong"
+      },
+      "priority": "P1",
+      "notes": ""
+    },
+    {
+      "id": "presentation.palette",
+      "category": "Presentation / debrief UI",
+      "sdjKind": "palette",
+      "description": "Multi-view layout",
+      "status": {
+        "schema": "proposed",
+        "example": "mixed",
+        "cesiumRuntime": "partial",
+        "simdisExport": "strong",
+        "soapExport": "strong"
+      },
+      "priority": "P1",
+      "notes": ""
+    },
+    {
+      "id": "presentation.slide",
+      "category": "Presentation / debrief UI",
+      "sdjKind": "slide",
+      "description": "Time-bounded presentation slide",
+      "status": {
+        "schema": "existing",
+        "example": "mixed",
+        "cesiumRuntime": "partial",
+        "simdisExport": "strong",
+        "soapExport": "strong"
+      },
+      "priority": "P1",
+      "notes": ""
+    },
+    {
+      "id": "presentation.presentation",
+      "category": "Presentation / debrief UI",
+      "sdjKind": "presentation",
+      "description": "Presentation sequence",
+      "status": {
+        "schema": "existing",
+        "example": "mixed",
+        "cesiumRuntime": "partial",
+        "simdisExport": "strong",
+        "soapExport": "strong"
+      },
+      "priority": "P1",
+      "notes": ""
+    },
+    {
+      "id": "presentation.cameraAction",
+      "category": "Presentation / debrief UI",
+      "sdjKind": "cameraAction",
+      "description": "Scripted camera action",
+      "status": {
+        "schema": "existing",
+        "example": "mixed",
+        "cesiumRuntime": "partial",
+        "simdisExport": "strong",
+        "soapExport": "strong"
+      },
+      "priority": "P1",
+      "notes": ""
+    },
+    {
+      "id": "presentation.bookmark",
+      "category": "Presentation / debrief UI",
+      "sdjKind": "bookmark",
+      "description": "Named camera/time bookmark",
+      "status": {
+        "schema": "existing",
+        "example": "mixed",
+        "cesiumRuntime": "partial",
+        "simdisExport": "strong",
+        "soapExport": "strong"
+      },
+      "priority": "P1",
+      "notes": ""
+    },
+    {
+      "id": "presentation.popup",
+      "category": "Presentation / debrief UI",
+      "sdjKind": "popup",
+      "description": "Popup/hover details",
+      "status": {
+        "schema": "existing",
+        "example": "mixed",
+        "cesiumRuntime": "partial",
+        "simdisExport": "strong",
+        "soapExport": "strong"
+      },
+      "priority": "P1",
+      "notes": ""
+    },
+    {
+      "id": "presentation.banner",
+      "category": "Presentation / debrief UI",
+      "sdjKind": "banner",
+      "description": "Classification/banner overlay",
+      "status": {
+        "schema": "existing",
+        "example": "mixed",
+        "cesiumRuntime": "partial",
+        "simdisExport": "strong",
+        "soapExport": "strong"
+      },
+      "priority": "P1",
+      "notes": ""
+    },
+    {
+      "id": "presentation.hudOverlay",
+      "category": "Presentation / debrief UI",
+      "sdjKind": "hudOverlay",
+      "description": "Screen-space HUD overlay",
+      "status": {
+        "schema": "proposed",
+        "example": "mixed",
+        "cesiumRuntime": "partial",
+        "simdisExport": "strong",
+        "soapExport": "strong"
+      },
+      "priority": "P1",
+      "notes": ""
+    },
+    {
+      "id": "presentation.movie",
+      "category": "Presentation / debrief UI",
+      "sdjKind": "movie",
+      "description": "Movie/render export",
+      "status": {
+        "schema": "proposed",
+        "example": "mixed",
+        "cesiumRuntime": "partial",
+        "simdisExport": "strong",
+        "soapExport": "strong"
+      },
+      "priority": "P1",
+      "notes": ""
+    },
+    {
+      "id": "presentation.reportView",
+      "category": "Presentation / debrief UI",
+      "sdjKind": "reportView",
+      "description": "Report view",
+      "status": {
+        "schema": "existing",
+        "example": "mixed",
+        "cesiumRuntime": "partial",
+        "simdisExport": "strong",
+        "soapExport": "strong"
+      },
+      "priority": "P1",
+      "notes": ""
+    },
+    {
+      "id": "presentation.plotView",
+      "category": "Presentation / debrief UI",
+      "sdjKind": "plotView",
+      "description": "Plot view",
+      "status": {
+        "schema": "existing",
+        "example": "mixed",
+        "cesiumRuntime": "partial",
+        "simdisExport": "strong",
+        "soapExport": "strong"
+      },
+      "priority": "P1",
+      "notes": ""
+    },
+    {
+      "id": "presentation.dataView",
+      "category": "Presentation / debrief UI",
+      "sdjKind": "dataView",
+      "description": "Data table view",
+      "status": {
+        "schema": "existing",
+        "example": "mixed",
+        "cesiumRuntime": "partial",
+        "simdisExport": "strong",
+        "soapExport": "strong"
+      },
+      "priority": "P1",
+      "notes": ""
+    },
+    {
+      "id": "backend.rendererHints",
+      "category": "Backend bindings / compiler contracts",
+      "sdjKind": "rendererHints",
+      "description": "Preferred backends and fallbacks",
+      "status": {
+        "schema": "existing",
+        "example": "mixed",
+        "cesiumRuntime": "strong",
+        "simdisExport": "strong",
+        "soapExport": "strong"
+      },
+      "priority": "P0",
+      "notes": ""
+    },
+    {
+      "id": "backend.backendNative",
+      "category": "Backend bindings / compiler contracts",
+      "sdjKind": "backendNative",
+      "description": "Raw native per-backend escape hatch",
+      "status": {
+        "schema": "proposed",
+        "example": "mixed",
+        "cesiumRuntime": "strong",
+        "simdisExport": "strong",
+        "soapExport": "strong"
+      },
+      "priority": "P0",
+      "notes": ""
+    },
+    {
+      "id": "backend.capabilityMatrix",
+      "category": "Backend bindings / compiler contracts",
+      "sdjKind": "capabilityMatrix",
+      "description": "Backend support matrix",
+      "status": {
+        "schema": "existing",
+        "example": "mixed",
+        "cesiumRuntime": "strong",
+        "simdisExport": "strong",
+        "soapExport": "strong"
+      },
+      "priority": "P0",
+      "notes": ""
+    },
+    {
+      "id": "backend.compileDiagnostics",
+      "category": "Backend bindings / compiler contracts",
+      "sdjKind": "compileDiagnostics",
+      "description": "Lossiness/error/warning diagnostics",
+      "status": {
+        "schema": "existing",
+        "example": "mixed",
+        "cesiumRuntime": "strong",
+        "simdisExport": "strong",
+        "soapExport": "strong"
+      },
+      "priority": "P0",
+      "notes": ""
+    },
+    {
+      "id": "backend.artifactManifest",
+      "category": "Backend bindings / compiler contracts",
+      "sdjKind": "artifactManifest",
+      "description": "Output bundle manifest",
+      "status": {
+        "schema": "existing",
+        "example": "mixed",
+        "cesiumRuntime": "strong",
+        "simdisExport": "strong",
+        "soapExport": "strong"
+      },
+      "priority": "P0",
+      "notes": ""
+    },
+    {
+      "id": "backend.unrealBinding",
+      "category": "Backend bindings / compiler contracts",
+      "sdjKind": "unrealBinding",
+      "description": "Future Unreal binding",
+      "status": {
+        "schema": "proposed",
+        "example": "mixed",
+        "cesiumRuntime": "strong",
+        "simdisExport": "strong",
+        "soapExport": "strong"
+      },
+      "priority": "P3",
+      "notes": ""
+    },
+    {
+      "id": "backend.tgxBinding",
+      "category": "Backend bindings / compiler contracts",
+      "sdjKind": "tgxBinding",
+      "description": "Future TGx binding",
+      "status": {
+        "schema": "proposed",
+        "example": "mixed",
+        "cesiumRuntime": "strong",
+        "simdisExport": "strong",
+        "soapExport": "strong"
+      },
+      "priority": "P3",
+      "notes": ""
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "schemaVersion": "1.0.0-scene",
+  "document": {
+    "id": "orb-format-collection__soap15__util__region-utility__regions-example",
+    "name": "regions_example",
+    "source": "orb_format_collection/soap15/util/region_utility/regions_example.orb"
+  },
+  "objects": []
+}

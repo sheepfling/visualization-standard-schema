@@ -1,0 +1,270 @@
+{
+  "$defs": {
+    "EntityCategory": {
+      "enum": [
+        "air",
+        "ground",
+        "surface",
+        "subsurface",
+        "space",
+        "sensor",
+        "overlay",
+        "other"
+      ],
+      "title": "EntityCategory",
+      "type": "string"
+    },
+    "EntityUpsertPayload": {
+      "additionalProperties": false,
+      "properties": {
+        "entityId": {
+          "minLength": 1,
+          "title": "Entityid",
+          "type": "string"
+        },
+        "name": {
+          "minLength": 1,
+          "title": "Name",
+          "type": "string"
+        },
+        "category": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/EntityCategory"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "position": {
+          "$ref": "#/$defs/Wgs84Position"
+        },
+        "orientation": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Orientation"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "style": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Style"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "attributes": {
+          "additionalProperties": true,
+          "title": "Attributes",
+          "type": "object"
+        }
+      },
+      "required": [
+        "entityId",
+        "name",
+        "position"
+      ],
+      "title": "EntityUpsertPayload",
+      "type": "object"
+    },
+    "Orientation": {
+      "additionalProperties": false,
+      "properties": {
+        "headingDeg": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Headingdeg"
+        },
+        "pitchDeg": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Pitchdeg"
+        },
+        "rollDeg": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Rolldeg"
+        }
+      },
+      "title": "Orientation",
+      "type": "object"
+    },
+    "Style": {
+      "additionalProperties": false,
+      "properties": {
+        "label": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Label"
+        },
+        "iconUri": {
+          "anyOf": [
+            {
+              "format": "uri",
+              "maxLength": 2083,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Iconuri"
+        },
+        "modelUri": {
+          "anyOf": [
+            {
+              "format": "uri",
+              "maxLength": 2083,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Modeluri"
+        },
+        "colorRgba": {
+          "anyOf": [
+            {
+              "maxItems": 4,
+              "minItems": 4,
+              "prefixItems": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "integer"
+                }
+              ],
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Colorrgba"
+        }
+      },
+      "title": "Style",
+      "type": "object"
+    },
+    "Wgs84Position": {
+      "additionalProperties": false,
+      "properties": {
+        "longitudeDeg": {
+          "maximum": 180,
+          "minimum": -180,
+          "title": "Longitudedeg",
+          "type": "number"
+        },
+        "latitudeDeg": {
+          "maximum": 90,
+          "minimum": -90,
+          "title": "Latitudedeg",
+          "type": "number"
+        },
+        "altitudeM": {
+          "title": "Altitudem",
+          "type": "number"
+        }
+      },
+      "required": [
+        "longitudeDeg",
+        "latitudeDeg",
+        "altitudeM"
+      ],
+      "title": "Wgs84Position",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schemaVersion": {
+      "const": "1.0.0",
+      "title": "Schemaversion",
+      "type": "string"
+    },
+    "messageType": {
+      "const": "entity.upsert",
+      "title": "Messagetype",
+      "type": "string"
+    },
+    "messageId": {
+      "minLength": 1,
+      "title": "Messageid",
+      "type": "string"
+    },
+    "timestamp": {
+      "format": "date-time",
+      "title": "Timestamp",
+      "type": "string"
+    },
+    "source": {
+      "minLength": 1,
+      "title": "Source",
+      "type": "string"
+    },
+    "payload": {
+      "$ref": "#/$defs/EntityUpsertPayload"
+    }
+  },
+  "required": [
+    "schemaVersion",
+    "messageType",
+    "messageId",
+    "timestamp",
+    "source",
+    "payload"
+  ],
+  "title": "EntityUpsertMessage",
+  "type": "object"
+}

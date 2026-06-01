@@ -1,0 +1,340 @@
+{
+  "schemaVersion": "1.0.0-scene",
+  "document": {
+    "id": "orb-format-collection__soap15__scenarios__contour-revisit-ex",
+    "name": "contour_revisit_ex",
+    "source": "orb_format_collection/soap15/scenarios/contour_revisit_ex.orb"
+  },
+  "objects": [
+    {
+      "id": ".Earth CR Observer",
+      "name": ".Earth CR Observer",
+      "attributes": {
+        "platform_type": "ECR_FIXED",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/contour_revisit_ex.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": 66.0,
+        "latitudeDeg": 34.0005729578,
+        "altitudeM": 63781.369999999995
+      }
+    },
+    {
+      "id": ".Earth CR Observer 1",
+      "name": ".Earth CR Observer 1",
+      "attributes": {
+        "platform_type": "ECR_FIXED",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/contour_revisit_ex.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": 66.0,
+        "latitudeDeg": 32.0005729578,
+        "altitudeM": 63781.369999999995
+      }
+    },
+    {
+      "id": ".Earth CR Observer 10",
+      "name": ".Earth CR Observer 10",
+      "attributes": {
+        "platform_type": "ECR_FIXED",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/contour_revisit_ex.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": 66.0,
+        "latitudeDeg": 34.0005729578,
+        "altitudeM": 63781.369999999995
+      }
+    },
+    {
+      "id": ".Earth CR Observer 11",
+      "name": ".Earth CR Observer 11",
+      "attributes": {
+        "platform_type": "ECR_FIXED",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/contour_revisit_ex.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": 66.0,
+        "latitudeDeg": 34.0005729578,
+        "altitudeM": 63781.369999999995
+      }
+    },
+    {
+      "id": ".Earth CR Observer 12",
+      "name": ".Earth CR Observer 12",
+      "attributes": {
+        "platform_type": "ECR_FIXED",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/contour_revisit_ex.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": 66.0,
+        "latitudeDeg": 34.0005729578,
+        "altitudeM": 63781.369999999995
+      }
+    },
+    {
+      "id": ".Earth CR Observer 13",
+      "name": ".Earth CR Observer 13",
+      "attributes": {
+        "platform_type": "ECR_FIXED",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/contour_revisit_ex.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": 66.0,
+        "latitudeDeg": 34.0005729578,
+        "altitudeM": 63781.369999999995
+      }
+    },
+    {
+      "id": ".Earth CR Observer 14",
+      "name": ".Earth CR Observer 14",
+      "attributes": {
+        "platform_type": "ECR_FIXED",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/contour_revisit_ex.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": 64.0,
+        "latitudeDeg": 34.0005729578,
+        "altitudeM": 63781.369999999995
+      }
+    },
+    {
+      "id": ".Earth CR Observer 2",
+      "name": ".Earth CR Observer 2",
+      "attributes": {
+        "platform_type": "ECR_FIXED",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/contour_revisit_ex.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": 66.0,
+        "latitudeDeg": 34.0005729578,
+        "altitudeM": 63781.369999999995
+      }
+    },
+    {
+      "id": ".Earth CR Observer 3",
+      "name": ".Earth CR Observer 3",
+      "attributes": {
+        "platform_type": "ECR_FIXED",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/contour_revisit_ex.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": 66.0,
+        "latitudeDeg": 30.0005729578,
+        "altitudeM": 63781.369999999995
+      }
+    },
+    {
+      "id": ".Earth CR Observer 4",
+      "name": ".Earth CR Observer 4",
+      "attributes": {
+        "platform_type": "ECR_FIXED",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/contour_revisit_ex.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": 76.0,
+        "latitudeDeg": 30.0005729578,
+        "altitudeM": 63781.369999999995
+      }
+    },
+    {
+      "id": ".Earth CR Observer 5",
+      "name": ".Earth CR Observer 5",
+      "attributes": {
+        "platform_type": "ECR_FIXED",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/contour_revisit_ex.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": 66.0,
+        "latitudeDeg": 34.0005729578,
+        "altitudeM": 63781.369999999995
+      }
+    },
+    {
+      "id": ".Earth CR Observer 6",
+      "name": ".Earth CR Observer 6",
+      "attributes": {
+        "platform_type": "ECR_FIXED",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/contour_revisit_ex.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": 66.0,
+        "latitudeDeg": 34.0005729578,
+        "altitudeM": 63781.369999999995
+      }
+    },
+    {
+      "id": ".Earth CR Observer 7",
+      "name": ".Earth CR Observer 7",
+      "attributes": {
+        "platform_type": "ECR_FIXED",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/contour_revisit_ex.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": 66.0,
+        "latitudeDeg": 34.0005729578,
+        "altitudeM": 63781.369999999995
+      }
+    },
+    {
+      "id": ".Earth CR Observer 8",
+      "name": ".Earth CR Observer 8",
+      "attributes": {
+        "platform_type": "ECR_FIXED",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/contour_revisit_ex.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": 66.0,
+        "latitudeDeg": 34.0005729578,
+        "altitudeM": 63781.369999999995
+      }
+    },
+    {
+      "id": ".Earth CR Observer 9",
+      "name": ".Earth CR Observer 9",
+      "attributes": {
+        "platform_type": "ECR_FIXED",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/contour_revisit_ex.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": 66.0,
+        "latitudeDeg": 34.0005729578,
+        "altitudeM": 63781.369999999995
+      }
+    },
+    {
+      "id": ".Earth Ground",
+      "name": ".Earth Ground",
+      "attributes": {
+        "platform_type": "ECR_FIXED",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/contour_revisit_ex.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": -99.0,
+        "latitudeDeg": 38.0,
+        "altitudeM": 0.0
+      }
+    },
+    {
+      "id": ".Earth Ground Observer",
+      "name": ".Earth Ground Observer",
+      "attributes": {
+        "platform_type": "ECR_FIXED",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/contour_revisit_ex.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": 90.0,
+        "latitudeDeg": 0.0005729577951308,
+        "altitudeM": 0.0
+      }
+    },
+    {
+      "id": ".Earth Polar Observer",
+      "name": ".Earth Polar Observer",
+      "attributes": {
+        "platform_type": "ECR_FIXED",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/contour_revisit_ex.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": 0.0,
+        "latitudeDeg": 90.0,
+        "altitudeM": 63781.369999999995
+      }
+    },
+    {
+      "id": "O",
+      "name": "O",
+      "attributes": {
+        "platform_type": "ECR_FIXED",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/contour_revisit_ex.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": 71.4999996,
+        "latitudeDeg": 36.4999997,
+        "altitudeM": 0.0
+      }
+    },
+    {
+      "id": "Pak",
+      "name": "Pak",
+      "attributes": {
+        "platform_type": "ECR_FIXED",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/contour_revisit_ex.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": 70.0,
+        "latitudeDeg": 29.999999999999996,
+        "altitudeM": 0.0
+      }
+    },
+    {
+      "id": "Percent True Over-Time2_Ctr",
+      "name": "Percent True Over-Time2_Ctr",
+      "attributes": {
+        "platform_type": "ECR_FIXED",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/contour_revisit_ex.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": 69.0,
+        "latitudeDeg": 32.0,
+        "altitudeM": 0.0
+      }
+    },
+    {
+      "id": "PercentTimeTrue_Ctr",
+      "name": "PercentTimeTrue_Ctr",
+      "attributes": {
+        "platform_type": "ECR_FIXED",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/contour_revisit_ex.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": 69.0,
+        "latitudeDeg": 32.0,
+        "altitudeM": 0.0
+      }
+    }
+  ]
+}

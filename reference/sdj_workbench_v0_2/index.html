@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SDJ Workbench</title>
+  <script src="https://cesium.com/downloads/cesiumjs/releases/1.141/Build/Cesium/Cesium.js"></script>
+  <link href="https://cesium.com/downloads/cesiumjs/releases/1.141/Build/Cesium/Widgets/widgets.css" rel="stylesheet">
+  <link href="./src/styles.css" rel="stylesheet">
+</head>
+<body>
+  <main id="cesiumContainer" aria-label="Cesium viewer"></main>
+
+  <section class="app-topbar" aria-label="Application toolbar">
+    <div class="brand">
+      <strong>SDJ Workbench</strong>
+      <span>Drop JSON → validate → render in Cesium → export to SOAP / SIMDIS</span>
+    </div>
+    <span id="statusText" class="status-pill neutral">Initializing...</span>
+    <div class="topbar-actions">
+      <button id="drawerToggle" type="button">Toggle Drawer</button>
+      <button id="renderButton" class="primary" type="button">Render SDJ</button>
+      <button id="validateButton" type="button">Validate</button>
+      <button id="clearButton" class="danger" type="button">Clear Render</button>
+    </div>
+  </section>
+
+  <aside id="drawer" class="drawer" aria-label="SDJ control drawer">
+    <header class="drawer-header">
+      <h1>Scene JSON</h1>
+      <p>Paste, upload, or drop an SDJ document. The workbench normalizes it, compiles support plans, and renders supported objects through Cesium.</p>
+    </header>
+
+    <div class="drawer-body">
+      <section class="drawer-section">
+        <h2>Exposed SDJ scenes</h2>
+        <p id="sceneCatalogSummary" class="section-help">Loading exposed SDJ scenes...</p>
+        <input id="sceneCatalogFilter" type="search" placeholder="Filter exposed scenes by name, group, or source">
+        <select id="sceneCatalogSelect" class="scene-catalog-select" size="10" aria-label="Exposed SDJ scene catalog"></select>
+        <div class="button-row">
+          <button id="loadSelectedSceneButton" class="primary" type="button">Load Selected Scene</button>
+          <button id="loadFeaturedSceneButton" type="button">Load Featured Scene</button>
+        </div>
+      </section>
+
+      <section class="drawer-section">
+        <h2>Examples and input</h2>
+        <div class="button-row">
+          <button id="loadMinimalButton" type="button">Load Minimal Example</button>
+          <button id="loadFullButton" type="button">Load Full Coverage Example</button>
+          <button id="formatButton" type="button">Format JSON</button>
+        </div>
+        <input id="fileInput" class="file-input" type="file" accept="application/json,.json">
+        <div id="dropZone" class="drop-zone">Drop SDJ JSON here</div>
+      </section>
+
+      <section class="drawer-section">
+        <h2>Cesium ion</h2>
+        <label>
+          Access token, optional for ion assets/world terrain
+          <div class="token-row">
+            <input id="ionTokenInput" type="password" autocomplete="off" placeholder="Paste token for ion assets">
+            <button id="saveTokenButton" type="button">Save</button>
+          </div>
+        </label>
+      </section>
+
+      <section class="drawer-section">
+        <h2>Editor</h2>
+        <textarea id="jsonEditor" spellcheck="false" aria-label="SDJ JSON editor"></textarea>
+      </section>
+
+      <section class="drawer-section">
+        <h2>Export</h2>
+        <div class="button-row">
+          <button id="exportSdjButton" type="button">Download SDJ</button>
+          <button id="exportCesiumButton" type="button">Export Cesium ZIP</button>
+          <button id="exportSimdisButton" type="button">Export SIMDIS ZIP</button>
+          <button id="exportSoapButton" type="button">Export SOAP ZIP</button>
+          <button id="exportAllButton" type="button">Export All ZIP</button>
+        </div>
+      </section>
+
+      <section class="drawer-section">
+        <h2>Backend support totals</h2>
+        <div id="totalsPanel" class="panels-grid"></div>
+      </section>
+
+      <section class="drawer-section">
+        <h2>Diagnostics</h2>
+        <div id="diagnosticsPanel" class="diagnostics"></div>
+      </section>
+
+      <section class="drawer-section">
+        <h2>Object coverage</h2>
+        <div class="object-tools">
+          <input id="objectFilter" type="search" placeholder="Filter object id, kind, or name">
+        </div>
+        <div class="object-table-wrapper">
+          <table class="object-table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Kind</th>
+                <th>Name</th>
+                <th>Backend support</th>
+              </tr>
+            </thead>
+            <tbody id="objectTableBody"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="drawer-section inspector-section" aria-label="Backend capability inspector">
+        <div class="section-title-row">
+          <h2>Backend inspector</h2>
+        </div>
+        <p class="section-help">Select any SDJ object to see how it maps to Cesium, SIMDIS, and SOAP, including support level, native target, artifact path, and per-target diagnostics.</p>
+        <div class="button-row">
+          <button id="zoomSelectedButton" type="button">Zoom Selected</button>
+          <button id="copyInspectorButton" type="button">Copy Mapping JSON</button>
+          <button id="downloadInspectorButton" type="button">Download Mapping JSON</button>
+        </div>
+        <div id="inspectorPanel" class="inspector-panel"></div>
+      </section>
+    </div>
+  </aside>
+
+  <div id="selectedObject" class="selected-object">No object selected</div>
+
+  <script src="./vendor/sdj_cesium_loader_v0_4.js"></script>
+  <script type="module" src="./src/app.js"></script>
+</body>
+</html>

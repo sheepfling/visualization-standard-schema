@@ -1,0 +1,85 @@
+{
+  "schemaVersion": "1.0.0-scene",
+  "document": {
+    "id": "orb-format-collection__soap15__scenarios__ae9ap9-radiation-examples__protons-saa-700km",
+    "name": "Protons SAA 700km",
+    "source": "orb_format_collection/soap15/scenarios/ae9ap9_radiation_examples/Protons SAA 700km.orb"
+  },
+  "objects": [
+    {
+      "id": ".Earth CR Observer",
+      "name": ".Earth CR Observer",
+      "attributes": {
+        "platform_type": "ECR_FIXED",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/ae9ap9_radiation_examples/Protons SAA 700km.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": -10.000000000000007,
+        "latitudeDeg": 38.000572957795136,
+        "altitudeM": 63781.369999999995
+      }
+    },
+    {
+      "id": ".Earth Ground",
+      "name": ".Earth Ground",
+      "attributes": {
+        "platform_type": "ECR_FIXED",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/ae9ap9_radiation_examples/Protons SAA 700km.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": -99.0,
+        "latitudeDeg": 38.0,
+        "altitudeM": 0.0
+      }
+    },
+    {
+      "id": ".Earth Ground Observer",
+      "name": ".Earth Ground Observer",
+      "attributes": {
+        "platform_type": "ECR_FIXED",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/ae9ap9_radiation_examples/Protons SAA 700km.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": 90.0,
+        "latitudeDeg": 0.0005729577951308233,
+        "altitudeM": 0.0
+      }
+    },
+    {
+      "id": ".Earth Polar Observer",
+      "name": ".Earth Polar Observer",
+      "attributes": {
+        "platform_type": "ECR_FIXED",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/ae9ap9_radiation_examples/Protons SAA 700km.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": 0.0,
+        "latitudeDeg": 90.0,
+        "altitudeM": 63781.369999999995
+      }
+    },
+    {
+      "id": "SAA_GRID_Ctr",
+      "name": "SAA_GRID_Ctr",
+      "attributes": {
+        "platform_type": "ECR_FIXED",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/ae9ap9_radiation_examples/Protons SAA 700km.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": 180.0,
+        "latitudeDeg": 0.0,
+        "altitudeM": 0.0
+      }
+    }
+  ]
+}

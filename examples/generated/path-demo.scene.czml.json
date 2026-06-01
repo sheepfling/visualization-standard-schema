@@ -1,0 +1,94 @@
+[
+  {
+    "id": "document",
+    "name": "Path Demo",
+    "version": "1.0"
+  },
+  {
+    "id": "track-001-path",
+    "name": "Track 001 Path",
+    "availability": "2026-06-01T12:00:00+00:00/2026-06-01T12:06:00+00:00",
+    "position": {
+      "epoch": "2026-06-01T12:00:00+00:00",
+      "cartographicDegrees": [
+        0.0,
+        -97.74,
+        30.26,
+        9000.0,
+        180.0,
+        -97.62,
+        30.34,
+        9200.0,
+        360.0,
+        -97.51,
+        30.41,
+        9600.0
+      ]
+    },
+    "path": {
+      "leadTime": 0,
+      "trailTime": 300,
+      "width": 3.5,
+      "show": true,
+      "resolution": 60,
+      "material": {
+        "solidColor": {
+          "color": {
+            "rgba": [
+              69,
+              142,
+              255,
+              255
+            ]
+          }
+        }
+      },
+      "clampToGround": false
+    },
+    "point": {
+      "pixelSize": 8,
+      "outlineWidth": 1,
+      "color": {
+        "rgba": [
+          69,
+          142,
+          255,
+          255
+        ]
+      },
+      "outlineColor": {
+        "rgba": [
+          255,
+          255,
+          255,
+          255
+        ]
+      }
+    },
+    "properties": {
+      "callsign": "PATH1",
+      "sourceTrack": "aircraft-001",
+      "objectType": "path",
+      "category": "path",
+      "source": "sim.example.flight-sim"
+    },
+    "label": {
+      "text": "Track 001",
+      "horizontalOrigin": "LEFT",
+      "pixelOffset": {
+        "cartesian2": [
+          12,
+          0
+        ]
+      },
+      "fillColor": {
+        "rgba": [
+          69,
+          142,
+          255,
+          255
+        ]
+      }
+    }
+  }
+]

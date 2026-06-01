@@ -1,0 +1,193 @@
+{
+  "target": "soap",
+  "source": "orb-format-collection__soap15__scenarios__collision-probability__26207-7219-encounter",
+  "manifest": {
+    "target": "soap",
+    "source": "orb-format-collection__soap15__scenarios__collision-probability__26207-7219-encounter",
+    "mode": "scene-to-scenario+scene-to-analysis+scene-to-presentation",
+    "profiles": [],
+    "artifacts": [
+      {
+        "kind": "manifest",
+        "path": "soap/manifest.json"
+      },
+      {
+        "kind": "scenario",
+        "path": "soap/scenario.json"
+      },
+      {
+        "kind": "views",
+        "path": "soap/views.json"
+      },
+      {
+        "kind": "analysis",
+        "path": "soap/analysis.json"
+      },
+      {
+        "kind": "presentation",
+        "path": "soap/presentation.json"
+      },
+      {
+        "kind": "assetManifest",
+        "path": "soap/assets.json"
+      },
+      {
+        "kind": "diagnostics",
+        "path": "soap/diagnostics.json"
+      }
+    ],
+    "totals": {
+      "platforms": 4,
+      "trajectories": 0,
+      "models": 0,
+      "sensorSwaths": 0,
+      "overlays": 0
+    }
+  },
+  "scenario": {
+    "id": "orb-format-collection__soap15__scenarios__collision-probability__26207-7219-encounter",
+    "name": "26207-7219 encounter",
+    "clock": {},
+    "units": {},
+    "platforms": [
+      {
+        "id": ".Earth Ground",
+        "name": ".Earth Ground",
+        "kind": "Platform",
+        "initialState": {
+          "frame": "cartographicDegrees",
+          "lon": -99.0,
+          "lat": 38.0,
+          "alt": 0.0
+        },
+        "properties": {
+          "platform_type": "ECR_FIXED",
+          "orbArchiveMember": "orb_format_collection/soap15/scenarios/collision_probability/26207-7219 encounter.orb",
+          "source": "orb-scenario"
+        }
+      },
+      {
+        "id": ".Earth Ground Observer",
+        "name": ".Earth Ground Observer",
+        "kind": "Platform",
+        "initialState": {
+          "frame": "cartographicDegrees",
+          "lon": 90.0,
+          "lat": 0.0005729577951308,
+          "alt": 0.0
+        },
+        "properties": {
+          "platform_type": "ECR_FIXED",
+          "orbArchiveMember": "orb_format_collection/soap15/scenarios/collision_probability/26207-7219 encounter.orb",
+          "source": "orb-scenario"
+        }
+      },
+      {
+        "id": ".Earth Polar Observer",
+        "name": ".Earth Polar Observer",
+        "kind": "Platform",
+        "initialState": {
+          "frame": "cartographicDegrees",
+          "lon": 0.0,
+          "lat": 90.0,
+          "alt": 63781.369999999995
+        },
+        "properties": {
+          "platform_type": "ECR_FIXED",
+          "orbArchiveMember": "orb_format_collection/soap15/scenarios/collision_probability/26207-7219 encounter.orb",
+          "source": "orb-scenario"
+        }
+      },
+      {
+        "id": "Earth Observer",
+        "name": "Earth Observer",
+        "kind": "Platform",
+        "initialState": {
+          "frame": "cartographicDegrees",
+          "lon": 4.0,
+          "lat": -85.999427,
+          "alt": 63781.369999999995
+        },
+        "properties": {
+          "platform_type": "ECR_FIXED",
+          "orbArchiveMember": "orb_format_collection/soap15/scenarios/collision_probability/26207-7219 encounter.orb",
+          "source": "orb-scenario"
+        }
+      }
+    ],
+    "trajectories": [],
+    "models": [],
+    "sensorSwaths": [],
+    "overlays": [],
+    "extensions": {}
+  },
+  "views": {
+    "views": [
+      {
+        "id": "orb-format-collection__soap15__scenarios__collision-probability__26207-7219-encounter-overview",
+        "name": "26207-7219 encounter Overview",
+        "kind": "View",
+        "target": ".Earth Ground",
+        "camera": {
+          "frame": "cartographicDegrees",
+          "lon": -99.0,
+          "lat": 38.0,
+          "alt": 0.0
+        }
+      }
+    ],
+    "palettes": [
+      {
+        "id": "orb-format-collection__soap15__scenarios__collision-probability__26207-7219-encounter-default-palette",
+        "name": "Default Palette",
+        "entries": [
+          {
+            "kind": "entity-count",
+            "value": 4
+          },
+          {
+            "kind": "overlay-count",
+            "value": 0
+          }
+        ]
+      }
+    ]
+  },
+  "analysis": {
+    "results": []
+  },
+  "presentation": {
+    "slides": [],
+    "actions": []
+  },
+  "assets": {
+    "assets": []
+  },
+  "diagnostics": [
+    {
+      "severity": "warning",
+      "code": "SOAP-SCENE-MISSING-TIMESTAMP",
+      "path": "entities/.Earth Ground",
+      "message": "Entity '.Earth Ground' has no timestamp; SOAP trajectory export was omitted."
+    },
+    {
+      "severity": "warning",
+      "code": "SOAP-SCENE-MISSING-TIMESTAMP",
+      "path": "entities/.Earth Ground Observer",
+      "message": "Entity '.Earth Ground Observer' has no timestamp; SOAP trajectory export was omitted."
+    },
+    {
+      "severity": "warning",
+      "code": "SOAP-SCENE-MISSING-TIMESTAMP",
+      "path": "entities/.Earth Polar Observer",
+      "message": "Entity '.Earth Polar Observer' has no timestamp; SOAP trajectory export was omitted."
+    },
+    {
+      "severity": "warning",
+      "code": "SOAP-SCENE-MISSING-TIMESTAMP",
+      "path": "entities/Earth Observer",
+      "message": "Entity 'Earth Observer' has no timestamp; SOAP trajectory export was omitted."
+    }
+  ],
+  "overlays": []
+}

@@ -1,0 +1,38 @@
+{
+  "schemaVersion": "1.0.0-scene",
+  "document": {
+    "id": "rectangle-demo",
+    "name": "Rectangle Demo",
+    "description": "A rectangle overlay used to exercise the Cesium rectangle emitter.",
+    "created": "2026-06-01T12:00:00Z",
+    "generator": "visualization-standard-schema",
+    "source": "sim.example.geo-sim"
+  },
+  "objects": [
+    {
+      "objectType": "overlay",
+      "id": "rect-001",
+      "name": "Rect 001",
+      "geometryType": "rectangle",
+      "position": {
+        "longitudeDeg": -97.700,
+        "latitudeDeg": 30.300,
+        "altitudeM": 0.0
+      },
+      "style": {
+        "label": "Rect 001",
+        "colorRgba": [52, 199, 89, 180]
+      },
+      "rectangle": {
+        "westSouthEastNorthDegrees": [-97.780, 30.240, -97.620, 30.360],
+        "heightMeters": 0.0,
+        "rotationDegrees": 0.0
+      },
+      "attributes": {
+        "zoneType": "control-area"
+      },
+      "source": "sim.example.geo-sim",
+      "timestamp": "2026-06-01T12:00:00Z"
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "schemaVersion": "1.0.0-scene",
+  "document": {
+    "id": "orb-format-collection__soap15__scenarios__parallel-processing__coverage-contours-fine-nogui",
+    "name": "coverage_contours_fine_nogui",
+    "source": "orb_format_collection/soap15/scenarios/parallel_processing/coverage_contours_fine_nogui.orb"
+  },
+  "objects": [
+    {
+      "id": ".Contour",
+      "name": ".Contour",
+      "attributes": {
+        "platform_type": "ECR_FIXED",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/parallel_processing/coverage_contours_fine_nogui.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": 0.0,
+        "latitudeDeg": 0.0,
+        "altitudeM": 0.0
+      }
+    },
+    {
+      "id": ".G0",
+      "name": ".G0",
+      "attributes": {
+        "platform_type": "ECR_FIXED",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/parallel_processing/coverage_contours_fine_nogui.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": 90.0,
+        "latitudeDeg": 0.0,
+        "altitudeM": 0.0
+      }
+    },
+    {
+      "id": ".P0",
+      "name": ".P0",
+      "attributes": {
+        "platform_type": "ECR_FIXED",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/parallel_processing/coverage_contours_fine_nogui.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": 0.0,
+        "latitudeDeg": 90.0,
+        "altitudeM": 63781.369999999995
+      }
+    }
+  ]
+}

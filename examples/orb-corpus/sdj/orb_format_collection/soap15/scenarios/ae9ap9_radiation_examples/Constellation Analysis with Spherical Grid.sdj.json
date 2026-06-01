@@ -1,0 +1,100 @@
+{
+  "schemaVersion": "1.0.0-scene",
+  "document": {
+    "id": "orb-format-collection__soap15__scenarios__ae9ap9-radiation-examples__constellation-analysis-with-spherical-grid",
+    "name": "Constellation Analysis with Spherical Grid",
+    "source": "orb_format_collection/soap15/scenarios/ae9ap9_radiation_examples/Constellation Analysis with Spherical Grid.orb"
+  },
+  "objects": [
+    {
+      "id": ".Earth CR Observer",
+      "name": ".Earth CR Observer",
+      "attributes": {
+        "platform_type": "ECR_FIXED",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/ae9ap9_radiation_examples/Constellation Analysis with Spherical Grid.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": -128.0000000000014,
+        "latitudeDeg": 29.99999427042196,
+        "altitudeM": 63781.369999999995
+      }
+    },
+    {
+      "id": ".Earth Ground",
+      "name": ".Earth Ground",
+      "attributes": {
+        "platform_type": "ECR_FIXED",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/ae9ap9_radiation_examples/Constellation Analysis with Spherical Grid.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": -99.0,
+        "latitudeDeg": 38.0,
+        "altitudeM": 0.0
+      }
+    },
+    {
+      "id": ".Earth Ground Observer",
+      "name": ".Earth Ground Observer",
+      "attributes": {
+        "platform_type": "ECR_FIXED",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/ae9ap9_radiation_examples/Constellation Analysis with Spherical Grid.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": 90.0,
+        "latitudeDeg": 0.0005729577951308233,
+        "altitudeM": 0.0
+      }
+    },
+    {
+      "id": ".Earth Polar Observer",
+      "name": ".Earth Polar Observer",
+      "attributes": {
+        "platform_type": "ECR_FIXED",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/ae9ap9_radiation_examples/Constellation Analysis with Spherical Grid.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": -2.0,
+        "latitudeDeg": 89.99999427042206,
+        "altitudeM": 63781.369999999995
+      }
+    },
+    {
+      "id": "Rad Table Cartesian Grid_Ctr",
+      "name": "Rad Table Cartesian Grid_Ctr",
+      "attributes": {
+        "platform_type": "ECR_FIXED",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/ae9ap9_radiation_examples/Constellation Analysis with Spherical Grid.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": 180.0,
+        "latitudeDeg": 0.0,
+        "altitudeM": 0.0
+      }
+    },
+    {
+      "id": "Rad Table Grid_Ctr",
+      "name": "Rad Table Grid_Ctr",
+      "attributes": {
+        "platform_type": "ECR_FIXED",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/ae9ap9_radiation_examples/Constellation Analysis with Spherical Grid.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": 180.0,
+        "latitudeDeg": 0.0,
+        "altitudeM": 0.0
+      }
+    }
+  ]
+}

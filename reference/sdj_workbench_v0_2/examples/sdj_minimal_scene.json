@@ -1,0 +1,192 @@
+{
+  "schemaVersion": "sdj-0.4",
+  "profiles": [
+    "entity-core",
+    "trajectory-diagnostics"
+  ],
+  "document": {
+    "id": "sdj-minimal-demo",
+    "name": "Minimal SDJ Workbench Demo"
+  },
+  "units": {
+    "linear": "meter",
+    "angular": "degree",
+    "time": "iso8601"
+  },
+  "clock": {
+    "startTime": "2026-05-29T16:00:00Z",
+    "stopTime": "2026-05-29T16:01:00Z",
+    "currentTime": "2026-05-29T16:00:00Z",
+    "multiplier": 1,
+    "shouldAnimate": true,
+    "clockRange": "loopStop",
+    "clockStep": "systemClockMultiplier"
+  },
+  "layers": [
+    {
+      "id": "demo",
+      "name": "Demo",
+      "show": true
+    }
+  ],
+  "objects": [
+    {
+      "id": "sensor-site-a",
+      "kind": "point",
+      "name": "Sensor Site A",
+      "layer": "demo",
+      "pose": {
+        "position": {
+          "cartographicDegrees": [-117.92, 33.92, 1000]
+        }
+      },
+      "point": {
+        "pixelSize": 12
+      },
+      "label": {
+        "text": "Sensor A",
+        "pixelOffset": [12, -14]
+      },
+      "style": {
+        "material": {
+          "type": "solidColor",
+          "rgba": [0.1, 0.9, 1, 1]
+        }
+      }
+    },
+    {
+      "id": "track-001",
+      "kind": "track",
+      "name": "Demo Track 001",
+      "layer": "demo",
+      "pose": {
+        "position": {
+          "samples": {
+            "epoch": "2026-05-29T16:00:00Z",
+            "timeFormat": "secondsSinceEpoch",
+            "valueFormat": "cartographicDegrees",
+            "referenceFrame": "FIXED",
+            "interpolation": "linear",
+            "values": [
+              [0, -117.95, 33.9, 10000],
+              [20, -117.9, 33.96, 11000],
+              [40, -117.84, 34.02, 12000],
+              [60, -117.77, 34.08, 12500]
+            ]
+          }
+        },
+        "orientation": {
+          "computed": {
+            "operation": "velocityOrientation",
+            "source": "track-001#pose.position"
+          }
+        }
+      },
+      "path": {
+        "show": true,
+        "trailTimeSeconds": 120,
+        "leadTimeSeconds": 60,
+        "width": 3,
+        "material": {
+          "type": "solidColor",
+          "rgba": [1, 1, 0, 1]
+        }
+      },
+      "overlays": [
+        {
+          "id": "track-001-velocity",
+          "kind": "velocityVector",
+          "geometry": {
+            "source": "track-001#pose.position",
+            "scale": 4,
+            "arrow": true
+          },
+          "style": {
+            "material": {
+              "type": "solidColor",
+              "rgba": [1, 0.8, 0.1, 1]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "sensor-sector-a",
+      "kind": "sector2d",
+      "name": "Sensor Sector A",
+      "layer": "demo",
+      "pose": {
+        "position": {
+          "reference": "sensor-site-a#pose.position"
+        },
+        "orientation": {
+          "headingPitchRollDegrees": [35, 0, 0],
+          "frame": "ENU"
+        }
+      },
+      "geometry": {
+        "innerRadiusMeters": 5000,
+        "outerRadiusMeters": 75000,
+        "azimuthStartDegrees": -30,
+        "azimuthStopDegrees": 30,
+        "segments": 64
+      },
+      "style": {
+        "material": {
+          "type": "solidColor",
+          "rgba": [0, 1, 0.2, 0.22]
+        },
+        "outline": true,
+        "outlineColor": [0, 1, 0.2, 0.85]
+      }
+    },
+    {
+      "id": "los-a-track001",
+      "kind": "lineOfSight",
+      "name": "LOS A to Track 001",
+      "layer": "demo",
+      "geometry": {
+        "from": "sensor-site-a#pose.position",
+        "to": "track-001#pose.position"
+      },
+      "style": {
+        "material": {
+          "type": "solidColor",
+          "rgba": [1, 1, 1, 1]
+        },
+        "width": 2
+      }
+    }
+  ],
+  "views": [
+    {
+      "id": "overview",
+      "name": "Overview",
+      "target": "track-001",
+      "rangeMeters": 180000
+    }
+  ],
+  "analysis": [
+    {
+      "id": "access-track001-sensor-a",
+      "kind": "accessIntervals",
+      "analysisType": "accessIntervals",
+      "participants": ["sensor-site-a", "track-001"],
+      "intervals": [
+        {
+          "start": "2026-05-29T16:00:00Z",
+          "stop": "2026-05-29T16:01:00Z",
+          "access": true
+        }
+      ]
+    }
+  ],
+  "presentation": [
+    {
+      "id": "overview-view",
+      "kind": "view",
+      "name": "Overview",
+      "target": "track-001"
+    }
+  ]
+}

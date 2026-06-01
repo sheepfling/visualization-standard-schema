@@ -1,0 +1,60 @@
+{
+  "schemaVersion": "1.0.0-scene",
+  "document": {
+    "id": "track-demo",
+    "name": "Track Demo",
+    "description": "A sampled-motion track object used to exercise the Cesium track emitter.",
+    "created": "2026-06-01T12:00:00Z",
+    "generator": "visualization-standard-schema",
+    "source": "sim.example.flight-sim"
+  },
+  "objects": [
+    {
+      "objectType": "track",
+      "id": "track-001",
+      "name": "Track 001",
+      "style": {
+        "label": "Track 001",
+        "colorRgba": [235, 99, 52, 255]
+      },
+      "samples": [
+        {
+          "timestamp": "2026-06-01T12:00:00Z",
+          "position": {
+            "longitudeDeg": -97.850,
+            "latitudeDeg": 30.250,
+            "altitudeM": 9100.0
+          }
+        },
+        {
+          "timestamp": "2026-06-01T12:02:00Z",
+          "position": {
+            "longitudeDeg": -97.740,
+            "latitudeDeg": 30.300,
+            "altitudeM": 9300.0
+          }
+        },
+        {
+          "timestamp": "2026-06-01T12:05:00Z",
+          "position": {
+            "longitudeDeg": -97.610,
+            "latitudeDeg": 30.380,
+            "altitudeM": 9700.0
+          }
+        }
+      ],
+      "widthPx": 4.0,
+      "clampToGround": false,
+      "orientation": {
+        "headingDeg": 72.0,
+        "pitchDeg": 1.5,
+        "rollDeg": 0.2
+      },
+      "attributes": {
+        "callsign": "TRACK1",
+        "sourceTrack": "aircraft-001"
+      },
+      "source": "sim.example.flight-sim"
+    }
+  ]
+}

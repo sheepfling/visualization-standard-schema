@@ -1,0 +1,190 @@
+{
+  "schemaVersion": "1.0.0-scene",
+  "document": {
+    "id": "orb-format-collection__soap15__scenarios__air-route-simple",
+    "name": "air_route_simple",
+    "source": "orb_format_collection/soap15/scenarios/air_route_simple.orb"
+  },
+  "objects": [
+    {
+      "id": ".Earth CR Observer",
+      "name": ".Earth CR Observer",
+      "attributes": {
+        "platform_type": "ECR_FIXED",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/air_route_simple.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": -98.0,
+        "latitudeDeg": 36.0005729578,
+        "altitudeM": 63781.37000001
+      }
+    },
+    {
+      "id": ".Earth Ground Observer",
+      "name": ".Earth Ground Observer",
+      "attributes": {
+        "platform_type": "ECR_FIXED",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/air_route_simple.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": 90.0,
+        "latitudeDeg": 0.0005729577951308,
+        "altitudeM": 0.0
+      }
+    },
+    {
+      "id": ".Earth Polar Observer",
+      "name": ".Earth Polar Observer",
+      "attributes": {
+        "platform_type": "ECR_FIXED",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/air_route_simple.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": 0.0,
+        "latitudeDeg": 90.0,
+        "altitudeM": 63781.37000001
+      }
+    },
+    {
+      "id": "ABQ",
+      "name": "ABQ",
+      "attributes": {
+        "platform_type": "ECR_FIXED",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/air_route_simple.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": -106.6,
+        "latitudeDeg": 35.05,
+        "altitudeM": 0.0
+      }
+    },
+    {
+      "id": "Air",
+      "name": "Air",
+      "attributes": {
+        "platform_type": "AIRROUTE",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/air_route_simple.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": -118.4,
+        "latitudeDeg": 33.93,
+        "altitudeM": 1.0
+      }
+    },
+    {
+      "id": "Air(Smooth)",
+      "name": "Air(Smooth)",
+      "attributes": {
+        "platform_type": "AIRROUTE",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/air_route_simple.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": -118.4,
+        "latitudeDeg": 33.93,
+        "altitudeM": 1.0
+      }
+    },
+    {
+      "id": "COS",
+      "name": "COS",
+      "attributes": {
+        "platform_type": "ECR_FIXED",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/air_route_simple.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": -104.72,
+        "latitudeDeg": 38.82,
+        "altitudeM": 0.0
+      }
+    },
+    {
+      "id": "DC",
+      "name": "DC",
+      "attributes": {
+        "platform_type": "ECR_FIXED",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/air_route_simple.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": -77.46,
+        "latitudeDeg": 38.95,
+        "altitudeM": 0.0
+      }
+    },
+    {
+      "id": "LAX",
+      "name": "LAX",
+      "attributes": {
+        "platform_type": "ECR_FIXED",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/air_route_simple.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": -118.40000000000002,
+        "latitudeDeg": 33.93,
+        "altitudeM": 0.0
+      }
+    },
+    {
+      "id": "SAT",
+      "name": "SAT",
+      "attributes": {
+        "platform_type": "ECR_FIXED",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/air_route_simple.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": -98.47,
+        "latitudeDeg": 29.53,
+        "altitudeM": 0.0
+      }
+    },
+    {
+      "id": "SFF",
+      "name": "SFF",
+      "attributes": {
+        "platform_type": "ECR_FIXED",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/air_route_simple.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": -117.33,
+        "latitudeDeg": 47.67000000000001,
+        "altitudeM": 0.0
+      }
+    },
+    {
+      "id": "t",
+      "name": "t",
+      "attributes": {
+        "platform_type": "AIRROUTE",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/air_route_simple.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": 4.0,
+        "latitudeDeg": 3.0,
+        "altitudeM": 2.0
+      }
+    }
+  ]
+}

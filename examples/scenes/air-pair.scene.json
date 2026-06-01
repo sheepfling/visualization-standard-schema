@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "1.0.0-scene",
+  "document": {
+    "id": "air-pair-demo",
+    "name": "Air Pair Demo",
+    "description": "Two aircraft in a simple scene for Cesium scene-level export.",
+    "created": "2026-06-01T12:05:00Z",
+    "generator": "visualization-standard-schema",
+    "source": "sim.example.flight-sim"
+  },
+  "objects": [
+    {
+      "objectType": "entity",
+      "id": "aircraft-001",
+      "name": "Blue One",
+      "category": "air",
+      "position": {
+        "longitudeDeg": -97.7431,
+        "latitudeDeg": 30.2672,
+        "altitudeM": 9450.0
+      },
+      "orientation": {
+        "headingDeg": 72.0,
+        "pitchDeg": 1.5,
+        "rollDeg": 0.2
+      },
+      "style": {
+        "label": "Blue One",
+        "modelUri": "https://example.org/assets/aircraft.glb",
+        "colorRgba": [64, 145, 255, 255]
+      },
+      "attributes": {
+        "speedMps": 235.4,
+        "callsign": "BLUE1",
+        "messageId": "msg-0001"
+      },
+      "source": "sim.example.flight-sim",
+      "timestamp": "2026-06-01T12:00:00Z"
+    },
+    {
+      "objectType": "entity",
+      "id": "aircraft-002",
+      "name": "Blue Two",
+      "category": "air",
+      "position": {
+        "longitudeDeg": -97.512,
+        "latitudeDeg": 30.418,
+        "altitudeM": 10120.0
+      },
+      "orientation": {
+        "headingDeg": 58.0,
+        "pitchDeg": 0.5,
+        "rollDeg": -0.1
+      },
+      "style": {
+        "label": "Blue Two",
+        "modelUri": "https://example.org/assets/aircraft.glb",
+        "colorRgba": [44, 199, 156, 255]
+      },
+      "attributes": {
+        "speedMps": 248.9,
+        "callsign": "BLUE2",
+        "messageId": "msg-0002"
+      },
+      "source": "sim.example.flight-sim",
+      "timestamp": "2026-06-01T12:05:00Z"
+    }
+  ]
+}

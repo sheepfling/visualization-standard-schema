@@ -1,0 +1,259 @@
+{
+  "target": "soap",
+  "source": "orb-format-collection__soap15__scenarios__great-circle-ex",
+  "manifest": {
+    "target": "soap",
+    "source": "orb-format-collection__soap15__scenarios__great-circle-ex",
+    "mode": "scene-to-scenario+scene-to-analysis+scene-to-presentation",
+    "profiles": [],
+    "artifacts": [
+      {
+        "kind": "manifest",
+        "path": "soap/manifest.json"
+      },
+      {
+        "kind": "scenario",
+        "path": "soap/scenario.json"
+      },
+      {
+        "kind": "views",
+        "path": "soap/views.json"
+      },
+      {
+        "kind": "analysis",
+        "path": "soap/analysis.json"
+      },
+      {
+        "kind": "presentation",
+        "path": "soap/presentation.json"
+      },
+      {
+        "kind": "assetManifest",
+        "path": "soap/assets.json"
+      },
+      {
+        "kind": "diagnostics",
+        "path": "soap/diagnostics.json"
+      }
+    ],
+    "totals": {
+      "platforms": 7,
+      "trajectories": 0,
+      "models": 0,
+      "sensorSwaths": 0,
+      "overlays": 0
+    }
+  },
+  "scenario": {
+    "id": "orb-format-collection__soap15__scenarios__great-circle-ex",
+    "name": "great_circle_ex",
+    "clock": {},
+    "units": {},
+    "platforms": [
+      {
+        "id": ".Earth CR Observer",
+        "name": ".Earth CR Observer",
+        "kind": "Platform",
+        "initialState": {
+          "frame": "cartographicDegrees",
+          "lon": 0.0,
+          "lat": 0.0005729577951308233,
+          "alt": 63781.369999999995
+        },
+        "properties": {
+          "platform_type": "ECR_FIXED",
+          "orbArchiveMember": "orb_format_collection/soap15/scenarios/great_circle_ex.orb",
+          "source": "orb-scenario"
+        }
+      },
+      {
+        "id": ".Earth Ground",
+        "name": ".Earth Ground",
+        "kind": "Platform",
+        "initialState": {
+          "frame": "cartographicDegrees",
+          "lon": -50.0,
+          "lat": 38.0,
+          "alt": 0.0
+        },
+        "properties": {
+          "platform_type": "ECR_FIXED",
+          "orbArchiveMember": "orb_format_collection/soap15/scenarios/great_circle_ex.orb",
+          "source": "orb-scenario"
+        }
+      },
+      {
+        "id": ".Earth Ground Observer",
+        "name": ".Earth Ground Observer",
+        "kind": "Platform",
+        "initialState": {
+          "frame": "cartographicDegrees",
+          "lon": 90.0,
+          "lat": 0.0005729577951308233,
+          "alt": 0.0
+        },
+        "properties": {
+          "platform_type": "ECR_FIXED",
+          "orbArchiveMember": "orb_format_collection/soap15/scenarios/great_circle_ex.orb",
+          "source": "orb-scenario"
+        }
+      },
+      {
+        "id": ".Earth Polar Observer",
+        "name": ".Earth Polar Observer",
+        "kind": "Platform",
+        "initialState": {
+          "frame": "cartographicDegrees",
+          "lon": 0.0,
+          "lat": 90.0,
+          "alt": 63781.369999999995
+        },
+        "properties": {
+          "platform_type": "ECR_FIXED",
+          "orbArchiveMember": "orb_format_collection/soap15/scenarios/great_circle_ex.orb",
+          "source": "orb-scenario"
+        }
+      },
+      {
+        "id": "LA",
+        "name": "LA",
+        "kind": "Platform",
+        "initialState": {
+          "frame": "cartographicDegrees",
+          "lon": -118.25,
+          "lat": 34.0,
+          "alt": 0.0
+        },
+        "properties": {
+          "platform_type": "ECR_FIXED",
+          "orbArchiveMember": "orb_format_collection/soap15/scenarios/great_circle_ex.orb",
+          "source": "orb-scenario"
+        }
+      },
+      {
+        "id": "Rome",
+        "name": "Rome",
+        "kind": "Platform",
+        "initialState": {
+          "frame": "cartographicDegrees",
+          "lon": 12.5,
+          "lat": 41.9,
+          "alt": 0.0
+        },
+        "properties": {
+          "platform_type": "ECR_FIXED",
+          "orbArchiveMember": "orb_format_collection/soap15/scenarios/great_circle_ex.orb",
+          "source": "orb-scenario"
+        }
+      },
+      {
+        "id": "Traveler",
+        "name": "Traveler",
+        "kind": "Platform",
+        "initialState": {
+          "frame": "cartographicDegrees",
+          "lon": -118.25,
+          "lat": 34.0,
+          "alt": 0.01
+        },
+        "properties": {
+          "platform_type": "AIRROUTE",
+          "orbArchiveMember": "orb_format_collection/soap15/scenarios/great_circle_ex.orb",
+          "source": "orb-scenario"
+        }
+      }
+    ],
+    "trajectories": [],
+    "models": [],
+    "sensorSwaths": [],
+    "overlays": [],
+    "extensions": {}
+  },
+  "views": {
+    "views": [
+      {
+        "id": "orb-format-collection__soap15__scenarios__great-circle-ex-overview",
+        "name": "great_circle_ex Overview",
+        "kind": "View",
+        "target": ".Earth CR Observer",
+        "camera": {
+          "frame": "cartographicDegrees",
+          "lon": 0.0,
+          "lat": 0.0005729577951308233,
+          "alt": 63781.369999999995
+        }
+      }
+    ],
+    "palettes": [
+      {
+        "id": "orb-format-collection__soap15__scenarios__great-circle-ex-default-palette",
+        "name": "Default Palette",
+        "entries": [
+          {
+            "kind": "entity-count",
+            "value": 7
+          },
+          {
+            "kind": "overlay-count",
+            "value": 0
+          }
+        ]
+      }
+    ]
+  },
+  "analysis": {
+    "results": []
+  },
+  "presentation": {
+    "slides": [],
+    "actions": []
+  },
+  "assets": {
+    "assets": []
+  },
+  "diagnostics": [
+    {
+      "severity": "warning",
+      "code": "SOAP-SCENE-MISSING-TIMESTAMP",
+      "path": "entities/.Earth CR Observer",
+      "message": "Entity '.Earth CR Observer' has no timestamp; SOAP trajectory export was omitted."
+    },
+    {
+      "severity": "warning",
+      "code": "SOAP-SCENE-MISSING-TIMESTAMP",
+      "path": "entities/.Earth Ground",
+      "message": "Entity '.Earth Ground' has no timestamp; SOAP trajectory export was omitted."
+    },
+    {
+      "severity": "warning",
+      "code": "SOAP-SCENE-MISSING-TIMESTAMP",
+      "path": "entities/.Earth Ground Observer",
+      "message": "Entity '.Earth Ground Observer' has no timestamp; SOAP trajectory export was omitted."
+    },
+    {
+      "severity": "warning",
+      "code": "SOAP-SCENE-MISSING-TIMESTAMP",
+      "path": "entities/.Earth Polar Observer",
+      "message": "Entity '.Earth Polar Observer' has no timestamp; SOAP trajectory export was omitted."
+    },
+    {
+      "severity": "warning",
+      "code": "SOAP-SCENE-MISSING-TIMESTAMP",
+      "path": "entities/LA",
+      "message": "Entity 'LA' has no timestamp; SOAP trajectory export was omitted."
+    },
+    {
+      "severity": "warning",
+      "code": "SOAP-SCENE-MISSING-TIMESTAMP",
+      "path": "entities/Rome",
+      "message": "Entity 'Rome' has no timestamp; SOAP trajectory export was omitted."
+    },
+    {
+      "severity": "warning",
+      "code": "SOAP-SCENE-MISSING-TIMESTAMP",
+      "path": "entities/Traveler",
+      "message": "Entity 'Traveler' has no timestamp; SOAP trajectory export was omitted."
+    }
+  ],
+  "overlays": []
+}

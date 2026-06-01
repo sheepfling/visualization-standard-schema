@@ -1,0 +1,64 @@
+{
+  "schemaVersion": "1.0.0-scene",
+  "document": {
+    "id": "ellipse-circle-demo",
+    "name": "Ellipse Circle Demo",
+    "description": "Ellipse and circle overlays used to exercise the Cesium ellipse emitter.",
+    "created": "2026-06-01T12:10:00Z",
+    "generator": "visualization-standard-schema",
+    "source": "sim.example.geo-sim"
+  },
+  "objects": [
+    {
+      "objectType": "overlay",
+      "id": "ellipse-001",
+      "name": "Ellipse 001",
+      "geometryType": "ellipse",
+      "position": {
+        "longitudeDeg": -97.640,
+        "latitudeDeg": 30.330,
+        "altitudeM": 0.0
+      },
+      "style": {
+        "label": "Ellipse 001",
+        "colorRgba": [88, 159, 255, 160]
+      },
+      "ellipse": {
+        "semiMajorAxisMeters": 120000.0,
+        "semiMinorAxisMeters": 60000.0,
+        "heightMeters": 0.0,
+        "rotationDegrees": 15.0
+      },
+      "attributes": {
+        "zoneType": "coverage-ellipse"
+      },
+      "source": "sim.example.geo-sim",
+      "timestamp": "2026-06-01T12:00:00Z"
+    },
+    {
+      "objectType": "overlay",
+      "id": "circle-001",
+      "name": "Circle 001",
+      "geometryType": "circle",
+      "position": {
+        "longitudeDeg": -97.700,
+        "latitudeDeg": 30.260,
+        "altitudeM": 0.0
+      },
+      "style": {
+        "label": "Circle 001",
+        "colorRgba": [255, 145, 77, 180]
+      },
+      "circle": {
+        "radiusMeters": 80000.0,
+        "heightMeters": 0.0,
+        "rotationDegrees": 0.0
+      },
+      "attributes": {
+        "zoneType": "coverage-circle"
+      },
+      "source": "sim.example.geo-sim",
+      "timestamp": "2026-06-01T12:05:00Z"
+    }
+  ]
+}

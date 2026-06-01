@@ -1,0 +1,100 @@
+{
+  "schemaVersion": "1.0.0-scene",
+  "document": {
+    "id": "orb-format-collection__soap15__scenarios__dted-uav-blawkhawk-clouds__dted-uav-blackhawk-clouds",
+    "name": "dted_uav_blackhawk_clouds",
+    "source": "orb_format_collection/soap15/scenarios/dted_uav_blawkhawk_clouds/dted_uav_blackhawk_clouds.orb"
+  },
+  "objects": [
+    {
+      "id": "+33.13755119_-115.31250000_+35.46066995_-112.500000001_Ctr",
+      "name": "+33.13755119_-115.31250000_+35.46066995_-112.500000001_Ctr",
+      "attributes": {
+        "platform_type": "ECR_FIXED",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/dted_uav_blawkhawk_clouds/dted_uav_blackhawk_clouds.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": -113.90625000050002,
+        "latitudeDeg": 34.29911057,
+        "altitudeM": 0.0
+      }
+    },
+    {
+      "id": "+33.13755119_-118.12500000_+35.46066995_-115.312500000_Ctr",
+      "name": "+33.13755119_-118.12500000_+35.46066995_-115.312500000_Ctr",
+      "attributes": {
+        "platform_type": "ECR_FIXED",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/dted_uav_blawkhawk_clouds/dted_uav_blackhawk_clouds.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": -116.71875000000001,
+        "latitudeDeg": 34.29911057,
+        "altitudeM": 0.0
+      }
+    },
+    {
+      "id": ".Earth CR Observer",
+      "name": ".Earth CR Observer",
+      "attributes": {
+        "platform_type": "ECR_FIXED",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/dted_uav_blawkhawk_clouds/dted_uav_blackhawk_clouds.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": -74.0,
+        "latitudeDeg": -3.9994270422000002,
+        "altitudeM": 63781370.000002064
+      }
+    },
+    {
+      "id": ".Earth Ground Observer",
+      "name": ".Earth Ground Observer",
+      "attributes": {
+        "platform_type": "ECR_FIXED",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/dted_uav_blawkhawk_clouds/dted_uav_blackhawk_clouds.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": 90.0,
+        "latitudeDeg": 0.0005729577951308,
+        "altitudeM": 0.0
+      }
+    },
+    {
+      "id": ".Earth Polar Observer",
+      "name": ".Earth Polar Observer",
+      "attributes": {
+        "platform_type": "ECR_FIXED",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/dted_uav_blawkhawk_clouds/dted_uav_blackhawk_clouds.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": 0.0,
+        "latitudeDeg": 90.0,
+        "altitudeM": 63781370.000002064
+      }
+    },
+    {
+      "id": "Bunker",
+      "name": "Bunker",
+      "attributes": {
+        "platform_type": "ECR_FIXED",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/dted_uav_blawkhawk_clouds/dted_uav_blackhawk_clouds.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": -116.81000000000002,
+        "latitudeDeg": 33.921,
+        "altitudeM": 18.000000000129866
+      }
+    }
+  ]
+}

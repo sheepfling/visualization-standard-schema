@@ -1,0 +1,73 @@
+[
+  {
+    "id": "document",
+    "name": "VSS CZML",
+    "version": "1.0"
+  },
+  {
+    "id": "aircraft-001",
+    "name": "Blue One",
+    "position": {
+      "cartographicDegrees": [
+        -97.7431,
+        30.2672,
+        9450.0
+      ]
+    },
+    "properties": {
+      "source": "sim.example.flight-sim",
+      "messageId": "msg-0001",
+      "timestamp": "2026-06-01T12:00:00+00:00",
+      "speedMps": 235.4,
+      "callsign": "BLUE1",
+      "orientationDegrees": {
+        "heading": 72.0,
+        "pitch": 1.5,
+        "roll": 0.2
+      },
+      "category": "air"
+    },
+    "label": {
+      "text": "Blue One",
+      "horizontalOrigin": "LEFT",
+      "pixelOffset": {
+        "cartesian2": [
+          12,
+          0
+        ]
+      },
+      "fillColor": {
+        "rgba": [
+          64,
+          145,
+          255,
+          255
+        ]
+      }
+    },
+    "model": {
+      "uri": "https://example.org/assets/aircraft.glb",
+      "scale": 1.0
+    },
+    "point": {
+      "pixelSize": 10,
+      "outlineWidth": 1,
+      "color": {
+        "rgba": [
+          64,
+          145,
+          255,
+          255
+        ]
+      },
+      "outlineColor": {
+        "rgba": [
+          255,
+          255,
+          255,
+          255
+        ]
+      }
+    }
+  }
+]

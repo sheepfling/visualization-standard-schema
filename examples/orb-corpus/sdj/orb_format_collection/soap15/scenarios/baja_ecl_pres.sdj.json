@@ -1,0 +1,9 @@
+{
+  "schemaVersion": "1.0.0-scene",
+  "document": {
+    "id": "orb-format-collection__soap15__scenarios__baja-ecl-pres",
+    "name": "baja_ecl_pres",
+    "source": "orb_format_collection/soap15/scenarios/baja_ecl_pres.orb"
+  },
+  "objects": []
+}

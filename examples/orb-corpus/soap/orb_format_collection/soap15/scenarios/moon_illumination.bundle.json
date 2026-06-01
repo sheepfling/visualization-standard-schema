@@ -1,0 +1,369 @@
+{
+  "target": "soap",
+  "source": "orb-format-collection__soap15__scenarios__moon-illumination",
+  "manifest": {
+    "target": "soap",
+    "source": "orb-format-collection__soap15__scenarios__moon-illumination",
+    "mode": "scene-to-scenario+scene-to-analysis+scene-to-presentation",
+    "profiles": [],
+    "artifacts": [
+      {
+        "kind": "manifest",
+        "path": "soap/manifest.json"
+      },
+      {
+        "kind": "scenario",
+        "path": "soap/scenario.json"
+      },
+      {
+        "kind": "views",
+        "path": "soap/views.json"
+      },
+      {
+        "kind": "analysis",
+        "path": "soap/analysis.json"
+      },
+      {
+        "kind": "presentation",
+        "path": "soap/presentation.json"
+      },
+      {
+        "kind": "assetManifest",
+        "path": "soap/assets.json"
+      },
+      {
+        "kind": "diagnostics",
+        "path": "soap/diagnostics.json"
+      }
+    ],
+    "totals": {
+      "platforms": 12,
+      "trajectories": 0,
+      "models": 0,
+      "sensorSwaths": 0,
+      "overlays": 0
+    }
+  },
+  "scenario": {
+    "id": "orb-format-collection__soap15__scenarios__moon-illumination",
+    "name": "moon_illumination",
+    "clock": {},
+    "units": {},
+    "platforms": [
+      {
+        "id": ".Earth CR Observer",
+        "name": ".Earth CR Observer",
+        "kind": "Platform",
+        "initialState": {
+          "frame": "cartographicDegrees",
+          "lon": 0.0,
+          "lat": 0.0005729577951308233,
+          "alt": 63781.369999999995
+        },
+        "properties": {
+          "platform_type": "ECR_FIXED",
+          "orbArchiveMember": "orb_format_collection/soap15/scenarios/moon_illumination.orb",
+          "source": "orb-scenario"
+        }
+      },
+      {
+        "id": ".Earth Ground",
+        "name": ".Earth Ground",
+        "kind": "Platform",
+        "initialState": {
+          "frame": "cartographicDegrees",
+          "lon": -99.0,
+          "lat": 38.0,
+          "alt": 0.0
+        },
+        "properties": {
+          "platform_type": "ECR_FIXED",
+          "orbArchiveMember": "orb_format_collection/soap15/scenarios/moon_illumination.orb",
+          "source": "orb-scenario"
+        }
+      },
+      {
+        "id": ".Earth Ground Observer",
+        "name": ".Earth Ground Observer",
+        "kind": "Platform",
+        "initialState": {
+          "frame": "cartographicDegrees",
+          "lon": 90.0,
+          "lat": 0.0005729577951308233,
+          "alt": 0.0
+        },
+        "properties": {
+          "platform_type": "ECR_FIXED",
+          "orbArchiveMember": "orb_format_collection/soap15/scenarios/moon_illumination.orb",
+          "source": "orb-scenario"
+        }
+      },
+      {
+        "id": ".Earth Polar Observer",
+        "name": ".Earth Polar Observer",
+        "kind": "Platform",
+        "initialState": {
+          "frame": "cartographicDegrees",
+          "lon": 0.0,
+          "lat": 90.0,
+          "alt": 63781.369999999995
+        },
+        "properties": {
+          "platform_type": "ECR_FIXED",
+          "orbArchiveMember": "orb_format_collection/soap15/scenarios/moon_illumination.orb",
+          "source": "orb-scenario"
+        }
+      },
+      {
+        "id": "DC",
+        "name": "DC",
+        "kind": "Platform",
+        "initialState": {
+          "frame": "cartographicDegrees",
+          "lon": -77.03666667,
+          "lat": 38.895,
+          "alt": 0.0
+        },
+        "properties": {
+          "platform_type": "ECR_FIXED",
+          "orbArchiveMember": "orb_format_collection/soap15/scenarios/moon_illumination.orb",
+          "source": "orb-scenario"
+        }
+      },
+      {
+        "id": "Earth_In_View Contour_Ctr",
+        "name": "Earth_In_View Contour_Ctr",
+        "kind": "Platform",
+        "initialState": {
+          "frame": "cartographicDegrees",
+          "lon": 180.0,
+          "lat": 0.0,
+          "alt": 0.0
+        },
+        "properties": {
+          "platform_type": "ECR_FIXED",
+          "orbArchiveMember": "orb_format_collection/soap15/scenarios/moon_illumination.orb",
+          "source": "orb-scenario"
+        }
+      },
+      {
+        "id": "Sun_Earth_In_View_Cos _Ctr",
+        "name": "Sun_Earth_In_View_Cos _Ctr",
+        "kind": "Platform",
+        "initialState": {
+          "frame": "cartographicDegrees",
+          "lon": 180.0,
+          "lat": 0.0,
+          "alt": 0.0
+        },
+        "properties": {
+          "platform_type": "ECR_FIXED",
+          "orbArchiveMember": "orb_format_collection/soap15/scenarios/moon_illumination.orb",
+          "source": "orb-scenario"
+        }
+      },
+      {
+        "id": "Sun_Earth_Overlap Cont_Cos_Ctr",
+        "name": "Sun_Earth_Overlap Cont_Cos_Ctr",
+        "kind": "Platform",
+        "initialState": {
+          "frame": "cartographicDegrees",
+          "lon": 180.0,
+          "lat": 0.0,
+          "alt": 0.0
+        },
+        "properties": {
+          "platform_type": "ECR_FIXED",
+          "orbArchiveMember": "orb_format_collection/soap15/scenarios/moon_illumination.orb",
+          "source": "orb-scenario"
+        }
+      },
+      {
+        "id": "Sun_Earth_Overlap Contour2_Ctr",
+        "name": "Sun_Earth_Overlap Contour2_Ctr",
+        "kind": "Platform",
+        "initialState": {
+          "frame": "cartographicDegrees",
+          "lon": 180.0,
+          "lat": 0.0,
+          "alt": 0.0
+        },
+        "properties": {
+          "platform_type": "ECR_FIXED",
+          "orbArchiveMember": "orb_format_collection/soap15/scenarios/moon_illumination.orb",
+          "source": "orb-scenario"
+        }
+      },
+      {
+        "id": "Sun_Earth_Overlap Contour_Ctr",
+        "name": "Sun_Earth_Overlap Contour_Ctr",
+        "kind": "Platform",
+        "initialState": {
+          "frame": "cartographicDegrees",
+          "lon": 180.0,
+          "lat": 0.0,
+          "alt": 0.0
+        },
+        "properties": {
+          "platform_type": "ECR_FIXED",
+          "orbArchiveMember": "orb_format_collection/soap15/scenarios/moon_illumination.orb",
+          "source": "orb-scenario"
+        }
+      },
+      {
+        "id": "Sun_In_View Contou_Ctr",
+        "name": "Sun_In_View Contou_Ctr",
+        "kind": "Platform",
+        "initialState": {
+          "frame": "cartographicDegrees",
+          "lon": 180.0,
+          "lat": 0.0,
+          "alt": 0.0
+        },
+        "properties": {
+          "platform_type": "ECR_FIXED",
+          "orbArchiveMember": "orb_format_collection/soap15/scenarios/moon_illumination.orb",
+          "source": "orb-scenario"
+        }
+      },
+      {
+        "id": "Sun_In_View Contour_Ctr",
+        "name": "Sun_In_View Contour_Ctr",
+        "kind": "Platform",
+        "initialState": {
+          "frame": "cartographicDegrees",
+          "lon": 180.0,
+          "lat": 0.0,
+          "alt": 0.0
+        },
+        "properties": {
+          "platform_type": "ECR_FIXED",
+          "orbArchiveMember": "orb_format_collection/soap15/scenarios/moon_illumination.orb",
+          "source": "orb-scenario"
+        }
+      }
+    ],
+    "trajectories": [],
+    "models": [],
+    "sensorSwaths": [],
+    "overlays": [],
+    "extensions": {}
+  },
+  "views": {
+    "views": [
+      {
+        "id": "orb-format-collection__soap15__scenarios__moon-illumination-overview",
+        "name": "moon_illumination Overview",
+        "kind": "View",
+        "target": ".Earth CR Observer",
+        "camera": {
+          "frame": "cartographicDegrees",
+          "lon": 0.0,
+          "lat": 0.0005729577951308233,
+          "alt": 63781.369999999995
+        }
+      }
+    ],
+    "palettes": [
+      {
+        "id": "orb-format-collection__soap15__scenarios__moon-illumination-default-palette",
+        "name": "Default Palette",
+        "entries": [
+          {
+            "kind": "entity-count",
+            "value": 12
+          },
+          {
+            "kind": "overlay-count",
+            "value": 0
+          }
+        ]
+      }
+    ]
+  },
+  "analysis": {
+    "results": []
+  },
+  "presentation": {
+    "slides": [],
+    "actions": []
+  },
+  "assets": {
+    "assets": []
+  },
+  "diagnostics": [
+    {
+      "severity": "warning",
+      "code": "SOAP-SCENE-MISSING-TIMESTAMP",
+      "path": "entities/.Earth CR Observer",
+      "message": "Entity '.Earth CR Observer' has no timestamp; SOAP trajectory export was omitted."
+    },
+    {
+      "severity": "warning",
+      "code": "SOAP-SCENE-MISSING-TIMESTAMP",
+      "path": "entities/.Earth Ground",
+      "message": "Entity '.Earth Ground' has no timestamp; SOAP trajectory export was omitted."
+    },
+    {
+      "severity": "warning",
+      "code": "SOAP-SCENE-MISSING-TIMESTAMP",
+      "path": "entities/.Earth Ground Observer",
+      "message": "Entity '.Earth Ground Observer' has no timestamp; SOAP trajectory export was omitted."
+    },
+    {
+      "severity": "warning",
+      "code": "SOAP-SCENE-MISSING-TIMESTAMP",
+      "path": "entities/.Earth Polar Observer",
+      "message": "Entity '.Earth Polar Observer' has no timestamp; SOAP trajectory export was omitted."
+    },
+    {
+      "severity": "warning",
+      "code": "SOAP-SCENE-MISSING-TIMESTAMP",
+      "path": "entities/DC",
+      "message": "Entity 'DC' has no timestamp; SOAP trajectory export was omitted."
+    },
+    {
+      "severity": "warning",
+      "code": "SOAP-SCENE-MISSING-TIMESTAMP",
+      "path": "entities/Earth_In_View Contour_Ctr",
+      "message": "Entity 'Earth_In_View Contour_Ctr' has no timestamp; SOAP trajectory export was omitted."
+    },
+    {
+      "severity": "warning",
+      "code": "SOAP-SCENE-MISSING-TIMESTAMP",
+      "path": "entities/Sun_Earth_In_View_Cos _Ctr",
+      "message": "Entity 'Sun_Earth_In_View_Cos _Ctr' has no timestamp; SOAP trajectory export was omitted."
+    },
+    {
+      "severity": "warning",
+      "code": "SOAP-SCENE-MISSING-TIMESTAMP",
+      "path": "entities/Sun_Earth_Overlap Cont_Cos_Ctr",
+      "message": "Entity 'Sun_Earth_Overlap Cont_Cos_Ctr' has no timestamp; SOAP trajectory export was omitted."
+    },
+    {
+      "severity": "warning",
+      "code": "SOAP-SCENE-MISSING-TIMESTAMP",
+      "path": "entities/Sun_Earth_Overlap Contour2_Ctr",
+      "message": "Entity 'Sun_Earth_Overlap Contour2_Ctr' has no timestamp; SOAP trajectory export was omitted."
+    },
+    {
+      "severity": "warning",
+      "code": "SOAP-SCENE-MISSING-TIMESTAMP",
+      "path": "entities/Sun_Earth_Overlap Contour_Ctr",
+      "message": "Entity 'Sun_Earth_Overlap Contour_Ctr' has no timestamp; SOAP trajectory export was omitted."
+    },
+    {
+      "severity": "warning",
+      "code": "SOAP-SCENE-MISSING-TIMESTAMP",
+      "path": "entities/Sun_In_View Contou_Ctr",
+      "message": "Entity 'Sun_In_View Contou_Ctr' has no timestamp; SOAP trajectory export was omitted."
+    },
+    {
+      "severity": "warning",
+      "code": "SOAP-SCENE-MISSING-TIMESTAMP",
+      "path": "entities/Sun_In_View Contour_Ctr",
+      "message": "Entity 'Sun_In_View Contour_Ctr' has no timestamp; SOAP trajectory export was omitted."
+    }
+  ],
+  "overlays": []
+}

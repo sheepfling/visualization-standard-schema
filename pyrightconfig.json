@@ -1,0 +1,21 @@
+{
+  "include": [
+    "src",
+    "tests",
+    "scripts"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "build",
+    "examples/generated"
+  ],
+  "typeCheckingMode": "basic",
+  "pythonVersion": "3.12",
+  "executionEnvironments": [
+    {
+      "root": "./",
+      "extraPaths": ["./src"]
+    }
+  ]
+}

@@ -1,0 +1,1297 @@
+{
+  "generatedAt": "2026-06-01T19:58:56.221Z",
+  "sourceRoot": "examples/orb-corpus/sdj",
+  "totalCount": 131,
+  "defaultPath": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/air_route_simple.sdj.json",
+  "featured": [
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/air_route_simple.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__air-route-simple",
+      "name": "air_route_simple",
+      "objectCount": 12,
+      "group": "orb_format_collection/soap15/scenarios",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/air_route_simple.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/moon_illumination.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__moon-illumination",
+      "name": "moon_illumination",
+      "objectCount": 12,
+      "group": "orb_format_collection/soap15/scenarios",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/moon_illumination.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/slew_demo3.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__slew-demo3",
+      "name": "slew_demo3",
+      "objectCount": 12,
+      "group": "orb_format_collection/soap15/scenarios",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/slew_demo3.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/gps_nga.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__gps-nga",
+      "name": "gps_nga",
+      "objectCount": 11,
+      "group": "orb_format_collection/soap15/scenarios",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/gps_nga.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/plat_vis_color_ex.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__plat-vis-color-ex",
+      "name": "plat_vis_color_ex",
+      "objectCount": 11,
+      "group": "orb_format_collection/soap15/scenarios",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/plat_vis_color_ex.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/regions_example/regions_example.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__regions-example__regions-example",
+      "name": "regions_example",
+      "objectCount": 11,
+      "group": "orb_format_collection/soap15/scenarios/regions_example",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/regions_example/regions_example.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/rpo_cases.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__rpo-cases",
+      "name": "rpo_cases",
+      "objectCount": 11,
+      "group": "orb_format_collection/soap15/scenarios",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/rpo_cases.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/eclipse_north_america_2017.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__eclipse-north-america-2017",
+      "name": "eclipse_north_america_2017",
+      "objectCount": 10,
+      "group": "orb_format_collection/soap15/scenarios",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/eclipse_north_america_2017.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/air_route_example.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__air-route-example",
+      "name": "air_route_example",
+      "objectCount": 9,
+      "group": "orb_format_collection/soap15/scenarios",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/air_route_example.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/north_korea_ballistic_plume/north_korea_ballistic_plume.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__north-korea-ballistic-plume__north-korea-ballistic-plume",
+      "name": "north_korea_ballistic_plume",
+      "objectCount": 8,
+      "group": "orb_format_collection/soap15/scenarios/north_korea_ballistic_plume",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/north_korea_ballistic_plume/north_korea_ballistic_plume.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/xlink.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__xlink",
+      "name": "xlink",
+      "objectCount": 8,
+      "group": "orb_format_collection/soap15/scenarios",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/xlink.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/Antenna_shadow_model.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__antenna-shadow-model",
+      "name": "Antenna_shadow_model",
+      "objectCount": 7,
+      "group": "orb_format_collection/soap15/scenarios",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/Antenna_shadow_model.orb"
+    }
+  ],
+  "scenes": [
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/air_route_simple.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__air-route-simple",
+      "name": "air_route_simple",
+      "objectCount": 12,
+      "group": "orb_format_collection/soap15/scenarios",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/air_route_simple.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/moon_illumination.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__moon-illumination",
+      "name": "moon_illumination",
+      "objectCount": 12,
+      "group": "orb_format_collection/soap15/scenarios",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/moon_illumination.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/slew_demo3.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__slew-demo3",
+      "name": "slew_demo3",
+      "objectCount": 12,
+      "group": "orb_format_collection/soap15/scenarios",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/slew_demo3.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/gps_nga.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__gps-nga",
+      "name": "gps_nga",
+      "objectCount": 11,
+      "group": "orb_format_collection/soap15/scenarios",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/gps_nga.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/plat_vis_color_ex.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__plat-vis-color-ex",
+      "name": "plat_vis_color_ex",
+      "objectCount": 11,
+      "group": "orb_format_collection/soap15/scenarios",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/plat_vis_color_ex.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/regions_example/regions_example.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__regions-example__regions-example",
+      "name": "regions_example",
+      "objectCount": 11,
+      "group": "orb_format_collection/soap15/scenarios/regions_example",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/regions_example/regions_example.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/rpo_cases.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__rpo-cases",
+      "name": "rpo_cases",
+      "objectCount": 11,
+      "group": "orb_format_collection/soap15/scenarios",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/rpo_cases.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/eclipse_north_america_2017.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__eclipse-north-america-2017",
+      "name": "eclipse_north_america_2017",
+      "objectCount": 10,
+      "group": "orb_format_collection/soap15/scenarios",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/eclipse_north_america_2017.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/air_route_example.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__air-route-example",
+      "name": "air_route_example",
+      "objectCount": 9,
+      "group": "orb_format_collection/soap15/scenarios",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/air_route_example.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/north_korea_ballistic_plume/north_korea_ballistic_plume.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__north-korea-ballistic-plume__north-korea-ballistic-plume",
+      "name": "north_korea_ballistic_plume",
+      "objectCount": 8,
+      "group": "orb_format_collection/soap15/scenarios/north_korea_ballistic_plume",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/north_korea_ballistic_plume/north_korea_ballistic_plume.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/xlink.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__xlink",
+      "name": "xlink",
+      "objectCount": 8,
+      "group": "orb_format_collection/soap15/scenarios",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/xlink.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/Antenna_shadow_model.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__antenna-shadow-model",
+      "name": "Antenna_shadow_model",
+      "objectCount": 7,
+      "group": "orb_format_collection/soap15/scenarios",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/Antenna_shadow_model.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/contour_min_max_ex.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__contour-min-max-ex",
+      "name": "contour_min_max_ex",
+      "objectCount": 7,
+      "group": "orb_format_collection/soap15/scenarios",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/contour_min_max_ex.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/cork2.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__cork2",
+      "name": "cork2",
+      "objectCount": 7,
+      "group": "orb_format_collection/soap15/scenarios",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/cork2.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/expression.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__expression",
+      "name": "expression",
+      "objectCount": 7,
+      "group": "orb_format_collection/soap15/scenarios",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/expression.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/great_circle_ex.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__great-circle-ex",
+      "name": "great_circle_ex",
+      "objectCount": 7,
+      "group": "orb_format_collection/soap15/scenarios",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/great_circle_ex.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/house_shadow/house_shadow.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__house-shadow__house-shadow",
+      "name": "house_shadow",
+      "objectCount": 7,
+      "group": "orb_format_collection/soap15/scenarios/house_shadow",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/house_shadow/house_shadow.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/missile_explosion_with_sound/missile_explosion_with_sound.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__missile-explosion-with-sound__missile-explosion-with-sound",
+      "name": "missile_explosion_with_sound",
+      "objectCount": 7,
+      "group": "orb_format_collection/soap15/scenarios/missile_explosion_with_sound",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/missile_explosion_with_sound/missile_explosion_with_sound.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/auto_report/myAutoreportSetup.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__auto-report__myautoreportsetup",
+      "name": "myAutoreportSetup",
+      "objectCount": 7,
+      "group": "orb_format_collection/soap15/scenarios/auto_report",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/auto_report/myAutoreportSetup.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/batchmode_example/process_and_quit.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__batchmode-example__process-and-quit",
+      "name": "process_and_quit",
+      "objectCount": 7,
+      "group": "orb_format_collection/soap15/scenarios/batchmode_example",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/batchmode_example/process_and_quit.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/RF_module_examples/rfi_example.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__rf-module-examples__rfi-example",
+      "name": "rfi_example",
+      "objectCount": 7,
+      "group": "orb_format_collection/soap15/scenarios/RF_module_examples",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/RF_module_examples/rfi_example.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/swath8.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__swath8",
+      "name": "swath8",
+      "objectCount": 7,
+      "group": "orb_format_collection/soap15/scenarios",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/swath8.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/variable_conical_sensor.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__variable-conical-sensor",
+      "name": "variable_conical_sensor",
+      "objectCount": 7,
+      "group": "orb_format_collection/soap15/scenarios",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/variable_conical_sensor.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/3D model contour example/3D_Model_Contour_demo.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__3d-model-contour-example__3d-model-contour-demo",
+      "name": "3D_Model_Contour_demo",
+      "objectCount": 6,
+      "group": "orb_format_collection/soap15/scenarios/3D model contour example",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/3D model contour example/3D_Model_Contour_demo.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/ae9ap9_radiation_examples/Constellation Analysis with Spherical Grid.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__ae9ap9-radiation-examples__constellation-analysis-with-spherical-grid",
+      "name": "Constellation Analysis with Spherical Grid",
+      "objectCount": 6,
+      "group": "orb_format_collection/soap15/scenarios/ae9ap9_radiation_examples",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/ae9ap9_radiation_examples/Constellation Analysis with Spherical Grid.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/coverage_contours_save.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__coverage-contours-save",
+      "name": "coverage_contours_save",
+      "objectCount": 6,
+      "group": "orb_format_collection/soap15/scenarios",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/coverage_contours_save.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/demo.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__demo",
+      "name": "demo",
+      "objectCount": 6,
+      "group": "orb_format_collection/soap15/scenarios",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/demo.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/demo_newvp.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__demo-newvp",
+      "name": "demo_newvp",
+      "objectCount": 6,
+      "group": "orb_format_collection/soap15/scenarios",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/demo_newvp.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/dted_uav_blawkhawk_clouds/dted_uav_blackhawk_clouds.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__dted-uav-blawkhawk-clouds__dted-uav-blackhawk-clouds",
+      "name": "dted_uav_blackhawk_clouds",
+      "objectCount": 6,
+      "group": "orb_format_collection/soap15/scenarios/dted_uav_blawkhawk_clouds",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/dted_uav_blawkhawk_clouds/dted_uav_blackhawk_clouds.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/hohmann.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__hohmann",
+      "name": "hohmann",
+      "objectCount": 6,
+      "group": "orb_format_collection/soap15/scenarios",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/hohmann.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/orbit definitions.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__orbit-definitions",
+      "name": "orbit definitions",
+      "objectCount": 6,
+      "group": "orb_format_collection/soap15/scenarios",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/orbit definitions.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/overland_test/overland_test.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__overland-test__overland-test",
+      "name": "overland_test",
+      "objectCount": 6,
+      "group": "orb_format_collection/soap15/scenarios/overland_test",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/overland_test/overland_test.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/planet_local_time.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__planet-local-time",
+      "name": "planet_local_time",
+      "objectCount": 6,
+      "group": "orb_format_collection/soap15/scenarios",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/planet_local_time.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/parametric_study/optimize_constellation/ps_optimize_constellation.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__parametric-study__optimize-constellation__ps-optimize-constellation",
+      "name": "ps_optimize_constellation",
+      "objectCount": 6,
+      "group": "orb_format_collection/soap15/scenarios/parametric_study/optimize_constellation",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/parametric_study/optimize_constellation/ps_optimize_constellation.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/rise-set report.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__rise-set-report",
+      "name": "rise-set report",
+      "objectCount": 6,
+      "group": "orb_format_collection/soap15/scenarios",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/rise-set report.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/statistics_view_ex1.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__statistics-view-ex1",
+      "name": "statistics_view_ex1",
+      "objectCount": 6,
+      "group": "orb_format_collection/soap15/scenarios",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/statistics_view_ex1.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/contour_age_of_data/age_of_data_example.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__contour-age-of-data__age-of-data-example",
+      "name": "age_of_data_example",
+      "objectCount": 5,
+      "group": "orb_format_collection/soap15/scenarios/contour_age_of_data",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/contour_age_of_data/age_of_data_example.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/antenna_gain_pattern_example.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__antenna-gain-pattern-example",
+      "name": "antenna_gain_pattern_example",
+      "objectCount": 5,
+      "group": "orb_format_collection/soap15/scenarios",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/antenna_gain_pattern_example.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/bank.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__bank",
+      "name": "bank",
+      "objectCount": 5,
+      "group": "orb_format_collection/soap15/scenarios",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/bank.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/california.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__california",
+      "name": "california",
+      "objectCount": 5,
+      "group": "orb_format_collection/soap15/scenarios",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/california.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/celestial.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__celestial",
+      "name": "celestial",
+      "objectCount": 5,
+      "group": "orb_format_collection/soap15/scenarios",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/celestial.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/clouds/clouds3D.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__clouds__clouds3d",
+      "name": "clouds3D",
+      "objectCount": 5,
+      "group": "orb_format_collection/soap15/scenarios/clouds",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/clouds/clouds3D.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/Penguin Gravity Demo/gravity_demo_sounds.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__penguin-gravity-demo__gravity-demo-sounds",
+      "name": "gravity_demo_sounds",
+      "objectCount": 5,
+      "group": "orb_format_collection/soap15/scenarios/Penguin Gravity Demo",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/Penguin Gravity Demo/gravity_demo_sounds.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/orbit_plane_ex.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__orbit-plane-ex",
+      "name": "orbit_plane_ex",
+      "objectCount": 5,
+      "group": "orb_format_collection/soap15/scenarios",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/orbit_plane_ex.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/platform_group_contour_cumulative_ex.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__platform-group-contour-cumulative-ex",
+      "name": "platform_group_contour_cumulative_ex",
+      "objectCount": 5,
+      "group": "orb_format_collection/soap15/scenarios",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/platform_group_contour_cumulative_ex.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/ae9ap9_radiation_examples/Protons SAA 700km.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__ae9ap9-radiation-examples__protons-saa-700km",
+      "name": "Protons SAA 700km",
+      "objectCount": 5,
+      "group": "orb_format_collection/soap15/scenarios/ae9ap9_radiation_examples",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/ae9ap9_radiation_examples/Protons SAA 700km.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/parametric_study/optimal_solar_panel_power/ps_solar_panel_power.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__parametric-study__optimal-solar-panel-power__ps-solar-panel-power",
+      "name": "ps_solar_panel_power",
+      "objectCount": 5,
+      "group": "orb_format_collection/soap15/scenarios/parametric_study/optimal_solar_panel_power",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/parametric_study/optimal_solar_panel_power/ps_solar_panel_power.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/rise_set.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__rise-set",
+      "name": "rise_set",
+      "objectCount": 5,
+      "group": "orb_format_collection/soap15/scenarios",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/rise_set.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/star_count.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__star-count",
+      "name": "star_count",
+      "objectCount": 5,
+      "group": "orb_format_collection/soap15/scenarios",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/star_count.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/variable_platform_ex.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__variable-platform-ex",
+      "name": "variable_platform_ex",
+      "objectCount": 5,
+      "group": "orb_format_collection/soap15/scenarios",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/variable_platform_ex.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/sequence_demo/year_seq.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__sequence-demo__year-seq",
+      "name": "year_seq",
+      "objectCount": 5,
+      "group": "orb_format_collection/soap15/scenarios/sequence_demo",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/sequence_demo/year_seq.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/collision_probability/26207-7219 encounter.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__collision-probability__26207-7219-encounter",
+      "name": "26207-7219 encounter",
+      "objectCount": 4,
+      "group": "orb_format_collection/soap15/scenarios/collision_probability",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/collision_probability/26207-7219 encounter.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/aquarium_view.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__aquarium-view",
+      "name": "aquarium_view",
+      "objectCount": 4,
+      "group": "orb_format_collection/soap15/scenarios",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/aquarium_view.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/clouds/atmospheric_ellipsoid_texture.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__clouds__atmospheric-ellipsoid-texture",
+      "name": "atmospheric_ellipsoid_texture",
+      "objectCount": 4,
+      "group": "orb_format_collection/soap15/scenarios/clouds",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/clouds/atmospheric_ellipsoid_texture.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/orbit_transfers/bielliptic_vs_hohmann_orbit_transfers.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__orbit-transfers__bielliptic-vs-hohmann-orbit-transfers",
+      "name": "bielliptic_vs_hohmann_orbit_transfers",
+      "objectCount": 4,
+      "group": "orb_format_collection/soap15/scenarios/orbit_transfers",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/orbit_transfers/bielliptic_vs_hohmann_orbit_transfers.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/clock.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__clock",
+      "name": "clock",
+      "objectCount": 4,
+      "group": "orb_format_collection/soap15/scenarios",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/clock.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/cont_gen_on_demand.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__cont-gen-on-demand",
+      "name": "cont_gen_on_demand",
+      "objectCount": 4,
+      "group": "orb_format_collection/soap15/scenarios",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/cont_gen_on_demand.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/coverage_contours_table.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__coverage-contours-table",
+      "name": "coverage_contours_table",
+      "objectCount": 4,
+      "group": "orb_format_collection/soap15/scenarios",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/coverage_contours_table.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/data_table_plot_ex.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__data-table-plot-ex",
+      "name": "data_table_plot_ex",
+      "objectCount": 4,
+      "group": "orb_format_collection/soap15/scenarios",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/data_table_plot_ex.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/dop.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__dop",
+      "name": "dop",
+      "objectCount": 4,
+      "group": "orb_format_collection/soap15/scenarios",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/dop.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/drag-effects-on-orbit.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__drag-effects-on-orbit",
+      "name": "drag-effects-on-orbit",
+      "objectCount": 4,
+      "group": "orb_format_collection/soap15/scenarios",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/drag-effects-on-orbit.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/encounter_data_view_ex.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__encounter-data-view-ex",
+      "name": "encounter_data_view_ex",
+      "objectCount": 4,
+      "group": "orb_format_collection/soap15/scenarios",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/encounter_data_view_ex.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/explosion.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__explosion",
+      "name": "explosion",
+      "objectCount": 4,
+      "group": "orb_format_collection/soap15/scenarios",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/explosion.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/explosion_freeze.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__explosion-freeze",
+      "name": "explosion_freeze",
+      "objectCount": 4,
+      "group": "orb_format_collection/soap15/scenarios",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/explosion_freeze.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/geoid_undulation_contour.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__geoid-undulation-contour",
+      "name": "geoid_undulation_contour",
+      "objectCount": 4,
+      "group": "orb_format_collection/soap15/scenarios",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/geoid_undulation_contour.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/intelsat_history/intelsat_maneuvers.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__intelsat-history__intelsat-maneuvers",
+      "name": "intelsat_maneuvers",
+      "objectCount": 4,
+      "group": "orb_format_collection/soap15/scenarios/intelsat_history",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/intelsat_history/intelsat_maneuvers.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/light_time_example.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__light-time-example",
+      "name": "light_time_example",
+      "objectCount": 4,
+      "group": "orb_format_collection/soap15/scenarios",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/light_time_example.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/new_region.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__new-region",
+      "name": "new_region",
+      "objectCount": 4,
+      "group": "orb_format_collection/soap15/scenarios",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/new_region.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/platform_group_contour_instantaneous_ex.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__platform-group-contour-instantaneous-ex",
+      "name": "platform_group_contour_instantaneous_ex",
+      "objectCount": 4,
+      "group": "orb_format_collection/soap15/scenarios",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/platform_group_contour_instantaneous_ex.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/platform_label_rotation.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__platform-label-rotation",
+      "name": "platform_label_rotation",
+      "objectCount": 4,
+      "group": "orb_format_collection/soap15/scenarios",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/platform_label_rotation.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/platform_notes_ex.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__platform-notes-ex",
+      "name": "platform_notes_ex",
+      "objectCount": 4,
+      "group": "orb_format_collection/soap15/scenarios",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/platform_notes_ex.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/ae9ap9_radiation_examples/Rad Flux Grid.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__ae9ap9-radiation-examples__rad-flux-grid",
+      "name": "Rad Flux Grid",
+      "objectCount": 4,
+      "group": "orb_format_collection/soap15/scenarios/ae9ap9_radiation_examples",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/ae9ap9_radiation_examples/Rad Flux Grid.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/ae9ap9_radiation_examples/Rad Flux Trajectory Analysis.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__ae9ap9-radiation-examples__rad-flux-trajectory-analysis",
+      "name": "Rad Flux Trajectory Analysis",
+      "objectCount": 4,
+      "group": "orb_format_collection/soap15/scenarios/ae9ap9_radiation_examples",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/ae9ap9_radiation_examples/Rad Flux Trajectory Analysis.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/rpy_datatable_ex2.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__rpy-datatable-ex2",
+      "name": "rpy_datatable_ex2",
+      "objectCount": 4,
+      "group": "orb_format_collection/soap15/scenarios",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/rpy_datatable_ex2.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/sbmview.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__sbmview",
+      "name": "sbmview",
+      "objectCount": 4,
+      "group": "orb_format_collection/soap15/scenarios",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/sbmview.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/simple_3d_icons.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__simple-3d-icons",
+      "name": "simple_3d_icons",
+      "objectCount": 4,
+      "group": "orb_format_collection/soap15/scenarios",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/simple_3d_icons.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/spice_dsn_stations.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__spice-dsn-stations",
+      "name": "spice_dsn_stations",
+      "objectCount": 4,
+      "group": "orb_format_collection/soap15/scenarios",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/spice_dsn_stations.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/star-tracking.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__star-tracking",
+      "name": "star-tracking",
+      "objectCount": 4,
+      "group": "orb_format_collection/soap15/scenarios",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/star-tracking.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/static_image_view_ex.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__static-image-view-ex",
+      "name": "static_image_view_ex",
+      "objectCount": 4,
+      "group": "orb_format_collection/soap15/scenarios",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/static_image_view_ex.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/sunsync_ltan.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__sunsync-ltan",
+      "name": "sunsync_ltan",
+      "objectCount": 4,
+      "group": "orb_format_collection/soap15/scenarios",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/sunsync_ltan.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/timestep_animation.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__timestep-animation",
+      "name": "timestep_animation",
+      "objectCount": 4,
+      "group": "orb_format_collection/soap15/scenarios",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/timestep_animation.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/traj_timeticks.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__traj-timeticks",
+      "name": "traj_timeticks",
+      "objectCount": 4,
+      "group": "orb_format_collection/soap15/scenarios",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/traj_timeticks.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/visibility_contours.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__visibility-contours",
+      "name": "visibility_contours",
+      "objectCount": 4,
+      "group": "orb_format_collection/soap15/scenarios",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/visibility_contours.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/weekly_calendar.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__weekly-calendar",
+      "name": "weekly_calendar",
+      "objectCount": 4,
+      "group": "orb_format_collection/soap15/scenarios",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/weekly_calendar.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/xy_colorscale_plot_example.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__xy-colorscale-plot-example",
+      "name": "xy_colorscale_plot_example",
+      "objectCount": 4,
+      "group": "orb_format_collection/soap15/scenarios",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/xy_colorscale_plot_example.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/action_example.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__action-example",
+      "name": "action_example",
+      "objectCount": 3,
+      "group": "orb_format_collection/soap15/scenarios",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/action_example.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/colorscale_labels_test.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__colorscale-labels-test",
+      "name": "colorscale_labels_test",
+      "objectCount": 3,
+      "group": "orb_format_collection/soap15/scenarios",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/colorscale_labels_test.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/condition_action_ex.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__condition-action-ex",
+      "name": "condition_action_ex",
+      "objectCount": 3,
+      "group": "orb_format_collection/soap15/scenarios",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/condition_action_ex.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/cones.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__cones",
+      "name": "cones",
+      "objectCount": 3,
+      "group": "orb_format_collection/soap15/scenarios",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/cones.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/contour_vis.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__contour-vis",
+      "name": "contour_vis",
+      "objectCount": 3,
+      "group": "orb_format_collection/soap15/scenarios",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/contour_vis.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/parallel_processing/coverage_contours_fine.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__parallel-processing__coverage-contours-fine",
+      "name": "coverage_contours_fine",
+      "objectCount": 3,
+      "group": "orb_format_collection/soap15/scenarios/parallel_processing",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/parallel_processing/coverage_contours_fine.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/parallel_processing/coverage_contours_fine_gui.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__parallel-processing__coverage-contours-fine-gui",
+      "name": "coverage_contours_fine_gui",
+      "objectCount": 3,
+      "group": "orb_format_collection/soap15/scenarios/parallel_processing",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/parallel_processing/coverage_contours_fine_gui.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/parallel_processing/coverage_contours_fine_nogui.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__parallel-processing__coverage-contours-fine-nogui",
+      "name": "coverage_contours_fine_nogui",
+      "objectCount": 3,
+      "group": "orb_format_collection/soap15/scenarios/parallel_processing",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/parallel_processing/coverage_contours_fine_nogui.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/data_table_example_contour.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__data-table-example-contour",
+      "name": "data_table_example_contour",
+      "objectCount": 3,
+      "group": "orb_format_collection/soap15/scenarios",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/data_table_example_contour.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/iso4a.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__iso4a",
+      "name": "iso4a",
+      "objectCount": 3,
+      "group": "orb_format_collection/soap15/scenarios",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/iso4a.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/logo.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__logo",
+      "name": "logo",
+      "objectCount": 3,
+      "group": "orb_format_collection/soap15/scenarios",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/logo.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/many_sbm.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__many-sbm",
+      "name": "many_sbm",
+      "objectCount": 3,
+      "group": "orb_format_collection/soap15/scenarios",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/many_sbm.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/RF_module_examples/power_flux_density_ex.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__rf-module-examples__power-flux-density-ex",
+      "name": "power_flux_density_ex",
+      "objectCount": 3,
+      "group": "orb_format_collection/soap15/scenarios/RF_module_examples",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/RF_module_examples/power_flux_density_ex.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/shadow_demo.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__shadow-demo",
+      "name": "shadow_demo",
+      "objectCount": 3,
+      "group": "orb_format_collection/soap15/scenarios",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/shadow_demo.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/solarsystem.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__solarsystem",
+      "name": "solarsystem",
+      "objectCount": 3,
+      "group": "orb_format_collection/soap15/scenarios",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/solarsystem.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/trajdemo2.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__trajdemo2",
+      "name": "trajdemo2",
+      "objectCount": 3,
+      "group": "orb_format_collection/soap15/scenarios",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/trajdemo2.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/transit_of_mercury_pres.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__transit-of-mercury-pres",
+      "name": "transit_of_mercury_pres",
+      "objectCount": 3,
+      "group": "orb_format_collection/soap15/scenarios",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/transit_of_mercury_pres.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/body_rel_plat.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__body-rel-plat",
+      "name": "body_rel_plat",
+      "objectCount": 2,
+      "group": "orb_format_collection/soap15/scenarios",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/body_rel_plat.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/conj_2000_may_06.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__conj-2000-may-06",
+      "name": "conj_2000_may_06",
+      "objectCount": 2,
+      "group": "orb_format_collection/soap15/scenarios",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/conj_2000_may_06.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/sbm.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__sbm",
+      "name": "sbm",
+      "objectCount": 2,
+      "group": "orb_format_collection/soap15/scenarios",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/sbm.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/ae9ap9_radiation_examples/6_Shells.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__ae9ap9-radiation-examples__6-shells",
+      "name": "6_Shells",
+      "objectCount": 0,
+      "group": "orb_format_collection/soap15/scenarios/ae9ap9_radiation_examples",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/ae9ap9_radiation_examples/6_Shells.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/auto-load-examples/autoload_self.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__auto-load-examples__autoload-self",
+      "name": "autoload_self",
+      "objectCount": 0,
+      "group": "orb_format_collection/soap15/scenarios/auto-load-examples",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/auto-load-examples/autoload_self.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/auto-load-examples/autoload1.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__auto-load-examples__autoload1",
+      "name": "autoload1",
+      "objectCount": 0,
+      "group": "orb_format_collection/soap15/scenarios/auto-load-examples",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/auto-load-examples/autoload1.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/auto-load-examples/autoload2.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__auto-load-examples__autoload2",
+      "name": "autoload2",
+      "objectCount": 0,
+      "group": "orb_format_collection/soap15/scenarios/auto-load-examples",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/auto-load-examples/autoload2.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/baja_ecl_pres.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__baja-ecl-pres",
+      "name": "baja_ecl_pres",
+      "objectCount": 0,
+      "group": "orb_format_collection/soap15/scenarios",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/baja_ecl_pres.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/auto-load-examples/celestrak_gps.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__auto-load-examples__celestrak-gps",
+      "name": "celestrak_gps",
+      "objectCount": 0,
+      "group": "orb_format_collection/soap15/scenarios/auto-load-examples",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/auto-load-examples/celestrak_gps.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/auto-load-examples/celestrak_new_objects.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__auto-load-examples__celestrak-new-objects",
+      "name": "celestrak_new_objects",
+      "objectCount": 0,
+      "group": "orb_format_collection/soap15/scenarios/auto-load-examples",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/auto-load-examples/celestrak_new_objects.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/clouds/clouds isccp.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__clouds__clouds-isccp",
+      "name": "clouds isccp",
+      "objectCount": 0,
+      "group": "orb_format_collection/soap15/scenarios/clouds",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/clouds/clouds isccp.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/coverage_contours.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__coverage-contours",
+      "name": "coverage_contours",
+      "objectCount": 0,
+      "group": "orb_format_collection/soap15/scenarios",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/coverage_contours.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/data_table_example.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__data-table-example",
+      "name": "data_table_example",
+      "objectCount": 0,
+      "group": "orb_format_collection/soap15/scenarios",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/data_table_example.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/ae9ap9_radiation_examples/Dose Analysis.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__ae9ap9-radiation-examples__dose-analysis",
+      "name": "Dose Analysis",
+      "objectCount": 0,
+      "group": "orb_format_collection/soap15/scenarios/ae9ap9_radiation_examples",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/ae9ap9_radiation_examples/Dose Analysis.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/dted_landsat_uav.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__dted-landsat-uav",
+      "name": "dted_landsat_uav",
+      "objectCount": 0,
+      "group": "orb_format_collection/soap15/scenarios",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/dted_landsat_uav.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/ae9ap9_radiation_examples/Flux Shells.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__ae9ap9-radiation-examples__flux-shells",
+      "name": "Flux Shells",
+      "objectCount": 0,
+      "group": "orb_format_collection/soap15/scenarios/ae9ap9_radiation_examples",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/ae9ap9_radiation_examples/Flux Shells.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/3D texture model example/globalstar.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__3d-texture-model-example__globalstar",
+      "name": "globalstar",
+      "objectCount": 0,
+      "group": "orb_format_collection/soap15/scenarios/3D texture model example",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/3D texture model example/globalstar.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/grids_example.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__grids-example",
+      "name": "grids_example",
+      "objectCount": 0,
+      "group": "orb_format_collection/soap15/scenarios",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/grids_example.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/matlab/matlab.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__matlab__matlab",
+      "name": "matlab",
+      "objectCount": 0,
+      "group": "orb_format_collection/soap15/scenarios/matlab",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/matlab/matlab.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/norad.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__norad",
+      "name": "norad",
+      "objectCount": 0,
+      "group": "orb_format_collection/soap15/scenarios",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/norad.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/ae9ap9_radiation_examples/Protons SAA 700kmb.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__ae9ap9-radiation-examples__protons-saa-700kmb",
+      "name": "Protons SAA 700kmb",
+      "objectCount": 0,
+      "group": "orb_format_collection/soap15/scenarios/ae9ap9_radiation_examples",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/ae9ap9_radiation_examples/Protons SAA 700kmb.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/util/region_utility/regions_example.sdj.json",
+      "id": "orb-format-collection__soap15__util__region-utility__regions-example",
+      "name": "regions_example",
+      "objectCount": 0,
+      "group": "orb_format_collection/soap15/util/region_utility",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/util/region_utility/regions_example.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/stuck_thruster_examples/stuck_thruster_ahead.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__stuck-thruster-examples__stuck-thruster-ahead",
+      "name": "stuck_thruster_ahead",
+      "objectCount": 0,
+      "group": "orb_format_collection/soap15/scenarios/stuck_thruster_examples",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/stuck_thruster_examples/stuck_thruster_ahead.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/stuck_thruster_examples/stuck_thruster_behind.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__stuck-thruster-examples__stuck-thruster-behind",
+      "name": "stuck_thruster_behind",
+      "objectCount": 0,
+      "group": "orb_format_collection/soap15/scenarios/stuck_thruster_examples",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/stuck_thruster_examples/stuck_thruster_behind.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/stuck_thruster_examples/stuck_thruster_cross.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__stuck-thruster-examples__stuck-thruster-cross",
+      "name": "stuck_thruster_cross",
+      "objectCount": 0,
+      "group": "orb_format_collection/soap15/scenarios/stuck_thruster_examples",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/stuck_thruster_examples/stuck_thruster_cross.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/stuck_thruster_examples/stuck_thruster_down.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__stuck-thruster-examples__stuck-thruster-down",
+      "name": "stuck_thruster_down",
+      "objectCount": 0,
+      "group": "orb_format_collection/soap15/scenarios/stuck_thruster_examples",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/stuck_thruster_examples/stuck_thruster_down.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/stuck_thruster_examples/stuck_thruster_up.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__stuck-thruster-examples__stuck-thruster-up",
+      "name": "stuck_thruster_up",
+      "objectCount": 0,
+      "group": "orb_format_collection/soap15/scenarios/stuck_thruster_examples",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/stuck_thruster_examples/stuck_thruster_up.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/matlab/test0_rev1.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__matlab__test0-rev1",
+      "name": "test0_rev1",
+      "objectCount": 0,
+      "group": "orb_format_collection/soap15/scenarios/matlab",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/matlab/test0_rev1.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/thermal_template.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__thermal-template",
+      "name": "thermal_template",
+      "objectCount": 0,
+      "group": "orb_format_collection/soap15/scenarios",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/thermal_template.orb"
+    }
+  ]
+}

@@ -1,0 +1,446 @@
+{
+  "cesium": {
+    "target": "cesium",
+    "adapterVersion": "vss-python-0.1",
+    "surfaces": [
+      {
+        "id": "czml",
+        "label": "CZML document",
+        "kind": "exchange-format",
+        "status": "strong",
+        "description": "Primary current Cesium output from the Python package.",
+        "artifacts": ["*.czml.json"]
+      },
+      {
+        "id": "cesium-js-viewer",
+        "label": "CesiumJS viewer HTML",
+        "kind": "runtime-shell",
+        "status": "partial",
+        "description": "Generated HTML shell that loads CZML in CesiumJS; scene views and richer runtime wiring are not compiled yet.",
+        "artifacts": ["*.viewer.html"]
+      },
+      {
+        "id": "cesium-js-loader",
+        "label": "CesiumJS loader module",
+        "kind": "runtime-module",
+        "status": "unsupported",
+        "description": "The imported SDJ workbench has this shape, but the Python package does not emit a dedicated Cesium loader module yet.",
+        "artifacts": []
+      }
+    ],
+    "schemaFeatures": [
+      {
+        "featureId": "document.metadata",
+        "label": "Document metadata",
+        "support": "strong",
+        "notes": "Scene id, name, description, source, and created timestamp map cleanly into document packet metadata.",
+        "surfaces": ["czml", "cesium-js-viewer"]
+      },
+      {
+        "featureId": "clock.timestamps",
+        "label": "Scene clock from timestamps",
+        "support": "strong",
+        "notes": "Current scene timestamps compile into a CZML document clock.",
+        "surfaces": ["czml"]
+      },
+      {
+        "featureId": "object.entity.position",
+        "label": "Entity point position",
+        "support": "strong",
+        "notes": "Entities compile to CZML packets with cartographic degree positions.",
+        "surfaces": ["czml"]
+      },
+      {
+        "featureId": "object.entity.orientation",
+        "label": "Entity orientation",
+        "support": "partial",
+        "notes": "Heading, pitch, and roll are preserved only as packet properties, not native Cesium quaternions.",
+        "surfaces": ["czml"]
+      },
+      {
+        "featureId": "object.path.sampledMotion",
+        "label": "Sampled path motion",
+        "support": "partial",
+        "notes": "Path objects compile into sampled CZML position plus path graphics with basic styling; richer path semantics remain open.",
+        "surfaces": ["czml", "cesium-js-viewer"]
+      },
+      {
+        "featureId": "object.track.sampledMotion",
+        "label": "Track motion",
+        "support": "strong",
+        "notes": "Track objects compile into sampled CZML position plus path graphics, matching the imported SDJ track family closely.",
+        "surfaces": ["czml", "cesium-js-viewer"]
+      },
+      {
+        "featureId": "object.rectangle.geometry",
+        "label": "Rectangle geometry",
+        "support": "strong",
+        "notes": "Rectangle overlays compile into native CZML rectangle packets with Cesium-compatible bounds and styling.",
+        "surfaces": ["czml", "cesium-js-viewer"]
+      },
+      {
+        "featureId": "object.corridor.geometry",
+        "label": "Corridor geometry",
+        "support": "strong",
+        "notes": "Corridor overlays compile into native CZML corridor packets with positions, width, and styling.",
+        "surfaces": ["czml", "cesium-js-viewer"]
+      },
+      {
+        "featureId": "object.ellipse.geometry",
+        "label": "Ellipse geometry",
+        "support": "strong",
+        "notes": "Ellipse overlays compile into native CZML ellipse packets with semi-major and semi-minor axes plus styling.",
+        "surfaces": ["czml", "cesium-js-viewer"]
+      },
+      {
+        "featureId": "object.circle.geometry",
+        "label": "Circle geometry",
+        "support": "strong",
+        "notes": "Circle overlays compile into CZML ellipse packets with matching axes and styling.",
+        "surfaces": ["czml", "cesium-js-viewer"]
+      },
+      {
+        "featureId": "style.label",
+        "label": "Text labels",
+        "support": "strong",
+        "notes": "Style labels compile to CZML label graphics.",
+        "surfaces": ["czml"]
+      },
+      {
+        "featureId": "style.icon",
+        "label": "Billboard icons",
+        "support": "strong",
+        "notes": "Style icon URIs compile to CZML billboard graphics.",
+        "surfaces": ["czml"]
+      },
+      {
+        "featureId": "style.model",
+        "label": "3D model references",
+        "support": "strong",
+        "notes": "Model URIs compile to CZML model graphics.",
+        "surfaces": ["czml", "cesium-js-viewer"]
+      },
+      {
+        "featureId": "style.color",
+        "label": "RGBA styling",
+        "support": "strong",
+        "notes": "Current point, label, polyline, and polygon paths carry RGBA color into CZML.",
+        "surfaces": ["czml"]
+      },
+      {
+        "featureId": "object.overlay.polyline",
+        "label": "Polyline overlays",
+        "support": "strong",
+        "notes": "Polyline overlays compile to native CZML polyline packets.",
+        "surfaces": ["czml", "cesium-js-viewer"]
+      },
+      {
+        "featureId": "object.overlay.polygon",
+        "label": "Polygon overlays",
+        "support": "strong",
+        "notes": "Polygon overlays compile to native CZML polygon packets.",
+        "surfaces": ["czml", "cesium-js-viewer"]
+      },
+      {
+        "featureId": "object.sensor",
+        "label": "Sensor semantics",
+        "support": "partial",
+        "notes": "Sensor entities render as ordinary entities or billboards; no native sensor volume geometry is emitted yet.",
+        "surfaces": ["czml", "cesium-js-viewer"]
+      },
+      {
+        "featureId": "views",
+        "label": "Scene views",
+        "support": "unsupported",
+        "notes": "The package emits a generic viewer HTML shell but does not compile SDJ view definitions into Cesium camera programs.",
+        "surfaces": ["cesium-js-viewer"]
+      },
+      {
+        "featureId": "analysis",
+        "label": "Analysis records",
+        "support": "unsupported",
+        "notes": "Scene analysis content is not compiled into Cesium artifacts yet.",
+        "surfaces": ["czml"]
+      },
+      {
+        "featureId": "presentation",
+        "label": "Presentation records",
+        "support": "unsupported",
+        "notes": "Scene presentation content is not compiled into Cesium artifacts yet.",
+        "surfaces": ["czml"]
+      }
+    ],
+    "notes": [
+      "Current Cesium support is centered on CZML, sampled path/track motion, and a generated CesiumJS HTML loader shell.",
+      "The imported SDJ workbench advertises broader Cesium object families than the current Python package actually emits."
+    ]
+  },
+  "simdis": {
+    "target": "simdis",
+    "adapterVersion": "vss-python-0.1",
+    "surfaces": [
+      {
+        "id": "simdis-asi",
+        "label": "SIMDIS ASI lines",
+        "kind": "exchange-format",
+        "status": "partial",
+        "description": "Line-oriented output for entity-style platform updates; best for simple message or track export, not full scene semantics.",
+        "artifacts": ["*.simdis.txt"]
+      },
+      {
+        "id": "simdis-gog",
+        "label": "SIMDIS GOG overlays",
+        "kind": "overlay-format",
+        "status": "strong",
+        "description": "Native overlay surface for polyline and polygon geometry.",
+        "artifacts": ["simdis/overlays.gog"]
+      },
+      {
+        "id": "simdis-bundle",
+        "label": "SIMDIS bundle",
+        "kind": "bundle",
+        "status": "strong",
+        "description": "Typed bundle containing entities, overlays, diagnostics, and presentation placeholders.",
+        "artifacts": ["simdis/manifest.json", "simdis/entities.json", "simdis/diagnostics.json"]
+      }
+    ],
+    "schemaFeatures": [
+      {
+        "featureId": "document.metadata",
+        "label": "Document metadata",
+        "support": "partial",
+        "notes": "Scene id and counts flow into the SIMDIS manifest, but there is no full scene metadata artifact.",
+        "surfaces": ["simdis-bundle"]
+      },
+      {
+        "featureId": "clock.timestamps",
+        "label": "Scene clock from timestamps",
+        "support": "partial",
+        "notes": "Timestamps are preserved on platform updates and trajectories, but no scene-level clock artifact is emitted.",
+        "surfaces": ["simdis-asi", "simdis-bundle"]
+      },
+      {
+        "featureId": "object.entity.position",
+        "label": "Entity position",
+        "support": "strong",
+        "notes": "Entities map into SIMDIS platforms, sensors, or annotations with position state.",
+        "surfaces": ["simdis-asi", "simdis-bundle"]
+      },
+      {
+        "featureId": "object.entity.orientation",
+        "label": "Entity orientation",
+        "support": "partial",
+        "notes": "Orientation is carried for platform lines and bundle state, but not all SIMDIS object paths use it equally.",
+        "surfaces": ["simdis-asi", "simdis-bundle"]
+      },
+      {
+        "featureId": "style.label",
+        "label": "Text labels",
+        "support": "strong",
+        "notes": "Labels map to platform labels or annotation text.",
+        "surfaces": ["simdis-asi", "simdis-bundle", "simdis-gog"]
+      },
+      {
+        "featureId": "style.icon",
+        "label": "Billboard icons",
+        "support": "partial",
+        "notes": "Icons are preserved only on annotation bundle entries, not native SIMDIS platform models.",
+        "surfaces": ["simdis-bundle"]
+      },
+      {
+        "featureId": "style.model",
+        "label": "3D model references",
+        "support": "unsupported",
+        "notes": "Model URIs are not mapped into SIMDIS model libraries or platform art yet.",
+        "surfaces": ["simdis-bundle"]
+      },
+      {
+        "featureId": "style.color",
+        "label": "RGBA styling",
+        "support": "partial",
+        "notes": "Overlay and annotation colors are preserved, but full SDJ material semantics are not.",
+        "surfaces": ["simdis-bundle", "simdis-gog"]
+      },
+      {
+        "featureId": "object.overlay.polyline",
+        "label": "Polyline overlays",
+        "support": "strong",
+        "notes": "Polyline overlays compile into native GOG lines and typed overlay bundle records.",
+        "surfaces": ["simdis-gog", "simdis-bundle"]
+      },
+      {
+        "featureId": "object.overlay.polygon",
+        "label": "Polygon overlays",
+        "support": "strong",
+        "notes": "Polygon overlays compile into native GOG polygons and typed overlay bundle records.",
+        "surfaces": ["simdis-gog", "simdis-bundle"]
+      },
+      {
+        "featureId": "object.sensor",
+        "label": "Sensor semantics",
+        "support": "partial",
+        "notes": "Sensor entities become sensor bundle records, but current geometry is only a point-like placeholder target.",
+        "surfaces": ["simdis-bundle"]
+      },
+      {
+        "featureId": "views",
+        "label": "Scene views",
+        "support": "unsupported",
+        "notes": "No SDJ view definitions are compiled into SIMDIS presentation records yet.",
+        "surfaces": ["simdis-bundle"]
+      },
+      {
+        "featureId": "analysis",
+        "label": "Analysis records",
+        "support": "unsupported",
+        "notes": "Analysis content is not compiled into SIMDIS analysis artifacts yet.",
+        "surfaces": ["simdis-bundle"]
+      },
+      {
+        "featureId": "presentation",
+        "label": "Presentation records",
+        "support": "unsupported",
+        "notes": "The presentation artifact exists but scene presentation content is not compiled into it yet.",
+        "surfaces": ["simdis-bundle"]
+      }
+    ],
+    "notes": [
+      "The package currently has multiple SIMDIS surfaces: simple ASI-style platform lines, native GOG overlays, and a typed SIMDIS bundle.",
+      "GOG is the overlay geometry surface. ASI-style lines are the simple platform update surface. The bundle is the package-owned contract that ties them together."
+    ]
+  },
+  "soap": {
+    "target": "soap",
+    "adapterVersion": "vss-python-0.1",
+    "surfaces": [
+      {
+        "id": "soap-envelope",
+        "label": "SOAP XML envelope",
+        "kind": "exchange-format",
+        "status": "partial",
+        "description": "Single-entity XML surface for transport-style entity updates.",
+        "artifacts": ["*.soap.xml"]
+      },
+      {
+        "id": "soap-bundle",
+        "label": "SOAP scene bundle",
+        "kind": "bundle",
+        "status": "strong",
+        "description": "Typed scene bundle with scenario, views, overlays, diagnostics, and placeholder analysis and presentation artifacts.",
+        "artifacts": ["soap/scenario.json", "soap/views.json", "soap/diagnostics.json"]
+      },
+      {
+        "id": "orb-related",
+        "label": "ORB-related scenario surface",
+        "kind": "related-format",
+        "status": "partial",
+        "description": "ORB text is a related scenario surface in this repo, but it is not yet a first-class target-owned SOAP artifact family.",
+        "artifacts": ["*.orb.txt"]
+      }
+    ],
+    "schemaFeatures": [
+      {
+        "featureId": "document.metadata",
+        "label": "Document metadata",
+        "support": "partial",
+        "notes": "Scene id and name map to scenario metadata and views, but not all SDJ document fields are preserved.",
+        "surfaces": ["soap-bundle", "soap-envelope"]
+      },
+      {
+        "featureId": "clock.timestamps",
+        "label": "Scene clock from timestamps",
+        "support": "strong",
+        "notes": "Scene timestamps compile into a scenario clock and trajectory sample times.",
+        "surfaces": ["soap-bundle"]
+      },
+      {
+        "featureId": "object.entity.position",
+        "label": "Entity position",
+        "support": "strong",
+        "notes": "Entities compile into platforms and optional trajectories with cartographic position state.",
+        "surfaces": ["soap-bundle", "soap-envelope"]
+      },
+      {
+        "featureId": "object.entity.orientation",
+        "label": "Entity orientation",
+        "support": "unsupported",
+        "notes": "Current SOAP bundle and envelope paths do not preserve scene orientation state as native scenario data.",
+        "surfaces": ["soap-bundle", "soap-envelope"]
+      },
+      {
+        "featureId": "style.label",
+        "label": "Text labels",
+        "support": "partial",
+        "notes": "Labels are preserved on sensor swaths and overlay styles, but not as a fully general scene label primitive.",
+        "surfaces": ["soap-bundle", "soap-envelope"]
+      },
+      {
+        "featureId": "style.icon",
+        "label": "Billboard icons",
+        "support": "unsupported",
+        "notes": "Icon URIs are not compiled into SOAP bundle or envelope artifacts.",
+        "surfaces": ["soap-bundle", "soap-envelope"]
+      },
+      {
+        "featureId": "style.model",
+        "label": "3D model references",
+        "support": "strong",
+        "notes": "Entities with model URIs emit typed SOAP model records.",
+        "surfaces": ["soap-bundle", "orb-related"]
+      },
+      {
+        "featureId": "style.color",
+        "label": "RGBA styling",
+        "support": "partial",
+        "notes": "Color is preserved on overlay and sensor style records, but not as a general material model.",
+        "surfaces": ["soap-bundle", "soap-envelope"]
+      },
+      {
+        "featureId": "object.overlay.polyline",
+        "label": "Polyline overlays",
+        "support": "strong",
+        "notes": "Polyline overlays compile into typed SOAP overlay records.",
+        "surfaces": ["soap-bundle", "orb-related"]
+      },
+      {
+        "featureId": "object.overlay.polygon",
+        "label": "Polygon overlays",
+        "support": "strong",
+        "notes": "Polygon overlays compile into typed SOAP overlay records.",
+        "surfaces": ["soap-bundle", "orb-related"]
+      },
+      {
+        "featureId": "object.sensor",
+        "label": "Sensor semantics",
+        "support": "partial",
+        "notes": "Sensor entities compile into typed sensor swath records, but only as point-hosted placeholders today.",
+        "surfaces": ["soap-bundle", "orb-related"]
+      },
+      {
+        "featureId": "views",
+        "label": "Scene views",
+        "support": "partial",
+        "notes": "A typed view and palette artifact is generated, but it is currently derived from the first entity rather than authored SDJ views.",
+        "surfaces": ["soap-bundle"]
+      },
+      {
+        "featureId": "analysis",
+        "label": "Analysis records",
+        "support": "unsupported",
+        "notes": "Analysis artifacts are emitted as empty placeholders today.",
+        "surfaces": ["soap-bundle", "orb-related"]
+      },
+      {
+        "featureId": "presentation",
+        "label": "Presentation records",
+        "support": "unsupported",
+        "notes": "Presentation artifacts are emitted as empty placeholders today.",
+        "surfaces": ["soap-bundle", "orb-related"]
+      }
+    ],
+    "notes": [
+      "The package currently has two SOAP-owned surfaces: a single-message XML envelope and a typed scene bundle.",
+      "ORB text exists as a related scenario surface in the repo and should be treated as adjacent rather than identical to the SOAP bundle contract."
+    ]
+  }
+}

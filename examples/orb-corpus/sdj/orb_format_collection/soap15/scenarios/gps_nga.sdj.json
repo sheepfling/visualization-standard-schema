@@ -1,0 +1,175 @@
+{
+  "schemaVersion": "1.0.0-scene",
+  "document": {
+    "id": "orb-format-collection__soap15__scenarios__gps-nga",
+    "name": "gps_nga",
+    "source": "orb_format_collection/soap15/scenarios/gps_nga.orb"
+  },
+  "objects": [
+    {
+      "id": ".Earth CR Observer",
+      "name": ".Earth CR Observer",
+      "attributes": {
+        "platform_type": "ECR_FIXED",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/gps_nga.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": -94.0,
+        "latitudeDeg": 36.0005729578,
+        "altitudeM": 63781.369999999995
+      }
+    },
+    {
+      "id": ".Earth CR Observer 1",
+      "name": ".Earth CR Observer 1",
+      "attributes": {
+        "platform_type": "ECR_FIXED",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/gps_nga.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": -136.0,
+        "latitudeDeg": -10.0005729578,
+        "altitudeM": 63781.369999999995
+      }
+    },
+    {
+      "id": ".Earth CR Observer 2",
+      "name": ".Earth CR Observer 2",
+      "attributes": {
+        "platform_type": "ECR_FIXED",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/gps_nga.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": -72.0,
+        "latitudeDeg": 31.9994270422,
+        "altitudeM": 63781.369999999995
+      }
+    },
+    {
+      "id": ".Earth Ground Observer",
+      "name": ".Earth Ground Observer",
+      "attributes": {
+        "platform_type": "ECR_FIXED",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/gps_nga.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": 90.0,
+        "latitudeDeg": 0.0005729577951308,
+        "altitudeM": 0.0
+      }
+    },
+    {
+      "id": ".Earth Polar Observer",
+      "name": ".Earth Polar Observer",
+      "attributes": {
+        "platform_type": "ECR_FIXED",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/gps_nga.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": -52.0,
+        "latitudeDeg": 89.9994270422,
+        "altitudeM": 63781.369999999995
+      }
+    },
+    {
+      "id": "DGS",
+      "name": "DGS",
+      "attributes": {
+        "platform_type": "ECR_FIXED",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/gps_nga.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": 72.3709,
+        "latitudeDeg": -7.269800000000001,
+        "altitudeM": 0.0
+      }
+    },
+    {
+      "id": "KWAJ",
+      "name": "KWAJ",
+      "attributes": {
+        "platform_type": "ECR_FIXED",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/gps_nga.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": 167.7305,
+        "latitudeDeg": 8.7225,
+        "altitudeM": 0.039927
+      }
+    },
+    {
+      "id": "NGA AUS",
+      "name": "NGA AUS",
+      "attributes": {
+        "platform_type": "ECR_FIXED",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/gps_nga.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": 138.6473,
+        "latitudeDeg": -34.729,
+        "altitudeM": 0.038155
+      }
+    },
+    {
+      "id": "NGA BAH",
+      "name": "NGA BAH",
+      "attributes": {
+        "platform_type": "ECR_FIXED",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/gps_nga.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": 50.60814,
+        "latitudeDeg": 26.20914,
+        "altitudeM": -0.01387
+      }
+    },
+    {
+      "id": "NGA NZA",
+      "name": "NGA NZA",
+      "attributes": {
+        "platform_type": "ECR_FIXED",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/gps_nga.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": 174.7787,
+        "latitudeDeg": -41.2726,
+        "altitudeM": 0.046902
+      }
+    },
+    {
+      "id": "NGA SAF",
+      "name": "NGA SAF",
+      "attributes": {
+        "platform_type": "ECR_FIXED",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/gps_nga.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": 28.22404,
+        "latitudeDeg": -25.7463,
+        "altitudeM": 1.416405
+      }
+    }
+  ]
+}

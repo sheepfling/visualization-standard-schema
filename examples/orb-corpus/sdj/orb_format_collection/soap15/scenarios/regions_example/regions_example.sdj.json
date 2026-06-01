@@ -1,0 +1,175 @@
+{
+  "schemaVersion": "1.0.0-scene",
+  "document": {
+    "id": "orb-format-collection__soap15__scenarios__regions-example__regions-example",
+    "name": "regions_example",
+    "source": "orb_format_collection/soap15/scenarios/regions_example/regions_example.orb"
+  },
+  "objects": [
+    {
+      "id": ".Earth CR Observer",
+      "name": ".Earth CR Observer",
+      "attributes": {
+        "platform_type": "ECR_FIXED",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/regions_example/regions_example.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": 64.0,
+        "latitudeDeg": 32.0005729578,
+        "altitudeM": 63781.369999999995
+      }
+    },
+    {
+      "id": ".Earth Ground",
+      "name": ".Earth Ground",
+      "attributes": {
+        "platform_type": "ECR_FIXED",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/regions_example/regions_example.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": -99.0,
+        "latitudeDeg": 38.0,
+        "altitudeM": 0.0
+      }
+    },
+    {
+      "id": ".Earth Ground Observer",
+      "name": ".Earth Ground Observer",
+      "attributes": {
+        "platform_type": "ECR_FIXED",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/regions_example/regions_example.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": 90.0,
+        "latitudeDeg": 0.0005729577951308,
+        "altitudeM": 0.0
+      }
+    },
+    {
+      "id": ".Earth Polar Observer",
+      "name": ".Earth Polar Observer",
+      "attributes": {
+        "platform_type": "ECR_FIXED",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/regions_example/regions_example.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": 0.0,
+        "latitudeDeg": 90.0,
+        "altitudeM": 63781.369999999995
+      }
+    },
+    {
+      "id": "Grid  0001_Ctr",
+      "name": "Grid  0001_Ctr",
+      "attributes": {
+        "platform_type": "ECR_FIXED",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/regions_example/regions_example.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": 69.15,
+        "latitudeDeg": 31.000000000000007,
+        "altitudeM": 0.0
+      }
+    },
+    {
+      "id": "Region Afghan Sat_Ctr",
+      "name": "Region Afghan Sat_Ctr",
+      "attributes": {
+        "platform_type": "ECR_FIXED",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/regions_example/regions_example.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": 69.15,
+        "latitudeDeg": 31.000000000000007,
+        "altitudeM": 0.0
+      }
+    },
+    {
+      "id": "Region Afghan_Ctr",
+      "name": "Region Afghan_Ctr",
+      "attributes": {
+        "platform_type": "ECR_FIXED",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/regions_example/regions_example.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": 69.15,
+        "latitudeDeg": 31.000000000000007,
+        "altitudeM": 0.0
+      }
+    },
+    {
+      "id": "Region Afghani Sat_Ctr",
+      "name": "Region Afghani Sat_Ctr",
+      "attributes": {
+        "platform_type": "ECR_FIXED",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/regions_example/regions_example.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": 69.15,
+        "latitudeDeg": 31.000000000000007,
+        "altitudeM": 0.0
+      }
+    },
+    {
+      "id": "Region Paki Sat 0001_Ctr",
+      "name": "Region Paki Sat 0001_Ctr",
+      "attributes": {
+        "platform_type": "ECR_FIXED",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/regions_example/regions_example.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": 69.15,
+        "latitudeDeg": 31.000000000000007,
+        "altitudeM": 0.0
+      }
+    },
+    {
+      "id": "Region Paki Sat_Ctr",
+      "name": "Region Paki Sat_Ctr",
+      "attributes": {
+        "platform_type": "ECR_FIXED",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/regions_example/regions_example.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": 69.15,
+        "latitudeDeg": 31.000000000000007,
+        "altitudeM": 0.0
+      }
+    },
+    {
+      "id": "Region Paki_Ctr",
+      "name": "Region Paki_Ctr",
+      "attributes": {
+        "platform_type": "ECR_FIXED",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/regions_example/regions_example.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": 69.15,
+        "latitudeDeg": 31.000000000000007,
+        "altitudeM": 0.0
+      }
+    }
+  ]
+}

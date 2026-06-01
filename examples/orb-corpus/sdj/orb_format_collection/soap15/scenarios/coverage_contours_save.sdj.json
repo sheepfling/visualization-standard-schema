@@ -1,0 +1,100 @@
+{
+  "schemaVersion": "1.0.0-scene",
+  "document": {
+    "id": "orb-format-collection__soap15__scenarios__coverage-contours-save",
+    "name": "coverage_contours_save",
+    "source": "orb_format_collection/soap15/scenarios/coverage_contours_save.orb"
+  },
+  "objects": [
+    {
+      "id": ".Contour",
+      "name": ".Contour",
+      "attributes": {
+        "platform_type": "ECR_FIXED",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/coverage_contours_save.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": 0.0,
+        "latitudeDeg": 0.0,
+        "altitudeM": 0.0
+      }
+    },
+    {
+      "id": ".F0",
+      "name": ".F0",
+      "attributes": {
+        "platform_type": "ECR_FIXED",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/coverage_contours_save.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": 94.99999999999991,
+        "latitudeDeg": -5.000005729577928,
+        "altitudeM": 63780.99999999999
+      }
+    },
+    {
+      "id": ".F0 0001",
+      "name": ".F0 0001",
+      "attributes": {
+        "platform_type": "ECR_FIXED",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/coverage_contours_save.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": 39.99999999999994,
+        "latitudeDeg": 25.0005729578,
+        "altitudeM": 63780.99999999999
+      }
+    },
+    {
+      "id": ".G0",
+      "name": ".G0",
+      "attributes": {
+        "platform_type": "ECR_FIXED",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/coverage_contours_save.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": 90.0,
+        "latitudeDeg": 0.0,
+        "altitudeM": 0.0
+      }
+    },
+    {
+      "id": ".P0",
+      "name": ".P0",
+      "attributes": {
+        "platform_type": "ECR_FIXED",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/coverage_contours_save.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": 0.0,
+        "latitudeDeg": 90.0,
+        "altitudeM": 63781.369999999995
+      }
+    },
+    {
+      "id": "GS 0001",
+      "name": "GS 0001",
+      "attributes": {
+        "platform_type": "ECR_FIXED",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/coverage_contours_save.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": 43.42969484510609,
+        "latitudeDeg": 13.737085542503698,
+        "altitudeM": 0.0
+      }
+    }
+  ]
+}

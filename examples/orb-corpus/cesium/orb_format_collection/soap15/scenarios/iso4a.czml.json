@@ -1,0 +1,67 @@
+[
+  {
+    "id": "document",
+    "name": "iso4a",
+    "version": "1.0"
+  },
+  {
+    "id": "-F0",
+    "name": "-F0",
+    "position": {
+      "cartographicDegrees": [
+        -175.0,
+        19.9994270422,
+        210848000.0
+      ]
+    },
+    "properties": {
+      "platform_type": "ECR_FIXED",
+      "orbArchiveMember": "orb_format_collection/soap15/scenarios/iso4a.orb",
+      "source": "orb-scenario"
+    },
+    "point": {
+      "pixelSize": 10,
+      "outlineWidth": 1
+    }
+  },
+  {
+    "id": "-G0",
+    "name": "-G0",
+    "position": {
+      "cartographicDegrees": [
+        90.0,
+        0.0,
+        0.0
+      ]
+    },
+    "properties": {
+      "platform_type": "ECR_FIXED",
+      "orbArchiveMember": "orb_format_collection/soap15/scenarios/iso4a.orb",
+      "source": "orb-scenario"
+    },
+    "point": {
+      "pixelSize": 10,
+      "outlineWidth": 1
+    }
+  },
+  {
+    "id": "LAAFB",
+    "name": "LAAFB",
+    "position": {
+      "cartographicDegrees": [
+        -119.0,
+        32.0,
+        0.0
+      ]
+    },
+    "properties": {
+      "platform_type": "ECR_FIXED",
+      "orbArchiveMember": "orb_format_collection/soap15/scenarios/iso4a.orb",
+      "source": "orb-scenario"
+    },
+    "point": {
+      "pixelSize": 10,
+      "outlineWidth": 1
+    }
+  }
+]

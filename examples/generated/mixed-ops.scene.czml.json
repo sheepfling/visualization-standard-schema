@@ -1,0 +1,333 @@
+[
+  {
+    "id": "document",
+    "name": "Mixed Ops Demo",
+    "version": "1.0",
+    "clock": {
+      "interval": "2026-06-01T12:00:00+00:00/2026-06-01T12:07:00+00:00",
+      "currentTime": "2026-06-01T12:07:00+00:00",
+      "multiplier": 1,
+      "range": "CLAMPED",
+      "step": "SYSTEM_CLOCK_MULTIPLIER"
+    }
+  },
+  {
+    "id": "aircraft-003",
+    "name": "Raven One",
+    "position": {
+      "cartographicDegrees": [
+        -96.812,
+        32.779,
+        8840.0
+      ]
+    },
+    "properties": {
+      "speedMps": 221.6,
+      "callsign": "RAVEN1",
+      "mission": "CAP",
+      "source": "sim.example.ops-sim",
+      "timestamp": "2026-06-01T12:00:00+00:00",
+      "orientationDegrees": {
+        "heading": 101.0,
+        "pitch": 1.2,
+        "roll": 0.0
+      },
+      "category": "air"
+    },
+    "label": {
+      "text": "Raven One",
+      "horizontalOrigin": "LEFT",
+      "pixelOffset": {
+        "cartesian2": [
+          12,
+          0
+        ]
+      },
+      "fillColor": {
+        "rgba": [
+          235,
+          99,
+          52,
+          255
+        ]
+      }
+    },
+    "model": {
+      "uri": "https://example.org/assets/aircraft.glb",
+      "scale": 1.0
+    },
+    "point": {
+      "pixelSize": 10,
+      "outlineWidth": 1,
+      "color": {
+        "rgba": [
+          235,
+          99,
+          52,
+          255
+        ]
+      },
+      "outlineColor": {
+        "rgba": [
+          255,
+          255,
+          255,
+          255
+        ]
+      }
+    }
+  },
+  {
+    "id": "sensor-alpha",
+    "name": "Sensor Alpha",
+    "position": {
+      "cartographicDegrees": [
+        -96.805,
+        32.751,
+        420.0
+      ]
+    },
+    "properties": {
+      "sensorType": "radar",
+      "rangeKm": 140.0,
+      "status": "active",
+      "source": "sim.example.ops-sim",
+      "timestamp": "2026-06-01T12:03:00+00:00",
+      "category": "sensor"
+    },
+    "label": {
+      "text": "Sensor Alpha",
+      "horizontalOrigin": "LEFT",
+      "pixelOffset": {
+        "cartesian2": [
+          12,
+          0
+        ]
+      },
+      "fillColor": {
+        "rgba": [
+          255,
+          206,
+          84,
+          255
+        ]
+      }
+    },
+    "billboard": {
+      "image": "https://example.org/assets/sensor.png",
+      "scale": 1.0,
+      "verticalOrigin": "BOTTOM"
+    },
+    "point": {
+      "pixelSize": 10,
+      "outlineWidth": 1,
+      "color": {
+        "rgba": [
+          255,
+          206,
+          84,
+          255
+        ]
+      },
+      "outlineColor": {
+        "rgba": [
+          255,
+          255,
+          255,
+          255
+        ]
+      }
+    }
+  },
+  {
+    "id": "ground-site-01",
+    "name": "Ground Site 01",
+    "position": {
+      "cartographicDegrees": [
+        -96.774,
+        32.738,
+        195.0
+      ]
+    },
+    "properties": {
+      "siteRole": "relay",
+      "team": "blue",
+      "source": "sim.example.ops-sim",
+      "timestamp": "2026-06-01T12:07:00+00:00",
+      "category": "ground"
+    },
+    "label": {
+      "text": "Ground Site 01",
+      "horizontalOrigin": "LEFT",
+      "pixelOffset": {
+        "cartesian2": [
+          12,
+          0
+        ]
+      },
+      "fillColor": {
+        "rgba": [
+          35,
+          166,
+          213,
+          255
+        ]
+      }
+    },
+    "point": {
+      "pixelSize": 10,
+      "outlineWidth": 1,
+      "color": {
+        "rgba": [
+          35,
+          166,
+          213,
+          255
+        ]
+      },
+      "outlineColor": {
+        "rgba": [
+          255,
+          255,
+          255,
+          255
+        ]
+      }
+    }
+  },
+  {
+    "id": "flight-corridor-a",
+    "name": "Flight Corridor A",
+    "position": {
+      "cartographicDegrees": [
+        -96.79,
+        32.76,
+        6000.0
+      ]
+    },
+    "properties": {
+      "routeType": "patrol-corridor",
+      "status": "planned",
+      "objectType": "overlay",
+      "source": "sim.example.ops-sim",
+      "timestamp": "2026-06-01T12:06:00+00:00",
+      "category": "overlay"
+    },
+    "label": {
+      "text": "Corridor A",
+      "horizontalOrigin": "LEFT",
+      "pixelOffset": {
+        "cartesian2": [
+          12,
+          0
+        ]
+      },
+      "fillColor": {
+        "rgba": [
+          186,
+          104,
+          200,
+          255
+        ]
+      }
+    },
+    "polyline": {
+      "positions": {
+        "cartographicDegrees": [
+          -96.88,
+          32.7,
+          5500.0,
+          -96.79,
+          32.76,
+          6000.0,
+          -96.69,
+          32.82,
+          6400.0
+        ]
+      },
+      "width": 4.0,
+      "clampToGround": false,
+      "material": {
+        "solidColor": {
+          "color": {
+            "rgba": [
+              186,
+              104,
+              200,
+              255
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "coverage-zone-b",
+    "name": "Coverage Zone B",
+    "position": {
+      "cartographicDegrees": [
+        -96.735,
+        32.785,
+        1800.0
+      ]
+    },
+    "properties": {
+      "zoneType": "coverage",
+      "status": "active",
+      "objectType": "overlay",
+      "source": "sim.example.ops-sim",
+      "timestamp": "2026-06-01T12:04:00+00:00",
+      "category": "overlay"
+    },
+    "label": {
+      "text": "Zone B",
+      "horizontalOrigin": "LEFT",
+      "pixelOffset": {
+        "cartesian2": [
+          12,
+          0
+        ]
+      },
+      "fillColor": {
+        "rgba": [
+          120,
+          192,
+          108,
+          180
+        ]
+      }
+    },
+    "polygon": {
+      "positions": {
+        "cartographicDegrees": [
+          -96.76,
+          32.77,
+          1500.0,
+          -96.72,
+          32.76,
+          1500.0,
+          -96.7,
+          32.79,
+          1800.0,
+          -96.74,
+          32.81,
+          1800.0
+        ]
+      },
+      "perPositionHeight": true,
+      "arcType": "GEODESIC",
+      "material": {
+        "solidColor": {
+          "color": {
+            "rgba": [
+              120,
+              192,
+              108,
+              180
+            ]
+          }
+        }
+      }
+    }
+  }
+]

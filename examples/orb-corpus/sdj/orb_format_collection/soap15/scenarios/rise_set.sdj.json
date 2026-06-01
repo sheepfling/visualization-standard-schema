@@ -1,0 +1,85 @@
+{
+  "schemaVersion": "1.0.0-scene",
+  "document": {
+    "id": "orb-format-collection__soap15__scenarios__rise-set",
+    "name": "rise_set",
+    "source": "orb_format_collection/soap15/scenarios/rise_set.orb"
+  },
+  "objects": [
+    {
+      "id": ".Contour",
+      "name": ".Contour",
+      "attributes": {
+        "platform_type": "ECR_FIXED",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/rise_set.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": 0.0,
+        "latitudeDeg": 0.00057296,
+        "altitudeM": 0.0
+      }
+    },
+    {
+      "id": ".F0",
+      "name": ".F0",
+      "attributes": {
+        "platform_type": "ECR_FIXED",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/rise_set.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": 0.0,
+        "latitudeDeg": 40.00057296,
+        "altitudeM": 63781.369999999995
+      }
+    },
+    {
+      "id": ".G0",
+      "name": ".G0",
+      "attributes": {
+        "platform_type": "ECR_FIXED",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/rise_set.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": 90.0,
+        "latitudeDeg": 0.00057296,
+        "altitudeM": 0.0
+      }
+    },
+    {
+      "id": ".P0",
+      "name": ".P0",
+      "attributes": {
+        "platform_type": "ECR_FIXED",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/rise_set.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": 0.0,
+        "latitudeDeg": 90.0,
+        "altitudeM": 63781.369999999995
+      }
+    },
+    {
+      "id": "LA",
+      "name": "LA",
+      "attributes": {
+        "platform_type": "ECR_FIXED",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/rise_set.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": -118.00000000000001,
+        "latitudeDeg": 35.0,
+        "altitudeM": 0.0
+      }
+    }
+  ]
+}

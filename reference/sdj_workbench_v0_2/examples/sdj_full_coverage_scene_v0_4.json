@@ -1,0 +1,4680 @@
+{
+  "schemaVersion": "sdj-0.4",
+  "profiles": [
+    "asset-backed",
+    "backend-capability-matrix",
+    "backend-raw-extensions",
+    "cesium-3d-tiles",
+    "cesium-custom-primitive-mesh",
+    "cesium-entity",
+    "cesium-particles",
+    "cesium-primitive",
+    "cesium-scene",
+    "core",
+    "coverage-analysis",
+    "debrief-presentation",
+    "diagnostic-principal-axes",
+    "entity-core",
+    "gaussian-splats",
+    "modern-3d-assets",
+    "multi-backend-compile",
+    "pbr",
+    "primitive-generated-geometry",
+    "rf-electromagnetic-analysis",
+    "sandcastle-coverage",
+    "scene-core",
+    "sensor-analysis",
+    "simdis-analysis",
+    "simdis-entity",
+    "simdis-export",
+    "simdis-gog",
+    "simdis-presentation",
+    "simdis-target",
+    "soap-analysis",
+    "soap-display",
+    "soap-export",
+    "soap-presentation",
+    "soap-target",
+    "tactical-geometry",
+    "tactical-volume-mesh",
+    "time-dynamic",
+    "trajectory-diagnostics"
+  ],
+  "document": {
+    "id": "sdj-v0-4-comprehensive-backend-proof",
+    "name": "SDJ v0.4 Comprehensive Backend Proof Scene",
+    "description": "Coverage-heavy scene for Cesium rendering plus SIMDIS and SOAP compile/export adapters.",
+    "created": "2026-05-29T00:00:00Z",
+    "generator": "sdj-v0.4-generator"
+  },
+  "units": {
+    "linear": "meter",
+    "angular": "degree",
+    "time": "iso8601",
+    "horizontalDatum": "WGS84",
+    "verticalDatum": "ellipsoid"
+  },
+  "clock": {
+    "startTime": "2026-05-29T16:00:00Z",
+    "stopTime": "2026-05-29T16:03:00Z",
+    "currentTime": "2026-05-29T16:00:00Z",
+    "multiplier": 1,
+    "shouldAnimate": true,
+    "clockRange": "loopStop",
+    "clockStep": "systemClockMultiplier"
+  },
+  "scene": {
+    "terrain": {
+      "type": "ellipsoid"
+    },
+    "imageryLayers": []
+  },
+  "assets": {
+    "cesiumAir": {
+      "kind": "glbModel",
+      "uri": "../SampleData/models/CesiumAir/Cesium_Air.glb"
+    },
+    "smokeParticle": {
+      "kind": "particleImage",
+      "uri": "../SampleData/smoke.png"
+    },
+    "optionalTileset": {
+      "kind": "tileset3d",
+      "ionAssetId": 40866
+    },
+    "optionalSplat": {
+      "kind": "gaussianSplatTileset",
+      "ionAssetId": 4547222
+    },
+    "sensorIcon": {
+      "kind": "icon",
+      "uri": "../SampleData/facility.gif"
+    },
+    "groundImagery": {
+      "kind": "singleTileImagery",
+      "uri": "../SampleData/NE2_50M_SR_W_4096.jpg"
+    },
+    "rfPatternTable": {
+      "kind": "geojson",
+      "uri": "analysis/rf-pattern.geojson"
+    },
+    "coverageGeoJson": {
+      "kind": "geojson",
+      "uri": "analysis/coverage-grid.geojson"
+    },
+    "demoKml": {
+      "kind": "kml",
+      "uri": "overlays/demo.kml"
+    },
+    "demoCzml": {
+      "kind": "czml",
+      "uri": "tracks/demo.czml"
+    },
+    "presentationImage": {
+      "kind": "image",
+      "uri": "media/slide-title.png"
+    },
+    "presentationVideo": {
+      "kind": "video",
+      "uri": "media/flythrough.mp4"
+    },
+    "terrainAsset": {
+      "kind": "terrain",
+      "uri": "terrain/demo-terrain"
+    },
+    "customShaderAsset": {
+      "kind": "shader",
+      "uri": "shaders/tileset-style.glsl"
+    },
+    "panoramaAsset": {
+      "kind": "panoramaImage",
+      "uri": "media/panorama.jpg"
+    },
+    "skyBoxAsset": {
+      "kind": "cubemap",
+      "uri": "media/skybox/"
+    },
+    "simdisIveModel": {
+      "kind": "gltfModel",
+      "uri": "models/simdis-compatible-platform.gltf"
+    }
+  },
+  "layers": [
+    {
+      "id": "annotations",
+      "name": "Annotations",
+      "show": true,
+      "order": 1
+    },
+    {
+      "id": "entity-gallery",
+      "name": "Entity geometry gallery",
+      "show": true,
+      "order": 2
+    },
+    {
+      "id": "tracks",
+      "name": "Tracks",
+      "show": true,
+      "order": 3
+    },
+    {
+      "id": "tactical",
+      "name": "Tactical geometry",
+      "show": true,
+      "order": 4
+    },
+    {
+      "id": "assets",
+      "name": "Asset-backed layers",
+      "show": true,
+      "order": 5
+    },
+    {
+      "id": "effects",
+      "name": "Effects",
+      "show": true,
+      "order": 6
+    },
+    {
+      "id": "backend-analysis",
+      "name": "Backend analysis outputs",
+      "show": true,
+      "order": 7
+    },
+    {
+      "id": "coverage-placeholders",
+      "name": "Reserved/backend-specific coverage placeholders",
+      "show": false,
+      "order": 8
+    },
+    {
+      "id": "presentation-layer",
+      "name": "Presentation overlays",
+      "show": true,
+      "order": 9
+    }
+  ],
+  "materials": {
+    "greenTransparent": {
+      "type": "solidColor",
+      "rgba": [
+        0,
+        1,
+        0.2,
+        0.18
+      ]
+    },
+    "yellowOpaque": {
+      "type": "solidColor",
+      "rgba": [
+        1,
+        1,
+        0,
+        1
+      ]
+    },
+    "blueTransparent": {
+      "type": "solidColor",
+      "rgba": [
+        0.1,
+        0.4,
+        1,
+        0.24
+      ]
+    },
+    "redTransparent": {
+      "type": "solidColor",
+      "rgba": [
+        1,
+        0.1,
+        0.1,
+        0.32
+      ]
+    },
+    "cyanTransparent": {
+      "type": "solidColor",
+      "rgba": [
+        0.0,
+        0.8,
+        1.0,
+        0.25
+      ]
+    },
+    "magentaTransparent": {
+      "type": "solidColor",
+      "rgba": [
+        1.0,
+        0.0,
+        0.8,
+        0.25
+      ]
+    },
+    "orangeTransparent": {
+      "type": "solidColor",
+      "rgba": [
+        1.0,
+        0.5,
+        0.0,
+        0.28
+      ]
+    },
+    "whiteLine": {
+      "type": "solidColor",
+      "rgba": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ]
+    }
+  },
+  "objects": [
+    {
+      "id": "sensor-site-a",
+      "kind": "point",
+      "name": "Sensor Site A",
+      "layer": "annotations",
+      "pose": {
+        "position": {
+          "cartographicDegrees": [
+            -117.8,
+            34.02,
+            250
+          ]
+        }
+      },
+      "point": {
+        "pixelSize": 12,
+        "color": [
+          0,
+          1,
+          0,
+          1
+        ],
+        "outlineColor": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "outlineWidth": 2
+      },
+      "label": {
+        "text": "Sensor A",
+        "font": "14px sans-serif",
+        "showBackground": true,
+        "pixelOffset": [
+          12,
+          -20
+        ],
+        "fillColor": [
+          1,
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "id": "billboard-demo",
+      "kind": "billboard",
+      "name": "Billboard marker",
+      "layer": "annotations",
+      "pose": {
+        "position": {
+          "cartographicDegrees": [
+            -117.86,
+            34.04,
+            500
+          ]
+        }
+      },
+      "billboard": {
+        "image": "../SampleData/Cesium_Logo_overlay.png",
+        "scale": 0.3,
+        "verticalOrigin": "bottom"
+      },
+      "label": {
+        "text": "Billboard",
+        "font": "13px sans-serif",
+        "pixelOffset": [
+          0,
+          -42
+        ],
+        "showBackground": true
+      }
+    },
+    {
+      "id": "gallery-polyline",
+      "kind": "polyline",
+      "name": "Polyline",
+      "layer": "entity-gallery",
+      "geometry": {
+        "positions": [
+          {
+            "cartographicDegrees": [
+              -117.92,
+              33.94,
+              1000
+            ]
+          },
+          {
+            "cartographicDegrees": [
+              -117.88,
+              33.96,
+              1300
+            ]
+          },
+          {
+            "cartographicDegrees": [
+              -117.83,
+              33.95,
+              900
+            ]
+          }
+        ]
+      },
+      "style": {
+        "width": 3,
+        "material": {
+          "type": "polylineGlow",
+          "rgba": [
+            1,
+            1,
+            0,
+            1
+          ],
+          "options": {
+            "glowPower": 0.18
+          }
+        }
+      }
+    },
+    {
+      "id": "gallery-polygon",
+      "kind": "polygon",
+      "name": "Extruded polygon",
+      "layer": "entity-gallery",
+      "geometry": {
+        "rings": [
+          [
+            {
+              "cartographicDegrees": [
+                -117.95,
+                34.0,
+                0
+              ]
+            },
+            {
+              "cartographicDegrees": [
+                -117.91,
+                34.01,
+                0
+              ]
+            },
+            {
+              "cartographicDegrees": [
+                -117.9,
+                33.97,
+                0
+              ]
+            },
+            {
+              "cartographicDegrees": [
+                -117.94,
+                33.96,
+                0
+              ]
+            }
+          ]
+        ],
+        "heightMeters": 0,
+        "extrudedHeightMeters": 2500
+      },
+      "style": {
+        "material": {
+          "type": "solidColor",
+          "rgba": [
+            0.1,
+            0.4,
+            1,
+            0.28
+          ]
+        },
+        "outline": true,
+        "outlineColor": [
+          0.1,
+          0.4,
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "id": "gallery-rectangle",
+      "kind": "rectangle",
+      "name": "Rectangle",
+      "layer": "entity-gallery",
+      "geometry": {
+        "heightMeters": 0,
+        "westSouthEastNorthDegrees": [
+          -117.88,
+          33.96,
+          -117.84,
+          33.99
+        ]
+      },
+      "style": {
+        "material": {
+          "type": "solidColor",
+          "rgba": [
+            1,
+            1,
+            0,
+            0.25
+          ]
+        },
+        "outline": true,
+        "outlineColor": [
+          1,
+          1,
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "id": "gallery-circle",
+      "kind": "circle",
+      "name": "Circle / ellipse",
+      "layer": "entity-gallery",
+      "pose": {
+        "position": {
+          "cartographicDegrees": [
+            -117.82,
+            33.96,
+            0
+          ]
+        }
+      },
+      "geometry": {
+        "radiusMeters": 1800
+      },
+      "style": {
+        "material": {
+          "type": "solidColor",
+          "rgba": [
+            1,
+            0,
+            1,
+            0.24
+          ]
+        },
+        "outline": true,
+        "outlineColor": [
+          1,
+          0,
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "id": "gallery-box",
+      "kind": "box",
+      "name": "Box",
+      "layer": "entity-gallery",
+      "pose": {
+        "position": {
+          "cartographicDegrees": [
+            -117.78,
+            33.97,
+            2500
+          ]
+        }
+      },
+      "geometry": {
+        "dimensionsMeters": [
+          2500,
+          1800,
+          5000
+        ]
+      },
+      "style": {
+        "material": {
+          "type": "solidColor",
+          "rgba": [
+            1,
+            0.2,
+            0.2,
+            0.35
+          ]
+        },
+        "outline": true,
+        "outlineColor": [
+          1,
+          0.2,
+          0.2,
+          1
+        ]
+      }
+    },
+    {
+      "id": "gallery-cone",
+      "kind": "cone",
+      "name": "Cone via CylinderGraphics",
+      "layer": "entity-gallery",
+      "pose": {
+        "position": {
+          "cartographicDegrees": [
+            -117.75,
+            33.98,
+            2500
+          ]
+        }
+      },
+      "geometry": {
+        "lengthMeters": 5000,
+        "bottomRadiusMeters": 1500,
+        "topRadiusMeters": 0
+      },
+      "style": {
+        "material": {
+          "type": "solidColor",
+          "rgba": [
+            0.1,
+            1,
+            1,
+            0.35
+          ]
+        },
+        "outline": true,
+        "outlineColor": [
+          0.1,
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "id": "gallery-ellipsoid",
+      "kind": "ellipsoid",
+      "name": "Ellipsoid",
+      "layer": "entity-gallery",
+      "pose": {
+        "position": {
+          "cartographicDegrees": [
+            -117.72,
+            34.0,
+            3200
+          ]
+        }
+      },
+      "geometry": {
+        "radiiMeters": [
+          2500,
+          1800,
+          1200
+        ]
+      },
+      "style": {
+        "material": {
+          "type": "solidColor",
+          "rgba": [
+            0.8,
+            0.8,
+            1,
+            0.4
+          ]
+        },
+        "outline": true,
+        "outlineColor": [
+          0.8,
+          0.8,
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "id": "gallery-wall",
+      "kind": "wall",
+      "name": "Wall",
+      "layer": "entity-gallery",
+      "geometry": {
+        "positions": [
+          {
+            "cartographicDegrees": [
+              -117.91,
+              34.05,
+              0
+            ]
+          },
+          {
+            "cartographicDegrees": [
+              -117.87,
+              34.06,
+              0
+            ]
+          },
+          {
+            "cartographicDegrees": [
+              -117.83,
+              34.05,
+              0
+            ]
+          }
+        ],
+        "minimumHeightsMeters": [
+          0,
+          0,
+          0
+        ],
+        "maximumHeightsMeters": [
+          2500,
+          3500,
+          2500
+        ]
+      },
+      "style": {
+        "material": {
+          "type": "solidColor",
+          "rgba": [
+            1,
+            0.5,
+            0.1,
+            0.4
+          ]
+        },
+        "outline": true,
+        "outlineColor": [
+          1,
+          0.5,
+          0.1,
+          1
+        ]
+      }
+    },
+    {
+      "id": "gallery-corridor",
+      "kind": "corridor",
+      "name": "Corridor",
+      "layer": "entity-gallery",
+      "geometry": {
+        "positions": [
+          {
+            "cartographicDegrees": [
+              -117.9,
+              34.08,
+              0
+            ]
+          },
+          {
+            "cartographicDegrees": [
+              -117.84,
+              34.09,
+              0
+            ]
+          },
+          {
+            "cartographicDegrees": [
+              -117.79,
+              34.08,
+              0
+            ]
+          }
+        ],
+        "widthMeters": 1200,
+        "heightMeters": 0
+      },
+      "style": {
+        "material": {
+          "type": "solidColor",
+          "rgba": [
+            0.2,
+            1,
+            0.2,
+            0.3
+          ]
+        },
+        "outline": true,
+        "outlineColor": [
+          0.2,
+          1,
+          0.2,
+          1
+        ]
+      }
+    },
+    {
+      "id": "gallery-polyline-volume",
+      "kind": "polylineVolume",
+      "name": "Polyline volume",
+      "layer": "entity-gallery",
+      "geometry": {
+        "positions": [
+          {
+            "cartographicDegrees": [
+              -117.77,
+              34.07,
+              0
+            ]
+          },
+          {
+            "cartographicDegrees": [
+              -117.73,
+              34.08,
+              0
+            ]
+          },
+          {
+            "cartographicDegrees": [
+              -117.69,
+              34.07,
+              0
+            ]
+          }
+        ],
+        "shapeMeters": [
+          [
+            -400,
+            -400
+          ],
+          [
+            400,
+            -400
+          ],
+          [
+            400,
+            400
+          ],
+          [
+            -400,
+            400
+          ]
+        ]
+      },
+      "style": {
+        "material": {
+          "type": "solidColor",
+          "rgba": [
+            0.2,
+            0.6,
+            1,
+            0.4
+          ]
+        },
+        "outline": true,
+        "outlineColor": [
+          0.2,
+          0.6,
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "id": "gallery-plane",
+      "kind": "plane",
+      "name": "PlaneGraphics",
+      "layer": "entity-gallery",
+      "pose": {
+        "position": {
+          "cartographicDegrees": [
+            -117.7,
+            34.04,
+            2500
+          ]
+        },
+        "orientation": {
+          "headingPitchRollDegrees": [
+            35,
+            0,
+            0
+          ],
+          "frame": "ENU"
+        }
+      },
+      "geometry": {
+        "normal": [
+          0,
+          0,
+          1
+        ],
+        "distanceMeters": 0,
+        "widthMeters": 4000,
+        "heightMeters": 2500
+      },
+      "style": {
+        "material": {
+          "type": "solidColor",
+          "rgba": [
+            0.9,
+            0.9,
+            0.9,
+            0.35
+          ]
+        },
+        "outline": true,
+        "outlineColor": [
+          1,
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "id": "sensor-a-sector",
+      "kind": "sector2d",
+      "name": "2D range sector",
+      "layer": "tactical",
+      "pose": {
+        "position": {
+          "reference": "sensor-site-a#pose.position"
+        },
+        "orientation": {
+          "headingPitchRollDegrees": [
+            40,
+            0,
+            0
+          ],
+          "frame": "ENU"
+        }
+      },
+      "geometry": {
+        "innerRadiusMeters": 5000,
+        "outerRadiusMeters": 45000,
+        "azimuthStartDegrees": -35,
+        "azimuthStopDegrees": 35,
+        "segments": 64
+      },
+      "style": {
+        "material": {
+          "type": "solidColor",
+          "rgba": [
+            0,
+            1,
+            0.2,
+            0.18
+          ]
+        },
+        "outline": true,
+        "outlineColor": [
+          0,
+          1,
+          0.2,
+          0.9
+        ]
+      },
+      "rendererHints": {
+        "semanticKind": "search-sector",
+        "preferredBackends": [
+          "cesium.ionSdkFan",
+          "cesium.entity.polygon",
+          "cesium.customPrimitive"
+        ]
+      }
+    },
+    {
+      "id": "sensor-a-keyhole",
+      "kind": "keyhole",
+      "name": "Keyhole search volume",
+      "layer": "tactical",
+      "pose": {
+        "position": {
+          "reference": "sensor-site-a#pose.position"
+        },
+        "orientation": {
+          "headingPitchRollDegrees": [
+            40,
+            0,
+            0
+          ],
+          "frame": "ENU"
+        }
+      },
+      "geometry": {
+        "innerRadiusMeters": 10000,
+        "outerRadiusMeters": 85000,
+        "azimuthStartDegrees": -25,
+        "azimuthStopDegrees": 25,
+        "elevationStartDegrees": 0,
+        "elevationStopDegrees": 45,
+        "segments": 64,
+        "mode": "volume",
+        "backend": "primitive"
+      },
+      "style": {
+        "material": {
+          "type": "solidColor",
+          "rgba": [
+            0,
+            1,
+            0.2,
+            0.12
+          ]
+        },
+        "outline": true,
+        "outlineColor": [
+          0,
+          1,
+          0.2,
+          0.8
+        ]
+      },
+      "rendererHints": {
+        "semanticKind": "keyhole",
+        "preferredBackends": [
+          "cesium.ionSdkSensor",
+          "cesium.entity.ellipsoidWedge",
+          "cesium.customPrimitive"
+        ]
+      }
+    },
+    {
+      "id": "sensor-a-sector-volume-primitive",
+      "kind": "sectorVolume",
+      "name": "Generated sector-volume primitive",
+      "layer": "sensors",
+      "pose": {
+        "position": {
+          "reference": "sensor-site-a#pose.position"
+        },
+        "orientation": {
+          "headingPitchRollDegrees": [
+            110,
+            0,
+            0
+          ],
+          "frame": "ENU"
+        }
+      },
+      "geometry": {
+        "innerRadiusMeters": 0,
+        "outerRadiusMeters": 62000,
+        "azimuthStartDegrees": -18,
+        "azimuthStopDegrees": 18,
+        "elevationStartDegrees": 5,
+        "elevationStopDegrees": 35,
+        "azimuthSegments": 36,
+        "elevationSegments": 6,
+        "mode": "volume",
+        "backend": "primitive"
+      },
+      "style": {
+        "material": {
+          "type": "solidColor",
+          "rgba": [
+            1,
+            0.6,
+            0.1,
+            0.16
+          ]
+        },
+        "outline": true,
+        "outlineColor": [
+          1,
+          0.6,
+          0.1,
+          0.9
+        ]
+      },
+      "rendererHints": {
+        "semanticKind": "sectorVolume",
+        "preferredBackends": [
+          "cesium.primitive.mesh",
+          "cesium.ionSdk.conicSensor",
+          "cesium.entity.ellipsoidFallback"
+        ]
+      }
+    },
+    {
+      "id": "upper-dome-a",
+      "kind": "hemisphere",
+      "name": "Upper hemisphere / dome",
+      "layer": "tactical",
+      "pose": {
+        "position": {
+          "cartographicDegrees": [
+            -117.73,
+            34.03,
+            1000
+          ]
+        }
+      },
+      "geometry": {
+        "radiusMeters": 18000,
+        "portion": "upper",
+        "segments": 64,
+        "backend": "primitive"
+      },
+      "style": {
+        "material": {
+          "type": "solidColor",
+          "rgba": [
+            0.2,
+            0.7,
+            1,
+            0.18
+          ]
+        },
+        "outline": true,
+        "outlineColor": [
+          0.2,
+          0.7,
+          1,
+          0.9
+        ]
+      },
+      "rendererHints": {
+        "preferredBackends": [
+          "cesium.primitive.mesh",
+          "cesium.entity.ellipsoidFallback"
+        ]
+      }
+    },
+    {
+      "id": "air-track-17",
+      "kind": "track",
+      "name": "Air Track 17",
+      "layer": "tracks",
+      "availability": "2026-05-29T16:00:00Z/2026-05-29T16:03:00Z",
+      "pose": {
+        "position": {
+          "samples": {
+            "epoch": "2026-05-29T16:00:00Z",
+            "timeFormat": "secondsSinceEpoch",
+            "valueFormat": "cartographicDegrees",
+            "referenceFrame": "FIXED",
+            "interpolation": "lagrange",
+            "interpolationDegree": 2,
+            "values": [
+              [
+                0,
+                -117.92,
+                33.92,
+                10000
+              ],
+              [
+                30,
+                -117.88,
+                33.96,
+                10800
+              ],
+              [
+                60,
+                -117.83,
+                34.01,
+                11500
+              ],
+              [
+                90,
+                -117.77,
+                34.04,
+                11200
+              ],
+              [
+                120,
+                -117.7,
+                34.06,
+                10500
+              ],
+              [
+                180,
+                -117.62,
+                34.07,
+                9800
+              ]
+            ]
+          }
+        },
+        "orientation": {
+          "computed": {
+            "operation": "velocityOrientation",
+            "source": "air-track-17#pose.position"
+          }
+        }
+      },
+      "point": {
+        "pixelSize": 8,
+        "color": [
+          1,
+          1,
+          0,
+          1
+        ]
+      },
+      "label": {
+        "text": "Track 17",
+        "font": "14px sans-serif",
+        "showBackground": true,
+        "pixelOffset": [
+          10,
+          -18
+        ]
+      },
+      "path": {
+        "show": true,
+        "leadTimeSeconds": 45,
+        "trailTimeSeconds": 120,
+        "width": 3,
+        "material": {
+          "type": "solidColor",
+          "rgba": [
+            1,
+            1,
+            1,
+            1
+          ]
+        }
+      },
+      "properties": {
+        "trackId": 17,
+        "classification": "demo"
+      },
+      "overlays": [
+        {
+          "id": "air-track-17-velocity",
+          "kind": "velocityVector",
+          "geometry": {
+            "source": "air-track-17#pose.position",
+            "scale": 5,
+            "windowSeconds": 1,
+            "arrow": true
+          },
+          "style": {
+            "width": 3,
+            "material": {
+              "type": "solidColor",
+              "rgba": [
+                1,
+                1,
+                0,
+                1
+              ]
+            }
+          }
+        },
+        {
+          "id": "air-track-17-acceleration",
+          "kind": "accelerationVector",
+          "geometry": {
+            "source": "air-track-17#pose.position",
+            "scale": 80,
+            "windowSeconds": 2,
+            "arrow": true
+          },
+          "style": {
+            "width": 2,
+            "material": {
+              "type": "solidColor",
+              "rgba": [
+                1,
+                0.2,
+                0.2,
+                1
+              ]
+            }
+          }
+        },
+        {
+          "id": "air-track-17-body-axes",
+          "kind": "bodyAxes",
+          "geometry": {
+            "position": "air-track-17#pose.position",
+            "orientation": "air-track-17#pose.orientation",
+            "lengthMeters": 3000,
+            "axes": [
+              "x",
+              "y",
+              "z"
+            ]
+          }
+        },
+        {
+          "id": "air-track-17-principal-axes",
+          "kind": "principalAxes",
+          "name": "Covariance principal axes",
+          "geometry": {
+            "position": "air-track-17#pose.position",
+            "lengthMeters": 60,
+            "axes": [
+              "principal0",
+              "principal1",
+              "principal2"
+            ],
+            "covarianceUpperTriangle": [
+              9.0,
+              2.0,
+              0.4,
+              4.0,
+              0.5,
+              1.0
+            ],
+            "scaleByEigenvalue": true,
+            "frame": "localEnu"
+          },
+          "rendererHints": {
+            "semanticKind": "principalComponentVectors",
+            "preferredBackends": [
+              "cesium.entity.polyline",
+              "simdis.platform.bodyAxes"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "air-track-17-model",
+      "kind": "model",
+      "name": "Track 17 GLB",
+      "layer": "tracks",
+      "asset": "cesiumAir",
+      "pose": {
+        "position": {
+          "reference": "air-track-17#pose.position"
+        },
+        "orientation": {
+          "reference": "air-track-17#pose.orientation"
+        }
+      },
+      "model": {
+        "scale": 2,
+        "minimumPixelSize": 64,
+        "runAnimations": true,
+        "modelFrameCorrection": {
+          "bodyFromModel": {
+            "rotationDegrees": [
+              0,
+              0,
+              0
+            ],
+            "translationMeters": [
+              0,
+              0,
+              0
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "sensor-to-track-los",
+      "kind": "lineOfSight",
+      "name": "Sensor A to track LOS",
+      "layer": "tactical",
+      "geometry": {
+        "from": "sensor-site-a#pose.position",
+        "to": "air-track-17#pose.position"
+      },
+      "style": {
+        "width": 2,
+        "material": {
+          "type": "solidColor",
+          "rgba": [
+            1,
+            1,
+            1,
+            0.75
+          ]
+        }
+      }
+    },
+    {
+      "id": "smoke-effect-demo",
+      "kind": "particleSystem",
+      "name": "Particle system proof",
+      "layer": "effects",
+      "asset": "smokeParticle",
+      "pose": {
+        "position": {
+          "cartographicDegrees": [
+            -117.68,
+            34.02,
+            1500
+          ]
+        }
+      },
+      "geometry": {
+        "emitter": {
+          "type": "circle",
+          "radiusMeters": 2
+        },
+        "emissionRate": 12,
+        "particleLifeSeconds": 4,
+        "speedMetersPerSecond": 8,
+        "startScale": 0.6,
+        "endScale": 3.0,
+        "imageSize": [
+          20,
+          20
+        ]
+      },
+      "style": {
+        "startColor": [
+          1,
+          1,
+          1,
+          0.7
+        ],
+        "endColor": [
+          0.4,
+          0.4,
+          0.4,
+          0.0
+        ]
+      }
+    },
+    {
+      "id": "optional-bim-or-tileset",
+      "kind": "tileset",
+      "name": "Optional 3D Tiles asset",
+      "layer": "assets",
+      "show": false,
+      "asset": "optionalTileset",
+      "tileset": {
+        "maximumScreenSpaceError": 16,
+        "dynamicScreenSpaceError": true
+      },
+      "rendererHints": {
+        "preferredBackends": [
+          "cesium.3dTileset"
+        ]
+      }
+    },
+    {
+      "id": "optional-gaussian-splat",
+      "kind": "tileset",
+      "name": "Optional Gaussian splat tileset",
+      "layer": "assets",
+      "show": false,
+      "asset": "optionalSplat",
+      "tileset": {
+        "maximumScreenSpaceError": 16,
+        "dynamicScreenSpaceError": true
+      },
+      "rendererHints": {
+        "semanticKind": "gaussian-splat-tileset",
+        "preferredBackends": [
+          "cesium.3dTileset"
+        ]
+      }
+    },
+    {
+      "id": "future-clipping-demo",
+      "kind": "clippingPolygon",
+      "name": "Reserved clipping polygon capability",
+      "layer": "assets",
+      "show": false,
+      "geometry": {
+        "positions": [
+          {
+            "cartographicDegrees": [
+              -117.76,
+              34.01,
+              0
+            ]
+          },
+          {
+            "cartographicDegrees": [
+              -117.74,
+              34.01,
+              0
+            ]
+          },
+          {
+            "cartographicDegrees": [
+              -117.74,
+              34.03,
+              0
+            ]
+          },
+          {
+            "cartographicDegrees": [
+              -117.76,
+              34.03,
+              0
+            ]
+          }
+        ]
+      },
+      "rendererHints": {
+        "preferredBackends": [
+          "cesium.clippingPolygonCollection"
+        ]
+      }
+    },
+    {
+      "id": "sensor-a-frustum-primitive",
+      "kind": "frustum",
+      "name": "Generated rectangular frustum primitive",
+      "layer": "sensors",
+      "pose": {
+        "position": {
+          "cartographicDegrees": [
+            -117.92,
+            33.915,
+            1400
+          ]
+        },
+        "orientation": {
+          "headingPitchRollDegrees": [
+            62,
+            -8,
+            0
+          ],
+          "frame": "ENU"
+        }
+      },
+      "geometry": {
+        "nearMeters": 5000,
+        "farMeters": 45000,
+        "horizontalFovDegrees": 22,
+        "verticalFovDegrees": 14,
+        "backend": "primitive"
+      },
+      "style": {
+        "material": {
+          "type": "solidColor",
+          "rgba": [
+            0.2,
+            0.8,
+            1.0,
+            0.22
+          ]
+        },
+        "outline": true
+      },
+      "rendererHints": {
+        "semanticKind": "rectangularSensorFrustum",
+        "preferredBackends": [
+          "cesium.primitive.mesh",
+          "cesium.ionSdk.rectangularSensor"
+        ]
+      }
+    },
+    {
+      "id": "explicit-custom-pyramid-primitive",
+      "kind": "customPrimitive",
+      "name": "Explicit custom pyramid primitive",
+      "layer": "sensors",
+      "pose": {
+        "position": {
+          "cartographicDegrees": [
+            -117.955,
+            33.91,
+            1200
+          ]
+        },
+        "orientation": {
+          "headingPitchRollDegrees": [
+            25,
+            0,
+            0
+          ],
+          "frame": "ENU"
+        }
+      },
+      "geometry": {
+        "primitiveType": "triangles",
+        "coordinateFrame": "local",
+        "positions": [
+          [
+            -5000,
+            -5000,
+            0
+          ],
+          [
+            5000,
+            -5000,
+            0
+          ],
+          [
+            5000,
+            5000,
+            0
+          ],
+          [
+            -5000,
+            5000,
+            0
+          ],
+          [
+            0,
+            0,
+            16000
+          ]
+        ],
+        "indices": [
+          0,
+          1,
+          2,
+          0,
+          2,
+          3,
+          0,
+          4,
+          1,
+          1,
+          4,
+          2,
+          2,
+          4,
+          3,
+          3,
+          4,
+          0
+        ],
+        "backend": "primitive"
+      },
+      "style": {
+        "material": {
+          "type": "solidColor",
+          "rgba": [
+            1.0,
+            0.45,
+            0.1,
+            0.3
+          ]
+        }
+      },
+      "rendererHints": {
+        "semanticKind": "customMesh",
+        "preferredBackends": [
+          "cesium.primitive.mesh",
+          "unreal.proceduralMesh"
+        ]
+      }
+    },
+    {
+      "id": "facility-label-standalone",
+      "kind": "label",
+      "name": "Standalone label",
+      "layer": "annotations",
+      "pose": {
+        "position": {
+          "cartographicDegrees": [
+            -117.72,
+            34.06,
+            900
+          ]
+        }
+      },
+      "label": {
+        "text": "Standalone Label",
+        "font": "15px sans-serif",
+        "showBackground": true,
+        "fillColor": [
+          1,
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "id": "gallery-cylinder",
+      "kind": "cylinder",
+      "name": "Cylinder",
+      "layer": "entity-gallery",
+      "pose": {
+        "position": {
+          "cartographicDegrees": [
+            -117.68,
+            33.95,
+            2200
+          ]
+        },
+        "orientation": {
+          "headingPitchRollDegrees": [
+            0,
+            0,
+            0
+          ],
+          "frame": "ENU"
+        }
+      },
+      "geometry": {
+        "lengthMeters": 4500,
+        "radiusMeters": 1200,
+        "slices": 32
+      },
+      "style": {
+        "material": {
+          "type": "solidColor",
+          "rgba": [
+            0.8,
+            0.8,
+            0.1,
+            0.3
+          ]
+        },
+        "outline": true
+      }
+    },
+    {
+      "id": "gallery-sphere",
+      "kind": "sphere",
+      "name": "Sphere",
+      "layer": "entity-gallery",
+      "pose": {
+        "position": {
+          "cartographicDegrees": [
+            -117.665,
+            33.975,
+            2500
+          ]
+        }
+      },
+      "geometry": {
+        "radiusMeters": 1800,
+        "slicePartitions": 32,
+        "stackPartitions": 16
+      },
+      "style": {
+        "material": {
+          "type": "solidColor",
+          "rgba": [
+            0.2,
+            1.0,
+            1.0,
+            0.25
+          ]
+        },
+        "outline": true
+      }
+    },
+    {
+      "id": "sensor-a-spherical-cap",
+      "kind": "sphericalCap",
+      "name": "Spherical cap primitive",
+      "layer": "tactical",
+      "pose": {
+        "position": {
+          "cartographicDegrees": [
+            -117.785,
+            34.025,
+            250
+          ]
+        },
+        "orientation": {
+          "headingPitchRollDegrees": [
+            70,
+            0,
+            0
+          ],
+          "frame": "ENU"
+        }
+      },
+      "geometry": {
+        "radiusMeters": 50000,
+        "innerRadiusMeters": 15000,
+        "elevationStartDegrees": 20,
+        "elevationStopDegrees": 70,
+        "azimuthSegments": 48,
+        "elevationSegments": 8,
+        "backend": "primitive"
+      },
+      "style": {
+        "material": {
+          "type": "solidColor",
+          "rgba": [
+            0.7,
+            0.2,
+            1.0,
+            0.18
+          ]
+        },
+        "outline": true
+      },
+      "rendererHints": {
+        "semanticKind": "sphericalCap",
+        "preferredBackends": [
+          "cesium.primitive.mesh",
+          "simdis.gog",
+          "soap.sensorSwath"
+        ]
+      }
+    },
+    {
+      "id": "sensor-a-range-ring",
+      "kind": "rangeRing",
+      "name": "Range ring 25 km",
+      "layer": "tactical",
+      "pose": {
+        "position": {
+          "reference": "sensor-site-a#pose.position"
+        }
+      },
+      "geometry": {
+        "radiusMeters": 25000,
+        "heightMeters": 250
+      },
+      "style": {
+        "material": {
+          "type": "polylineOutline",
+          "rgba": [
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        "outline": true,
+        "width": 2
+      }
+    },
+    {
+      "id": "sensor-a-bearing-fan",
+      "kind": "bearingFan",
+      "name": "Bearing fan",
+      "layer": "tactical",
+      "pose": {
+        "position": {
+          "reference": "sensor-site-a#pose.position"
+        },
+        "orientation": {
+          "headingPitchRollDegrees": [
+            15,
+            0,
+            0
+          ],
+          "frame": "ENU"
+        }
+      },
+      "geometry": {
+        "innerRadiusMeters": 0,
+        "outerRadiusMeters": 46000,
+        "azimuthStartDegrees": -12,
+        "azimuthStopDegrees": 12,
+        "segments": 24,
+        "mode": "flatLocal"
+      },
+      "style": {
+        "material": {
+          "type": "solidColor",
+          "rgba": [
+            1,
+            1,
+            0,
+            0.18
+          ]
+        },
+        "outline": true
+      }
+    },
+    {
+      "id": "sensor-a-conic-sensor",
+      "kind": "conicSensor",
+      "name": "Conic sensor semantic object",
+      "layer": "tactical",
+      "pose": {
+        "position": {
+          "reference": "sensor-site-a#pose.position"
+        },
+        "orientation": {
+          "headingPitchRollDegrees": [
+            90,
+            -15,
+            0
+          ],
+          "frame": "ENU"
+        }
+      },
+      "geometry": {
+        "innerRadiusMeters": 0,
+        "outerRadiusMeters": 72000,
+        "azimuthStartDegrees": -22,
+        "azimuthStopDegrees": 22,
+        "elevationStartDegrees": 0,
+        "elevationStopDegrees": 35,
+        "backend": "native"
+      },
+      "style": {
+        "material": {
+          "type": "solidColor",
+          "rgba": [
+            0,
+            0.8,
+            1,
+            0.18
+          ]
+        },
+        "outline": true
+      },
+      "rendererHints": {
+        "semanticKind": "conicSensor",
+        "preferredBackends": [
+          "cesium.ionSdk.ConicSensorGraphics",
+          "simdis.beam",
+          "soap.sensorSwath"
+        ]
+      }
+    },
+    {
+      "id": "sensor-a-rectangular-sensor",
+      "kind": "rectangularSensor",
+      "name": "Rectangular sensor semantic object",
+      "show": false,
+      "layer": "tactical",
+      "pose": {
+        "position": {
+          "reference": "sensor-site-a#pose.position"
+        },
+        "orientation": {
+          "headingPitchRollDegrees": [
+            120,
+            -5,
+            0
+          ],
+          "frame": "ENU"
+        }
+      },
+      "geometry": {
+        "nearMeters": 1000,
+        "farMeters": 65000,
+        "horizontalFovDegrees": 26,
+        "verticalFovDegrees": 16,
+        "backend": "native"
+      },
+      "rendererHints": {
+        "semanticKind": "rectangularSensor",
+        "preferredBackends": [
+          "cesium.ionSdk.RectangularSensorGraphics",
+          "simdis.gate",
+          "soap.sensorSwath"
+        ]
+      }
+    },
+    {
+      "id": "sensor-a-custom-pattern-sensor",
+      "kind": "customPatternSensor",
+      "name": "Custom pattern sensor semantic object",
+      "show": false,
+      "layer": "tactical",
+      "pose": {
+        "position": {
+          "reference": "sensor-site-a#pose.position"
+        },
+        "orientation": {
+          "headingPitchRollDegrees": [
+            155,
+            -8,
+            0
+          ],
+          "frame": "ENU"
+        }
+      },
+      "geometry": {
+        "outerRadiusMeters": 70000,
+        "azimuthStartDegrees": -35,
+        "azimuthStopDegrees": 35,
+        "elevationStartDegrees": 5,
+        "elevationStopDegrees": 55,
+        "backend": "native"
+      },
+      "extensions": {
+        "pattern": {
+          "azimuthElevationDegrees": [
+            [
+              -35,
+              5
+            ],
+            [
+              -10,
+              35
+            ],
+            [
+              0,
+              55
+            ],
+            [
+              20,
+              42
+            ],
+            [
+              35,
+              10
+            ]
+          ]
+        }
+      },
+      "rendererHints": {
+        "semanticKind": "customPatternSensor",
+        "preferredBackends": [
+          "cesium.ionSdk.CustomPatternSensorGraphics",
+          "simdis.antennaPattern",
+          "soap.sensorSwath"
+        ]
+      }
+    },
+    {
+      "id": "generic-vector-demo",
+      "kind": "vector",
+      "name": "Generic vector demo",
+      "layer": "backend-analysis",
+      "pose": {
+        "position": {
+          "reference": "sensor-site-a#pose.position"
+        }
+      },
+      "geometry": {
+        "direction": [
+          1,
+          1,
+          0.2
+        ],
+        "lengthMeters": 15000,
+        "arrow": true
+      },
+      "style": {
+        "material": {
+          "type": "solidColor",
+          "rgba": [
+            1,
+            0.5,
+            0,
+            1
+          ]
+        },
+        "outline": true,
+        "width": 3
+      }
+    },
+    {
+      "id": "sensor-to-track-relative-line",
+      "kind": "relativeLine",
+      "name": "Relative line sensor-to-track",
+      "layer": "backend-analysis",
+      "geometry": {
+        "from": "sensor-site-a#pose.position",
+        "to": "air-track-17#pose.position"
+      },
+      "style": {
+        "material": {
+          "type": "polylineGlow",
+          "rgba": [
+            0.2,
+            1,
+            1,
+            1
+          ]
+        },
+        "width": 2
+      }
+    },
+    {
+      "id": "intercept-line-demo",
+      "kind": "interceptLine",
+      "name": "Intercept line demo",
+      "layer": "backend-analysis",
+      "geometry": {
+        "from": "air-track-17#pose.position",
+        "to": "air-track-42#pose.position"
+      },
+      "style": {
+        "material": {
+          "type": "polylineArrow",
+          "rgba": [
+            1,
+            0.4,
+            0.4,
+            1
+          ]
+        },
+        "width": 3
+      }
+    },
+    {
+      "id": "air-track-42",
+      "kind": "track",
+      "name": "Air Track 42",
+      "layer": "tracks",
+      "availability": "2026-05-29T16:00:00Z/2026-05-29T16:03:00Z",
+      "pose": {
+        "position": {
+          "samples": {
+            "epoch": "2026-05-29T16:00:00Z",
+            "timeFormat": "secondsSinceEpoch",
+            "valueFormat": "cartographicDegrees",
+            "referenceFrame": "FIXED",
+            "interpolation": "linear",
+            "interpolationDegree": 1,
+            "values": [
+              [
+                0,
+                -117.99,
+                34.025,
+                12500
+              ],
+              [
+                30,
+                -117.935,
+                34.015,
+                12400
+              ],
+              [
+                60,
+                -117.875,
+                34.0,
+                12200
+              ],
+              [
+                90,
+                -117.81,
+                33.99,
+                11900
+              ],
+              [
+                120,
+                -117.76,
+                33.975,
+                11600
+              ]
+            ]
+          }
+        },
+        "orientation": {
+          "computed": {
+            "operation": "velocityOrientation",
+            "source": "air-track-42#pose.position"
+          }
+        }
+      },
+      "point": {
+        "pixelSize": 8,
+        "color": [
+          1,
+          0.4,
+          0.1,
+          1
+        ],
+        "outlineColor": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "outlineWidth": 1
+      },
+      "label": {
+        "text": "Track 42",
+        "font": "13px sans-serif",
+        "showBackground": true,
+        "pixelOffset": [
+          10,
+          -18
+        ]
+      },
+      "path": {
+        "show": true,
+        "leadTimeSeconds": 60,
+        "trailTimeSeconds": 120,
+        "width": 2,
+        "material": {
+          "type": "solidColor",
+          "rgba": [
+            1,
+            0.5,
+            0.1,
+            1
+          ]
+        }
+      },
+      "overlays": [
+        {
+          "id": "track-42-velocity",
+          "kind": "velocityVector",
+          "geometry": {
+            "source": "air-track-42#pose.position",
+            "scale": 4,
+            "arrow": true
+          },
+          "style": {
+            "material": {
+              "type": "solidColor",
+              "rgba": [
+                1,
+                0.8,
+                0.1,
+                1
+              ]
+            },
+            "width": 3
+          }
+        },
+        {
+          "id": "track-42-acceleration",
+          "kind": "accelerationVector",
+          "geometry": {
+            "source": "air-track-42#pose.position",
+            "scale": 20,
+            "method": "finiteDifference",
+            "windowSeconds": 2,
+            "arrow": true
+          },
+          "style": {
+            "material": {
+              "type": "solidColor",
+              "rgba": [
+                1,
+                0.2,
+                0.2,
+                1
+              ]
+            },
+            "width": 2
+          }
+        },
+        {
+          "id": "track-42-body-axes",
+          "kind": "bodyAxes",
+          "geometry": {
+            "orientation": "air-track-42#pose.orientation",
+            "position": "air-track-42#pose.position",
+            "lengthMeters": 2600,
+            "axes": [
+              "x",
+              "y",
+              "z"
+            ],
+            "frame": "body"
+          }
+        }
+      ],
+      "properties": {
+        "category": "friendly",
+        "platformType": "aircraft",
+        "backendRole": "platform"
+      }
+    },
+    {
+      "id": "track-42-model",
+      "kind": "model",
+      "asset": "cesiumAir",
+      "name": "Second track model",
+      "layer": "tracks",
+      "pose": {
+        "position": {
+          "reference": "air-track-42#pose.position"
+        },
+        "orientation": {
+          "reference": "air-track-42#pose.orientation"
+        }
+      },
+      "model": {
+        "scale": 1.5,
+        "minimumPixelSize": 48,
+        "runAnimations": true,
+        "modelFrameCorrection": {
+          "bodyFromModel": {
+            "rotationDegrees": [
+              0,
+              0,
+              0
+            ],
+            "translationMeters": [
+              0,
+              0,
+              0
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "uncertainty-ellipsoid-track-42",
+      "kind": "uncertaintyEllipsoid",
+      "name": "Uncertainty ellipsoid",
+      "layer": "backend-analysis",
+      "pose": {
+        "position": {
+          "reference": "air-track-42#pose.position"
+        }
+      },
+      "geometry": {
+        "radiiMeters": [
+          2200,
+          1200,
+          800
+        ],
+        "slicePartitions": 24,
+        "stackPartitions": 12
+      },
+      "style": {
+        "material": {
+          "type": "solidColor",
+          "rgba": [
+            1.0,
+            0.9,
+            0.1,
+            0.18
+          ]
+        },
+        "outline": true
+      }
+    },
+    {
+      "id": "covariance-ellipse-track-42",
+      "kind": "covarianceEllipse",
+      "name": "Covariance ellipse",
+      "layer": "backend-analysis",
+      "pose": {
+        "position": {
+          "reference": "air-track-42#pose.position"
+        }
+      },
+      "geometry": {
+        "semiMajorAxisMeters": 6000,
+        "semiMinorAxisMeters": 2200,
+        "heightMeters": 12000,
+        "rotationDegrees": 30
+      },
+      "style": {
+        "material": {
+          "type": "solidColor",
+          "rgba": [
+            1.0,
+            1.0,
+            0.0,
+            0.22
+          ]
+        },
+        "outline": true
+      }
+    },
+    {
+      "id": "second-principal-axes",
+      "kind": "principalAxes",
+      "name": "Principal axes explicit covariance",
+      "layer": "backend-analysis",
+      "pose": {
+        "position": {
+          "reference": "air-track-42#pose.position"
+        }
+      },
+      "geometry": {
+        "lengthMeters": 4500,
+        "axes": [
+          "principal0",
+          "principal1",
+          "principal2"
+        ],
+        "covarianceMatrix": [
+          [
+            9,
+            2,
+            0
+          ],
+          [
+            2,
+            4,
+            0
+          ],
+          [
+            0,
+            0,
+            1
+          ]
+        ],
+        "scaleByEigenvalue": true,
+        "frame": "localEnu"
+      }
+    },
+    {
+      "id": "tileset-style-reservation",
+      "kind": "tilesetStyle",
+      "name": "Tileset style reservation",
+      "show": false,
+      "layer": "assets",
+      "asset": "customShaderAsset",
+      "extensions": {
+        "style": {
+          "colorExpression": "color('white')"
+        }
+      }
+    },
+    {
+      "id": "geojson-source-reservation",
+      "kind": "geoJsonDataSource",
+      "name": "GeoJSON data source reservation",
+      "show": false,
+      "layer": "assets",
+      "asset": "coverageGeoJson"
+    },
+    {
+      "id": "kml-source-reservation",
+      "kind": "kmlDataSource",
+      "name": "KML data source reservation",
+      "show": false,
+      "layer": "assets",
+      "asset": "demoKml"
+    },
+    {
+      "id": "czml-source-reservation",
+      "kind": "czmlDataSource",
+      "name": "CZML data source reservation",
+      "show": false,
+      "layer": "assets",
+      "asset": "demoCzml"
+    },
+    {
+      "id": "coverage-placeholder-path",
+      "kind": "path",
+      "name": "Coverage placeholder: path",
+      "show": false,
+      "layer": "coverage-placeholders",
+      "extensions": {
+        "coverage": {
+          "reason": "schema/backend capability coverage placeholder"
+        }
+      },
+      "rendererHints": {
+        "semanticKind": "path",
+        "preferredBackends": [
+          "cesium",
+          "simdis",
+          "soap"
+        ]
+      }
+    },
+    {
+      "id": "coverage-placeholder-ellipse",
+      "kind": "ellipse",
+      "name": "Coverage placeholder: ellipse",
+      "show": false,
+      "layer": "coverage-placeholders",
+      "extensions": {
+        "coverage": {
+          "reason": "schema/backend capability coverage placeholder"
+        }
+      },
+      "rendererHints": {
+        "semanticKind": "ellipse",
+        "preferredBackends": [
+          "cesium",
+          "simdis",
+          "soap"
+        ]
+      }
+    },
+    {
+      "id": "coverage-placeholder-fan",
+      "kind": "fan",
+      "name": "Coverage placeholder: fan",
+      "show": false,
+      "layer": "coverage-placeholders",
+      "extensions": {
+        "coverage": {
+          "reason": "schema/backend capability coverage placeholder"
+        }
+      },
+      "rendererHints": {
+        "semanticKind": "fan",
+        "preferredBackends": [
+          "cesium",
+          "simdis",
+          "soap"
+        ]
+      }
+    },
+    {
+      "id": "coverage-placeholder-voxel",
+      "kind": "voxel",
+      "name": "Coverage placeholder: voxel",
+      "show": false,
+      "layer": "coverage-placeholders",
+      "extensions": {
+        "coverage": {
+          "reason": "schema/backend capability coverage placeholder"
+        }
+      },
+      "rendererHints": {
+        "semanticKind": "voxel",
+        "preferredBackends": [
+          "cesium",
+          "simdis",
+          "soap"
+        ]
+      }
+    },
+    {
+      "id": "coverage-placeholder-clippingPlane",
+      "kind": "clippingPlane",
+      "name": "Coverage placeholder: clippingPlane",
+      "show": false,
+      "layer": "coverage-placeholders",
+      "extensions": {
+        "coverage": {
+          "reason": "schema/backend capability coverage placeholder"
+        }
+      },
+      "rendererHints": {
+        "semanticKind": "clippingPlane",
+        "preferredBackends": [
+          "cesium",
+          "simdis",
+          "soap"
+        ]
+      }
+    },
+    {
+      "id": "coverage-placeholder-classificationVolume",
+      "kind": "classificationVolume",
+      "name": "Coverage placeholder: classificationVolume",
+      "show": false,
+      "layer": "coverage-placeholders",
+      "extensions": {
+        "coverage": {
+          "reason": "schema/backend capability coverage placeholder"
+        }
+      },
+      "rendererHints": {
+        "semanticKind": "classificationVolume",
+        "preferredBackends": [
+          "cesium",
+          "simdis",
+          "soap"
+        ]
+      }
+    },
+    {
+      "id": "coverage-placeholder-postProcessStage",
+      "kind": "postProcessStage",
+      "name": "Coverage placeholder: postProcessStage",
+      "show": false,
+      "layer": "coverage-placeholders",
+      "extensions": {
+        "coverage": {
+          "reason": "schema/backend capability coverage placeholder"
+        }
+      },
+      "rendererHints": {
+        "semanticKind": "postProcessStage",
+        "preferredBackends": [
+          "cesium",
+          "simdis",
+          "soap"
+        ]
+      }
+    },
+    {
+      "id": "coverage-placeholder-composite",
+      "kind": "composite",
+      "name": "Coverage placeholder: composite",
+      "show": false,
+      "layer": "coverage-placeholders",
+      "extensions": {
+        "coverage": {
+          "reason": "schema/backend capability coverage placeholder"
+        }
+      },
+      "rendererHints": {
+        "semanticKind": "composite",
+        "preferredBackends": [
+          "cesium",
+          "simdis",
+          "soap"
+        ]
+      }
+    },
+    {
+      "id": "coverage-placeholder-atmosphere",
+      "kind": "atmosphere",
+      "name": "Coverage placeholder: atmosphere",
+      "show": false,
+      "layer": "coverage-placeholders",
+      "extensions": {
+        "coverage": {
+          "reason": "schema/backend capability coverage placeholder"
+        }
+      },
+      "rendererHints": {
+        "semanticKind": "atmosphere",
+        "preferredBackends": [
+          "cesium",
+          "simdis",
+          "soap"
+        ]
+      }
+    },
+    {
+      "id": "coverage-placeholder-cameraView",
+      "kind": "cameraView",
+      "name": "Coverage placeholder: cameraView",
+      "show": false,
+      "layer": "coverage-placeholders",
+      "extensions": {
+        "coverage": {
+          "reason": "schema/backend capability coverage placeholder"
+        }
+      },
+      "rendererHints": {
+        "semanticKind": "cameraView",
+        "preferredBackends": [
+          "cesium",
+          "simdis",
+          "soap"
+        ]
+      }
+    },
+    {
+      "id": "coverage-placeholder-classificationPrimitive",
+      "kind": "classificationPrimitive",
+      "name": "Coverage placeholder: classificationPrimitive",
+      "show": false,
+      "layer": "coverage-placeholders",
+      "extensions": {
+        "coverage": {
+          "reason": "schema/backend capability coverage placeholder"
+        }
+      },
+      "rendererHints": {
+        "semanticKind": "classificationPrimitive",
+        "preferredBackends": [
+          "cesium",
+          "simdis",
+          "soap"
+        ]
+      }
+    },
+    {
+      "id": "coverage-placeholder-cloudCollection",
+      "kind": "cloudCollection",
+      "name": "Coverage placeholder: cloudCollection",
+      "show": false,
+      "layer": "coverage-placeholders",
+      "extensions": {
+        "coverage": {
+          "reason": "schema/backend capability coverage placeholder"
+        }
+      },
+      "rendererHints": {
+        "semanticKind": "cloudCollection",
+        "preferredBackends": [
+          "cesium",
+          "simdis",
+          "soap"
+        ]
+      }
+    },
+    {
+      "id": "coverage-placeholder-customShader",
+      "kind": "customShader",
+      "name": "Coverage placeholder: customShader",
+      "show": false,
+      "layer": "coverage-placeholders",
+      "extensions": {
+        "coverage": {
+          "reason": "schema/backend capability coverage placeholder"
+        }
+      },
+      "rendererHints": {
+        "semanticKind": "customShader",
+        "preferredBackends": [
+          "cesium",
+          "simdis",
+          "soap"
+        ]
+      }
+    },
+    {
+      "id": "coverage-placeholder-dataSource",
+      "kind": "dataSource",
+      "name": "Coverage placeholder: dataSource",
+      "show": false,
+      "layer": "coverage-placeholders",
+      "extensions": {
+        "coverage": {
+          "reason": "schema/backend capability coverage placeholder"
+        }
+      },
+      "rendererHints": {
+        "semanticKind": "dataSource",
+        "preferredBackends": [
+          "cesium",
+          "simdis",
+          "soap"
+        ]
+      }
+    },
+    {
+      "id": "coverage-placeholder-debugInspector",
+      "kind": "debugInspector",
+      "name": "Coverage placeholder: debugInspector",
+      "show": false,
+      "layer": "coverage-placeholders",
+      "extensions": {
+        "coverage": {
+          "reason": "schema/backend capability coverage placeholder"
+        }
+      },
+      "rendererHints": {
+        "semanticKind": "debugInspector",
+        "preferredBackends": [
+          "cesium",
+          "simdis",
+          "soap"
+        ]
+      }
+    },
+    {
+      "id": "coverage-placeholder-groundPolyline",
+      "kind": "groundPolyline",
+      "name": "Coverage placeholder: groundPolyline",
+      "show": false,
+      "layer": "coverage-placeholders",
+      "extensions": {
+        "coverage": {
+          "reason": "schema/backend capability coverage placeholder"
+        }
+      },
+      "rendererHints": {
+        "semanticKind": "groundPolyline",
+        "preferredBackends": [
+          "cesium",
+          "simdis",
+          "soap"
+        ]
+      }
+    },
+    {
+      "id": "coverage-placeholder-groundPrimitive",
+      "kind": "groundPrimitive",
+      "name": "Coverage placeholder: groundPrimitive",
+      "show": false,
+      "layer": "coverage-placeholders",
+      "extensions": {
+        "coverage": {
+          "reason": "schema/backend capability coverage placeholder"
+        }
+      },
+      "rendererHints": {
+        "semanticKind": "groundPrimitive",
+        "preferredBackends": [
+          "cesium",
+          "simdis",
+          "soap"
+        ]
+      }
+    },
+    {
+      "id": "coverage-placeholder-imageryLayer",
+      "kind": "imageryLayer",
+      "name": "Coverage placeholder: imageryLayer",
+      "show": false,
+      "layer": "coverage-placeholders",
+      "extensions": {
+        "coverage": {
+          "reason": "schema/backend capability coverage placeholder"
+        }
+      },
+      "rendererHints": {
+        "semanticKind": "imageryLayer",
+        "preferredBackends": [
+          "cesium",
+          "simdis",
+          "soap"
+        ]
+      }
+    },
+    {
+      "id": "coverage-placeholder-panorama",
+      "kind": "panorama",
+      "name": "Coverage placeholder: panorama",
+      "show": false,
+      "layer": "coverage-placeholders",
+      "extensions": {
+        "coverage": {
+          "reason": "schema/backend capability coverage placeholder"
+        }
+      },
+      "rendererHints": {
+        "semanticKind": "panorama",
+        "preferredBackends": [
+          "cesium",
+          "simdis",
+          "soap"
+        ]
+      }
+    },
+    {
+      "id": "coverage-placeholder-skyBox",
+      "kind": "skyBox",
+      "name": "Coverage placeholder: skyBox",
+      "show": false,
+      "layer": "coverage-placeholders",
+      "extensions": {
+        "coverage": {
+          "reason": "schema/backend capability coverage placeholder"
+        }
+      },
+      "rendererHints": {
+        "semanticKind": "skyBox",
+        "preferredBackends": [
+          "cesium",
+          "simdis",
+          "soap"
+        ]
+      }
+    },
+    {
+      "id": "coverage-placeholder-terrain",
+      "kind": "terrain",
+      "name": "Coverage placeholder: terrain",
+      "show": false,
+      "layer": "coverage-placeholders",
+      "extensions": {
+        "coverage": {
+          "reason": "schema/backend capability coverage placeholder"
+        }
+      },
+      "rendererHints": {
+        "semanticKind": "terrain",
+        "preferredBackends": [
+          "cesium",
+          "simdis",
+          "soap"
+        ]
+      }
+    },
+    {
+      "id": "coverage-placeholder-videoPlane",
+      "kind": "videoPlane",
+      "name": "Coverage placeholder: videoPlane",
+      "show": false,
+      "layer": "coverage-placeholders",
+      "extensions": {
+        "coverage": {
+          "reason": "schema/backend capability coverage placeholder"
+        }
+      },
+      "rendererHints": {
+        "semanticKind": "videoPlane",
+        "preferredBackends": [
+          "cesium",
+          "simdis",
+          "soap"
+        ]
+      }
+    },
+    {
+      "id": "coverage-placeholder-primitiveMesh",
+      "kind": "primitiveMesh",
+      "name": "Coverage placeholder: primitiveMesh",
+      "show": false,
+      "layer": "coverage-placeholders",
+      "extensions": {
+        "coverage": {
+          "reason": "schema/backend capability coverage placeholder"
+        }
+      },
+      "rendererHints": {
+        "semanticKind": "primitiveMesh",
+        "preferredBackends": [
+          "cesium",
+          "simdis",
+          "soap"
+        ]
+      }
+    },
+    {
+      "id": "coverage-placeholder-terrainSurface",
+      "kind": "terrainSurface",
+      "name": "Coverage placeholder: terrainSurface",
+      "show": false,
+      "layer": "coverage-placeholders",
+      "extensions": {
+        "coverage": {
+          "reason": "schema/backend capability coverage placeholder"
+        }
+      },
+      "rendererHints": {
+        "semanticKind": "terrainSurface",
+        "preferredBackends": [
+          "cesium",
+          "simdis",
+          "soap"
+        ]
+      }
+    },
+    {
+      "id": "coverage-placeholder-customMesh",
+      "kind": "customMesh",
+      "name": "Coverage placeholder: customMesh",
+      "show": false,
+      "layer": "coverage-placeholders",
+      "extensions": {
+        "coverage": {
+          "reason": "schema/backend capability coverage placeholder"
+        }
+      },
+      "rendererHints": {
+        "semanticKind": "customMesh",
+        "preferredBackends": [
+          "cesium",
+          "simdis",
+          "soap"
+        ]
+      }
+    }
+  ],
+  "views": [
+    {
+      "id": "overview",
+      "name": "Overview",
+      "target": "air-track-17",
+      "rangeMeters": 120000
+    }
+  ],
+  "backend": {
+    "preferredTargets": [
+      "cesium",
+      "simdis",
+      "soap"
+    ],
+    "fallbackBehavior": "warn",
+    "capabilityPolicy": "bestAvailable",
+    "output": {
+      "includeCompilePlan": true,
+      "includeDiagnostics": true,
+      "includeCoverageMatrix": true,
+      "packageAssets": true
+    },
+    "targetOptions": {
+      "cesium": {
+        "sandcastle": true,
+        "renderUnsupportedAsWarnings": true
+      },
+      "simdis": {
+        "emitGog": true,
+        "emitEntities": true,
+        "emitPresentation": true
+      },
+      "soap": {
+        "emitScenario": true,
+        "emitAnalysis": true,
+        "emitPresentation": true
+      }
+    }
+  },
+  "backendCapabilities": {
+    "cesium": {
+      "backend": "cesium",
+      "version": "sdj-adapter-v0.4",
+      "profiles": [
+        "cesium-scene",
+        "cesium-entity",
+        "cesium-primitive",
+        "cesium-3d-tiles",
+        "cesium-particles"
+      ],
+      "compileModes": [
+        "scene-to-cesium-loader",
+        "scene-to-sandcastle",
+        "scene-to-compile-plan"
+      ],
+      "artifacts": [
+        {
+          "kind": "manifest",
+          "path": "cesium/manifest.json"
+        },
+        {
+          "kind": "sceneJson",
+          "path": "cesium/scene.sdj.json"
+        },
+        {
+          "kind": "loader",
+          "path": "sdj_cesium_loader_v0_4.js"
+        },
+        {
+          "kind": "sandcastleRunner",
+          "path": "sdj_sandcastle_runner_v0_4.js"
+        },
+        {
+          "kind": "compilePlan",
+          "path": "cesium/compile-plan.json"
+        }
+      ],
+      "objectSupport": {
+        "point": {
+          "support": "strong",
+          "target": "Entity API or scene primitive",
+          "lossiness": "low"
+        },
+        "billboard": {
+          "support": "strong",
+          "target": "Entity API or scene primitive",
+          "lossiness": "low"
+        },
+        "label": {
+          "support": "strong",
+          "target": "Entity API or scene primitive",
+          "lossiness": "low"
+        },
+        "model": {
+          "support": "strong",
+          "target": "Entity API or scene primitive",
+          "lossiness": "low"
+        },
+        "path": {
+          "support": "strong",
+          "target": "Entity + SampledPositionProperty + PathGraphics",
+          "lossiness": "low"
+        },
+        "polyline": {
+          "support": "strong",
+          "target": "Entity API or scene primitive",
+          "lossiness": "low"
+        },
+        "polygon": {
+          "support": "strong",
+          "target": "Entity API or scene primitive",
+          "lossiness": "low"
+        },
+        "rectangle": {
+          "support": "strong",
+          "target": "Entity API or scene primitive",
+          "lossiness": "low"
+        },
+        "ellipse": {
+          "support": "strong",
+          "target": "Entity API or scene primitive",
+          "lossiness": "low"
+        },
+        "circle": {
+          "support": "strong",
+          "target": "Entity API or scene primitive",
+          "lossiness": "low"
+        },
+        "box": {
+          "support": "strong",
+          "target": "Entity API or scene primitive",
+          "lossiness": "low"
+        },
+        "cylinder": {
+          "support": "strong",
+          "target": "Entity API or scene primitive",
+          "lossiness": "low"
+        },
+        "cone": {
+          "support": "strong",
+          "target": "Entity API or scene primitive",
+          "lossiness": "low"
+        },
+        "ellipsoid": {
+          "support": "strong",
+          "target": "Entity API or scene primitive",
+          "lossiness": "low"
+        },
+        "sphere": {
+          "support": "strong",
+          "target": "Entity API or scene primitive",
+          "lossiness": "low"
+        },
+        "wall": {
+          "support": "strong",
+          "target": "Entity API or scene primitive",
+          "lossiness": "low"
+        },
+        "corridor": {
+          "support": "strong",
+          "target": "Entity API or scene primitive",
+          "lossiness": "low"
+        },
+        "polylineVolume": {
+          "support": "strong",
+          "target": "Entity API or scene primitive",
+          "lossiness": "low"
+        },
+        "plane": {
+          "support": "strong",
+          "target": "Entity API or scene primitive",
+          "lossiness": "low"
+        },
+        "tileset": {
+          "support": "strong",
+          "target": "Cesium3DTileset",
+          "lossiness": "low"
+        },
+        "track": {
+          "support": "strong",
+          "target": "Entity + SampledPositionProperty + PathGraphics",
+          "lossiness": "low"
+        },
+        "sector2d": {
+          "support": "partial",
+          "target": "Entity API or scene primitive",
+          "lossiness": "medium"
+        },
+        "sectorVolume": {
+          "support": "partial",
+          "target": "Primitive / GeometryInstance mesh or Entity fallback",
+          "lossiness": "medium"
+        },
+        "hemisphere": {
+          "support": "partial",
+          "target": "Primitive / GeometryInstance mesh or Entity fallback",
+          "lossiness": "medium"
+        },
+        "sphericalCap": {
+          "support": "partial",
+          "target": "Primitive / GeometryInstance mesh or Entity fallback",
+          "lossiness": "medium"
+        },
+        "keyhole": {
+          "support": "partial",
+          "target": "Primitive / GeometryInstance mesh or Entity fallback",
+          "lossiness": "medium"
+        },
+        "rangeRing": {
+          "support": "strong",
+          "target": "Entity API or scene primitive",
+          "lossiness": "low"
+        },
+        "bearingFan": {
+          "support": "strong",
+          "target": "Entity API or scene primitive",
+          "lossiness": "low"
+        },
+        "frustum": {
+          "support": "partial",
+          "target": "Primitive / GeometryInstance mesh or Entity fallback",
+          "lossiness": "medium"
+        },
+        "conicSensor": {
+          "support": "partial",
+          "target": "Entity API or scene primitive",
+          "lossiness": "medium"
+        },
+        "rectangularSensor": {
+          "support": "partial",
+          "target": "Entity API or scene primitive",
+          "lossiness": "medium"
+        },
+        "customPatternSensor": {
+          "support": "partial",
+          "target": "Entity API or scene primitive",
+          "lossiness": "medium"
+        },
+        "fan": {
+          "support": "strong",
+          "target": "Entity API or scene primitive",
+          "lossiness": "low"
+        },
+        "vector": {
+          "support": "strong",
+          "target": "Entity API or scene primitive",
+          "lossiness": "low"
+        },
+        "velocityVector": {
+          "support": "strong",
+          "target": "CallbackProperty-derived Entity polylines",
+          "lossiness": "low"
+        },
+        "accelerationVector": {
+          "support": "strong",
+          "target": "CallbackProperty-derived Entity polylines",
+          "lossiness": "low"
+        },
+        "bodyAxes": {
+          "support": "strong",
+          "target": "CallbackProperty-derived Entity polylines",
+          "lossiness": "low"
+        },
+        "principalAxes": {
+          "support": "strong",
+          "target": "CallbackProperty-derived Entity polylines",
+          "lossiness": "low"
+        },
+        "lineOfSight": {
+          "support": "strong",
+          "target": "Entity API or scene primitive",
+          "lossiness": "low"
+        },
+        "relativeLine": {
+          "support": "strong",
+          "target": "Entity API or scene primitive",
+          "lossiness": "low"
+        },
+        "interceptLine": {
+          "support": "strong",
+          "target": "Entity API or scene primitive",
+          "lossiness": "low"
+        },
+        "uncertaintyEllipsoid": {
+          "support": "strong",
+          "target": "Entity API or scene primitive",
+          "lossiness": "low"
+        },
+        "covarianceEllipse": {
+          "support": "strong",
+          "target": "Entity API or scene primitive",
+          "lossiness": "low"
+        },
+        "particleSystem": {
+          "support": "strong",
+          "target": "ParticleSystem",
+          "lossiness": "low"
+        },
+        "voxel": {
+          "support": "partial",
+          "target": "Entity API or scene primitive",
+          "lossiness": "medium"
+        },
+        "clippingPolygon": {
+          "support": "strong",
+          "target": "Entity API or scene primitive",
+          "lossiness": "low"
+        },
+        "clippingPlane": {
+          "support": "strong",
+          "target": "Entity API or scene primitive",
+          "lossiness": "low"
+        },
+        "classificationVolume": {
+          "support": "strong",
+          "target": "Entity API or scene primitive",
+          "lossiness": "low"
+        },
+        "postProcessStage": {
+          "support": "partial",
+          "target": "Entity API or scene primitive",
+          "lossiness": "medium"
+        },
+        "customPrimitive": {
+          "support": "strong",
+          "target": "Primitive / GeometryInstance mesh or Entity fallback",
+          "lossiness": "low"
+        },
+        "composite": {
+          "support": "partial",
+          "target": "Entity API or scene primitive",
+          "lossiness": "medium"
+        },
+        "atmosphere": {
+          "support": "strong",
+          "target": "Entity API or scene primitive",
+          "lossiness": "low"
+        },
+        "cameraView": {
+          "support": "strong",
+          "target": "Entity API or scene primitive",
+          "lossiness": "low"
+        },
+        "classificationPrimitive": {
+          "support": "strong",
+          "target": "Entity API or scene primitive",
+          "lossiness": "low"
+        },
+        "cloudCollection": {
+          "support": "strong",
+          "target": "Entity API or scene primitive",
+          "lossiness": "low"
+        },
+        "customShader": {
+          "support": "strong",
+          "target": "Entity API or scene primitive",
+          "lossiness": "low"
+        },
+        "czmlDataSource": {
+          "support": "strong",
+          "target": "Entity API or scene primitive",
+          "lossiness": "low"
+        },
+        "dataSource": {
+          "support": "partial",
+          "target": "Entity API or scene primitive",
+          "lossiness": "medium"
+        },
+        "debugInspector": {
+          "support": "strong",
+          "target": "Entity API or scene primitive",
+          "lossiness": "low"
+        },
+        "geoJsonDataSource": {
+          "support": "strong",
+          "target": "Entity API or scene primitive",
+          "lossiness": "low"
+        },
+        "groundPolyline": {
+          "support": "strong",
+          "target": "Entity API or scene primitive",
+          "lossiness": "low"
+        },
+        "groundPrimitive": {
+          "support": "strong",
+          "target": "Entity API or scene primitive",
+          "lossiness": "low"
+        },
+        "imageryLayer": {
+          "support": "strong",
+          "target": "Entity API or scene primitive",
+          "lossiness": "low"
+        },
+        "kmlDataSource": {
+          "support": "strong",
+          "target": "Entity API or scene primitive",
+          "lossiness": "low"
+        },
+        "panorama": {
+          "support": "partial",
+          "target": "Entity API or scene primitive",
+          "lossiness": "medium"
+        },
+        "skyBox": {
+          "support": "strong",
+          "target": "Entity API or scene primitive",
+          "lossiness": "low"
+        },
+        "terrain": {
+          "support": "strong",
+          "target": "Entity API or scene primitive",
+          "lossiness": "low"
+        },
+        "tilesetStyle": {
+          "support": "strong",
+          "target": "Entity API or scene primitive",
+          "lossiness": "low"
+        },
+        "videoPlane": {
+          "support": "strong",
+          "target": "Entity API or scene primitive",
+          "lossiness": "low"
+        },
+        "primitiveMesh": {
+          "support": "strong",
+          "target": "Primitive / GeometryInstance mesh or Entity fallback",
+          "lossiness": "low"
+        },
+        "terrainSurface": {
+          "support": "strong",
+          "target": "Entity API or scene primitive",
+          "lossiness": "low"
+        },
+        "customMesh": {
+          "support": "strong",
+          "target": "Primitive / GeometryInstance mesh or Entity fallback",
+          "lossiness": "low"
+        }
+      },
+      "analysisSupport": {
+        "accessIntervals": {
+          "support": "partial",
+          "target": "derived overlays / labels",
+          "lossiness": "medium"
+        },
+        "rfLinkBudget": {
+          "support": "weak",
+          "target": "report overlay / data source",
+          "lossiness": "high"
+        },
+        "coverageGrid": {
+          "support": "partial",
+          "target": "polygon/primitive overlay",
+          "lossiness": "medium"
+        },
+        "report": {
+          "support": "partial",
+          "target": "HTML description / panel",
+          "lossiness": "medium"
+        },
+        "plot": {
+          "support": "weak",
+          "target": "external UI panel",
+          "lossiness": "high"
+        }
+      },
+      "notes": [
+        "Cesium is the primary render target; analysis-heavy outputs are visualized as overlays rather than native analyses."
+      ]
+    },
+    "simdis": {
+      "backend": "simdis",
+      "version": "local-spec-simdis-export",
+      "profiles": [
+        "scene-core",
+        "entity-core",
+        "trajectory-diagnostics",
+        "modern-3d-assets",
+        "tactical-geometry",
+        "sensor-analysis",
+        "rf-electromagnetic-analysis",
+        "coverage-analysis",
+        "debrief-presentation",
+        "simdis-export",
+        "backend-raw-extensions",
+        "simdis-gog",
+        "simdis-entity",
+        "simdis-analysis",
+        "simdis-presentation",
+        "simdis-media"
+      ],
+      "compileModes": [
+        "scene-to-gog",
+        "scene-to-entities",
+        "scene-to-presentation",
+        "scene-to-assets",
+        "simdis-result-to-overlay"
+      ],
+      "artifacts": [
+        {
+          "kind": "manifest",
+          "pathPattern": "out/simdis/manifest.json"
+        },
+        {
+          "kind": "gog",
+          "pathPattern": "out/simdis/overlays.gog"
+        },
+        {
+          "kind": "entityState",
+          "pathPattern": "out/simdis/entities.json"
+        },
+        {
+          "kind": "presentation",
+          "pathPattern": "out/simdis/presentation.json"
+        },
+        {
+          "kind": "assetManifest",
+          "pathPattern": "out/simdis/assets.json"
+        },
+        {
+          "kind": "exampleBundle",
+          "pathPattern": "generated/simdis-example-bundle.json"
+        }
+      ],
+      "objectSupport": {
+        "point": {
+          "support": "strong",
+          "target": "SIMDIS package artifact or extension",
+          "lossiness": "low"
+        },
+        "billboard": {
+          "support": "strong",
+          "target": "SIMDIS package artifact or extension",
+          "lossiness": "low"
+        },
+        "label": {
+          "support": "strong",
+          "target": "SIMDIS package artifact or extension",
+          "lossiness": "low"
+        },
+        "model": {
+          "support": "strong",
+          "target": "platform/entity state + model asset",
+          "lossiness": "low"
+        },
+        "path": {
+          "support": "strong",
+          "target": "SIMDIS package artifact or extension",
+          "lossiness": "low"
+        },
+        "polyline": {
+          "support": "strong",
+          "target": "GOG overlay",
+          "lossiness": "low"
+        },
+        "polygon": {
+          "support": "strong",
+          "target": "GOG overlay",
+          "lossiness": "low"
+        },
+        "rectangle": {
+          "support": "strong",
+          "target": "GOG overlay",
+          "lossiness": "low"
+        },
+        "ellipse": {
+          "support": "strong",
+          "target": "GOG overlay",
+          "lossiness": "low"
+        },
+        "circle": {
+          "support": "strong",
+          "target": "GOG overlay",
+          "lossiness": "low"
+        },
+        "box": {
+          "support": "strong",
+          "target": "SIMDIS package artifact or extension",
+          "lossiness": "low"
+        },
+        "cylinder": {
+          "support": "strong",
+          "target": "SIMDIS package artifact or extension",
+          "lossiness": "low"
+        },
+        "cone": {
+          "support": "strong",
+          "target": "SIMDIS package artifact or extension",
+          "lossiness": "low"
+        },
+        "ellipsoid": {
+          "support": "strong",
+          "target": "SIMDIS package artifact or extension",
+          "lossiness": "low"
+        },
+        "sphere": {
+          "support": "strong",
+          "target": "SIMDIS package artifact or extension",
+          "lossiness": "low"
+        },
+        "wall": {
+          "support": "strong",
+          "target": "GOG overlay",
+          "lossiness": "low"
+        },
+        "corridor": {
+          "support": "strong",
+          "target": "GOG overlay",
+          "lossiness": "low"
+        },
+        "polylineVolume": {
+          "support": "strong",
+          "target": "SIMDIS package artifact or extension",
+          "lossiness": "low"
+        },
+        "plane": {
+          "support": "strong",
+          "target": "SIMDIS package artifact or extension",
+          "lossiness": "low"
+        },
+        "tileset": {
+          "support": "partial",
+          "target": "SIMDIS package artifact or extension",
+          "lossiness": "medium"
+        },
+        "track": {
+          "support": "strong",
+          "target": "platform/entity state + model asset",
+          "lossiness": "low"
+        },
+        "sector2d": {
+          "support": "strong",
+          "target": "SIMDIS package artifact or extension",
+          "lossiness": "low"
+        },
+        "sectorVolume": {
+          "support": "strong",
+          "target": "beam/gate/LOB/projector or GOG geometry",
+          "lossiness": "low"
+        },
+        "hemisphere": {
+          "support": "strong",
+          "target": "SIMDIS package artifact or extension",
+          "lossiness": "low"
+        },
+        "sphericalCap": {
+          "support": "strong",
+          "target": "SIMDIS package artifact or extension",
+          "lossiness": "low"
+        },
+        "keyhole": {
+          "support": "strong",
+          "target": "beam/gate/LOB/projector or GOG geometry",
+          "lossiness": "low"
+        },
+        "rangeRing": {
+          "support": "strong",
+          "target": "GOG overlay",
+          "lossiness": "low"
+        },
+        "bearingFan": {
+          "support": "strong",
+          "target": "beam/gate/LOB/projector or GOG geometry",
+          "lossiness": "low"
+        },
+        "frustum": {
+          "support": "strong",
+          "target": "beam/gate/LOB/projector or GOG geometry",
+          "lossiness": "low"
+        },
+        "conicSensor": {
+          "support": "strong",
+          "target": "beam/gate/LOB/projector or GOG geometry",
+          "lossiness": "low"
+        },
+        "rectangularSensor": {
+          "support": "strong",
+          "target": "beam/gate/LOB/projector or GOG geometry",
+          "lossiness": "low"
+        },
+        "customPatternSensor": {
+          "support": "strong",
+          "target": "beam/gate/LOB/projector or GOG geometry",
+          "lossiness": "low"
+        },
+        "fan": {
+          "support": "strong",
+          "target": "beam/gate/LOB/projector or GOG geometry",
+          "lossiness": "low"
+        },
+        "vector": {
+          "support": "strong",
+          "target": "SIMDIS package artifact or extension",
+          "lossiness": "low"
+        },
+        "velocityVector": {
+          "support": "strong",
+          "target": "SIMDIS package artifact or extension",
+          "lossiness": "low"
+        },
+        "accelerationVector": {
+          "support": "strong",
+          "target": "SIMDIS package artifact or extension",
+          "lossiness": "low"
+        },
+        "bodyAxes": {
+          "support": "strong",
+          "target": "SIMDIS package artifact or extension",
+          "lossiness": "low"
+        },
+        "principalAxes": {
+          "support": "strong",
+          "target": "SIMDIS package artifact or extension",
+          "lossiness": "low"
+        },
+        "lineOfSight": {
+          "support": "strong",
+          "target": "measurement/range/LOS overlay",
+          "lossiness": "low"
+        },
+        "relativeLine": {
+          "support": "strong",
+          "target": "measurement/range/LOS overlay",
+          "lossiness": "low"
+        },
+        "interceptLine": {
+          "support": "strong",
+          "target": "measurement/range/LOS overlay",
+          "lossiness": "low"
+        },
+        "uncertaintyEllipsoid": {
+          "support": "strong",
+          "target": "SIMDIS package artifact or extension",
+          "lossiness": "low"
+        },
+        "covarianceEllipse": {
+          "support": "strong",
+          "target": "SIMDIS package artifact or extension",
+          "lossiness": "low"
+        },
+        "particleSystem": {
+          "support": "partial",
+          "target": "SIMDIS package artifact or extension",
+          "lossiness": "medium"
+        },
+        "voxel": {
+          "support": "partial",
+          "target": "SIMDIS package artifact or extension",
+          "lossiness": "medium"
+        },
+        "clippingPolygon": {
+          "support": "partial",
+          "target": "SIMDIS package artifact or extension",
+          "lossiness": "medium"
+        },
+        "clippingPlane": {
+          "support": "partial",
+          "target": "SIMDIS package artifact or extension",
+          "lossiness": "medium"
+        },
+        "classificationVolume": {
+          "support": "strong",
+          "target": "SIMDIS package artifact or extension",
+          "lossiness": "low"
+        },
+        "postProcessStage": {
+          "support": "partial",
+          "target": "SIMDIS package artifact or extension",
+          "lossiness": "medium"
+        },
+        "customPrimitive": {
+          "support": "strong",
+          "target": "SIMDIS package artifact or extension",
+          "lossiness": "low"
+        },
+        "composite": {
+          "support": "partial",
+          "target": "SIMDIS package artifact or extension",
+          "lossiness": "medium"
+        },
+        "atmosphere": {
+          "support": "partial",
+          "target": "SIMDIS package artifact or extension",
+          "lossiness": "medium"
+        },
+        "cameraView": {
+          "support": "partial",
+          "target": "SIMDIS package artifact or extension",
+          "lossiness": "medium"
+        },
+        "classificationPrimitive": {
+          "support": "partial",
+          "target": "SIMDIS package artifact or extension",
+          "lossiness": "medium"
+        },
+        "cloudCollection": {
+          "support": "partial",
+          "target": "SIMDIS package artifact or extension",
+          "lossiness": "medium"
+        },
+        "customShader": {
+          "support": "partial",
+          "target": "SIMDIS package artifact or extension",
+          "lossiness": "medium"
+        },
+        "czmlDataSource": {
+          "support": "partial",
+          "target": "SIMDIS package artifact or extension",
+          "lossiness": "medium"
+        },
+        "dataSource": {
+          "support": "partial",
+          "target": "SIMDIS package artifact or extension",
+          "lossiness": "medium"
+        },
+        "debugInspector": {
+          "support": "partial",
+          "target": "SIMDIS package artifact or extension",
+          "lossiness": "medium"
+        },
+        "geoJsonDataSource": {
+          "support": "partial",
+          "target": "SIMDIS package artifact or extension",
+          "lossiness": "medium"
+        },
+        "groundPolyline": {
+          "support": "partial",
+          "target": "SIMDIS package artifact or extension",
+          "lossiness": "medium"
+        },
+        "groundPrimitive": {
+          "support": "partial",
+          "target": "SIMDIS package artifact or extension",
+          "lossiness": "medium"
+        },
+        "imageryLayer": {
+          "support": "strong",
+          "target": "SIMDIS package artifact or extension",
+          "lossiness": "low"
+        },
+        "kmlDataSource": {
+          "support": "partial",
+          "target": "SIMDIS package artifact or extension",
+          "lossiness": "medium"
+        },
+        "panorama": {
+          "support": "partial",
+          "target": "SIMDIS package artifact or extension",
+          "lossiness": "medium"
+        },
+        "skyBox": {
+          "support": "partial",
+          "target": "SIMDIS package artifact or extension",
+          "lossiness": "medium"
+        },
+        "terrain": {
+          "support": "strong",
+          "target": "SIMDIS package artifact or extension",
+          "lossiness": "low"
+        },
+        "tilesetStyle": {
+          "support": "partial",
+          "target": "SIMDIS package artifact or extension",
+          "lossiness": "medium"
+        },
+        "videoPlane": {
+          "support": "partial",
+          "target": "SIMDIS package artifact or extension",
+          "lossiness": "medium"
+        },
+        "primitiveMesh": {
+          "support": "strong",
+          "target": "SIMDIS package artifact or extension",
+          "lossiness": "low"
+        },
+        "terrainSurface": {
+          "support": "partial",
+          "target": "SIMDIS package artifact or extension",
+          "lossiness": "medium"
+        },
+        "customMesh": {
+          "support": "strong",
+          "target": "SIMDIS package artifact or extension",
+          "lossiness": "low"
+        }
+      },
+      "analysisSupport": {
+        "accessIntervals": {
+          "support": "strong",
+          "target": "range tool / measurement overlay",
+          "lossiness": "low"
+        },
+        "lineOfSightSamples": {
+          "support": "strong",
+          "target": "LOS / range sampling",
+          "lossiness": "low"
+        },
+        "rfLinkBudget": {
+          "support": "strong",
+          "target": "RF propagation / antenna analysis",
+          "lossiness": "low"
+        },
+        "coverageGrid": {
+          "support": "strong",
+          "target": "GOG overlay / heat map",
+          "lossiness": "low"
+        },
+        "sensorSwath": {
+          "support": "strong",
+          "target": "sensor beam/gate/projector",
+          "lossiness": "low"
+        },
+        "report": {
+          "support": "partial",
+          "target": "measurement/report bundle",
+          "lossiness": "medium"
+        },
+        "plot": {
+          "support": "partial",
+          "target": "measurement/export data",
+          "lossiness": "medium"
+        }
+      },
+      "notes": [
+        "SIMDIS export emits package artifacts, GOG overlays, entity state, presentation, assets, and diagnostics."
+      ]
+    },
+    "soap": {
+      "backend": "soap",
+      "version": "local-spec-soap-export",
+      "profiles": [
+        "entity-core",
+        "trajectory-diagnostics",
+        "modern-3d-assets",
+        "tactical-geometry",
+        "sensor-analysis",
+        "debrief-presentation",
+        "rf-electromagnetic-analysis",
+        "coverage-analysis",
+        "backend-raw-extensions"
+      ],
+      "compileModes": [
+        "scene-to-scenario",
+        "scene-to-analysis",
+        "scene-to-presentation",
+        "soap-result-to-overlay"
+      ],
+      "artifacts": [
+        {
+          "kind": "manifest",
+          "pathPattern": "out/soap/manifest.json"
+        },
+        {
+          "kind": "views",
+          "pathPattern": "out/soap/views.json"
+        },
+        {
+          "kind": "analysis",
+          "pathPattern": "out/soap/analysis.json"
+        },
+        {
+          "kind": "overlay",
+          "pathPattern": "out/soap/overlays/{analysisId}.json"
+        },
+        {
+          "kind": "presentation",
+          "pathPattern": "out/soap/presentation.json"
+        },
+        {
+          "kind": "assetManifest",
+          "pathPattern": "out/soap/assets.json"
+        },
+        {
+          "kind": "exampleBundle",
+          "pathPattern": "generated/soap-example-bundle.json"
+        }
+      ],
+      "objectSupport": {
+        "point": {
+          "support": "strong",
+          "target": "SOAP view/model/overlay artifact",
+          "lossiness": "low"
+        },
+        "billboard": {
+          "support": "partial",
+          "target": "SOAP view/model/overlay artifact",
+          "lossiness": "medium"
+        },
+        "label": {
+          "support": "strong",
+          "target": "SOAP view/model/overlay artifact",
+          "lossiness": "low"
+        },
+        "model": {
+          "support": "strong",
+          "target": "Platform / Trajectory / 3D Model",
+          "lossiness": "low"
+        },
+        "path": {
+          "support": "strong",
+          "target": "SOAP view/model/overlay artifact",
+          "lossiness": "low"
+        },
+        "polyline": {
+          "support": "strong",
+          "target": "SOAP view/model/overlay artifact",
+          "lossiness": "low"
+        },
+        "polygon": {
+          "support": "strong",
+          "target": "SOAP view/model/overlay artifact",
+          "lossiness": "low"
+        },
+        "rectangle": {
+          "support": "strong",
+          "target": "SOAP view/model/overlay artifact",
+          "lossiness": "low"
+        },
+        "ellipse": {
+          "support": "strong",
+          "target": "SOAP view/model/overlay artifact",
+          "lossiness": "low"
+        },
+        "circle": {
+          "support": "strong",
+          "target": "SOAP view/model/overlay artifact",
+          "lossiness": "low"
+        },
+        "box": {
+          "support": "partial",
+          "target": "SOAP view/model/overlay artifact",
+          "lossiness": "medium"
+        },
+        "cylinder": {
+          "support": "partial",
+          "target": "SOAP view/model/overlay artifact",
+          "lossiness": "medium"
+        },
+        "cone": {
+          "support": "partial",
+          "target": "SOAP view/model/overlay artifact",
+          "lossiness": "medium"
+        },
+        "ellipsoid": {
+          "support": "partial",
+          "target": "SOAP view/model/overlay artifact",
+          "lossiness": "medium"
+        },
+        "sphere": {
+          "support": "partial",
+          "target": "SOAP view/model/overlay artifact",
+          "lossiness": "medium"
+        },
+        "wall": {
+          "support": "partial",
+          "target": "SOAP view/model/overlay artifact",
+          "lossiness": "medium"
+        },
+        "corridor": {
+          "support": "partial",
+          "target": "SOAP view/model/overlay artifact",
+          "lossiness": "medium"
+        },
+        "polylineVolume": {
+          "support": "partial",
+          "target": "SOAP view/model/overlay artifact",
+          "lossiness": "medium"
+        },
+        "plane": {
+          "support": "partial",
+          "target": "SOAP view/model/overlay artifact",
+          "lossiness": "medium"
+        },
+        "tileset": {
+          "support": "partial",
+          "target": "SOAP view/model/overlay artifact",
+          "lossiness": "medium"
+        },
+        "track": {
+          "support": "strong",
+          "target": "Platform / Trajectory / 3D Model",
+          "lossiness": "low"
+        },
+        "sector2d": {
+          "support": "strong",
+          "target": "SOAP view/model/overlay artifact",
+          "lossiness": "low"
+        },
+        "sectorVolume": {
+          "support": "strong",
+          "target": "Sensor Swath / RF object / contour overlay",
+          "lossiness": "low"
+        },
+        "hemisphere": {
+          "support": "strong",
+          "target": "SOAP view/model/overlay artifact",
+          "lossiness": "low"
+        },
+        "sphericalCap": {
+          "support": "strong",
+          "target": "SOAP view/model/overlay artifact",
+          "lossiness": "low"
+        },
+        "keyhole": {
+          "support": "strong",
+          "target": "Sensor Swath / RF object / contour overlay",
+          "lossiness": "low"
+        },
+        "rangeRing": {
+          "support": "strong",
+          "target": "SOAP view/model/overlay artifact",
+          "lossiness": "low"
+        },
+        "bearingFan": {
+          "support": "strong",
+          "target": "SOAP view/model/overlay artifact",
+          "lossiness": "low"
+        },
+        "frustum": {
+          "support": "strong",
+          "target": "Sensor Swath / RF object / contour overlay",
+          "lossiness": "low"
+        },
+        "conicSensor": {
+          "support": "strong",
+          "target": "Sensor Swath / RF object / contour overlay",
+          "lossiness": "low"
+        },
+        "rectangularSensor": {
+          "support": "strong",
+          "target": "Sensor Swath / RF object / contour overlay",
+          "lossiness": "low"
+        },
+        "customPatternSensor": {
+          "support": "strong",
+          "target": "Sensor Swath / RF object / contour overlay",
+          "lossiness": "low"
+        },
+        "fan": {
+          "support": "strong",
+          "target": "Sensor Swath / RF object / contour overlay",
+          "lossiness": "low"
+        },
+        "vector": {
+          "support": "strong",
+          "target": "SOAP view/model/overlay artifact",
+          "lossiness": "low"
+        },
+        "velocityVector": {
+          "support": "strong",
+          "target": "SOAP view/model/overlay artifact",
+          "lossiness": "low"
+        },
+        "accelerationVector": {
+          "support": "strong",
+          "target": "SOAP view/model/overlay artifact",
+          "lossiness": "low"
+        },
+        "bodyAxes": {
+          "support": "strong",
+          "target": "SOAP view/model/overlay artifact",
+          "lossiness": "low"
+        },
+        "principalAxes": {
+          "support": "strong",
+          "target": "SOAP view/model/overlay artifact",
+          "lossiness": "low"
+        },
+        "lineOfSight": {
+          "support": "strong",
+          "target": "analysis overlay / visibility result",
+          "lossiness": "low"
+        },
+        "relativeLine": {
+          "support": "strong",
+          "target": "analysis overlay / visibility result",
+          "lossiness": "low"
+        },
+        "interceptLine": {
+          "support": "strong",
+          "target": "analysis overlay / visibility result",
+          "lossiness": "low"
+        },
+        "uncertaintyEllipsoid": {
+          "support": "strong",
+          "target": "SOAP view/model/overlay artifact",
+          "lossiness": "low"
+        },
+        "covarianceEllipse": {
+          "support": "strong",
+          "target": "SOAP view/model/overlay artifact",
+          "lossiness": "low"
+        },
+        "particleSystem": {
+          "support": "partial",
+          "target": "SOAP view/model/overlay artifact",
+          "lossiness": "medium"
+        },
+        "voxel": {
+          "support": "partial",
+          "target": "SOAP view/model/overlay artifact",
+          "lossiness": "medium"
+        },
+        "clippingPolygon": {
+          "support": "partial",
+          "target": "SOAP view/model/overlay artifact",
+          "lossiness": "medium"
+        },
+        "clippingPlane": {
+          "support": "partial",
+          "target": "SOAP view/model/overlay artifact",
+          "lossiness": "medium"
+        },
+        "classificationVolume": {
+          "support": "strong",
+          "target": "SOAP view/model/overlay artifact",
+          "lossiness": "low"
+        },
+        "postProcessStage": {
+          "support": "partial",
+          "target": "SOAP view/model/overlay artifact",
+          "lossiness": "medium"
+        },
+        "customPrimitive": {
+          "support": "partial",
+          "target": "SOAP view/model/overlay artifact",
+          "lossiness": "medium"
+        },
+        "composite": {
+          "support": "partial",
+          "target": "SOAP view/model/overlay artifact",
+          "lossiness": "medium"
+        },
+        "atmosphere": {
+          "support": "partial",
+          "target": "SOAP view/model/overlay artifact",
+          "lossiness": "medium"
+        },
+        "cameraView": {
+          "support": "partial",
+          "target": "SOAP view/model/overlay artifact",
+          "lossiness": "medium"
+        },
+        "classificationPrimitive": {
+          "support": "partial",
+          "target": "SOAP view/model/overlay artifact",
+          "lossiness": "medium"
+        },
+        "cloudCollection": {
+          "support": "partial",
+          "target": "SOAP view/model/overlay artifact",
+          "lossiness": "medium"
+        },
+        "customShader": {
+          "support": "partial",
+          "target": "SOAP view/model/overlay artifact",
+          "lossiness": "medium"
+        },
+        "czmlDataSource": {
+          "support": "partial",
+          "target": "SOAP view/model/overlay artifact",
+          "lossiness": "medium"
+        },
+        "dataSource": {
+          "support": "partial",
+          "target": "SOAP view/model/overlay artifact",
+          "lossiness": "medium"
+        },
+        "debugInspector": {
+          "support": "partial",
+          "target": "SOAP view/model/overlay artifact",
+          "lossiness": "medium"
+        },
+        "geoJsonDataSource": {
+          "support": "partial",
+          "target": "SOAP view/model/overlay artifact",
+          "lossiness": "medium"
+        },
+        "groundPolyline": {
+          "support": "partial",
+          "target": "SOAP view/model/overlay artifact",
+          "lossiness": "medium"
+        },
+        "groundPrimitive": {
+          "support": "partial",
+          "target": "SOAP view/model/overlay artifact",
+          "lossiness": "medium"
+        },
+        "imageryLayer": {
+          "support": "strong",
+          "target": "Terrain and Imagery",
+          "lossiness": "low"
+        },
+        "kmlDataSource": {
+          "support": "partial",
+          "target": "SOAP view/model/overlay artifact",
+          "lossiness": "medium"
+        },
+        "panorama": {
+          "support": "partial",
+          "target": "SOAP view/model/overlay artifact",
+          "lossiness": "medium"
+        },
+        "skyBox": {
+          "support": "partial",
+          "target": "SOAP view/model/overlay artifact",
+          "lossiness": "medium"
+        },
+        "terrain": {
+          "support": "strong",
+          "target": "Terrain and Imagery",
+          "lossiness": "low"
+        },
+        "tilesetStyle": {
+          "support": "partial",
+          "target": "SOAP view/model/overlay artifact",
+          "lossiness": "medium"
+        },
+        "videoPlane": {
+          "support": "partial",
+          "target": "SOAP view/model/overlay artifact",
+          "lossiness": "medium"
+        },
+        "primitiveMesh": {
+          "support": "partial",
+          "target": "SOAP view/model/overlay artifact",
+          "lossiness": "medium"
+        },
+        "terrainSurface": {
+          "support": "partial",
+          "target": "SOAP view/model/overlay artifact",
+          "lossiness": "medium"
+        },
+        "customMesh": {
+          "support": "partial",
+          "target": "SOAP view/model/overlay artifact",
+          "lossiness": "medium"
+        }
+      },
+      "analysisSupport": {
+        "accessIntervals": {
+          "support": "strong",
+          "target": "report / data view",
+          "lossiness": "low"
+        },
+        "lineOfSightSamples": {
+          "support": "strong",
+          "target": "visibility analysis",
+          "lossiness": "low"
+        },
+        "rfLinkBudget": {
+          "support": "strong",
+          "target": "RF Communications",
+          "lossiness": "low"
+        },
+        "coverageGrid": {
+          "support": "strong",
+          "target": "Contours",
+          "lossiness": "low"
+        },
+        "sensorSwath": {
+          "support": "strong",
+          "target": "Sensor Swath",
+          "lossiness": "low"
+        },
+        "report": {
+          "support": "strong",
+          "target": "Report View",
+          "lossiness": "low"
+        },
+        "plot": {
+          "support": "strong",
+          "target": "Plot View",
+          "lossiness": "low"
+        },
+        "dataTable": {
+          "support": "strong",
+          "target": "Data Table",
+          "lossiness": "low"
+        }
+      },
+      "notes": [
+        "SOAP export emphasizes scenario, trajectory, analysis, views, slides, plots, reports, and data-view artifacts."
+      ]
+    }
+  },
+  "extensions": {
+    "simdis": {
+      "kind": "simdis-package",
+      "raw": {
+        "classificationBanner": "UNCLASSIFIED//SDJ DEMO",
+        "defaultPrefs": {
+          "trackHistory": true
+        }
+      }
+    },
+    "soap": {
+      "kind": "soap-presentation",
+      "raw": {
+        "maxViewports": 4,
+        "presentationMode": "selfRunning"
+      }
+    }
+  },
+  "analysis": [
+    {
+      "id": "access-sensor-a-track-17",
+      "kind": "accessIntervals",
+      "analysisType": "accessIntervals",
+      "sourceBackend": "soap-or-simdis",
+      "participants": [
+        "sensor-site-a",
+        "air-track-17"
+      ],
+      "intervals": [
+        {
+          "start": "2026-05-29T16:00:12Z",
+          "stop": "2026-05-29T16:01:05Z",
+          "properties": {
+            "maxElevationDegrees": 39.5,
+            "minRangeMeters": 42000
+          }
+        },
+        {
+          "start": "2026-05-29T16:01:38Z",
+          "stop": "2026-05-29T16:02:15Z",
+          "properties": {
+            "maxElevationDegrees": 28.2,
+            "minRangeMeters": 51000
+          }
+        }
+      ],
+      "rendererHints": {
+        "preferredBackends": [
+          "soap.report",
+          "simdis.measurement",
+          "cesium.overlay"
+        ]
+      }
+    },
+    {
+      "id": "los-samples-a-17",
+      "kind": "lineOfSightSamples",
+      "analysisType": "lineOfSight",
+      "participants": [
+        "sensor-site-a",
+        "air-track-17"
+      ],
+      "samples": [
+        {
+          "time": "2026-05-29T16:00:00Z",
+          "visible": true,
+          "rangeMeters": 62000,
+          "azimuthDegrees": 65,
+          "elevationDegrees": 15
+        },
+        {
+          "time": "2026-05-29T16:01:00Z",
+          "visible": true,
+          "rangeMeters": 54000,
+          "azimuthDegrees": 78,
+          "elevationDegrees": 22
+        },
+        {
+          "time": "2026-05-29T16:02:00Z",
+          "visible": false,
+          "rangeMeters": 76000,
+          "azimuthDegrees": 104,
+          "elevationDegrees": 6
+        }
+      ]
+    },
+    {
+      "id": "rf-link-a-17",
+      "kind": "rfLinkBudget",
+      "analysisType": "rfLinkBudget",
+      "participants": [
+        "sensor-site-a",
+        "air-track-17"
+      ],
+      "metrics": {
+        "frequencyHz": 9400000000.0,
+        "eirpDbw": 52.0,
+        "receiverGainDbi": 18.0,
+        "minCn0DbHz": 42.0
+      },
+      "samples": [
+        {
+          "time": "2026-05-29T16:00:30Z",
+          "pathLossDb": 147.2,
+          "cn0DbHz": 48.1
+        },
+        {
+          "time": "2026-05-29T16:01:30Z",
+          "pathLossDb": 151.9,
+          "cn0DbHz": 43.4
+        }
+      ],
+      "extensions": {
+        "soap": {
+          "rfCommunications": true
+        },
+        "simdis": {
+          "rfPropagation": true
+        }
+      }
+    },
+    {
+      "id": "coverage-grid-a",
+      "kind": "coverageGrid",
+      "analysisType": "coverage",
+      "participants": [
+        "sensor-site-a"
+      ],
+      "grid": {
+        "frame": "cartographicDegrees",
+        "columns": [
+          "lon",
+          "lat",
+          "score"
+        ],
+        "values": [
+          [
+            -117.9,
+            34.0,
+            0.8
+          ],
+          [
+            -117.8,
+            34.0,
+            0.95
+          ],
+          [
+            -117.7,
+            34.0,
+            0.5
+          ]
+        ]
+      },
+      "rendererHints": {
+        "preferredBackends": [
+          "soap.contour",
+          "simdis.gogHeatMap",
+          "cesium.polygonOverlay"
+        ]
+      }
+    },
+    {
+      "id": "sensor-a-swath",
+      "kind": "sensorSwath",
+      "analysisType": "sensorSwath",
+      "participants": [
+        "sensor-site-a"
+      ],
+      "target": "sensor-a-conic-sensor",
+      "metrics": {
+        "groundRangeMeters": 85000,
+        "meanWidthMeters": 32000
+      }
+    },
+    {
+      "id": "close-approach-17-42",
+      "kind": "closeApproach",
+      "analysisType": "closeApproach",
+      "participants": [
+        "air-track-17",
+        "air-track-42"
+      ],
+      "intervals": [
+        {
+          "start": "2026-05-29T16:01:05Z",
+          "stop": "2026-05-29T16:01:35Z",
+          "properties": {
+            "minimumSeparationMeters": 18000
+          }
+        }
+      ]
+    },
+    {
+      "id": "range-report-a-17",
+      "kind": "report",
+      "analysisType": "rangeReport",
+      "participants": [
+        "sensor-site-a",
+        "air-track-17"
+      ],
+      "columns": [
+        "time",
+        "rangeMeters",
+        "azimuthDegrees",
+        "elevationDegrees"
+      ],
+      "rows": [
+        [
+          "2026-05-29T16:00:00Z",
+          62000,
+          65,
+          15
+        ],
+        [
+          "2026-05-29T16:01:00Z",
+          54000,
+          78,
+          22
+        ]
+      ]
+    },
+    {
+      "id": "range-plot-a-17",
+      "kind": "plot",
+      "analysisType": "xyPlot",
+      "participants": [
+        "sensor-site-a",
+        "air-track-17"
+      ],
+      "columns": [
+        "seconds",
+        "rangeMeters"
+      ],
+      "rows": [
+        [
+          0,
+          62000
+        ],
+        [
+          60,
+          54000
+        ],
+        [
+          120,
+          76000
+        ]
+      ]
+    },
+    {
+      "id": "platform-data-table",
+      "kind": "dataTable",
+      "analysisType": "dataTable",
+      "columns": [
+        "platformId",
+        "type",
+        "team"
+      ],
+      "rows": [
+        [
+          "air-track-17",
+          "aircraft",
+          "blue"
+        ],
+        [
+          "air-track-42",
+          "aircraft",
+          "orange"
+        ]
+      ]
+    },
+    {
+      "id": "comm-link-17-42",
+      "kind": "communicationLink",
+      "analysisType": "communicationLink",
+      "participants": [
+        "air-track-17",
+        "air-track-42"
+      ],
+      "metrics": {
+        "linkMarginDb": 6.2,
+        "availabilityPercent": 93.1
+      }
+    },
+    {
+      "id": "parametric-range-study",
+      "kind": "parametricStudy",
+      "analysisType": "parametricStudy",
+      "properties": {
+        "parameter": "sensorRangeMeters",
+        "values": [
+          50000,
+          75000,
+          100000
+        ],
+        "metric": "coveragePercent"
+      }
+    }
+  ],
+  "presentation": [
+    {
+      "id": "presentation-main",
+      "kind": "presentation",
+      "title": "SDJ Multi-Backend Proof",
+      "startTime": "2026-05-29T16:00:00Z",
+      "stopTime": "2026-05-29T16:03:00Z",
+      "stepSeconds": 1,
+      "views": [
+        "view-main",
+        "view-report"
+      ]
+    },
+    {
+      "id": "view-world-main",
+      "kind": "view",
+      "name": "World View",
+      "target": "air-track-17",
+      "rendererHints": {
+        "preferredBackends": [
+          "cesium.camera",
+          "simdis.view",
+          "soap.worldView"
+        ]
+      }
+    },
+    {
+      "id": "view-report-main",
+      "kind": "reportView",
+      "name": "Range Report",
+      "target": "range-report-a-17"
+    },
+    {
+      "id": "view-plot-main",
+      "kind": "plotView",
+      "name": "Range Plot",
+      "target": "range-plot-a-17"
+    },
+    {
+      "id": "palette-split",
+      "kind": "palette",
+      "title": "World + Report Palette",
+      "viewports": [
+        {
+          "id": "vp-world",
+          "view": "view-world-main",
+          "rect": [
+            0,
+            0,
+            0.68,
+            1
+          ]
+        },
+        {
+          "id": "vp-report",
+          "view": "view-report-main",
+          "rect": [
+            0.68,
+            0,
+            0.32,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "id": "slide-intro",
+      "kind": "slide",
+      "title": "Overview",
+      "startTime": "2026-05-29T16:00:00Z",
+      "stopTime": "2026-05-29T16:00:30Z",
+      "views": [
+        "view-world-main"
+      ]
+    },
+    {
+      "id": "slide-sensor",
+      "kind": "slide",
+      "title": "Sensor Coverage",
+      "startTime": "2026-05-29T16:00:30Z",
+      "stopTime": "2026-05-29T16:01:30Z",
+      "views": [
+        "view-world-main",
+        "view-report-main"
+      ]
+    },
+    {
+      "id": "slide-analysis",
+      "kind": "slide",
+      "title": "Analysis Results",
+      "startTime": "2026-05-29T16:01:30Z",
+      "stopTime": "2026-05-29T16:03:00Z",
+      "views": [
+        "view-world-main",
+        "view-plot-main"
+      ]
+    },
+    {
+      "id": "camera-follow-track-17",
+      "kind": "cameraAction",
+      "target": "air-track-17",
+      "durationSeconds": 20,
+      "camera": {
+        "action": "follow",
+        "rangeMeters": 95000
+      }
+    },
+    {
+      "id": "bookmark-sensor-a",
+      "kind": "bookmark",
+      "title": "Sensor A Bookmark",
+      "target": "sensor-site-a"
+    },
+    {
+      "id": "popup-access",
+      "kind": "popup",
+      "title": "Access Window",
+      "target": "access-sensor-a-track-17"
+    },
+    {
+      "id": "classification-banner",
+      "kind": "banner",
+      "title": "UNCLASSIFIED//SDJ DEMO"
+    },
+    {
+      "id": "movie-flythrough",
+      "kind": "movie",
+      "title": "Flythrough Movie Placeholder",
+      "target": "presentationVideo"
+    }
+  ]
+}

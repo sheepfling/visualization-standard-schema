@@ -1,0 +1,227 @@
+[
+  {
+    "id": "document",
+    "name": "rpo_cases",
+    "version": "1.0"
+  },
+  {
+    "id": ".Earth CR Observer",
+    "name": ".Earth CR Observer",
+    "position": {
+      "cartographicDegrees": [
+        1.0122909661567117,
+        1.22173037639603,
+        70159.507
+      ]
+    },
+    "properties": {
+      "platform_type": "ECR_FIXED",
+      "orbArchiveMember": "orb_format_collection/soap15/scenarios/rpo_cases.orb",
+      "source": "orb-scenario"
+    },
+    "point": {
+      "pixelSize": 10,
+      "outlineWidth": 1
+    }
+  },
+  {
+    "id": ".Earth Ground",
+    "name": ".Earth Ground",
+    "position": {
+      "cartographicDegrees": [
+        -1.7278759594743862,
+        0.6632251157578453,
+        0.002
+      ]
+    },
+    "properties": {
+      "platform_type": "ECR_FIXED",
+      "orbArchiveMember": "orb_format_collection/soap15/scenarios/rpo_cases.orb",
+      "source": "orb-scenario"
+    },
+    "point": {
+      "pixelSize": 10,
+      "outlineWidth": 1
+    }
+  },
+  {
+    "id": ".Earth Ground Observer",
+    "name": ".Earth Ground Observer",
+    "position": {
+      "cartographicDegrees": [
+        1.5707963267948966,
+        0.0,
+        0.0
+      ]
+    },
+    "properties": {
+      "platform_type": "ECR_FIXED",
+      "orbArchiveMember": "orb_format_collection/soap15/scenarios/rpo_cases.orb",
+      "source": "orb-scenario"
+    },
+    "point": {
+      "pixelSize": 10,
+      "outlineWidth": 1
+    }
+  },
+  {
+    "id": ".Earth Polar Observer",
+    "name": ".Earth Polar Observer",
+    "position": {
+      "cartographicDegrees": [
+        0.0,
+        1.5707963267948966,
+        70159.507
+      ]
+    },
+    "properties": {
+      "platform_type": "ECR_FIXED",
+      "orbArchiveMember": "orb_format_collection/soap15/scenarios/rpo_cases.orb",
+      "source": "orb-scenario"
+    },
+    "point": {
+      "pixelSize": 10,
+      "outlineWidth": 1
+    }
+  },
+  {
+    "id": "P1_Boom",
+    "name": "P1_Boom",
+    "position": {
+      "cartographicDegrees": [
+        2.0,
+        1.0,
+        3.0
+      ]
+    },
+    "properties": {
+      "platform_type": "RPO",
+      "orbArchiveMember": "orb_format_collection/soap15/scenarios/rpo_cases.orb",
+      "source": "orb-scenario"
+    },
+    "point": {
+      "pixelSize": 10,
+      "outlineWidth": 1
+    }
+  },
+  {
+    "id": "P2_FC",
+    "name": "P2_FC",
+    "position": {
+      "cartographicDegrees": [
+        2.0,
+        1.0,
+        3.0
+      ]
+    },
+    "properties": {
+      "platform_type": "RPO",
+      "orbArchiveMember": "orb_format_collection/soap15/scenarios/rpo_cases.orb",
+      "source": "orb-scenario"
+    },
+    "point": {
+      "pixelSize": 10,
+      "outlineWidth": 1
+    }
+  },
+  {
+    "id": "P3_TR",
+    "name": "P3_TR",
+    "position": {
+      "cartographicDegrees": [
+        2.0,
+        1.0,
+        3.0
+      ]
+    },
+    "properties": {
+      "platform_type": "RPO",
+      "orbArchiveMember": "orb_format_collection/soap15/scenarios/rpo_cases.orb",
+      "source": "orb-scenario"
+    },
+    "point": {
+      "pixelSize": 10,
+      "outlineWidth": 1
+    }
+  },
+  {
+    "id": "P4_OC",
+    "name": "P4_OC",
+    "position": {
+      "cartographicDegrees": [
+        2.0,
+        1.0,
+        3.0
+      ]
+    },
+    "properties": {
+      "platform_type": "RPO",
+      "orbArchiveMember": "orb_format_collection/soap15/scenarios/rpo_cases.orb",
+      "source": "orb-scenario"
+    },
+    "point": {
+      "pixelSize": 10,
+      "outlineWidth": 1
+    }
+  },
+  {
+    "id": "W1_S",
+    "name": "W1_S",
+    "position": {
+      "cartographicDegrees": [
+        2.0,
+        1.0,
+        3.0
+      ]
+    },
+    "properties": {
+      "platform_type": "RPO",
+      "orbArchiveMember": "orb_format_collection/soap15/scenarios/rpo_cases.orb",
+      "source": "orb-scenario"
+    },
+    "point": {
+      "pixelSize": 10,
+      "outlineWidth": 1
+    }
+  },
+  {
+    "id": "W2_ATC",
+    "name": "W2_ATC",
+    "position": {
+      "cartographicDegrees": [
+        2.0,
+        1.0,
+        3.0
+      ]
+    },
+    "properties": {
+      "platform_type": "RPO",
+      "orbArchiveMember": "orb_format_collection/soap15/scenarios/rpo_cases.orb",
+      "source": "orb-scenario"
+    },
+    "point": {
+      "pixelSize": 10,
+      "outlineWidth": 1
+    }
+  },
+  {
+    "id": "W3_QTC",
+    "name": "W3_QTC",
+    "position": {
+      "cartographicDegrees": [
+        2.0,
+        1.0,
+        3.0
+      ]
+    },
+    "properties": {
+      "platform_type": "RPO",
+      "orbArchiveMember": "orb_format_collection/soap15/scenarios/rpo_cases.orb",
+      "source": "orb-scenario"
+    },
+    "point": {
+      "pixelSize": 10,
+      "outlineWidth": 1
+    }
+  }
+]

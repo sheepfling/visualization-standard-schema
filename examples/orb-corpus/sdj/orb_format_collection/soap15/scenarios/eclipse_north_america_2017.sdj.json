@@ -1,0 +1,160 @@
+{
+  "schemaVersion": "1.0.0-scene",
+  "document": {
+    "id": "orb-format-collection__soap15__scenarios__eclipse-north-america-2017",
+    "name": "eclipse_north_america_2017",
+    "source": "orb_format_collection/soap15/scenarios/eclipse_north_america_2017.orb"
+  },
+  "objects": [
+    {
+      "id": ".Earth CR Observer",
+      "name": ".Earth CR Observer",
+      "attributes": {
+        "platform_type": "ECR_FIXED",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/eclipse_north_america_2017.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": -100.00000000000009,
+        "latitudeDeg": 42.00057295779514,
+        "altitudeM": 63781.369999999995
+      }
+    },
+    {
+      "id": ".Earth Ground",
+      "name": ".Earth Ground",
+      "attributes": {
+        "platform_type": "ECR_FIXED",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/eclipse_north_america_2017.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": -99.0,
+        "latitudeDeg": 38.0,
+        "altitudeM": 0.0
+      }
+    },
+    {
+      "id": ".Earth Ground Observer",
+      "name": ".Earth Ground Observer",
+      "attributes": {
+        "platform_type": "ECR_FIXED",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/eclipse_north_america_2017.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": 92.0,
+        "latitudeDeg": -7.999427042205001,
+        "altitudeM": 0.0
+      }
+    },
+    {
+      "id": ".Earth Polar Observer",
+      "name": ".Earth Polar Observer",
+      "attributes": {
+        "platform_type": "ECR_FIXED",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/eclipse_north_america_2017.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": 0.0,
+        "latitudeDeg": 90.0,
+        "altitudeM": 63781.369999999995
+      }
+    },
+    {
+      "id": "C",
+      "name": "C",
+      "attributes": {
+        "platform_type": "ECR_FIXED",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/eclipse_north_america_2017.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": -77.4528851,
+        "latitudeDeg": 38.8767715,
+        "altitudeM": 0.0
+      }
+    },
+    {
+      "id": "CoS",
+      "name": "CoS",
+      "attributes": {
+        "platform_type": "ECR_FIXED",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/eclipse_north_america_2017.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": -104.69668660000002,
+        "latitudeDeg": 38.7786804,
+        "altitudeM": 0.0
+      }
+    },
+    {
+      "id": "Eclipse Obscuration_Ctr",
+      "name": "Eclipse Obscuration_Ctr",
+      "attributes": {
+        "platform_type": "ECR_FIXED",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/eclipse_north_america_2017.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": -110.0,
+        "latitudeDeg": 29.999999999999996,
+        "altitudeM": 0.0
+      }
+    },
+    {
+      "id": "LA",
+      "name": "LA",
+      "attributes": {
+        "platform_type": "ECR_FIXED",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/eclipse_north_america_2017.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": -118.382481,
+        "latitudeDeg": 33.915499,
+        "altitudeM": 0.0
+      }
+    },
+    {
+      "id": "Max Pt, Hopkinsville",
+      "name": "Max Pt, Hopkinsville",
+      "attributes": {
+        "platform_type": "ECR_FIXED",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/eclipse_north_america_2017.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": -87.6709,
+        "latitudeDeg": 36.9664,
+        "altitudeM": 0.0
+      }
+    },
+    {
+      "id": "Salem",
+      "name": "Salem",
+      "attributes": {
+        "platform_type": "ECR_FIXED",
+        "orbArchiveMember": "orb_format_collection/soap15/scenarios/eclipse_north_america_2017.orb"
+      },
+      "source": "orb-scenario",
+      "objectType": "entity",
+      "position": {
+        "longitudeDeg": -123.03509629999999,
+        "latitudeDeg": 44.9428975,
+        "altitudeM": 0.0
+      }
+    }
+  ]
+}

@@ -1,0 +1,3157 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:workcomm:spatial-display-json:0.4",
+  "title": "Spatial Display JSON v0.4",
+  "description": "Renderer-neutral spatial display schema. v0.4 adds harmonized Cesium, SIMDIS, and SOAP backend compile/export metadata plus analysis and presentation objects.",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "objects"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schemaVersion": {
+      "const": "sdj-0.4"
+    },
+    "profiles": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "asset-backed",
+          "backend-capability-matrix",
+          "backend-raw-extensions",
+          "cesium-3d-tiles",
+          "cesium-classification",
+          "cesium-clipping",
+          "cesium-custom-primitive-mesh",
+          "cesium-custom-shader",
+          "cesium-data-source",
+          "cesium-entity",
+          "cesium-ion-sdk",
+          "cesium-particles",
+          "cesium-primitive",
+          "cesium-scene",
+          "cesium-voxel",
+          "core",
+          "coverage-analysis",
+          "custom-mesh",
+          "czml-compatible-core",
+          "debrief-presentation",
+          "diagnostic-principal-axes",
+          "entity-core",
+          "gaussian-splats",
+          "modern-3d-assets",
+          "multi-backend-compile",
+          "operation-plan",
+          "pbr",
+          "primitive-custom-geometry",
+          "primitive-generated-geometry",
+          "rf-electromagnetic-analysis",
+          "sandcastle-coverage",
+          "scene-core",
+          "sensor-analysis",
+          "simdis-analysis",
+          "simdis-entity",
+          "simdis-export",
+          "simdis-gog",
+          "simdis-media",
+          "simdis-presentation",
+          "simdis-target",
+          "soap-analysis",
+          "soap-contours",
+          "soap-display",
+          "soap-export",
+          "soap-presentation",
+          "soap-rf",
+          "soap-target",
+          "tactical-geometry",
+          "tactical-volume-mesh",
+          "tgx-target",
+          "time-dynamic",
+          "trajectory-diagnostics",
+          "unreal-target"
+        ]
+      },
+      "uniqueItems": true
+    },
+    "document": {
+      "$ref": "#/$defs/document"
+    },
+    "units": {
+      "$ref": "#/$defs/units"
+    },
+    "clock": {
+      "$ref": "#/$defs/clock"
+    },
+    "scene": {
+      "$ref": "#/$defs/scene"
+    },
+    "assets": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/$defs/asset"
+      }
+    },
+    "materials": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/$defs/material"
+      }
+    },
+    "layers": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/layer"
+      }
+    },
+    "objects": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/spatialObject"
+      }
+    },
+    "views": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/view"
+      }
+    },
+    "extensions": {
+      "$ref": "#/$defs/openObject"
+    },
+    "backend": {
+      "$ref": "#/$defs/backendConfig"
+    },
+    "backendCapabilities": {
+      "$ref": "#/$defs/backendCapabilities"
+    },
+    "analysis": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/analysisResult"
+      }
+    },
+    "presentation": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/presentationItem"
+      }
+    }
+  },
+  "$defs": {
+    "document": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "created": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "generator": {
+          "type": "string"
+        },
+        "source": {
+          "type": "string"
+        }
+      }
+    },
+    "units": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "linear": {
+          "enum": [
+            "meter"
+          ]
+        },
+        "angular": {
+          "enum": [
+            "degree",
+            "radian"
+          ]
+        },
+        "time": {
+          "enum": [
+            "iso8601"
+          ]
+        },
+        "horizontalDatum": {
+          "enum": [
+            "WGS84"
+          ]
+        },
+        "verticalDatum": {
+          "enum": [
+            "ellipsoid",
+            "EGM96",
+            "terrain"
+          ]
+        }
+      }
+    },
+    "clock": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "startTime": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "stopTime": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "currentTime": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "multiplier": {
+          "type": "number"
+        },
+        "shouldAnimate": {
+          "type": "boolean"
+        },
+        "clockRange": {
+          "enum": [
+            "unbounded",
+            "clamped",
+            "loopStop"
+          ]
+        },
+        "clockStep": {
+          "enum": [
+            "systemClock",
+            "systemClockMultiplier",
+            "tickDependent"
+          ]
+        }
+      }
+    },
+    "scene": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "terrain": {
+          "$ref": "#/$defs/terrain"
+        },
+        "imageryLayers": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/imageryLayer"
+          }
+        },
+        "globe": {
+          "$ref": "#/$defs/openObject"
+        },
+        "lighting": {
+          "$ref": "#/$defs/openObject"
+        },
+        "environment": {
+          "$ref": "#/$defs/openObject"
+        },
+        "clipping": {
+          "$ref": "#/$defs/openObject"
+        },
+        "postProcess": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/postProcess"
+          }
+        }
+      }
+    },
+    "asset": {
+      "type": "object",
+      "required": [
+        "kind"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "enum": [
+            "arcGisMapServerImagery",
+            "audio",
+            "cubemap",
+            "czml",
+            "czmlDocument",
+            "gaussianSplatTileset",
+            "geoJsonDocument",
+            "geojson",
+            "glbModel",
+            "gltfModel",
+            "icon",
+            "image",
+            "imagery",
+            "kml",
+            "kmlDocument",
+            "panoramaImage",
+            "particleImage",
+            "photogrammetryTileset",
+            "pointCloudTileset",
+            "shader",
+            "singleTileImagery",
+            "terrain",
+            "tileset3d",
+            "urlTemplateImagery",
+            "video",
+            "wmsImagery",
+            "wmtsImagery"
+          ]
+        },
+        "uri": {
+          "type": "string"
+        },
+        "ionAssetId": {
+          "type": "integer"
+        },
+        "mimeType": {
+          "type": "string"
+        },
+        "frame": {
+          "$ref": "#/$defs/frameName"
+        },
+        "metadata": {
+          "$ref": "#/$defs/openObject"
+        },
+        "rendererHints": {
+          "$ref": "#/$defs/rendererHints"
+        }
+      },
+      "anyOf": [
+        {
+          "required": [
+            "uri"
+          ]
+        },
+        {
+          "required": [
+            "ionAssetId"
+          ]
+        }
+      ]
+    },
+    "terrain": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "asset": {
+          "type": "string"
+        },
+        "ionAssetId": {
+          "type": "integer"
+        },
+        "uri": {
+          "type": "string"
+        },
+        "type": {
+          "enum": [
+            "ellipsoid",
+            "cesiumWorldTerrain",
+            "quantizedMesh",
+            "custom"
+          ]
+        },
+        "options": {
+          "$ref": "#/$defs/openObject"
+        }
+      }
+    },
+    "imageryLayer": {
+      "type": "object",
+      "required": [
+        "id"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "asset": {
+          "type": "string"
+        },
+        "uri": {
+          "type": "string"
+        },
+        "type": {
+          "enum": [
+            "urlTemplate",
+            "ion",
+            "wmts",
+            "wms",
+            "arcgis",
+            "bing",
+            "custom"
+          ]
+        },
+        "show": {
+          "$ref": "#/$defs/booleanProperty"
+        },
+        "alpha": {
+          "$ref": "#/$defs/numberProperty"
+        },
+        "options": {
+          "$ref": "#/$defs/openObject"
+        }
+      }
+    },
+    "layer": {
+      "type": "object",
+      "required": [
+        "id"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "show": {
+          "$ref": "#/$defs/booleanProperty"
+        },
+        "order": {
+          "type": "number"
+        },
+        "description": {
+          "type": "string"
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "rendererHints": {
+          "$ref": "#/$defs/rendererHints"
+        }
+      }
+    },
+    "view": {
+      "type": "object",
+      "required": [
+        "id"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "target": {
+          "type": "string"
+        },
+        "position": {
+          "$ref": "#/$defs/positionProperty"
+        },
+        "orientation": {
+          "$ref": "#/$defs/orientationProperty"
+        },
+        "rangeMeters": {
+          "type": "number"
+        },
+        "durationSeconds": {
+          "type": "number"
+        },
+        "rendererHints": {
+          "$ref": "#/$defs/rendererHints"
+        }
+      }
+    },
+    "spatialObject": {
+      "type": "object",
+      "required": [
+        "id",
+        "kind"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "kind": {
+          "$ref": "#/$defs/objectKind"
+        },
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "show": {
+          "$ref": "#/$defs/booleanProperty"
+        },
+        "availability": {
+          "$ref": "#/$defs/availability"
+        },
+        "parent": {
+          "type": "string"
+        },
+        "layer": {
+          "type": "string"
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "pose": {
+          "$ref": "#/$defs/pose"
+        },
+        "geometry": {
+          "$ref": "#/$defs/geometry"
+        },
+        "style": {
+          "$ref": "#/$defs/style"
+        },
+        "point": {
+          "$ref": "#/$defs/pointGraphic"
+        },
+        "billboard": {
+          "$ref": "#/$defs/billboardGraphic"
+        },
+        "label": {
+          "$ref": "#/$defs/labelGraphic"
+        },
+        "path": {
+          "$ref": "#/$defs/pathGraphic"
+        },
+        "model": {
+          "$ref": "#/$defs/modelGraphic"
+        },
+        "tileset": {
+          "$ref": "#/$defs/tilesetGraphic"
+        },
+        "asset": {
+          "type": "string"
+        },
+        "overlays": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/spatialObject"
+          }
+        },
+        "properties": {
+          "$ref": "#/$defs/openObject"
+        },
+        "interactions": {
+          "$ref": "#/$defs/openObject"
+        },
+        "requiredCapabilities": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "rendererHints": {
+          "$ref": "#/$defs/rendererHints"
+        },
+        "extensions": {
+          "$ref": "#/$defs/openObject"
+        },
+        "dataSource": {
+          "$ref": "#/$defs/openObject"
+        },
+        "particleSystem": {
+          "$ref": "#/$defs/openObject"
+        },
+        "clipping": {
+          "$ref": "#/$defs/openObject"
+        },
+        "classification": {
+          "$ref": "#/$defs/openObject"
+        },
+        "customShader": {
+          "$ref": "#/$defs/openObject"
+        },
+        "camera": {
+          "$ref": "#/$defs/openObject"
+        },
+        "debug": {
+          "$ref": "#/$defs/openObject"
+        }
+      }
+    },
+    "objectKind": {
+      "enum": [
+        "point",
+        "billboard",
+        "label",
+        "model",
+        "path",
+        "polyline",
+        "polygon",
+        "rectangle",
+        "ellipse",
+        "circle",
+        "box",
+        "cylinder",
+        "cone",
+        "ellipsoid",
+        "sphere",
+        "wall",
+        "corridor",
+        "polylineVolume",
+        "plane",
+        "tileset",
+        "track",
+        "sector2d",
+        "sectorVolume",
+        "hemisphere",
+        "sphericalCap",
+        "keyhole",
+        "rangeRing",
+        "bearingFan",
+        "frustum",
+        "conicSensor",
+        "rectangularSensor",
+        "customPatternSensor",
+        "fan",
+        "vector",
+        "velocityVector",
+        "accelerationVector",
+        "bodyAxes",
+        "principalAxes",
+        "lineOfSight",
+        "relativeLine",
+        "interceptLine",
+        "uncertaintyEllipsoid",
+        "covarianceEllipse",
+        "particleSystem",
+        "voxel",
+        "clippingPolygon",
+        "clippingPlane",
+        "classificationVolume",
+        "postProcessStage",
+        "customPrimitive",
+        "composite",
+        "atmosphere",
+        "cameraView",
+        "classificationPrimitive",
+        "cloudCollection",
+        "customShader",
+        "czmlDataSource",
+        "dataSource",
+        "debugInspector",
+        "geoJsonDataSource",
+        "groundPolyline",
+        "groundPrimitive",
+        "imageryLayer",
+        "kmlDataSource",
+        "panorama",
+        "skyBox",
+        "terrain",
+        "tilesetStyle",
+        "videoPlane",
+        "primitiveMesh",
+        "terrainSurface",
+        "customMesh"
+      ]
+    },
+    "availability": {
+      "oneOf": [
+        {
+          "type": "string"
+        },
+        {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        }
+      ]
+    },
+    "pose": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "position": {
+          "$ref": "#/$defs/positionProperty"
+        },
+        "orientation": {
+          "$ref": "#/$defs/orientationProperty"
+        },
+        "frame": {
+          "$ref": "#/$defs/frameName"
+        }
+      }
+    },
+    "positionProperty": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/positionValue"
+        },
+        {
+          "$ref": "#/$defs/sampledPosition"
+        },
+        {
+          "$ref": "#/$defs/referenceValue"
+        },
+        {
+          "$ref": "#/$defs/computedValue"
+        }
+      ]
+    },
+    "positionValue": {
+      "type": "object",
+      "oneOf": [
+        {
+          "required": [
+            "cartographicDegrees"
+          ],
+          "properties": {
+            "cartographicDegrees": {
+              "$ref": "#/$defs/vec3"
+            }
+          }
+        },
+        {
+          "required": [
+            "cartographicRadians"
+          ],
+          "properties": {
+            "cartographicRadians": {
+              "$ref": "#/$defs/vec3"
+            }
+          }
+        },
+        {
+          "required": [
+            "cartesianMeters"
+          ],
+          "properties": {
+            "cartesianMeters": {
+              "$ref": "#/$defs/vec3"
+            },
+            "frame": {
+              "$ref": "#/$defs/frameName"
+            }
+          }
+        },
+        {
+          "required": [
+            "localMeters"
+          ],
+          "properties": {
+            "localMeters": {
+              "type": "object",
+              "required": [
+                "origin",
+                "value"
+              ],
+              "additionalProperties": false,
+              "properties": {
+                "origin": {
+                  "$ref": "#/$defs/positionProperty"
+                },
+                "frame": {
+                  "enum": [
+                    "ENU",
+                    "NED",
+                    "body",
+                    "custom"
+                  ]
+                },
+                "value": {
+                  "$ref": "#/$defs/vec3"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "sampledPosition": {
+      "type": "object",
+      "required": [
+        "samples"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "samples": {
+          "type": "object",
+          "required": [
+            "epoch",
+            "values"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "epoch": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "timeFormat": {
+              "enum": [
+                "secondsSinceEpoch",
+                "iso8601"
+              ]
+            },
+            "valueFormat": {
+              "enum": [
+                "cartesianMeters",
+                "cartographicDegrees",
+                "cartographicRadians"
+              ]
+            },
+            "referenceFrame": {
+              "$ref": "#/$defs/frameName"
+            },
+            "interpolation": {
+              "enum": [
+                "linear",
+                "lagrange",
+                "hermite"
+              ]
+            },
+            "interpolationDegree": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "derivativeCount": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "forwardExtrapolation": {
+              "$ref": "#/$defs/extrapolation"
+            },
+            "backwardExtrapolation": {
+              "$ref": "#/$defs/extrapolation"
+            },
+            "values": {
+              "type": "array",
+              "items": {
+                "type": "array",
+                "minItems": 4,
+                "items": {
+                  "type": [
+                    "number",
+                    "string"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "orientationProperty": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/orientationValue"
+        },
+        {
+          "$ref": "#/$defs/referenceValue"
+        },
+        {
+          "$ref": "#/$defs/computedValue"
+        }
+      ]
+    },
+    "orientationValue": {
+      "type": "object",
+      "oneOf": [
+        {
+          "required": [
+            "headingPitchRollDegrees"
+          ],
+          "properties": {
+            "headingPitchRollDegrees": {
+              "$ref": "#/$defs/vec3"
+            },
+            "frame": {
+              "$ref": "#/$defs/frameName"
+            }
+          }
+        },
+        {
+          "required": [
+            "headingPitchRollRadians"
+          ],
+          "properties": {
+            "headingPitchRollRadians": {
+              "$ref": "#/$defs/vec3"
+            },
+            "frame": {
+              "$ref": "#/$defs/frameName"
+            }
+          }
+        },
+        {
+          "required": [
+            "unitQuaternion"
+          ],
+          "properties": {
+            "unitQuaternion": {
+              "$ref": "#/$defs/quat"
+            },
+            "frame": {
+              "$ref": "#/$defs/frameName"
+            }
+          }
+        },
+        {
+          "required": [
+            "velocityAligned"
+          ],
+          "properties": {
+            "velocityAligned": {
+              "type": "object",
+              "required": [
+                "source"
+              ],
+              "additionalProperties": false,
+              "properties": {
+                "source": {
+                  "type": "string"
+                },
+                "up": {
+                  "enum": [
+                    "ellipsoidNormal",
+                    "sceneUp",
+                    "custom"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "referenceValue": {
+      "type": "object",
+      "required": [
+        "reference"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "reference": {
+          "type": "string"
+        }
+      }
+    },
+    "computedValue": {
+      "type": "object",
+      "required": [
+        "computed"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "computed": {
+          "type": "object",
+          "required": [
+            "operation"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "operation": {
+              "enum": [
+                "velocity",
+                "acceleration",
+                "velocityOrientation",
+                "bodyAxis",
+                "principalAxis",
+                "normalize",
+                "scale",
+                "cross",
+                "subtract",
+                "lineBetween"
+              ]
+            },
+            "source": {
+              "type": "string"
+            },
+            "sources": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "method": {
+              "type": "string"
+            },
+            "windowSeconds": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            "scale": {
+              "type": "number"
+            },
+            "axis": {
+              "enum": [
+                "x",
+                "y",
+                "z",
+                "principal0",
+                "principal1",
+                "principal2"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "extrapolation": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "type": {
+          "enum": [
+            "none",
+            "hold",
+            "extrapolate"
+          ]
+        },
+        "durationSeconds": {
+          "type": "number",
+          "minimum": 0
+        }
+      }
+    },
+    "geometry": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/pointSetGeometry"
+        },
+        {
+          "$ref": "#/$defs/polylineGeometry"
+        },
+        {
+          "$ref": "#/$defs/polygonGeometry"
+        },
+        {
+          "$ref": "#/$defs/rectangleGeometry"
+        },
+        {
+          "$ref": "#/$defs/ellipseGeometry"
+        },
+        {
+          "$ref": "#/$defs/boxGeometry"
+        },
+        {
+          "$ref": "#/$defs/cylinderGeometry"
+        },
+        {
+          "$ref": "#/$defs/ellipsoidGeometry"
+        },
+        {
+          "$ref": "#/$defs/wallGeometry"
+        },
+        {
+          "$ref": "#/$defs/corridorGeometry"
+        },
+        {
+          "$ref": "#/$defs/polylineVolumeGeometry"
+        },
+        {
+          "$ref": "#/$defs/sectorGeometry"
+        },
+        {
+          "$ref": "#/$defs/keyholeGeometry"
+        },
+        {
+          "$ref": "#/$defs/hemisphereGeometry"
+        },
+        {
+          "$ref": "#/$defs/frustumGeometry"
+        },
+        {
+          "$ref": "#/$defs/vectorGeometry"
+        },
+        {
+          "$ref": "#/$defs/axesGeometry"
+        },
+        {
+          "$ref": "#/$defs/lineBetweenGeometry"
+        },
+        {
+          "$ref": "#/$defs/customPrimitiveGeometry"
+        },
+        {
+          "$ref": "#/$defs/planeGeometry"
+        },
+        {
+          "$ref": "#/$defs/particleSystemGeometry"
+        }
+      ]
+    },
+    "pointSetGeometry": {
+      "type": "object",
+      "required": [
+        "positions"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "positions": {
+          "$ref": "#/$defs/positionList"
+        }
+      }
+    },
+    "polylineGeometry": {
+      "type": "object",
+      "required": [
+        "positions"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "positions": {
+          "$ref": "#/$defs/positionList"
+        },
+        "arcType": {
+          "enum": [
+            "none",
+            "geodesic",
+            "rhumb"
+          ]
+        },
+        "clampToGround": {
+          "type": "boolean"
+        }
+      }
+    },
+    "polygonGeometry": {
+      "type": "object",
+      "required": [
+        "rings"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "rings": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "array",
+            "minItems": 3,
+            "items": {
+              "$ref": "#/$defs/positionProperty"
+            }
+          }
+        },
+        "heightMeters": {
+          "$ref": "#/$defs/numberProperty"
+        },
+        "extrudedHeightMeters": {
+          "$ref": "#/$defs/numberProperty"
+        },
+        "perPositionHeight": {
+          "type": "boolean"
+        },
+        "closeTop": {
+          "type": "boolean"
+        },
+        "closeBottom": {
+          "type": "boolean"
+        }
+      }
+    },
+    "rectangleGeometry": {
+      "type": "object",
+      "required": [
+        "westSouthEastNorthDegrees"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "westSouthEastNorthDegrees": {
+          "type": "array",
+          "prefixItems": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            }
+          ],
+          "items": false
+        },
+        "heightMeters": {
+          "$ref": "#/$defs/numberProperty"
+        },
+        "extrudedHeightMeters": {
+          "$ref": "#/$defs/numberProperty"
+        },
+        "rotationDegrees": {
+          "$ref": "#/$defs/numberProperty"
+        },
+        "stRotationDegrees": {
+          "$ref": "#/$defs/numberProperty"
+        }
+      }
+    },
+    "ellipseGeometry": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "semiMajorAxisMeters": {
+          "$ref": "#/$defs/numberProperty"
+        },
+        "semiMinorAxisMeters": {
+          "$ref": "#/$defs/numberProperty"
+        },
+        "radiusMeters": {
+          "$ref": "#/$defs/numberProperty"
+        },
+        "heightMeters": {
+          "$ref": "#/$defs/numberProperty"
+        },
+        "extrudedHeightMeters": {
+          "$ref": "#/$defs/numberProperty"
+        },
+        "rotationDegrees": {
+          "$ref": "#/$defs/numberProperty"
+        },
+        "stRotationDegrees": {
+          "$ref": "#/$defs/numberProperty"
+        }
+      },
+      "anyOf": [
+        {
+          "required": [
+            "radiusMeters"
+          ]
+        },
+        {
+          "required": [
+            "semiMajorAxisMeters",
+            "semiMinorAxisMeters"
+          ]
+        }
+      ]
+    },
+    "boxGeometry": {
+      "type": "object",
+      "required": [
+        "dimensionsMeters"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "dimensionsMeters": {
+          "$ref": "#/$defs/vec3"
+        }
+      }
+    },
+    "cylinderGeometry": {
+      "type": "object",
+      "required": [
+        "lengthMeters"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "lengthMeters": {
+          "$ref": "#/$defs/numberProperty"
+        },
+        "topRadiusMeters": {
+          "$ref": "#/$defs/numberProperty"
+        },
+        "bottomRadiusMeters": {
+          "$ref": "#/$defs/numberProperty"
+        },
+        "radiusMeters": {
+          "$ref": "#/$defs/numberProperty"
+        },
+        "slices": {
+          "type": "integer",
+          "minimum": 3
+        }
+      },
+      "anyOf": [
+        {
+          "required": [
+            "radiusMeters"
+          ]
+        },
+        {
+          "required": [
+            "topRadiusMeters",
+            "bottomRadiusMeters"
+          ]
+        }
+      ]
+    },
+    "ellipsoidGeometry": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "radiiMeters": {
+          "$ref": "#/$defs/vec3"
+        },
+        "innerRadiiMeters": {
+          "$ref": "#/$defs/vec3"
+        },
+        "radiusMeters": {
+          "$ref": "#/$defs/numberProperty"
+        },
+        "minimumClockDegrees": {
+          "$ref": "#/$defs/numberProperty"
+        },
+        "maximumClockDegrees": {
+          "$ref": "#/$defs/numberProperty"
+        },
+        "minimumConeDegrees": {
+          "$ref": "#/$defs/numberProperty"
+        },
+        "maximumConeDegrees": {
+          "$ref": "#/$defs/numberProperty"
+        },
+        "stackPartitions": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "slicePartitions": {
+          "type": "integer",
+          "minimum": 3
+        }
+      },
+      "anyOf": [
+        {
+          "required": [
+            "radiusMeters"
+          ]
+        },
+        {
+          "required": [
+            "radiiMeters"
+          ]
+        }
+      ]
+    },
+    "wallGeometry": {
+      "type": "object",
+      "required": [
+        "positions"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "positions": {
+          "$ref": "#/$defs/positionList"
+        },
+        "minimumHeightsMeters": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          }
+        },
+        "maximumHeightsMeters": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          }
+        }
+      }
+    },
+    "corridorGeometry": {
+      "type": "object",
+      "required": [
+        "positions",
+        "widthMeters"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "positions": {
+          "$ref": "#/$defs/positionList"
+        },
+        "widthMeters": {
+          "$ref": "#/$defs/numberProperty"
+        },
+        "heightMeters": {
+          "$ref": "#/$defs/numberProperty"
+        },
+        "extrudedHeightMeters": {
+          "$ref": "#/$defs/numberProperty"
+        },
+        "cornerType": {
+          "enum": [
+            "rounded",
+            "mitered",
+            "beveled"
+          ]
+        },
+        "clampToGround": {
+          "type": "boolean"
+        }
+      }
+    },
+    "polylineVolumeGeometry": {
+      "type": "object",
+      "required": [
+        "positions",
+        "shapeMeters"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "positions": {
+          "$ref": "#/$defs/positionList"
+        },
+        "shapeMeters": {
+          "type": "array",
+          "minItems": 3,
+          "items": {
+            "$ref": "#/$defs/vec2"
+          }
+        },
+        "cornerType": {
+          "enum": [
+            "rounded",
+            "mitered",
+            "beveled"
+          ]
+        }
+      }
+    },
+    "sectorGeometry": {
+      "type": "object",
+      "required": [
+        "outerRadiusMeters",
+        "azimuthStartDegrees",
+        "azimuthStopDegrees"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "innerRadiusMeters": {
+          "$ref": "#/$defs/numberProperty"
+        },
+        "outerRadiusMeters": {
+          "$ref": "#/$defs/numberProperty"
+        },
+        "azimuthStartDegrees": {
+          "$ref": "#/$defs/numberProperty"
+        },
+        "azimuthStopDegrees": {
+          "$ref": "#/$defs/numberProperty"
+        },
+        "elevationStartDegrees": {
+          "$ref": "#/$defs/numberProperty"
+        },
+        "elevationStopDegrees": {
+          "$ref": "#/$defs/numberProperty"
+        },
+        "heightMeters": {
+          "$ref": "#/$defs/numberProperty"
+        },
+        "segments": {
+          "type": "integer",
+          "minimum": 3
+        },
+        "mode": {
+          "enum": [
+            "surface",
+            "flatLocal",
+            "volume"
+          ]
+        },
+        "backend": {
+          "enum": [
+            "entity",
+            "primitive",
+            "customPrimitive",
+            "native",
+            "auto"
+          ]
+        },
+        "windingOrder": {
+          "enum": [
+            "counterClockwise",
+            "clockwise"
+          ]
+        },
+        "closed": {
+          "type": "boolean"
+        },
+        "azimuthSegments": {
+          "type": "integer",
+          "minimum": 3
+        },
+        "elevationSegments": {
+          "type": "integer",
+          "minimum": 1
+        }
+      }
+    },
+    "keyholeGeometry": {
+      "type": "object",
+      "required": [
+        "innerRadiusMeters",
+        "outerRadiusMeters",
+        "azimuthStartDegrees",
+        "azimuthStopDegrees"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "innerRadiusMeters": {
+          "$ref": "#/$defs/numberProperty"
+        },
+        "outerRadiusMeters": {
+          "$ref": "#/$defs/numberProperty"
+        },
+        "azimuthStartDegrees": {
+          "$ref": "#/$defs/numberProperty"
+        },
+        "azimuthStopDegrees": {
+          "$ref": "#/$defs/numberProperty"
+        },
+        "elevationStartDegrees": {
+          "$ref": "#/$defs/numberProperty"
+        },
+        "elevationStopDegrees": {
+          "$ref": "#/$defs/numberProperty"
+        },
+        "segments": {
+          "type": "integer",
+          "minimum": 3
+        },
+        "mode": {
+          "enum": [
+            "surface",
+            "flatLocal",
+            "volume"
+          ]
+        },
+        "backend": {
+          "enum": [
+            "entity",
+            "primitive",
+            "customPrimitive",
+            "native",
+            "auto"
+          ]
+        },
+        "windingOrder": {
+          "enum": [
+            "counterClockwise",
+            "clockwise"
+          ]
+        },
+        "closed": {
+          "type": "boolean"
+        },
+        "azimuthSegments": {
+          "type": "integer",
+          "minimum": 3
+        },
+        "elevationSegments": {
+          "type": "integer",
+          "minimum": 1
+        }
+      }
+    },
+    "hemisphereGeometry": {
+      "type": "object",
+      "required": [
+        "radiusMeters"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "radiusMeters": {
+          "$ref": "#/$defs/numberProperty"
+        },
+        "innerRadiusMeters": {
+          "$ref": "#/$defs/numberProperty"
+        },
+        "portion": {
+          "enum": [
+            "upper",
+            "lower",
+            "front",
+            "rear",
+            "left",
+            "right"
+          ]
+        },
+        "azimuthStartDegrees": {
+          "$ref": "#/$defs/numberProperty"
+        },
+        "azimuthStopDegrees": {
+          "$ref": "#/$defs/numberProperty"
+        },
+        "segments": {
+          "type": "integer",
+          "minimum": 3
+        },
+        "backend": {
+          "enum": [
+            "entity",
+            "primitive",
+            "customPrimitive",
+            "native",
+            "auto"
+          ]
+        },
+        "windingOrder": {
+          "enum": [
+            "counterClockwise",
+            "clockwise"
+          ]
+        },
+        "closed": {
+          "type": "boolean"
+        },
+        "azimuthSegments": {
+          "type": "integer",
+          "minimum": 3
+        },
+        "elevationSegments": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "elevationStartDegrees": {
+          "$ref": "#/$defs/numberProperty"
+        },
+        "elevationStopDegrees": {
+          "$ref": "#/$defs/numberProperty"
+        }
+      }
+    },
+    "frustumGeometry": {
+      "type": "object",
+      "required": [
+        "nearMeters",
+        "farMeters"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "nearMeters": {
+          "$ref": "#/$defs/numberProperty"
+        },
+        "farMeters": {
+          "$ref": "#/$defs/numberProperty"
+        },
+        "horizontalFovDegrees": {
+          "$ref": "#/$defs/numberProperty"
+        },
+        "verticalFovDegrees": {
+          "$ref": "#/$defs/numberProperty"
+        },
+        "innerHalfAngleDegrees": {
+          "$ref": "#/$defs/numberProperty"
+        },
+        "outerHalfAngleDegrees": {
+          "$ref": "#/$defs/numberProperty"
+        },
+        "aspectRatio": {
+          "$ref": "#/$defs/numberProperty"
+        },
+        "backend": {
+          "enum": [
+            "entity",
+            "primitive",
+            "customPrimitive",
+            "native",
+            "auto"
+          ]
+        },
+        "windingOrder": {
+          "enum": [
+            "counterClockwise",
+            "clockwise"
+          ]
+        },
+        "closed": {
+          "type": "boolean"
+        }
+      }
+    },
+    "vectorGeometry": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "source": {
+          "type": "string"
+        },
+        "direction": {
+          "$ref": "#/$defs/vectorProperty"
+        },
+        "lengthMeters": {
+          "$ref": "#/$defs/numberProperty"
+        },
+        "scale": {
+          "$ref": "#/$defs/numberProperty"
+        },
+        "minimumLengthPixels": {
+          "$ref": "#/$defs/numberProperty"
+        },
+        "arrow": {
+          "type": "boolean"
+        },
+        "method": {
+          "type": "string"
+        },
+        "windowSeconds": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        }
+      },
+      "anyOf": [
+        {
+          "required": [
+            "direction"
+          ]
+        },
+        {
+          "required": [
+            "source"
+          ]
+        }
+      ]
+    },
+    "axesGeometry": {
+      "type": "object",
+      "required": [
+        "lengthMeters"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "source": {
+          "type": "string"
+        },
+        "orientation": {
+          "type": "string"
+        },
+        "position": {
+          "type": "string"
+        },
+        "lengthMeters": {
+          "$ref": "#/$defs/numberProperty"
+        },
+        "axes": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "x",
+              "y",
+              "z",
+              "principal0",
+              "principal1",
+              "principal2"
+            ]
+          },
+          "uniqueItems": true
+        },
+        "scaleByEigenvalue": {
+          "type": "boolean"
+        },
+        "covarianceMatrix": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "items": {
+            "type": "array",
+            "minItems": 3,
+            "maxItems": 3,
+            "items": {
+              "type": "number"
+            }
+          }
+        },
+        "covarianceUpperTriangle": {
+          "type": "array",
+          "minItems": 6,
+          "maxItems": 6,
+          "items": {
+            "type": "number"
+          }
+        },
+        "directions": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "items": {
+            "$ref": "#/$defs/vec3"
+          }
+        },
+        "frame": {
+          "enum": [
+            "localEnu",
+            "ecef",
+            "body"
+          ]
+        }
+      }
+    },
+    "lineBetweenGeometry": {
+      "type": "object",
+      "required": [
+        "from",
+        "to"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "from": {
+          "type": "string"
+        },
+        "to": {
+          "type": "string"
+        },
+        "clampToGround": {
+          "type": "boolean"
+        },
+        "arcType": {
+          "enum": [
+            "none",
+            "geodesic",
+            "rhumb"
+          ]
+        }
+      }
+    },
+    "customPrimitiveGeometry": {
+      "type": "object",
+      "required": [
+        "primitiveType"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "primitiveType": {
+          "enum": [
+            "points",
+            "lines",
+            "triangles",
+            "mesh",
+            "external"
+          ]
+        },
+        "positions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/vec3"
+          }
+        },
+        "indices": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "normals": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/vec3"
+          }
+        },
+        "uvs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/vec2"
+          }
+        },
+        "asset": {
+          "type": "string"
+        },
+        "options": {
+          "$ref": "#/$defs/openObject"
+        },
+        "backend": {
+          "enum": [
+            "entity",
+            "primitive",
+            "customPrimitive",
+            "native",
+            "auto"
+          ]
+        },
+        "windingOrder": {
+          "enum": [
+            "counterClockwise",
+            "clockwise"
+          ]
+        },
+        "closed": {
+          "type": "boolean"
+        },
+        "coordinateFrame": {
+          "enum": [
+            "local",
+            "ecef",
+            "cartesian"
+          ]
+        }
+      }
+    },
+    "pointGraphic": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "pixelSize": {
+          "$ref": "#/$defs/numberProperty"
+        },
+        "color": {
+          "$ref": "#/$defs/colorProperty"
+        },
+        "outlineColor": {
+          "$ref": "#/$defs/colorProperty"
+        },
+        "outlineWidth": {
+          "$ref": "#/$defs/numberProperty"
+        },
+        "heightReference": {
+          "$ref": "#/$defs/heightReference"
+        },
+        "scaleByDistance": {
+          "$ref": "#/$defs/openObject"
+        },
+        "distanceDisplayCondition": {
+          "$ref": "#/$defs/distanceDisplayCondition"
+        }
+      }
+    },
+    "billboardGraphic": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "image": {
+          "type": "string"
+        },
+        "asset": {
+          "type": "string"
+        },
+        "scale": {
+          "$ref": "#/$defs/numberProperty"
+        },
+        "color": {
+          "$ref": "#/$defs/colorProperty"
+        },
+        "pixelOffset": {
+          "$ref": "#/$defs/vec2"
+        },
+        "eyeOffset": {
+          "$ref": "#/$defs/vec3"
+        },
+        "heightReference": {
+          "$ref": "#/$defs/heightReference"
+        },
+        "alignedAxis": {
+          "$ref": "#/$defs/vec3"
+        },
+        "horizontalOrigin": {
+          "enum": [
+            "left",
+            "center",
+            "right"
+          ]
+        },
+        "verticalOrigin": {
+          "enum": [
+            "bottom",
+            "center",
+            "top",
+            "baseline"
+          ]
+        }
+      }
+    },
+    "labelGraphic": {
+      "type": "object",
+      "required": [
+        "text"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "text": {
+          "$ref": "#/$defs/stringProperty"
+        },
+        "template": {
+          "type": "boolean"
+        },
+        "font": {
+          "$ref": "#/$defs/stringProperty"
+        },
+        "style": {
+          "enum": [
+            "fill",
+            "outline",
+            "fillAndOutline"
+          ]
+        },
+        "fillColor": {
+          "$ref": "#/$defs/colorProperty"
+        },
+        "outlineColor": {
+          "$ref": "#/$defs/colorProperty"
+        },
+        "outlineWidth": {
+          "$ref": "#/$defs/numberProperty"
+        },
+        "showBackground": {
+          "$ref": "#/$defs/booleanProperty"
+        },
+        "backgroundColor": {
+          "$ref": "#/$defs/colorProperty"
+        },
+        "pixelOffset": {
+          "$ref": "#/$defs/vec2"
+        },
+        "eyeOffset": {
+          "$ref": "#/$defs/vec3"
+        },
+        "heightReference": {
+          "$ref": "#/$defs/heightReference"
+        },
+        "horizontalOrigin": {
+          "enum": [
+            "left",
+            "center",
+            "right"
+          ]
+        },
+        "verticalOrigin": {
+          "enum": [
+            "bottom",
+            "center",
+            "top",
+            "baseline"
+          ]
+        }
+      }
+    },
+    "pathGraphic": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "show": {
+          "$ref": "#/$defs/booleanProperty"
+        },
+        "leadTimeSeconds": {
+          "$ref": "#/$defs/numberProperty"
+        },
+        "trailTimeSeconds": {
+          "$ref": "#/$defs/numberProperty"
+        },
+        "width": {
+          "$ref": "#/$defs/numberProperty"
+        },
+        "material": {
+          "$ref": "#/$defs/material"
+        },
+        "resolutionSeconds": {
+          "$ref": "#/$defs/numberProperty"
+        },
+        "distanceDisplayCondition": {
+          "$ref": "#/$defs/distanceDisplayCondition"
+        }
+      }
+    },
+    "modelGraphic": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "uri": {
+          "type": "string"
+        },
+        "asset": {
+          "type": "string"
+        },
+        "scale": {
+          "$ref": "#/$defs/numberProperty"
+        },
+        "minimumPixelSize": {
+          "$ref": "#/$defs/numberProperty"
+        },
+        "maximumScale": {
+          "$ref": "#/$defs/numberProperty"
+        },
+        "runAnimations": {
+          "$ref": "#/$defs/booleanProperty"
+        },
+        "clampAnimations": {
+          "$ref": "#/$defs/booleanProperty"
+        },
+        "shadows": {
+          "enum": [
+            "enabled",
+            "disabled",
+            "castOnly",
+            "receiveOnly"
+          ]
+        },
+        "heightReference": {
+          "$ref": "#/$defs/heightReference"
+        },
+        "silhouetteColor": {
+          "$ref": "#/$defs/colorProperty"
+        },
+        "silhouetteSize": {
+          "$ref": "#/$defs/numberProperty"
+        },
+        "color": {
+          "$ref": "#/$defs/colorProperty"
+        },
+        "colorBlendMode": {
+          "enum": [
+            "highlight",
+            "replace",
+            "mix"
+          ]
+        },
+        "colorBlendAmount": {
+          "$ref": "#/$defs/numberProperty"
+        },
+        "imageBasedLightingFactor": {
+          "$ref": "#/$defs/vec2"
+        },
+        "lightColor": {
+          "$ref": "#/$defs/vec3"
+        },
+        "nodeTransformations": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/$defs/trs"
+          }
+        },
+        "articulations": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/$defs/numberProperty"
+          }
+        },
+        "customShader": {
+          "type": "string"
+        },
+        "modelFrameCorrection": {
+          "$ref": "#/$defs/modelFrameCorrection"
+        },
+        "rawCesium": {
+          "$ref": "#/$defs/openObject"
+        }
+      }
+    },
+    "modelFrameCorrection": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "bodyFromModel": {
+          "$ref": "#/$defs/trs"
+        },
+        "modelFromBody": {
+          "$ref": "#/$defs/trs"
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    },
+    "trs": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "translationMeters": {
+          "$ref": "#/$defs/vec3"
+        },
+        "rotationDegrees": {
+          "$ref": "#/$defs/vec3"
+        },
+        "rotationRadians": {
+          "$ref": "#/$defs/vec3"
+        },
+        "unitQuaternion": {
+          "$ref": "#/$defs/quat"
+        },
+        "scale": {
+          "$ref": "#/$defs/vec3"
+        }
+      }
+    },
+    "tilesetGraphic": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "uri": {
+          "type": "string"
+        },
+        "asset": {
+          "type": "string"
+        },
+        "ionAssetId": {
+          "type": "integer"
+        },
+        "maximumScreenSpaceError": {
+          "$ref": "#/$defs/numberProperty"
+        },
+        "dynamicScreenSpaceError": {
+          "$ref": "#/$defs/booleanProperty"
+        },
+        "style": {
+          "$ref": "#/$defs/openObject"
+        },
+        "clippingPlanes": {
+          "$ref": "#/$defs/openObject"
+        },
+        "clippingPolygons": {
+          "$ref": "#/$defs/openObject"
+        },
+        "modelMatrix": {
+          "$ref": "#/$defs/mat4"
+        },
+        "debugShowBoundingVolume": {
+          "type": "boolean"
+        },
+        "rawCesium": {
+          "$ref": "#/$defs/openObject"
+        }
+      }
+    },
+    "style": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "material": {
+          "$ref": "#/$defs/material"
+        },
+        "fill": {
+          "$ref": "#/$defs/booleanProperty"
+        },
+        "outline": {
+          "$ref": "#/$defs/booleanProperty"
+        },
+        "outlineColor": {
+          "$ref": "#/$defs/colorProperty"
+        },
+        "outlineWidth": {
+          "$ref": "#/$defs/numberProperty"
+        },
+        "width": {
+          "$ref": "#/$defs/numberProperty"
+        },
+        "shadows": {
+          "enum": [
+            "enabled",
+            "disabled",
+            "castOnly",
+            "receiveOnly"
+          ]
+        },
+        "heightReference": {
+          "$ref": "#/$defs/heightReference"
+        },
+        "classificationType": {
+          "enum": [
+            "terrain",
+            "cesium3DTile",
+            "both"
+          ]
+        },
+        "distanceDisplayCondition": {
+          "$ref": "#/$defs/distanceDisplayCondition"
+        },
+        "depthTest": {
+          "$ref": "#/$defs/booleanProperty"
+        },
+        "zIndex": {
+          "$ref": "#/$defs/numberProperty"
+        },
+        "rendererHints": {
+          "$ref": "#/$defs/rendererHints"
+        },
+        "startColor": {
+          "$ref": "#/$defs/color"
+        },
+        "endColor": {
+          "$ref": "#/$defs/color"
+        }
+      }
+    },
+    "material": {
+      "type": "object",
+      "required": [
+        "type"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "type": {
+          "enum": [
+            "solidColor",
+            "image",
+            "checkerboard",
+            "stripe",
+            "grid",
+            "polylineGlow",
+            "polylineOutline",
+            "polylineArrow",
+            "pbrAsset",
+            "tilesetStyle",
+            "customShader",
+            "rendererNative"
+          ]
+        },
+        "rgba": {
+          "$ref": "#/$defs/color"
+        },
+        "asset": {
+          "type": "string"
+        },
+        "uri": {
+          "type": "string"
+        },
+        "shader": {
+          "type": "string"
+        },
+        "options": {
+          "$ref": "#/$defs/openObject"
+        }
+      }
+    },
+    "rendererHints": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "semanticKind": {
+          "type": "string"
+        },
+        "preferredBackends": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "fallbackBackends": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "cesium": {
+          "$ref": "#/$defs/openObject"
+        },
+        "unreal": {
+          "$ref": "#/$defs/openObject"
+        },
+        "simdis": {
+          "$ref": "#/$defs/openObject"
+        },
+        "soap": {
+          "$ref": "#/$defs/openObject"
+        },
+        "tgx": {
+          "$ref": "#/$defs/openObject"
+        },
+        "raw": {
+          "$ref": "#/$defs/openObject"
+        }
+      }
+    },
+    "postProcess": {
+      "type": "object",
+      "required": [
+        "id",
+        "type"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "type": {
+          "enum": [
+            "bloom",
+            "ambientOcclusion",
+            "silhouette",
+            "custom"
+          ]
+        },
+        "show": {
+          "$ref": "#/$defs/booleanProperty"
+        },
+        "options": {
+          "$ref": "#/$defs/openObject"
+        }
+      }
+    },
+    "heightReference": {
+      "enum": [
+        "none",
+        "clampToGround",
+        "relativeToGround"
+      ]
+    },
+    "frameName": {
+      "enum": [
+        "WGS84",
+        "ECEF",
+        "ECI",
+        "TEME",
+        "ICRF",
+        "FIXED",
+        "INERTIAL",
+        "ENU",
+        "NED",
+        "BODY",
+        "MODEL",
+        "ECEF_FROM_BODY",
+        "BODY_FROM_MODEL",
+        "MODEL_FROM_BODY",
+        "CUSTOM"
+      ]
+    },
+    "vectorProperty": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/vec3"
+        },
+        {
+          "$ref": "#/$defs/referenceValue"
+        },
+        {
+          "$ref": "#/$defs/computedValue"
+        }
+      ]
+    },
+    "booleanProperty": {
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "type": "object",
+          "required": [
+            "constant"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "constant": {
+              "type": "boolean"
+            }
+          }
+        },
+        {
+          "$ref": "#/$defs/referenceValue"
+        }
+      ]
+    },
+    "numberProperty": {
+      "oneOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "object",
+          "required": [
+            "constant"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "constant": {
+              "type": "number"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "samples"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "samples": {
+              "type": "object",
+              "required": [
+                "epoch",
+                "values"
+              ],
+              "additionalProperties": false,
+              "properties": {
+                "epoch": {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                "timeFormat": {
+                  "enum": [
+                    "secondsSinceEpoch",
+                    "iso8601"
+                  ]
+                },
+                "interpolation": {
+                  "enum": [
+                    "linear",
+                    "lagrange",
+                    "hermite"
+                  ]
+                },
+                "values": {
+                  "type": "array",
+                  "items": {
+                    "type": "array",
+                    "minItems": 2,
+                    "maxItems": 2,
+                    "items": {
+                      "type": [
+                        "number",
+                        "string"
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "$ref": "#/$defs/referenceValue"
+        },
+        {
+          "$ref": "#/$defs/computedValue"
+        }
+      ]
+    },
+    "stringProperty": {
+      "oneOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "object",
+          "required": [
+            "constant"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "constant": {
+              "type": "string"
+            }
+          }
+        },
+        {
+          "$ref": "#/$defs/referenceValue"
+        }
+      ]
+    },
+    "colorProperty": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/color"
+        },
+        {
+          "type": "object",
+          "required": [
+            "constant"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "constant": {
+              "$ref": "#/$defs/color"
+            }
+          }
+        },
+        {
+          "$ref": "#/$defs/referenceValue"
+        }
+      ]
+    },
+    "distanceDisplayCondition": {
+      "type": "array",
+      "prefixItems": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "number"
+        }
+      ],
+      "items": false
+    },
+    "vec2": {
+      "type": "array",
+      "prefixItems": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "number"
+        }
+      ],
+      "items": false
+    },
+    "vec3": {
+      "type": "array",
+      "prefixItems": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "number"
+        },
+        {
+          "type": "number"
+        }
+      ],
+      "items": false
+    },
+    "quat": {
+      "type": "array",
+      "prefixItems": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "number"
+        },
+        {
+          "type": "number"
+        },
+        {
+          "type": "number"
+        }
+      ],
+      "items": false
+    },
+    "mat4": {
+      "type": "array",
+      "minItems": 16,
+      "maxItems": 16,
+      "items": {
+        "type": "number"
+      }
+    },
+    "color": {
+      "type": "array",
+      "prefixItems": [
+        {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        }
+      ],
+      "items": false
+    },
+    "openObject": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "packedPositionList": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "cartographicDegrees": {
+          "type": "array",
+          "minItems": 6,
+          "items": {
+            "type": "number"
+          }
+        },
+        "cartographicRadians": {
+          "type": "array",
+          "minItems": 6,
+          "items": {
+            "type": "number"
+          }
+        },
+        "cartesianMeters": {
+          "type": "array",
+          "minItems": 6,
+          "items": {
+            "type": "number"
+          }
+        }
+      },
+      "anyOf": [
+        {
+          "required": [
+            "cartographicDegrees"
+          ]
+        },
+        {
+          "required": [
+            "cartographicRadians"
+          ]
+        },
+        {
+          "required": [
+            "cartesianMeters"
+          ]
+        }
+      ]
+    },
+    "positionList": {
+      "anyOf": [
+        {
+          "type": "array",
+          "minItems": 2,
+          "items": {
+            "$ref": "#/$defs/positionProperty"
+          }
+        },
+        {
+          "$ref": "#/$defs/packedPositionList"
+        }
+      ]
+    },
+    "planeGeometry": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "normal": {
+          "$ref": "#/$defs/vec3"
+        },
+        "distanceMeters": {
+          "$ref": "#/$defs/numberProperty"
+        },
+        "widthMeters": {
+          "$ref": "#/$defs/numberProperty"
+        },
+        "heightMeters": {
+          "$ref": "#/$defs/numberProperty"
+        }
+      }
+    },
+    "particleSystemGeometry": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "asset": {
+          "type": "string"
+        },
+        "image": {
+          "type": "string"
+        },
+        "emitter": {
+          "$ref": "#/$defs/openObject"
+        },
+        "emissionRate": {
+          "$ref": "#/$defs/numberProperty"
+        },
+        "lifetimeSeconds": {
+          "$ref": "#/$defs/numberProperty"
+        },
+        "particleLifeSeconds": {
+          "$ref": "#/$defs/numberProperty"
+        },
+        "minimumParticleLifeSeconds": {
+          "$ref": "#/$defs/numberProperty"
+        },
+        "maximumParticleLifeSeconds": {
+          "$ref": "#/$defs/numberProperty"
+        },
+        "speedMetersPerSecond": {
+          "$ref": "#/$defs/numberProperty"
+        },
+        "minimumSpeedMetersPerSecond": {
+          "$ref": "#/$defs/numberProperty"
+        },
+        "maximumSpeedMetersPerSecond": {
+          "$ref": "#/$defs/numberProperty"
+        },
+        "scale": {
+          "$ref": "#/$defs/numberProperty"
+        },
+        "startScale": {
+          "$ref": "#/$defs/numberProperty"
+        },
+        "endScale": {
+          "$ref": "#/$defs/numberProperty"
+        },
+        "imageSize": {
+          "$ref": "#/$defs/vec2"
+        },
+        "startColor": {
+          "$ref": "#/$defs/color"
+        },
+        "endColor": {
+          "$ref": "#/$defs/color"
+        }
+      },
+      "anyOf": [
+        {
+          "required": [
+            "asset"
+          ]
+        },
+        {
+          "required": [
+            "image"
+          ]
+        },
+        {
+          "required": [
+            "emitter"
+          ]
+        },
+        {
+          "required": [
+            "emissionRate"
+          ]
+        }
+      ]
+    },
+    "backendConfig": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "preferredTargets": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "cesium",
+              "simdis",
+              "soap",
+              "tgx",
+              "unreal"
+            ]
+          }
+        },
+        "fallbackBehavior": {
+          "enum": [
+            "warn",
+            "fail",
+            "approximate"
+          ]
+        },
+        "capabilityPolicy": {
+          "enum": [
+            "strict",
+            "bestEffort",
+            "bestAvailable"
+          ]
+        },
+        "output": {
+          "$ref": "#/$defs/openObject"
+        },
+        "targetOptions": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/$defs/openObject"
+          }
+        }
+      }
+    },
+    "backendCapabilities": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/$defs/backendCapabilitySet"
+      }
+    },
+    "backendCapabilitySet": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "backend": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string"
+        },
+        "profiles": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "compileModes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "artifacts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/backendArtifactSpec"
+          }
+        },
+        "objectSupport": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/$defs/supportRecord"
+          }
+        },
+        "analysisSupport": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/$defs/supportRecord"
+          }
+        },
+        "notes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "backendArtifactSpec": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "kind"
+      ],
+      "properties": {
+        "kind": {
+          "type": "string"
+        },
+        "path": {
+          "type": "string"
+        },
+        "pathPattern": {
+          "type": "string"
+        },
+        "required": {
+          "type": "boolean"
+        }
+      }
+    },
+    "supportRecord": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "support"
+      ],
+      "properties": {
+        "support": {
+          "enum": [
+            "native",
+            "strong",
+            "partial",
+            "weak",
+            "reserved",
+            "unsupported",
+            "unknown"
+          ]
+        },
+        "target": {
+          "type": "string"
+        },
+        "mode": {
+          "type": "string"
+        },
+        "lossiness": {
+          "enum": [
+            "none",
+            "low",
+            "medium",
+            "high",
+            "unsupported",
+            "unknown"
+          ]
+        },
+        "notes": {
+          "type": "string"
+        },
+        "artifacts": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "analysisResult": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "id",
+        "kind"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "kind": {
+          "enum": [
+            "accessIntervals",
+            "lineOfSightIntervals",
+            "lineOfSightSamples",
+            "rangeSamples",
+            "rfLinkBudget",
+            "coverageGrid",
+            "contour",
+            "closeApproach",
+            "report",
+            "plot",
+            "dataTable",
+            "sensorSwath",
+            "communicationLink",
+            "parametricStudy",
+            "analysisResult"
+          ]
+        },
+        "analysisType": {
+          "type": "string"
+        },
+        "sourceBackend": {
+          "type": "string"
+        },
+        "participants": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "target": {
+          "type": "string"
+        },
+        "source": {
+          "type": "string"
+        },
+        "intervals": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/intervalRecord"
+          }
+        },
+        "samples": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/openObject"
+          }
+        },
+        "grid": {
+          "$ref": "#/$defs/openObject"
+        },
+        "columns": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "rows": {
+          "type": "array",
+          "items": {
+            "type": "array"
+          }
+        },
+        "metrics": {
+          "$ref": "#/$defs/openObject"
+        },
+        "properties": {
+          "$ref": "#/$defs/openObject"
+        },
+        "rendererHints": {
+          "$ref": "#/$defs/rendererHints"
+        },
+        "extensions": {
+          "$ref": "#/$defs/openObject"
+        }
+      }
+    },
+    "intervalRecord": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "start": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "stop": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "properties": {
+          "$ref": "#/$defs/openObject"
+        }
+      }
+    },
+    "presentationItem": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "id",
+        "kind"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "kind": {
+          "enum": [
+            "presentation",
+            "slide",
+            "palette",
+            "viewport",
+            "view",
+            "cameraAction",
+            "bookmark",
+            "annotation",
+            "banner",
+            "popup",
+            "movie",
+            "reportView",
+            "plotView",
+            "dataView"
+          ]
+        },
+        "title": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "target": {
+          "type": "string"
+        },
+        "startTime": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "stopTime": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "durationSeconds": {
+          "type": "number"
+        },
+        "stepSeconds": {
+          "type": "number"
+        },
+        "viewports": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/openObject"
+          }
+        },
+        "views": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "camera": {
+          "$ref": "#/$defs/openObject"
+        },
+        "actions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/openObject"
+          }
+        },
+        "rendererHints": {
+          "$ref": "#/$defs/rendererHints"
+        },
+        "extensions": {
+          "$ref": "#/$defs/openObject"
+        }
+      }
+    }
+  }
+}

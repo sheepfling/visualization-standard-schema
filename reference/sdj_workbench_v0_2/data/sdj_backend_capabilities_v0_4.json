@@ -1,0 +1,1347 @@
+{
+  "cesium": {
+    "backend": "cesium",
+    "version": "sdj-adapter-v0.4",
+    "profiles": [
+      "cesium-scene",
+      "cesium-entity",
+      "cesium-primitive",
+      "cesium-3d-tiles",
+      "cesium-particles"
+    ],
+    "compileModes": [
+      "scene-to-cesium-loader",
+      "scene-to-sandcastle",
+      "scene-to-compile-plan"
+    ],
+    "artifacts": [
+      {
+        "kind": "manifest",
+        "path": "cesium/manifest.json"
+      },
+      {
+        "kind": "sceneJson",
+        "path": "cesium/scene.sdj.json"
+      },
+      {
+        "kind": "loader",
+        "path": "sdj_cesium_loader_v0_4.js"
+      },
+      {
+        "kind": "sandcastleRunner",
+        "path": "sdj_sandcastle_runner_v0_4.js"
+      },
+      {
+        "kind": "compilePlan",
+        "path": "cesium/compile-plan.json"
+      }
+    ],
+    "objectSupport": {
+      "point": {
+        "support": "strong",
+        "target": "Entity API or scene primitive",
+        "lossiness": "low"
+      },
+      "billboard": {
+        "support": "strong",
+        "target": "Entity API or scene primitive",
+        "lossiness": "low"
+      },
+      "label": {
+        "support": "strong",
+        "target": "Entity API or scene primitive",
+        "lossiness": "low"
+      },
+      "model": {
+        "support": "strong",
+        "target": "Entity API or scene primitive",
+        "lossiness": "low"
+      },
+      "path": {
+        "support": "strong",
+        "target": "Entity + SampledPositionProperty + PathGraphics",
+        "lossiness": "low"
+      },
+      "polyline": {
+        "support": "strong",
+        "target": "Entity API or scene primitive",
+        "lossiness": "low"
+      },
+      "polygon": {
+        "support": "strong",
+        "target": "Entity API or scene primitive",
+        "lossiness": "low"
+      },
+      "rectangle": {
+        "support": "strong",
+        "target": "Entity API or scene primitive",
+        "lossiness": "low"
+      },
+      "ellipse": {
+        "support": "strong",
+        "target": "Entity API or scene primitive",
+        "lossiness": "low"
+      },
+      "circle": {
+        "support": "strong",
+        "target": "Entity API or scene primitive",
+        "lossiness": "low"
+      },
+      "box": {
+        "support": "strong",
+        "target": "Entity API or scene primitive",
+        "lossiness": "low"
+      },
+      "cylinder": {
+        "support": "strong",
+        "target": "Entity API or scene primitive",
+        "lossiness": "low"
+      },
+      "cone": {
+        "support": "strong",
+        "target": "Entity API or scene primitive",
+        "lossiness": "low"
+      },
+      "ellipsoid": {
+        "support": "strong",
+        "target": "Entity API or scene primitive",
+        "lossiness": "low"
+      },
+      "sphere": {
+        "support": "strong",
+        "target": "Entity API or scene primitive",
+        "lossiness": "low"
+      },
+      "wall": {
+        "support": "strong",
+        "target": "Entity API or scene primitive",
+        "lossiness": "low"
+      },
+      "corridor": {
+        "support": "strong",
+        "target": "Entity API or scene primitive",
+        "lossiness": "low"
+      },
+      "polylineVolume": {
+        "support": "strong",
+        "target": "Entity API or scene primitive",
+        "lossiness": "low"
+      },
+      "plane": {
+        "support": "strong",
+        "target": "Entity API or scene primitive",
+        "lossiness": "low"
+      },
+      "tileset": {
+        "support": "strong",
+        "target": "Cesium3DTileset",
+        "lossiness": "low"
+      },
+      "track": {
+        "support": "strong",
+        "target": "Entity + SampledPositionProperty + PathGraphics",
+        "lossiness": "low"
+      },
+      "sector2d": {
+        "support": "partial",
+        "target": "Entity API or scene primitive",
+        "lossiness": "medium"
+      },
+      "sectorVolume": {
+        "support": "partial",
+        "target": "Primitive / GeometryInstance mesh or Entity fallback",
+        "lossiness": "medium"
+      },
+      "hemisphere": {
+        "support": "partial",
+        "target": "Primitive / GeometryInstance mesh or Entity fallback",
+        "lossiness": "medium"
+      },
+      "sphericalCap": {
+        "support": "partial",
+        "target": "Primitive / GeometryInstance mesh or Entity fallback",
+        "lossiness": "medium"
+      },
+      "keyhole": {
+        "support": "partial",
+        "target": "Primitive / GeometryInstance mesh or Entity fallback",
+        "lossiness": "medium"
+      },
+      "rangeRing": {
+        "support": "strong",
+        "target": "Entity API or scene primitive",
+        "lossiness": "low"
+      },
+      "bearingFan": {
+        "support": "strong",
+        "target": "Entity API or scene primitive",
+        "lossiness": "low"
+      },
+      "frustum": {
+        "support": "partial",
+        "target": "Primitive / GeometryInstance mesh or Entity fallback",
+        "lossiness": "medium"
+      },
+      "conicSensor": {
+        "support": "partial",
+        "target": "Entity API or scene primitive",
+        "lossiness": "medium"
+      },
+      "rectangularSensor": {
+        "support": "partial",
+        "target": "Entity API or scene primitive",
+        "lossiness": "medium"
+      },
+      "customPatternSensor": {
+        "support": "partial",
+        "target": "Entity API or scene primitive",
+        "lossiness": "medium"
+      },
+      "fan": {
+        "support": "strong",
+        "target": "Entity API or scene primitive",
+        "lossiness": "low"
+      },
+      "vector": {
+        "support": "strong",
+        "target": "Entity API or scene primitive",
+        "lossiness": "low"
+      },
+      "velocityVector": {
+        "support": "strong",
+        "target": "CallbackProperty-derived Entity polylines",
+        "lossiness": "low"
+      },
+      "accelerationVector": {
+        "support": "strong",
+        "target": "CallbackProperty-derived Entity polylines",
+        "lossiness": "low"
+      },
+      "bodyAxes": {
+        "support": "strong",
+        "target": "CallbackProperty-derived Entity polylines",
+        "lossiness": "low"
+      },
+      "principalAxes": {
+        "support": "strong",
+        "target": "CallbackProperty-derived Entity polylines",
+        "lossiness": "low"
+      },
+      "lineOfSight": {
+        "support": "strong",
+        "target": "Entity API or scene primitive",
+        "lossiness": "low"
+      },
+      "relativeLine": {
+        "support": "strong",
+        "target": "Entity API or scene primitive",
+        "lossiness": "low"
+      },
+      "interceptLine": {
+        "support": "strong",
+        "target": "Entity API or scene primitive",
+        "lossiness": "low"
+      },
+      "uncertaintyEllipsoid": {
+        "support": "strong",
+        "target": "Entity API or scene primitive",
+        "lossiness": "low"
+      },
+      "covarianceEllipse": {
+        "support": "strong",
+        "target": "Entity API or scene primitive",
+        "lossiness": "low"
+      },
+      "particleSystem": {
+        "support": "strong",
+        "target": "ParticleSystem",
+        "lossiness": "low"
+      },
+      "voxel": {
+        "support": "partial",
+        "target": "Entity API or scene primitive",
+        "lossiness": "medium"
+      },
+      "clippingPolygon": {
+        "support": "strong",
+        "target": "Entity API or scene primitive",
+        "lossiness": "low"
+      },
+      "clippingPlane": {
+        "support": "strong",
+        "target": "Entity API or scene primitive",
+        "lossiness": "low"
+      },
+      "classificationVolume": {
+        "support": "strong",
+        "target": "Entity API or scene primitive",
+        "lossiness": "low"
+      },
+      "postProcessStage": {
+        "support": "partial",
+        "target": "Entity API or scene primitive",
+        "lossiness": "medium"
+      },
+      "customPrimitive": {
+        "support": "strong",
+        "target": "Primitive / GeometryInstance mesh or Entity fallback",
+        "lossiness": "low"
+      },
+      "composite": {
+        "support": "partial",
+        "target": "Entity API or scene primitive",
+        "lossiness": "medium"
+      },
+      "atmosphere": {
+        "support": "strong",
+        "target": "Entity API or scene primitive",
+        "lossiness": "low"
+      },
+      "cameraView": {
+        "support": "strong",
+        "target": "Entity API or scene primitive",
+        "lossiness": "low"
+      },
+      "classificationPrimitive": {
+        "support": "strong",
+        "target": "Entity API or scene primitive",
+        "lossiness": "low"
+      },
+      "cloudCollection": {
+        "support": "strong",
+        "target": "Entity API or scene primitive",
+        "lossiness": "low"
+      },
+      "customShader": {
+        "support": "strong",
+        "target": "Entity API or scene primitive",
+        "lossiness": "low"
+      },
+      "czmlDataSource": {
+        "support": "strong",
+        "target": "Entity API or scene primitive",
+        "lossiness": "low"
+      },
+      "dataSource": {
+        "support": "partial",
+        "target": "Entity API or scene primitive",
+        "lossiness": "medium"
+      },
+      "debugInspector": {
+        "support": "strong",
+        "target": "Entity API or scene primitive",
+        "lossiness": "low"
+      },
+      "geoJsonDataSource": {
+        "support": "strong",
+        "target": "Entity API or scene primitive",
+        "lossiness": "low"
+      },
+      "groundPolyline": {
+        "support": "strong",
+        "target": "Entity API or scene primitive",
+        "lossiness": "low"
+      },
+      "groundPrimitive": {
+        "support": "strong",
+        "target": "Entity API or scene primitive",
+        "lossiness": "low"
+      },
+      "imageryLayer": {
+        "support": "strong",
+        "target": "Entity API or scene primitive",
+        "lossiness": "low"
+      },
+      "kmlDataSource": {
+        "support": "strong",
+        "target": "Entity API or scene primitive",
+        "lossiness": "low"
+      },
+      "panorama": {
+        "support": "partial",
+        "target": "Entity API or scene primitive",
+        "lossiness": "medium"
+      },
+      "skyBox": {
+        "support": "strong",
+        "target": "Entity API or scene primitive",
+        "lossiness": "low"
+      },
+      "terrain": {
+        "support": "strong",
+        "target": "Entity API or scene primitive",
+        "lossiness": "low"
+      },
+      "tilesetStyle": {
+        "support": "strong",
+        "target": "Entity API or scene primitive",
+        "lossiness": "low"
+      },
+      "videoPlane": {
+        "support": "strong",
+        "target": "Entity API or scene primitive",
+        "lossiness": "low"
+      },
+      "primitiveMesh": {
+        "support": "strong",
+        "target": "Primitive / GeometryInstance mesh or Entity fallback",
+        "lossiness": "low"
+      },
+      "terrainSurface": {
+        "support": "strong",
+        "target": "Entity API or scene primitive",
+        "lossiness": "low"
+      },
+      "customMesh": {
+        "support": "strong",
+        "target": "Primitive / GeometryInstance mesh or Entity fallback",
+        "lossiness": "low"
+      }
+    },
+    "analysisSupport": {
+      "accessIntervals": {
+        "support": "partial",
+        "target": "derived overlays / labels",
+        "lossiness": "medium"
+      },
+      "rfLinkBudget": {
+        "support": "weak",
+        "target": "report overlay / data source",
+        "lossiness": "high"
+      },
+      "coverageGrid": {
+        "support": "partial",
+        "target": "polygon/primitive overlay",
+        "lossiness": "medium"
+      },
+      "report": {
+        "support": "partial",
+        "target": "HTML description / panel",
+        "lossiness": "medium"
+      },
+      "plot": {
+        "support": "weak",
+        "target": "external UI panel",
+        "lossiness": "high"
+      }
+    },
+    "notes": [
+      "Cesium is the primary render target; analysis-heavy outputs are visualized as overlays rather than native analyses."
+    ]
+  },
+  "simdis": {
+    "backend": "simdis",
+    "version": "local-spec-simdis-export",
+    "profiles": [
+      "scene-core",
+      "entity-core",
+      "trajectory-diagnostics",
+      "modern-3d-assets",
+      "tactical-geometry",
+      "sensor-analysis",
+      "rf-electromagnetic-analysis",
+      "coverage-analysis",
+      "debrief-presentation",
+      "simdis-export",
+      "backend-raw-extensions",
+      "simdis-gog",
+      "simdis-entity",
+      "simdis-analysis",
+      "simdis-presentation",
+      "simdis-media"
+    ],
+    "compileModes": [
+      "scene-to-gog",
+      "scene-to-entities",
+      "scene-to-presentation",
+      "scene-to-assets",
+      "simdis-result-to-overlay"
+    ],
+    "artifacts": [
+      {
+        "kind": "manifest",
+        "pathPattern": "out/simdis/manifest.json"
+      },
+      {
+        "kind": "gog",
+        "pathPattern": "out/simdis/overlays.gog"
+      },
+      {
+        "kind": "entityState",
+        "pathPattern": "out/simdis/entities.json"
+      },
+      {
+        "kind": "presentation",
+        "pathPattern": "out/simdis/presentation.json"
+      },
+      {
+        "kind": "assetManifest",
+        "pathPattern": "out/simdis/assets.json"
+      },
+      {
+        "kind": "exampleBundle",
+        "pathPattern": "generated/simdis-example-bundle.json"
+      }
+    ],
+    "objectSupport": {
+      "point": {
+        "support": "strong",
+        "target": "SIMDIS package artifact or extension",
+        "lossiness": "low"
+      },
+      "billboard": {
+        "support": "strong",
+        "target": "SIMDIS package artifact or extension",
+        "lossiness": "low"
+      },
+      "label": {
+        "support": "strong",
+        "target": "SIMDIS package artifact or extension",
+        "lossiness": "low"
+      },
+      "model": {
+        "support": "strong",
+        "target": "platform/entity state + model asset",
+        "lossiness": "low"
+      },
+      "path": {
+        "support": "strong",
+        "target": "SIMDIS package artifact or extension",
+        "lossiness": "low"
+      },
+      "polyline": {
+        "support": "strong",
+        "target": "GOG overlay",
+        "lossiness": "low"
+      },
+      "polygon": {
+        "support": "strong",
+        "target": "GOG overlay",
+        "lossiness": "low"
+      },
+      "rectangle": {
+        "support": "strong",
+        "target": "GOG overlay",
+        "lossiness": "low"
+      },
+      "ellipse": {
+        "support": "strong",
+        "target": "GOG overlay",
+        "lossiness": "low"
+      },
+      "circle": {
+        "support": "strong",
+        "target": "GOG overlay",
+        "lossiness": "low"
+      },
+      "box": {
+        "support": "strong",
+        "target": "SIMDIS package artifact or extension",
+        "lossiness": "low"
+      },
+      "cylinder": {
+        "support": "strong",
+        "target": "SIMDIS package artifact or extension",
+        "lossiness": "low"
+      },
+      "cone": {
+        "support": "strong",
+        "target": "SIMDIS package artifact or extension",
+        "lossiness": "low"
+      },
+      "ellipsoid": {
+        "support": "strong",
+        "target": "SIMDIS package artifact or extension",
+        "lossiness": "low"
+      },
+      "sphere": {
+        "support": "strong",
+        "target": "SIMDIS package artifact or extension",
+        "lossiness": "low"
+      },
+      "wall": {
+        "support": "strong",
+        "target": "GOG overlay",
+        "lossiness": "low"
+      },
+      "corridor": {
+        "support": "strong",
+        "target": "GOG overlay",
+        "lossiness": "low"
+      },
+      "polylineVolume": {
+        "support": "strong",
+        "target": "SIMDIS package artifact or extension",
+        "lossiness": "low"
+      },
+      "plane": {
+        "support": "strong",
+        "target": "SIMDIS package artifact or extension",
+        "lossiness": "low"
+      },
+      "tileset": {
+        "support": "partial",
+        "target": "SIMDIS package artifact or extension",
+        "lossiness": "medium"
+      },
+      "track": {
+        "support": "strong",
+        "target": "platform/entity state + model asset",
+        "lossiness": "low"
+      },
+      "sector2d": {
+        "support": "strong",
+        "target": "SIMDIS package artifact or extension",
+        "lossiness": "low"
+      },
+      "sectorVolume": {
+        "support": "strong",
+        "target": "beam/gate/LOB/projector or GOG geometry",
+        "lossiness": "low"
+      },
+      "hemisphere": {
+        "support": "strong",
+        "target": "SIMDIS package artifact or extension",
+        "lossiness": "low"
+      },
+      "sphericalCap": {
+        "support": "strong",
+        "target": "SIMDIS package artifact or extension",
+        "lossiness": "low"
+      },
+      "keyhole": {
+        "support": "strong",
+        "target": "beam/gate/LOB/projector or GOG geometry",
+        "lossiness": "low"
+      },
+      "rangeRing": {
+        "support": "strong",
+        "target": "GOG overlay",
+        "lossiness": "low"
+      },
+      "bearingFan": {
+        "support": "strong",
+        "target": "beam/gate/LOB/projector or GOG geometry",
+        "lossiness": "low"
+      },
+      "frustum": {
+        "support": "strong",
+        "target": "beam/gate/LOB/projector or GOG geometry",
+        "lossiness": "low"
+      },
+      "conicSensor": {
+        "support": "strong",
+        "target": "beam/gate/LOB/projector or GOG geometry",
+        "lossiness": "low"
+      },
+      "rectangularSensor": {
+        "support": "strong",
+        "target": "beam/gate/LOB/projector or GOG geometry",
+        "lossiness": "low"
+      },
+      "customPatternSensor": {
+        "support": "strong",
+        "target": "beam/gate/LOB/projector or GOG geometry",
+        "lossiness": "low"
+      },
+      "fan": {
+        "support": "strong",
+        "target": "beam/gate/LOB/projector or GOG geometry",
+        "lossiness": "low"
+      },
+      "vector": {
+        "support": "strong",
+        "target": "SIMDIS package artifact or extension",
+        "lossiness": "low"
+      },
+      "velocityVector": {
+        "support": "strong",
+        "target": "SIMDIS package artifact or extension",
+        "lossiness": "low"
+      },
+      "accelerationVector": {
+        "support": "strong",
+        "target": "SIMDIS package artifact or extension",
+        "lossiness": "low"
+      },
+      "bodyAxes": {
+        "support": "strong",
+        "target": "SIMDIS package artifact or extension",
+        "lossiness": "low"
+      },
+      "principalAxes": {
+        "support": "strong",
+        "target": "SIMDIS package artifact or extension",
+        "lossiness": "low"
+      },
+      "lineOfSight": {
+        "support": "strong",
+        "target": "measurement/range/LOS overlay",
+        "lossiness": "low"
+      },
+      "relativeLine": {
+        "support": "strong",
+        "target": "measurement/range/LOS overlay",
+        "lossiness": "low"
+      },
+      "interceptLine": {
+        "support": "strong",
+        "target": "measurement/range/LOS overlay",
+        "lossiness": "low"
+      },
+      "uncertaintyEllipsoid": {
+        "support": "strong",
+        "target": "SIMDIS package artifact or extension",
+        "lossiness": "low"
+      },
+      "covarianceEllipse": {
+        "support": "strong",
+        "target": "SIMDIS package artifact or extension",
+        "lossiness": "low"
+      },
+      "particleSystem": {
+        "support": "partial",
+        "target": "SIMDIS package artifact or extension",
+        "lossiness": "medium"
+      },
+      "voxel": {
+        "support": "partial",
+        "target": "SIMDIS package artifact or extension",
+        "lossiness": "medium"
+      },
+      "clippingPolygon": {
+        "support": "partial",
+        "target": "SIMDIS package artifact or extension",
+        "lossiness": "medium"
+      },
+      "clippingPlane": {
+        "support": "partial",
+        "target": "SIMDIS package artifact or extension",
+        "lossiness": "medium"
+      },
+      "classificationVolume": {
+        "support": "strong",
+        "target": "SIMDIS package artifact or extension",
+        "lossiness": "low"
+      },
+      "postProcessStage": {
+        "support": "partial",
+        "target": "SIMDIS package artifact or extension",
+        "lossiness": "medium"
+      },
+      "customPrimitive": {
+        "support": "strong",
+        "target": "SIMDIS package artifact or extension",
+        "lossiness": "low"
+      },
+      "composite": {
+        "support": "partial",
+        "target": "SIMDIS package artifact or extension",
+        "lossiness": "medium"
+      },
+      "atmosphere": {
+        "support": "partial",
+        "target": "SIMDIS package artifact or extension",
+        "lossiness": "medium"
+      },
+      "cameraView": {
+        "support": "partial",
+        "target": "SIMDIS package artifact or extension",
+        "lossiness": "medium"
+      },
+      "classificationPrimitive": {
+        "support": "partial",
+        "target": "SIMDIS package artifact or extension",
+        "lossiness": "medium"
+      },
+      "cloudCollection": {
+        "support": "partial",
+        "target": "SIMDIS package artifact or extension",
+        "lossiness": "medium"
+      },
+      "customShader": {
+        "support": "partial",
+        "target": "SIMDIS package artifact or extension",
+        "lossiness": "medium"
+      },
+      "czmlDataSource": {
+        "support": "partial",
+        "target": "SIMDIS package artifact or extension",
+        "lossiness": "medium"
+      },
+      "dataSource": {
+        "support": "partial",
+        "target": "SIMDIS package artifact or extension",
+        "lossiness": "medium"
+      },
+      "debugInspector": {
+        "support": "partial",
+        "target": "SIMDIS package artifact or extension",
+        "lossiness": "medium"
+      },
+      "geoJsonDataSource": {
+        "support": "partial",
+        "target": "SIMDIS package artifact or extension",
+        "lossiness": "medium"
+      },
+      "groundPolyline": {
+        "support": "partial",
+        "target": "SIMDIS package artifact or extension",
+        "lossiness": "medium"
+      },
+      "groundPrimitive": {
+        "support": "partial",
+        "target": "SIMDIS package artifact or extension",
+        "lossiness": "medium"
+      },
+      "imageryLayer": {
+        "support": "strong",
+        "target": "SIMDIS package artifact or extension",
+        "lossiness": "low"
+      },
+      "kmlDataSource": {
+        "support": "partial",
+        "target": "SIMDIS package artifact or extension",
+        "lossiness": "medium"
+      },
+      "panorama": {
+        "support": "partial",
+        "target": "SIMDIS package artifact or extension",
+        "lossiness": "medium"
+      },
+      "skyBox": {
+        "support": "partial",
+        "target": "SIMDIS package artifact or extension",
+        "lossiness": "medium"
+      },
+      "terrain": {
+        "support": "strong",
+        "target": "SIMDIS package artifact or extension",
+        "lossiness": "low"
+      },
+      "tilesetStyle": {
+        "support": "partial",
+        "target": "SIMDIS package artifact or extension",
+        "lossiness": "medium"
+      },
+      "videoPlane": {
+        "support": "partial",
+        "target": "SIMDIS package artifact or extension",
+        "lossiness": "medium"
+      },
+      "primitiveMesh": {
+        "support": "strong",
+        "target": "SIMDIS package artifact or extension",
+        "lossiness": "low"
+      },
+      "terrainSurface": {
+        "support": "partial",
+        "target": "SIMDIS package artifact or extension",
+        "lossiness": "medium"
+      },
+      "customMesh": {
+        "support": "strong",
+        "target": "SIMDIS package artifact or extension",
+        "lossiness": "low"
+      }
+    },
+    "analysisSupport": {
+      "accessIntervals": {
+        "support": "strong",
+        "target": "range tool / measurement overlay",
+        "lossiness": "low"
+      },
+      "lineOfSightSamples": {
+        "support": "strong",
+        "target": "LOS / range sampling",
+        "lossiness": "low"
+      },
+      "rfLinkBudget": {
+        "support": "strong",
+        "target": "RF propagation / antenna analysis",
+        "lossiness": "low"
+      },
+      "coverageGrid": {
+        "support": "strong",
+        "target": "GOG overlay / heat map",
+        "lossiness": "low"
+      },
+      "sensorSwath": {
+        "support": "strong",
+        "target": "sensor beam/gate/projector",
+        "lossiness": "low"
+      },
+      "report": {
+        "support": "partial",
+        "target": "measurement/report bundle",
+        "lossiness": "medium"
+      },
+      "plot": {
+        "support": "partial",
+        "target": "measurement/export data",
+        "lossiness": "medium"
+      }
+    },
+    "notes": [
+      "SIMDIS export emits package artifacts, GOG overlays, entity state, presentation, assets, and diagnostics."
+    ]
+  },
+  "soap": {
+    "backend": "soap",
+    "version": "local-spec-soap-export",
+    "profiles": [
+      "entity-core",
+      "trajectory-diagnostics",
+      "modern-3d-assets",
+      "tactical-geometry",
+      "sensor-analysis",
+      "debrief-presentation",
+      "rf-electromagnetic-analysis",
+      "coverage-analysis",
+      "backend-raw-extensions"
+    ],
+    "compileModes": [
+      "scene-to-scenario",
+      "scene-to-analysis",
+      "scene-to-presentation",
+      "soap-result-to-overlay"
+    ],
+    "artifacts": [
+      {
+        "kind": "manifest",
+        "pathPattern": "out/soap/manifest.json"
+      },
+      {
+        "kind": "views",
+        "pathPattern": "out/soap/views.json"
+      },
+      {
+        "kind": "analysis",
+        "pathPattern": "out/soap/analysis.json"
+      },
+      {
+        "kind": "overlay",
+        "pathPattern": "out/soap/overlays/{analysisId}.json"
+      },
+      {
+        "kind": "presentation",
+        "pathPattern": "out/soap/presentation.json"
+      },
+      {
+        "kind": "assetManifest",
+        "pathPattern": "out/soap/assets.json"
+      },
+      {
+        "kind": "exampleBundle",
+        "pathPattern": "generated/soap-example-bundle.json"
+      }
+    ],
+    "objectSupport": {
+      "point": {
+        "support": "strong",
+        "target": "SOAP view/model/overlay artifact",
+        "lossiness": "low"
+      },
+      "billboard": {
+        "support": "partial",
+        "target": "SOAP view/model/overlay artifact",
+        "lossiness": "medium"
+      },
+      "label": {
+        "support": "strong",
+        "target": "SOAP view/model/overlay artifact",
+        "lossiness": "low"
+      },
+      "model": {
+        "support": "strong",
+        "target": "Platform / Trajectory / 3D Model",
+        "lossiness": "low"
+      },
+      "path": {
+        "support": "strong",
+        "target": "SOAP view/model/overlay artifact",
+        "lossiness": "low"
+      },
+      "polyline": {
+        "support": "strong",
+        "target": "SOAP view/model/overlay artifact",
+        "lossiness": "low"
+      },
+      "polygon": {
+        "support": "strong",
+        "target": "SOAP view/model/overlay artifact",
+        "lossiness": "low"
+      },
+      "rectangle": {
+        "support": "strong",
+        "target": "SOAP view/model/overlay artifact",
+        "lossiness": "low"
+      },
+      "ellipse": {
+        "support": "strong",
+        "target": "SOAP view/model/overlay artifact",
+        "lossiness": "low"
+      },
+      "circle": {
+        "support": "strong",
+        "target": "SOAP view/model/overlay artifact",
+        "lossiness": "low"
+      },
+      "box": {
+        "support": "partial",
+        "target": "SOAP view/model/overlay artifact",
+        "lossiness": "medium"
+      },
+      "cylinder": {
+        "support": "partial",
+        "target": "SOAP view/model/overlay artifact",
+        "lossiness": "medium"
+      },
+      "cone": {
+        "support": "partial",
+        "target": "SOAP view/model/overlay artifact",
+        "lossiness": "medium"
+      },
+      "ellipsoid": {
+        "support": "partial",
+        "target": "SOAP view/model/overlay artifact",
+        "lossiness": "medium"
+      },
+      "sphere": {
+        "support": "partial",
+        "target": "SOAP view/model/overlay artifact",
+        "lossiness": "medium"
+      },
+      "wall": {
+        "support": "partial",
+        "target": "SOAP view/model/overlay artifact",
+        "lossiness": "medium"
+      },
+      "corridor": {
+        "support": "partial",
+        "target": "SOAP view/model/overlay artifact",
+        "lossiness": "medium"
+      },
+      "polylineVolume": {
+        "support": "partial",
+        "target": "SOAP view/model/overlay artifact",
+        "lossiness": "medium"
+      },
+      "plane": {
+        "support": "partial",
+        "target": "SOAP view/model/overlay artifact",
+        "lossiness": "medium"
+      },
+      "tileset": {
+        "support": "partial",
+        "target": "SOAP view/model/overlay artifact",
+        "lossiness": "medium"
+      },
+      "track": {
+        "support": "strong",
+        "target": "Platform / Trajectory / 3D Model",
+        "lossiness": "low"
+      },
+      "sector2d": {
+        "support": "strong",
+        "target": "SOAP view/model/overlay artifact",
+        "lossiness": "low"
+      },
+      "sectorVolume": {
+        "support": "strong",
+        "target": "Sensor Swath / RF object / contour overlay",
+        "lossiness": "low"
+      },
+      "hemisphere": {
+        "support": "strong",
+        "target": "SOAP view/model/overlay artifact",
+        "lossiness": "low"
+      },
+      "sphericalCap": {
+        "support": "strong",
+        "target": "SOAP view/model/overlay artifact",
+        "lossiness": "low"
+      },
+      "keyhole": {
+        "support": "strong",
+        "target": "Sensor Swath / RF object / contour overlay",
+        "lossiness": "low"
+      },
+      "rangeRing": {
+        "support": "strong",
+        "target": "SOAP view/model/overlay artifact",
+        "lossiness": "low"
+      },
+      "bearingFan": {
+        "support": "strong",
+        "target": "SOAP view/model/overlay artifact",
+        "lossiness": "low"
+      },
+      "frustum": {
+        "support": "strong",
+        "target": "Sensor Swath / RF object / contour overlay",
+        "lossiness": "low"
+      },
+      "conicSensor": {
+        "support": "strong",
+        "target": "Sensor Swath / RF object / contour overlay",
+        "lossiness": "low"
+      },
+      "rectangularSensor": {
+        "support": "strong",
+        "target": "Sensor Swath / RF object / contour overlay",
+        "lossiness": "low"
+      },
+      "customPatternSensor": {
+        "support": "strong",
+        "target": "Sensor Swath / RF object / contour overlay",
+        "lossiness": "low"
+      },
+      "fan": {
+        "support": "strong",
+        "target": "Sensor Swath / RF object / contour overlay",
+        "lossiness": "low"
+      },
+      "vector": {
+        "support": "strong",
+        "target": "SOAP view/model/overlay artifact",
+        "lossiness": "low"
+      },
+      "velocityVector": {
+        "support": "strong",
+        "target": "SOAP view/model/overlay artifact",
+        "lossiness": "low"
+      },
+      "accelerationVector": {
+        "support": "strong",
+        "target": "SOAP view/model/overlay artifact",
+        "lossiness": "low"
+      },
+      "bodyAxes": {
+        "support": "strong",
+        "target": "SOAP view/model/overlay artifact",
+        "lossiness": "low"
+      },
+      "principalAxes": {
+        "support": "strong",
+        "target": "SOAP view/model/overlay artifact",
+        "lossiness": "low"
+      },
+      "lineOfSight": {
+        "support": "strong",
+        "target": "analysis overlay / visibility result",
+        "lossiness": "low"
+      },
+      "relativeLine": {
+        "support": "strong",
+        "target": "analysis overlay / visibility result",
+        "lossiness": "low"
+      },
+      "interceptLine": {
+        "support": "strong",
+        "target": "analysis overlay / visibility result",
+        "lossiness": "low"
+      },
+      "uncertaintyEllipsoid": {
+        "support": "strong",
+        "target": "SOAP view/model/overlay artifact",
+        "lossiness": "low"
+      },
+      "covarianceEllipse": {
+        "support": "strong",
+        "target": "SOAP view/model/overlay artifact",
+        "lossiness": "low"
+      },
+      "particleSystem": {
+        "support": "partial",
+        "target": "SOAP view/model/overlay artifact",
+        "lossiness": "medium"
+      },
+      "voxel": {
+        "support": "partial",
+        "target": "SOAP view/model/overlay artifact",
+        "lossiness": "medium"
+      },
+      "clippingPolygon": {
+        "support": "partial",
+        "target": "SOAP view/model/overlay artifact",
+        "lossiness": "medium"
+      },
+      "clippingPlane": {
+        "support": "partial",
+        "target": "SOAP view/model/overlay artifact",
+        "lossiness": "medium"
+      },
+      "classificationVolume": {
+        "support": "strong",
+        "target": "SOAP view/model/overlay artifact",
+        "lossiness": "low"
+      },
+      "postProcessStage": {
+        "support": "partial",
+        "target": "SOAP view/model/overlay artifact",
+        "lossiness": "medium"
+      },
+      "customPrimitive": {
+        "support": "partial",
+        "target": "SOAP view/model/overlay artifact",
+        "lossiness": "medium"
+      },
+      "composite": {
+        "support": "partial",
+        "target": "SOAP view/model/overlay artifact",
+        "lossiness": "medium"
+      },
+      "atmosphere": {
+        "support": "partial",
+        "target": "SOAP view/model/overlay artifact",
+        "lossiness": "medium"
+      },
+      "cameraView": {
+        "support": "partial",
+        "target": "SOAP view/model/overlay artifact",
+        "lossiness": "medium"
+      },
+      "classificationPrimitive": {
+        "support": "partial",
+        "target": "SOAP view/model/overlay artifact",
+        "lossiness": "medium"
+      },
+      "cloudCollection": {
+        "support": "partial",
+        "target": "SOAP view/model/overlay artifact",
+        "lossiness": "medium"
+      },
+      "customShader": {
+        "support": "partial",
+        "target": "SOAP view/model/overlay artifact",
+        "lossiness": "medium"
+      },
+      "czmlDataSource": {
+        "support": "partial",
+        "target": "SOAP view/model/overlay artifact",
+        "lossiness": "medium"
+      },
+      "dataSource": {
+        "support": "partial",
+        "target": "SOAP view/model/overlay artifact",
+        "lossiness": "medium"
+      },
+      "debugInspector": {
+        "support": "partial",
+        "target": "SOAP view/model/overlay artifact",
+        "lossiness": "medium"
+      },
+      "geoJsonDataSource": {
+        "support": "partial",
+        "target": "SOAP view/model/overlay artifact",
+        "lossiness": "medium"
+      },
+      "groundPolyline": {
+        "support": "partial",
+        "target": "SOAP view/model/overlay artifact",
+        "lossiness": "medium"
+      },
+      "groundPrimitive": {
+        "support": "partial",
+        "target": "SOAP view/model/overlay artifact",
+        "lossiness": "medium"
+      },
+      "imageryLayer": {
+        "support": "strong",
+        "target": "Terrain and Imagery",
+        "lossiness": "low"
+      },
+      "kmlDataSource": {
+        "support": "partial",
+        "target": "SOAP view/model/overlay artifact",
+        "lossiness": "medium"
+      },
+      "panorama": {
+        "support": "partial",
+        "target": "SOAP view/model/overlay artifact",
+        "lossiness": "medium"
+      },
+      "skyBox": {
+        "support": "partial",
+        "target": "SOAP view/model/overlay artifact",
+        "lossiness": "medium"
+      },
+      "terrain": {
+        "support": "strong",
+        "target": "Terrain and Imagery",
+        "lossiness": "low"
+      },
+      "tilesetStyle": {
+        "support": "partial",
+        "target": "SOAP view/model/overlay artifact",
+        "lossiness": "medium"
+      },
+      "videoPlane": {
+        "support": "partial",
+        "target": "SOAP view/model/overlay artifact",
+        "lossiness": "medium"
+      },
+      "primitiveMesh": {
+        "support": "partial",
+        "target": "SOAP view/model/overlay artifact",
+        "lossiness": "medium"
+      },
+      "terrainSurface": {
+        "support": "partial",
+        "target": "SOAP view/model/overlay artifact",
+        "lossiness": "medium"
+      },
+      "customMesh": {
+        "support": "partial",
+        "target": "SOAP view/model/overlay artifact",
+        "lossiness": "medium"
+      }
+    },
+    "analysisSupport": {
+      "accessIntervals": {
+        "support": "strong",
+        "target": "report / data view",
+        "lossiness": "low"
+      },
+      "lineOfSightSamples": {
+        "support": "strong",
+        "target": "visibility analysis",
+        "lossiness": "low"
+      },
+      "rfLinkBudget": {
+        "support": "strong",
+        "target": "RF Communications",
+        "lossiness": "low"
+      },
+      "coverageGrid": {
+        "support": "strong",
+        "target": "Contours",
+        "lossiness": "low"
+      },
+      "sensorSwath": {
+        "support": "strong",
+        "target": "Sensor Swath",
+        "lossiness": "low"
+      },
+      "report": {
+        "support": "strong",
+        "target": "Report View",
+        "lossiness": "low"
+      },
+      "plot": {
+        "support": "strong",
+        "target": "Plot View",
+        "lossiness": "low"
+      },
+      "dataTable": {
+        "support": "strong",
+        "target": "Data Table",
+        "lossiness": "low"
+      }
+    },
+    "notes": [
+      "SOAP export emphasizes scenario, trajectory, analysis, views, slides, plots, reports, and data-view artifacts."
+    ]
+  }
+}

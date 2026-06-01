@@ -1,0 +1,18 @@
+{
+  "name": "visualization-standard-schema",
+  "private": true,
+  "workspaces": [
+    "reference/sdj_workbench_v0_2"
+  ],
+  "scripts": {
+    "dev": "npm --workspace reference/sdj_workbench_v0_2 run dev",
+    "preview": "npm --workspace reference/sdj_workbench_v0_2 run preview",
+    "serve:static": "npm --workspace reference/sdj_workbench_v0_2 run serve:static",
+    "check": "npm --workspace reference/sdj_workbench_v0_2 run check",
+    "build:exposed-scenes": "npm --workspace reference/sdj_workbench_v0_2 run build:exposed-scenes",
+    "browser-smoke": "npm --workspace reference/sdj_workbench_v0_2 run browser-smoke",
+    "shell-smoke": "npm --workspace reference/sdj_workbench_v0_2 run shell-smoke",
+    "smoke": "npm --workspace reference/sdj_workbench_v0_2 run smoke",
+    "test": "npm --workspace reference/sdj_workbench_v0_2 run test"
+  }
+}

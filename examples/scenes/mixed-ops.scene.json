@@ -1,0 +1,173 @@
+{
+  "schemaVersion": "1.0.0-scene",
+  "document": {
+    "id": "mixed-ops-demo",
+    "name": "Mixed Ops Demo",
+    "description": "Aircraft, sensor, and ground entities in one scene for Cesium export coverage.",
+    "created": "2026-06-01T12:07:00Z",
+    "generator": "visualization-standard-schema",
+    "source": "sim.example.ops-sim"
+  },
+  "objects": [
+    {
+      "objectType": "entity",
+      "id": "aircraft-003",
+      "name": "Raven One",
+      "category": "air",
+      "position": {
+        "longitudeDeg": -96.812,
+        "latitudeDeg": 32.779,
+        "altitudeM": 8840.0
+      },
+      "orientation": {
+        "headingDeg": 101.0,
+        "pitchDeg": 1.2,
+        "rollDeg": 0.0
+      },
+      "style": {
+        "label": "Raven One",
+        "modelUri": "https://example.org/assets/aircraft.glb",
+        "colorRgba": [235, 99, 52, 255]
+      },
+      "attributes": {
+        "speedMps": 221.6,
+        "callsign": "RAVEN1",
+        "mission": "CAP"
+      },
+      "source": "sim.example.ops-sim",
+      "timestamp": "2026-06-01T12:00:00Z"
+    },
+    {
+      "objectType": "entity",
+      "id": "sensor-alpha",
+      "name": "Sensor Alpha",
+      "category": "sensor",
+      "position": {
+        "longitudeDeg": -96.805,
+        "latitudeDeg": 32.751,
+        "altitudeM": 420.0
+      },
+      "style": {
+        "label": "Sensor Alpha",
+        "iconUri": "https://example.org/assets/sensor.png",
+        "colorRgba": [255, 206, 84, 255]
+      },
+      "attributes": {
+        "sensorType": "radar",
+        "rangeKm": 140.0,
+        "status": "active"
+      },
+      "source": "sim.example.ops-sim",
+      "timestamp": "2026-06-01T12:03:00Z"
+    },
+    {
+      "objectType": "entity",
+      "id": "ground-site-01",
+      "name": "Ground Site 01",
+      "category": "ground",
+      "position": {
+        "longitudeDeg": -96.774,
+        "latitudeDeg": 32.738,
+        "altitudeM": 195.0
+      },
+      "style": {
+        "label": "Ground Site 01",
+        "colorRgba": [35, 166, 213, 255]
+      },
+      "attributes": {
+        "siteRole": "relay",
+        "team": "blue"
+      },
+      "source": "sim.example.ops-sim",
+      "timestamp": "2026-06-01T12:07:00Z"
+    },
+    {
+      "objectType": "overlay",
+      "id": "flight-corridor-a",
+      "name": "Flight Corridor A",
+      "geometryType": "polyline",
+      "position": {
+        "longitudeDeg": -96.79,
+        "latitudeDeg": 32.76,
+        "altitudeM": 6000.0
+      },
+      "style": {
+        "label": "Corridor A",
+        "colorRgba": [186, 104, 200, 255]
+      },
+      "polyline": {
+        "positions": [
+          {
+            "longitudeDeg": -96.88,
+            "latitudeDeg": 32.70,
+            "altitudeM": 5500.0
+          },
+          {
+            "longitudeDeg": -96.79,
+            "latitudeDeg": 32.76,
+            "altitudeM": 6000.0
+          },
+          {
+            "longitudeDeg": -96.69,
+            "latitudeDeg": 32.82,
+            "altitudeM": 6400.0
+          }
+        ],
+        "widthPx": 4.0,
+        "clampToGround": false
+      },
+      "attributes": {
+        "routeType": "patrol-corridor",
+        "status": "planned"
+      },
+      "source": "sim.example.ops-sim",
+      "timestamp": "2026-06-01T12:06:00Z"
+    },
+    {
+      "objectType": "overlay",
+      "id": "coverage-zone-b",
+      "name": "Coverage Zone B",
+      "geometryType": "polygon",
+      "position": {
+        "longitudeDeg": -96.735,
+        "latitudeDeg": 32.785,
+        "altitudeM": 1800.0
+      },
+      "style": {
+        "label": "Zone B",
+        "colorRgba": [120, 192, 108, 180]
+      },
+      "polygon": {
+        "positions": [
+          {
+            "longitudeDeg": -96.760,
+            "latitudeDeg": 32.770,
+            "altitudeM": 1500.0
+          },
+          {
+            "longitudeDeg": -96.720,
+            "latitudeDeg": 32.760,
+            "altitudeM": 1500.0
+          },
+          {
+            "longitudeDeg": -96.700,
+            "latitudeDeg": 32.790,
+            "altitudeM": 1800.0
+          },
+          {
+            "longitudeDeg": -96.740,
+            "latitudeDeg": 32.810,
+            "altitudeM": 1800.0
+          }
+        ],
+        "clampToGround": false
+      },
+      "attributes": {
+        "zoneType": "coverage",
+        "status": "active"
+      },
+      "source": "sim.example.ops-sim",
+      "timestamp": "2026-06-01T12:04:00Z"
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+[
+  {
+    "id": "document",
+    "name": "Rectangle Demo",
+    "version": "1.0",
+    "clock": {
+      "interval": "2026-06-01T12:00:00+00:00/2026-06-01T12:00:00+00:00",
+      "currentTime": "2026-06-01T12:00:00+00:00",
+      "multiplier": 1,
+      "range": "CLAMPED",
+      "step": "SYSTEM_CLOCK_MULTIPLIER"
+    }
+  },
+  {
+    "id": "rect-001",
+    "name": "Rect 001",
+    "position": {
+      "cartographicDegrees": [
+        -97.7,
+        30.3,
+        0.0
+      ]
+    },
+    "properties": {
+      "zoneType": "control-area",
+      "objectType": "overlay",
+      "source": "sim.example.geo-sim",
+      "timestamp": "2026-06-01T12:00:00+00:00",
+      "category": "overlay"
+    },
+    "label": {
+      "text": "Rect 001",
+      "horizontalOrigin": "LEFT",
+      "pixelOffset": {
+        "cartesian2": [
+          12,
+          0
+        ]
+      },
+      "fillColor": {
+        "rgba": [
+          52,
+          199,
+          89,
+          180
+        ]
+      }
+    },
+    "rectangle": {
+      "coordinates": {
+        "wsenDegrees": [
+          -97.78,
+          30.24,
+          -97.62,
+          30.36
+        ]
+      },
+      "height": 0.0,
+      "rotation": 0.0,
+      "material": {
+        "solidColor": {
+          "color": {
+            "rgba": [
+              52,
+              199,
+              89,
+              180
+            ]
+          }
+        }
+      }
+    }
+  }
+]

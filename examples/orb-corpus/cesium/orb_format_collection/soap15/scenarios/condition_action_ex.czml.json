@@ -1,0 +1,67 @@
+[
+  {
+    "id": "document",
+    "name": "condition_action_ex",
+    "version": "1.0"
+  },
+  {
+    "id": ".F0",
+    "name": ".F0",
+    "position": {
+      "cartographicDegrees": [
+        0.0,
+        0.00057296,
+        63781.369999999995
+      ]
+    },
+    "properties": {
+      "platform_type": "ECR_FIXED",
+      "orbArchiveMember": "orb_format_collection/soap15/scenarios/condition_action_ex.orb",
+      "source": "orb-scenario"
+    },
+    "point": {
+      "pixelSize": 10,
+      "outlineWidth": 1
+    }
+  },
+  {
+    "id": ".G0",
+    "name": ".G0",
+    "position": {
+      "cartographicDegrees": [
+        90.0,
+        0.00057296,
+        0.0
+      ]
+    },
+    "properties": {
+      "platform_type": "ECR_FIXED",
+      "orbArchiveMember": "orb_format_collection/soap15/scenarios/condition_action_ex.orb",
+      "source": "orb-scenario"
+    },
+    "point": {
+      "pixelSize": 10,
+      "outlineWidth": 1
+    }
+  },
+  {
+    "id": ".P0",
+    "name": ".P0",
+    "position": {
+      "cartographicDegrees": [
+        0.0,
+        90.0,
+        63781.369999999995
+      ]
+    },
+    "properties": {
+      "platform_type": "ECR_FIXED",
+      "orbArchiveMember": "orb_format_collection/soap15/scenarios/condition_action_ex.orb",
+      "source": "orb-scenario"
+    },
+    "point": {
+      "pixelSize": 10,
+      "outlineWidth": 1
+    }
+  }
+]
