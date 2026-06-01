@@ -1,0 +1,157 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/vss/schemas/v1/vss-message.schema.json",
+  "title": "Visualization Standard Schema Message",
+  "description": "Transport-agnostic visualization message envelope with Cesium-first entity payload support.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "messageType",
+    "messageId",
+    "timestamp",
+    "source",
+    "payload"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "type": "string",
+      "const": "1.0.0"
+    },
+    "messageType": {
+      "type": "string",
+      "enum": [
+        "entity.upsert"
+      ]
+    },
+    "messageId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "source": {
+      "type": "string",
+      "minLength": 1
+    },
+    "payload": {
+      "$ref": "#/$defs/entityUpsertPayload"
+    }
+  },
+  "$defs": {
+    "entityUpsertPayload": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "entityId",
+        "name",
+        "position"
+      ],
+      "properties": {
+        "entityId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "category": {
+          "type": "string",
+          "enum": [
+            "air",
+            "ground",
+            "surface",
+            "subsurface",
+            "space",
+            "sensor",
+            "overlay",
+            "other"
+          ]
+        },
+        "position": {
+          "$ref": "#/$defs/wgs84Position"
+        },
+        "orientation": {
+          "$ref": "#/$defs/orientation"
+        },
+        "style": {
+          "$ref": "#/$defs/style"
+        },
+        "attributes": {
+          "type": "object",
+          "description": "Free-form metadata carried alongside the core state.",
+          "additionalProperties": true
+        }
+      }
+    },
+    "wgs84Position": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "longitudeDeg",
+        "latitudeDeg",
+        "altitudeM"
+      ],
+      "properties": {
+        "longitudeDeg": {
+          "type": "number",
+          "minimum": -180,
+          "maximum": 180
+        },
+        "latitudeDeg": {
+          "type": "number",
+          "minimum": -90,
+          "maximum": 90
+        },
+        "altitudeM": {
+          "type": "number"
+        }
+      }
+    },
+    "orientation": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "headingDeg": {
+          "type": "number"
+        },
+        "pitchDeg": {
+          "type": "number"
+        },
+        "rollDeg": {
+          "type": "number"
+        }
+      }
+    },
+    "style": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "label": {
+          "type": "string"
+        },
+        "iconUri": {
+          "type": "string",
+          "format": "uri"
+        },
+        "modelUri": {
+          "type": "string",
+          "format": "uri"
+        },
+        "colorRgba": {
+          "type": "array",
+          "minItems": 4,
+          "maxItems": 4,
+          "items": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 255
+          }
+        }
+      }
+    }
+  }
+}

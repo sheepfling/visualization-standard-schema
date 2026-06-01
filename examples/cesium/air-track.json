@@ -1,0 +1,36 @@
+{
+  "schemaVersion": "1.0.0",
+  "messageType": "entity.upsert",
+  "messageId": "msg-0001",
+  "timestamp": "2026-06-01T12:00:00Z",
+  "source": "sim.example.flight-sim",
+  "payload": {
+    "entityId": "aircraft-001",
+    "name": "Blue One",
+    "category": "air",
+    "position": {
+      "longitudeDeg": -97.7431,
+      "latitudeDeg": 30.2672,
+      "altitudeM": 9450.0
+    },
+    "orientation": {
+      "headingDeg": 72.0,
+      "pitchDeg": 1.5,
+      "rollDeg": 0.2
+    },
+    "style": {
+      "label": "Blue One",
+      "modelUri": "https://example.org/assets/aircraft.glb",
+      "colorRgba": [
+        64,
+        145,
+        255,
+        255
+      ]
+    },
+    "attributes": {
+      "speedMps": 235.4,
+      "callsign": "BLUE1"
+    }
+  }
+}
