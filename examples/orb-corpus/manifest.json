@@ -1,11 +1,11 @@
 {
-  "sourceArchive": "INBOX/orb_format_collection.tar",
+  "sourceArchive": "reference/orb_format_collection/orb_format_collection.tar",
   "outputRoot": "examples/orb-corpus",
   "totals": {
     "orbFiles": 145,
-    "parsed": 131,
-    "failed": 14,
-    "entities": 545,
+    "parsed": 129,
+    "failed": 16,
+    "entities": 548,
     "overlays": 0
   },
   "entries": [
@@ -31,19 +31,19 @@
       "archiveMember": "orb_format_collection/soap15/scenarios/3D texture model example/globalstar.orb",
       "relativeName": "orb_format_collection/soap15/scenarios/3D texture model example/globalstar.orb",
       "sceneId": "orb-format-collection__soap15__scenarios__3d-texture-model-example__globalstar",
-      "revision": 42,
-      "fileType": "SOAP_SCENARIO_FILE",
-      "platforms": 67,
+      "revision": null,
+      "fileType": null,
+      "platforms": 0,
       "trajectories": 0,
-      "views": 11,
+      "views": 0,
       "entities": 0,
       "overlays": 0,
       "targets": {
-        "sdj": "sdj/orb_format_collection/soap15/scenarios/3D texture model example/globalstar.sdj.json",
-        "cesium": "cesium/orb_format_collection/soap15/scenarios/3D texture model example/globalstar.czml.json",
-        "soap": "soap/orb_format_collection/soap15/scenarios/3D texture model example/globalstar.bundle.json"
+        "sdj": null,
+        "cesium": null,
+        "soap": null
       },
-      "error": null
+      "error": "TimeoutError: "
     },
     {
       "archiveMember": "orb_format_collection/soap15/scenarios/6_Elements_Colored.orb",
@@ -85,19 +85,19 @@
       "archiveMember": "orb_format_collection/soap15/scenarios/Penguin Gravity Demo/gravity_demo_sounds.orb",
       "relativeName": "orb_format_collection/soap15/scenarios/Penguin Gravity Demo/gravity_demo_sounds.orb",
       "sceneId": "orb-format-collection__soap15__scenarios__penguin-gravity-demo__gravity-demo-sounds",
-      "revision": 54,
-      "fileType": "SOAP_SCENARIO_FILE",
-      "platforms": 28,
-      "trajectories": 7,
-      "views": 25,
-      "entities": 5,
+      "revision": null,
+      "fileType": null,
+      "platforms": 0,
+      "trajectories": 0,
+      "views": 0,
+      "entities": 0,
       "overlays": 0,
       "targets": {
-        "sdj": "sdj/orb_format_collection/soap15/scenarios/Penguin Gravity Demo/gravity_demo_sounds.sdj.json",
-        "cesium": "cesium/orb_format_collection/soap15/scenarios/Penguin Gravity Demo/gravity_demo_sounds.czml.json",
-        "soap": "soap/orb_format_collection/soap15/scenarios/Penguin Gravity Demo/gravity_demo_sounds.bundle.json"
+        "sdj": null,
+        "cesium": null,
+        "soap": null
       },
-      "error": null
+      "error": "TimeoutError: "
     },
     {
       "archiveMember": "orb_format_collection/soap15/scenarios/Quick_Dart_Example_Package.orb",
@@ -445,19 +445,19 @@
       "archiveMember": "orb_format_collection/soap15/scenarios/auto-load-examples/autoload3.orb",
       "relativeName": "orb_format_collection/soap15/scenarios/auto-load-examples/autoload3.orb",
       "sceneId": "orb-format-collection__soap15__scenarios__auto-load-examples__autoload3",
-      "revision": null,
-      "fileType": null,
-      "platforms": 0,
-      "trajectories": 0,
-      "views": 0,
+      "revision": 44,
+      "fileType": "SOAP_SCENARIO_FILE",
+      "platforms": 63,
+      "trajectories": 2,
+      "views": 32,
       "entities": 0,
       "overlays": 0,
       "targets": {
-        "sdj": null,
-        "cesium": null,
-        "soap": null
+        "sdj": "sdj/orb_format_collection/soap15/scenarios/auto-load-examples/autoload3.sdj.json",
+        "cesium": "cesium/orb_format_collection/soap15/scenarios/auto-load-examples/autoload3.czml.json",
+        "soap": "soap/orb_format_collection/soap15/scenarios/auto-load-examples/autoload3.bundle.json"
       },
-      "error": "TimeoutError: "
+      "error": null
     },
     {
       "archiveMember": "orb_format_collection/soap15/scenarios/auto-load-examples/autoload_self.orb",
@@ -607,19 +607,19 @@
       "archiveMember": "orb_format_collection/soap15/scenarios/california.orb",
       "relativeName": "orb_format_collection/soap15/scenarios/california.orb",
       "sceneId": "orb-format-collection__soap15__scenarios__california",
-      "revision": 55,
-      "fileType": "SOAP_SCENARIO_FILE",
-      "platforms": 16,
+      "revision": null,
+      "fileType": null,
+      "platforms": 0,
       "trajectories": 0,
-      "views": 17,
-      "entities": 5,
+      "views": 0,
+      "entities": 0,
       "overlays": 0,
       "targets": {
-        "sdj": "sdj/orb_format_collection/soap15/scenarios/california.sdj.json",
-        "cesium": "cesium/orb_format_collection/soap15/scenarios/california.czml.json",
-        "soap": "soap/orb_format_collection/soap15/scenarios/california.bundle.json"
+        "sdj": null,
+        "cesium": null,
+        "soap": null
       },
-      "error": null
+      "error": "TimeoutError: "
     },
     {
       "archiveMember": "orb_format_collection/soap15/scenarios/cassini_demo/cassini.orb",
@@ -895,19 +895,19 @@
       "archiveMember": "orb_format_collection/soap15/scenarios/contour_revisit_ex.orb",
       "relativeName": "orb_format_collection/soap15/scenarios/contour_revisit_ex.orb",
       "sceneId": "orb-format-collection__soap15__scenarios__contour-revisit-ex",
-      "revision": null,
-      "fileType": null,
-      "platforms": 0,
+      "revision": 53,
+      "fileType": "SOAP_SCENARIO_FILE",
+      "platforms": 31,
       "trajectories": 0,
-      "views": 0,
-      "entities": 0,
+      "views": 44,
+      "entities": 22,
       "overlays": 0,
       "targets": {
-        "sdj": null,
-        "cesium": null,
-        "soap": null
+        "sdj": "sdj/orb_format_collection/soap15/scenarios/contour_revisit_ex.sdj.json",
+        "cesium": "cesium/orb_format_collection/soap15/scenarios/contour_revisit_ex.czml.json",
+        "soap": "soap/orb_format_collection/soap15/scenarios/contour_revisit_ex.bundle.json"
       },
-      "error": "TimeoutError: "
+      "error": null
     },
     {
       "archiveMember": "orb_format_collection/soap15/scenarios/contour_vis.orb",
@@ -949,19 +949,19 @@
       "archiveMember": "orb_format_collection/soap15/scenarios/coverage.orb",
       "relativeName": "orb_format_collection/soap15/scenarios/coverage.orb",
       "sceneId": "orb-format-collection__soap15__scenarios__coverage",
-      "revision": null,
-      "fileType": null,
-      "platforms": 0,
+      "revision": 54,
+      "fileType": "SOAP_SCENARIO_FILE",
+      "platforms": 27,
       "trajectories": 0,
-      "views": 0,
-      "entities": 0,
+      "views": 15,
+      "entities": 3,
       "overlays": 0,
       "targets": {
-        "sdj": null,
-        "cesium": null,
-        "soap": null
+        "sdj": "sdj/orb_format_collection/soap15/scenarios/coverage.sdj.json",
+        "cesium": "cesium/orb_format_collection/soap15/scenarios/coverage.czml.json",
+        "soap": "soap/orb_format_collection/soap15/scenarios/coverage.bundle.json"
       },
-      "error": "TimeoutError: "
+      "error": null
     },
     {
       "archiveMember": "orb_format_collection/soap15/scenarios/coverage_contours.orb",
@@ -1183,19 +1183,19 @@
       "archiveMember": "orb_format_collection/soap15/scenarios/dted_uav_blawkhawk_clouds/dted_uav_blackhawk_clouds.orb",
       "relativeName": "orb_format_collection/soap15/scenarios/dted_uav_blawkhawk_clouds/dted_uav_blackhawk_clouds.orb",
       "sceneId": "orb-format-collection__soap15__scenarios__dted-uav-blawkhawk-clouds__dted-uav-blackhawk-clouds",
-      "revision": 55,
-      "fileType": "SOAP_SCENARIO_FILE",
-      "platforms": 44,
-      "trajectories": 10,
-      "views": 35,
-      "entities": 6,
+      "revision": null,
+      "fileType": null,
+      "platforms": 0,
+      "trajectories": 0,
+      "views": 0,
+      "entities": 0,
       "overlays": 0,
       "targets": {
-        "sdj": "sdj/orb_format_collection/soap15/scenarios/dted_uav_blawkhawk_clouds/dted_uav_blackhawk_clouds.sdj.json",
-        "cesium": "cesium/orb_format_collection/soap15/scenarios/dted_uav_blawkhawk_clouds/dted_uav_blackhawk_clouds.czml.json",
-        "soap": "soap/orb_format_collection/soap15/scenarios/dted_uav_blawkhawk_clouds/dted_uav_blackhawk_clouds.bundle.json"
+        "sdj": null,
+        "cesium": null,
+        "soap": null
       },
-      "error": null
+      "error": "TimeoutError: "
     },
     {
       "archiveMember": "orb_format_collection/soap15/scenarios/eclipse_north_america_2017.orb",
@@ -1831,19 +1831,19 @@
       "archiveMember": "orb_format_collection/soap15/scenarios/parametric_study/optimize_constellation/ps_optimize_constellation.orb",
       "relativeName": "orb_format_collection/soap15/scenarios/parametric_study/optimize_constellation/ps_optimize_constellation.orb",
       "sceneId": "orb-format-collection__soap15__scenarios__parametric-study__optimize-constellation__ps-optimize-constellation",
-      "revision": 54,
-      "fileType": "SOAP_SCENARIO_FILE",
-      "platforms": 37,
+      "revision": null,
+      "fileType": null,
+      "platforms": 0,
       "trajectories": 0,
-      "views": 12,
-      "entities": 6,
+      "views": 0,
+      "entities": 0,
       "overlays": 0,
       "targets": {
-        "sdj": "sdj/orb_format_collection/soap15/scenarios/parametric_study/optimize_constellation/ps_optimize_constellation.sdj.json",
-        "cesium": "cesium/orb_format_collection/soap15/scenarios/parametric_study/optimize_constellation/ps_optimize_constellation.czml.json",
-        "soap": "soap/orb_format_collection/soap15/scenarios/parametric_study/optimize_constellation/ps_optimize_constellation.bundle.json"
+        "sdj": null,
+        "cesium": null,
+        "soap": null
       },
-      "error": null
+      "error": "TimeoutError: "
     },
     {
       "archiveMember": "orb_format_collection/soap15/scenarios/planet_local_time.orb",

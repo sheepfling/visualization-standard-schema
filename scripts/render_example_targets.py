@@ -25,6 +25,8 @@ def main() -> None:
     rectangle_scene = load_scene_file("examples/scenes/rectangle-demo.scene.json")
     corridor_scene = load_scene_file("examples/scenes/corridor-demo.scene.json")
     ellipse_circle_scene = load_scene_file("examples/scenes/ellipse-circle-demo.scene.json")
+    wall_scene = load_scene_file("examples/scenes/wall-demo.scene.json")
+    box_scene = load_scene_file("examples/scenes/box-demo.scene.json")
     out_dir = Path("examples/generated")
     out_dir.mkdir(parents=True, exist_ok=True)
 
@@ -107,6 +109,26 @@ def main() -> None:
         out_dir / "ellipse-circle-demo.scene.viewer.html",
         czml_path="./ellipse-circle-demo.scene.czml.json",
         title="VSS Ellipse Circle Demo Scene Viewer",
+    )
+    write_text_file(
+        out_dir / "wall-demo.scene.czml.json",
+        dumps_json(compile_cesium_scene(wall_scene), indent=2),
+        encoding="utf-8",
+    )
+    write_cesium_viewer(
+        out_dir / "wall-demo.scene.viewer.html",
+        czml_path="./wall-demo.scene.czml.json",
+        title="VSS Wall Demo Scene Viewer",
+    )
+    write_text_file(
+        out_dir / "box-demo.scene.czml.json",
+        dumps_json(compile_cesium_scene(box_scene), indent=2),
+        encoding="utf-8",
+    )
+    write_cesium_viewer(
+        out_dir / "box-demo.scene.viewer.html",
+        czml_path="./box-demo.scene.czml.json",
+        title="VSS Box Demo Scene Viewer",
     )
     write_text_file(
         out_dir / "air-track.simdis.txt",

@@ -1,3 +1,9 @@
+"""Compatibility shims for legacy target imports.
+
+These modules intentionally mirror the public target surface exposed by the
+root package while the import paths are being retired.
+"""
+
 from .cesium import (
     assess_cesium_scene_support,
     compile_cesium_document,

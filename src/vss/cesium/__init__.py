@@ -6,12 +6,14 @@ from typing import Any
 from ..capabilities import assess_cesium_scene_support, get_cesium_capabilities
 from ..models import (
     EntityUpsertMessage,
+    SceneBox,
     SceneCircle,
     SceneEntity,
     SceneEllipse,
     SceneOverlay,
     ScenePath,
     SceneTrack,
+    SceneWall,
     VssScene,
     scene_entity_from_message,
 )
@@ -390,6 +392,27 @@ def _build_scene_overlay_packet(overlay: SceneOverlay) -> dict[str, Any]:
             packet["ellipse"]["clampToGround"] = True
         if rgba:
             packet["ellipse"]["material"] = {"solidColor": {"color": {"rgba": rgba}}}
+    elif overlay.geometryType == "wall" and overlay.wall:
+        packet["wall"] = {
+            "positions": {
+                "cartographicDegrees": _flatten_positions(overlay.wall.positions)
+            },
+            "maximumHeights": overlay.wall.maximumHeightsMeters
+            if overlay.wall.maximumHeightsMeters is not None
+            else [pos.altitudeM for pos in overlay.wall.positions],
+            "minimumHeights": overlay.wall.minimumHeightsMeters
+            if overlay.wall.minimumHeightsMeters is not None
+            else [0.0 for _ in overlay.wall.positions],
+            "clampToGround": overlay.wall.clampToGround,
+        }
+        if rgba:
+            packet["wall"]["material"] = {"solidColor": {"color": {"rgba": rgba}}}
+    elif overlay.geometryType == "box" and overlay.box:
+        packet["box"] = {
+            "dimensions": {"cartesian": list(overlay.box.dimensionsMeters)}
+        }
+        if rgba:
+            packet["box"]["material"] = {"solidColor": {"color": {"rgba": rgba}}}
 
     return packet
 

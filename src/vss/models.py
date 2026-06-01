@@ -88,6 +88,17 @@ class SceneCorridor(VssModel):
     clampToGround: bool = False
 
 
+class SceneWall(VssModel):
+    positions: list[Wgs84Position] = Field(min_length=2)
+    minimumHeightsMeters: list[float] | None = None
+    maximumHeightsMeters: list[float] | None = None
+    clampToGround: bool = False
+
+
+class SceneBox(VssModel):
+    dimensionsMeters: tuple[float, float, float]
+
+
 class EntityUpsertPayload(VssModel):
     entityId: str = Field(min_length=1)
     name: str = Field(min_length=1)
@@ -139,13 +150,15 @@ class SceneEntity(SceneObjectBase):
 class SceneOverlay(SceneObjectBase):
     objectType: Literal["overlay"] = "overlay"
     position: Wgs84Position
-    geometryType: Literal["polyline", "polygon", "rectangle", "corridor", "ellipse", "circle"] = "polyline"
+    geometryType: Literal["polyline", "polygon", "rectangle", "corridor", "ellipse", "circle", "wall", "box"] = "polyline"
     polyline: ScenePolyline | None = None
     polygon: ScenePolygon | None = None
     rectangle: SceneRectangle | None = None
     corridor: SceneCorridor | None = None
     ellipse: SceneEllipse | None = None
     circle: SceneCircle | None = None
+    wall: SceneWall | None = None
+    box: SceneBox | None = None
 
 
 class ScenePathSample(VssModel):

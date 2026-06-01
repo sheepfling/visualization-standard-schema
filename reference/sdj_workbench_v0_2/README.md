@@ -39,7 +39,9 @@ examples/sdj_minimal_scene.json             # Small render/export smoke scene
 examples/sdj_full_coverage_scene_v0_4.json   # Comprehensive coverage scene
 schemas/sdj_v0_4.schema.json                # SDJ schema reference
 data/sdj_backend_capabilities_v0_4.json      # Backend support matrix
+data/sdj_exposed_scenes_manifest.json        # Generated gallery of exposed SDJ corpus scenes
 scripts/smoke-test.mjs                      # Node smoke test for compiler/export artifacts
+scripts/build-exposed-scenes-manifest.mjs    # Regenerates the exposed SDJ gallery manifest
 ```
 
 ## Run locally
@@ -84,6 +86,12 @@ npm run smoke
 ```
 
 The smoke test reads the comprehensive scene, validates it, compiles all backend bundles, exercises the object inspector helper, and writes a report under `generated-smoke/smoke-report.json`.
+
+To regenerate the exposed-scene catalog after adding or moving corpus files:
+
+```bash
+npm run build:exposed-scenes
+```
 
 For browser verification:
 

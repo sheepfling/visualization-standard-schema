@@ -11,5 +11,5 @@ Contents:
 Provenance:
 
 - Promoted from the local intake area into a tracked reference location so
-  repository code, docs, tests, and generated manifests do not depend on
-  `INBOX/` paths.
+  repository code, docs, tests, and generated manifests do not depend on an
+  external staging path.

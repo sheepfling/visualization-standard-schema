@@ -37,7 +37,7 @@ from .io import (
     write_message_file,
     write_scene_file,
 )
-from .models import EntityUpsertMessage, SceneCircle, SceneCorridor, SceneDocument, SceneEllipse, SceneEntity, ScenePath, SceneRectangle, SceneTrack, VssScene
+from .models import EntityUpsertMessage, SceneBox, SceneCircle, SceneCorridor, SceneDocument, SceneEllipse, SceneEntity, ScenePath, SceneRectangle, SceneTrack, SceneWall, VssScene
 from .orb import (
     AnalysisTemplateSpec,
     DerivedVariableSpec,
@@ -85,6 +85,7 @@ __all__ = [
     "EntityUpsertMessage",
     "SceneFeatureAssessment",
     "SceneCircle",
+    "SceneBox",
     "SceneCorridor",
     "SceneDocument",
     "SceneEllipse",
@@ -92,6 +93,7 @@ __all__ = [
     "ScenePath",
     "SceneRectangle",
     "SceneTrack",
+    "SceneWall",
     "SceneTargetAssessment",
     "SchemaFeatureSupport",
     "SimdisBundle",

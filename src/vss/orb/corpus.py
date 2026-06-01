@@ -1,8 +1,8 @@
 from __future__ import annotations
 
-import signal
+from concurrent.futures import ThreadPoolExecutor, TimeoutError as FuturesTimeoutError
+from collections.abc import Callable
 import tarfile
-from contextlib import contextmanager
 from pathlib import Path, PurePosixPath
 
 from pydantic import Field
@@ -21,6 +21,12 @@ class OrbCorpusTargets(VssModel):
     soap: str | None = None
 
 
+class OrbCorpusFailure(VssModel):
+    stage: str = Field(min_length=1)
+    errorType: str = Field(min_length=1)
+    message: str = Field(min_length=1)
+
+
 class OrbCorpusEntry(VssModel):
     archiveMember: str = Field(min_length=1)
     relativeName: str = Field(min_length=1)
@@ -33,7 +39,13 @@ class OrbCorpusEntry(VssModel):
     entities: int = 0
     overlays: int = 0
     targets: OrbCorpusTargets = Field(default_factory=OrbCorpusTargets)
-    error: str | None = None
+    failure: OrbCorpusFailure | None = None
+
+    @property
+    def error(self) -> str | None:
+        if self.failure is None:
+            return None
+        return self.failure.message
 
 
 class OrbCorpusManifest(VssModel):
@@ -49,12 +61,14 @@ def build_orb_fixture_set(
     *,
     limit: int | None = None,
     timeout_seconds: int = 5,
+    member_processor: Callable[[tarfile.TarFile, tarfile.TarInfo, Path], OrbCorpusEntry] | None = None,
 ) -> OrbCorpusManifest:
     archive = Path(archive_path)
     output = Path(output_root)
     output.mkdir(parents=True, exist_ok=True)
 
     entries: list[OrbCorpusEntry] = []
+    processor = member_processor or _process_member
     with tarfile.open(archive) as handle:
         members = sorted(
             (
@@ -70,26 +84,15 @@ def build_orb_fixture_set(
             members = members[:limit]
 
         for member in members:
-            with _time_limit(timeout_seconds):
-                try:
-                    entries.append(_process_member(handle, member, output))
-                except TimeoutError:
-                    entries.append(
-                        OrbCorpusEntry(
-                            archiveMember=member.name,
-                            relativeName=PurePosixPath(member.name).as_posix(),
-                            sceneId=_scene_id_for_member(PurePosixPath(member.name)),
-                            error=f"TimeoutError: exceeded {timeout_seconds}s parse budget",
-                        )
-                    )
+            entries.append(_process_member_with_timeout(processor, handle, member, output, timeout_seconds))
 
     manifest = OrbCorpusManifest(
         sourceArchive=str(archive),
         outputRoot=str(output),
         totals={
             "orbFiles": len(entries),
-            "parsed": sum(1 for entry in entries if entry.error is None),
-            "failed": sum(1 for entry in entries if entry.error is not None),
+            "parsed": sum(1 for entry in entries if entry.failure is None),
+            "failed": sum(1 for entry in entries if entry.failure is not None),
             "entities": sum(entry.entities for entry in entries),
             "overlays": sum(entry.overlays for entry in entries),
         },
@@ -110,17 +113,25 @@ def _process_member(handle: tarfile.TarFile, member: tarfile.TarInfo, output_roo
 
     extracted = handle.extractfile(member)
     if extracted is None:
-        entry.error = "archive member could not be extracted"
+        entry.failure = OrbCorpusFailure(
+            stage="extract",
+            errorType="ValueError",
+            message="archive member could not be extracted",
+        )
         return entry
     raw_text = extracted.read().decode("utf-8", errors="replace")
 
     try:
         scenario = parse_orb_scenario_text(raw_text)
-        from ..convert import _scene_from_orb_scenario
+        from ..convert.common import _scene_from_orb_scenario
 
         scene = _scene_from_orb_scenario(scenario, scene_source="orb-scenario")
-    except Exception as exc:  # pragma: no cover
-        entry.error = f"{type(exc).__name__}: {exc}"
+    except (AttributeError, KeyError, TypeError, UnicodeError, ValueError) as exc:
+        entry.failure = OrbCorpusFailure(
+            stage="parse",
+            errorType=type(exc).__name__,
+            message=str(exc),
+        )
         return entry
 
     _normalize_scene(scene, member_name=member.name, scene_id=scene_id, scene_name=relative_name.stem)
@@ -149,6 +160,47 @@ def _process_member(handle: tarfile.TarFile, member: tarfile.TarInfo, output_roo
     return entry
 
 
+def _process_member_with_timeout(
+    processor: Callable[[tarfile.TarFile, tarfile.TarInfo, Path], OrbCorpusEntry],
+    handle: tarfile.TarFile,
+    member: tarfile.TarInfo,
+    output_root: Path,
+    timeout_seconds: int,
+) -> OrbCorpusEntry:
+    if timeout_seconds <= 0:
+        return processor(handle, member, output_root)
+
+    with ThreadPoolExecutor(max_workers=1) as executor:
+        future = executor.submit(processor, handle, member, output_root)
+        try:
+            return future.result(timeout=timeout_seconds)
+        except FuturesTimeoutError:
+            future.cancel()
+            return _build_failure_entry(
+                member=member,
+                stage="timeout",
+                error_type="TimeoutError",
+                message=f"exceeded {timeout_seconds}s parse budget",
+            )
+        except (AttributeError, KeyError, RuntimeError, TypeError, UnicodeError, ValueError, tarfile.TarError) as exc:
+            future.cancel()
+            return _build_failure_entry(member=member, stage="parse", error_type=type(exc).__name__, message=str(exc))
+
+
+def _build_failure_entry(*, member: tarfile.TarInfo, stage: str, error_type: str, message: str) -> OrbCorpusEntry:
+    relative_name = PurePosixPath(member.name)
+    return OrbCorpusEntry(
+        archiveMember=member.name,
+        relativeName=relative_name.as_posix(),
+        sceneId=_scene_id_for_member(relative_name),
+        failure=OrbCorpusFailure(
+            stage=stage,
+            errorType=error_type,
+            message=message,
+        ),
+    )
+
+
 def _normalize_scene(scene: VssScene, *, member_name: str, scene_id: str, scene_name: str) -> None:
     scene.document.id = scene_id
     scene.document.name = scene_name
@@ -164,21 +216,3 @@ def _scene_id_for_member(member_name: PurePosixPath) -> str:
         cleaned = "".join(char if char.isalnum() else "-" for char in part).strip("-").lower()
         parts.append(cleaned or "item")
     return "__".join(parts)
-
-
-@contextmanager
-def _time_limit(seconds: int):
-    if seconds <= 0:
-        yield
-        return
-
-    def _raise_timeout(signum, frame):  # type: ignore[unused-argument]
-        raise TimeoutError
-
-    previous = signal.signal(signal.SIGALRM, _raise_timeout)
-    signal.setitimer(signal.ITIMER_REAL, seconds)
-    try:
-        yield
-    finally:
-        signal.setitimer(signal.ITIMER_REAL, 0)
-        signal.signal(signal.SIGALRM, previous)

@@ -100,6 +100,20 @@
         "surfaces": ["czml", "cesium-js-viewer"]
       },
       {
+        "featureId": "object.wall.geometry",
+        "label": "Wall geometry",
+        "support": "strong",
+        "notes": "Wall overlays compile into native CZML wall packets with positions, height arrays, and styling.",
+        "surfaces": ["czml", "cesium-js-viewer"]
+      },
+      {
+        "featureId": "object.box.geometry",
+        "label": "Box geometry",
+        "support": "strong",
+        "notes": "Box overlays compile into native CZML box packets with dimensions and styling.",
+        "surfaces": ["czml", "cesium-js-viewer"]
+      },
+      {
         "featureId": "style.label",
         "label": "Text labels",
         "support": "strong",

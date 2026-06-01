@@ -24,7 +24,7 @@ from .authoring import (
     normalize_analysis_template,
     write_orb_package,
 )
-from .corpus import OrbCorpusEntry, OrbCorpusManifest, OrbCorpusTargets, build_orb_fixture_set
+from .corpus import OrbCorpusEntry, OrbCorpusFailure, OrbCorpusManifest, OrbCorpusTargets, build_orb_fixture_set
 from .editor import OrbScenarioEditor
 from .io import dump_orb_file, dump_orb_text, parse_orb_file, parse_orb_text
 from .models import OrbDefineBlock, OrbDocument, OrbLine, tokenize_orb_content
@@ -82,6 +82,7 @@ __all__ = [
     "SiteBundleSpec",
     "WorldViewSpec",
     "OrbCorpusEntry",
+    "OrbCorpusFailure",
     "OrbCorpusManifest",
     "OrbCorpusTargets",
     "build_orb_package",

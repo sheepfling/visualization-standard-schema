@@ -13,9 +13,10 @@ function readJson(relativePath) {
 test("exposed scene manifest includes the full corpus", () => {
   const manifest = readJson("data/sdj_exposed_scenes_manifest.json");
 
-  assert.equal(manifest.totalCount, 131);
+  assert.equal(manifest.totalCount, 134);
   assert.equal(manifest.featured.length, 12);
-  assert.equal(manifest.defaultPath, "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/air_route_simple.sdj.json");
-  assert.equal(manifest.scenes[0].name, "air_route_simple");
-  assert.equal(manifest.scenes[0].objectCount, 12);
+  assert.equal(manifest.defaultPath, manifest.scenes[0].path);
+  assert.equal(manifest.featured[0].path, manifest.scenes[0].path);
+  assert.equal(manifest.scenes[0].objectCount, manifest.featured[0].objectCount);
+  assert.ok(manifest.scenes[0].objectCount >= manifest.scenes[manifest.scenes.length - 1].objectCount);
 });

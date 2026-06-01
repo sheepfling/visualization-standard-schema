@@ -49,6 +49,8 @@ Supported overlay geometries:
 - `corridor`
 - `ellipse`
 - `circle`
+- `wall`
+- `box`
 
 Supported entity styling:
 
@@ -119,6 +121,9 @@ The current Cesium emitter in `src/vss/cesium/__init__.py` compiles:
   - polygon geometry
   - rectangle geometry
   - corridor geometry
+  - ellipse geometry
+  - circle geometry
+  - wall geometry
   - overlay label styling
 
 Current Cesium target support is already tracked in `targets/capabilities/target-capabilities.json`.
@@ -142,6 +147,8 @@ Current Cesium target support is already tracked in `targets/capabilities/target
 - `overlay.corridor` -> CZML `corridor`
 - `overlay.ellipse` -> CZML `ellipse`
 - `overlay.circle` -> CZML `ellipse`
+- `overlay.wall` -> CZML `wall`
+- `overlay.box` -> CZML `box`
 - timestamps -> CZML document `clock`
 
 ### Partially Wired Today
@@ -174,6 +181,14 @@ Current Cesium target support is already tracked in `targets/capabilities/target
   Current status: typed circle overlays compile to CZML ellipse packets with matching axes and styling
   Missing: higher-level circle authoring helpers and imported-SDJ edge cases
 
+- `wall` overlay geometry
+  Current status: typed wall overlays compile to CZML wall packets with positions and height arrays
+  Missing: richer wall authoring helpers and imported-SDJ edge cases
+
+- `box` overlay geometry
+  Current status: typed box overlays compile to CZML box packets with dimensions and styling
+  Missing: richer box authoring helpers and imported-SDJ edge cases
+
 - sensor entities
   Current status: sensor category can render as normal entity, billboard, or model
   Missing: sensor volume geometry such as conic, rectangular, frustum, keyhole, fan
@@ -184,14 +199,11 @@ Current Cesium target support is already tracked in `targets/capabilities/target
 
 ### Not Wired Into the Python Scene Model Yet
 
-- `ellipse`
-- `circle`
 - `box`
 - `cylinder`
 - `cone`
 - `ellipsoid`
 - `sphere`
-- `wall`
 - `polylineVolume`
 - `plane`
 - `tileset`
@@ -306,7 +318,7 @@ Do not present it as a full SDJ-to-Cesium library yet.
 5. Add first-class scene `views` and compile them into runtime camera behavior.
 6. Add scene-level fixtures that exercise imported SDJ families incrementally:
    - `track` / `path`
-   - `wall`
+   - `box` / `cylinder` / `cone`
    - sensor volumes
    - vectors
    - tileset

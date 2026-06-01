@@ -12,7 +12,7 @@ from vss.convert import parse_simdis_asi_to_scene
 from vss.simdis import compile_simdis_asi, parse_simdis_gog_text, render_simdis_gog_text
 
 
-CORPUS_ZIP = Path("INBOX/simdis_corpus_v0_1.zip")
+CORPUS_ZIP = Path("reference/simdis_corpus_v0_1/simdis_corpus_v0_1.zip")
 ASI_PREFIX = "simdis_corpus_v0_1/public_seed/asi/"
 GOG_PREFIX = "simdis_corpus_v0_1/public_seed/gog/"
 DISCN_PREFIX = "simdis_corpus_v0_1/inferred/discn/"

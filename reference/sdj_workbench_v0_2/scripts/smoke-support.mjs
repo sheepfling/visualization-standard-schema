@@ -18,15 +18,15 @@ export const DEFAULT_BROWSER_PATHS = [
  */
 export function resolveBrowserLaunchOptions(env = process.env, fileExists = existsSync) {
   const headless = readBooleanEnv(env.SDJ_BROWSER_HEADLESS, true);
-  const channel = normalizeChannel(env.SDJ_BROWSER_CHANNEL);
-
-  if (channel) {
-    return { headless, channel };
-  }
 
   const explicitExecutablePath = env.SDJ_BROWSER_EXECUTABLE_PATH?.trim();
   if (explicitExecutablePath) {
     return { headless, executablePath: explicitExecutablePath };
+  }
+
+  const channel = normalizeChannel(env.SDJ_BROWSER_CHANNEL);
+  if (channel) {
+    return { headless, channel };
   }
 
   for (const candidate of DEFAULT_BROWSER_PATHS) {

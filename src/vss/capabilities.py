@@ -3,7 +3,7 @@ from __future__ import annotations
 import json
 from functools import lru_cache
 from pathlib import Path
-from typing import Literal
+from typing import Callable, Literal
 
 from pydantic import Field
 
@@ -57,6 +57,49 @@ class SceneTargetAssessment(VssModel):
 
 
 _CAPABILITY_CONTRACT_PATH = Path(__file__).resolve().parents[2] / "targets" / "capabilities" / "target-capabilities.json"
+_SceneFeatureCounter = Callable[[VssScene], int]
+
+
+def _count_object_attr(scene: VssScene, attr_name: str) -> int:
+    return sum(1 for obj in scene.objects if getattr(obj, attr_name) is not None)
+
+
+def _count_overlay_geometry(scene: VssScene, geometry_type: str, attr_name: str) -> int:
+    return sum(
+        1
+        for overlay in scene.overlays
+        if overlay.geometryType == geometry_type and getattr(overlay, attr_name) is not None
+    )
+
+
+def _count_style_attr(scene: VssScene, attr_name: str) -> int:
+    return sum(1 for obj in scene.objects if obj.style is not None and getattr(obj.style, attr_name) is not None)
+
+
+_SCENE_FEATURE_COUNTERS: dict[str, _SceneFeatureCounter] = {
+    "document.metadata": lambda scene: 1,
+    "clock.timestamps": lambda scene: _count_object_attr(scene, "timestamp"),
+    "object.entity.position": lambda scene: len(scene.entities),
+    "object.entity.orientation": lambda scene: sum(1 for entity in scene.entities if entity.orientation is not None),
+    "style.label": lambda scene: _count_style_attr(scene, "label"),
+    "style.icon": lambda scene: _count_style_attr(scene, "iconUri"),
+    "style.model": lambda scene: _count_style_attr(scene, "modelUri"),
+    "style.color": lambda scene: _count_style_attr(scene, "colorRgba"),
+    "object.path.sampledMotion": lambda scene: len(scene.paths),
+    "object.track.sampledMotion": lambda scene: len(scene.tracks),
+    "object.rectangle.geometry": lambda scene: _count_overlay_geometry(scene, "rectangle", "rectangle"),
+    "object.overlay.polyline": lambda scene: _count_overlay_geometry(scene, "polyline", "polyline"),
+    "object.overlay.polygon": lambda scene: _count_overlay_geometry(scene, "polygon", "polygon"),
+    "object.corridor.geometry": lambda scene: _count_overlay_geometry(scene, "corridor", "corridor"),
+    "object.ellipse.geometry": lambda scene: _count_overlay_geometry(scene, "ellipse", "ellipse"),
+    "object.circle.geometry": lambda scene: _count_overlay_geometry(scene, "circle", "circle"),
+    "object.wall.geometry": lambda scene: _count_overlay_geometry(scene, "wall", "wall"),
+    "object.box.geometry": lambda scene: _count_overlay_geometry(scene, "box", "box"),
+    "object.sensor": lambda scene: sum(1 for entity in scene.entities if entity.category is not None and entity.category.value == "sensor"),
+    "views": lambda scene: 0,
+    "analysis": lambda scene: 0,
+    "presentation": lambda scene: 0,
+}
 
 
 @lru_cache(maxsize=1)
@@ -110,35 +153,7 @@ def assess_scene_for_target(scene: VssScene, target: TargetName) -> SceneTargetA
 
 
 def _scene_feature_counts(scene: VssScene) -> dict[str, int]:
-    entity_count = len(scene.entities)
-    overlay_polyline_count = sum(1 for overlay in scene.overlays if overlay.geometryType == "polyline" and overlay.polyline is not None)
-    overlay_polygon_count = sum(1 for overlay in scene.overlays if overlay.geometryType == "polygon" and overlay.polygon is not None)
-    overlay_corridor_count = sum(1 for overlay in scene.overlays if overlay.geometryType == "corridor" and overlay.corridor is not None)
-    overlay_ellipse_count = sum(1 for overlay in scene.overlays if overlay.geometryType == "ellipse" and overlay.ellipse is not None)
-    overlay_circle_count = sum(1 for overlay in scene.overlays if overlay.geometryType == "circle" and overlay.circle is not None)
-    counts = {
-        "document.metadata": 1,
-        "clock.timestamps": sum(1 for obj in scene.objects if obj.timestamp is not None),
-        "object.entity.position": entity_count,
-        "object.entity.orientation": sum(1 for entity in scene.entities if entity.orientation is not None),
-        "style.label": sum(1 for obj in scene.objects if obj.style is not None and obj.style.label is not None),
-        "style.icon": sum(1 for obj in scene.objects if obj.style is not None and obj.style.iconUri is not None),
-        "style.model": sum(1 for obj in scene.objects if obj.style is not None and obj.style.modelUri is not None),
-        "style.color": sum(1 for obj in scene.objects if obj.style is not None and obj.style.colorRgba is not None),
-        "object.path.sampledMotion": len(scene.paths),
-        "object.track.sampledMotion": len(scene.tracks),
-        "object.rectangle.geometry": sum(1 for overlay in scene.overlays if overlay.geometryType == "rectangle" and overlay.rectangle is not None),
-        "object.overlay.polyline": overlay_polyline_count,
-        "object.overlay.polygon": overlay_polygon_count,
-        "object.corridor.geometry": overlay_corridor_count,
-        "object.ellipse.geometry": overlay_ellipse_count,
-        "object.circle.geometry": overlay_circle_count,
-        "object.sensor": sum(1 for entity in scene.entities if entity.category is not None and entity.category.value == "sensor"),
-        "views": 0,
-        "analysis": 0,
-        "presentation": 0,
-    }
-    return counts
+    return {feature_id: counter(scene) for feature_id, counter in _SCENE_FEATURE_COUNTERS.items()}
 
 
 def get_cesium_capabilities() -> TargetCapabilityReport:

@@ -1,9 +1,18 @@
 {
-  "generatedAt": "2026-06-01T19:58:56.221Z",
+  "generatedAt": "2026-06-01T20:02:24.319Z",
   "sourceRoot": "examples/orb-corpus/sdj",
-  "totalCount": 131,
-  "defaultPath": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/air_route_simple.sdj.json",
+  "totalCount": 134,
+  "defaultPath": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/contour_revisit_ex.sdj.json",
   "featured": [
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/contour_revisit_ex.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__contour-revisit-ex",
+      "name": "contour_revisit_ex",
+      "objectCount": 22,
+      "group": "orb_format_collection/soap15/scenarios",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/contour_revisit_ex.orb"
+    },
     {
       "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/air_route_simple.sdj.json",
       "id": "orb-format-collection__soap15__scenarios__air-route-simple",
@@ -102,18 +111,18 @@
       "group": "orb_format_collection/soap15/scenarios",
       "schemaVersion": "1.0.0-scene",
       "source": "orb_format_collection/soap15/scenarios/xlink.orb"
-    },
-    {
-      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/Antenna_shadow_model.sdj.json",
-      "id": "orb-format-collection__soap15__scenarios__antenna-shadow-model",
-      "name": "Antenna_shadow_model",
-      "objectCount": 7,
-      "group": "orb_format_collection/soap15/scenarios",
-      "schemaVersion": "1.0.0-scene",
-      "source": "orb_format_collection/soap15/scenarios/Antenna_shadow_model.orb"
     }
   ],
   "scenes": [
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/contour_revisit_ex.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__contour-revisit-ex",
+      "name": "contour_revisit_ex",
+      "objectCount": 22,
+      "group": "orb_format_collection/soap15/scenarios",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/contour_revisit_ex.orb"
+    },
     {
       "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/air_route_simple.sdj.json",
       "id": "orb-format-collection__soap15__scenarios__air-route-simple",
@@ -925,6 +934,15 @@
       "source": "orb_format_collection/soap15/scenarios/contour_vis.orb"
     },
     {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/coverage.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__coverage",
+      "name": "coverage",
+      "objectCount": 3,
+      "group": "orb_format_collection/soap15/scenarios",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/coverage.orb"
+    },
+    {
       "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/parallel_processing/coverage_contours_fine.sdj.json",
       "id": "orb-format-collection__soap15__scenarios__parallel-processing__coverage-contours-fine",
       "name": "coverage_contours_fine",
@@ -1094,6 +1112,15 @@
       "group": "orb_format_collection/soap15/scenarios/auto-load-examples",
       "schemaVersion": "1.0.0-scene",
       "source": "orb_format_collection/soap15/scenarios/auto-load-examples/autoload2.orb"
+    },
+    {
+      "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/auto-load-examples/autoload3.sdj.json",
+      "id": "orb-format-collection__soap15__scenarios__auto-load-examples__autoload3",
+      "name": "autoload3",
+      "objectCount": 0,
+      "group": "orb_format_collection/soap15/scenarios/auto-load-examples",
+      "schemaVersion": "1.0.0-scene",
+      "source": "orb_format_collection/soap15/scenarios/auto-load-examples/autoload3.orb"
     },
     {
       "path": "../../../examples/orb-corpus/sdj/orb_format_collection/soap15/scenarios/baja_ecl_pres.sdj.json",

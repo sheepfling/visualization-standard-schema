@@ -230,6 +230,8 @@ SCENE_EXAMPLE_PATH = Path("examples/scenes/air-pair.scene.json")
 MIXED_SCENE_EXAMPLE_PATH = Path("examples/scenes/mixed-ops.scene.json")
 CORRIDOR_SCENE_EXAMPLE_PATH = Path("examples/scenes/corridor-demo.scene.json")
 ELLIPSE_CIRCLE_SCENE_EXAMPLE_PATH = Path("examples/scenes/ellipse-circle-demo.scene.json")
+WALL_SCENE_EXAMPLE_PATH = Path("examples/scenes/wall-demo.scene.json")
+BOX_SCENE_EXAMPLE_PATH = Path("examples/scenes/box-demo.scene.json")
 ORB_SAMPLE_DIR = Path("reference/orb_samples")
 SIMDIS_GOG_SAMPLE = """# Packet-style GOG sample.
 
@@ -458,6 +460,8 @@ def test_static_target_capability_reports_describe_current_surfaces() -> None:
     assert any(feature.featureId == "object.corridor.geometry" and feature.support == "strong" for feature in cesium.schemaFeatures)
     assert any(feature.featureId == "object.ellipse.geometry" and feature.support == "strong" for feature in cesium.schemaFeatures)
     assert any(feature.featureId == "object.circle.geometry" and feature.support == "strong" for feature in cesium.schemaFeatures)
+    assert any(feature.featureId == "object.wall.geometry" and feature.support == "strong" for feature in cesium.schemaFeatures)
+    assert any(feature.featureId == "object.box.geometry" and feature.support == "strong" for feature in cesium.schemaFeatures)
     assert any(feature.featureId == "style.model" and feature.support == "unsupported" for feature in simdis.schemaFeatures)
     assert any(feature.featureId == "views" and feature.support == "partial" for feature in soap.schemaFeatures)
 
@@ -516,6 +520,20 @@ def test_ellipse_circle_scene_assessment_reports_ellipse_and_circle_support() ->
     assert assessment.objectCount == 2
     assert any(feature.featureId == "object.ellipse.geometry" and feature.support == "strong" for feature in assessment.features)
     assert any(feature.featureId == "object.circle.geometry" and feature.support == "strong" for feature in assessment.features)
+
+
+def test_wall_scene_assessment_reports_wall_support() -> None:
+    scene = load_scene_file(WALL_SCENE_EXAMPLE_PATH)
+    assessment = assess_scene_for_target(scene, "cesium")
+    assert assessment.objectCount == 1
+    assert any(feature.featureId == "object.wall.geometry" and feature.support == "strong" for feature in assessment.features)
+
+
+def test_box_scene_assessment_reports_box_support() -> None:
+    scene = load_scene_file(BOX_SCENE_EXAMPLE_PATH)
+    assessment = assess_scene_for_target(scene, "cesium")
+    assert assessment.objectCount == 1
+    assert any(feature.featureId == "object.box.geometry" and feature.support == "strong" for feature in assessment.features)
 
 
 def test_example_loads(example_message: EntityUpsertMessage) -> None:
@@ -611,6 +629,29 @@ def test_ellipse_circle_scene_example_loads() -> None:
     assert circle.geometryType == "circle"
     assert circle.circle is not None
     assert circle.circle.radiusMeters == 80000.0
+
+
+def test_wall_scene_example_loads() -> None:
+    scene = load_scene_file(WALL_SCENE_EXAMPLE_PATH)
+    assert scene.document.id == "wall-demo"
+    assert len(scene.objects) == 1
+    assert len(scene.overlays) == 1
+    wall = scene.overlays[0]
+    assert wall.geometryType == "wall"
+    assert wall.wall is not None
+    assert wall.wall.positions[0].longitudeDeg == -97.66
+    assert wall.wall.maximumHeightsMeters == [2500.0, 3000.0, 2800.0]
+
+
+def test_box_scene_example_loads() -> None:
+    scene = load_scene_file(BOX_SCENE_EXAMPLE_PATH)
+    assert scene.document.id == "box-demo"
+    assert len(scene.objects) == 1
+    assert len(scene.overlays) == 1
+    box = scene.overlays[0]
+    assert box.geometryType == "box"
+    assert box.box is not None
+    assert box.box.dimensionsMeters == (50000.0, 30000.0, 12000.0)
 
 
 def test_cesium_output_contains_entity_packet(example_message: EntityUpsertMessage) -> None:
@@ -821,6 +862,27 @@ def test_ellipse_circle_scene_compiles_to_czml_ellipse_graphics() -> None:
     assert packets[2]["ellipse"]["semiMinorAxis"] == 80000.0
 
 
+def test_wall_scene_compiles_to_czml_wall_graphics() -> None:
+    scene = load_scene_file(WALL_SCENE_EXAMPLE_PATH)
+    packets = compile_cesium_scene(scene)
+    assert packets[0]["name"] == "Wall Demo"
+    assert len(packets) == 2
+    assert packets[1]["id"] == "wall-001"
+    assert packets[1]["wall"]["positions"]["cartographicDegrees"] == [
+        -97.66,
+        30.3,
+        0.0,
+        -97.59,
+        30.35,
+        0.0,
+        -97.52,
+        30.39,
+        0.0,
+    ]
+    assert packets[1]["wall"]["maximumHeights"] == [2500.0, 3000.0, 2800.0]
+    assert packets[1]["wall"]["minimumHeights"] == [0.0, 0.0, 0.0]
+
+
 def test_corridor_scene_round_trip_through_czml_parser() -> None:
     scene = load_scene_file(CORRIDOR_SCENE_EXAMPLE_PATH)
     rebuilt = parse_czml_to_scene(dump_cesium_scene_json(scene), source="czml")
@@ -842,6 +904,16 @@ def test_ellipse_circle_scene_round_trip_through_czml_parser() -> None:
     assert rebuilt.overlays[1].geometryType == "circle"
     assert rebuilt.overlays[1].circle is not None
     assert rebuilt.overlays[1].circle.radiusMeters == 80000.0
+
+
+def test_wall_scene_round_trip_through_czml_parser() -> None:
+    scene = load_scene_file(WALL_SCENE_EXAMPLE_PATH)
+    rebuilt = parse_czml_to_scene(dump_cesium_scene_json(scene), source="czml")
+    assert len(rebuilt.overlays) == 1
+    wall = rebuilt.overlays[0]
+    assert wall.geometryType == "wall"
+    assert wall.wall is not None
+    assert wall.wall.maximumHeightsMeters == [2500.0, 3000.0, 2800.0]
 
 
 def test_scene_files_can_be_written(example_scene: VssScene, tmp_path: Path) -> None:

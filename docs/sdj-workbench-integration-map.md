@@ -22,6 +22,7 @@ The unpacked workbench now lives at `reference/sdj_workbench_v0_2/` and includes
 - `src/sdj_browser_compiler.js`: normalization, semantic validation, compile planning, object inspection, and backend export logic.
 - `data/sdj_backend_capabilities_v0_4.json`: backend capability matrix for Cesium, SIMDIS, and SOAP.
 - `scripts/smoke-test.mjs`: reference smoke test.
+- `data/sdj_exposed_scenes_manifest.json`: generated catalog of exposed SDJ corpus scenes used by the workbench gallery.
 - `examples/sdj_full_coverage_scene_v0_4.json`: broad coverage fixture.
 
 The imported smoke report claims:

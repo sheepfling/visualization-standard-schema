@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import math
 from dataclasses import dataclass, field
 from typing import TypeAlias
 
@@ -497,17 +498,49 @@ def _parse_primitive(token: str) -> OrbPrimitive:
     if token == "OFF":
         return False
 
+    quoted = _parse_quoted_primitive(token)
+    if quoted is not None:
+        return quoted
+
+    integer = _parse_int_primitive(token)
+    if integer is not None:
+        return integer
+
+    floating = _parse_float_primitive(token)
+    if floating is not None:
+        return floating
+
+    return token
+
+
+def _parse_quoted_primitive(token: str) -> str | None:
+    if len(token) < 2:
+        return None
+    if token[0] != token[-1]:
+        return None
+    if token[0] not in {'"', "'"}:
+        return None
+    return token[1:-1]
+
+
+def _parse_int_primitive(token: str) -> int | None:
+    digits = token[1:] if token[:1] in {"+", "-"} else token
+    if not digits.isdigit():
+        return None
     try:
-        if token.isdigit() or (token.startswith("-") and token[1:].isdigit()):
-            return int(token)
         return int(token, 10)
     except ValueError:
-        pass
+        return None
 
+
+def _parse_float_primitive(token: str) -> float | None:
     try:
-        return float(token)
+        value = float(token)
     except ValueError:
-        return token
+        return None
+    if not math.isfinite(value):
+        return None
+    return value
 
 
 def _coerce_bool(value: OrbValue | None) -> bool | None:

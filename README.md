@@ -26,6 +26,7 @@ Python namespaces.
 - `docs/` design notes and roadmap material.
 
 Imported SDJ workbench integration notes are captured in `docs/sdj-workbench-integration-map.md`, with the tracked bundle now under `reference/sdj_workbench_v0_2/`.
+The reusable browser-library layer extracted from that workbench now lives under `reference/sdj_workbench_v0_2/src/lib/`.
 
 For a single overview of the core schema and compile targets, see `docs/schema-and-targets-overview.md`.
 The SDJ survey / exposé / portfolio v0.5 package is tracked in `reference/sdj_survey_v0_5/`.
@@ -42,6 +43,7 @@ Useful root-level workbench commands:
 
 ```bash
 npm run check
+npm run build:exposed-scenes
 npm run smoke
 npm run browser-smoke
 npm run shell-smoke
