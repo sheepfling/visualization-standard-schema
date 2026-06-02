@@ -191,6 +191,7 @@ python3 scripts/build_orb_fixture_set.py --archive reference/orb_format_collecti
 `examples/orb-corpus/` is the initial cross-target fixture set built from the
 SOAP `.orb` scenario archive in
 `reference/orb_format_collection/orb_format_collection.tar`.
+That tracked archive is sanitized to exclude bundled PDF help/manual files.
 
 The current manifest covers:
 
