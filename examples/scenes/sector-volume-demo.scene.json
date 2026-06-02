@@ -1,0 +1,42 @@
+{
+  "schemaVersion": "1.0.0-scene",
+  "document": {
+    "id": "sector-volume-demo",
+    "name": "Sector Volume Demo",
+    "description": "A sector volume overlay used to exercise the Cesium sector volume emitter."
+  },
+  "objects": [
+    {
+      "objectType": "overlay",
+      "id": "sector-volume-001",
+      "name": "Sector Volume 001",
+      "geometryType": "sectorVolume",
+      "position": {
+        "longitudeDeg": -97.705,
+        "latitudeDeg": 30.298,
+        "altitudeM": 2600.0
+      },
+      "style": {
+        "label": "Sector Volume 001",
+        "colorRgba": [102, 187, 106, 150]
+      },
+      "sectorVolume": {
+        "innerRadiusMeters": 2000.0,
+        "outerRadiusMeters": 14000.0,
+        "azimuthStartDegrees": 25.0,
+        "azimuthStopDegrees": 105.0,
+        "elevationStartDegrees": -8.0,
+        "elevationStopDegrees": 12.0,
+        "heightMeters": 3500.0,
+        "segments": 32,
+        "mode": "volume",
+        "windingOrder": "counterClockwise",
+        "closed": true
+      },
+      "attributes": {
+        "shapeType": "sector-volume"
+      },
+      "timestamp": "2026-06-01T15:30:00Z"
+    }
+  ]
+}

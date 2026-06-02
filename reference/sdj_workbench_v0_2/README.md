@@ -18,6 +18,8 @@ SDJ JSON
 
 Cesium is the live renderer in this workbench. SIMDIS and SOAP exports are normalized artifact bundles that preserve backend diagnostics and lossy/partial support notes. They are designed as an adapter boundary, not as a claim that every file is a proprietary native project file.
 
+The ingest/normalize/compile core now lives in the separate `sdj-core` package at `reference/sdj_core_v0_1/`; this workbench keeps the browser shell, showcase pages, and Cesium runtime wiring.
+
 ## New in v0.2
 
 - Object coverage rows are clickable.
@@ -31,8 +33,9 @@ Cesium is the live renderer in this workbench. SIMDIS and SOAP exports are norma
 
 ```text
 index.html                                  # Cesium page and SDJ drawer UI
-src/app.js                                  # UI orchestration, inspector, and Cesium render calls
-src/sdj_browser_compiler.js                 # Browser-side Cesium/SIMDIS/SOAP compiler helpers
+src/app.js                                  # Thin browser loader
+src/workbench/bootstrap.ts                  # UI orchestration, inspector, and Cesium render calls
+sdj-core package in reference/sdj_core_v0_1/ # Browser-visible core compiler entrypoint
 src/styles.css                              # Workbench UI styles
 vendor/sdj_cesium_loader_v0_4.js             # Cesium runtime adapter from SDJ v0.4
 examples/sdj_minimal_scene.json             # Small render/export smoke scene
@@ -100,6 +103,12 @@ npm run browser-smoke
 ```
 
 The browser smoke prefers a local browser executable when one is available on macOS, or you can point it at a specific browser with `SDJ_BROWSER_EXECUTABLE_PATH`. Set `SDJ_BROWSER_CHANNEL=chrome` to use a Playwright channel, or `SDJ_BROWSER_SMOKE_FALLBACK=none` to disable the HTML fallback. When browser launch is blocked, it falls back to a shell-level markup check unless you disable that fallback.
+
+When the browser path succeeds, it also writes rendered evidence under `generated-smoke/browser/`:
+
+- `browser-smoke-report.json`
+- `browser-workbench.png`
+- `cesium-container.png`
 
 If you want the CI-safe shell check directly:
 

@@ -1,0 +1,34 @@
+{
+  "schemaVersion": "1.0.0-scene",
+  "document": {
+    "id": "range-ring-demo",
+    "name": "Range Ring Demo",
+    "description": "A range ring overlay used to exercise the Cesium range ring emitter."
+  },
+  "objects": [
+    {
+      "objectType": "overlay",
+      "id": "range-ring-001",
+      "name": "Range Ring 25 km",
+      "geometryType": "rangeRing",
+      "position": {
+        "longitudeDeg": -97.72,
+        "latitudeDeg": 30.31,
+        "altitudeM": 250.0
+      },
+      "style": {
+        "label": "Range Ring 25 km",
+        "colorRgba": [255, 255, 255, 255]
+      },
+      "rangeRing": {
+        "radiusMeters": 25000.0,
+        "heightMeters": 250.0,
+        "outlineWidthPx": 2.0
+      },
+      "attributes": {
+        "shapeType": "rangeRing"
+      },
+      "timestamp": "2026-06-01T15:50:00Z"
+    }
+  ]
+}

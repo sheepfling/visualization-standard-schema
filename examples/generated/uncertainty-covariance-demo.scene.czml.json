@@ -1,0 +1,132 @@
+[
+  {
+    "id": "document",
+    "name": "Uncertainty Covariance Demo",
+    "version": "1.0"
+  },
+  {
+    "id": "uncertainty-ellipsoid-track-42",
+    "name": "Uncertainty Ellipsoid Track 42",
+    "position": {
+      "cartographicDegrees": [
+        -97.72,
+        30.305,
+        4200.0
+      ]
+    },
+    "properties": {
+      "shapeType": "uncertaintyEllipsoid",
+      "objectType": "overlay",
+      "category": "overlay",
+      "uncertaintyEllipsoid": {
+        "radiiMeters": [
+          2200.0,
+          1200.0,
+          800.0
+        ],
+        "slicePartitions": 24,
+        "stackPartitions": 12
+      }
+    },
+    "label": {
+      "text": "Uncertainty Ellipsoid 42",
+      "horizontalOrigin": "LEFT",
+      "pixelOffset": {
+        "cartesian2": [
+          12,
+          0
+        ]
+      },
+      "fillColor": {
+        "rgba": [
+          120,
+          144,
+          156,
+          170
+        ]
+      }
+    },
+    "ellipsoid": {
+      "radii": {
+        "cartesian": [
+          2200.0,
+          1200.0,
+          800.0
+        ]
+      },
+      "material": {
+        "solidColor": {
+          "color": {
+            "rgba": [
+              120,
+              144,
+              156,
+              170
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "covariance-ellipse-track-42",
+    "name": "Covariance Ellipse Track 42",
+    "position": {
+      "cartographicDegrees": [
+        -97.69,
+        30.315,
+        0.0
+      ]
+    },
+    "properties": {
+      "shapeType": "covarianceEllipse",
+      "objectType": "overlay",
+      "category": "overlay",
+      "covarianceEllipse": {
+        "semiMajorAxisMeters": 6000.0,
+        "semiMinorAxisMeters": 2200.0,
+        "heightMeters": 12000.0,
+        "extrudedHeightMeters": null,
+        "rotationDegrees": 30.0,
+        "stRotationDegrees": null,
+        "clampToGround": false
+      }
+    },
+    "label": {
+      "text": "Covariance Ellipse 42",
+      "horizontalOrigin": "LEFT",
+      "pixelOffset": {
+        "cartesian2": [
+          12,
+          0
+        ]
+      },
+      "fillColor": {
+        "rgba": [
+          255,
+          193,
+          7,
+          180
+        ]
+      }
+    },
+    "ellipse": {
+      "semiMajorAxis": 6000.0,
+      "semiMinorAxis": 2200.0,
+      "height": 12000.0,
+      "rotation": 30.0,
+      "material": {
+        "solidColor": {
+          "color": {
+            "rgba": [
+              255,
+              193,
+              7,
+              180
+            ]
+          }
+        }
+      }
+    }
+  }
+]

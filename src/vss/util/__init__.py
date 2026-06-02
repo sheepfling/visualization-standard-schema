@@ -8,10 +8,12 @@ from typing import Any
 __all__ = [
     "parse_iso_datetime",
     "to_int",
+    "safe_int",
     "safe_get",
     "simdis_fallback_timestamp_iso",
     "ensure_trailing_newline",
     "to_float",
+    "safe_float",
     "to_bool",
     "bool_to_int",
     "float_or_default",
@@ -57,6 +59,10 @@ def to_float(raw: Any) -> float | None:
         return None
 
 
+def safe_float(raw: Any) -> float | None:
+    return to_float(raw)
+
+
 def to_int(raw: Any) -> int | None:
     try:
         if raw is None:
@@ -64,6 +70,10 @@ def to_int(raw: Any) -> int | None:
         return int(raw)
     except (TypeError, ValueError):
         return None
+
+
+def safe_int(raw: Any) -> int | None:
+    return to_int(raw)
 
 
 def to_bool(raw: Any) -> bool | None:

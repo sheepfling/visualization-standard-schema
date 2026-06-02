@@ -3,7 +3,7 @@ from __future__ import annotations
 import json
 from functools import lru_cache
 from pathlib import Path
-from typing import Callable, Literal
+from typing import Any, Literal
 
 from pydantic import Field
 
@@ -57,49 +57,7 @@ class SceneTargetAssessment(VssModel):
 
 
 _CAPABILITY_CONTRACT_PATH = Path(__file__).resolve().parents[2] / "targets" / "capabilities" / "target-capabilities.json"
-_SceneFeatureCounter = Callable[[VssScene], int]
-
-
-def _count_object_attr(scene: VssScene, attr_name: str) -> int:
-    return sum(1 for obj in scene.objects if getattr(obj, attr_name) is not None)
-
-
-def _count_overlay_geometry(scene: VssScene, geometry_type: str, attr_name: str) -> int:
-    return sum(
-        1
-        for overlay in scene.overlays
-        if overlay.geometryType == geometry_type and getattr(overlay, attr_name) is not None
-    )
-
-
-def _count_style_attr(scene: VssScene, attr_name: str) -> int:
-    return sum(1 for obj in scene.objects if obj.style is not None and getattr(obj.style, attr_name) is not None)
-
-
-_SCENE_FEATURE_COUNTERS: dict[str, _SceneFeatureCounter] = {
-    "document.metadata": lambda scene: 1,
-    "clock.timestamps": lambda scene: _count_object_attr(scene, "timestamp"),
-    "object.entity.position": lambda scene: len(scene.entities),
-    "object.entity.orientation": lambda scene: sum(1 for entity in scene.entities if entity.orientation is not None),
-    "style.label": lambda scene: _count_style_attr(scene, "label"),
-    "style.icon": lambda scene: _count_style_attr(scene, "iconUri"),
-    "style.model": lambda scene: _count_style_attr(scene, "modelUri"),
-    "style.color": lambda scene: _count_style_attr(scene, "colorRgba"),
-    "object.path.sampledMotion": lambda scene: len(scene.paths),
-    "object.track.sampledMotion": lambda scene: len(scene.tracks),
-    "object.rectangle.geometry": lambda scene: _count_overlay_geometry(scene, "rectangle", "rectangle"),
-    "object.overlay.polyline": lambda scene: _count_overlay_geometry(scene, "polyline", "polyline"),
-    "object.overlay.polygon": lambda scene: _count_overlay_geometry(scene, "polygon", "polygon"),
-    "object.corridor.geometry": lambda scene: _count_overlay_geometry(scene, "corridor", "corridor"),
-    "object.ellipse.geometry": lambda scene: _count_overlay_geometry(scene, "ellipse", "ellipse"),
-    "object.circle.geometry": lambda scene: _count_overlay_geometry(scene, "circle", "circle"),
-    "object.wall.geometry": lambda scene: _count_overlay_geometry(scene, "wall", "wall"),
-    "object.box.geometry": lambda scene: _count_overlay_geometry(scene, "box", "box"),
-    "object.sensor": lambda scene: sum(1 for entity in scene.entities if entity.category is not None and entity.category.value == "sensor"),
-    "views": lambda scene: 0,
-    "analysis": lambda scene: 0,
-    "presentation": lambda scene: 0,
-}
+_SCENE_FEATURE_COUNT_RULES_PATH = Path(__file__).resolve().parents[2] / "targets" / "capabilities" / "scene-feature-counts.json"
 
 
 @lru_cache(maxsize=1)
@@ -153,7 +111,88 @@ def assess_scene_for_target(scene: VssScene, target: TargetName) -> SceneTargetA
 
 
 def _scene_feature_counts(scene: VssScene) -> dict[str, int]:
-    return {feature_id: counter(scene) for feature_id, counter in _SCENE_FEATURE_COUNTERS.items()}
+    rules = _load_scene_feature_count_rules()
+    return {feature_id: _evaluate_scene_feature_count(scene, rule) for feature_id, rule in rules.items()}
+
+
+@lru_cache(maxsize=1)
+def _load_scene_feature_count_rules() -> dict[str, dict[str, Any]]:
+    return json.loads(_SCENE_FEATURE_COUNT_RULES_PATH.read_text(encoding="utf-8"))
+
+
+def _evaluate_scene_feature_count(scene: VssScene, rule: dict[str, Any]) -> int:
+    kind = rule["kind"]
+    if kind == "constant":
+        return int(rule["value"])
+    if kind == "object_attr":
+        attr = rule["attr"]
+        return sum(1 for obj in scene.objects if getattr(obj, attr, None) is not None)
+    if kind == "entity_count":
+        return len(scene.entities)
+    if kind == "entity_attr":
+        attr = rule["attr"]
+        return sum(1 for entity in scene.entities if getattr(entity, attr, None) is not None)
+    if kind == "style_attr":
+        attr = rule["attr"]
+        return sum(
+            1
+            for obj in scene.objects
+            if (style := getattr(obj, "style", None)) is not None and getattr(style, attr, None) is not None
+        )
+    if kind == "scene_path_count":
+        return len(scene.paths)
+    if kind == "scene_track_count":
+        return len(scene.tracks)
+    if kind == "scene_vector_count":
+        return len(scene.vectors)
+    if kind == "scene_velocity_vector_count":
+        return len(scene.velocityVectors)
+    if kind == "scene_acceleration_vector_count":
+        return len(scene.accelerationVectors)
+    if kind == "scene_line_of_sight_count":
+        return len(scene.lineOfSights)
+    if kind == "scene_body_axes_count":
+        return len(scene.bodyAxes)
+    if kind == "scene_principal_axes_count":
+        return len(scene.principalAxes)
+    if kind == "scene_relative_line_count":
+        return len(scene.relativeLines)
+    if kind == "scene_intercept_line_count":
+        return len(scene.interceptLines)
+    if kind == "scene_camera_view_count":
+        return len(scene.cameraViews)
+    if kind == "scene_view_count":
+        return len(scene.views)
+    if kind == "scene_custom_object_count":
+        return len(scene.customObjects)
+    if kind == "scene_runtime_object_count":
+        return len(scene.runtimeObjects)
+    if kind == "scene_terrain_surface_count":
+        return len(scene.terrainSurfaces)
+    if kind == "scene_custom_mesh_count":
+        return len(scene.customMeshes)
+    if kind == "scene_clipping_plane_count":
+        return len(scene.clippingPlanes)
+    if kind == "scene_clipping_polygon_count":
+        return len(scene.clippingPolygons)
+    if kind == "scene_classification_volume_count":
+        return len(scene.classificationVolumes)
+    if kind == "scene_custom_shader_count":
+        return len(scene.customShaders)
+    if kind == "scene_post_process_stage_count":
+        return len(scene.postProcessStages)
+    if kind == "overlay_geometry":
+        geometry_type = rule["geometryType"]
+        attr = rule["attr"]
+        return sum(
+            1
+            for overlay in scene.overlays
+            if overlay.geometryType == geometry_type and getattr(overlay, attr, None) is not None
+        )
+    if kind == "entity_category":
+        category = rule["category"]
+        return sum(1 for entity in scene.entities if entity.category is not None and entity.category.value == category)
+    raise ValueError(f"unknown scene feature count rule kind: {kind}")
 
 
 def get_cesium_capabilities() -> TargetCapabilityReport:

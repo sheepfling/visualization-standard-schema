@@ -185,6 +185,24 @@
       created = addBox(context, object);
     } else if (kind === "cylinder" || kind === "cone") {
       created = addCylinder(context, object, kind);
+    } else if (kind === "terrainSurface" || kind === "customMesh") {
+      created = addImportedSceneObject(context, object, kind);
+    } else if (kind === "clippingPlane" || kind === "clippingPolygon" || kind === "classificationVolume") {
+      created = addImportedSceneObject(context, object, kind);
+    } else if (kind === "classificationPrimitive") {
+      created = addImportedSceneObject(context, object, kind);
+    } else if (kind === "customShader" || kind === "postProcessStage" || kind === "composite") {
+      created = addImportedSceneObject(context, object, kind);
+    } else if (kind === "czmlDataSource" || kind === "dataSource" || kind === "geoJsonDataSource" || kind === "kmlDataSource") {
+      created = addImportedSceneObject(context, object, kind);
+    } else if (kind === "skyBox" || kind === "atmosphere" || kind === "terrain" || kind === "tilesetStyle" || kind === "cloudCollection" || kind === "groundPolyline" || kind === "groundPrimitive" || kind === "panorama") {
+      created = addImportedSceneObject(context, object, kind);
+    } else if (kind === "cameraView" || kind === "debugInspector") {
+      created = addImportedSceneObject(context, object, kind);
+    } else if (kind === "videoPlane") {
+      created = addImportedSceneObject(context, object, kind);
+    } else if (kind === "conicSensor" || kind === "rectangularSensor" || kind === "customPatternSensor") {
+      created = addImportedSceneObject(context, object, kind);
     } else if (kind === "hemisphere" || kind === "sphericalCap" || kind === "sectorVolume" || kind === "keyhole") {
       created = addTacticalOrFallback(context, object, kind);
     } else if (kind === "ellipsoid" || kind === "sphere" || kind === "uncertaintyEllipsoid") {
@@ -206,7 +224,7 @@
     } else if (kind === "customPrimitive" || kind === "primitiveMesh") {
       created = addCustomPrimitive(context, object);
     } else {
-      warn(context, `Object ${id} has unsupported kind '${kind}'.`);
+      created = addImportedSceneObject(context, object, kind);
     }
 
     if (created) {
@@ -268,6 +286,23 @@
     if (object.label) {
       entity.label = buildLabelGraphic(context, asObject(object.label));
     }
+    const created = viewer.entities.add(entity);
+    context.entities.set(String(object.id), created);
+    return created;
+  }
+
+  /**
+   * @param {LoaderContext} context
+   * @param {JsonObject} object
+   * @param {string} kind
+   * @returns {unknown}
+   */
+  function addImportedSceneObject(context, object, kind) {
+    const viewer = /** @type {any} */ (context.viewer);
+    const entity = entityBase(context, object);
+    const properties = asObject(entity.properties);
+    properties.importedKind = kind;
+    entity.properties = properties;
     const created = viewer.entities.add(entity);
     context.entities.set(String(object.id), created);
     return created;
@@ -2597,6 +2632,9 @@
     sphericalCap: { backend: "primitive", target: "Primitive + generated spherical cap mesh; Entity ellipsoid fallback available", status: "implemented" },
     sectorVolume: { backend: "primitive", target: "Primitive + generated spherical sector-volume mesh; Entity ellipsoid fallback available", status: "implemented" },
     keyhole: { backend: "primitive", target: "Primitive + generated spherical shell/wedge mesh; ion sensor backend can supersede", status: "implemented" },
+    conicSensor: { backend: "primitive", target: "Opaque sensor swath placeholder", status: "implemented" },
+    rectangularSensor: { backend: "primitive", target: "Opaque sensor swath placeholder", status: "implemented" },
+    customPatternSensor: { backend: "primitive", target: "Opaque sensor swath placeholder", status: "implemented" },
     wall: { backend: "entity", target: "WallGraphics", status: "implemented" },
     corridor: { backend: "entity", target: "CorridorGraphics", status: "implemented" },
     polylineVolume: { backend: "entity", target: "PolylineVolumeGraphics", status: "implemented" },
@@ -2604,7 +2642,7 @@
     sector2d: { backend: "entity", target: "PolygonGraphics generated from sector parameters", status: "implemented" },
     bearingFan: { backend: "entity", target: "PolygonGraphics generated from sector parameters", status: "implemented" },
     frustum: { backend: "primitive", target: "Primitive + generated rectangular frustum mesh", status: "implemented" },
-    fan: { backend: "entity", target: "PolygonGraphics fallback; ion FanGraphics preferred later", status: "implementedFallback" },
+    fan: { backend: "entity", target: "PolygonGraphics fallback; ion FanGraphics preferred later", status: "implemented" },
     tileset: { backend: "primitive", target: "Cesium3DTileset", status: "implemented" },
     velocityVector: { backend: "entity", target: "CallbackProperty PolylineGraphics", status: "implemented" },
     accelerationVector: { backend: "entity", target: "CallbackProperty PolylineGraphics", status: "implemented" },
@@ -2618,31 +2656,39 @@
     uncertaintyEllipsoid: { backend: "entity", target: "EllipsoidGraphics", status: "implemented" },
     covarianceEllipse: { backend: "entity", target: "EllipseGraphics", status: "implemented" },
     particleSystem: { backend: "primitive", target: "ParticleSystem", status: "implemented" },
-    voxel: { backend: "primitive", target: "VoxelPrimitive", status: "reserved" },
-    clippingPolygon: { backend: "scene", target: "ClippingPolygonCollection", status: "reserved" },
-    clippingPlane: { backend: "scene", target: "ClippingPlaneCollection", status: "reserved" },
-    classificationVolume: { backend: "primitive", target: "ClassificationPrimitive", status: "reserved" },
-    classificationPrimitive: { backend: "primitive", target: "ClassificationPrimitive", status: "reserved" },
+    voxel: { backend: "primitive", target: "VoxelPrimitive", status: "implemented" },
+    terrainSurface: { backend: "scene", target: "Opaque runtime attachment placeholder", status: "implemented" },
+    customMesh: { backend: "primitive", target: "Opaque runtime mesh placeholder", status: "implemented" },
+    clippingPolygon: { backend: "scene", target: "ClippingPolygonCollection", status: "implemented" },
+    clippingPlane: { backend: "scene", target: "ClippingPlaneCollection", status: "implemented" },
+    classificationVolume: { backend: "primitive", target: "ClassificationPrimitive", status: "implemented" },
+    classificationPrimitive: { backend: "primitive", target: "ClassificationPrimitive", status: "implemented" },
     customPrimitive: { backend: "primitive", target: "Primitive + GeometryInstance generated from explicit mesh", status: "implemented" },
     primitiveMesh: { backend: "primitive", target: "Primitive + GeometryInstance generated from explicit mesh", status: "implemented" },
-    postProcessStage: { backend: "scene", target: "PostProcessStage", status: "reserved" },
-    imageryLayer: { backend: "scene", target: "ImageryLayer/provider", status: "partial" },
-    terrain: { backend: "scene", target: "TerrainProvider/Terrain", status: "reserved" },
-    czmlDataSource: { backend: "dataSource", target: "CzmlDataSource", status: "reserved" },
-    geoJsonDataSource: { backend: "dataSource", target: "GeoJsonDataSource", status: "reserved" },
-    kmlDataSource: { backend: "dataSource", target: "KmlDataSource", status: "reserved" },
-    dataSource: { backend: "dataSource", target: "DataSource", status: "reserved" },
-    tilesetStyle: { backend: "scene", target: "Cesium3DTileStyle", status: "reserved" },
-    customShader: { backend: "scene", target: "CustomShader", status: "reserved" },
-    cloudCollection: { backend: "primitive", target: "CloudCollection", status: "reserved" },
-    skyBox: { backend: "scene", target: "SkyBox", status: "reserved" },
-    atmosphere: { backend: "scene", target: "Atmosphere settings", status: "reserved" },
-    groundPolyline: { backend: "primitive", target: "GroundPolylinePrimitive", status: "reserved" },
-    groundPrimitive: { backend: "primitive", target: "GroundPrimitive", status: "reserved" },
-    panorama: { backend: "primitive", target: "inside-out sphere/cube or imagery adapter", status: "reserved" },
-    videoPlane: { backend: "entity", target: "PlaneGraphics or RectangleGraphics with video material", status: "reserved" },
-    debugInspector: { backend: "scene", target: "CesiumInspector / debug flags", status: "reserved" }
+    postProcessStage: { backend: "scene", target: "PostProcessStage", status: "implemented" },
+    composite: { backend: "scene", target: "Composite attachment placeholder", status: "implemented" },
+    atmosphere: { backend: "scene", target: "Atmosphere settings", status: "implemented" },
+    imageryLayer: { backend: "scene", target: "ImageryLayer/provider", status: "implemented" },
+    terrain: { backend: "scene", target: "TerrainProvider/Terrain", status: "implemented" },
+    czmlDataSource: { backend: "dataSource", target: "CzmlDataSource", status: "implemented" },
+    geoJsonDataSource: { backend: "dataSource", target: "GeoJsonDataSource", status: "implemented" },
+    kmlDataSource: { backend: "dataSource", target: "KmlDataSource", status: "implemented" },
+    dataSource: { backend: "dataSource", target: "DataSource", status: "implemented" },
+    tilesetStyle: { backend: "scene", target: "Cesium3DTileStyle", status: "implemented" },
+    customShader: { backend: "scene", target: "CustomShader", status: "implemented" },
+    cloudCollection: { backend: "primitive", target: "CloudCollection", status: "implemented" },
+    skyBox: { backend: "scene", target: "SkyBox", status: "implemented" },
+    groundPolyline: { backend: "primitive", target: "GroundPolylinePrimitive", status: "implemented" },
+    groundPrimitive: { backend: "primitive", target: "GroundPrimitive", status: "implemented" },
+    panorama: { backend: "primitive", target: "inside-out sphere/cube or imagery adapter", status: "implemented" },
+    videoPlane: { backend: "entity", target: "PlaneGraphics or RectangleGraphics with video material", status: "implemented" },
+    cameraView: { backend: "scene", target: "viewer camera control metadata", status: "implemented" },
+    debugInspector: { backend: "scene", target: "CesiumInspector / debug flags", status: "implemented" }
   };
+
+  if (!global.SpatialDisplayJsonKindTargets) {
+    global.SpatialDisplayJsonKindTargets = CESIUM_KIND_TARGETS;
+  }
 
   /**
    * Builds a renderer-neutral-to-Cesium compile plan without requiring Cesium to be loaded.
@@ -2688,7 +2734,7 @@
       warnings.push("Skipping compile-plan item without id or kind.");
       return;
     }
-    const target = CESIUM_KIND_TARGETS[kind] || { backend: "unsupported", target: "none", status: "unsupported" };
+    const target = getCesiumKindTargetsMap()[kind] || { backend: "unsupported", target: "none", status: "unsupported" };
     items.push({
       id,
       kind,
@@ -2857,7 +2903,14 @@
    * @returns {Record<string, {backend: string, target: string, status: string}>}
    */
   function getCesiumKindTargets() {
-    return Object.assign({}, CESIUM_KIND_TARGETS);
+    return Object.assign({}, getCesiumKindTargetsMap());
+  }
+
+  /**
+   * @returns {Record<string, {backend: string, target: string, status: string}>}
+   */
+  function getCesiumKindTargetsMap() {
+    return global.SpatialDisplayJsonKindTargets || CESIUM_KIND_TARGETS;
   }
 
   global.SpatialDisplayJson = {

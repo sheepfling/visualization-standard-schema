@@ -1,0 +1,82 @@
+[
+  {
+    "id": "document",
+    "name": "Attachment Runtime Demo",
+    "version": "1.0"
+  },
+  {
+    "id": "clipping-plane-001",
+    "name": "Clipping Plane Placeholder",
+    "properties": {
+      "shapeType": "clippingPlane",
+      "objectType": "clippingPlane",
+      "show": false,
+      "layer": "coverage-placeholders",
+      "rendererHints": {
+        "semanticKind": "clippingPlane"
+      },
+      "clippingPlane": {
+        "normal": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "distanceMeters": 250.0
+      }
+    }
+  },
+  {
+    "id": "clipping-polygon-001",
+    "name": "Clipping Polygon Placeholder",
+    "properties": {
+      "shapeType": "clippingPolygon",
+      "objectType": "clippingPolygon",
+      "show": false,
+      "layer": "coverage-placeholders",
+      "rendererHints": {
+        "semanticKind": "clippingPolygon"
+      },
+      "clippingPolygon": {
+        "positions": [
+          {
+            "longitudeDeg": -117.3,
+            "latitudeDeg": 34.0,
+            "altitudeM": 0.0
+          },
+          {
+            "longitudeDeg": -117.2,
+            "latitudeDeg": 34.0,
+            "altitudeM": 0.0
+          },
+          {
+            "longitudeDeg": -117.2,
+            "latitudeDeg": 34.1,
+            "altitudeM": 0.0
+          }
+        ],
+        "clampToGround": true
+      }
+    }
+  },
+  {
+    "id": "classification-volume-001",
+    "name": "Classification Volume Placeholder",
+    "properties": {
+      "shapeType": "classificationVolume",
+      "objectType": "classificationVolume",
+      "show": false,
+      "layer": "coverage-placeholders",
+      "rendererHints": {
+        "semanticKind": "classificationVolume"
+      },
+      "classificationVolume": {
+        "shape": "box",
+        "dimensionsMeters": [
+          100.0,
+          100.0,
+          75.0
+        ]
+      }
+    }
+  }
+]

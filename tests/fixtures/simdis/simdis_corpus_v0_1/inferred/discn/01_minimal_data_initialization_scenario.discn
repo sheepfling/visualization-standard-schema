@@ -1,0 +1,9 @@
+# SIMDIS Data Initialization Scenario seed candidate
+# Status: inferred. The public SDK file patterns group .discn with ASI-compatible formats,
+# but this exact content has not been validated against a native SIMDIS install.
+ReferenceYear 2026
+DegreeAngles 1
+PlatformID 9001
+PlatformName 9001 "DISCN Candidate Platform"
+PlatformIcon 9001 "aircraft"
+PlatformData 9001 "001:00:00:00.000" 33.920000 -117.920000 1000.0 0.0 0.0 0.0 0.0 0.0 0.0

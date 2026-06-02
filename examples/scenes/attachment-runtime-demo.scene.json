@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "1.0.0-scene",
+  "document": {
+    "id": "attachment-runtime-demo",
+    "name": "Attachment Runtime Demo",
+    "description": "Typed attachment/runtime subclasses preserved as explicit scene objects.",
+    "created": "2026-06-01T19:25:00Z",
+    "generator": "visualization-standard-schema",
+    "source": "sim.example.geo-sim"
+  },
+  "objects": [
+    {
+      "objectType": "clippingPlane",
+      "id": "clipping-plane-001",
+      "name": "Clipping Plane Placeholder",
+      "show": false,
+      "layer": "coverage-placeholders",
+      "rendererHints": {
+        "semanticKind": "clippingPlane"
+      },
+      "clippingPlane": {
+        "normal": [1.0, 0.0, 0.0],
+        "distanceMeters": 250.0
+      },
+      "attributes": {
+        "shapeType": "clippingPlane"
+      }
+    },
+    {
+      "objectType": "clippingPolygon",
+      "id": "clipping-polygon-001",
+      "name": "Clipping Polygon Placeholder",
+      "show": false,
+      "layer": "coverage-placeholders",
+      "rendererHints": {
+        "semanticKind": "clippingPolygon"
+      },
+      "clippingPolygon": {
+        "positions": [
+          {"longitudeDeg": -117.3, "latitudeDeg": 34.0, "altitudeM": 0.0},
+          {"longitudeDeg": -117.2, "latitudeDeg": 34.0, "altitudeM": 0.0},
+          {"longitudeDeg": -117.2, "latitudeDeg": 34.1, "altitudeM": 0.0}
+        ],
+        "clampToGround": true
+      },
+      "attributes": {
+        "shapeType": "clippingPolygon"
+      }
+    },
+    {
+      "objectType": "classificationVolume",
+      "id": "classification-volume-001",
+      "name": "Classification Volume Placeholder",
+      "show": false,
+      "layer": "coverage-placeholders",
+      "rendererHints": {
+        "semanticKind": "classificationVolume"
+      },
+      "classificationVolume": {
+        "shape": "box",
+        "dimensionsMeters": [100.0, 100.0, 75.0]
+      },
+      "attributes": {
+        "shapeType": "classificationVolume"
+      }
+    }
+  ]
+}

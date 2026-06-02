@@ -1,0 +1,125 @@
+[
+  {
+    "id": "document",
+    "name": "Relative and Intercept Line Demo",
+    "version": "1.0"
+  },
+  {
+    "id": "relative-line-001",
+    "name": "Relative Line 001",
+    "position": {
+      "cartographicDegrees": [
+        -97.74,
+        30.27,
+        9200.0
+      ]
+    },
+    "polyline": {
+      "positions": {
+        "cartographicDegrees": [
+          -97.74,
+          30.27,
+          9200.0,
+          -97.68,
+          30.31,
+          9400.0
+        ]
+      },
+      "width": 2.8,
+      "clampToGround": false,
+      "material": {
+        "solidColor": {
+          "color": {
+            "rgba": [
+              120,
+              180,
+              255,
+              255
+            ]
+          }
+        }
+      }
+    },
+    "properties": {
+      "objectType": "relativeLine",
+      "category": "relativeLine"
+    },
+    "label": {
+      "text": "Relative Line",
+      "horizontalOrigin": "LEFT",
+      "pixelOffset": {
+        "cartesian2": [
+          12,
+          0
+        ]
+      },
+      "fillColor": {
+        "rgba": [
+          120,
+          180,
+          255,
+          255
+        ]
+      }
+    }
+  },
+  {
+    "id": "intercept-line-001",
+    "name": "Intercept Line 001",
+    "position": {
+      "cartographicDegrees": [
+        -97.72,
+        30.29,
+        9000.0
+      ]
+    },
+    "polyline": {
+      "positions": {
+        "cartographicDegrees": [
+          -97.72,
+          30.29,
+          9000.0,
+          -97.66,
+          30.34,
+          9600.0
+        ]
+      },
+      "width": 3.2,
+      "clampToGround": false,
+      "material": {
+        "solidColor": {
+          "color": {
+            "rgba": [
+              255,
+              180,
+              120,
+              255
+            ]
+          }
+        }
+      }
+    },
+    "properties": {
+      "objectType": "interceptLine",
+      "category": "interceptLine"
+    },
+    "label": {
+      "text": "Intercept Line",
+      "horizontalOrigin": "LEFT",
+      "pixelOffset": {
+        "cartesian2": [
+          12,
+          0
+        ]
+      },
+      "fillColor": {
+        "rgba": [
+          255,
+          180,
+          120,
+          255
+        ]
+      }
+    }
+  }
+]

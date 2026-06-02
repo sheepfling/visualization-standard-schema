@@ -1,0 +1,46 @@
+{
+  "schemaVersion": "1.0.0-scene",
+  "document": {
+    "id": "sector2d-demo",
+    "name": "Sector 2D Demo",
+    "description": "A 2D sector overlay used to exercise the Cesium sector polygon emitter.",
+    "created": "2026-06-01T14:20:00Z",
+    "generator": "visualization-standard-schema",
+    "source": "sim.example.geo-sim"
+  },
+  "objects": [
+    {
+      "objectType": "overlay",
+      "id": "sector2d-001",
+      "name": "Sector 2D 001",
+      "geometryType": "sector2d",
+      "position": {
+        "longitudeDeg": -97.72,
+        "latitudeDeg": 30.305,
+        "altitudeM": 1800.0
+      },
+      "style": {
+        "label": "Sector 2D 001",
+        "colorRgba": [76, 175, 80, 140]
+      },
+      "sector2d": {
+        "innerRadiusMeters": 4000.0,
+        "outerRadiusMeters": 14000.0,
+        "azimuthStartDegrees": 25.0,
+        "azimuthStopDegrees": 105.0,
+        "elevationStartDegrees": 0.0,
+        "elevationStopDegrees": 0.0,
+        "heightMeters": 120.0,
+        "segments": 20,
+        "mode": "surface",
+        "windingOrder": "counterClockwise",
+        "closed": true
+      },
+      "attributes": {
+        "shapeType": "sector2d"
+      },
+      "source": "sim.example.geo-sim",
+      "timestamp": "2026-06-01T14:20:00Z"
+    }
+  ]
+}

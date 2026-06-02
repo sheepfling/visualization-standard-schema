@@ -1,0 +1,47 @@
+{
+  "schemaVersion": "1.0.0-scene",
+  "document": {
+    "id": "rectangular-sensor-demo",
+    "name": "Rectangular Sensor Demo",
+    "description": "A rectangular sensor overlay used to exercise the Cesium rectangular sensor emitter.",
+    "created": "2026-06-01T14:10:00Z",
+    "generator": "visualization-standard-schema",
+    "source": "sim.example.geo-sim"
+  },
+  "objects": [
+    {
+      "objectType": "overlay",
+      "id": "rect-sensor-001",
+      "name": "Rect Sensor 001",
+      "geometryType": "rectangularSensor",
+      "position": {
+        "longitudeDeg": -97.705,
+        "latitudeDeg": 30.298,
+        "altitudeM": 2600.0
+      },
+      "orientation": {
+        "headingDeg": 18.0,
+        "pitchDeg": -9.0,
+        "rollDeg": 2.0
+      },
+      "style": {
+        "label": "Rect Sensor 001",
+        "colorRgba": [33, 150, 243, 170]
+      },
+      "rectangularSensor": {
+        "radiusMeters": 22000.0,
+        "xHalfAngleDegrees": 16.0,
+        "yHalfAngleDegrees": 28.0,
+        "showIntersection": true,
+        "intersectionWidthPx": 2.5,
+        "showLateralSurfaces": true,
+        "showDomeSurfaces": true
+      },
+      "attributes": {
+        "shapeType": "sensor-rectangular"
+      },
+      "source": "sim.example.geo-sim",
+      "timestamp": "2026-06-01T14:10:00Z"
+    }
+  ]
+}

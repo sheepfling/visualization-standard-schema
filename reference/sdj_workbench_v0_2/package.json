@@ -7,15 +7,16 @@
     "dev": "vite --host 127.0.0.1",
     "preview": "vite preview --host 127.0.0.1",
     "serve:static": "python3 -m http.server 5173",
-    "check": "node --check src/app.js && node --check src/sdj_browser_compiler.js && node --check scripts/smoke-test.mjs && node --check scripts/smoke-support.mjs && node --check scripts/shell-smoke.mjs && node --check scripts/browser-smoke.mjs && node --check scripts/build-exposed-scenes-manifest.mjs",
+    "check": "node --experimental-strip-types --check src/app.js && node --experimental-strip-types --check src/workbench/bootstrap.ts && node --experimental-strip-types --check scripts/smoke-test.mjs && node --experimental-strip-types --check scripts/smoke-support.mjs && node --experimental-strip-types --check scripts/shell-smoke.mjs && node --experimental-strip-types --check scripts/browser-smoke.mjs && node --experimental-strip-types --check scripts/build-exposed-scenes-manifest.mjs",
     "build:exposed-scenes": "node scripts/build-exposed-scenes-manifest.mjs",
-    "smoke": "node scripts/smoke-test.mjs",
+    "smoke": "node --experimental-strip-types scripts/smoke-test.mjs",
     "shell-smoke": "node scripts/shell-smoke.mjs",
-    "browser-smoke": "node scripts/browser-smoke.mjs",
-    "test": "node --test tests/*.test.mjs"
+    "browser-smoke": "node --experimental-strip-types scripts/browser-smoke.mjs",
+    "test": "node --experimental-strip-types --test tests/*.test.mjs"
   },
   "devDependencies": {
     "playwright": "latest",
+    "typescript": "^6.0.3",
     "vite": "latest"
   }
 }

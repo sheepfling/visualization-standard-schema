@@ -19,6 +19,5 @@
 - Add code generation for TypeScript and Python bindings.
 - Add conformance fixtures and translation tests.
 - Add smoke tests for scene-level compilation across Cesium, SIMDIS, and SOAP.
-- Track the SIMDIS extraction boundary in `docs/simdis-extraction-plan.md`.
-- Track the SIMDIS corpus implementation plan in `docs/simdis-corpus-plan.md`.
+- Track the canonical SIMDIS plan in `docs/simdis-corpus-plan.md`.
 - Track the SOAP extraction boundary in `docs/soap-extraction-plan.md`.

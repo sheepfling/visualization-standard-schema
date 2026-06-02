@@ -149,3 +149,5 @@ class SoapBundle(VssModel):
     assets: SoapAssets = Field(default_factory=SoapAssets)
     diagnostics: list[SoapDiagnostic] = Field(default_factory=list)
     overlays: list[str] = Field(default_factory=list)
+    customObjects: list[dict[str, Any]] = Field(default_factory=list)
+    runtimeObjects: list[dict[str, Any]] = Field(default_factory=list)

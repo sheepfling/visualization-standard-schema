@@ -1,0 +1,50 @@
+{
+  "schemaVersion": "1.0.0-scene",
+  "document": {
+    "id": "relative-intercept-demo",
+    "name": "Relative and Intercept Line Demo",
+    "description": "A scene with derived line variants wired through the Cesium path."
+  },
+  "objects": [
+    {
+      "objectType": "relativeLine",
+      "id": "relative-line-001",
+      "name": "Relative Line 001",
+      "startPosition": {
+        "longitudeDeg": -97.74,
+        "latitudeDeg": 30.27,
+        "altitudeM": 9200.0
+      },
+      "endPosition": {
+        "longitudeDeg": -97.68,
+        "latitudeDeg": 30.31,
+        "altitudeM": 9400.0
+      },
+      "widthPx": 2.8,
+      "style": {
+        "label": "Relative Line",
+        "colorRgba": [120, 180, 255, 255]
+      }
+    },
+    {
+      "objectType": "interceptLine",
+      "id": "intercept-line-001",
+      "name": "Intercept Line 001",
+      "startPosition": {
+        "longitudeDeg": -97.72,
+        "latitudeDeg": 30.29,
+        "altitudeM": 9000.0
+      },
+      "endPosition": {
+        "longitudeDeg": -97.66,
+        "latitudeDeg": 30.34,
+        "altitudeM": 9600.0
+      },
+      "widthPx": 3.2,
+      "style": {
+        "label": "Intercept Line",
+        "colorRgba": [255, 180, 120, 255]
+      }
+    }
+  ]
+}

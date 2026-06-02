@@ -1,0 +1,72 @@
+[
+  {
+    "id": "document",
+    "name": "Runtime Subclasses Demo",
+    "version": "1.0",
+    "clock": {
+      "interval": "2026-06-01T19:15:00+00:00/2026-06-01T19:16:00+00:00",
+      "currentTime": "2026-06-01T19:16:00+00:00",
+      "multiplier": 1,
+      "range": "CLAMPED",
+      "step": "SYSTEM_CLOCK_MULTIPLIER"
+    }
+  },
+  {
+    "id": "terrain-surface-001",
+    "name": "Terrain Surface Placeholder",
+    "properties": {
+      "shapeType": "terrainSurface",
+      "objectType": "terrainSurface",
+      "source": "sim.example.geo-sim",
+      "timestamp": "2026-06-01T19:15:00+00:00",
+      "show": false,
+      "layer": "coverage-placeholders",
+      "extensions": {
+        "coverage": {
+          "reason": "schema/backend capability coverage placeholder"
+        }
+      },
+      "rendererHints": {
+        "semanticKind": "terrainSurface",
+        "preferredBackends": [
+          "cesium",
+          "simdis",
+          "soap"
+        ]
+      },
+      "payload": {
+        "kind": "terrainSurface",
+        "note": "placeholder"
+      }
+    }
+  },
+  {
+    "id": "custom-mesh-001",
+    "name": "Custom Mesh Placeholder",
+    "properties": {
+      "shapeType": "customMesh",
+      "objectType": "customMesh",
+      "source": "sim.example.geo-sim",
+      "timestamp": "2026-06-01T19:16:00+00:00",
+      "show": false,
+      "layer": "coverage-placeholders",
+      "extensions": {
+        "coverage": {
+          "reason": "schema/backend capability coverage placeholder"
+        }
+      },
+      "rendererHints": {
+        "semanticKind": "customMesh",
+        "preferredBackends": [
+          "cesium",
+          "simdis",
+          "soap"
+        ]
+      },
+      "payload": {
+        "kind": "customMesh",
+        "note": "placeholder"
+      }
+    }
+  }
+]

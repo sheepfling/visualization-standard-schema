@@ -1,0 +1,1309 @@
+{
+  "$defs": {
+    "EntityCategory": {
+      "enum": [
+        "air",
+        "ground",
+        "surface",
+        "subsurface",
+        "space",
+        "sensor",
+        "overlay",
+        "other"
+      ],
+      "title": "EntityCategory",
+      "type": "string"
+    },
+    "Orientation": {
+      "additionalProperties": false,
+      "properties": {
+        "headingDeg": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Headingdeg"
+        },
+        "pitchDeg": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Pitchdeg"
+        },
+        "rollDeg": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Rolldeg"
+        }
+      },
+      "title": "Orientation",
+      "type": "object"
+    },
+    "SceneBox": {
+      "additionalProperties": false,
+      "properties": {
+        "dimensionsMeters": {
+          "maxItems": 3,
+          "minItems": 3,
+          "prefixItems": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            }
+          ],
+          "title": "Dimensionsmeters",
+          "type": "array"
+        }
+      },
+      "required": [
+        "dimensionsMeters"
+      ],
+      "title": "SceneBox",
+      "type": "object"
+    },
+    "SceneCircle": {
+      "additionalProperties": false,
+      "properties": {
+        "radiusMeters": {
+          "exclusiveMinimum": 0,
+          "title": "Radiusmeters",
+          "type": "number"
+        },
+        "heightMeters": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Heightmeters"
+        },
+        "extrudedHeightMeters": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Extrudedheightmeters"
+        },
+        "rotationDegrees": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Rotationdegrees"
+        },
+        "stRotationDegrees": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Strotationdegrees"
+        },
+        "clampToGround": {
+          "default": false,
+          "title": "Clamptoground",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "radiusMeters"
+      ],
+      "title": "SceneCircle",
+      "type": "object"
+    },
+    "SceneCorridor": {
+      "additionalProperties": false,
+      "properties": {
+        "positions": {
+          "items": {
+            "$ref": "#/$defs/Wgs84Position"
+          },
+          "minItems": 2,
+          "title": "Positions",
+          "type": "array"
+        },
+        "widthMeters": {
+          "exclusiveMinimum": 0,
+          "title": "Widthmeters",
+          "type": "number"
+        },
+        "heightMeters": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Heightmeters"
+        },
+        "extrudedHeightMeters": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Extrudedheightmeters"
+        },
+        "cornerType": {
+          "anyOf": [
+            {
+              "enum": [
+                "rounded",
+                "mitered",
+                "beveled"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Cornertype"
+        },
+        "clampToGround": {
+          "default": false,
+          "title": "Clamptoground",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "positions",
+        "widthMeters"
+      ],
+      "title": "SceneCorridor",
+      "type": "object"
+    },
+    "SceneCylinder": {
+      "additionalProperties": false,
+      "properties": {
+        "lengthMeters": {
+          "exclusiveMinimum": 0,
+          "title": "Lengthmeters",
+          "type": "number"
+        },
+        "topRadiusMeters": {
+          "minimum": 0,
+          "title": "Topradiusmeters",
+          "type": "number"
+        },
+        "bottomRadiusMeters": {
+          "minimum": 0,
+          "title": "Bottomradiusmeters",
+          "type": "number"
+        },
+        "numberOfSides": {
+          "anyOf": [
+            {
+              "minimum": 3,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Numberofsides"
+        },
+        "slope": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Slope"
+        }
+      },
+      "required": [
+        "lengthMeters",
+        "topRadiusMeters",
+        "bottomRadiusMeters"
+      ],
+      "title": "SceneCylinder",
+      "type": "object"
+    },
+    "SceneDocument": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "minLength": 1,
+          "title": "Id",
+          "type": "string"
+        },
+        "name": {
+          "minLength": 1,
+          "title": "Name",
+          "type": "string"
+        },
+        "description": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Description"
+        },
+        "created": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Created"
+        },
+        "generator": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Generator"
+        },
+        "source": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Source"
+        }
+      },
+      "required": [
+        "id",
+        "name"
+      ],
+      "title": "SceneDocument",
+      "type": "object"
+    },
+    "SceneEllipse": {
+      "additionalProperties": false,
+      "properties": {
+        "semiMajorAxisMeters": {
+          "exclusiveMinimum": 0,
+          "title": "Semimajoraxismeters",
+          "type": "number"
+        },
+        "semiMinorAxisMeters": {
+          "exclusiveMinimum": 0,
+          "title": "Semiminoraxismeters",
+          "type": "number"
+        },
+        "heightMeters": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Heightmeters"
+        },
+        "extrudedHeightMeters": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Extrudedheightmeters"
+        },
+        "rotationDegrees": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Rotationdegrees"
+        },
+        "stRotationDegrees": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Strotationdegrees"
+        },
+        "clampToGround": {
+          "default": false,
+          "title": "Clamptoground",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "semiMajorAxisMeters",
+        "semiMinorAxisMeters"
+      ],
+      "title": "SceneEllipse",
+      "type": "object"
+    },
+    "SceneEllipsoid": {
+      "additionalProperties": false,
+      "properties": {
+        "radiiMeters": {
+          "maxItems": 3,
+          "minItems": 3,
+          "prefixItems": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            }
+          ],
+          "title": "Radiimeters",
+          "type": "array"
+        }
+      },
+      "required": [
+        "radiiMeters"
+      ],
+      "title": "SceneEllipsoid",
+      "type": "object"
+    },
+    "SceneEntity": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "minLength": 1,
+          "title": "Id",
+          "type": "string"
+        },
+        "name": {
+          "minLength": 1,
+          "title": "Name",
+          "type": "string"
+        },
+        "style": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Style"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "attributes": {
+          "additionalProperties": true,
+          "title": "Attributes",
+          "type": "object"
+        },
+        "source": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Source"
+        },
+        "timestamp": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Timestamp"
+        },
+        "objectType": {
+          "const": "entity",
+          "default": "entity",
+          "title": "Objecttype",
+          "type": "string"
+        },
+        "category": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/EntityCategory"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "position": {
+          "$ref": "#/$defs/Wgs84Position"
+        },
+        "orientation": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Orientation"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "position"
+      ],
+      "title": "SceneEntity",
+      "type": "object"
+    },
+    "SceneOverlay": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "minLength": 1,
+          "title": "Id",
+          "type": "string"
+        },
+        "name": {
+          "minLength": 1,
+          "title": "Name",
+          "type": "string"
+        },
+        "style": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Style"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "attributes": {
+          "additionalProperties": true,
+          "title": "Attributes",
+          "type": "object"
+        },
+        "source": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Source"
+        },
+        "timestamp": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Timestamp"
+        },
+        "objectType": {
+          "const": "overlay",
+          "default": "overlay",
+          "title": "Objecttype",
+          "type": "string"
+        },
+        "position": {
+          "$ref": "#/$defs/Wgs84Position"
+        },
+        "geometryType": {
+          "default": "polyline",
+          "enum": [
+            "polyline",
+            "polygon",
+            "rectangle",
+            "corridor",
+            "ellipse",
+            "circle",
+            "wall",
+            "box",
+            "cylinder",
+            "ellipsoid",
+            "sphere"
+          ],
+          "title": "Geometrytype",
+          "type": "string"
+        },
+        "polyline": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/ScenePolyline"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "polygon": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/ScenePolygon"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "rectangle": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/SceneRectangle"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "corridor": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/SceneCorridor"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "ellipse": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/SceneEllipse"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "circle": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/SceneCircle"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "wall": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/SceneWall"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "box": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/SceneBox"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "cylinder": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/SceneCylinder"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "ellipsoid": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/SceneEllipsoid"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "sphere": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/SceneSphere"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "position"
+      ],
+      "title": "SceneOverlay",
+      "type": "object"
+    },
+    "ScenePath": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "minLength": 1,
+          "title": "Id",
+          "type": "string"
+        },
+        "name": {
+          "minLength": 1,
+          "title": "Name",
+          "type": "string"
+        },
+        "style": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Style"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "attributes": {
+          "additionalProperties": true,
+          "title": "Attributes",
+          "type": "object"
+        },
+        "source": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Source"
+        },
+        "timestamp": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Timestamp"
+        },
+        "objectType": {
+          "const": "path",
+          "default": "path",
+          "title": "Objecttype",
+          "type": "string"
+        },
+        "samples": {
+          "items": {
+            "$ref": "#/$defs/ScenePathSample"
+          },
+          "minItems": 2,
+          "title": "Samples",
+          "type": "array"
+        },
+        "widthPx": {
+          "default": 2.0,
+          "exclusiveMinimum": 0,
+          "title": "Widthpx",
+          "type": "number"
+        },
+        "clampToGround": {
+          "default": false,
+          "title": "Clamptoground",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "samples"
+      ],
+      "title": "ScenePath",
+      "type": "object"
+    },
+    "ScenePathSample": {
+      "additionalProperties": false,
+      "properties": {
+        "timestamp": {
+          "format": "date-time",
+          "title": "Timestamp",
+          "type": "string"
+        },
+        "position": {
+          "$ref": "#/$defs/Wgs84Position"
+        }
+      },
+      "required": [
+        "timestamp",
+        "position"
+      ],
+      "title": "ScenePathSample",
+      "type": "object"
+    },
+    "ScenePolygon": {
+      "additionalProperties": false,
+      "properties": {
+        "positions": {
+          "items": {
+            "$ref": "#/$defs/Wgs84Position"
+          },
+          "minItems": 3,
+          "title": "Positions",
+          "type": "array"
+        },
+        "clampToGround": {
+          "default": false,
+          "title": "Clamptoground",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "positions"
+      ],
+      "title": "ScenePolygon",
+      "type": "object"
+    },
+    "ScenePolyline": {
+      "additionalProperties": false,
+      "properties": {
+        "positions": {
+          "items": {
+            "$ref": "#/$defs/Wgs84Position"
+          },
+          "minItems": 2,
+          "title": "Positions",
+          "type": "array"
+        },
+        "widthPx": {
+          "default": 2.0,
+          "exclusiveMinimum": 0,
+          "title": "Widthpx",
+          "type": "number"
+        },
+        "clampToGround": {
+          "default": false,
+          "title": "Clamptoground",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "positions"
+      ],
+      "title": "ScenePolyline",
+      "type": "object"
+    },
+    "SceneRectangle": {
+      "additionalProperties": false,
+      "properties": {
+        "westSouthEastNorthDegrees": {
+          "maxItems": 4,
+          "minItems": 4,
+          "prefixItems": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            }
+          ],
+          "title": "Westsoutheastnorthdegrees",
+          "type": "array"
+        },
+        "heightMeters": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Heightmeters"
+        },
+        "extrudedHeightMeters": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Extrudedheightmeters"
+        },
+        "rotationDegrees": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Rotationdegrees"
+        },
+        "stRotationDegrees": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Strotationdegrees"
+        }
+      },
+      "required": [
+        "westSouthEastNorthDegrees"
+      ],
+      "title": "SceneRectangle",
+      "type": "object"
+    },
+    "SceneSphere": {
+      "additionalProperties": false,
+      "properties": {
+        "radiusMeters": {
+          "exclusiveMinimum": 0,
+          "title": "Radiusmeters",
+          "type": "number"
+        }
+      },
+      "required": [
+        "radiusMeters"
+      ],
+      "title": "SceneSphere",
+      "type": "object"
+    },
+    "SceneTrack": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "minLength": 1,
+          "title": "Id",
+          "type": "string"
+        },
+        "name": {
+          "minLength": 1,
+          "title": "Name",
+          "type": "string"
+        },
+        "style": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Style"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "attributes": {
+          "additionalProperties": true,
+          "title": "Attributes",
+          "type": "object"
+        },
+        "source": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Source"
+        },
+        "timestamp": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Timestamp"
+        },
+        "objectType": {
+          "const": "track",
+          "default": "track",
+          "title": "Objecttype",
+          "type": "string"
+        },
+        "samples": {
+          "items": {
+            "$ref": "#/$defs/ScenePathSample"
+          },
+          "minItems": 2,
+          "title": "Samples",
+          "type": "array"
+        },
+        "widthPx": {
+          "default": 2.0,
+          "exclusiveMinimum": 0,
+          "title": "Widthpx",
+          "type": "number"
+        },
+        "clampToGround": {
+          "default": false,
+          "title": "Clamptoground",
+          "type": "boolean"
+        },
+        "orientation": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Orientation"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "samples"
+      ],
+      "title": "SceneTrack",
+      "type": "object"
+    },
+    "SceneWall": {
+      "additionalProperties": false,
+      "properties": {
+        "positions": {
+          "items": {
+            "$ref": "#/$defs/Wgs84Position"
+          },
+          "minItems": 2,
+          "title": "Positions",
+          "type": "array"
+        },
+        "minimumHeightsMeters": {
+          "anyOf": [
+            {
+              "items": {
+                "type": "number"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Minimumheightsmeters"
+        },
+        "maximumHeightsMeters": {
+          "anyOf": [
+            {
+              "items": {
+                "type": "number"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Maximumheightsmeters"
+        },
+        "clampToGround": {
+          "default": false,
+          "title": "Clamptoground",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "positions"
+      ],
+      "title": "SceneWall",
+      "type": "object"
+    },
+    "Style": {
+      "additionalProperties": false,
+      "properties": {
+        "label": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Label"
+        },
+        "iconUri": {
+          "anyOf": [
+            {
+              "format": "uri",
+              "maxLength": 2083,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Iconuri"
+        },
+        "modelUri": {
+          "anyOf": [
+            {
+              "format": "uri",
+              "maxLength": 2083,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Modeluri"
+        },
+        "colorRgba": {
+          "anyOf": [
+            {
+              "maxItems": 4,
+              "minItems": 4,
+              "prefixItems": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "integer"
+                }
+              ],
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Colorrgba"
+        }
+      },
+      "title": "Style",
+      "type": "object"
+    },
+    "Wgs84Position": {
+      "additionalProperties": false,
+      "properties": {
+        "longitudeDeg": {
+          "maximum": 180,
+          "minimum": -180,
+          "title": "Longitudedeg",
+          "type": "number"
+        },
+        "latitudeDeg": {
+          "maximum": 90,
+          "minimum": -90,
+          "title": "Latitudedeg",
+          "type": "number"
+        },
+        "altitudeM": {
+          "title": "Altitudem",
+          "type": "number"
+        }
+      },
+      "required": [
+        "longitudeDeg",
+        "latitudeDeg",
+        "altitudeM"
+      ],
+      "title": "Wgs84Position",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schemaVersion": {
+      "const": "1.0.0-scene",
+      "title": "Schemaversion",
+      "type": "string"
+    },
+    "document": {
+      "$ref": "#/$defs/SceneDocument"
+    },
+    "objects": {
+      "items": {
+        "discriminator": {
+          "mapping": {
+            "entity": "#/$defs/SceneEntity",
+            "overlay": "#/$defs/SceneOverlay",
+            "path": "#/$defs/ScenePath",
+            "track": "#/$defs/SceneTrack"
+          },
+          "propertyName": "objectType"
+        },
+        "oneOf": [
+          {
+            "$ref": "#/$defs/SceneEntity"
+          },
+          {
+            "$ref": "#/$defs/SceneOverlay"
+          },
+          {
+            "$ref": "#/$defs/ScenePath"
+          },
+          {
+            "$ref": "#/$defs/SceneTrack"
+          }
+        ]
+      },
+      "title": "Objects",
+      "type": "array"
+    }
+  },
+  "required": [
+    "schemaVersion",
+    "document"
+  ],
+  "title": "VssScene",
+  "type": "object"
+}

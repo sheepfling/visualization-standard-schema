@@ -1,0 +1,88 @@
+[
+  {
+    "id": "document",
+    "name": "Voxel Demo",
+    "version": "1.0",
+    "clock": {
+      "interval": "2026-06-01T19:00:00+00:00/2026-06-01T19:00:00+00:00",
+      "currentTime": "2026-06-01T19:00:00+00:00",
+      "multiplier": 1,
+      "range": "CLAMPED",
+      "step": "SYSTEM_CLOCK_MULTIPLIER"
+    }
+  },
+  {
+    "id": "voxel-001",
+    "name": "Voxel Placeholder 001",
+    "position": {
+      "cartographicDegrees": [
+        -97.741,
+        30.276,
+        1100.0
+      ]
+    },
+    "properties": {
+      "shapeType": "voxel",
+      "objectType": "overlay",
+      "source": "sim.example.geo-sim",
+      "timestamp": "2026-06-01T19:00:00+00:00",
+      "category": "overlay",
+      "voxel": {
+        "semanticKind": "voxel",
+        "grid": {
+          "x": 12,
+          "y": 8,
+          "z": 6
+        },
+        "dimensionsMeters": [
+          12.0,
+          8.0,
+          6.0
+        ],
+        "note": "placeholder",
+        "extensions": {}
+      }
+    },
+    "label": {
+      "text": "Voxel Placeholder 001",
+      "horizontalOrigin": "LEFT",
+      "pixelOffset": {
+        "cartesian2": [
+          12,
+          0
+        ]
+      },
+      "fillColor": {
+        "rgba": [
+          96,
+          125,
+          139,
+          120
+        ]
+      }
+    },
+    "box": {
+      "dimensions": {
+        "cartesian": [
+          12.0,
+          8.0,
+          6.0
+        ]
+      },
+      "fill": true,
+      "outline": false,
+      "material": {
+        "solidColor": {
+          "color": {
+            "rgba": [
+              96,
+              125,
+              139,
+              120
+            ]
+          }
+        }
+      }
+    }
+  }
+]

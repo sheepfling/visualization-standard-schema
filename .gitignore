@@ -11,9 +11,14 @@ __pycache__/
 .cache/
 .venv
 .venv/
+.idea/
+INBOX/
+reference/sdj_v0_5_advanced_cesium_profile/
+reference/simdis_corpus_v0_1/
 node_modules
 node_modules/
 dist
 dist/
 build
 build/
+reference/sdj_workbench_v0_2/generated-smoke/browser/

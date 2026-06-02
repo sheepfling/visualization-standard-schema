@@ -1,0 +1,90 @@
+[
+  {
+    "id": "document",
+    "name": "Polyline Volume Demo",
+    "version": "1.0",
+    "clock": {
+      "interval": "2026-06-01T13:10:00+00:00/2026-06-01T13:10:00+00:00",
+      "currentTime": "2026-06-01T13:10:00+00:00",
+      "multiplier": 1,
+      "range": "CLAMPED",
+      "step": "SYSTEM_CLOCK_MULTIPLIER"
+    }
+  },
+  {
+    "id": "pv-001",
+    "name": "Polyline Volume 001",
+    "position": {
+      "cartographicDegrees": [
+        -97.78,
+        30.22,
+        1200.0
+      ]
+    },
+    "properties": {
+      "shapeType": "route-volume",
+      "objectType": "overlay",
+      "source": "sim.example.geo-sim",
+      "timestamp": "2026-06-01T13:10:00+00:00",
+      "category": "overlay"
+    },
+    "label": {
+      "text": "Poly Vol 001",
+      "horizontalOrigin": "LEFT",
+      "pixelOffset": {
+        "cartesian2": [
+          12,
+          0
+        ]
+      },
+      "fillColor": {
+        "rgba": [
+          33,
+          150,
+          243,
+          180
+        ]
+      }
+    },
+    "polylineVolume": {
+      "positions": {
+        "cartographicDegrees": [
+          -97.78,
+          30.22,
+          1200.0,
+          -97.73,
+          30.25,
+          1800.0,
+          -97.69,
+          30.27,
+          2200.0
+        ]
+      },
+      "shape": {
+        "cartesian": [
+          -1000.0,
+          -1000.0,
+          1000.0,
+          -1000.0,
+          1000.0,
+          1000.0,
+          -1000.0,
+          1000.0
+        ]
+      },
+      "cornerType": "MITERED",
+      "material": {
+        "solidColor": {
+          "color": {
+            "rgba": [
+              33,
+              150,
+              243,
+              180
+            ]
+          }
+        }
+      }
+    }
+  }
+]

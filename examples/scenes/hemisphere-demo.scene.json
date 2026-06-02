@@ -1,0 +1,32 @@
+{
+  "schemaVersion": "1.0.0-scene",
+  "document": {
+    "id": "hemisphere-demo",
+    "name": "Hemisphere Demo",
+    "description": "A hemisphere overlay used to exercise the Cesium hemisphere emitter."
+  },
+  "objects": [
+    {
+      "objectType": "overlay",
+      "id": "hemisphere-001",
+      "name": "Hemisphere 001",
+      "geometryType": "hemisphere",
+      "position": {
+        "longitudeDeg": -97.715,
+        "latitudeDeg": 30.305,
+        "altitudeM": 2800.0
+      },
+      "style": {
+        "label": "Hemisphere 001",
+        "colorRgba": [244, 67, 54, 160]
+      },
+      "hemisphere": {
+        "radiusMeters": 9000.0
+      },
+      "attributes": {
+        "shapeType": "hemisphere"
+      },
+      "timestamp": "2026-06-01T15:45:00Z"
+    }
+  ]
+}

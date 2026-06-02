@@ -1,0 +1,66 @@
+[
+  {
+    "id": "document",
+    "name": "Velocity Vector Demo",
+    "version": "1.0"
+  },
+  {
+    "id": "velocity-vector-001",
+    "name": "Velocity Vector Alpha",
+    "position": {
+      "cartographicDegrees": [
+        -97.72,
+        30.26,
+        8000.0
+      ]
+    },
+    "polyline": {
+      "positions": {
+        "cartographicDegrees": [
+          -97.72,
+          30.26,
+          8000.0,
+          -97.65,
+          30.31,
+          9500.0
+        ]
+      },
+      "width": 3.5,
+      "clampToGround": false,
+      "material": {
+        "solidColor": {
+          "color": {
+            "rgba": [
+              0,
+              170,
+              255,
+              255
+            ]
+          }
+        }
+      }
+    },
+    "properties": {
+      "objectType": "velocityVector",
+      "category": "velocityVector"
+    },
+    "label": {
+      "text": "Velocity Vector Alpha",
+      "horizontalOrigin": "LEFT",
+      "pixelOffset": {
+        "cartesian2": [
+          12,
+          0
+        ]
+      },
+      "fillColor": {
+        "rgba": [
+          0,
+          170,
+          255,
+          255
+        ]
+      }
+    }
+  }
+]

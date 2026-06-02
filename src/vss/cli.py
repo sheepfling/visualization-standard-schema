@@ -4,17 +4,7 @@ import argparse
 from pathlib import Path
 
 from .capabilities import assess_scene_for_target, get_target_capabilities
-from .convert import (
-    emit_czml_from_scene,
-    emit_orb_from_scene,
-    emit_simdis_asi_from_scene,
-    emit_soap_envelope_from_scene,
-    parse_czml_file_to_scene,
-    parse_orb_to_scene,
-    parse_simdis_asi_to_scene,
-    parse_simdis_bundle_to_scene,
-    parse_soap_to_scene,
-)
+from .convert.adapters import EMIT_FORMATS, INGEST_FORMATS, get_format_adapter
 from .io import load_scene_file, write_scene_file
 from .util import dumps_json, write_text_file
 
@@ -38,7 +28,7 @@ def main(argv: list[str] | None = None) -> int:
     ingest.add_argument(
         "--format",
         "-f",
-        choices=("simdis-asi", "simdis-bundle", "soap", "orb", "czml"),
+        choices=INGEST_FORMATS,
         default="czml",
         help="Format of input data",
     )
@@ -50,7 +40,7 @@ def main(argv: list[str] | None = None) -> int:
     emit.add_argument(
         "--format",
         "-f",
-        choices=("simdis-asi", "soap", "orb", "czml"),
+        choices=EMIT_FORMATS,
         default="czml",
         help="Output format",
     )
@@ -72,34 +62,22 @@ def _ingest(args: argparse.Namespace) -> None:
     if not input_path.exists():
         raise FileNotFoundError(f"input not found: {input_path}")
 
-    if args.format == "simdis-asi":
-        scene = parse_simdis_asi_to_scene(input_path.read_text(encoding="utf-8"), source=input_path.stem)
-    elif args.format == "simdis-bundle":
-        scene = parse_simdis_bundle_to_scene(input_path, source=input_path.name)
-    elif args.format == "soap":
-        scene = parse_soap_to_scene(input_path, source=input_path.name)
-    elif args.format == "orb":
-        scene = parse_orb_to_scene(input_path)
-    elif args.format == "czml":
-        scene = parse_czml_file_to_scene(input_path)
-    else:  # pragma: no cover - argparse prevents this branch
-        raise ValueError(f"unsupported ingest format: {args.format}")
+    adapter = get_format_adapter(args.format)
+    scene = adapter.ingest(
+        input_path,
+        input_format=args.format,
+        source_name=input_path.stem if input_path.is_file() else input_path.name,
+    )
 
     write_scene_file(scene, args.output)
 
 
 def _emit(args: argparse.Namespace) -> None:
     scene = load_scene_file(args.input)
-    if args.format == "simdis-asi":
-        text = emit_simdis_asi_from_scene(scene)
-    elif args.format == "soap":
-        text = emit_soap_envelope_from_scene(scene)
-    elif args.format == "orb":
-        text = emit_orb_from_scene(scene)
-    elif args.format == "czml":
-        text = emit_czml_from_scene(scene)
-    else:  # pragma: no cover - argparse prevents this branch
+    adapter = get_format_adapter(args.format)
+    if adapter.emit is None:
         raise ValueError(f"unsupported emit format: {args.format}")
+    text = adapter.emit(scene)
 
     write_text_file(args.output, text, encoding="utf-8")
 

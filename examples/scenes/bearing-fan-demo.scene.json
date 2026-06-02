@@ -1,0 +1,42 @@
+{
+  "schemaVersion": "1.0.0-scene",
+  "document": {
+    "id": "bearing-fan-demo",
+    "name": "Bearing Fan Demo",
+    "description": "A bearing fan overlay used to exercise the Cesium sector-family emitter."
+  },
+  "objects": [
+    {
+      "objectType": "overlay",
+      "id": "bearing-fan-001",
+      "name": "Bearing Fan",
+      "geometryType": "bearingFan",
+      "position": {
+        "longitudeDeg": -97.73,
+        "latitudeDeg": 30.315,
+        "altitudeM": 150.0
+      },
+      "orientation": {
+        "headingDeg": 15.0,
+        "pitchDeg": 0.0,
+        "rollDeg": 0.0
+      },
+      "style": {
+        "label": "Bearing Fan",
+        "colorRgba": [255, 235, 59, 180]
+      },
+      "bearingFan": {
+        "innerRadiusMeters": 0.0,
+        "outerRadiusMeters": 46000.0,
+        "azimuthStartDegrees": -12.0,
+        "azimuthStopDegrees": 12.0,
+        "segments": 24,
+        "mode": "flatLocal"
+      },
+      "attributes": {
+        "shapeType": "bearingFan"
+      },
+      "timestamp": "2026-06-01T15:55:00Z"
+    }
+  ]
+}

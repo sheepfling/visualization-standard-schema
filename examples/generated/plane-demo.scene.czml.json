@@ -1,0 +1,82 @@
+[
+  {
+    "id": "document",
+    "name": "Plane Demo",
+    "version": "1.0",
+    "clock": {
+      "interval": "2026-06-01T13:25:00+00:00/2026-06-01T13:25:00+00:00",
+      "currentTime": "2026-06-01T13:25:00+00:00",
+      "multiplier": 1,
+      "range": "CLAMPED",
+      "step": "SYSTEM_CLOCK_MULTIPLIER"
+    }
+  },
+  {
+    "id": "plane-001",
+    "name": "Plane 001",
+    "position": {
+      "cartographicDegrees": [
+        -97.76,
+        30.285,
+        1500.0
+      ]
+    },
+    "properties": {
+      "shapeType": "analysis-plane",
+      "objectType": "overlay",
+      "source": "sim.example.geo-sim",
+      "timestamp": "2026-06-01T13:25:00+00:00",
+      "category": "overlay"
+    },
+    "label": {
+      "text": "Plane 001",
+      "horizontalOrigin": "LEFT",
+      "pixelOffset": {
+        "cartesian2": [
+          12,
+          0
+        ]
+      },
+      "fillColor": {
+        "rgba": [
+          244,
+          67,
+          54,
+          170
+        ]
+      }
+    },
+    "plane": {
+      "plane": {
+        "normal": {
+          "cartesian": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "distance": 0.0
+      },
+      "dimensions": {
+        "cartesian": [
+          45000.0,
+          28000.0
+        ]
+      },
+      "fill": true,
+      "outline": false,
+      "material": {
+        "solidColor": {
+          "color": {
+            "rgba": [
+              244,
+              67,
+              54,
+              170
+            ]
+          }
+        }
+      }
+    }
+  }
+]

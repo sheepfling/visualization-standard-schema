@@ -1,0 +1,406 @@
+[
+  {
+    "id": "document",
+    "name": "Axes Demo",
+    "version": "1.0"
+  },
+  {
+    "id": "body-axes-001-x",
+    "name": "Body Axes 001 X",
+    "position": {
+      "cartographicDegrees": [
+        -97.72,
+        30.29,
+        9000.0
+      ]
+    },
+    "polyline": {
+      "positions": {
+        "cartographicDegrees": [
+          -97.72,
+          30.29,
+          9000.0,
+          -97.68540024427402,
+          30.316900760644828,
+          9470.37808470444
+        ]
+      },
+      "width": 2.5,
+      "clampToGround": false,
+      "material": {
+        "solidColor": {
+          "color": {
+            "rgba": [
+              255,
+              255,
+              255,
+              220
+            ]
+          }
+        }
+      }
+    },
+    "properties": {
+      "axisSet": "body",
+      "objectType": "bodyAxes",
+      "category": "bodyAxes",
+      "axisRole": "x",
+      "axisIndex": 0,
+      "axisGroupId": "body-axes-001",
+      "axisLengthMeters": 4500.0,
+      "orientationDegrees": {
+        "heading": 42.0,
+        "pitch": -6.0,
+        "roll": 12.0
+      }
+    },
+    "label": {
+      "text": "Body Axes 001 X",
+      "horizontalOrigin": "LEFT",
+      "pixelOffset": {
+        "cartesian2": [
+          12,
+          0
+        ]
+      },
+      "fillColor": {
+        "rgba": [
+          255,
+          255,
+          255,
+          220
+        ]
+      }
+    }
+  },
+  {
+    "id": "body-axes-001-y",
+    "name": "Body Axes 001 Y",
+    "position": {
+      "cartographicDegrees": [
+        -97.72,
+        30.29,
+        9000.0
+      ]
+    },
+    "polyline": {
+      "positions": {
+        "cartographicDegrees": [
+          -97.72,
+          30.29,
+          9000.0,
+          -97.74093127795386,
+          30.309197717938673,
+          9620.318186463901
+        ]
+      },
+      "width": 2.5,
+      "clampToGround": false,
+      "material": {
+        "solidColor": {
+          "color": {
+            "rgba": [
+              255,
+              255,
+              255,
+              220
+            ]
+          }
+        }
+      }
+    },
+    "properties": {
+      "axisSet": "body",
+      "objectType": "bodyAxes",
+      "category": "bodyAxes",
+      "axisRole": "y",
+      "axisIndex": 1,
+      "axisGroupId": "body-axes-001",
+      "axisLengthMeters": 3000.0,
+      "orientationDegrees": {
+        "heading": 42.0,
+        "pitch": -6.0,
+        "roll": 12.0
+      }
+    },
+    "label": {
+      "text": "Body Axes 001 Y",
+      "horizontalOrigin": "LEFT",
+      "pixelOffset": {
+        "cartesian2": [
+          12,
+          0
+        ]
+      },
+      "fillColor": {
+        "rgba": [
+          255,
+          255,
+          255,
+          220
+        ]
+      }
+    }
+  },
+  {
+    "id": "body-axes-001-z",
+    "name": "Body Axes 001 Z",
+    "position": {
+      "cartographicDegrees": [
+        -97.72,
+        30.29,
+        9000.0
+      ]
+    },
+    "polyline": {
+      "positions": {
+        "cartographicDegrees": [
+          -97.72,
+          30.29,
+          9000.0,
+          -97.71881768141436,
+          30.286395419724492,
+          10751.020570497083
+        ]
+      },
+      "width": 2.5,
+      "clampToGround": false,
+      "material": {
+        "solidColor": {
+          "color": {
+            "rgba": [
+              255,
+              255,
+              255,
+              220
+            ]
+          }
+        }
+      }
+    },
+    "properties": {
+      "axisSet": "body",
+      "objectType": "bodyAxes",
+      "category": "bodyAxes",
+      "axisRole": "z",
+      "axisIndex": 2,
+      "axisGroupId": "body-axes-001",
+      "axisLengthMeters": 1800.0,
+      "orientationDegrees": {
+        "heading": 42.0,
+        "pitch": -6.0,
+        "roll": 12.0
+      }
+    },
+    "label": {
+      "text": "Body Axes 001 Z",
+      "horizontalOrigin": "LEFT",
+      "pixelOffset": {
+        "cartesian2": [
+          12,
+          0
+        ]
+      },
+      "fillColor": {
+        "rgba": [
+          255,
+          255,
+          255,
+          220
+        ]
+      }
+    }
+  },
+  {
+    "id": "principal-axes-001-x",
+    "name": "Principal Axes 001 X",
+    "position": {
+      "cartographicDegrees": [
+        -97.695,
+        30.305,
+        9200.0
+      ]
+    },
+    "polyline": {
+      "positions": {
+        "cartographicDegrees": [
+          -97.695,
+          30.305,
+          9200.0,
+          -97.65546126763051,
+          30.305,
+          9200.0
+        ]
+      },
+      "width": 2.5,
+      "clampToGround": false,
+      "material": {
+        "solidColor": {
+          "color": {
+            "rgba": [
+              255,
+              99,
+              71,
+              220
+            ]
+          }
+        }
+      }
+    },
+    "properties": {
+      "axisSet": "principal",
+      "objectType": "principalAxes",
+      "category": "principalAxes",
+      "axisRole": "x",
+      "axisIndex": 0,
+      "axisGroupId": "principal-axes-001",
+      "axisLengthMeters": 3800.0
+    },
+    "label": {
+      "text": "Principal Axes 001 X",
+      "horizontalOrigin": "LEFT",
+      "pixelOffset": {
+        "cartesian2": [
+          12,
+          0
+        ]
+      },
+      "fillColor": {
+        "rgba": [
+          255,
+          99,
+          71,
+          220
+        ]
+      }
+    }
+  },
+  {
+    "id": "principal-axes-001-y",
+    "name": "Principal Axes 001 Y",
+    "position": {
+      "cartographicDegrees": [
+        -97.695,
+        30.305,
+        9200.0
+      ]
+    },
+    "polyline": {
+      "positions": {
+        "cartographicDegrees": [
+          -97.695,
+          30.305,
+          9200.0,
+          -97.695,
+          30.3247628458498,
+          9200.0
+        ]
+      },
+      "width": 2.5,
+      "clampToGround": false,
+      "material": {
+        "solidColor": {
+          "color": {
+            "rgba": [
+              46,
+              204,
+              113,
+              220
+            ]
+          }
+        }
+      }
+    },
+    "properties": {
+      "axisSet": "principal",
+      "objectType": "principalAxes",
+      "category": "principalAxes",
+      "axisRole": "y",
+      "axisIndex": 1,
+      "axisGroupId": "principal-axes-001",
+      "axisLengthMeters": 2200.0
+    },
+    "label": {
+      "text": "Principal Axes 001 Y",
+      "horizontalOrigin": "LEFT",
+      "pixelOffset": {
+        "cartesian2": [
+          12,
+          0
+        ]
+      },
+      "fillColor": {
+        "rgba": [
+          46,
+          204,
+          113,
+          220
+        ]
+      }
+    }
+  },
+  {
+    "id": "principal-axes-001-z",
+    "name": "Principal Axes 001 Z",
+    "position": {
+      "cartographicDegrees": [
+        -97.695,
+        30.305,
+        9200.0
+      ]
+    },
+    "polyline": {
+      "positions": {
+        "cartographicDegrees": [
+          -97.695,
+          30.305,
+          9200.0,
+          -97.695,
+          30.305,
+          11800.0
+        ]
+      },
+      "width": 2.5,
+      "clampToGround": false,
+      "material": {
+        "solidColor": {
+          "color": {
+            "rgba": [
+              52,
+              152,
+              219,
+              220
+            ]
+          }
+        }
+      }
+    },
+    "properties": {
+      "axisSet": "principal",
+      "objectType": "principalAxes",
+      "category": "principalAxes",
+      "axisRole": "z",
+      "axisIndex": 2,
+      "axisGroupId": "principal-axes-001",
+      "axisLengthMeters": 2600.0
+    },
+    "label": {
+      "text": "Principal Axes 001 Z",
+      "horizontalOrigin": "LEFT",
+      "pixelOffset": {
+        "cartesian2": [
+          12,
+          0
+        ]
+      },
+      "fillColor": {
+        "rgba": [
+          52,
+          152,
+          219,
+          220
+        ]
+      }
+    }
+  }
+]

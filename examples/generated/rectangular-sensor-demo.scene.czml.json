@@ -1,0 +1,84 @@
+[
+  {
+    "id": "document",
+    "name": "Rectangular Sensor Demo",
+    "version": "1.0",
+    "clock": {
+      "interval": "2026-06-01T14:10:00+00:00/2026-06-01T14:10:00+00:00",
+      "currentTime": "2026-06-01T14:10:00+00:00",
+      "multiplier": 1,
+      "range": "CLAMPED",
+      "step": "SYSTEM_CLOCK_MULTIPLIER"
+    }
+  },
+  {
+    "id": "rect-sensor-001",
+    "name": "Rect Sensor 001",
+    "position": {
+      "cartographicDegrees": [
+        -97.705,
+        30.298,
+        2600.0
+      ]
+    },
+    "properties": {
+      "shapeType": "sensor-rectangular",
+      "objectType": "overlay",
+      "source": "sim.example.geo-sim",
+      "timestamp": "2026-06-01T14:10:00+00:00",
+      "category": "overlay",
+      "orientationDegrees": {
+        "heading": 18.0,
+        "pitch": -9.0,
+        "roll": 2.0
+      }
+    },
+    "label": {
+      "text": "Rect Sensor 001",
+      "horizontalOrigin": "LEFT",
+      "pixelOffset": {
+        "cartesian2": [
+          12,
+          0
+        ]
+      },
+      "fillColor": {
+        "rgba": [
+          33,
+          150,
+          243,
+          170
+        ]
+      }
+    },
+    "agi_rectangularSensor": {
+      "radius": 22000.0,
+      "xHalfAngle": 0.2792526803190927,
+      "yHalfAngle": 0.4886921905584123,
+      "showIntersection": true,
+      "intersectionWidth": 2.5,
+      "showLateralSurfaces": true,
+      "showDomeSurfaces": true,
+      "lateralSurfaceMaterial": {
+        "solidColor": {
+          "color": {
+            "rgba": [
+              33,
+              150,
+              243,
+              170
+            ]
+          }
+        }
+      }
+    },
+    "orientation": {
+      "unitQuaternion": [
+        0.029456238098177573,
+        -0.07475958978523743,
+        0.15728091918369064,
+        0.9842794553545146
+      ]
+    }
+  }
+]

@@ -1,0 +1,50 @@
+{
+  "schemaVersion": "1.0.0-scene",
+  "document": {
+    "id": "axes-demo",
+    "name": "Axes Demo",
+    "description": "A scene that exercises body axes and principal axes geometry."
+  },
+  "objects": [
+    {
+      "objectType": "bodyAxes",
+      "id": "body-axes-001",
+      "name": "Body Axes 001",
+      "originPosition": {
+        "longitudeDeg": -97.72,
+        "latitudeDeg": 30.29,
+        "altitudeM": 9000.0
+      },
+      "axisLengthsMeters": [4500.0, 3000.0, 1800.0],
+      "orientation": {
+        "headingDeg": 42.0,
+        "pitchDeg": -6.0,
+        "rollDeg": 12.0
+      },
+      "style": {
+        "label": "Body Axes",
+        "colorRgba": [255, 255, 255, 220]
+      },
+      "attributes": {
+        "axisSet": "body"
+      }
+    },
+    {
+      "objectType": "principalAxes",
+      "id": "principal-axes-001",
+      "name": "Principal Axes 001",
+      "originPosition": {
+        "longitudeDeg": -97.695,
+        "latitudeDeg": 30.305,
+        "altitudeM": 9200.0
+      },
+      "axisLengthsMeters": [3800.0, 2200.0, 2600.0],
+      "style": {
+        "label": "Principal Axes"
+      },
+      "attributes": {
+        "axisSet": "principal"
+      }
+    }
+  ]
+}

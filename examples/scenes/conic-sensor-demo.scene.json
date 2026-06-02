@@ -1,0 +1,47 @@
+{
+  "schemaVersion": "1.0.0-scene",
+  "document": {
+    "id": "conic-sensor-demo",
+    "name": "Conic Sensor Demo",
+    "description": "A conic sensor overlay used to exercise the Cesium conic-sensor emitter.",
+    "created": "2026-06-01T16:45:00Z",
+    "generator": "visualization-standard-schema",
+    "source": "sim.example.geo-sim"
+  },
+  "objects": [
+    {
+      "objectType": "overlay",
+      "id": "conic-sensor-001",
+      "name": "Conic Sensor 001",
+      "geometryType": "conicSensor",
+      "position": {
+        "longitudeDeg": -97.738,
+        "latitudeDeg": 30.309,
+        "altitudeM": 2200.0
+      },
+      "orientation": {
+        "headingDeg": 35.0,
+        "pitchDeg": -12.0,
+        "rollDeg": 5.0
+      },
+      "style": {
+        "label": "Conic Sensor 001",
+        "colorRgba": [255, 87, 34, 150]
+      },
+      "conicSensor": {
+        "radiusMeters": 14000.0,
+        "innerHalfAngleDegrees": 4.5,
+        "outerHalfAngleDegrees": 18.0,
+        "minimumClockAngleDegrees": 25.0,
+        "maximumClockAngleDegrees": 325.0,
+        "showIntersection": true,
+        "intersectionWidthPx": 3.0
+      },
+      "attributes": {
+        "shapeType": "conicSensor"
+      },
+      "source": "sim.example.geo-sim",
+      "timestamp": "2026-06-01T16:45:00Z"
+    }
+  ]
+}

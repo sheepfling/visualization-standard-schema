@@ -16,7 +16,7 @@
         "label": "CesiumJS viewer HTML",
         "kind": "runtime-shell",
         "status": "partial",
-        "description": "Generated HTML shell that loads CZML in CesiumJS; scene views and richer runtime wiring are not compiled yet.",
+        "description": "Generated HTML shell that loads CZML in CesiumJS and exposes scene-view buttons for basic camera control; richer runtime wiring is not compiled yet.",
         "artifacts": ["*.viewer.html"]
       },
       {
@@ -72,6 +72,62 @@
         "surfaces": ["czml", "cesium-js-viewer"]
       },
       {
+        "featureId": "object.vector.geometry",
+        "label": "Vector geometry",
+        "support": "strong",
+        "notes": "Vector objects compile into native CZML polyline packets with explicit start and end positions plus styling.",
+        "surfaces": ["czml", "cesium-js-viewer"]
+      },
+      {
+        "featureId": "object.velocityVector.geometry",
+        "label": "Velocity vector geometry",
+        "support": "strong",
+        "notes": "Velocity vectors reuse the native CZML polyline path and are treated as a dedicated vector family in the scene model.",
+        "surfaces": ["czml", "cesium-js-viewer"]
+      },
+      {
+        "featureId": "object.accelerationVector.geometry",
+        "label": "Acceleration vector geometry",
+        "support": "strong",
+        "notes": "Acceleration vectors reuse the native CZML polyline path and are treated as a dedicated vector family in the scene model.",
+        "surfaces": ["czml", "cesium-js-viewer"]
+      },
+      {
+        "featureId": "object.lineOfSight.geometry",
+        "label": "Line of sight geometry",
+        "support": "strong",
+        "notes": "Line-of-sight objects compile into native CZML polyline packets with start and end positions plus styling.",
+        "surfaces": ["czml", "cesium-js-viewer"]
+      },
+      {
+        "featureId": "object.bodyAxes.geometry",
+        "label": "Body axes geometry",
+        "support": "strong",
+        "notes": "Body axes compile into three CZML polyline packets representing the body frame axes.",
+        "surfaces": ["czml", "cesium-js-viewer"]
+      },
+      {
+        "featureId": "object.principalAxes.geometry",
+        "label": "Principal axes geometry",
+        "support": "strong",
+        "notes": "Principal axes compile into three CZML polyline packets representing the principal frame axes.",
+        "surfaces": ["czml", "cesium-js-viewer"]
+      },
+      {
+        "featureId": "object.relativeLine.geometry",
+        "label": "Relative line geometry",
+        "support": "strong",
+        "notes": "Relative-line objects compile into native CZML polyline packets with start and end positions plus styling.",
+        "surfaces": ["czml", "cesium-js-viewer"]
+      },
+      {
+        "featureId": "object.interceptLine.geometry",
+        "label": "Intercept line geometry",
+        "support": "strong",
+        "notes": "Intercept-line objects compile into native CZML polyline packets with start and end positions plus styling.",
+        "surfaces": ["czml", "cesium-js-viewer"]
+      },
+      {
         "featureId": "object.rectangle.geometry",
         "label": "Rectangle geometry",
         "support": "strong",
@@ -100,6 +156,13 @@
         "surfaces": ["czml", "cesium-js-viewer"]
       },
       {
+        "featureId": "object.rangeRing.geometry",
+        "label": "Range ring geometry",
+        "support": "partial",
+        "notes": "Range ring overlays compile into outlined CZML ellipse packets with radius and outline styling preserved in packet properties.",
+        "surfaces": ["czml", "cesium-js-viewer"]
+      },
+      {
         "featureId": "object.wall.geometry",
         "label": "Wall geometry",
         "support": "strong",
@@ -111,6 +174,244 @@
         "label": "Box geometry",
         "support": "strong",
         "notes": "Box overlays compile into native CZML box packets with dimensions and styling.",
+        "surfaces": ["czml", "cesium-js-viewer"]
+      },
+      {
+        "featureId": "object.cylinder.geometry",
+        "label": "Cylinder geometry",
+        "support": "strong",
+        "notes": "Cylinder overlays compile into native CZML cylinder packets with length and radii plus styling.",
+        "surfaces": ["czml", "cesium-js-viewer"]
+      },
+      {
+        "featureId": "object.cone.geometry",
+        "label": "Cone geometry",
+        "support": "strong",
+        "notes": "Cone overlays compile into Cesium's agi_conicSensor packet shape with radius, angles, orientation, and styling.",
+        "surfaces": ["czml", "cesium-js-viewer"]
+      },
+      {
+        "featureId": "object.conicSensor.geometry",
+        "label": "Conic sensor geometry",
+        "support": "strong",
+        "notes": "ConicSensor overlays compile into Cesium's agi_conicSensor packet shape with radius, angles, orientation, and styling.",
+        "surfaces": ["czml", "cesium-js-viewer"]
+      },
+      {
+        "featureId": "object.customPatternSensor.geometry",
+        "label": "Custom pattern sensor geometry",
+        "support": "partial",
+        "notes": "CustomPatternSensor overlays compile into CZML polygon wedge approximations with pattern metadata preserved in packet properties.",
+        "surfaces": ["czml", "cesium-js-viewer"]
+      },
+      {
+        "featureId": "object.frustum.geometry",
+        "label": "Frustum geometry",
+        "support": "partial",
+        "notes": "Frustum overlays compile into Cesium rectangular-sensor packets with frustum metadata preserved in packet properties.",
+        "surfaces": ["czml", "cesium-js-viewer"]
+      },
+      {
+        "featureId": "object.rectangularSensor.geometry",
+        "label": "Rectangular sensor geometry",
+        "support": "strong",
+        "notes": "Rectangular sensor overlays compile into Cesium's agi_rectangularSensor packet shape with radius, half angles, orientation, and styling.",
+        "surfaces": ["czml", "cesium-js-viewer"]
+      },
+      {
+        "featureId": "object.sector2d.geometry",
+        "label": "Sector 2D geometry",
+        "support": "partial",
+        "notes": "Sector 2D overlays compile into CZML polygon wedge approximations with sector parameters preserved in metadata.",
+        "surfaces": ["czml", "cesium-js-viewer"]
+      },
+      {
+        "featureId": "object.bearingFan.geometry",
+        "label": "Bearing fan geometry",
+        "support": "partial",
+        "notes": "Bearing fan overlays compile into CZML polygon wedge approximations with sector parameters preserved in metadata.",
+        "surfaces": ["czml", "cesium-js-viewer"]
+      },
+      {
+        "featureId": "object.fan.geometry",
+        "label": "Fan geometry",
+        "support": "partial",
+        "notes": "Fan overlays compile into CZML polygon wedge approximations with sector parameters preserved in metadata.",
+        "surfaces": ["czml", "cesium-js-viewer"]
+      },
+      {
+        "featureId": "object.sectorVolume.geometry",
+        "label": "Sector volume geometry",
+        "support": "partial",
+        "notes": "Sector volume overlays compile into CZML polygon wedge approximations with sector-volume metadata preserved in packet properties.",
+        "surfaces": ["czml", "cesium-js-viewer"]
+      },
+      {
+        "featureId": "object.hemisphere.geometry",
+        "label": "Hemisphere geometry",
+        "support": "partial",
+        "notes": "Hemisphere overlays compile into CZML ellipsoid packets with hemisphere metadata preserved in packet properties.",
+        "surfaces": ["czml", "cesium-js-viewer"]
+      },
+      {
+        "featureId": "object.keyhole.geometry",
+        "label": "Keyhole geometry",
+        "support": "partial",
+        "notes": "Keyhole overlays compile into CZML polygon wedge approximations with keyhole metadata preserved in packet properties.",
+        "surfaces": ["czml", "cesium-js-viewer"]
+      },
+      {
+        "featureId": "object.frustum.geometry",
+        "label": "Frustum geometry",
+        "support": "partial",
+        "notes": "Frustum overlays compile into approximate CZML box packets with frustum metadata preserved in packet properties.",
+        "surfaces": ["czml", "cesium-js-viewer"]
+      },
+      {
+        "featureId": "object.sphericalCap.geometry",
+        "label": "Spherical cap geometry",
+        "support": "partial",
+        "notes": "Spherical cap overlays compile into CZML ellipsoid packets with spherical-cap metadata preserved in packet properties.",
+        "surfaces": ["czml", "cesium-js-viewer"]
+      },
+      {
+        "featureId": "object.uncertaintyEllipsoid.geometry",
+        "label": "Uncertainty ellipsoid geometry",
+        "support": "strong",
+        "notes": "Uncertainty ellipsoids compile into native CZML ellipsoid packets with radii and partition metadata preserved in packet properties.",
+        "surfaces": ["czml", "cesium-js-viewer"]
+      },
+      {
+        "featureId": "object.covarianceEllipse.geometry",
+        "label": "Covariance ellipse geometry",
+        "support": "strong",
+        "notes": "Covariance ellipses compile into native CZML ellipse packets with covariance-style radii and styling.",
+        "surfaces": ["czml", "cesium-js-viewer"]
+      },
+      {
+        "featureId": "object.particleSystem.geometry",
+        "label": "Particle system geometry",
+        "support": "strong",
+        "notes": "Particle system overlays compile into Cesium particleSystem primitives with emitter, rate, image, size, and color metadata preserved.",
+        "surfaces": ["czml", "cesium-js-viewer"]
+      },
+      {
+        "featureId": "object.voxel.geometry",
+        "label": "Voxel geometry",
+        "support": "partial",
+        "notes": "Voxel overlays compile into a CZML box approximation with voxel metadata preserved in packet properties and round-trip back into the typed scene model, but the Python Cesium path does not compile them into a native voxel primitive yet.",
+        "surfaces": ["czml", "cesium-js-viewer"]
+      },
+      {
+        "featureId": "customObjects",
+        "label": "Custom objects",
+        "support": "partial",
+        "notes": "Custom objects preserve typed payloads and can dispatch through the Cesium overlay emitter registry, but there is not yet a standardized imported-SDJ custom type map.",
+        "surfaces": ["czml", "cesium-js-viewer"]
+      },
+      {
+        "featureId": "runtimeObjects",
+        "label": "Runtime objects",
+        "support": "partial",
+        "notes": "Runtime objects preserve typed payloads in the scene IR and can emit opaque CZML packet properties, but there is not yet a standardized imported-SDJ runtime object map.",
+        "surfaces": ["czml", "cesium-js-viewer"]
+      },
+      {
+        "featureId": "object.terrainSurface.runtime",
+        "label": "Terrain surface runtime object",
+        "support": "partial",
+        "notes": "Terrain surface objects preserve imported renderer/runtime payloads and round-trip through scene JSON/CZML, but the Python Cesium path does not emit a native terrain-surface primitive yet.",
+        "surfaces": ["czml", "cesium-js-viewer"]
+      },
+      {
+        "featureId": "object.customMesh.runtime",
+        "label": "Custom mesh runtime object",
+        "support": "partial",
+        "notes": "Custom mesh objects preserve imported renderer/runtime payloads and round-trip through scene JSON/CZML, but the Python Cesium path does not emit a native custom-mesh primitive yet.",
+        "surfaces": ["czml", "cesium-js-viewer"]
+      },
+      {
+        "featureId": "object.clippingPlane.runtime",
+        "label": "Clipping plane runtime object",
+        "support": "partial",
+        "notes": "Clipping plane objects preserve imported attachment payloads and round-trip through scene JSON/CZML, but the Python Cesium path does not emit a native clipping-plane collection yet.",
+        "surfaces": ["czml", "cesium-js-viewer"]
+      },
+      {
+        "featureId": "object.clippingPolygon.runtime",
+        "label": "Clipping polygon runtime object",
+        "support": "partial",
+        "notes": "Clipping polygon objects preserve imported attachment payloads and round-trip through scene JSON/CZML, but the Python Cesium path does not emit a native clipping-polygon collection yet.",
+        "surfaces": ["czml", "cesium-js-viewer"]
+      },
+      {
+        "featureId": "object.classificationVolume.runtime",
+        "label": "Classification volume runtime object",
+        "support": "partial",
+        "notes": "Classification volume objects preserve imported attachment payloads and round-trip through scene JSON/CZML, but the Python Cesium path does not emit a native classification-volume primitive yet.",
+        "surfaces": ["czml", "cesium-js-viewer"]
+      },
+      {
+        "featureId": "object.customShader.runtime",
+        "label": "Custom shader runtime object",
+        "support": "partial",
+        "notes": "Custom shader objects preserve imported attachment payloads and round-trip through scene JSON/CZML, but the Python Cesium path does not emit a native Cesium custom shader yet.",
+        "surfaces": ["czml", "cesium-js-viewer"]
+      },
+      {
+        "featureId": "object.postProcessStage.runtime",
+        "label": "Post-process stage runtime object",
+        "support": "partial",
+        "notes": "Post-process stage objects preserve imported attachment payloads and round-trip through scene JSON/CZML, but the Python Cesium path does not emit a native post-process stage yet.",
+        "surfaces": ["czml", "cesium-js-viewer"]
+      },
+      {
+        "featureId": "object.polylineVolume.geometry",
+        "label": "Polyline volume geometry",
+        "support": "strong",
+        "notes": "Polyline volumes compile into native CZML polylineVolume packets with positions, shape points, and styling.",
+        "surfaces": ["czml", "cesium-js-viewer"]
+      },
+      {
+        "featureId": "object.plane.geometry",
+        "label": "Plane geometry",
+        "support": "strong",
+        "notes": "Plane overlays compile into native CZML plane packets with a normal vector, distance, dimensions, and styling.",
+        "surfaces": ["czml", "cesium-js-viewer"]
+      },
+      {
+        "featureId": "object.tileset.geometry",
+        "label": "Tileset geometry",
+        "support": "strong",
+        "notes": "Tileset overlays compile into native CZML tileset packets with a URI and styling metadata.",
+        "surfaces": ["czml", "cesium-js-viewer"]
+      },
+      {
+        "featureId": "object.ellipsoid.geometry",
+        "label": "Ellipsoid geometry",
+        "support": "strong",
+        "notes": "Ellipsoid overlays compile into native CZML ellipsoid packets with radii and styling.",
+        "surfaces": ["czml", "cesium-js-viewer"]
+      },
+      {
+        "featureId": "object.sphere.geometry",
+        "label": "Sphere geometry",
+        "support": "strong",
+        "notes": "Sphere overlays compile into CZML ellipsoid packets with equal radii and styling.",
+        "surfaces": ["czml", "cesium-js-viewer"]
+      },
+      {
+        "featureId": "object.uncertaintyEllipsoid.geometry",
+        "label": "Uncertainty ellipsoid geometry",
+        "support": "partial",
+        "notes": "Uncertainty ellipsoid overlays compile into CZML ellipsoid packets with uncertainty metadata preserved in packet properties.",
+        "surfaces": ["czml", "cesium-js-viewer"]
+      },
+      {
+        "featureId": "object.covarianceEllipse.geometry",
+        "label": "Covariance ellipse geometry",
+        "support": "partial",
+        "notes": "Covariance ellipse overlays compile into CZML ellipse packets with covariance metadata preserved in packet properties.",
         "surfaces": ["czml", "cesium-js-viewer"]
       },
       {
@@ -165,22 +466,29 @@
       {
         "featureId": "views",
         "label": "Scene views",
-        "support": "unsupported",
-        "notes": "The package emits a generic viewer HTML shell but does not compile SDJ view definitions into Cesium camera programs.",
+        "support": "partial",
+        "notes": "The package emits a viewer HTML shell with scene-view buttons and target/position camera actions, including range-based focus and basic flight durations, but it does not yet compile the full SDJ camera program surface.",
+        "surfaces": ["cesium-js-viewer"]
+      },
+      {
+        "featureId": "cameraView",
+        "label": "Camera view objects",
+        "support": "partial",
+        "notes": "Camera view objects are rendered as viewer controls with target, position, orientation, range, and duration-based navigation, but not as a full runtime camera-program compiler.",
         "surfaces": ["cesium-js-viewer"]
       },
       {
         "featureId": "analysis",
         "label": "Analysis records",
-        "support": "unsupported",
-        "notes": "Scene analysis content is not compiled into Cesium artifacts yet.",
+        "support": "partial",
+        "notes": "Scene analysis content is preserved on the CZML document packet and surfaced in the Cesium viewer metadata panel.",
         "surfaces": ["czml"]
       },
       {
         "featureId": "presentation",
         "label": "Presentation records",
-        "support": "unsupported",
-        "notes": "Scene presentation content is not compiled into Cesium artifacts yet.",
+        "support": "partial",
+        "notes": "Scene presentation content is preserved on the CZML document packet and surfaced in the Cesium viewer metadata panel.",
         "surfaces": ["czml"]
       }
     ],
@@ -215,7 +523,14 @@
         "kind": "bundle",
         "status": "strong",
         "description": "Typed bundle containing entities, overlays, diagnostics, and presentation placeholders.",
-        "artifacts": ["simdis/manifest.json", "simdis/entities.json", "simdis/diagnostics.json"]
+        "artifacts": [
+          "simdis/manifest.json",
+          "simdis/entities.json",
+          "simdis/entities.normalized.json",
+          "simdis/overlays.gog",
+          "simdis/overlays.normalized.json",
+          "simdis/diagnostics.json"
+        ]
       }
     ],
     "schemaFeatures": [
@@ -290,6 +605,188 @@
         "surfaces": ["simdis-gog", "simdis-bundle"]
       },
       {
+        "featureId": "object.cone.geometry",
+        "label": "Cone geometry",
+        "support": "unsupported",
+        "notes": "Cone geometry is recognized by the broader SIMDIS vocabulary, but the current Python adapter does not emit it yet.",
+        "surfaces": ["simdis-gog", "simdis-bundle"]
+      },
+      {
+        "featureId": "object.conicSensor.geometry",
+        "label": "Conic sensor geometry",
+        "support": "unsupported",
+        "notes": "Conic sensor geometry is recognized by the broader SIMDIS vocabulary, but the current Python adapter does not emit it yet.",
+        "surfaces": ["simdis-gog", "simdis-bundle"]
+      },
+      {
+        "featureId": "object.customPatternSensor.geometry",
+        "label": "Custom pattern sensor geometry",
+        "support": "unsupported",
+        "notes": "Custom pattern sensor geometry is recognized by the broader SIMDIS vocabulary, but the current Python adapter does not emit it yet.",
+        "surfaces": ["simdis-gog", "simdis-bundle"]
+      },
+      {
+        "featureId": "object.frustum.geometry",
+        "label": "Frustum geometry",
+        "support": "unsupported",
+        "notes": "Frustum geometry is recognized by the broader SIMDIS vocabulary, but the current Python adapter does not emit it yet.",
+        "surfaces": ["simdis-gog", "simdis-bundle"]
+      },
+      {
+        "featureId": "object.rectangularSensor.geometry",
+        "label": "Rectangular sensor geometry",
+        "support": "unsupported",
+        "notes": "Rectangular sensor geometry is recognized by the broader SIMDIS vocabulary, but the current Python adapter does not emit it yet.",
+        "surfaces": ["simdis-gog", "simdis-bundle"]
+      },
+      {
+        "featureId": "object.sector2d.geometry",
+        "label": "Sector 2D geometry",
+        "support": "unsupported",
+        "notes": "Sector 2D geometry is recognized by the broader SIMDIS vocabulary, but the current Python adapter does not emit it yet.",
+        "surfaces": ["simdis-gog", "simdis-bundle"]
+      },
+      {
+        "featureId": "object.sectorVolume.geometry",
+        "label": "Sector volume geometry",
+        "support": "unsupported",
+        "notes": "Sector volume geometry is recognized by the broader SIMDIS vocabulary, but the current Python adapter does not emit it yet.",
+        "surfaces": ["simdis-gog", "simdis-bundle"]
+      },
+      {
+        "featureId": "object.hemisphere.geometry",
+        "label": "Hemisphere geometry",
+        "support": "unsupported",
+        "notes": "Hemisphere geometry is recognized by the broader SDJ/Cesium vocabulary, but the current SIMDIS adapter does not emit it yet.",
+        "surfaces": ["simdis-gog", "simdis-bundle"]
+      },
+      {
+        "featureId": "object.uncertaintyEllipsoid.geometry",
+        "label": "Uncertainty ellipsoid geometry",
+        "support": "unsupported",
+        "notes": "Uncertainty ellipsoid geometry is recognized by the broader SDJ/Cesium vocabulary, but the current SIMDIS adapter does not emit it yet.",
+        "surfaces": ["simdis-gog", "simdis-bundle"]
+      },
+      {
+        "featureId": "object.covarianceEllipse.geometry",
+        "label": "Covariance ellipse geometry",
+        "support": "unsupported",
+        "notes": "Covariance ellipse geometry is recognized by the broader SDJ/Cesium vocabulary, but the current SIMDIS adapter does not emit it yet.",
+        "surfaces": ["simdis-gog", "simdis-bundle"]
+      },
+      {
+        "featureId": "object.particleSystem.geometry",
+        "label": "Particle system geometry",
+        "support": "unsupported",
+        "notes": "Particle system geometry is recognized by the broader SDJ/Cesium vocabulary, but the current SIMDIS adapter does not emit it yet.",
+        "surfaces": ["simdis-gog", "simdis-bundle"]
+      },
+      {
+        "featureId": "object.voxel.geometry",
+        "label": "Voxel geometry",
+        "support": "unsupported",
+        "notes": "Voxel geometry is recognized by the broader SDJ/Cesium vocabulary, but the current SIMDIS adapter does not emit it yet and treats it as reserved.",
+        "surfaces": ["simdis-gog", "simdis-bundle"]
+      },
+      {
+        "featureId": "customObjects",
+        "label": "Custom objects",
+        "support": "partial",
+        "notes": "Custom objects are preserved in the SIMDIS bundle as typed opaque records, but the current SIMDIS adapter does not emit a standardized runtime surface yet.",
+        "surfaces": ["simdis-bundle"]
+      },
+      {
+        "featureId": "runtimeObjects",
+        "label": "Runtime objects",
+        "support": "partial",
+        "notes": "Runtime objects are preserved in the SIMDIS bundle as typed opaque records, but the current SIMDIS adapter does not emit a standardized runtime surface yet.",
+        "surfaces": ["simdis-bundle"]
+      },
+      {
+        "featureId": "object.terrainSurface.runtime",
+        "label": "Terrain surface runtime object",
+        "support": "partial",
+        "notes": "Terrain surface objects are preserved in the SIMDIS bundle as typed opaque records, but the current SIMDIS adapter does not emit a standardized terrain-surface runtime surface yet.",
+        "surfaces": ["simdis-bundle"]
+      },
+      {
+        "featureId": "object.customMesh.runtime",
+        "label": "Custom mesh runtime object",
+        "support": "partial",
+        "notes": "Custom mesh objects are preserved in the SIMDIS bundle as typed opaque records, but the current SIMDIS adapter does not emit a standardized custom-mesh runtime surface yet.",
+        "surfaces": ["simdis-bundle"]
+      },
+      {
+        "featureId": "object.clippingPlane.runtime",
+        "label": "Clipping plane runtime object",
+        "support": "partial",
+        "notes": "Clipping plane objects are preserved in the SIMDIS bundle as typed opaque records, but the current SIMDIS adapter does not emit a standardized clipping-plane runtime surface yet.",
+        "surfaces": ["simdis-bundle"]
+      },
+      {
+        "featureId": "object.clippingPolygon.runtime",
+        "label": "Clipping polygon runtime object",
+        "support": "partial",
+        "notes": "Clipping polygon objects are preserved in the SIMDIS bundle as typed opaque records, but the current SIMDIS adapter does not emit a standardized clipping-polygon runtime surface yet.",
+        "surfaces": ["simdis-bundle"]
+      },
+      {
+        "featureId": "object.classificationVolume.runtime",
+        "label": "Classification volume runtime object",
+        "support": "partial",
+        "notes": "Classification volume objects are preserved in the SIMDIS bundle as typed opaque records, but the current SIMDIS adapter does not emit a standardized classification-volume runtime surface yet.",
+        "surfaces": ["simdis-bundle"]
+      },
+      {
+        "featureId": "object.customShader.runtime",
+        "label": "Custom shader runtime object",
+        "support": "partial",
+        "notes": "Custom shader objects are preserved in the SIMDIS bundle as typed opaque records, but the current SIMDIS adapter does not emit a standardized custom-shader runtime surface yet.",
+        "surfaces": ["simdis-bundle"]
+      },
+      {
+        "featureId": "object.postProcessStage.runtime",
+        "label": "Post-process stage runtime object",
+        "support": "partial",
+        "notes": "Post-process stage objects are preserved in the SIMDIS bundle as typed opaque records, but the current SIMDIS adapter does not emit a standardized post-process stage runtime surface yet.",
+        "surfaces": ["simdis-bundle"]
+      },
+      {
+        "featureId": "object.keyhole.geometry",
+        "label": "Keyhole geometry",
+        "support": "unsupported",
+        "notes": "Keyhole geometry is recognized by the broader SDJ/Cesium vocabulary, but the current SIMDIS adapter does not emit it yet.",
+        "surfaces": ["simdis-gog", "simdis-bundle"]
+      },
+      {
+        "featureId": "object.frustum.geometry",
+        "label": "Frustum geometry",
+        "support": "unsupported",
+        "notes": "Frustum geometry is recognized by the broader SDJ/Cesium vocabulary, but the current SIMDIS adapter does not emit it yet.",
+        "surfaces": ["simdis-gog", "simdis-bundle"]
+      },
+      {
+        "featureId": "object.sphericalCap.geometry",
+        "label": "Spherical cap geometry",
+        "support": "unsupported",
+        "notes": "Spherical cap geometry is recognized by the broader SDJ/Cesium vocabulary, but the current SIMDIS adapter does not emit it yet.",
+        "surfaces": ["simdis-gog", "simdis-bundle"]
+      },
+      {
+        "featureId": "object.uncertaintyEllipsoid.geometry",
+        "label": "Uncertainty ellipsoid geometry",
+        "support": "unsupported",
+        "notes": "Uncertainty ellipsoid geometry is recognized by the broader SDJ/Cesium vocabulary, but the current SIMDIS adapter does not emit it yet.",
+        "surfaces": ["simdis-gog", "simdis-bundle"]
+      },
+      {
+        "featureId": "object.covarianceEllipse.geometry",
+        "label": "Covariance ellipse geometry",
+        "support": "unsupported",
+        "notes": "Covariance ellipse geometry is recognized by the broader SDJ/Cesium vocabulary, but the current SIMDIS adapter does not emit it yet.",
+        "surfaces": ["simdis-gog", "simdis-bundle"]
+      },
+      {
         "featureId": "object.sensor",
         "label": "Sensor semantics",
         "support": "partial",
@@ -297,10 +794,87 @@
         "surfaces": ["simdis-bundle"]
       },
       {
+        "featureId": "object.plane.geometry",
+        "label": "Plane geometry",
+        "support": "unsupported",
+        "notes": "Plane geometry is recognized by the broader SDJ/Cesium vocabulary, but the current SIMDIS adapter does not emit it yet.",
+        "surfaces": ["simdis-bundle"]
+      },
+      {
+        "featureId": "object.tileset.geometry",
+        "label": "Tileset geometry",
+        "support": "unsupported",
+        "notes": "Tileset geometry is recognized by the broader SDJ/Cesium vocabulary, but the current SIMDIS adapter does not emit it yet.",
+        "surfaces": ["simdis-bundle"]
+      },
+      {
+        "featureId": "object.vector.geometry",
+        "label": "Vector geometry",
+        "support": "unsupported",
+        "notes": "Vector geometry is recognized by the broader SDJ/Cesium vocabulary, but the current SIMDIS adapter does not emit it yet.",
+        "surfaces": ["simdis-bundle"]
+      },
+      {
+        "featureId": "object.velocityVector.geometry",
+        "label": "Velocity vector geometry",
+        "support": "unsupported",
+        "notes": "Velocity vector geometry is recognized by the broader SDJ/Cesium vocabulary, but the current SIMDIS adapter does not emit it yet.",
+        "surfaces": ["simdis-bundle"]
+      },
+      {
+        "featureId": "object.accelerationVector.geometry",
+        "label": "Acceleration vector geometry",
+        "support": "unsupported",
+        "notes": "Acceleration vector geometry is recognized by the broader SDJ/Cesium vocabulary, but the current SIMDIS adapter does not emit it yet.",
+        "surfaces": ["simdis-bundle"]
+      },
+      {
+        "featureId": "object.lineOfSight.geometry",
+        "label": "Line of sight geometry",
+        "support": "unsupported",
+        "notes": "Line-of-sight geometry is recognized by the broader SDJ/Cesium vocabulary, but the current SIMDIS adapter does not emit it yet.",
+        "surfaces": ["simdis-bundle"]
+      },
+      {
+        "featureId": "object.bodyAxes.geometry",
+        "label": "Body axes geometry",
+        "support": "unsupported",
+        "notes": "Body axes geometry is recognized by the broader SDJ/Cesium vocabulary, but the current SIMDIS adapter does not emit it yet.",
+        "surfaces": ["simdis-bundle"]
+      },
+      {
+        "featureId": "object.principalAxes.geometry",
+        "label": "Principal axes geometry",
+        "support": "unsupported",
+        "notes": "Principal axes geometry is recognized by the broader SDJ/Cesium vocabulary, but the current SIMDIS adapter does not emit it yet.",
+        "surfaces": ["simdis-bundle"]
+      },
+      {
+        "featureId": "object.relativeLine.geometry",
+        "label": "Relative line geometry",
+        "support": "unsupported",
+        "notes": "Relative-line geometry is recognized by the broader SDJ/Cesium vocabulary, but the current SIMDIS adapter does not emit it yet.",
+        "surfaces": ["simdis-bundle"]
+      },
+      {
+        "featureId": "object.interceptLine.geometry",
+        "label": "Intercept line geometry",
+        "support": "unsupported",
+        "notes": "Intercept-line geometry is recognized by the broader SDJ/Cesium vocabulary, but the current SIMDIS adapter does not emit it yet.",
+        "surfaces": ["simdis-bundle"]
+      },
+      {
         "featureId": "views",
         "label": "Scene views",
         "support": "unsupported",
         "notes": "No SDJ view definitions are compiled into SIMDIS presentation records yet.",
+        "surfaces": ["simdis-bundle"]
+      },
+      {
+        "featureId": "cameraView",
+        "label": "Camera view objects",
+        "support": "unsupported",
+        "notes": "Camera view objects are not compiled into SIMDIS presentation records yet.",
         "surfaces": ["simdis-bundle"]
       },
       {
@@ -424,6 +998,258 @@
         "surfaces": ["soap-bundle", "orb-related"]
       },
       {
+        "featureId": "object.plane.geometry",
+        "label": "Plane geometry",
+        "support": "unsupported",
+        "notes": "Plane geometry is not compiled into SOAP bundle or envelope artifacts yet.",
+        "surfaces": ["soap-bundle", "orb-related"]
+      },
+      {
+        "featureId": "object.tileset.geometry",
+        "label": "Tileset geometry",
+        "support": "unsupported",
+        "notes": "Tileset geometry is not compiled into SOAP bundle or envelope artifacts yet.",
+        "surfaces": ["soap-bundle", "orb-related"]
+      },
+      {
+        "featureId": "object.cone.geometry",
+        "label": "Cone geometry",
+        "support": "unsupported",
+        "notes": "Cone geometry is not compiled into SOAP bundle or envelope artifacts yet.",
+        "surfaces": ["soap-bundle", "orb-related"]
+      },
+      {
+        "featureId": "object.conicSensor.geometry",
+        "label": "Conic sensor geometry",
+        "support": "unsupported",
+        "notes": "Conic sensor geometry is not compiled into SOAP bundle or envelope artifacts yet.",
+        "surfaces": ["soap-bundle", "orb-related"]
+      },
+      {
+        "featureId": "object.uncertaintyEllipsoid.geometry",
+        "label": "Uncertainty ellipsoid geometry",
+        "support": "unsupported",
+        "notes": "Uncertainty ellipsoid geometry is not compiled into SOAP bundle or envelope artifacts yet.",
+        "surfaces": ["soap-bundle", "orb-related"]
+      },
+      {
+        "featureId": "object.covarianceEllipse.geometry",
+        "label": "Covariance ellipse geometry",
+        "support": "unsupported",
+        "notes": "Covariance ellipse geometry is not compiled into SOAP bundle or envelope artifacts yet.",
+        "surfaces": ["soap-bundle", "orb-related"]
+      },
+      {
+        "featureId": "object.particleSystem.geometry",
+        "label": "Particle system geometry",
+        "support": "unsupported",
+        "notes": "Particle system geometry is not compiled into SOAP bundle or envelope artifacts yet.",
+        "surfaces": ["soap-bundle", "orb-related"]
+      },
+      {
+        "featureId": "object.voxel.geometry",
+        "label": "Voxel geometry",
+        "support": "unsupported",
+        "notes": "Voxel geometry is not compiled into SOAP bundle or envelope artifacts yet and remains a reserved placeholder.",
+        "surfaces": ["soap-bundle", "orb-related"]
+      },
+      {
+        "featureId": "customObjects",
+        "label": "Custom objects",
+        "support": "partial",
+        "notes": "Custom objects are preserved in the SOAP bundle as typed opaque records, but SOAP bundle/envelope emission does not yet expose a standardized runtime surface.",
+        "surfaces": ["soap-bundle"]
+      },
+      {
+        "featureId": "runtimeObjects",
+        "label": "Runtime objects",
+        "support": "partial",
+        "notes": "Runtime objects are preserved in the SOAP bundle as typed opaque records, but SOAP bundle/envelope emission does not yet expose a standardized runtime surface.",
+        "surfaces": ["soap-bundle"]
+      },
+      {
+        "featureId": "object.terrainSurface.runtime",
+        "label": "Terrain surface runtime object",
+        "support": "partial",
+        "notes": "Terrain surface objects are preserved in the SOAP bundle as typed opaque records, but SOAP bundle/envelope emission does not yet expose a standardized terrain-surface runtime surface.",
+        "surfaces": ["soap-bundle"]
+      },
+      {
+        "featureId": "object.customMesh.runtime",
+        "label": "Custom mesh runtime object",
+        "support": "partial",
+        "notes": "Custom mesh objects are preserved in the SOAP bundle as typed opaque records, but SOAP bundle/envelope emission does not yet expose a standardized custom-mesh runtime surface.",
+        "surfaces": ["soap-bundle"]
+      },
+      {
+        "featureId": "object.clippingPlane.runtime",
+        "label": "Clipping plane runtime object",
+        "support": "partial",
+        "notes": "Clipping plane objects are preserved in the SOAP bundle as typed opaque records, but SOAP bundle/envelope emission does not yet expose a standardized clipping-plane runtime surface.",
+        "surfaces": ["soap-bundle"]
+      },
+      {
+        "featureId": "object.clippingPolygon.runtime",
+        "label": "Clipping polygon runtime object",
+        "support": "partial",
+        "notes": "Clipping polygon objects are preserved in the SOAP bundle as typed opaque records, but SOAP bundle/envelope emission does not yet expose a standardized clipping-polygon runtime surface.",
+        "surfaces": ["soap-bundle"]
+      },
+      {
+        "featureId": "object.classificationVolume.runtime",
+        "label": "Classification volume runtime object",
+        "support": "partial",
+        "notes": "Classification volume objects are preserved in the SOAP bundle as typed opaque records, but SOAP bundle/envelope emission does not yet expose a standardized classification-volume runtime surface.",
+        "surfaces": ["soap-bundle"]
+      },
+      {
+        "featureId": "object.customShader.runtime",
+        "label": "Custom shader runtime object",
+        "support": "partial",
+        "notes": "Custom shader objects are preserved in the SOAP bundle as typed opaque records, but SOAP bundle/envelope emission does not yet expose a standardized custom-shader runtime surface.",
+        "surfaces": ["soap-bundle"]
+      },
+      {
+        "featureId": "object.postProcessStage.runtime",
+        "label": "Post-process stage runtime object",
+        "support": "partial",
+        "notes": "Post-process stage objects are preserved in the SOAP bundle as typed opaque records, but SOAP bundle/envelope emission does not yet expose a standardized post-process stage runtime surface.",
+        "surfaces": ["soap-bundle"]
+      },
+      {
+        "featureId": "object.customPatternSensor.geometry",
+        "label": "Custom pattern sensor geometry",
+        "support": "unsupported",
+        "notes": "Custom pattern sensor geometry is not compiled into SOAP bundle or envelope artifacts yet.",
+        "surfaces": ["soap-bundle", "orb-related"]
+      },
+      {
+        "featureId": "object.frustum.geometry",
+        "label": "Frustum geometry",
+        "support": "unsupported",
+        "notes": "Frustum geometry is not compiled into SOAP bundle or envelope artifacts yet.",
+        "surfaces": ["soap-bundle", "orb-related"]
+      },
+      {
+        "featureId": "object.rectangularSensor.geometry",
+        "label": "Rectangular sensor geometry",
+        "support": "unsupported",
+        "notes": "Rectangular sensor geometry is not compiled into SOAP bundle or envelope artifacts yet.",
+        "surfaces": ["soap-bundle", "orb-related"]
+      },
+      {
+        "featureId": "object.sector2d.geometry",
+        "label": "Sector 2D geometry",
+        "support": "unsupported",
+        "notes": "Sector 2D geometry is not compiled into SOAP bundle or envelope artifacts yet.",
+        "surfaces": ["soap-bundle", "orb-related"]
+      },
+      {
+        "featureId": "object.sectorVolume.geometry",
+        "label": "Sector volume geometry",
+        "support": "unsupported",
+        "notes": "Sector volume geometry is not compiled into SOAP bundle or envelope artifacts yet.",
+        "surfaces": ["soap-bundle", "orb-related"]
+      },
+      {
+        "featureId": "object.hemisphere.geometry",
+        "label": "Hemisphere geometry",
+        "support": "unsupported",
+        "notes": "Hemisphere geometry is not compiled into SOAP bundle or envelope artifacts yet.",
+        "surfaces": ["soap-bundle", "orb-related"]
+      },
+      {
+        "featureId": "object.sphericalCap.geometry",
+        "label": "Spherical cap geometry",
+        "support": "unsupported",
+        "notes": "Spherical cap geometry is not compiled into SOAP bundle or envelope artifacts yet.",
+        "surfaces": ["soap-bundle", "orb-related"]
+      },
+      {
+        "featureId": "object.uncertaintyEllipsoid.geometry",
+        "label": "Uncertainty ellipsoid geometry",
+        "support": "unsupported",
+        "notes": "Uncertainty ellipsoid geometry is not compiled into SOAP bundle or envelope artifacts yet.",
+        "surfaces": ["soap-bundle", "orb-related"]
+      },
+      {
+        "featureId": "object.covarianceEllipse.geometry",
+        "label": "Covariance ellipse geometry",
+        "support": "unsupported",
+        "notes": "Covariance ellipse geometry is not compiled into SOAP bundle or envelope artifacts yet.",
+        "surfaces": ["soap-bundle", "orb-related"]
+      },
+      {
+        "featureId": "object.keyhole.geometry",
+        "label": "Keyhole geometry",
+        "support": "unsupported",
+        "notes": "Keyhole geometry is not compiled into SOAP bundle or envelope artifacts yet.",
+        "surfaces": ["soap-bundle", "orb-related"]
+      },
+      {
+        "featureId": "object.frustum.geometry",
+        "label": "Frustum geometry",
+        "support": "unsupported",
+        "notes": "Frustum geometry is not compiled into SOAP bundle or envelope artifacts yet.",
+        "surfaces": ["soap-bundle", "orb-related"]
+      },
+      {
+        "featureId": "object.vector.geometry",
+        "label": "Vector geometry",
+        "support": "unsupported",
+        "notes": "Vector geometry is not compiled into SOAP bundle or envelope artifacts yet.",
+        "surfaces": ["soap-bundle", "orb-related"]
+      },
+      {
+        "featureId": "object.velocityVector.geometry",
+        "label": "Velocity vector geometry",
+        "support": "unsupported",
+        "notes": "Velocity vector geometry is not compiled into SOAP bundle or envelope artifacts yet.",
+        "surfaces": ["soap-bundle", "orb-related"]
+      },
+      {
+        "featureId": "object.accelerationVector.geometry",
+        "label": "Acceleration vector geometry",
+        "support": "unsupported",
+        "notes": "Acceleration vector geometry is not compiled into SOAP bundle or envelope artifacts yet.",
+        "surfaces": ["soap-bundle", "orb-related"]
+      },
+      {
+        "featureId": "object.lineOfSight.geometry",
+        "label": "Line of sight geometry",
+        "support": "unsupported",
+        "notes": "Line-of-sight geometry is not compiled into SOAP bundle or envelope artifacts yet.",
+        "surfaces": ["soap-bundle", "orb-related"]
+      },
+      {
+        "featureId": "object.bodyAxes.geometry",
+        "label": "Body axes geometry",
+        "support": "unsupported",
+        "notes": "Body axes geometry is not compiled into SOAP bundle or envelope artifacts yet.",
+        "surfaces": ["soap-bundle", "orb-related"]
+      },
+      {
+        "featureId": "object.principalAxes.geometry",
+        "label": "Principal axes geometry",
+        "support": "unsupported",
+        "notes": "Principal axes geometry is not compiled into SOAP bundle or envelope artifacts yet.",
+        "surfaces": ["soap-bundle", "orb-related"]
+      },
+      {
+        "featureId": "object.relativeLine.geometry",
+        "label": "Relative line geometry",
+        "support": "unsupported",
+        "notes": "Relative-line geometry is not compiled into SOAP bundle or envelope artifacts yet.",
+        "surfaces": ["soap-bundle", "orb-related"]
+      },
+      {
+        "featureId": "object.interceptLine.geometry",
+        "label": "Intercept line geometry",
+        "support": "unsupported",
+        "notes": "Intercept-line geometry is not compiled into SOAP bundle or envelope artifacts yet.",
+        "surfaces": ["soap-bundle", "orb-related"]
+      },
+      {
         "featureId": "object.sensor",
         "label": "Sensor semantics",
         "support": "partial",
@@ -436,6 +1262,13 @@
         "support": "partial",
         "notes": "A typed view and palette artifact is generated, but it is currently derived from the first entity rather than authored SDJ views.",
         "surfaces": ["soap-bundle"]
+      },
+      {
+        "featureId": "cameraView",
+        "label": "Camera view objects",
+        "support": "unsupported",
+        "notes": "Camera view objects are not compiled into SOAP bundle or envelope artifacts yet.",
+        "surfaces": ["soap-bundle", "orb-related"]
       },
       {
         "featureId": "analysis",

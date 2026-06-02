@@ -1,0 +1,31 @@
+{
+  "schemaVersion": "1.0.0-scene",
+  "document": {
+    "id": "vector-demo",
+    "name": "Vector Demo",
+    "description": "A scene with a single vector object."
+  },
+  "objects": [
+    {
+      "objectType": "vector",
+      "id": "vector-001",
+      "name": "Vector Alpha",
+      "startPosition": {
+        "longitudeDeg": -97.74,
+        "latitudeDeg": 30.27,
+        "altitudeM": 9000.0
+      },
+      "endPosition": {
+        "longitudeDeg": -97.68,
+        "latitudeDeg": 30.33,
+        "altitudeM": 11000.0
+      },
+      "widthPx": 4.0,
+      "clampToGround": false,
+      "style": {
+        "label": "Vector Alpha",
+        "colorRgba": [255, 153, 0, 255]
+      }
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "schemaVersion": "1.0.0-scene",
+  "document": {
+    "id": "frustum-demo",
+    "name": "Frustum Demo",
+    "description": "A frustum overlay used to exercise the Cesium frustum approximation.",
+    "created": "2026-06-01T14:40:00Z",
+    "generator": "visualization-standard-schema",
+    "source": "sim.example.geo-sim"
+  },
+  "objects": [
+    {
+      "objectType": "overlay",
+      "id": "frustum-001",
+      "name": "Frustum 001",
+      "geometryType": "frustum",
+      "position": {
+        "longitudeDeg": -97.762,
+        "latitudeDeg": 30.335,
+        "altitudeM": 2300.0
+      },
+      "orientation": {
+        "headingDeg": 40.0,
+        "pitchDeg": -10.0,
+        "rollDeg": 0.0
+      },
+      "style": {
+        "label": "Frustum 001",
+        "colorRgba": [33, 150, 243, 120]
+      },
+      "frustum": {
+        "nearMeters": 2000.0,
+        "farMeters": 12000.0,
+        "horizontalFovDegrees": 40.0,
+        "verticalFovDegrees": 30.0,
+        "aspectRatio": 1.3333333333
+      },
+      "attributes": {
+        "shapeType": "frustum"
+      },
+      "source": "sim.example.geo-sim",
+      "timestamp": "2026-06-01T14:40:00Z"
+    }
+  ]
+}

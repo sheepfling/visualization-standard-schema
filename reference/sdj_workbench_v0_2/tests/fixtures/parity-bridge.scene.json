@@ -1,0 +1,115 @@
+{
+  "schemaVersion": "sdj-0.4",
+  "document": {
+    "id": "parity-bridge-demo",
+    "name": "Parity Bridge Demo",
+    "description": "Bridge fixture used to compare JS and Python target outputs.",
+    "created": "2026-06-01T12:00:00Z",
+    "generator": "visualization-standard-schema",
+    "source": "parity.bridge.fixture"
+  },
+  "objects": [
+    {
+      "id": "aircraft-001",
+      "kind": "track",
+      "name": "Blue One",
+      "timestamp": "2026-06-01T12:00:00Z",
+      "pose": {
+        "position": {
+          "cartographicDegrees": [-97.7431, 30.2672, 9450.0],
+          "samples": {
+            "epoch": "2026-06-01T12:00:00Z",
+            "timeFormat": "secondsSinceEpoch",
+            "valueFormat": "cartographicDegrees",
+            "referenceFrame": "FIXED",
+            "interpolation": "linear",
+            "values": [
+              ["2026-06-01T12:00:00Z", -97.7431, 30.2672, 9450.0]
+            ]
+          }
+        },
+        "orientation": {
+          "headingDeg": 72.0,
+          "pitchDeg": 1.5,
+          "rollDeg": 0.2
+        }
+      },
+      "properties": {
+        "platformType": "air",
+        "source": "parity.bridge.fixture"
+      },
+      "path": {
+        "show": true,
+        "trailTimeSeconds": 120,
+        "leadTimeSeconds": 60,
+        "width": 3
+      }
+    },
+    {
+      "id": "flight-corridor-a",
+      "kind": "polyline",
+      "name": "Flight Corridor A",
+      "pose": {
+        "position": {
+          "cartographicDegrees": [-97.79, 30.25, 6000.0]
+        }
+      },
+      "geometry": {
+        "widthPx": 3,
+        "positions": [
+          {
+            "cartographicDegrees": [-97.88, 30.20, 5500.0]
+          },
+          {
+            "cartographicDegrees": [-97.79, 30.25, 6000.0]
+          },
+          {
+            "cartographicDegrees": [-97.69, 30.31, 6400.0]
+          }
+        ]
+      },
+      "style": {
+        "material": {
+          "type": "solidColor",
+          "rgba": [186, 104, 200, 255]
+        }
+      }
+    },
+    {
+      "id": "coverage-zone-b",
+      "kind": "polygon",
+      "name": "Coverage Zone B",
+      "pose": {
+        "position": {
+          "cartographicDegrees": [-97.72, 30.28, 1800.0]
+        }
+      },
+      "geometry": {
+        "rings": [
+          [
+            {
+              "cartographicDegrees": [-97.76, 30.27, 1500.0]
+            },
+            {
+              "cartographicDegrees": [-97.72, 30.26, 1500.0]
+            },
+            {
+              "cartographicDegrees": [-97.70, 30.29, 1800.0]
+            },
+            {
+              "cartographicDegrees": [-97.74, 30.31, 1800.0]
+            }
+          ]
+        ]
+      },
+      "style": {
+        "material": {
+          "type": "solidColor",
+          "rgba": [120, 192, 108, 180]
+        }
+      }
+    }
+  ],
+  "analysis": [],
+  "presentation": []
+}

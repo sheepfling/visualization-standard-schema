@@ -1,0 +1,34 @@
+# SIMDIS ASCII seed example: platform + body-relative beam + gate + projector
+# Provenance: synthetic sample built from ASIViewer parser-supported Platform/Beam/Gate/Projector commands.
+ReferenceYear 2026
+DegreeAngles 1
+
+PlatformID 5001
+PlatformName 5001 "ISR Aircraft"
+PlatformIcon 5001 "aircraft"
+PlatformData 5001 "001:00:00:00.000" 33.750000 -118.250000 8000.0 65.0 -3.0 0.0 180.0 0.0 0.0
+PlatformData 5001 "001:00:00:15.000" 33.765000 -118.220000 8100.0 67.0 -2.0 0.0 182.0 0.0 0.0
+PlatformData 5001 "001:00:00:30.000" 33.782000 -118.190000 8200.0 69.0 -1.0 0.0 184.0 0.0 0.0
+
+BeamID 5001 5101
+BeamType 5101 "BODY"
+HorzBW 5101 20.0
+VertBW 5101 12.0
+BeamOnOffCmd 5101 "001:00:00:00.000" 1
+BeamColorCmd 5101 "001:00:00:00.000" cyan
+BeamDataRAE 5101 "001:00:00:00.000" 0.0 -12.0 60000.0
+BeamDataRAE 5101 "001:00:00:30.000" 5.0 -10.0 62000.0
+
+GateID 5101 5201
+GateType 5201 "BODY"
+GateOnOffCmd 5201 "001:00:00:00.000" 1
+GateColorCmd 5201 "001:00:00:00.000" green
+GateDataRAE 5201 "001:00:00:00.000" 0.0 -12.0 4.0 3.0 10000.0 60000.0 35000.0
+GateDataRAE 5201 "001:00:00:30.000" 5.0 -10.0 4.0 3.0 12000.0 62000.0 37000.0
+
+Projector 5001 5301
+ProjectorRasterFile 5301 "assets/projector/sample-frame.png"
+ProjectorInterpolateFOV 5301 1
+ProjectorOn 5301 "001:00:00:00.000" 1
+ProjectorFOV 5301 "001:00:00:00.000" 30.0
+ProjectorFOV 5301 "001:00:00:30.000" 22.0

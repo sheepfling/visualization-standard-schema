@@ -1,0 +1,50 @@
+{
+  "schemaVersion": "1.0.0-scene",
+  "document": {
+    "id": "particle-system-demo",
+    "name": "Particle System Demo",
+    "description": "A particle system overlay used to exercise the scene model boundary.",
+    "created": "2026-06-01T18:30:00Z",
+    "generator": "visualization-standard-schema",
+    "source": "sim.example.geo-sim"
+  },
+  "objects": [
+    {
+      "objectType": "overlay",
+      "id": "particle-system-001",
+      "name": "Particle System 001",
+      "geometryType": "particleSystem",
+      "position": {
+        "longitudeDeg": -97.74,
+        "latitudeDeg": 30.275,
+        "altitudeM": 1200.0
+      },
+      "style": {
+        "label": "Particle System 001",
+        "colorRgba": [255, 167, 38, 220]
+      },
+      "particleSystem": {
+        "asset": "smokeParticle",
+        "image": "smokeParticle.png",
+        "emitter": {
+          "type": "circle",
+          "radiusMeters": 2.0
+        },
+        "emissionRate": 12.0,
+        "particleLifeSeconds": 4.0,
+        "speedMetersPerSecond": 8.0,
+        "scale": 1.0,
+        "startScale": 0.6,
+        "endScale": 3.0,
+        "imageSize": [20.0, 20.0],
+        "startColor": [1.0, 1.0, 1.0, 0.7],
+        "endColor": [0.4, 0.4, 0.4, 0.0]
+      },
+      "attributes": {
+        "shapeType": "particleSystem"
+      },
+      "source": "sim.example.geo-sim",
+      "timestamp": "2026-06-01T18:30:00Z"
+    }
+  ]
+}

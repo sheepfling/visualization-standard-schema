@@ -1,0 +1,41 @@
+[
+  {
+    "id": "document",
+    "name": "Shader Stage Demo",
+    "version": "1.0"
+  },
+  {
+    "id": "custom-shader-001",
+    "name": "Custom Shader Placeholder",
+    "properties": {
+      "shapeType": "customShader",
+      "objectType": "customShader",
+      "show": false,
+      "layer": "coverage-placeholders",
+      "rendererHints": {
+        "semanticKind": "customShader"
+      },
+      "customShader": {
+        "language": "glsl",
+        "note": "placeholder"
+      }
+    }
+  },
+  {
+    "id": "post-process-stage-001",
+    "name": "Post Process Stage Placeholder",
+    "properties": {
+      "shapeType": "postProcessStage",
+      "objectType": "postProcessStage",
+      "show": false,
+      "layer": "coverage-placeholders",
+      "rendererHints": {
+        "semanticKind": "postProcessStage"
+      },
+      "postProcessStage": {
+        "stageType": "bloom",
+        "note": "placeholder"
+      }
+    }
+  }
+]

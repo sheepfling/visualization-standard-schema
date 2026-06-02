@@ -1,0 +1,26 @@
+# SIMDIS ASCII seed example: two platforms plus target-oriented beam
+# Provenance: synthetic sample built from ASIViewer parser-supported Platform/Beam commands.
+ReferenceYear 2026
+DegreeAngles 1
+
+PlatformID 1001
+PlatformName 1001 "Emitter Aircraft"
+PlatformIcon 1001 "aircraft"
+PlatformData 1001 "001:00:00:00.000" 33.920000 -117.920000 10000.0 90.0 0.0 0.0 220.0 0.0 0.0
+PlatformData 1001 "001:00:00:30.000" 33.965000 -117.845000 10900.0 98.0 1.0 0.0 235.0 0.0 0.0
+
+PlatformID 2001
+PlatformName 2001 "Target Aircraft"
+PlatformIcon 2001 "aircraft"
+PlatformData 2001 "001:00:00:00.000" 34.050000 -117.700000 9000.0 250.0 0.0 0.0 -180.0 0.0 0.0
+PlatformData 2001 "001:00:00:30.000" 34.030000 -117.750000 9200.0 248.0 0.0 0.0 -182.0 0.0 0.0
+
+BeamID 1001 3001
+BeamType 3001 "TARGET"
+HorzBW 3001 8.0
+VertBW 3001 5.0
+BeamOnOffCmd 3001 "001:00:00:00.000" 1
+BeamColorCmd 3001 "001:00:00:00.000" yellow
+BeamTargetIDCmd 3001 "001:00:00:00.000" 2001
+BeamDataRAE 3001 "001:00:00:00.000" 40.0 2.0 45000.0
+BeamDataRAE 3001 "001:00:00:30.000" 38.0 1.5 41000.0

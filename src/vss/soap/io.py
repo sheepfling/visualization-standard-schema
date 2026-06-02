@@ -22,6 +22,8 @@ SOAP_ANALYSIS_PATH = "soap/analysis.json"
 SOAP_PRESENTATION_PATH = "soap/presentation.json"
 SOAP_ASSETS_PATH = "soap/assets.json"
 SOAP_DIAGNOSTICS_PATH = "soap/diagnostics.json"
+SOAP_CUSTOM_OBJECTS_PATH = "soap/custom-objects.json"
+SOAP_RUNTIME_OBJECTS_PATH = "soap/runtime-objects.json"
 SOAP_GENERATED_BUNDLE_PATH = "soap/generated/soap-example-bundle.json"
 
 
@@ -43,6 +45,8 @@ def serialize_soap_bundle_files(bundle: SoapBundle, *, indent: int = 2) -> dict[
         SOAP_PRESENTATION_PATH: dumps_json(bundle.presentation.model_dump(mode="json", exclude_none=True), indent=indent),
         SOAP_ASSETS_PATH: dumps_json(bundle.assets.model_dump(mode="json", exclude_none=True), indent=indent),
         SOAP_DIAGNOSTICS_PATH: dumps_json(diagnostics_document, indent=indent),
+        SOAP_CUSTOM_OBJECTS_PATH: dumps_json({"customObjects": bundle.customObjects}, indent=indent),
+        SOAP_RUNTIME_OBJECTS_PATH: dumps_json({"runtimeObjects": bundle.runtimeObjects}, indent=indent),
         SOAP_GENERATED_BUNDLE_PATH: dump_soap_bundle_json(bundle, indent=indent),
     }
 
@@ -65,6 +69,8 @@ def load_soap_bundle_files(files: dict[str, str]) -> SoapBundle:
     assets = SoapAssets.model_validate_json(files.get(SOAP_ASSETS_PATH, '{"assets": []}'))
     diagnostics_payload = json.loads(files.get(SOAP_DIAGNOSTICS_PATH, '{"diagnostics": []}'))
     diagnostics = [SoapDiagnostic.model_validate(item) for item in diagnostics_payload.get("diagnostics", [])]
+    custom_objects_payload = json.loads(files.get(SOAP_CUSTOM_OBJECTS_PATH, '{"customObjects": []}'))
+    runtime_objects_payload = json.loads(files.get(SOAP_RUNTIME_OBJECTS_PATH, '{"runtimeObjects": []}'))
     return SoapBundle(
         source=manifest.source,
         manifest=manifest,
@@ -74,6 +80,8 @@ def load_soap_bundle_files(files: dict[str, str]) -> SoapBundle:
         presentation=presentation,
         assets=assets,
         diagnostics=diagnostics,
+        customObjects=list(custom_objects_payload.get("customObjects", [])),
+        runtimeObjects=list(runtime_objects_payload.get("runtimeObjects", [])),
     )
 
 
@@ -89,6 +97,8 @@ def load_soap_bundle(directory: str | Path) -> SoapBundle:
         SOAP_PRESENTATION_PATH,
         SOAP_ASSETS_PATH,
         SOAP_DIAGNOSTICS_PATH,
+        SOAP_CUSTOM_OBJECTS_PATH,
+        SOAP_RUNTIME_OBJECTS_PATH,
     ]:
         candidate = root / optional_path
         if candidate.exists():

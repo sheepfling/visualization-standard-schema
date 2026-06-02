@@ -2,17 +2,30 @@
   "name": "visualization-standard-schema",
   "private": true,
   "workspaces": [
-    "reference/sdj_workbench_v0_2"
+    "reference/sdj_core_v0_1",
+    "reference/sdj_workbench_v0_2",
+    "reference/sdj_v0_5_advanced_cesium_profile/sdj_workbench_v0_3"
   ],
   "scripts": {
     "dev": "npm --workspace reference/sdj_workbench_v0_2 run dev",
+    "dev:v0_3": "npm --workspace reference/sdj_v0_5_advanced_cesium_profile/sdj_workbench_v0_3 run dev",
     "preview": "npm --workspace reference/sdj_workbench_v0_2 run preview",
     "serve:static": "npm --workspace reference/sdj_workbench_v0_2 run serve:static",
-    "check": "npm --workspace reference/sdj_workbench_v0_2 run check",
+    "check": "npm run check:core && npm --workspace reference/sdj_workbench_v0_2 run check",
+    "check:core": "npm --workspace reference/sdj_core_v0_1 run check",
+    "check:v0_3": "npm --workspace reference/sdj_v0_5_advanced_cesium_profile/sdj_workbench_v0_3 run check && node reference/sdj_v0_5_advanced_cesium_profile/sdj_acceptance_runner_v0_5.mjs",
     "build:exposed-scenes": "npm --workspace reference/sdj_workbench_v0_2 run build:exposed-scenes",
+    "build:exposed-scenes:v0_3": "npm --workspace reference/sdj_v0_5_advanced_cesium_profile/sdj_workbench_v0_3 run build:exposed-scenes",
     "browser-smoke": "npm --workspace reference/sdj_workbench_v0_2 run browser-smoke",
     "shell-smoke": "npm --workspace reference/sdj_workbench_v0_2 run shell-smoke",
     "smoke": "npm --workspace reference/sdj_workbench_v0_2 run smoke",
-    "test": "npm --workspace reference/sdj_workbench_v0_2 run test"
+    "smoke:v0_3": "npm --workspace reference/sdj_v0_5_advanced_cesium_profile/sdj_workbench_v0_3 run smoke",
+    "test": "npm --workspace reference/sdj_workbench_v0_2 run test",
+    "test:v0_3": "npm --workspace reference/sdj_v0_5_advanced_cesium_profile/sdj_workbench_v0_3 run test",
+    "acceptance:v0_5": "node reference/sdj_v0_5_advanced_cesium_profile/sdj_acceptance_runner_v0_5.mjs"
+  },
+  "dependencies": {
+    "tpx": "^0.0.1-beta.1",
+    "tsc": "^2.0.4"
   }
 }

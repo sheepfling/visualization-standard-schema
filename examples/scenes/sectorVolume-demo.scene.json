@@ -1,0 +1,46 @@
+{
+  "schemaVersion": "1.0.0-scene",
+  "document": {
+    "id": "sectorVolume-demo",
+    "name": "Sector Volume Demo",
+    "description": "A sector volume overlay used to exercise the Cesium sector-volume emitter.",
+    "created": "2026-06-01T14:25:00Z",
+    "generator": "visualization-standard-schema",
+    "source": "sim.example.geo-sim"
+  },
+  "objects": [
+    {
+      "objectType": "overlay",
+      "id": "sector-volume-001",
+      "name": "Sector Volume 001",
+      "geometryType": "sectorVolume",
+      "position": {
+        "longitudeDeg": -97.735,
+        "latitudeDeg": 30.312,
+        "altitudeM": 2100.0
+      },
+      "style": {
+        "label": "Sector Volume 001",
+        "colorRgba": [255, 193, 7, 140]
+      },
+      "sectorVolume": {
+        "innerRadiusMeters": 5000.0,
+        "outerRadiusMeters": 18000.0,
+        "azimuthStartDegrees": 30.0,
+        "azimuthStopDegrees": 120.0,
+        "elevationStartDegrees": 0.0,
+        "elevationStopDegrees": 15.0,
+        "heightMeters": 2400.0,
+        "segments": 24,
+        "mode": "volume",
+        "windingOrder": "counterClockwise",
+        "closed": true
+      },
+      "attributes": {
+        "shapeType": "sectorVolume"
+      },
+      "source": "sim.example.geo-sim",
+      "timestamp": "2026-06-01T14:25:00Z"
+    }
+  ]
+}

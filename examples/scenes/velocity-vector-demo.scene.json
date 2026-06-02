@@ -1,0 +1,31 @@
+{
+  "schemaVersion": "1.0.0-scene",
+  "document": {
+    "id": "velocity-vector-demo",
+    "name": "Velocity Vector Demo",
+    "description": "A scene with a single velocity vector object."
+  },
+  "objects": [
+    {
+      "objectType": "velocityVector",
+      "id": "velocity-vector-001",
+      "name": "Velocity Vector Alpha",
+      "startPosition": {
+        "longitudeDeg": -97.72,
+        "latitudeDeg": 30.26,
+        "altitudeM": 8000.0
+      },
+      "endPosition": {
+        "longitudeDeg": -97.65,
+        "latitudeDeg": 30.31,
+        "altitudeM": 9500.0
+      },
+      "widthPx": 3.5,
+      "clampToGround": false,
+      "style": {
+        "label": "Velocity Vector Alpha",
+        "colorRgba": [0, 170, 255, 255]
+      }
+    }
+  ]
+}

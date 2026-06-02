@@ -1,0 +1,69 @@
+{
+  "ok": true,
+  "results": [
+    {
+      "path": "public_seed/asi/01_platform_track.asi",
+      "ok": true,
+      "commandCounts": {
+        "ReferenceYear": 1,
+        "DegreeAngles": 1,
+        "PlatformID": 1,
+        "PlatformName": 1,
+        "PlatformIcon": 1,
+        "PlatformData": 4
+      },
+      "issues": []
+    },
+    {
+      "path": "public_seed/asi/02_two_platforms_los.asi",
+      "ok": true,
+      "commandCounts": {
+        "ReferenceYear": 1,
+        "DegreeAngles": 1,
+        "PlatformID": 2,
+        "PlatformName": 2,
+        "PlatformIcon": 2,
+        "PlatformData": 4,
+        "BeamID": 1,
+        "BeamType": 1,
+        "HorzBW": 1,
+        "VertBW": 1,
+        "BeamOnOffCmd": 1,
+        "BeamColorCmd": 1,
+        "BeamTargetIDCmd": 1,
+        "BeamDataRAE": 2
+      },
+      "issues": []
+    },
+    {
+      "path": "public_seed/asi/03_platform_beam_gate_projector.asi",
+      "ok": true,
+      "commandCounts": {
+        "ReferenceYear": 1,
+        "DegreeAngles": 1,
+        "PlatformID": 1,
+        "PlatformName": 1,
+        "PlatformIcon": 1,
+        "PlatformData": 3,
+        "BeamID": 1,
+        "BeamType": 1,
+        "HorzBW": 1,
+        "VertBW": 1,
+        "BeamOnOffCmd": 1,
+        "BeamColorCmd": 1,
+        "BeamDataRAE": 2,
+        "GateID": 1,
+        "GateType": 1,
+        "GateOnOffCmd": 1,
+        "GateColorCmd": 1,
+        "GateDataRAE": 2,
+        "Projector": 1,
+        "ProjectorRasterFile": 1,
+        "ProjectorInterpolateFOV": 1,
+        "ProjectorOn": 1,
+        "ProjectorFOV": 2
+      },
+      "issues": []
+    }
+  ]
+}

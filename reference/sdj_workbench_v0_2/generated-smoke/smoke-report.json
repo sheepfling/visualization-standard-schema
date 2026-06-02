@@ -50,12 +50,7 @@
           "lossiness": "low",
           "artifact": "viewer.entities/Entity",
           "artifactPath": "cesium/scene.sdj.json#objects/sensor-site-a",
-          "artifactPaths": [
-            "cesium/scene.sdj.json",
-            "cesium/compile-plan.json"
-          ],
-          "action": "cesium can represent point directly or with low-loss native constructs.",
-          "diagnostics": []
+          "action": "cesium can represent point directly or with low-loss native constructs."
         },
         {
           "target": "simdis",
@@ -64,11 +59,7 @@
           "lossiness": "low",
           "artifact": "entities.json",
           "artifactPath": "simdis/entities.json#annotations/sensor-site-a",
-          "artifactPaths": [
-            "simdis/entities.json"
-          ],
-          "action": "simdis can represent point directly or with low-loss native constructs.",
-          "diagnostics": []
+          "action": "simdis can represent point directly or with low-loss native constructs."
         },
         {
           "target": "soap",
@@ -77,11 +68,7 @@
           "lossiness": "low",
           "artifact": "scenario.json/extensions",
           "artifactPath": "soap/scenario.json#extensions/sensor-site-a",
-          "artifactPaths": [
-            "soap/scenario.json"
-          ],
-          "action": "soap can represent point directly or with low-loss native constructs.",
-          "diagnostics": []
+          "action": "soap can represent point directly or with low-loss native constructs."
         }
       ]
     },

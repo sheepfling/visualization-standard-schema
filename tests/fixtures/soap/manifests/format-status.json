@@ -1,0 +1,13 @@
+{
+  "corpusVersion": "soap-orb-format-collection-soap15",
+  "formats": [
+    {
+      "extension": ".bundle.json",
+      "name": "SOAP bundle JSON",
+      "status": "seed-examples-included",
+      "confidence": "bundle-json-parse-and-emit-confirmed",
+      "includedSamples": 134,
+      "notes": "Use for SOAP scene bundle parse/emit/parse round-trips and manifest validation."
+    }
+  ]
+}

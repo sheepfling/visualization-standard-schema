@@ -1,0 +1,47 @@
+{
+  "schemaVersion": "1.0.0-scene",
+  "document": {
+    "id": "sphericalcap-demo",
+    "name": "Spherical Cap Demo",
+    "description": "A spherical-cap overlay used to exercise the Cesium spherical-cap bridge.",
+    "created": "2026-06-01T16:30:00Z",
+    "generator": "visualization-standard-schema",
+    "source": "sim.example.geo-sim"
+  },
+  "objects": [
+    {
+      "objectType": "overlay",
+      "id": "sphericalcap-001",
+      "name": "Spherical Cap 001",
+      "geometryType": "sphericalCap",
+      "position": {
+        "longitudeDeg": -97.755,
+        "latitudeDeg": 30.322,
+        "altitudeM": 2600.0
+      },
+      "style": {
+        "label": "Spherical Cap 001",
+        "colorRgba": [156, 39, 176, 130]
+      },
+      "sphericalCap": {
+        "radiusMeters": 11000.0,
+        "innerRadiusMeters": 2000.0,
+        "portion": "upper",
+        "azimuthStartDegrees": 15.0,
+        "azimuthStopDegrees": 165.0,
+        "segments": 24,
+        "windingOrder": "counterClockwise",
+        "closed": true,
+        "azimuthSegments": 12,
+        "elevationSegments": 6,
+        "elevationStartDegrees": 0.0,
+        "elevationStopDegrees": 45.0
+      },
+      "attributes": {
+        "shapeType": "sphericalCap"
+      },
+      "source": "sim.example.geo-sim",
+      "timestamp": "2026-06-01T16:30:00Z"
+    }
+  ]
+}

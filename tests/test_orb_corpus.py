@@ -26,11 +26,11 @@ def test_build_orb_fixture_set_records_timeout_failure(tmp_path: Path) -> None:
         "56 revision\nSOAP_SCENARIO_FILE\nDEFINE PLATFORM AIR \"Air\"\n\tWAYPOINT 33.93 -118.4 1\n",
     )
 
-    def slow_processor(_handle, member, _output_root):
+    def slow_processor(_raw_text, member_name, _output_root):
         time.sleep(0.2)
         return OrbCorpusEntry(
-            archiveMember=member.name,
-            relativeName=member.name,
+            archiveMember=member_name,
+            relativeName=member_name,
             sceneId="demo",
         )
 
@@ -55,7 +55,7 @@ def test_build_orb_fixture_set_records_parse_failure(tmp_path: Path) -> None:
         "56 revision\nSOAP_SCENARIO_FILE\nDEFINE PLATFORM AIR \"Air\"\n\tWAYPOINT 33.93 -118.4 1\n",
     )
 
-    def failing_processor(_handle, _member, _output_root):
+    def failing_processor(_raw_text, _member_name, _output_root):
         raise ValueError("bad orb")
 
     manifest = build_orb_fixture_set(

@@ -1,0 +1,31 @@
+{
+  "schemaVersion": "1.0.0-scene",
+  "document": {
+    "id": "line-of-sight-demo",
+    "name": "Line of Sight Demo",
+    "description": "A scene with a single line-of-sight object."
+  },
+  "objects": [
+    {
+      "objectType": "lineOfSight",
+      "id": "los-001",
+      "name": "Line of Sight Alpha",
+      "startPosition": {
+        "longitudeDeg": -97.74,
+        "latitudeDeg": 30.27,
+        "altitudeM": 1000.0
+      },
+      "endPosition": {
+        "longitudeDeg": -97.66,
+        "latitudeDeg": 30.31,
+        "altitudeM": 1000.0
+      },
+      "widthPx": 2.5,
+      "clampToGround": false,
+      "style": {
+        "label": "Line of Sight Alpha",
+        "colorRgba": [255, 255, 255, 255]
+      }
+    }
+  ]
+}

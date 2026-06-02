@@ -1,0 +1,47 @@
+{
+  "schemaVersion": "1.0.0-scene",
+  "document": {
+    "id": "shader-stage-demo",
+    "name": "Shader Stage Demo",
+    "description": "Typed customShader and postProcessStage placeholders preserved as scene objects.",
+    "created": "2026-06-01T19:35:00Z",
+    "generator": "visualization-standard-schema",
+    "source": "sim.example.geo-sim"
+  },
+  "objects": [
+    {
+      "objectType": "customShader",
+      "id": "custom-shader-001",
+      "name": "Custom Shader Placeholder",
+      "show": false,
+      "layer": "coverage-placeholders",
+      "rendererHints": {
+        "semanticKind": "customShader"
+      },
+      "customShader": {
+        "language": "glsl",
+        "note": "placeholder"
+      },
+      "attributes": {
+        "shapeType": "customShader"
+      }
+    },
+    {
+      "objectType": "postProcessStage",
+      "id": "post-process-stage-001",
+      "name": "Post Process Stage Placeholder",
+      "show": false,
+      "layer": "coverage-placeholders",
+      "rendererHints": {
+        "semanticKind": "postProcessStage"
+      },
+      "postProcessStage": {
+        "stageType": "bloom",
+        "note": "placeholder"
+      },
+      "attributes": {
+        "shapeType": "postProcessStage"
+      }
+    }
+  ]
+}

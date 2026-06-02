@@ -45,6 +45,7 @@ def _compile_platform_block(entity: SceneEntity) -> list[str]:
     platform_id = _simdis_string(simdis.get("platformId"), default=entity.id)
     name = _simdis_string(simdis.get("platformName"), default=entity.name)
     icon = _simdis_string(simdis.get("platformIcon"), default=_default_platform_icon(entity))
+    label = _simdis_string(simdis.get("platformLabel"), default=entity.style.label if entity.style and entity.style.label else "")
     samples = _platform_samples(entity, simdis)
     category = entity.category.value if entity.category is not None else "other"
 
@@ -55,6 +56,8 @@ def _compile_platform_block(entity: SceneEntity) -> list[str]:
     ]
     if icon:
         lines.append(f'PlatformIcon {platform_id} "{icon}"')
+    if label:
+        lines.append(f'PLATFORM_LABEL {platform_id} "{label}"')
     for sample in samples:
         lines.append(
             "PLATFORM_UPDATE "
@@ -74,7 +77,7 @@ def _compile_hosted_commands(entity: SceneEntity) -> list[str]:
 
 
 def _compile_beams(entity: SceneEntity, simdis: dict[str, Any]) -> list[str]:
-    beam_configs = _normalize_configs(simdis.get("beams") or simdis.get("beam"))
+    beam_configs = normalize_configs(simdis.get("beams") or simdis.get("beam"))
     lines: list[str] = []
     for index, config in enumerate(beam_configs, start=1):
         beam_id = _simdis_string(config.get("beamId"), default=_default_child_id(entity.id, "beam", index))
@@ -83,19 +86,19 @@ def _compile_beams(entity: SceneEntity, simdis: dict[str, Any]) -> list[str]:
         lines.append(f"BeamID {host_platform_id} {beam_id}")
         lines.append(f'BeamType {beam_id} "{beam_type}"')
         if config.get("horzBwDeg") is not None:
-            lines.append(f"HorzBW {beam_id} {_format_number(config['horzBwDeg'])}")
+            lines.append(f"HorzBW {beam_id} {format_float(config['horzBwDeg'])}")
         if config.get("vertBwDeg") is not None:
-            lines.append(f"VertBW {beam_id} {_format_number(config['vertBwDeg'])}")
-        for sample in _normalize_configs(config.get("samples")):
+            lines.append(f"VertBW {beam_id} {format_float(config['vertBwDeg'])}")
+        for sample in normalize_configs(config.get("samples")):
             timestamp = _simdis_time(sample.get("time"), default=entity.timestamp)
             if sample.get("on") is not None:
-                lines.append(f"BeamOnOffCmd {beam_id} {timestamp} {_bool_to_int(sample['on'])}")
+                lines.append(f"BeamOnOffCmd {beam_id} {timestamp} {bool_to_int(sample['on'])}")
             if sample.get("color") is not None:
                 lines.append(f"BeamColorCmd {beam_id} {timestamp} {sample['color']}")
             if all(sample.get(key) is not None for key in ("az", "el", "rangeMeters")):
                 lines.append(
                     "BeamDataRAE "
-                    f"{beam_id} {timestamp} {_format_number(sample['az'])} {_format_number(sample['el'])} {_format_number(sample['rangeMeters'])}"
+                    f"{beam_id} {timestamp} {format_float(sample['az'])} {format_float(sample['el'])} {format_float(sample['rangeMeters'])}"
                 )
             if sample.get("targetPlatformId") is not None:
                 lines.append(f"BeamTargetIDCmd {beam_id} {timestamp} {sample['targetPlatformId']}")
@@ -103,7 +106,7 @@ def _compile_beams(entity: SceneEntity, simdis: dict[str, Any]) -> list[str]:
 
 
 def _compile_gates(entity: SceneEntity, simdis: dict[str, Any]) -> list[str]:
-    gate_configs = _normalize_configs(simdis.get("gates") or simdis.get("gate"))
+    gate_configs = normalize_configs(simdis.get("gates") or simdis.get("gate"))
     lines: list[str] = []
     for index, config in enumerate(gate_configs, start=1):
         gate_id = _simdis_string(config.get("gateId"), default=_default_child_id(entity.id, "gate", index))
@@ -111,24 +114,24 @@ def _compile_gates(entity: SceneEntity, simdis: dict[str, Any]) -> list[str]:
         gate_type = _simdis_string(config.get("type"), default="BODY")
         lines.append(f"GateID {host_beam_id} {gate_id}")
         lines.append(f'GateType {gate_id} "{gate_type}"')
-        for sample in _normalize_configs(config.get("samples")):
+        for sample in normalize_configs(config.get("samples")):
             timestamp = _simdis_time(sample.get("time"), default=entity.timestamp)
             if sample.get("on") is not None:
-                lines.append(f"GateOnOffCmd {gate_id} {timestamp} {_bool_to_int(sample['on'])}")
+                lines.append(f"GateOnOffCmd {gate_id} {timestamp} {bool_to_int(sample['on'])}")
             if sample.get("color") is not None:
                 lines.append(f"GateColorCmd {gate_id} {timestamp} {sample['color']}")
             if all(sample.get(key) is not None for key in ("az", "el", "width", "height", "minRangeMeters", "maxRangeMeters", "centroidMeters")):
                 lines.append(
                     "GateDataRAE "
-                    f"{gate_id} {timestamp} {_format_number(sample['az'])} {_format_number(sample['el'])} "
-                    f"{_format_number(sample['width'])} {_format_number(sample['height'])} {_format_number(sample['minRangeMeters'])} "
-                    f"{_format_number(sample['maxRangeMeters'])} {_format_number(sample['centroidMeters'])}"
+                    f"{gate_id} {timestamp} {format_float(sample['az'])} {format_float(sample['el'])} "
+                    f"{format_float(sample['width'])} {format_float(sample['height'])} {format_float(sample['minRangeMeters'])} "
+                    f"{format_float(sample['maxRangeMeters'])} {format_float(sample['centroidMeters'])}"
                 )
     return lines
 
 
 def _compile_projectors(entity: SceneEntity, simdis: dict[str, Any]) -> list[str]:
-    projector_configs = _normalize_configs(simdis.get("projectors") or simdis.get("projector"))
+    projector_configs = normalize_configs(simdis.get("projectors") or simdis.get("projector"))
     lines: list[str] = []
     for index, config in enumerate(projector_configs, start=1):
         projector_id = _simdis_string(config.get("projectorId"), default=_default_child_id(entity.id, "projector", index))
@@ -137,18 +140,18 @@ def _compile_projectors(entity: SceneEntity, simdis: dict[str, Any]) -> list[str
         if config.get("rasterFile") is not None:
             lines.append(f'ProjectorRasterFile {projector_id} "{config["rasterFile"]}"')
         if config.get("interpolateFov") is not None:
-            lines.append(f"ProjectorInterpolateFOV {projector_id} {_bool_to_int(config['interpolateFov'])}")
-        for sample in _normalize_configs(config.get("samples")):
+            lines.append(f"ProjectorInterpolateFOV {projector_id} {bool_to_int(config['interpolateFov'])}")
+        for sample in normalize_configs(config.get("samples")):
             timestamp = _simdis_time(sample.get("time"), default=entity.timestamp)
             if sample.get("on") is not None:
-                lines.append(f"ProjectorOn {projector_id} {timestamp} {_bool_to_int(sample['on'])}")
+                lines.append(f"ProjectorOn {projector_id} {timestamp} {bool_to_int(sample['on'])}")
             if sample.get("fovDegrees") is not None:
-                lines.append(f"ProjectorFOV {projector_id} {timestamp} {_format_number(sample['fovDegrees'])}")
+                lines.append(f"ProjectorFOV {projector_id} {timestamp} {format_float(sample['fovDegrees'])}")
     return lines
 
 
 def _platform_samples(entity: SceneEntity, simdis: dict[str, Any]) -> list[dict[str, Any]]:
-    samples = _normalize_configs(simdis.get("platformSamples"))
+    samples = normalize_configs(simdis.get("platformSamples"))
     if samples:
         return [_normalize_platform_sample(sample, default_time=entity.timestamp, entity=entity) for sample in samples]
     return [_normalize_platform_sample({}, default_time=entity.timestamp, entity=entity)]
@@ -219,9 +222,6 @@ def _reference_year(scene: VssScene) -> int:
     return max(candidates) if candidates else 1970
 
 
-_normalize_configs = normalize_configs
-
-
 def _simdis_time(value: Any, *, default: datetime | None) -> str:
     if isinstance(value, datetime):
         return value.isoformat()
@@ -261,9 +261,6 @@ def _default_child_id(parent_id: str, child_kind: str, index: int) -> str:
     return f"{parent_id}-{child_kind}-{index}"
 
 
-_bool_to_int = bool_to_int
-
-
 def _dict_lookup(value: Any, *keys: str) -> Any:
     if not isinstance(value, dict):
         for key in keys:
@@ -274,9 +271,6 @@ def _dict_lookup(value: Any, *keys: str) -> Any:
         if key in value:
             return value[key]
     return None
-
-
-_format_number = format_float
 
 
 def _format_heading(value: Any) -> str:

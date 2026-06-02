@@ -1,0 +1,35 @@
+{
+  "schemaVersion": "1.0.0-scene",
+  "document": {
+    "id": "tileset-demo",
+    "name": "Tileset Demo",
+    "description": "A tileset overlay used to exercise the Cesium tileset emitter.",
+    "created": "2026-06-01T13:40:00Z",
+    "generator": "visualization-standard-schema",
+    "source": "sim.example.geo-sim"
+  },
+  "objects": [
+    {
+      "objectType": "overlay",
+      "id": "tileset-001",
+      "name": "Tileset 001",
+      "geometryType": "tileset",
+      "position": {
+        "longitudeDeg": -97.745,
+        "latitudeDeg": 30.275,
+        "altitudeM": 1200.0
+      },
+      "style": {
+        "label": "Tileset 001"
+      },
+      "tileset": {
+        "uri": "https://example.org/tilesets/demo/tileset.json"
+      },
+      "attributes": {
+        "shapeType": "3d-tiles"
+      },
+      "source": "sim.example.geo-sim",
+      "timestamp": "2026-06-01T13:40:00Z"
+    }
+  ]
+}

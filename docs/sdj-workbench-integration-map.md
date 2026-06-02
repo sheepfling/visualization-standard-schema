@@ -19,7 +19,7 @@ This document turns that import into an integration plan with explicit merge bou
 The unpacked workbench now lives at `reference/sdj_workbench_v0_2/` and includes:
 
 - `schemas/sdj_v0_4.schema.json`: full scene/object schema with `schemaVersion: "sdj-0.4"`.
-- `src/sdj_browser_compiler.js`: normalization, semantic validation, compile planning, object inspection, and backend export logic.
+- `reference/sdj_core_v0_1/src/index.ts`: normalization, semantic validation, compile planning, object inspection, and backend export logic.
 - `data/sdj_backend_capabilities_v0_4.json`: backend capability matrix for Cesium, SIMDIS, and SOAP.
 - `scripts/smoke-test.mjs`: reference smoke test.
 - `data/sdj_exposed_scenes_manifest.json`: generated catalog of exposed SDJ corpus scenes used by the workbench gallery.
@@ -283,8 +283,8 @@ The imported assets were unpacked successfully and verified locally with Node `v
 
 Confirmed checks:
 
-- `node --check reference/sdj_workbench_v0_2/src/app.js`
-- `node --check reference/sdj_workbench_v0_2/src/sdj_browser_compiler.js`
+- `node --experimental-strip-types --check reference/sdj_workbench_v0_2/src/app.js`
+- `node --experimental-strip-types --check reference/sdj_core_v0_1/src/index.ts`
 - `node reference/sdj_workbench_v0_2/scripts/smoke-test.mjs`
 
 Confirmed smoke result:

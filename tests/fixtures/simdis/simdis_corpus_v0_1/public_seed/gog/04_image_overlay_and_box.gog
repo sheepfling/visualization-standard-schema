@@ -1,0 +1,17 @@
+# SIMDIS GOG seed example: image overlay and lat/lon/alt box
+# Provenance: synthetic sample based on SDK GOG ImageOverlay and LatLonAltBox serializer fields.
+start
+imageoverlay 34.010000 33.900000 -117.980000 -117.820000 0
+imagefile assets/imagery/sample-overlay.png
+opacity 0.55
+3d name sample-image-overlay
+end
+
+start
+latlonaltbox 34.000000 33.940000 -117.900000 -117.820000 0 5000
+filled
+fillcolor hex 0x4422ff22
+linecolor hex 0xff22ff22
+altitudeunits m
+3d name sample-latlonaltbox
+end

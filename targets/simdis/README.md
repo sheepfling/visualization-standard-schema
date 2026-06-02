@@ -25,7 +25,9 @@ The current bundle serializer emits:
 
 - `simdis/manifest.json`
 - `simdis/entities.json`
+- `simdis/entities.normalized.json`
 - `simdis/overlays.gog`
+- `simdis/overlays.normalized.json`
 - `simdis/analysis.json`
 - `simdis/presentation.json`
 - `simdis/assets.json`
@@ -42,8 +44,8 @@ Message-level compilation:
 
 Scene-level compilation:
 
-- each `VssScene.entities[]` item currently maps to one `entities.platforms[]` entry
-- `overlays.gog` is currently generated as platform-oriented line output
+- each `VssScene.entities[]` item maps to platform, sensor, or annotation state depending on category and style
+- `VssScene.overlays[]` map to typed overlay state plus `overlays.gog` line output
 - `analysis.json`, `presentation.json`, and `assets.json` are emitted with valid empty structures unless populated by future scene features
 
 ## Current Contract Notes

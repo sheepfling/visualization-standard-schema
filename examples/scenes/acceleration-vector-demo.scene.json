@@ -1,0 +1,31 @@
+{
+  "schemaVersion": "1.0.0-scene",
+  "document": {
+    "id": "acceleration-vector-demo",
+    "name": "Acceleration Vector Demo",
+    "description": "A scene with a single acceleration vector object."
+  },
+  "objects": [
+    {
+      "objectType": "accelerationVector",
+      "id": "acceleration-vector-001",
+      "name": "Acceleration Vector Alpha",
+      "startPosition": {
+        "longitudeDeg": -97.70,
+        "latitudeDeg": 30.25,
+        "altitudeM": 7800.0
+      },
+      "endPosition": {
+        "longitudeDeg": -97.62,
+        "latitudeDeg": 30.29,
+        "altitudeM": 8800.0
+      },
+      "widthPx": 3.0,
+      "clampToGround": false,
+      "style": {
+        "label": "Acceleration Vector Alpha",
+        "colorRgba": [220, 90, 70, 255]
+      }
+    }
+  ]
+}

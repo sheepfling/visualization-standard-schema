@@ -1,0 +1,45 @@
+{
+  "corpusVersion": "simdis-corpus-v0.1",
+  "formats": [
+    {
+      "extension": ".asi",
+      "name": "SIMDIS ASCII",
+      "status": "seed-examples-included",
+      "confidence": "public-sdk-parser-confirmed",
+      "includedSamples": 3,
+      "notes": "Use for dynamic platforms, Beam/Gate/Projector subset."
+    },
+    {
+      "extension": ".gog",
+      "name": "Generalized Overlay Graphics",
+      "status": "seed-examples-included",
+      "confidence": "public-sdk-parser-and-shape-model-confirmed",
+      "includedSamples": 4,
+      "notes": "Use for static/authored vector geometry and simple volumes."
+    },
+    {
+      "extension": ".discn",
+      "name": "SIMDIS Data Initialization Scenario",
+      "status": "candidate-included-needs-native-validation",
+      "confidence": "file-pattern-confirmed-grammar-unconfirmed",
+      "includedSamples": 1,
+      "notes": "Public file-pattern list groups .discn with ASI-compatible formats. Need native examples."
+    },
+    {
+      "extension": ".fct",
+      "name": "SIMDIS Binary",
+      "status": "needs-official-sample",
+      "confidence": "file-pattern-confirmed-binary-grammar-not-publicly-derived",
+      "includedSamples": 0,
+      "notes": "Do not fake binary files. Collect from SIMDIS sample data."
+    },
+    {
+      "extension": ".svml",
+      "name": "SIMDIS 10 View File",
+      "status": "needs-official-sample",
+      "confidence": "file-pattern-confirmed-grammar-unconfirmed",
+      "includedSamples": 0,
+      "notes": "Collect from SIMDIS views/bookmarks/presentation samples."
+    }
+  ]
+}

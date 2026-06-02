@@ -1,0 +1,45 @@
+{
+  "schemaVersion": "1.0.0-scene",
+  "document": {
+    "id": "keyhole-demo",
+    "name": "Keyhole Demo",
+    "description": "A keyhole overlay used to exercise the Cesium keyhole emitter.",
+    "created": "2026-06-01T14:35:00Z",
+    "generator": "visualization-standard-schema",
+    "source": "sim.example.geo-sim"
+  },
+  "objects": [
+    {
+      "objectType": "overlay",
+      "id": "keyhole-001",
+      "name": "Keyhole 001",
+      "geometryType": "keyhole",
+      "position": {
+        "longitudeDeg": -97.751,
+        "latitudeDeg": 30.326,
+        "altitudeM": 1900.0
+      },
+      "style": {
+        "label": "Keyhole 001",
+        "colorRgba": [244, 67, 54, 140]
+      },
+      "keyhole": {
+        "innerRadiusMeters": 3500.0,
+        "outerRadiusMeters": 12500.0,
+        "azimuthStartDegrees": 45.0,
+        "azimuthStopDegrees": 135.0,
+        "elevationStartDegrees": 0.0,
+        "elevationStopDegrees": 0.0,
+        "segments": 18,
+        "mode": "surface",
+        "windingOrder": "counterClockwise",
+        "closed": true
+      },
+      "attributes": {
+        "shapeType": "keyhole"
+      },
+      "source": "sim.example.geo-sim",
+      "timestamp": "2026-06-01T14:35:00Z"
+    }
+  ]
+}

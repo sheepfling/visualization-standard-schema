@@ -1,0 +1,57 @@
+{
+  "schemaVersion": "1.0.0-scene",
+  "document": {
+    "id": "custom-pattern-sensor-demo",
+    "name": "Custom Pattern Sensor Demo",
+    "description": "A custom pattern sensor overlay used to exercise the Cesium custom-pattern bridge.",
+    "created": "2026-06-01T17:00:00Z",
+    "generator": "visualization-standard-schema",
+    "source": "sim.example.geo-sim"
+  },
+  "objects": [
+    {
+      "objectType": "overlay",
+      "id": "custom-pattern-sensor-001",
+      "name": "Custom Pattern Sensor 001",
+      "geometryType": "customPatternSensor",
+      "position": {
+        "longitudeDeg": -97.732,
+        "latitudeDeg": 30.315,
+        "altitudeM": 2100.0
+      },
+      "orientation": {
+        "headingDeg": 155.0,
+        "pitchDeg": -8.0,
+        "rollDeg": 0.0
+      },
+      "style": {
+        "label": "Custom Pattern Sensor 001",
+        "colorRgba": [0, 188, 212, 120]
+      },
+      "customPatternSensor": {
+        "outerRadiusMeters": 70000.0,
+        "azimuthStartDegrees": -35.0,
+        "azimuthStopDegrees": 35.0,
+        "elevationStartDegrees": 5.0,
+        "elevationStopDegrees": 55.0,
+        "patternAzimuthElevationDegrees": [
+          [-35.0, 5.0],
+          [-10.0, 35.0],
+          [0.0, 55.0],
+          [20.0, 42.0],
+          [35.0, 10.0]
+        ],
+        "heightMeters": 1500.0,
+        "segments": 24,
+        "mode": "surface",
+        "windingOrder": "counterClockwise",
+        "closed": true
+      },
+      "attributes": {
+        "shapeType": "customPatternSensor"
+      },
+      "source": "sim.example.geo-sim",
+      "timestamp": "2026-06-01T17:00:00Z"
+    }
+  ]
+}

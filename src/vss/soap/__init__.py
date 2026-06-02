@@ -95,6 +95,11 @@ def compile_soap_scene(scene: VssScene) -> SoapBundle:
     models = [_to_soap_model(entity) for entity in scene.entities if entity.style and entity.style.modelUri]
     sensor_swaths = [_to_soap_sensor_swath(entity) for entity in scene.entities if entity.category and entity.category.value == "sensor"]
     overlays = [_to_soap_overlay(overlay) for overlay in scene.overlays]
+    custom_objects = [custom_object.model_dump(mode="json", exclude_none=True) for custom_object in scene.customObjects]
+    runtime_objects = [
+        runtime_object.model_dump(mode="json", exclude_none=True)
+        for runtime_object in [*scene.runtimeObjects, *scene.terrainSurfaces, *scene.customMeshes, *scene.clippingPlanes, *scene.clippingPolygons, *scene.classificationVolumes, *scene.customShaders, *scene.postProcessStages]
+    ]
     diagnostics = _build_scene_diagnostics(scene)
     scenario = SoapScenario(
         id=scene.document.id,
@@ -118,6 +123,8 @@ def compile_soap_scene(scene: VssScene) -> SoapBundle:
             SoapArtifact(kind="presentation", path="soap/presentation.json"),
             SoapArtifact(kind="assetManifest", path="soap/assets.json"),
             SoapArtifact(kind="diagnostics", path="soap/diagnostics.json"),
+            SoapArtifact(kind="customObjects", path="soap/custom-objects.json"),
+            SoapArtifact(kind="runtimeObjects", path="soap/runtime-objects.json"),
         ],
         totals={
             "platforms": len(platforms),
@@ -125,6 +132,8 @@ def compile_soap_scene(scene: VssScene) -> SoapBundle:
             "models": len(models),
             "sensorSwaths": len(sensor_swaths),
             "overlays": len(overlays),
+            "customObjects": len(custom_objects),
+            "runtimeObjects": len(runtime_objects),
         },
     )
     return SoapBundle(
@@ -136,6 +145,8 @@ def compile_soap_scene(scene: VssScene) -> SoapBundle:
         presentation=SoapPresentation(),
         assets=SoapAssets(),
         diagnostics=diagnostics,
+        customObjects=custom_objects,
+        runtimeObjects=runtime_objects,
     )
 
 

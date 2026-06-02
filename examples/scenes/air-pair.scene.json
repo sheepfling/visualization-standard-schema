@@ -8,6 +8,24 @@
     "generator": "visualization-standard-schema",
     "source": "sim.example.flight-sim"
   },
+  "views": [
+    {
+      "id": "aircraft-001-focus",
+      "name": "Focus Blue One",
+      "target": "aircraft-001",
+      "durationSeconds": 1.5
+    },
+    {
+      "id": "air-pair-overview",
+      "name": "Air Pair Overview",
+      "position": {
+        "longitudeDeg": -97.63,
+        "latitudeDeg": 30.34,
+        "altitudeM": 40000.0
+      },
+      "durationSeconds": 2.0
+    }
+  ],
   "objects": [
     {
       "objectType": "entity",

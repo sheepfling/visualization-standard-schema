@@ -1,0 +1,85 @@
+{
+  "corpusVersion": "simdis-corpus-v0.1",
+  "files": [
+    {
+      "path": "README.md",
+      "sizeBytes": 1472,
+      "sha256": "f11d3e5a0594782cfe6aac6f306fa97e338296d185146eec2c0cc9a1429df1c9"
+    },
+    {
+      "path": "inferred/discn/01_minimal_data_initialization_scenario.discn",
+      "sizeBytes": 439,
+      "sha256": "8563ab2eb4787aa5eb3bfd6987dea0623da8c356e4340982117f8bdc203a648b"
+    },
+    {
+      "path": "manifests/asi-lite-validation.json",
+      "sizeBytes": 1585,
+      "sha256": "a6ed67c39b9912d0bb179516f93329fa5c1bfe8f6f835033a3fdc4dea036457a"
+    },
+    {
+      "path": "manifests/format-status.json",
+      "sizeBytes": 1570,
+      "sha256": "d734fc34e924efec87e5dacff9e28200a5444e71ed201792ca0adc9ca80f58d3"
+    },
+    {
+      "path": "needs_official_samples/fct/README.md",
+      "sizeBytes": 670,
+      "sha256": "21464e841afbfb9a271f9df9aa59acdb7cc2bbc04fc6f49e49aa4ce0d0c03549"
+    },
+    {
+      "path": "needs_official_samples/svml/README.md",
+      "sizeBytes": 511,
+      "sha256": "5bbc79adbda073499ab8500a5e8df9546a8a3a07c109d4e29042a68a46f15a8d"
+    },
+    {
+      "path": "notes/provenance.md",
+      "sizeBytes": 806,
+      "sha256": "c3b5f5701feece8a5697bbbd3be2cb69ffd2635c884e9ed5ecbbb28ae19e4789"
+    },
+    {
+      "path": "public_seed/asi/01_platform_track.asi",
+      "sizeBytes": 718,
+      "sha256": "ade9c83566bbca5775884970a4a4a323754aadd6910977bc7955dc52e89c31fb"
+    },
+    {
+      "path": "public_seed/asi/02_two_platforms_los.asi",
+      "sizeBytes": 1046,
+      "sha256": "87e701dc24b9a8648407af0dbb7c6ce87784a4387db1d6fe20eb4c2e490a243a"
+    },
+    {
+      "path": "public_seed/asi/03_platform_beam_gate_projector.asi",
+      "sizeBytes": 1355,
+      "sha256": "b7684dea7f2a2614e1b113358c85fbb2c0af19140d1c3c93d96ea60a4b8fdb63"
+    },
+    {
+      "path": "public_seed/gog/01_point_line_polygon_annotation.gog",
+      "sizeBytes": 975,
+      "sha256": "faae5cc555d33ccce828d646756e48ca72495f0a1fe2f46fe7d864deb30e00ab"
+    },
+    {
+      "path": "public_seed/gog/02_curves_and_volumes.gog",
+      "sizeBytes": 1658,
+      "sha256": "2e92831d433dcd2f573871ecc4370665856732c031f2fb9d3995b88a6ced4718"
+    },
+    {
+      "path": "public_seed/gog/03_relative_xyz_attachment.gog",
+      "sizeBytes": 627,
+      "sha256": "22a5160b2d88a4f158c621bf0952e78e2e444f0f887a6c10224ac40da44fbb26"
+    },
+    {
+      "path": "public_seed/gog/04_image_overlay_and_box.gog",
+      "sizeBytes": 489,
+      "sha256": "193cf8d47a86516b3e7c3162c064d783ff1357b49566f8eb7ffd17c7bc11e297"
+    },
+    {
+      "path": "scripts/collect_simdis_samples.py",
+      "sizeBytes": 5449,
+      "sha256": "ee52efd54f70ded5c1655bf8ffe4bf29cd971e16eaa11bb9dd52f4d631b8e92f"
+    },
+    {
+      "path": "scripts/validate_asi_lite.py",
+      "sizeBytes": 3944,
+      "sha256": "7925a58f49d38071940f3d21f79dea1bb6895355cacc0e0509c559fad1d236f5"
+    }
+  ]
+}

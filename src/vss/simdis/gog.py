@@ -125,14 +125,14 @@ def _ingest_gog_command(current: dict[str, Any], tokens: tuple[str, ...]) -> Non
 
     if command in {"lla", "xyz", "point"}:
         mode = "xyz" if command == "xyz" else "lla"
-        values = [_to_float(value) for value in tokens[1:4]]
+        values = [to_float(value) for value in tokens[1:4]]
         if all(value is not None for value in values):
             current["vertices"].append(SimdisGogVertex(mode=mode, values=[float(value) for value in values if value is not None]))
         return
 
     if command in {"centerlla", "centerxyz"}:
         mode = "xyz" if command == "centerxyz" else "lla"
-        values = [_to_float(value) for value in tokens[1:4]]
+        values = [to_float(value) for value in tokens[1:4]]
         if all(value is not None for value in values):
             attachments["center"] = SimdisGogVertex(mode=mode, values=[float(value) for value in values if value is not None])
         return
@@ -146,7 +146,7 @@ def _ingest_gog_command(current: dict[str, Any], tokens: tuple[str, ...]) -> Non
         return
 
     if command in {"filled", "outline"}:
-        properties[command] = True if len(tokens) == 1 else _to_bool(tokens[1])
+        properties[command] = True if len(tokens) == 1 else to_bool(tokens[1])
         return
 
     if command in {"linecolor", "fillcolor", "textoutlinecolor"}:
@@ -158,11 +158,11 @@ def _ingest_gog_command(current: dict[str, Any], tokens: tuple[str, ...]) -> Non
         return
 
     if command in {"fontsize", "linewidth", "pointsize", "opacity", "radius", "majoraxis", "minoraxis", "height", "innerradius", "anglestart", "angledeg"}:
-        properties[command] = _to_float(tokens[1]) if len(tokens) > 1 else None
+        properties[command] = to_float(tokens[1]) if len(tokens) > 1 else None
         return
 
     if command == "tessellate":
-        properties[command] = _to_bool(tokens[1]) if len(tokens) > 1 else True
+        properties[command] = to_bool(tokens[1]) if len(tokens) > 1 else True
         return
 
     if command == "label" and len(tokens) > 1:
@@ -170,23 +170,23 @@ def _ingest_gog_command(current: dict[str, Any], tokens: tuple[str, ...]) -> Non
         return
 
     if command == "opacity" and len(tokens) > 1:
-        properties[command] = _to_float(tokens[1])
+        properties[command] = to_float(tokens[1])
         return
 
     if command == "latlonaltbox" and len(tokens) >= 7:
-        values = [_to_float(value) for value in tokens[1:7]]
+        values = [to_float(value) for value in tokens[1:7]]
         if all(value is not None for value in values):
             properties[command] = [float(value) for value in values if value is not None]
         return
 
     if command == "imageoverlay" and len(tokens) >= 6:
-        values = [_to_float(value) for value in tokens[1:6]]
+        values = [to_float(value) for value in tokens[1:6]]
         if all(value is not None for value in values):
             properties[command] = [float(value) for value in values if value is not None]
         return
 
     if command in {"center", "anchor", "position"} and len(tokens) >= 4:
-        values = [_to_float(value) for value in tokens[1:4]]
+        values = [to_float(value) for value in tokens[1:4]]
         if all(value is not None for value in values):
             attachments[command] = [float(value) for value in values if value is not None]
         return
@@ -228,7 +228,7 @@ def _shape_to_overlay(shape: SimdisGogShape, *, source: str) -> SceneOverlay | N
             geometryType="polyline",
             polyline=ScenePolyline(
                 positions=vertices,
-                widthPx=_float_or_default(shape.properties.get("linewidth"), 2.0),
+                widthPx=float_or_default(shape.properties.get("linewidth"), 2.0),
                 clampToGround=False,
             ),
             style=style,
@@ -357,7 +357,7 @@ def _render_shape_properties(properties: dict[str, Any]) -> list[str]:
     if properties.get("fontname") is not None:
         lines.append(f'fontname {_quote_text(str(properties["fontname"]))}')
     if properties.get("fontsize") is not None:
-        lines.append(f'fontsize {_format_number(properties["fontsize"])}')
+        lines.append(f'fontsize {format_float(properties["fontsize"])}')
     for key in ("linecolor", "fillcolor", "textoutlinecolor"):
         if key in properties and properties[key] is not None:
             lines.append(f"{key} hex {_render_color(properties[key])}")
@@ -373,7 +373,7 @@ def _render_shape_properties(properties: dict[str, Any]) -> list[str]:
         lines.append(f'altitudeunits {_quote_text(str(properties["altitudeunits"]))}')
     for key in ("pointsize", "linewidth", "opacity", "radius", "majoraxis", "minoraxis", "height", "innerradius", "anglestart", "angledeg", "fontsize"):
         if key in properties and properties[key] is not None and key not in {"fontsize"}:
-            lines.append(f"{key} {_format_number(properties[key])}")
+            lines.append(f"{key} {format_float(properties[key])}")
     for key in ("filled", "outline", "tessellate"):
         if properties.get(key) is not None:
             value = properties[key]
@@ -381,7 +381,7 @@ def _render_shape_properties(properties: dict[str, Any]) -> list[str]:
     if properties.get("imagefile") is not None:
         lines.append(f'imagefile {_quote_text(str(properties["imagefile"]))}')
     if properties.get("priority") is not None:
-        lines.append(f'priority {_format_number(properties["priority"])}')
+        lines.append(f'priority {format_float(properties["priority"])}')
     return lines
 
 
@@ -412,7 +412,7 @@ def _render_generic_attachment(name: str, value: Any) -> str | None:
 
 
 def _render_xyz_like(command: str, values: list[float] | tuple[float, ...]) -> str:
-    rendered_values = " ".join(_format_number(value) for value in values)
+    rendered_values = " ".join(format_float(value) for value in values)
     return f"{command} {rendered_values}".rstrip()
 
 
@@ -440,9 +440,6 @@ def _quote_token(value: str) -> str:
     return value
 
 
-_format_number = format_float
-
-
 def _parse_color(tokens: list[str]) -> tuple[int, int, int, int] | None:
     if not tokens:
         return None
@@ -461,11 +458,6 @@ def _parse_color(tokens: list[str]) -> tuple[int, int, int, int] | None:
         blue = int(value[4:6], 16)
         return red, green, blue, 255
     return None
-
-
-_to_bool = to_bool
-_to_float = to_float
-_float_or_default = float_or_default
 
 
 _SHAPE_COMMANDS = {

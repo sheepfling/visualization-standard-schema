@@ -1,0 +1,73 @@
+[
+  {
+    "id": "document",
+    "name": "Hemisphere Demo",
+    "version": "1.0",
+    "clock": {
+      "interval": "2026-06-01T15:45:00+00:00/2026-06-01T15:45:00+00:00",
+      "currentTime": "2026-06-01T15:45:00+00:00",
+      "multiplier": 1,
+      "range": "CLAMPED",
+      "step": "SYSTEM_CLOCK_MULTIPLIER"
+    }
+  },
+  {
+    "id": "hemisphere-001",
+    "name": "Hemisphere 001",
+    "position": {
+      "cartographicDegrees": [
+        -97.715,
+        30.305,
+        2800.0
+      ]
+    },
+    "properties": {
+      "shapeType": "hemisphere",
+      "objectType": "overlay",
+      "timestamp": "2026-06-01T15:45:00+00:00",
+      "category": "overlay",
+      "hemisphere": {
+        "radiusMeters": 9000.0
+      }
+    },
+    "label": {
+      "text": "Hemisphere 001",
+      "horizontalOrigin": "LEFT",
+      "pixelOffset": {
+        "cartesian2": [
+          12,
+          0
+        ]
+      },
+      "fillColor": {
+        "rgba": [
+          244,
+          67,
+          54,
+          160
+        ]
+      }
+    },
+    "ellipsoid": {
+      "radii": {
+        "cartesian": [
+          9000.0,
+          9000.0,
+          9000.0
+        ]
+      },
+      "material": {
+        "solidColor": {
+          "color": {
+            "rgba": [
+              244,
+              67,
+              54,
+              160
+            ]
+          }
+        }
+      }
+    }
+  }
+]

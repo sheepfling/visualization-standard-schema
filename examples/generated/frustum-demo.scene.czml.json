@@ -1,0 +1,95 @@
+[
+  {
+    "id": "document",
+    "name": "Frustum Demo",
+    "version": "1.0",
+    "clock": {
+      "interval": "2026-06-01T14:40:00+00:00/2026-06-01T14:40:00+00:00",
+      "currentTime": "2026-06-01T14:40:00+00:00",
+      "multiplier": 1,
+      "range": "CLAMPED",
+      "step": "SYSTEM_CLOCK_MULTIPLIER"
+    }
+  },
+  {
+    "id": "frustum-001",
+    "name": "Frustum 001",
+    "position": {
+      "cartographicDegrees": [
+        -97.762,
+        30.335,
+        2300.0
+      ]
+    },
+    "properties": {
+      "shapeType": "frustum",
+      "objectType": "overlay",
+      "source": "sim.example.geo-sim",
+      "timestamp": "2026-06-01T14:40:00+00:00",
+      "category": "overlay",
+      "frustum": {
+        "nearMeters": 2000.0,
+        "farMeters": 12000.0,
+        "horizontalFovDegrees": 40.0,
+        "verticalFovDegrees": 30.0,
+        "innerHalfAngleDegrees": null,
+        "outerHalfAngleDegrees": null,
+        "aspectRatio": 1.3333333333,
+        "windingOrder": null,
+        "closed": null
+      },
+      "orientationDegrees": {
+        "heading": 40.0,
+        "pitch": -10.0,
+        "roll": 0.0
+      }
+    },
+    "label": {
+      "text": "Frustum 001",
+      "horizontalOrigin": "LEFT",
+      "pixelOffset": {
+        "cartesian2": [
+          12,
+          0
+        ]
+      },
+      "fillColor": {
+        "rgba": [
+          33,
+          150,
+          243,
+          120
+        ]
+      }
+    },
+    "box": {
+      "dimensions": {
+        "cartesian": [
+          10000.0,
+          8735.285622388856,
+          6430.780618346945
+        ]
+      },
+      "material": {
+        "solidColor": {
+          "color": {
+            "rgba": [
+              33,
+              150,
+              243,
+              120
+            ]
+          }
+        }
+      }
+    },
+    "orientation": {
+      "unitQuaternion": [
+        0.029809019626209157,
+        -0.08189960831908934,
+        0.34071865342161006,
+        0.9361168066628592
+      ]
+    }
+  }
+]

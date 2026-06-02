@@ -262,3 +262,5 @@ class SimdisBundle(VssModel):
     presentation: SimdisPresentation = Field(default_factory=SimdisPresentation)
     assets: SimdisAssets = Field(default_factory=SimdisAssets)
     diagnostics: list[SimdisDiagnostic] = Field(default_factory=list)
+    customObjects: list[dict[str, Any]] = Field(default_factory=list)
+    runtimeObjects: list[dict[str, Any]] = Field(default_factory=list)

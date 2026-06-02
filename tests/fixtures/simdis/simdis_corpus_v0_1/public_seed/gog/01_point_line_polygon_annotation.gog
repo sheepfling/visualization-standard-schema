@@ -1,0 +1,48 @@
+# SIMDIS GOG seed example: point, line, polygon, annotation
+# Provenance: synthetic sample based on public SDK GOG serializer/parser shape names and fields.
+start
+points
+lla 33.920000 -117.920000 1000
+pointsize 8
+linecolor hex 0xffffcc00
+3d name sdj-demo-point
+end
+
+start
+line
+lla 33.920000 -117.920000 1000
+lla 33.940000 -117.880000 1500
+lla 33.960000 -117.840000 1800
+linecolor hex 0xff00ffff
+linewidth 3
+tessellate true
+lineprojection greatcircle
+3d name sdj-demo-line
+end
+
+start
+polygon
+lla 33.900000 -117.960000 500
+lla 33.930000 -117.950000 500
+lla 33.940000 -117.910000 500
+lla 33.910000 -117.900000 500
+filled
+fillcolor hex 0x6600ff00
+outline true
+linecolor hex 0xff00ff00
+linewidth 2
+altitudemode absolute
+3d name sdj-demo-coverage-polygon
+end
+
+start
+annotation SDJ Demo Label
+lla 33.945000 -117.880000 2500
+fontname arial.ttf
+fontsize 16
+linecolor hex 0xffffffff
+textoutlinecolor hex 0xff000000
+textoutlinethickness thin
+priority 10
+3d name sdj-demo-annotation
+end

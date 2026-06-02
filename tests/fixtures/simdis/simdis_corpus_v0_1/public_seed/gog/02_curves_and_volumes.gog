@@ -1,0 +1,103 @@
+# SIMDIS GOG seed example: circle, arc, ellipse, sphere, hemisphere, cone, cylinder, ellipsoid
+# Provenance: synthetic sample based on public SDK GOG shape model and serializer field names.
+start
+circle
+centerlla 33.920000 -117.920000 0
+radius 25000
+linecolor hex 0xffffff00
+linewidth 2
+3d name range-ring-25km
+end
+
+start
+arc
+centerlla 33.920000 -117.920000 0
+radius 50000
+innerradius 15000
+anglestart 25
+angledeg 70
+filled
+fillcolor hex 0x3300ffff
+linecolor hex 0xff00ffff
+linewidth 2
+angleunits deg
+rangeunits m
+3d name bearing-fan-arc
+end
+
+start
+ellipse
+centerlla 33.950000 -117.820000 1000
+majoraxis 30000
+minoraxis 12000
+anglestart 0
+angledeg 360
+linecolor hex 0xffff00ff
+linewidth 2
+rangeunits m
+3d name covariance-ellipse
+end
+
+start
+sphere
+centerlla 33.980000 -117.800000 3000
+radius 6000
+filled
+fillcolor hex 0x339966ff
+linecolor hex 0xff9966ff
+rangeunits m
+3d name demo-sphere
+end
+
+start
+hemisphere
+centerlla 33.990000 -117.790000 0
+radius 8000
+filled
+fillcolor hex 0x3300ff99
+linecolor hex 0xff00ff99
+rangeunits m
+3d name demo-hemisphere
+end
+
+start
+cone
+centerlla 34.000000 -117.780000 0
+radius 9000
+height 16000
+filled
+fillcolor hex 0x332255ff
+linecolor hex 0xff2255ff
+rangeunits m
+altitudeunits m
+3d name demo-cone
+end
+
+start
+cylinder
+centerlla 34.010000 -117.770000 0
+majoraxis 7000
+minoraxis 7000
+height 12000
+filled
+fillcolor hex 0x33ff5522
+linecolor hex 0xffff5522
+rangeunits m
+altitudeunits m
+3d name demo-cylinder
+end
+
+start
+ellipsoid
+centerlla 34.020000 -117.760000 5000
+radius 5000
+majoraxis 12000
+minoraxis 7000
+height 9000
+filled
+fillcolor hex 0x3344aaff
+linecolor hex 0xff44aaff
+rangeunits m
+altitudeunits m
+3d name demo-ellipsoid
+end

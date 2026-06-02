@@ -12,16 +12,10 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 
 import pytest
 
-from vss.convert import (
-    emit_czml_from_scene,
-    emit_orb_from_scene,
-    emit_simdis_asi_from_scene,
-    emit_soap_envelope_from_scene,
-    parse_czml_file_to_scene,
-    parse_orb_to_scene,
-    parse_simdis_asi_to_scene,
-    parse_soap_to_scene,
-)
+from vss.convert.czml import emit_czml_from_scene, parse_czml_file_to_scene
+from vss.convert.orb import emit_orb_from_scene, parse_orb_to_scene
+from vss.convert.simdis import emit_simdis_asi_from_scene, parse_simdis_asi_to_scene
+from vss.convert.soap import emit_soap_envelope_from_scene, parse_soap_to_scene
 from vss.orb import build_orb_fixture_set
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
@@ -53,9 +47,19 @@ def test_simdis_asi_parse_and_emit_round_trip() -> None:
     assert len(scene.entities) == 1
 
     emitted = emit_simdis_asi_from_scene(scene)
+    rebuilt = parse_simdis_asi_to_scene(emitted)
 
     assert "PLATFORM aircraft-001" in emitted
     assert "PLATFORM_UPDATE aircraft-001" in emitted
+    assert len(rebuilt.entities) == 1
+    assert rebuilt.entities[0].id == scene.entities[0].id
+    assert rebuilt.entities[0].name == scene.entities[0].name
+    assert rebuilt.entities[0].position == scene.entities[0].position
+    original_simdis = dict(scene.entities[0].attributes.get("simdis", {}))
+    rebuilt_simdis = dict(rebuilt.entities[0].attributes.get("simdis", {}))
+    original_simdis.pop("platformIcon", None)
+    rebuilt_simdis.pop("platformIcon", None)
+    assert rebuilt_simdis == original_simdis
 
 
 def test_soap_parse_and_emit_round_trip() -> None:
@@ -63,8 +67,16 @@ def test_soap_parse_and_emit_round_trip() -> None:
     assert len(scene.entities) == 1
 
     emitted = emit_soap_envelope_from_scene(scene)
+    rebuilt = parse_soap_to_scene(emitted)
     assert "EntityUpsertMessage" in emitted
     assert "aircraft-001" in emitted
+    assert len(rebuilt.entities) == 1
+    assert rebuilt.entities[0].id == scene.entities[0].id
+    assert rebuilt.entities[0].name == scene.entities[0].name
+    assert rebuilt.entities[0].position == scene.entities[0].position
+    assert rebuilt.entities[0].orientation == scene.entities[0].orientation
+    assert rebuilt.entities[0].style == scene.entities[0].style
+    assert rebuilt.entities[0].attributes == scene.entities[0].attributes
 
 
 def test_czml_parse_and_emit_round_trip() -> None:

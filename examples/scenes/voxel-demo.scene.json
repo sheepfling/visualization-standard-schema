@@ -1,0 +1,43 @@
+{
+  "schemaVersion": "1.0.0-scene",
+  "document": {
+    "id": "voxel-demo",
+    "name": "Voxel Demo",
+    "description": "A voxel placeholder overlay used to exercise the model boundary.",
+    "created": "2026-06-01T19:00:00Z",
+    "generator": "visualization-standard-schema",
+    "source": "sim.example.geo-sim"
+  },
+  "objects": [
+    {
+      "objectType": "overlay",
+      "id": "voxel-001",
+      "name": "Voxel Placeholder 001",
+      "geometryType": "voxel",
+      "position": {
+        "longitudeDeg": -97.741,
+        "latitudeDeg": 30.276,
+        "altitudeM": 1100.0
+      },
+      "style": {
+        "label": "Voxel Placeholder 001",
+        "colorRgba": [96, 125, 139, 120]
+      },
+      "voxel": {
+        "semanticKind": "voxel",
+        "grid": {
+          "x": 12,
+          "y": 8,
+          "z": 6
+        },
+        "dimensionsMeters": [12.0, 8.0, 6.0],
+        "note": "placeholder"
+      },
+      "attributes": {
+        "shapeType": "voxel"
+      },
+      "source": "sim.example.geo-sim",
+      "timestamp": "2026-06-01T19:00:00Z"
+    }
+  ]
+}

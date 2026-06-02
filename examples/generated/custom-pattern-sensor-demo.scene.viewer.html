@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>VSS Custom Pattern Sensor Demo Scene Viewer</title>
+    <script src="https://cesium.com/downloads/cesiumjs/releases/1.120/Build/Cesium/Cesium.js"></script>
+    <link href="https://cesium.com/downloads/cesiumjs/releases/1.120/Build/Cesium/Widgets/widgets.css" rel="stylesheet">
+    <style>
+      html, body, #cesiumContainer {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        font-family: ui-sans-serif, system-ui, sans-serif;
+      }
+      .overlay {
+        position: absolute;
+        top: 16px;
+        left: 16px;
+        z-index: 1;
+        max-width: 24rem;
+        padding: 12px 14px;
+        background: rgba(15, 23, 42, 0.82);
+        color: #e2e8f0;
+        border-radius: 10px;
+        backdrop-filter: blur(10px);
+      }
+      .overlay h1 {
+        margin: 0 0 8px;
+        font-size: 16px;
+      }
+      .overlay p {
+        margin: 0;
+        font-size: 13px;
+        line-height: 1.45;
+      }
+      .overlay .view-controls {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 12px;
+      }
+      .overlay .view-controls button {
+        border: 0;
+        border-radius: 999px;
+        padding: 8px 12px;
+        background: #2563eb;
+        color: white;
+        font-size: 12px;
+        font-weight: 600;
+        cursor: pointer;
+      }
+      .overlay .view-controls button:hover {
+        background: #1d4ed8;
+      }
+      .overlay code {
+        font-size: 12px;
+      }
+      .overlay details {
+        margin-top: 12px;
+      }
+      .overlay pre {
+        margin: 8px 0 0;
+        max-height: 12rem;
+        overflow: auto;
+        padding: 10px;
+        background: rgba(15, 23, 42, 0.92);
+        color: #cbd5e1;
+        border-radius: 8px;
+        font-size: 11px;
+        white-space: pre-wrap;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="overlay">
+      <h1>VSS Custom Pattern Sensor Demo Scene Viewer</h1>
+      <p>Load this page through a local web server so Cesium can fetch <code>./custom-pattern-sensor-demo.scene.czml.json</code>.</p>
+      <div class="view-controls" id="viewControls"></div>
+      <details id="sceneMetadataPanel" hidden>
+        <summary>Scene metadata</summary>
+        <pre id="sceneMetadataText"></pre>
+      </details>
+    </div>
+    <div id="cesiumContainer"></div>
+    <script>
+      const sceneViews = [];
+      const sceneMetadata = {};
+      const viewer = new Cesium.Viewer("cesiumContainer", {
+        animation: false,
+        timeline: false,
+        shouldAnimate: false
+      });
+      let loadedDataSource = null;
+
+      function activateSceneView(view) {
+        if (!loadedDataSource) {
+          return Promise.resolve();
+        }
+        if (view.target) {
+          const entity = loadedDataSource.entities.getById(view.target);
+          if (entity) {
+            const options = {
+              duration: view.durationSeconds ?? 1.5
+            };
+            if (view.rangeMeters) {
+              options.offset = new Cesium.HeadingPitchRange(0.0, Cesium.Math.toRadians(-25.0), view.rangeMeters);
+            }
+            return viewer.flyTo(entity, options);
+          }
+        }
+        if (view.position) {
+          const orientation = view.orientation ? {
+            heading: Cesium.Math.toRadians(view.orientation.headingDeg || 0.0),
+            pitch: Cesium.Math.toRadians(view.orientation.pitchDeg || 0.0),
+            roll: Cesium.Math.toRadians(view.orientation.rollDeg || 0.0)
+          } : undefined;
+          return viewer.camera.flyTo({
+            destination: Cesium.Cartesian3.fromDegrees(
+              view.position.longitudeDeg,
+              view.position.latitudeDeg,
+              view.position.altitudeM
+            ),
+            orientation,
+            duration: view.durationSeconds ?? 1.5
+          });
+        }
+        return Promise.resolve();
+      }
+
+      function renderViewControls() {
+        const container = document.getElementById("viewControls");
+        container.innerHTML = "";
+        if (!sceneViews.length) {
+          container.style.display = "none";
+          return;
+        }
+        sceneViews.forEach((view) => {
+          const button = document.createElement("button");
+          button.textContent = view.name || view.id;
+          button.title = view.target ? "Focus " + view.target : "Fly to " + button.textContent;
+          button.addEventListener("click", () => activateSceneView(view).catch((error) => console.error("Failed to activate view", error)));
+          container.appendChild(button);
+        });
+      }
+
+      function renderSceneMetadata() {
+        const panel = document.getElementById("sceneMetadataPanel");
+        const text = document.getElementById("sceneMetadataText");
+        const hasMetadata = sceneMetadata && Object.keys(sceneMetadata).length > 0;
+        if (!panel || !text || !hasMetadata) {
+          if (panel) {
+            panel.hidden = true;
+          }
+          return;
+        }
+        text.textContent = JSON.stringify(sceneMetadata, null, 2);
+        panel.hidden = false;
+      }
+
+      Cesium.CzmlDataSource.load("./custom-pattern-sensor-demo.scene.czml.json")
+        .then((dataSource) => viewer.dataSources.add(dataSource))
+        .then((dataSource) => {
+          loadedDataSource = dataSource;
+          renderViewControls();
+          renderSceneMetadata();
+          return viewer.zoomTo(dataSource);
+        })
+        .catch((error) => {
+          console.error("Failed to load CZML", error);
+        });
+    </script>
+  </body>
+</html>

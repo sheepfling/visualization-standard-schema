@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "1.0.0-scene",
+  "document": {
+    "id": "view-demo",
+    "name": "View Demo",
+    "description": "A scene with authored view metadata for Cesium viewer controls."
+  },
+  "views": [
+    {
+      "id": "aircraft-overview",
+      "name": "Aircraft Overview",
+      "target": "aircraft-001",
+      "position": {
+        "longitudeDeg": -97.7431,
+        "latitudeDeg": 30.2672,
+        "altitudeM": 15000.0
+      },
+      "durationSeconds": 2.5,
+      "rendererHints": {
+        "buttonStyle": "primary"
+      }
+    }
+  ],
+  "objects": [
+    {
+      "objectType": "cameraView",
+      "id": "aircraft-camera-view",
+      "name": "Aircraft Camera View",
+      "target": "aircraft-001",
+      "position": {
+        "longitudeDeg": -97.7431,
+        "latitudeDeg": 30.2672,
+        "altitudeM": 16000.0
+      },
+      "orientation": {
+        "headingDeg": 0.0,
+        "pitchDeg": -30.0,
+        "rollDeg": 0.0
+      },
+      "rangeMeters": 22000.0,
+      "durationSeconds": 2.0,
+      "rendererHints": {
+        "buttonStyle": "secondary"
+      }
+    },
+    {
+      "objectType": "entity",
+      "id": "aircraft-001",
+      "name": "Aircraft 001",
+      "category": "air",
+      "position": {
+        "longitudeDeg": -97.7431,
+        "latitudeDeg": 30.2672,
+        "altitudeM": 9450.0
+      },
+      "orientation": {
+        "headingDeg": 72.0,
+        "pitchDeg": 1.5,
+        "rollDeg": 0.2
+      },
+      "style": {
+        "label": "Aircraft 001",
+        "modelUri": "https://example.org/assets/aircraft.glb",
+        "colorRgba": [64, 145, 255, 255]
+      }
+    }
+  ]
+}

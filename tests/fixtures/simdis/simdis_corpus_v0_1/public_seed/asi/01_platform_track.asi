@@ -1,0 +1,13 @@
+# SIMDIS ASCII seed example: platform track
+# Provenance: synthetic sample built from the public SDK ASIViewer parser command subset.
+# Time strings are ordinal day-of-year values interpreted relative to ReferenceYear.
+ReferenceYear 2026
+DegreeAngles 1
+
+PlatformID 1001
+PlatformName 1001 "SDJ Demo Aircraft 1001"
+PlatformIcon 1001 "aircraft"
+PlatformData 1001 "001:00:00:00.000" 33.920000 -117.920000 10000.0 90.0 0.0 0.0 220.0 0.0 0.0
+PlatformData 1001 "001:00:00:10.000" 33.930000 -117.900000 10250.0 91.0 1.0 0.0 225.0 0.0 0.0
+PlatformData 1001 "001:00:00:20.000" 33.945000 -117.875000 10500.0 94.0 1.5 0.0 230.0 0.0 0.0
+PlatformData 1001 "001:00:00:30.000" 33.965000 -117.845000 10900.0 98.0 1.0 0.0 235.0 0.0 0.0

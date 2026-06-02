@@ -11,6 +11,7 @@ The canonical Python model layer lives in `src/vss/` and starts with:
 - `EntityUpsertMessage` for transport-agnostic entity updates
 - `VssScene` for scene-level payloads
 - Pydantic validation, JSON loading, JSON file loading, and JSON schema export
+- Canonical schema docs in `docs/sdj-schema.md`.
 
 Core schema goals:
 
@@ -48,7 +49,7 @@ Current outputs:
 - SIMDIS line-oriented text
 - SIMDIS bundle JSON/file-set output
 
-The current extraction covers the bundle split and the scene families already modeled in the repo, with explicit gaps called out in `docs/simdis-extraction-plan.md`.
+The current extraction covers the bundle split and the scene families already modeled in the repo, with explicit gaps called out in `docs/simdis-corpus-plan.md`.
 
 ### SOAP
 
@@ -98,7 +99,7 @@ What the repo currently treats as round-trip safe:
 
 The target-specific docs should remain the source of truth for gaps and lossiness:
 
-- `docs/simdis-extraction-plan.md`
+- `docs/simdis-corpus-plan.md`
 - `docs/soap-extraction-plan.md`
 
 The intent is that gaps are explicit, named, and testable.

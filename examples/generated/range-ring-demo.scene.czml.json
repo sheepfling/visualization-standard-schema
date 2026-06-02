@@ -1,0 +1,74 @@
+[
+  {
+    "id": "document",
+    "name": "Range Ring Demo",
+    "version": "1.0",
+    "clock": {
+      "interval": "2026-06-01T15:50:00+00:00/2026-06-01T15:50:00+00:00",
+      "currentTime": "2026-06-01T15:50:00+00:00",
+      "multiplier": 1,
+      "range": "CLAMPED",
+      "step": "SYSTEM_CLOCK_MULTIPLIER"
+    }
+  },
+  {
+    "id": "range-ring-001",
+    "name": "Range Ring 25 km",
+    "position": {
+      "cartographicDegrees": [
+        -97.72,
+        30.31,
+        250.0
+      ]
+    },
+    "properties": {
+      "shapeType": "rangeRing",
+      "objectType": "overlay",
+      "timestamp": "2026-06-01T15:50:00+00:00",
+      "category": "overlay",
+      "rangeRing": {
+        "radiusMeters": 25000.0,
+        "heightMeters": 250.0,
+        "extrudedHeightMeters": null,
+        "rotationDegrees": null,
+        "stRotationDegrees": null,
+        "outlineWidthPx": 2.0,
+        "clampToGround": false
+      }
+    },
+    "label": {
+      "text": "Range Ring 25 km",
+      "horizontalOrigin": "LEFT",
+      "pixelOffset": {
+        "cartesian2": [
+          12,
+          0
+        ]
+      },
+      "fillColor": {
+        "rgba": [
+          255,
+          255,
+          255,
+          255
+        ]
+      }
+    },
+    "ellipse": {
+      "semiMajorAxis": 25000.0,
+      "semiMinorAxis": 25000.0,
+      "fill": false,
+      "outline": true,
+      "height": 250.0,
+      "outlineWidth": 2.0,
+      "outlineColor": {
+        "rgba": [
+          255,
+          255,
+          255,
+          255
+        ]
+      }
+    }
+  }
+]

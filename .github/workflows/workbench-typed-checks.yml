@@ -1,0 +1,36 @@
+name: Workbench Typed Checks
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  workbench:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Core check
+        run: npm --workspace reference/sdj_core_v0_1 run check
+
+      - name: Workbench check
+        run: npm --workspace reference/sdj_workbench_v0_2 run check
+
+      - name: TypeScript check
+        run: npx tsc -p reference/sdj_workbench_v0_2/tsconfig.json
+
+      - name: Workbench tests
+        run: npm --workspace reference/sdj_workbench_v0_2 test

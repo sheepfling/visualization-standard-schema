@@ -1,0 +1,40 @@
+{
+  "schemaVersion": "1.0.0-scene",
+  "document": {
+    "id": "cylinder-demo",
+    "name": "Cylinder Demo",
+    "description": "A cylinder overlay used to exercise the Cesium cylinder emitter.",
+    "created": "2026-06-01T12:25:00Z",
+    "generator": "visualization-standard-schema",
+    "source": "sim.example.geo-sim"
+  },
+  "objects": [
+    {
+      "objectType": "overlay",
+      "id": "cyl-001",
+      "name": "Cylinder 001",
+      "geometryType": "cylinder",
+      "position": {
+        "longitudeDeg": -97.560,
+        "latitudeDeg": 30.240,
+        "altitudeM": 2500.0
+      },
+      "style": {
+        "label": "Cylinder 001",
+        "colorRgba": [244, 67, 54, 180]
+      },
+      "cylinder": {
+        "lengthMeters": 6000.0,
+        "topRadiusMeters": 1500.0,
+        "bottomRadiusMeters": 2500.0,
+        "numberOfSides": 48,
+        "slope": 0.0
+      },
+      "attributes": {
+        "shapeType": "facility-volume"
+      },
+      "source": "sim.example.geo-sim",
+      "timestamp": "2026-06-01T12:25:00Z"
+    }
+  ]
+}

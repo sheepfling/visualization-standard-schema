@@ -1,0 +1,36 @@
+{
+  "schemaVersion": "1.0.0-scene",
+  "document": {
+    "id": "box-demo",
+    "name": "Box Demo",
+    "description": "A box overlay used to exercise the Cesium box emitter.",
+    "created": "2026-06-01T12:20:00Z",
+    "generator": "visualization-standard-schema",
+    "source": "sim.example.geo-sim"
+  },
+  "objects": [
+    {
+      "objectType": "overlay",
+      "id": "box-001",
+      "name": "Box 001",
+      "geometryType": "box",
+      "position": {
+        "longitudeDeg": -97.610,
+        "latitudeDeg": 30.280,
+        "altitudeM": 1800.0
+      },
+      "style": {
+        "label": "Box 001",
+        "colorRgba": [76, 175, 80, 180]
+      },
+      "box": {
+        "dimensionsMeters": [50000.0, 30000.0, 12000.0]
+      },
+      "attributes": {
+        "volumeType": "airspace"
+      },
+      "source": "sim.example.geo-sim",
+      "timestamp": "2026-06-01T12:20:00Z"
+    }
+  ]
+}

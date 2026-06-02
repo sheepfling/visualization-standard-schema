@@ -1,0 +1,120 @@
+[
+  {
+    "id": "document",
+    "name": "Particle System Demo",
+    "version": "1.0",
+    "clock": {
+      "interval": "2026-06-01T18:30:00+00:00/2026-06-01T18:30:00+00:00",
+      "currentTime": "2026-06-01T18:30:00+00:00",
+      "multiplier": 1,
+      "range": "CLAMPED",
+      "step": "SYSTEM_CLOCK_MULTIPLIER"
+    }
+  },
+  {
+    "id": "particle-system-001",
+    "name": "Particle System 001",
+    "position": {
+      "cartographicDegrees": [
+        -97.74,
+        30.275,
+        1200.0
+      ]
+    },
+    "properties": {
+      "shapeType": "particleSystem",
+      "objectType": "overlay",
+      "source": "sim.example.geo-sim",
+      "timestamp": "2026-06-01T18:30:00+00:00",
+      "category": "overlay",
+      "particleSystem": {
+        "asset": "smokeParticle",
+        "image": "smokeParticle.png",
+        "emitter": {
+          "type": "circle",
+          "radiusMeters": 2.0
+        },
+        "emissionRate": 12.0,
+        "lifetimeSeconds": null,
+        "particleLifeSeconds": 4.0,
+        "minimumParticleLifeSeconds": null,
+        "maximumParticleLifeSeconds": null,
+        "speedMetersPerSecond": 8.0,
+        "minimumSpeedMetersPerSecond": null,
+        "maximumSpeedMetersPerSecond": null,
+        "scale": 1.0,
+        "startScale": 0.6,
+        "endScale": 3.0,
+        "imageSize": [
+          20.0,
+          20.0
+        ],
+        "startColor": [
+          1.0,
+          1.0,
+          1.0,
+          0.7
+        ],
+        "endColor": [
+          0.4,
+          0.4,
+          0.4,
+          0.0
+        ]
+      }
+    },
+    "label": {
+      "text": "Particle System 001",
+      "horizontalOrigin": "LEFT",
+      "pixelOffset": {
+        "cartesian2": [
+          12,
+          0
+        ]
+      },
+      "fillColor": {
+        "rgba": [
+          255,
+          167,
+          38,
+          220
+        ]
+      }
+    },
+    "particleSystem": {
+      "image": "smokeParticle.png",
+      "emitter": {
+        "type": "circle",
+        "radiusMeters": 2.0
+      },
+      "emissionRate": 12.0,
+      "particleLife": 4.0,
+      "speed": 8.0,
+      "scale": 1.0,
+      "startScale": 0.6,
+      "endScale": 3.0,
+      "imageSize": {
+        "cartesian2": [
+          20.0,
+          20.0
+        ]
+      },
+      "startColor": {
+        "rgba": [
+          255,
+          255,
+          255,
+          178
+        ]
+      },
+      "endColor": {
+        "rgba": [
+          102,
+          102,
+          102,
+          0
+        ]
+      }
+    }
+  }
+]

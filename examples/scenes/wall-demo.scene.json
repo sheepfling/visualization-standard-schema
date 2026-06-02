@@ -1,0 +1,55 @@
+{
+  "schemaVersion": "1.0.0-scene",
+  "document": {
+    "id": "wall-demo",
+    "name": "Wall Demo",
+    "description": "A wall overlay used to exercise the Cesium wall emitter.",
+    "created": "2026-06-01T12:15:00Z",
+    "generator": "visualization-standard-schema",
+    "source": "sim.example.geo-sim"
+  },
+  "objects": [
+    {
+      "objectType": "overlay",
+      "id": "wall-001",
+      "name": "Wall 001",
+      "geometryType": "wall",
+      "position": {
+        "longitudeDeg": -97.590,
+        "latitudeDeg": 30.350,
+        "altitudeM": 0.0
+      },
+      "style": {
+        "label": "Wall 001",
+        "colorRgba": [255, 196, 61, 200]
+      },
+      "wall": {
+        "positions": [
+          {
+            "longitudeDeg": -97.660,
+            "latitudeDeg": 30.300,
+            "altitudeM": 0.0
+          },
+          {
+            "longitudeDeg": -97.590,
+            "latitudeDeg": 30.350,
+            "altitudeM": 0.0
+          },
+          {
+            "longitudeDeg": -97.520,
+            "latitudeDeg": 30.390,
+            "altitudeM": 0.0
+          }
+        ],
+        "minimumHeightsMeters": [0.0, 0.0, 0.0],
+        "maximumHeightsMeters": [2500.0, 3000.0, 2800.0],
+        "clampToGround": false
+      },
+      "attributes": {
+        "wallType": "boundary"
+      },
+      "source": "sim.example.geo-sim",
+      "timestamp": "2026-06-01T12:15:00Z"
+    }
+  ]
+}

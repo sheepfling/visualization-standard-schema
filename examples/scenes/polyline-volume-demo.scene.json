@@ -1,0 +1,59 @@
+{
+  "schemaVersion": "1.0.0-scene",
+  "document": {
+    "id": "polyline-volume-demo",
+    "name": "Polyline Volume Demo",
+    "description": "A polyline volume overlay used to exercise the Cesium polylineVolume emitter.",
+    "created": "2026-06-01T13:10:00Z",
+    "generator": "visualization-standard-schema",
+    "source": "sim.example.geo-sim"
+  },
+  "objects": [
+    {
+      "objectType": "overlay",
+      "id": "pv-001",
+      "name": "Polyline Volume 001",
+      "geometryType": "polylineVolume",
+      "position": {
+        "longitudeDeg": -97.780,
+        "latitudeDeg": 30.220,
+        "altitudeM": 1200.0
+      },
+      "style": {
+        "label": "Poly Vol 001",
+        "colorRgba": [33, 150, 243, 180]
+      },
+      "polylineVolume": {
+        "positions": [
+          {
+            "longitudeDeg": -97.780,
+            "latitudeDeg": 30.220,
+            "altitudeM": 1200.0
+          },
+          {
+            "longitudeDeg": -97.730,
+            "latitudeDeg": 30.250,
+            "altitudeM": 1800.0
+          },
+          {
+            "longitudeDeg": -97.690,
+            "latitudeDeg": 30.270,
+            "altitudeM": 2200.0
+          }
+        ],
+        "shapePositions": [
+          [-1000.0, -1000.0],
+          [1000.0, -1000.0],
+          [1000.0, 1000.0],
+          [-1000.0, 1000.0]
+        ],
+        "cornerType": "mitered"
+      },
+      "attributes": {
+        "shapeType": "route-volume"
+      },
+      "source": "sim.example.geo-sim",
+      "timestamp": "2026-06-01T13:10:00Z"
+    }
+  ]
+}

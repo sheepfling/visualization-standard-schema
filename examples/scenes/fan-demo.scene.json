@@ -1,0 +1,42 @@
+{
+  "schemaVersion": "1.0.0-scene",
+  "document": {
+    "id": "fan-demo",
+    "name": "Fan Demo",
+    "description": "A fan overlay used to exercise the Cesium fan fallback emitter."
+  },
+  "objects": [
+    {
+      "objectType": "overlay",
+      "id": "fan-001",
+      "name": "Fan 001",
+      "geometryType": "fan",
+      "position": {
+        "longitudeDeg": -97.735,
+        "latitudeDeg": 30.318,
+        "altitudeM": 120.0
+      },
+      "orientation": {
+        "headingDeg": 5.0,
+        "pitchDeg": 0.0,
+        "rollDeg": 0.0
+      },
+      "style": {
+        "label": "Fan 001",
+        "colorRgba": [0, 188, 212, 160]
+      },
+      "fan": {
+        "innerRadiusMeters": 0.0,
+        "outerRadiusMeters": 38000.0,
+        "azimuthStartDegrees": -20.0,
+        "azimuthStopDegrees": 20.0,
+        "segments": 20,
+        "mode": "flatLocal"
+      },
+      "attributes": {
+        "shapeType": "fan"
+      },
+      "timestamp": "2026-06-01T16:00:00Z"
+    }
+  ]
+}

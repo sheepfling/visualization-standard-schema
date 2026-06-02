@@ -1,0 +1,58 @@
+{
+  "schemaVersion": "1.0.0-scene",
+  "document": {
+    "id": "uncertainty-covariance-demo",
+    "name": "Uncertainty Covariance Demo",
+    "description": "A scene that exercises uncertainty ellipsoid and covariance ellipse overlays."
+  },
+  "objects": [
+    {
+      "objectType": "overlay",
+      "id": "uncertainty-ellipsoid-track-42",
+      "name": "Uncertainty Ellipsoid Track 42",
+      "geometryType": "uncertaintyEllipsoid",
+      "position": {
+        "longitudeDeg": -97.720,
+        "latitudeDeg": 30.305,
+        "altitudeM": 4200.0
+      },
+      "style": {
+        "label": "Uncertainty Ellipsoid 42",
+        "colorRgba": [120, 144, 156, 170]
+      },
+      "uncertaintyEllipsoid": {
+        "radiiMeters": [2200.0, 1200.0, 800.0],
+        "slicePartitions": 24,
+        "stackPartitions": 12
+      },
+      "attributes": {
+        "shapeType": "uncertainty-ellipsoid"
+      }
+    },
+    {
+      "objectType": "overlay",
+      "id": "covariance-ellipse-track-42",
+      "name": "Covariance Ellipse Track 42",
+      "geometryType": "covarianceEllipse",
+      "position": {
+        "longitudeDeg": -97.690,
+        "latitudeDeg": 30.315,
+        "altitudeM": 0.0
+      },
+      "style": {
+        "label": "Covariance Ellipse 42",
+        "colorRgba": [255, 193, 7, 180]
+      },
+      "covarianceEllipse": {
+        "semiMajorAxisMeters": 6000.0,
+        "semiMinorAxisMeters": 2200.0,
+        "heightMeters": 12000.0,
+        "rotationDegrees": 30.0,
+        "clampToGround": false
+      },
+      "attributes": {
+        "shapeType": "covariance-ellipse"
+      }
+    }
+  ]
+}

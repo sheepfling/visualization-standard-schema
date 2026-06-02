@@ -8,7 +8,7 @@ import {
   inspectObject,
   normalizeSceneForWorkbench,
   validateSemantics
-} from "../src/sdj_browser_compiler.js";
+} from "../../sdj_core_v0_1/src/index.ts";
 
 /**
  * @param {string} path

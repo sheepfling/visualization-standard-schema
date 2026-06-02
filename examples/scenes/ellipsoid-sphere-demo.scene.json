@@ -1,0 +1,59 @@
+{
+  "schemaVersion": "1.0.0-scene",
+  "document": {
+    "id": "ellipsoid-sphere-demo",
+    "name": "Ellipsoid Sphere Demo",
+    "description": "Ellipsoid and sphere overlays used to exercise the Cesium ellipsoid emitter.",
+    "created": "2026-06-01T12:30:00Z",
+    "generator": "visualization-standard-schema",
+    "source": "sim.example.geo-sim"
+  },
+  "objects": [
+    {
+      "objectType": "overlay",
+      "id": "ellipsoid-001",
+      "name": "Ellipsoid 001",
+      "geometryType": "ellipsoid",
+      "position": {
+        "longitudeDeg": -97.520,
+        "latitudeDeg": 30.200,
+        "altitudeM": 1600.0
+      },
+      "style": {
+        "label": "Ellipsoid 001",
+        "colorRgba": [33, 150, 243, 160]
+      },
+      "ellipsoid": {
+        "radiiMeters": [8000.0, 12000.0, 6000.0]
+      },
+      "attributes": {
+        "volumeType": "anisotropic"
+      },
+      "source": "sim.example.geo-sim",
+      "timestamp": "2026-06-01T12:30:00Z"
+    },
+    {
+      "objectType": "overlay",
+      "id": "sphere-001",
+      "name": "Sphere 001",
+      "geometryType": "sphere",
+      "position": {
+        "longitudeDeg": -97.480,
+        "latitudeDeg": 30.180,
+        "altitudeM": 1600.0
+      },
+      "style": {
+        "label": "Sphere 001",
+        "colorRgba": [156, 39, 176, 180]
+      },
+      "sphere": {
+        "radiusMeters": 10000.0
+      },
+      "attributes": {
+        "volumeType": "isotropic"
+      },
+      "source": "sim.example.geo-sim",
+      "timestamp": "2026-06-01T12:35:00Z"
+    }
+  ]
+}

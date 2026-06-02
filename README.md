@@ -25,10 +25,13 @@ Python namespaces.
 - `targets/` notes and adapter contracts for compile targets.
 - `docs/` design notes and roadmap material.
 
+`INBOX/` is the ignored drop zone for unpacked source assets and scratch imports while they are being evaluated for promotion into tracked `reference/` or `examples/` content.
 Imported SDJ workbench integration notes are captured in `docs/sdj-workbench-integration-map.md`, with the tracked bundle now under `reference/sdj_workbench_v0_2/`.
-The reusable browser-library layer extracted from that workbench now lives under `reference/sdj_workbench_v0_2/src/lib/`.
+The reusable browser-library layer extracted from that workbench now lives in the separate `sdj-core` package under `reference/sdj_core_v0_1/`.
+The JS/TS modularization plan for that split is in `docs/workbench-js-ts-refactor-plan.md`.
 
 For a single overview of the core schema and compile targets, see `docs/schema-and-targets-overview.md`.
+For field-level SDJ contracts, see `docs/sdj-schema.md`.
 The SDJ survey / exposé / portfolio v0.5 package is tracked in `reference/sdj_survey_v0_5/`.
 Tracked ORB sample fixtures used by the regression suite live in `reference/orb_samples/`.
 
@@ -133,6 +136,20 @@ Run the smoke tests:
 python3 -m pytest
 ```
 
+Run just the corpus round-trip checks when you are working on SIMDIS, SOAP, or the exposed SDJ scene set:
+
+```bash
+python3 -m pytest -m sdj_roundtrip
+python3 -m pytest tests/test_sdj_corpus_roundtrip.py -q
+python3 -m pytest tests/test_simdis_corpus.py tests/test_soap_corpus.py -q
+```
+
+These tests are designed to be rerunnable from a clean checkout:
+
+- they only read checked-in fixture data
+- they write temporary outputs under pytest-managed `tmp_path` directories
+- they compare stable semantic fields instead of raw bytes when a native format is lossy
+
 Use the bundled CLI to ingest into SDJ or emit SDJ back out:
 
 ```bash
@@ -146,11 +163,16 @@ vss ingest --format simdis-bundle --input /path/to/simdis-bundle-dir --output /t
 Supported ingest formats are `simdis-asi`, `simdis-bundle`, `soap`, `orb`, and `czml`.
 Supported emit formats are `simdis-asi`, `soap`, `orb`, and `czml`.
 
-Export the Pydantic-generated schema:
+Export the Pydantic-generated schemas:
 
 ```bash
 python3 scripts/export_schema.py
 ```
+
+This writes:
+
+- `schemas/vss-message.pydantic.schema.json`
+- `schemas/vss-scene.pydantic.schema.json`
 
 Render example target outputs from `examples/cesium/air-track.json`:
 

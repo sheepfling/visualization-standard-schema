@@ -1,0 +1,71 @@
+[
+  {
+    "id": "document",
+    "name": "Box Demo",
+    "version": "1.0",
+    "clock": {
+      "interval": "2026-06-01T12:20:00+00:00/2026-06-01T12:20:00+00:00",
+      "currentTime": "2026-06-01T12:20:00+00:00",
+      "multiplier": 1,
+      "range": "CLAMPED",
+      "step": "SYSTEM_CLOCK_MULTIPLIER"
+    }
+  },
+  {
+    "id": "box-001",
+    "name": "Box 001",
+    "position": {
+      "cartographicDegrees": [
+        -97.61,
+        30.28,
+        1800.0
+      ]
+    },
+    "properties": {
+      "volumeType": "airspace",
+      "objectType": "overlay",
+      "source": "sim.example.geo-sim",
+      "timestamp": "2026-06-01T12:20:00+00:00",
+      "category": "overlay"
+    },
+    "label": {
+      "text": "Box 001",
+      "horizontalOrigin": "LEFT",
+      "pixelOffset": {
+        "cartesian2": [
+          12,
+          0
+        ]
+      },
+      "fillColor": {
+        "rgba": [
+          76,
+          175,
+          80,
+          180
+        ]
+      }
+    },
+    "box": {
+      "dimensions": {
+        "cartesian": [
+          50000.0,
+          30000.0,
+          12000.0
+        ]
+      },
+      "material": {
+        "solidColor": {
+          "color": {
+            "rgba": [
+              76,
+              175,
+              80,
+              180
+            ]
+          }
+        }
+      }
+    }
+  }
+]

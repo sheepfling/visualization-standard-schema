@@ -1,0 +1,66 @@
+[
+  {
+    "id": "document",
+    "name": "Line of Sight Demo",
+    "version": "1.0"
+  },
+  {
+    "id": "los-001",
+    "name": "Line of Sight Alpha",
+    "position": {
+      "cartographicDegrees": [
+        -97.74,
+        30.27,
+        1000.0
+      ]
+    },
+    "polyline": {
+      "positions": {
+        "cartographicDegrees": [
+          -97.74,
+          30.27,
+          1000.0,
+          -97.66,
+          30.31,
+          1000.0
+        ]
+      },
+      "width": 2.5,
+      "clampToGround": false,
+      "material": {
+        "solidColor": {
+          "color": {
+            "rgba": [
+              255,
+              255,
+              255,
+              255
+            ]
+          }
+        }
+      }
+    },
+    "properties": {
+      "objectType": "lineOfSight",
+      "category": "lineOfSight"
+    },
+    "label": {
+      "text": "Line of Sight Alpha",
+      "horizontalOrigin": "LEFT",
+      "pixelOffset": {
+        "cartesian2": [
+          12,
+          0
+        ]
+      },
+      "fillColor": {
+        "rgba": [
+          255,
+          255,
+          255,
+          255
+        ]
+      }
+    }
+  }
+]

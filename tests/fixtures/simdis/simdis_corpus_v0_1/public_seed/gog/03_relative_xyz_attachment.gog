@@ -1,0 +1,33 @@
+# SIMDIS GOG seed example: relative XYZ shape
+# Provenance: synthetic sample based on SDK support for relative shapes, ref, xyz, and follow fields.
+start
+line
+ref 33.920000 -117.920000 1000
+xyz 0 0 0
+xyz 10000 0 2000
+xyz 20000 5000 3000
+linecolor hex 0xffffaa00
+linewidth 4
+rangeunits m
+altitudeunits m
+3d follow cpr
+3d offsetcourse 0
+3d offsetpitch 0
+3d offsetroll 0
+3d name relative-body-line
+end
+
+start
+polygon
+ref 33.920000 -117.920000 1000
+xyz -5000 -5000 0
+xyz 5000 -5000 0
+xyz 5000 5000 0
+xyz -5000 5000 0
+filled
+fillcolor hex 0x5522ccff
+linecolor hex 0xff22ccff
+rangeunits m
+altitudeunits m
+3d name relative-square
+end

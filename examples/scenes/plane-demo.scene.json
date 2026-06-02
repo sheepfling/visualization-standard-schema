@@ -1,0 +1,39 @@
+{
+  "schemaVersion": "1.0.0-scene",
+  "document": {
+    "id": "plane-demo",
+    "name": "Plane Demo",
+    "description": "A plane overlay used to exercise the Cesium plane emitter.",
+    "created": "2026-06-01T13:25:00Z",
+    "generator": "visualization-standard-schema",
+    "source": "sim.example.geo-sim"
+  },
+  "objects": [
+    {
+      "objectType": "overlay",
+      "id": "plane-001",
+      "name": "Plane 001",
+      "geometryType": "plane",
+      "position": {
+        "longitudeDeg": -97.760,
+        "latitudeDeg": 30.285,
+        "altitudeM": 1500.0
+      },
+      "style": {
+        "label": "Plane 001",
+        "colorRgba": [244, 67, 54, 170]
+      },
+      "plane": {
+        "normal": [0.0, 0.0, 1.0],
+        "distanceMeters": 0.0,
+        "widthMeters": 45000.0,
+        "heightMeters": 28000.0
+      },
+      "attributes": {
+        "shapeType": "analysis-plane"
+      },
+      "source": "sim.example.geo-sim",
+      "timestamp": "2026-06-01T13:25:00Z"
+    }
+  ]
+}

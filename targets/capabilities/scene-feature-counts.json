@@ -1,0 +1,268 @@
+{
+  "document.metadata": {
+    "kind": "constant",
+    "value": 1
+  },
+  "clock.timestamps": {
+    "kind": "object_attr",
+    "attr": "timestamp"
+  },
+  "object.entity.position": {
+    "kind": "entity_count"
+  },
+  "object.entity.orientation": {
+    "kind": "entity_attr",
+    "attr": "orientation"
+  },
+  "style.label": {
+    "kind": "style_attr",
+    "attr": "label"
+  },
+  "style.icon": {
+    "kind": "style_attr",
+    "attr": "iconUri"
+  },
+  "style.model": {
+    "kind": "style_attr",
+    "attr": "modelUri"
+  },
+  "style.color": {
+    "kind": "style_attr",
+    "attr": "colorRgba"
+  },
+  "object.path.sampledMotion": {
+    "kind": "scene_path_count"
+  },
+  "object.track.sampledMotion": {
+    "kind": "scene_track_count"
+  },
+  "object.vector.geometry": {
+    "kind": "scene_vector_count"
+  },
+  "object.velocityVector.geometry": {
+    "kind": "scene_velocity_vector_count"
+  },
+  "object.accelerationVector.geometry": {
+    "kind": "scene_acceleration_vector_count"
+  },
+  "object.lineOfSight.geometry": {
+    "kind": "scene_line_of_sight_count"
+  },
+  "object.bodyAxes.geometry": {
+    "kind": "scene_body_axes_count"
+  },
+  "object.principalAxes.geometry": {
+    "kind": "scene_principal_axes_count"
+  },
+  "object.relativeLine.geometry": {
+    "kind": "scene_relative_line_count"
+  },
+  "object.interceptLine.geometry": {
+    "kind": "scene_intercept_line_count"
+  },
+  "object.rectangle.geometry": {
+    "kind": "overlay_geometry",
+    "geometryType": "rectangle",
+    "attr": "rectangle"
+  },
+  "object.overlay.polyline": {
+    "kind": "overlay_geometry",
+    "geometryType": "polyline",
+    "attr": "polyline"
+  },
+  "object.overlay.polygon": {
+    "kind": "overlay_geometry",
+    "geometryType": "polygon",
+    "attr": "polygon"
+  },
+  "object.corridor.geometry": {
+    "kind": "overlay_geometry",
+    "geometryType": "corridor",
+    "attr": "corridor"
+  },
+  "object.ellipse.geometry": {
+    "kind": "overlay_geometry",
+    "geometryType": "ellipse",
+    "attr": "ellipse"
+  },
+  "object.circle.geometry": {
+    "kind": "overlay_geometry",
+    "geometryType": "circle",
+    "attr": "circle"
+  },
+  "object.rangeRing.geometry": {
+    "kind": "overlay_geometry",
+    "geometryType": "rangeRing",
+    "attr": "rangeRing"
+  },
+  "object.wall.geometry": {
+    "kind": "overlay_geometry",
+    "geometryType": "wall",
+    "attr": "wall"
+  },
+  "object.box.geometry": {
+    "kind": "overlay_geometry",
+    "geometryType": "box",
+    "attr": "box"
+  },
+  "object.cylinder.geometry": {
+    "kind": "overlay_geometry",
+    "geometryType": "cylinder",
+    "attr": "cylinder"
+  },
+  "object.cone.geometry": {
+    "kind": "overlay_geometry",
+    "geometryType": "cone",
+    "attr": "cone"
+  },
+  "object.conicSensor.geometry": {
+    "kind": "overlay_geometry",
+    "geometryType": "conicSensor",
+    "attr": "conicSensor"
+  },
+  "object.customPatternSensor.geometry": {
+    "kind": "overlay_geometry",
+    "geometryType": "customPatternSensor",
+    "attr": "customPatternSensor"
+  },
+  "object.frustum.geometry": {
+    "kind": "overlay_geometry",
+    "geometryType": "frustum",
+    "attr": "frustum"
+  },
+  "object.rectangularSensor.geometry": {
+    "kind": "overlay_geometry",
+    "geometryType": "rectangularSensor",
+    "attr": "rectangularSensor"
+  },
+  "object.sector2d.geometry": {
+    "kind": "overlay_geometry",
+    "geometryType": "sector2d",
+    "attr": "sector2d"
+  },
+  "object.bearingFan.geometry": {
+    "kind": "overlay_geometry",
+    "geometryType": "bearingFan",
+    "attr": "bearingFan"
+  },
+  "object.fan.geometry": {
+    "kind": "overlay_geometry",
+    "geometryType": "fan",
+    "attr": "fan"
+  },
+  "object.sectorVolume.geometry": {
+    "kind": "overlay_geometry",
+    "geometryType": "sectorVolume",
+    "attr": "sectorVolume"
+  },
+  "object.hemisphere.geometry": {
+    "kind": "overlay_geometry",
+    "geometryType": "hemisphere",
+    "attr": "hemisphere"
+  },
+  "object.sphericalCap.geometry": {
+    "kind": "overlay_geometry",
+    "geometryType": "sphericalCap",
+    "attr": "sphericalCap"
+  },
+  "object.keyhole.geometry": {
+    "kind": "overlay_geometry",
+    "geometryType": "keyhole",
+    "attr": "keyhole"
+  },
+  "object.frustum.geometry": {
+    "kind": "overlay_geometry",
+    "geometryType": "frustum",
+    "attr": "frustum"
+  },
+  "object.polylineVolume.geometry": {
+    "kind": "overlay_geometry",
+    "geometryType": "polylineVolume",
+    "attr": "polylineVolume"
+  },
+  "object.plane.geometry": {
+    "kind": "overlay_geometry",
+    "geometryType": "plane",
+    "attr": "plane"
+  },
+  "object.tileset.geometry": {
+    "kind": "overlay_geometry",
+    "geometryType": "tileset",
+    "attr": "tileset"
+  },
+  "object.ellipsoid.geometry": {
+    "kind": "overlay_geometry",
+    "geometryType": "ellipsoid",
+    "attr": "ellipsoid"
+  },
+  "object.sphere.geometry": {
+    "kind": "overlay_geometry",
+    "geometryType": "sphere",
+    "attr": "sphere"
+  },
+  "object.uncertaintyEllipsoid.geometry": {
+    "kind": "overlay_geometry",
+    "geometryType": "uncertaintyEllipsoid",
+    "attr": "uncertaintyEllipsoid"
+  },
+  "object.covarianceEllipse.geometry": {
+    "kind": "overlay_geometry",
+    "geometryType": "covarianceEllipse",
+    "attr": "covarianceEllipse"
+  },
+  "object.particleSystem.geometry": {
+    "kind": "overlay_geometry",
+    "geometryType": "particleSystem",
+    "attr": "particleSystem"
+  },
+  "object.voxel.geometry": {
+    "kind": "overlay_geometry",
+    "geometryType": "voxel",
+    "attr": "voxel"
+  },
+  "customObjects": {
+    "kind": "scene_custom_object_count"
+  },
+  "runtimeObjects": {
+    "kind": "scene_runtime_object_count"
+  },
+  "object.terrainSurface.runtime": {
+    "kind": "scene_terrain_surface_count"
+  },
+  "object.customMesh.runtime": {
+    "kind": "scene_custom_mesh_count"
+  },
+  "object.clippingPlane.runtime": {
+    "kind": "scene_clipping_plane_count"
+  },
+  "object.clippingPolygon.runtime": {
+    "kind": "scene_clipping_polygon_count"
+  },
+  "object.classificationVolume.runtime": {
+    "kind": "scene_classification_volume_count"
+  },
+  "object.customShader.runtime": {
+    "kind": "scene_custom_shader_count"
+  },
+  "object.postProcessStage.runtime": {
+    "kind": "scene_post_process_stage_count"
+  },
+  "object.sensor": {
+    "kind": "entity_category",
+    "category": "sensor"
+  },
+  "views": {
+    "kind": "scene_view_count"
+  },
+  "cameraView": {
+    "kind": "scene_camera_view_count"
+  },
+  "analysis": {
+    "kind": "constant",
+    "value": 0
+  },
+  "presentation": {
+    "kind": "constant",
+    "value": 0
+  }
+}

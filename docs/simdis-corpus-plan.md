@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Turn the SIMDIS findings into executable fixtures and target behavior. The goal is to keep SIMDIS native-ish exports useful now, without pretending we have official coverage for formats we have not validated.
+This is the canonical SIMDIS planning doc. It merges the extraction boundary with the corpus-driven implementation path so there is one source of truth for what SIMDIS supports today, what the corpus proves, and what the next implementation steps should target.
 
 ## Current Corpus Status
 
@@ -23,19 +23,60 @@ Current file counts in the zip:
 - 0 `.fct` native samples
 - 0 `.svml` native samples
 
+## Current Extraction Boundary
+
+The current SIMDIS boundary lives in `src/vss/simdis/`, with `vss.targets` kept as a compatibility facade only.
+
+Implemented today:
+
+- `vss.simdis.compile_simdis_lines(message)`
+- `vss.simdis.compile_simdis_asi(message)`
+- `vss.simdis.compile_simdis_bundle(message)`
+- `vss.simdis.compile_simdis_scene(scene)`
+- typed bundle serialization and deserialization for:
+  - `simdis/manifest.json`
+  - `simdis/entities.json`
+  - `simdis/scenario.asi`
+  - `simdis/overlays.gog`
+  - `simdis/analysis.json`
+  - `simdis/presentation.json`
+  - `simdis/assets.json`
+  - `simdis/diagnostics.json`
+  - `simdis/generated/simdis-example-bundle.json`
+- scene-level partitioning for platform, sensor, vector, and annotation families
+- typed beam, gate, and projector state extraction from `attributes.simdis`
+- label or billboard-only entities without a model URI are emitted as annotations
+- annotation bundles are reflected in `overlays.gog` as annotation records
+- ASI-lite parsing and export for the current corpus subset
+- GOG-lite parsing and rendering for the current corpus subset
+
+Current bundle and round-trip state:
+
+- the current VSS message model and current `VssScene` model can round-trip through the SIMDIS bundle contract defined in this repo
+- the bundle output keeps typed structure instead of collapsing SIMDIS or SOAP into generic overlay dictionaries
+- `vss.targets` only re-exports SIMDIS entrypoints for compatibility
+
+Out of scope for now:
+
+- richer annotation styling and native geometry generation
+- richer native sensor and vector geometry generation
+- reverse parsing from SIMDIS artifacts back into VSS/SDJ source objects
+- full-fidelity `analysis`, `presentation`, and `assets` mapping at scene scope
+- proprietary SIMDIS project file generation
+
 ## What We Already Cover
 
 The repo already has:
 
 - target-owned SIMDIS code under `vss.simdis`
 - a SIMDIS bundle format with typed entities, overlays, diagnostics, and `scenario.asi`
-- ASI-lite parsing for the current seed corpus
+- ASI-lite parsing and export for the current seed corpus
 - GOG-lite parsing and rendering for the current seed corpus
 - corpus tests that parse and round-trip the packaged samples
 
 ## What This Plan Is Driving Toward
 
-The SIMDIS backend should emit a native-ish package instead of only normalized JSON:
+The corpus is the concrete execution driver. The SIMDIS backend should emit a native-ish package instead of only normalized JSON:
 
 - `generated/simdis/manifest.json`
 - `generated/simdis/scenario.asi`
@@ -48,6 +89,7 @@ The key split is:
 
 - tracks, platforms, sensors, beams, gates, and projectors go to `scenario.asi`
 - static overlays, annotations, and authored geometry go to `overlays.gog`
+- the normalized JSON mirrors remain useful for inspection and tests, but are not the primary export contract
 
 ## Immediate Implementation Order
 
@@ -157,6 +199,7 @@ Do not fake unsupported formats.
 - `.discn` stays an inferred candidate until validated against native SIMDIS
 - `.fct` stays binary/native and should be collected from official samples only
 - `.svml` stays native view/session/presentation data and should be collected from official samples only
+- there should be no fake writers for formats we have not validated
 
 ### 6. Run the collector against an installed SIMDIS tree
 

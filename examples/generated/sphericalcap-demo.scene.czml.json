@@ -1,0 +1,85 @@
+[
+  {
+    "id": "document",
+    "name": "Spherical Cap Demo",
+    "version": "1.0",
+    "clock": {
+      "interval": "2026-06-01T16:30:00+00:00/2026-06-01T16:30:00+00:00",
+      "currentTime": "2026-06-01T16:30:00+00:00",
+      "multiplier": 1,
+      "range": "CLAMPED",
+      "step": "SYSTEM_CLOCK_MULTIPLIER"
+    }
+  },
+  {
+    "id": "sphericalcap-001",
+    "name": "Spherical Cap 001",
+    "position": {
+      "cartographicDegrees": [
+        -97.755,
+        30.322,
+        2600.0
+      ]
+    },
+    "properties": {
+      "shapeType": "sphericalCap",
+      "objectType": "overlay",
+      "source": "sim.example.geo-sim",
+      "timestamp": "2026-06-01T16:30:00+00:00",
+      "category": "overlay",
+      "sphericalCap": {
+        "radiusMeters": 11000.0,
+        "innerRadiusMeters": 2000.0,
+        "portion": "upper",
+        "azimuthStartDegrees": 15.0,
+        "azimuthStopDegrees": 165.0,
+        "segments": 24,
+        "windingOrder": "counterClockwise",
+        "closed": true,
+        "azimuthSegments": 12,
+        "elevationSegments": 6,
+        "elevationStartDegrees": 0.0,
+        "elevationStopDegrees": 45.0
+      }
+    },
+    "label": {
+      "text": "Spherical Cap 001",
+      "horizontalOrigin": "LEFT",
+      "pixelOffset": {
+        "cartesian2": [
+          12,
+          0
+        ]
+      },
+      "fillColor": {
+        "rgba": [
+          156,
+          39,
+          176,
+          130
+        ]
+      }
+    },
+    "ellipsoid": {
+      "radii": {
+        "cartesian": [
+          11000.0,
+          11000.0,
+          11000.0
+        ]
+      },
+      "material": {
+        "solidColor": {
+          "color": {
+            "rgba": [
+              156,
+              39,
+              176,
+              130
+            ]
+          }
+        }
+      }
+    }
+  }
+]

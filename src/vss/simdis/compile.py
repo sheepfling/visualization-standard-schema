@@ -98,6 +98,11 @@ def compile_simdis_scene(scene: VssScene) -> SimdisBundle:
     projectors: list[SimdisProjectorState] = []
     vectors: list[SimdisVectorState] = []
     overlays: list[SimdisOverlayState] = []
+    custom_objects = [custom_object.model_dump(mode="json", exclude_none=True) for custom_object in scene.customObjects]
+    runtime_objects = [
+        runtime_object.model_dump(mode="json", exclude_none=True)
+        for runtime_object in [*scene.runtimeObjects, *scene.terrainSurfaces, *scene.customMeshes, *scene.clippingPlanes, *scene.clippingPolygons, *scene.classificationVolumes, *scene.customShaders, *scene.postProcessStages]
+    ]
 
     for entity in scene.entities:
         if _is_annotation_candidate(entity):
@@ -152,6 +157,8 @@ def compile_simdis_scene(scene: VssScene) -> SimdisBundle:
         overlays_gog="\n".join(overlay_lines) + "\n",
         scenario_asi=compile_simdis_asi(scene),
         diagnostics=diagnostics,
+        customObjects=custom_objects,
+        runtimeObjects=runtime_objects,
     )
 
 
@@ -170,6 +177,8 @@ def _build_simdis_bundle(
     overlays_gog: str,
     scenario_asi: str,
     diagnostics: list[SimdisDiagnostic] | None = None,
+    customObjects: list[dict[str, Any]] | None = None,
+    runtimeObjects: list[dict[str, Any]] | None = None,
 ) -> SimdisBundle:
     manifest = SimdisManifest(
         source=source,
@@ -177,12 +186,16 @@ def _build_simdis_bundle(
         artifacts=[
             SimdisArtifact(kind="manifest", path="simdis/manifest.json"),
             SimdisArtifact(kind="entityState", path="simdis/entities.json"),
+            SimdisArtifact(kind="entityStateNormalized", path="simdis/entities.normalized.json"),
             SimdisArtifact(kind="gog", path="simdis/overlays.gog"),
+            SimdisArtifact(kind="gogNormalized", path="simdis/overlays.normalized.json"),
             SimdisArtifact(kind="asi", path="simdis/scenario.asi"),
             SimdisArtifact(kind="analysis", path="simdis/analysis.json"),
             SimdisArtifact(kind="presentation", path="simdis/presentation.json"),
             SimdisArtifact(kind="assetManifest", path="simdis/assets.json"),
             SimdisArtifact(kind="diagnostics", path="simdis/diagnostics.json"),
+            SimdisArtifact(kind="customObjects", path="simdis/custom-objects.json"),
+            SimdisArtifact(kind="runtimeObjects", path="simdis/runtime-objects.json"),
         ],
         totals={
             "platforms": len(platforms),
@@ -193,6 +206,8 @@ def _build_simdis_bundle(
             "projectors": len(projectors),
             "vectors": len(vectors),
             "overlays": len(overlays),
+            "customObjects": len(customObjects or []),
+            "runtimeObjects": len(runtimeObjects or []),
         },
     )
     return SimdisBundle(
@@ -214,14 +229,31 @@ def _build_simdis_bundle(
         presentation=SimdisPresentation(),
         assets=SimdisAssets(),
         diagnostics=diagnostics or [],
+        customObjects=customObjects or [],
+        runtimeObjects=runtimeObjects or [],
     )
 
 
 def _platform_from_scene_entity(entity: SceneEntity) -> SimdisPlatformState:
+    trajectory: list[dict[str, Any]] = []
+    if entity.timestamp is not None:
+        trajectory.append(
+            {
+                "t": entity.timestamp.isoformat(),
+                "valueFormat": "cartesianMeters",
+                "referenceFrame": "FIXED",
+                "value": [
+                    entity.position.longitudeDeg,
+                    entity.position.latitudeDeg,
+                    entity.position.altitudeM,
+                ],
+            }
+        )
     return SimdisPlatformState(
         id=entity.id,
         name=entity.name,
         category=entity.category.value if entity.category else "platform",
+        trajectory=trajectory,
         initialPosition=SimdisPosition(
             frame="cartographicDegrees",
             lon=entity.position.longitudeDeg,
@@ -286,7 +318,7 @@ def _annotation_from_scene_entity(entity: SceneEntity) -> SimdisAnnotationState:
 
 def _beams_from_scene_entity(entity: SceneEntity) -> list[SimdisBeamState]:
     simdis = _simdis_config(entity)
-    beam_configs = _normalize_configs(simdis.get("beams") or simdis.get("beam"))
+    beam_configs = normalize_configs(simdis.get("beams") or simdis.get("beam"))
     beams: list[SimdisBeamState] = []
     for index, config in enumerate(beam_configs, start=1):
         beams.append(
@@ -302,14 +334,14 @@ def _beams_from_scene_entity(entity: SceneEntity) -> list[SimdisBeamState]:
                             sample.get("time"),
                             isoformat_or_default(entity.timestamp, fallback_iso=simdis_fallback_timestamp_iso),
                         ),
-                        on=_to_bool(sample.get("on")),
+                        on=to_bool(sample.get("on")),
                         color=_string_or_none(sample.get("color")),
                         az=to_float(sample.get("az")),
                         el=to_float(sample.get("el")),
                         rangeMeters=to_float(sample.get("rangeMeters")),
                         targetPlatformId=_string_or_none(sample.get("targetPlatformId")),
                     )
-                    for sample in _normalize_configs(config.get("samples"))
+                    for sample in normalize_configs(config.get("samples"))
                 ],
             )
         )
@@ -318,7 +350,7 @@ def _beams_from_scene_entity(entity: SceneEntity) -> list[SimdisBeamState]:
 
 def _gates_from_scene_entity(entity: SceneEntity) -> list[SimdisGateState]:
     simdis = _simdis_config(entity)
-    gate_configs = _normalize_configs(simdis.get("gates") or simdis.get("gate"))
+    gate_configs = normalize_configs(simdis.get("gates") or simdis.get("gate"))
     gates: list[SimdisGateState] = []
     for index, config in enumerate(gate_configs, start=1):
         gates.append(
@@ -332,7 +364,7 @@ def _gates_from_scene_entity(entity: SceneEntity) -> list[SimdisGateState]:
                             sample.get("time"),
                             isoformat_or_default(entity.timestamp, fallback_iso=simdis_fallback_timestamp_iso),
                         ),
-                        on=_to_bool(sample.get("on")),
+                        on=to_bool(sample.get("on")),
                         color=_string_or_none(sample.get("color")),
                         az=to_float(sample.get("az")),
                         el=to_float(sample.get("el")),
@@ -342,7 +374,7 @@ def _gates_from_scene_entity(entity: SceneEntity) -> list[SimdisGateState]:
                         maxRangeMeters=to_float(sample.get("maxRangeMeters")),
                         centroidMeters=to_float(sample.get("centroidMeters")),
                     )
-                    for sample in _normalize_configs(config.get("samples"))
+                    for sample in normalize_configs(config.get("samples"))
                 ],
             )
         )
@@ -351,7 +383,7 @@ def _gates_from_scene_entity(entity: SceneEntity) -> list[SimdisGateState]:
 
 def _projectors_from_scene_entity(entity: SceneEntity) -> list[SimdisProjectorState]:
     simdis = _simdis_config(entity)
-    projector_configs = _normalize_configs(simdis.get("projectors") or simdis.get("projector"))
+    projector_configs = normalize_configs(simdis.get("projectors") or simdis.get("projector"))
     projectors: list[SimdisProjectorState] = []
     for index, config in enumerate(projector_configs, start=1):
         projectors.append(
@@ -366,10 +398,10 @@ def _projectors_from_scene_entity(entity: SceneEntity) -> list[SimdisProjectorSt
                             sample.get("time"),
                             isoformat_or_default(entity.timestamp, fallback_iso=simdis_fallback_timestamp_iso),
                         ),
-                        on=_to_bool(sample.get("on")),
+                        on=to_bool(sample.get("on")),
                         fovDegrees=to_float(sample.get("fovDegrees")),
                     )
-                    for sample in _normalize_configs(config.get("samples"))
+                    for sample in normalize_configs(config.get("samples"))
                 ],
             )
         )
@@ -503,9 +535,6 @@ def _compile_annotation_gog(annotation: SimdisAnnotationState) -> list[str]:
     return lines
 
 
-_normalize_configs = normalize_configs
-
-
 def _string_or_default(value: Any, default: str) -> str:
     if value is None:
         return default
@@ -518,9 +547,6 @@ def _string_or_none(value: Any) -> str | None:
         return None
     text = str(value).strip()
     return text or None
-
-
-_to_bool = to_bool
 
 
 def _vector_from_scene_overlay(overlay: SceneOverlay) -> SimdisVectorState:

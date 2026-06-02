@@ -1,3 +1,6 @@
+import { mkdirSync, statSync, writeFileSync } from "node:fs";
+import { dirname, join, relative } from "node:path";
+import { fileURLToPath } from "node:url";
 import { chromium } from "playwright";
 import {
   analyzeWorkbenchShell,
@@ -6,6 +9,12 @@ import {
   resolveBrowserLaunchOptions
 } from "./smoke-support.mjs";
 
+const scriptDir = dirname(fileURLToPath(import.meta.url));
+const projectDir = join(scriptDir, "..");
+const artifactDir = process.env.SDJ_BROWSER_SMOKE_ARTIFACT_DIR?.trim() || join(projectDir, "generated-smoke", "browser");
+const artifactManifestPath = join(artifactDir, "browser-smoke-report.json");
+const viewportScreenshotPath = join(artifactDir, "browser-workbench.png");
+const cesiumScreenshotPath = join(artifactDir, "cesium-container.png");
 const baseUrl = process.env.SDJ_WORKBENCH_URL || "http://127.0.0.1:5173";
 const launchOptions = resolveBrowserLaunchOptions();
 
@@ -42,9 +51,19 @@ async function runBrowserSmoke() {
     await page.getByRole("button", { name: "Load Minimal Example" }).waitFor();
     await page.getByRole("button", { name: "Render SDJ" }).click();
     await page.getByText("Rendered").waitFor({ timeout: 30000 });
+    await page.locator("#cesiumContainer canvas").first().waitFor({ state: "visible", timeout: 30000 });
+
+    mkdirSync(artifactDir, { recursive: true });
+    await page.screenshot({ path: viewportScreenshotPath });
+    await page.locator("#cesiumContainer").screenshot({ path: cesiumScreenshotPath });
 
     const statusText = await page.locator("#statusText").textContent();
     const bodyText = await page.locator("body").textContent();
+    const renderSummary = await page.evaluate(() => globalThis.__sdjWorkbenchSmoke?.getRenderSummary?.() || null);
+    const artifactSummary = buildArtifactSummary({
+      viewportScreenshotPath,
+      cesiumScreenshotPath
+    });
 
     if (consoleErrors.some((line) => line.includes("Error constructing CesiumWidget"))) {
       throw new Error(`CesiumWidget failed to construct in browser: ${consoleErrors.join("\n")}`);
@@ -53,14 +72,18 @@ async function runBrowserSmoke() {
       throw new Error("Expected rendered status text was not found.");
     }
 
-    console.log(JSON.stringify({
+    const report = {
       ok: true,
       mode: "browser",
       url: baseUrl,
       browser: launchOptions.channel || launchOptions.executablePath || "playwright-bundled",
       statusText: statusText || null,
-      consoleErrors
-    }, null, 2));
+      consoleErrors,
+      renderSummary,
+      artifacts: artifactSummary
+    };
+    writeArtifactReport(report);
+    console.log(JSON.stringify(report, null, 2));
   } finally {
     await browser.close();
   }
@@ -73,15 +96,35 @@ async function runShellFallback() {
     throw new Error(`Workbench shell is missing required markup: ${analysis.missing.join(", ")}`);
   }
 
-  console.log(JSON.stringify({
+  const report = {
     ok: true,
     mode: "shell",
     url: "file://index.html",
     browser: null,
     statusText: "Shell markup verified",
     consoleErrors: [],
-    missing: analysis.missing
-  }, null, 2));
+    missing: analysis.missing,
+    renderSummary: null,
+    artifacts: []
+  };
+  writeArtifactReport(report);
+  console.log(JSON.stringify(report, null, 2));
+}
+
+function buildArtifactSummary(paths) {
+  return Object.entries(paths).map(([name, path]) => {
+    const stats = statSync(path);
+    return {
+      name,
+      path: relative(projectDir, path),
+      bytes: stats.size
+    };
+  });
+}
+
+function writeArtifactReport(report) {
+  mkdirSync(artifactDir, { recursive: true });
+  writeFileSync(artifactManifestPath, `${JSON.stringify(report, null, 2)}\n`, "utf8");
 }
 
 await runBrowserSmoke();

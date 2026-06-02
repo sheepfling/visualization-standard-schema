@@ -1,0 +1,71 @@
+{
+  "schemaVersion": "sdj-0.4",
+  "document": {
+    "id": "runtime-families-demo",
+    "name": "Runtime Families Demo",
+    "description": "Bridge fixture used to compare JS and Python runtime-object outputs.",
+    "created": "2026-06-01T12:00:00Z",
+    "generator": "visualization-standard-schema",
+    "source": "runtime.families.fixture"
+  },
+  "objects": [
+    {
+      "id": "terrain-runtime",
+      "kind": "terrainSurface",
+      "name": "Terrain Runtime",
+      "rendererHints": { "semanticKind": "terrainSurface" },
+      "payload": { "note": "terrain" }
+    },
+    {
+      "id": "mesh-runtime",
+      "kind": "customMesh",
+      "name": "Custom Mesh Runtime",
+      "rendererHints": { "semanticKind": "customMesh" },
+      "payload": { "note": "mesh" }
+    },
+    {
+      "id": "clip-runtime",
+      "kind": "clippingPlane",
+      "name": "Clipping Plane Runtime",
+      "clippingPlane": { "distanceMeters": 250.0 },
+      "rendererHints": { "semanticKind": "clippingPlane" }
+    },
+    {
+      "id": "shader-runtime",
+      "kind": "customShader",
+      "name": "Custom Shader Runtime",
+      "customShader": { "language": "glsl" },
+      "rendererHints": { "semanticKind": "customShader" }
+    },
+    {
+      "id": "stage-runtime",
+      "kind": "postProcessStage",
+      "name": "Post Process Stage Runtime",
+      "postProcessStage": { "stageType": "bloom" },
+      "rendererHints": { "semanticKind": "postProcessStage" }
+    },
+    {
+      "id": "source-runtime",
+      "kind": "geoJsonDataSource",
+      "name": "GeoJSON Runtime",
+      "payload": { "uri": "data/sample.geojson" },
+      "rendererHints": { "semanticKind": "geoJsonDataSource" }
+    },
+    {
+      "id": "sky-runtime",
+      "kind": "skyBox",
+      "name": "Sky Box Runtime",
+      "payload": { "theme": "dawn" },
+      "rendererHints": { "semanticKind": "skyBox" }
+    },
+    {
+      "id": "video-runtime",
+      "kind": "videoPlane",
+      "name": "Video Plane Runtime",
+      "payload": { "uri": "media/sample-video.mp4" },
+      "rendererHints": { "semanticKind": "videoPlane" }
+    }
+  ],
+  "analysis": [],
+  "presentation": []
+}
