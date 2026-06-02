@@ -42,7 +42,7 @@ def _bridge_to_scene(payload: dict[str, object]) -> VssScene:
         assert isinstance(item, dict)
         kind = str(item.get("kind") or "")
         if kind == "track":
-            scene_objects.append(_track_to_entity(item))
+            scene_objects.append(_track_to_entity(item, source=str(document.get("source") or "parity.bridge.fixture")))
         elif kind == "polyline":
             scene_objects.append(_polyline_to_overlay(item))
         elif kind == "polygon":
@@ -83,7 +83,7 @@ def _bridge_to_scene(payload: dict[str, object]) -> VssScene:
     )
 
 
-def _track_to_entity(item: dict[str, object]) -> SceneEntity:
+def _track_to_entity(item: dict[str, object], *, source: str) -> SceneEntity:
     pose = item.get("pose")
     assert isinstance(pose, dict)
     position = pose.get("position")
@@ -156,7 +156,7 @@ def _track_to_entity(item: dict[str, object]) -> SceneEntity:
             **({"path": path} if path is not None else {}),
             "bridgeKind": str(item.get("kind") or ""),
         },
-        source="parity.bridge.fixture",
+        source=source,
         timestamp=timestamp,
     )
 

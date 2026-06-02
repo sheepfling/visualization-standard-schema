@@ -1,4 +1,6 @@
-type WorkbenchState = {
+import type { WorkbenchElements } from "../types/sdj";
+
+type WorkbenchSmokeState = {
   viewer?: unknown;
   lastLoad?: {
     entities?: Map<string, unknown>;
@@ -12,10 +14,6 @@ type WorkbenchState = {
     };
   };
   selectedObjectId?: string;
-};
-
-type WorkbenchElements = {
-  statusText: HTMLElement;
 };
 
 type WorkbenchSmokeApi = {
@@ -34,9 +32,9 @@ type WorkbenchSmokeApi = {
 /**
  * Returns the current rendered-state summary for browser smoke checks.
  *
- * @param {{ state: WorkbenchState, elements: WorkbenchElements }} deps
+ * @param {{ state: WorkbenchSmokeState, elements: Pick<WorkbenchElements, "statusText"> }} deps
  */
-export function getRenderSummary(deps: { state: WorkbenchState; elements: WorkbenchElements }) {
+export function getRenderSummary(deps: { state: WorkbenchSmokeState; elements: Pick<WorkbenchElements, "statusText"> }) {
   const entityCount = deps.state.lastLoad?.entities ? deps.state.lastLoad.entities.size : 0;
   const primitiveCount = deps.state.lastLoad?.primitives ? deps.state.lastLoad.primitives.size : 0;
   const warningCount = deps.state.lastLoad?.warnings ? deps.state.lastLoad.warnings.length : 0;
@@ -55,14 +53,13 @@ export function getRenderSummary(deps: { state: WorkbenchState; elements: Workbe
 /**
  * Installs the smoke API on the global object for external browser harnesses.
  *
- * @param {{ state: WorkbenchState, elements: WorkbenchElements }} deps
+ * @param {{ state: WorkbenchSmokeState, elements: Pick<WorkbenchElements, "statusText"> }} deps
  * @returns {WorkbenchSmokeApi}
  */
-export function installWorkbenchSmokeApi(deps: { state: WorkbenchState; elements: WorkbenchElements }): WorkbenchSmokeApi {
+export function installWorkbenchSmokeApi(deps: { state: WorkbenchSmokeState; elements: Pick<WorkbenchElements, "statusText"> }): WorkbenchSmokeApi {
   const api = {
     getRenderSummary: () => getRenderSummary(deps)
   };
   globalThis.__sdjWorkbenchSmoke = api;
   return api;
 }
-

@@ -1,4 +1,4 @@
-import { readFileSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { spawnSync } from "node:child_process";
@@ -9,9 +9,8 @@ import { compileBackend, buildCompilePlan } from "../../sdj_core_v0_1/src/index.
 const projectDir = dirname(dirname(fileURLToPath(import.meta.url)));
 const fixturePath = join(projectDir, "tests/fixtures/parity-bridge.scene.json");
 const runtimeFixturePath = join(projectDir, "tests/fixtures/runtime-families.bridge.scene.json");
+const multiTrackFixturePath = join(projectDir, "tests/fixtures/multi-track.bridge.scene.json");
 const pythonParityHelper = join(projectDir, "tests/python_target_parity.py");
-const corpusManifest = readJson("data/sdj_exposed_scenes_manifest.json");
-const corpusScenes = corpusManifest.featured.slice(0, 6);
 
 function readJson(relativePath) {
   return JSON.parse(readFileSync(join(projectDir, relativePath), "utf8"));
@@ -93,11 +92,15 @@ test("runtime-family bundles stay parity-aligned between JS and Python", () => {
   assert.equal(jsSoap.manifest.totals.runtimeObjects, pythonSoapRuntime.length);
 });
 
+const corpusScenes = [
+  { name: "bridge parity", path: fixturePath },
+  { name: "multi-track bridge", path: multiTrackFixturePath },
+];
+
 for (const scene of corpusScenes) {
-  test(`target parity matches Python on corpus scene ${scene.name}`, () => {
-    const scenePath = join(projectDir, scene.path);
-    const bridgeScene = readJson(scene.path);
-    const python = loadPythonParity(scenePath, "scene");
+  test(`target parity matches Python on corpus scene ${scene.name}`, { skip: !existsSync(scene.path) }, () => {
+    const bridgeScene = JSON.parse(readFileSync(scene.path, "utf8"));
+    const python = loadPythonParity(scene.path, "bridge");
     const jsCesium = compileBackend(bridgeScene, "cesium");
     const jsSimdis = compileBackend(bridgeScene, "simdis");
     const jsSoap = compileBackend(bridgeScene, "soap");

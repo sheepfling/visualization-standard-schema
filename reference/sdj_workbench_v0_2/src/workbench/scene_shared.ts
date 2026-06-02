@@ -1,5 +1,4 @@
-import { asArray, asObject, normalizeSceneForWorkbench, toJson, type JsonObject, loadSpatialDisplayScene, type CesiumSpatialDisplayLoader, createZipBlob } from "../../../sdj_core_v0_1/src/index.ts";
-import { errorMessage, getCesium, getSdjLoader } from "./helpers.ts";
+import type { JsonObject } from "../../../sdj_core_v0_1/src/index.ts";
 import type { WorkbenchElements, WorkbenchState } from "../types/sdj";
 
 export type StatusKind = "ok" | "warning" | "error" | "neutral";
@@ -51,11 +50,6 @@ export interface SceneWorkbenchDeps {
   findSceneObject: (scene: JsonObject, objectId: string) => JsonObject | undefined;
   inspectObject: (scene: JsonObject, objectId: string, plan?: JsonObject) => JsonObject | undefined;
 }
-
-export type StatusDeps = {
-  setStatus: (message: string, kind: StatusKind) => void;
-  errorMessage?: (error: unknown) => string;
-};
 
 export type LoadDefaultCapabilitiesDeps = { state: Pick<SceneWorkbenchState, "defaultCapabilities"> } & StatusDeps;
 export type LoadExampleSceneDeps = {
@@ -157,22 +151,3 @@ export const EXAMPLE_SCENES = {
 };
 
 export const EXPOSED_SCENE_MANIFEST = "../data/sdj_exposed_scenes_manifest.json";
-
-export function loadDefaultCapabilities(url: string, deps: { state: Pick<SceneWorkbenchState, "defaultCapabilities"> } & StatusDeps): Promise<void> {
-  return fetch(new URL(url, import.meta.url))
-    .then((response) => response.json())
-    .then((json) => {
-      deps.state.defaultCapabilities = json;
-    })
-    .catch((error) => {
-      deps.state.defaultCapabilities = {};
-      deps.setStatus(`Capability metadata could not be loaded: ${errorMessage(error)}`, "warning");
-    });
-}
-
-export function normalizeSceneForWorkbenchFromText(text: string, defaultCapabilities: JsonObject | undefined): JsonObject {
-  const parsed = JSON.parse(text) as JsonObject;
-  return normalizeSceneForWorkbench(parsed, defaultCapabilities);
-}
-
-export { asArray, asObject, createZipBlob, errorMessage, getCesium, getSdjLoader, loadSpatialDisplayScene, normalizeSceneForWorkbench, toJson };
