@@ -1,0 +1,130 @@
+{
+  "schemaVersion": "sdj-acceptance-report-0.5",
+  "sceneId": "sdj-advanced-cesium-v0-5",
+  "records": [
+    {
+      "feature": "tileset",
+      "exampleObjectId": "downtown-tileset",
+      "examplePresent": true,
+      "schemaValid": true,
+      "semanticValid": true,
+      "workbenchInspectorPresent": true
+    },
+    {
+      "feature": "gaussianSplatTileset",
+      "exampleObjectId": "downtown-splat-tileset",
+      "examplePresent": true,
+      "schemaValid": true,
+      "semanticValid": true,
+      "workbenchInspectorPresent": true
+    },
+    {
+      "feature": "tilesetStyle",
+      "exampleObjectId": "downtown-tiles-style",
+      "examplePresent": true,
+      "schemaValid": true,
+      "semanticValid": true,
+      "workbenchInspectorPresent": true
+    },
+    {
+      "feature": "clippingPlane",
+      "exampleObjectId": "downtown-clip-planes",
+      "examplePresent": true,
+      "schemaValid": true,
+      "semanticValid": true,
+      "workbenchInspectorPresent": true
+    },
+    {
+      "feature": "clippingPolygon",
+      "exampleObjectId": "downtown-clip-polygon",
+      "examplePresent": true,
+      "schemaValid": true,
+      "semanticValid": true,
+      "workbenchInspectorPresent": true
+    },
+    {
+      "feature": "customShader",
+      "exampleObjectId": "downtown-custom-shader",
+      "examplePresent": true,
+      "schemaValid": true,
+      "semanticValid": true,
+      "workbenchInspectorPresent": true
+    },
+    {
+      "feature": "classificationPrimitive",
+      "exampleObjectId": "restricted-area-classification",
+      "examplePresent": true,
+      "schemaValid": true,
+      "semanticValid": true,
+      "workbenchInspectorPresent": true
+    },
+    {
+      "feature": "groundPolyline",
+      "exampleObjectId": "secure-ground-polyline",
+      "examplePresent": true,
+      "schemaValid": true,
+      "semanticValid": true,
+      "workbenchInspectorPresent": true
+    },
+    {
+      "feature": "groundPrimitive",
+      "exampleObjectId": "secure-ground-primitive",
+      "examplePresent": true,
+      "schemaValid": true,
+      "semanticValid": true,
+      "workbenchInspectorPresent": true
+    },
+    {
+      "feature": "terrain",
+      "exampleObjectId": "world-terrain",
+      "examplePresent": true,
+      "schemaValid": true,
+      "semanticValid": true,
+      "workbenchInspectorPresent": true
+    },
+    {
+      "feature": "imageryLayer",
+      "exampleObjectId": "base-imagery",
+      "examplePresent": true,
+      "schemaValid": true,
+      "semanticValid": true,
+      "workbenchInspectorPresent": true
+    },
+    {
+      "feature": "dataSource",
+      "exampleObjectId": "ops-data-source",
+      "examplePresent": true,
+      "schemaValid": true,
+      "semanticValid": true,
+      "workbenchInspectorPresent": true
+    },
+    {
+      "feature": "postProcessStage",
+      "exampleObjectId": "night-vision-stage",
+      "examplePresent": true,
+      "schemaValid": true,
+      "semanticValid": true,
+      "workbenchInspectorPresent": true
+    }
+  ],
+  "diagnostics": {
+    "semanticErrors": [],
+    "advancedDiagnostics": [
+      {
+        "backend": "simdis",
+        "objectId": "downtown-tiles-style",
+        "supportClass": "unsupported"
+      },
+      {
+        "backend": "soap",
+        "objectId": "night-vision-stage",
+        "supportClass": "metadata-only"
+      }
+    ]
+  },
+  "compilePlanTotals": {
+    "cesium": {
+      "strong": 20
+    }
+  }
+}

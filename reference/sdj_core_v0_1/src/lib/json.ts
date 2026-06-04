@@ -1,7 +1,7 @@
 /**
  * Shared JSON helpers for the SDJ workbench library layer.
  */
-export type JsonObject = Record<string, unknown>;
+export type JsonObject = Record<string, any>;
 
 export function asObject(value: unknown): JsonObject {
   if (value && typeof value === "object" && !Array.isArray(value)) {

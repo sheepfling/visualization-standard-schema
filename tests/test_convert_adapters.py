@@ -1,6 +1,13 @@
 import inspect
 
-from vss.convert.adapters import EMIT_FORMATS, FORMAT_ADAPTERS, INGEST_FORMATS, TARGET_ADAPTERS, get_format_adapter, get_target_adapter
+from vss.convert.adapters import (
+    EMIT_FORMATS,
+    FORMAT_ADAPTERS,
+    INGEST_FORMATS,
+    TARGET_ADAPTERS,
+    get_format_adapter,
+    get_target_adapter,
+)
 
 
 def test_target_adapter_registry_exposes_canonical_targets() -> None:

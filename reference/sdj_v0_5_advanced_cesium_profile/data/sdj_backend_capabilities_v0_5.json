@@ -1,0 +1,8 @@
+{
+  "schemaVersion": "sdj-backend-capabilities-0.5",
+  "backends": [
+    "cesium",
+    "simdis",
+    "soap"
+  ]
+}

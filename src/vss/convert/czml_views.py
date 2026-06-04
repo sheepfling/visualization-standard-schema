@@ -3,9 +3,21 @@ from __future__ import annotations
 import math
 from typing import Any
 
-from ..models import Orientation, SceneCameraView, SceneFrustum, SceneOverlay, SceneRectangularSensor, Wgs84Position
+from ..models import (
+    Orientation,
+    SceneCameraView,
+    SceneFrustum,
+    SceneOverlay,
+    SceneRectangularSensor,
+    Wgs84Position,
+)
 from ..util import safe_get, to_bool, to_float
-from .czml_helpers import _extract_czml_packet_position, _packet_orientation, _packet_style, _packet_timestamp
+from .czml_helpers import (
+    _extract_czml_packet_position,
+    _packet_orientation,
+    _packet_style,
+    _packet_timestamp,
+)
 
 
 def _packet_to_scene_camera_view(packet: dict[str, Any], packet_id: str) -> SceneCameraView | None:

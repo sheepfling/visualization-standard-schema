@@ -5,7 +5,6 @@ from pathlib import Path
 
 from ..models import SceneEntity
 from ..orb.typed import OrbPlatform
-from .scene import _build_scene
 from ..util import safe_get, to_float
 
 

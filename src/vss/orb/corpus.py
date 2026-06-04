@@ -1,11 +1,11 @@
 from __future__ import annotations
 
+import tarfile
 from collections.abc import Callable
 from multiprocessing import get_context
-from queue import Empty
-import tarfile
-from threading import Thread
 from pathlib import Path, PurePosixPath
+from queue import Empty
+from threading import Thread
 
 from pydantic import Field
 

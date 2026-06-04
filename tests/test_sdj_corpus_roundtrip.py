@@ -22,7 +22,6 @@ from vss.io import load_scene_file
 from vss.simdis import compile_simdis_scene, write_simdis_bundle
 from vss.soap import compile_soap_scene, write_soap_bundle
 
-
 pytestmark = pytest.mark.sdj_roundtrip
 
 REPO_ROOT = Path(__file__).resolve().parents[1]

@@ -1,64 +1,42 @@
 from __future__ import annotations
 
 import math
+from datetime import datetime
 from pathlib import Path
 from typing import Any, Callable
 
 from ..capabilities import assess_cesium_scene_support, get_cesium_capabilities
 from ..models import (
     EntityUpsertMessage,
-    SceneBox,
-    SceneBearingFan,
-    SceneCircle,
-    SceneCone,
-    SceneEntity,
-    SceneEllipse,
-    SceneCylinder,
-    SceneEllipsoid,
-    SceneCovarianceEllipse,
-    SceneFrustum,
-    SceneOverlay,
-    SceneCustomPatternSensor,
-    SceneFan,
-    ScenePath,
-    ScenePlane,
-    ScenePolylineVolume,
-    SceneRectangularSensor,
-    SceneSector2D,
-    SceneSectorVolume,
-    SceneHemisphere,
-    SceneKeyhole,
-    SceneRangeRing,
-    SceneSphere,
-    SceneUncertaintyEllipsoid,
-    SceneTileset,
-    SceneTrack,
-    SceneVector,
-    SceneVelocityVector,
     SceneAccelerationVector,
-    SceneLineOfSight,
+    SceneBodyAxes,
     SceneCameraView,
     SceneClassificationVolume,
     SceneClippingPlane,
     SceneClippingPolygon,
-    SceneCustomObject,
     SceneCustomMesh,
+    SceneCustomObject,
     SceneCustomShader,
-    SceneRuntimeObject,
-    ScenePostProcessStage,
-    SceneTerrainSurface,
-    SceneView,
-    SceneBodyAxes,
+    SceneEntity,
     SceneInterceptLine,
-    SceneRelativeLine,
+    SceneLineOfSight,
+    SceneOverlay,
+    SceneParticleSystem,
+    ScenePath,
+    ScenePostProcessStage,
     ScenePrincipalAxes,
-    SceneWall,
-    SceneVoxel,
+    SceneRelativeLine,
+    SceneRuntimeObject,
+    SceneTerrainSurface,
+    SceneTrack,
+    SceneVector,
+    SceneVelocityVector,
+    SceneView,
     VssScene,
+    Wgs84Position,
     scene_entity_from_message,
 )
 from ..util import dumps_json, write_text_file
-
 
 CesiumOverlayEmitter = Callable[[SceneOverlay], dict[str, Any] | None]
 _CESIUM_OVERLAY_EMITTERS: dict[str, CesiumOverlayEmitter] = {}

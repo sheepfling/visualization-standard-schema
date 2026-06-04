@@ -1,0 +1,9 @@
+{
+  "schemaVersion": "sdj-exposed-scenes-manifest-0.5",
+  "scenes": [
+    {
+      "id": "sdj-advanced-cesium-v0-5",
+      "path": "examples/sdj_advanced_cesium_scene_v0_5.json"
+    }
+  ]
+}

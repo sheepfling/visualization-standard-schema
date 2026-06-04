@@ -22,7 +22,7 @@ export type BackendBundle = {
   files: Record<string, string>;
   manifest: JsonObject;
   compilePlan: JsonObject;
-  diagnostics: { severity: string; code: string; path: string; message: string }[];
+  diagnostics: JsonObject[];
 };
 
 export function compileSimdis(scene: JsonObject, compilePlan: JsonObject): BackendBundle {

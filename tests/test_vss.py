@@ -1,9 +1,6 @@
 import sys
-import math
 from datetime import datetime
 from pathlib import Path
-
-import pytest
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 
@@ -11,15 +8,11 @@ from vss import (
     assess_scene_for_target,
     dump_message,
     dump_message_json,
-    dump_scene,
     dump_scene_json,
-    load_message_file,
     load_scene_file,
-    parse_scene_json,
     load_simdis_bundle,
     load_soap_bundle,
-    write_message_file,
-    write_scene_file,
+    parse_scene_json,
 )
 from vss import (
     build_orb_package as build_orb_package_root,
@@ -75,67 +68,36 @@ from vss import (
 from vss import (
     write_orb_package as write_orb_package_root,
 )
-from vss.convert.czml import parse_czml_to_scene
-from vss.convert.simdis import parse_simdis_bundle_to_scene
 from vss.cesium import (
     compile_cesium_document,
     compile_cesium_scene,
     dump_cesium_document_json,
     dump_cesium_scene_json,
-    render_cesium_viewer_html,
     register_cesium_overlay_emitter,
+    render_cesium_viewer_html,
+    unregister_cesium_overlay_emitter,
     write_cesium_document,
     write_cesium_scene,
     write_cesium_viewer,
-    unregister_cesium_overlay_emitter,
 )
+from vss.convert.czml import parse_czml_to_scene
+from vss.convert.simdis import parse_simdis_bundle_to_scene
 from vss.models import (
     EntityCategory,
     EntityUpsertMessage,
+    SceneCustomObject,
     SceneDocument,
     SceneEntity,
-    SceneCustomObject,
-    SceneCustomMesh,
-    SceneClassificationVolume,
-    SceneClippingPlane,
-    SceneClippingPolygon,
-    SceneCustomShader,
-    SceneRuntimeObject,
-    ScenePostProcessStage,
-    SceneTerrainSurface,
     SceneOverlay,
+    SceneRuntimeObject,
     SceneView,
     Style,
     VssScene,
     Wgs84Position,
 )
 from vss.orb import (
-    AnalysisSpec,
-    AnalysisTemplateSpec,
-    ContourGridSpec,
-    CoordinateSystemSpec,
-    DerivedVariableSpec,
-    DisplayDefaultsSpec,
-    FixedSiteSpec,
-    ObserverPlatformSpec,
-    OrbDefineBlock,
-    OrbPackageSpec,
-    OrbStabilization,
-    SiteBundleSpec,
-    WorldViewSpec,
-    add_contour_grid,
-    add_coordinate_system,
-    add_fixed_site,
-    add_observer_platform,
-    add_site_bundle,
-    add_world_view_from_spec,
     build_orb_package,
-    dump_orb_text,
-    edit_orb_scenario_text,
     load_orb_package,
-    normalize_analysis_template,
-    parse_orb_scenario_text,
-    parse_orb_text,
     write_orb_package,
 )
 from vss.simdis import (
@@ -158,6 +120,7 @@ from vss.soap import (
     serialize_soap_bundle_files,
     write_soap_bundle,
 )
+
 EXAMPLE_PATH = Path("examples/cesium/air-track.json")
 SCENE_EXAMPLE_PATH = Path("examples/scenes/air-pair.scene.json")
 MIXED_SCENE_EXAMPLE_PATH = Path("examples/scenes/mixed-ops.scene.json")

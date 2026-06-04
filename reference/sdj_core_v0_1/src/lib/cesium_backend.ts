@@ -6,7 +6,7 @@ export type BackendBundle = {
   files: Record<string, string>;
   manifest: JsonObject;
   compilePlan: JsonObject;
-  diagnostics: { severity: string; code: string; path: string; message: string }[];
+  diagnostics: JsonObject[];
 };
 
 export function compileCesium(scene: JsonObject, compilePlan: JsonObject): BackendBundle {
@@ -86,7 +86,7 @@ function buildCesiumClock(objects: JsonObject[]): JsonObject | null {
 function buildCesiumEntityPacket(object: JsonObject): JsonObject {
   const position = asObject(asObject(object.pose).position);
   const cartographic = asArray(position.cartographicDegrees);
-  const properties = {
+  const properties: JsonObject = {
     ...asObject(object.properties),
     ...(object.kind ? { bridgeKind: object.kind } : {}),
     ...(asObject(object.properties).platformType ? { category: asObject(object.properties).platformType } : {}),

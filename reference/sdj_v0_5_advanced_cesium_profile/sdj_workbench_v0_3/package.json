@@ -1,0 +1,13 @@
+{
+  "name": "sdj-workbench-v0-3",
+  "version": "0.3.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node server.mjs",
+    "check": "node --check index.html.js && node --check server.mjs",
+    "build:exposed-scenes": "node build-exposed-scenes.mjs",
+    "smoke": "node smoke.mjs",
+    "test": "node --test tests/*.test.mjs"
+  }
+}

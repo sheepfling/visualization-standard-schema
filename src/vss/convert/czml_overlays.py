@@ -4,46 +4,48 @@ import math
 from typing import Any
 
 from ..models import (
+    SceneBearingFan,
+    SceneBox,
     SceneCircle,
     SceneCone,
-    SceneBox,
-    SceneCorridor,
-    SceneCylinder,
     SceneConicSensor,
-    SceneBearingFan,
+    SceneCorridor,
+    SceneCovarianceEllipse,
     SceneCustomPatternSensor,
+    SceneCylinder,
     SceneEllipse,
     SceneEllipsoid,
-    SceneCovarianceEllipse,
-    SceneFrustum,
-    SceneOverlay,
-    SceneKeyhole,
     SceneFan,
+    SceneFrustum,
+    SceneHemisphere,
+    SceneKeyhole,
+    SceneOverlay,
+    SceneParticleSystem,
     ScenePlane,
-    ScenePolyline,
     ScenePolylineVolume,
     SceneRangeRing,
     SceneRectangle,
     SceneSector2D,
     SceneSectorVolume,
-    SceneHemisphere,
-    SceneSphericalCap,
     SceneSphere,
-    SceneUncertaintyEllipsoid,
+    SceneSphericalCap,
     SceneTileset,
-    SceneInterceptLine,
-    SceneParticleSystem,
+    SceneUncertaintyEllipsoid,
     SceneVoxel,
     SceneWall,
     Wgs84Position,
 )
-from ..util import safe_get, to_float, to_bool
-from .czml_helpers import _extract_czml_packet_position, _packet_orientation, _packet_style, _packet_timestamp
+from ..util import safe_get, to_bool, to_float
+from .czml_helpers import (
+    _extract_czml_packet_position,
+    _packet_orientation,
+    _packet_style,
+    _packet_timestamp,
+)
 from .czml_polylines import _packet_to_scene_polyline_overlay
 
 
 def _packet_to_scene_overlay(packet: dict[str, Any], packet_id: str) -> SceneOverlay | None:
-    polyline = safe_get(packet, "polyline")
     rectangle = safe_get(packet, "rectangle")
     corridor = safe_get(packet, "corridor")
     ellipse = safe_get(packet, "ellipse")

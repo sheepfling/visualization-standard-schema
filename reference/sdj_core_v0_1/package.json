@@ -7,7 +7,7 @@
     ".": "./src/index.ts"
   },
   "scripts": {
-    "check": "npx tsc -p tsconfig.json"
+    "check": "node ../../node_modules/typescript/bin/tsc -p tsconfig.json"
   },
   "devDependencies": {
     "typescript": "^6.0.3"

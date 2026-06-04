@@ -6,8 +6,7 @@ import pytest
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 
 from vss import load_message_file
-from vss.models import EntityUpsertMessage
-from vss.models import VssScene
+from vss.models import EntityUpsertMessage, VssScene
 
 
 @pytest.fixture

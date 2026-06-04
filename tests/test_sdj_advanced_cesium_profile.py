@@ -3,7 +3,6 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
-
 PACKAGE_DIR = Path("reference/sdj_v0_5_advanced_cesium_profile")
 
 

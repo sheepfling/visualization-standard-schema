@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from pathlib import Path
 
-from ..models import SceneEntity, Style, VssScene, Wgs84Position
+from ..models import SceneEntity, VssScene, Wgs84Position
 from ..orb.schema import parse_orb_scenario_file, parse_orb_scenario_text
 from ..orb.typed import OrbScenario
 from .categories import _coerce_entity_category
