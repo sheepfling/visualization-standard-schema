@@ -9,8 +9,7 @@ import pytest
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 
-from vss.convert.simdis import parse_simdis_asi_to_scene
-from vss.convert.simdis import parse_simdis_bundle_to_scene
+from vss.convert.simdis import parse_simdis_asi_to_scene, parse_simdis_bundle_to_scene
 from vss.simdis import (
     compile_simdis_asi,
     compile_simdis_scene,
@@ -21,7 +20,6 @@ from vss.simdis import (
     serialize_simdis_bundle_files,
     write_simdis_bundle,
 )
-
 
 CORPUS_ROOT = Path("tests/fixtures/simdis/simdis_corpus_v0_1")
 CORPUS_MANIFEST_PATH = CORPUS_ROOT / "manifests" / "corpus-file-manifest.json"

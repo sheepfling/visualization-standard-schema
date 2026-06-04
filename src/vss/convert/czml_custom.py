@@ -2,7 +2,18 @@ from __future__ import annotations
 
 from typing import Any
 
-from ..models import SceneClassificationVolume, SceneClippingPlane, SceneClippingPolygon, SceneCustomMesh, SceneCustomObject, SceneCustomShader, ScenePostProcessStage, SceneRuntimeObject, SceneTerrainSurface, Wgs84Position
+from ..models import (
+    SceneClassificationVolume,
+    SceneClippingPlane,
+    SceneClippingPolygon,
+    SceneCustomMesh,
+    SceneCustomObject,
+    SceneCustomShader,
+    ScenePostProcessStage,
+    SceneRuntimeObject,
+    SceneTerrainSurface,
+    Wgs84Position,
+)
 from ..util import safe_get
 from .czml_helpers import _extract_czml_packet_position, _packet_orientation, _packet_timestamp
 

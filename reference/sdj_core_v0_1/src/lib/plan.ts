@@ -1,13 +1,8 @@
 import { asArray, asObject, asString, type JsonObject } from "./json.ts";
+import type { Diagnostic } from "./scene.ts";
 import { CESIUM_KIND_TARGETS } from "./cesium_kind_targets.ts";
 import { findObject, flattenObjects, isShown, validateSemantics } from "./scene.ts";
 
-type Diagnostic = {
-  severity: string;
-  code: string;
-  path: string;
-  message: string;
-};
 
 const TARGETS = ["cesium", "simdis", "soap"];
 

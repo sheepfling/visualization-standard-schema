@@ -4,10 +4,10 @@ from typing import Any
 
 from ..models import (
     SceneAccelerationVector,
+    SceneInterceptLine,
     SceneLineOfSight,
     SceneOverlay,
     ScenePolyline,
-    SceneInterceptLine,
     SceneRelativeLine,
     SceneVector,
     SceneVelocityVector,

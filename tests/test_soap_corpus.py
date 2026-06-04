@@ -10,10 +10,13 @@ import pytest
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 
 from vss.convert.soap import parse_soap_bundle_to_scene
-from vss.soap import compile_soap_scene
-from vss.soap import load_soap_bundle_files, parse_soap_bundle_json, serialize_soap_bundle_files
-from vss.soap import write_soap_bundle
-
+from vss.soap import (
+    compile_soap_scene,
+    load_soap_bundle_files,
+    parse_soap_bundle_json,
+    serialize_soap_bundle_files,
+    write_soap_bundle,
+)
 
 CORPUS_ROOT = Path("tests/fixtures/soap")
 CORPUS_MANIFEST_PATH = CORPUS_ROOT / "manifests" / "corpus-file-manifest.json"

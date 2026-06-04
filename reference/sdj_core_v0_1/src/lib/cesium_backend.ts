@@ -1,4 +1,5 @@
 import { asArray, asObject, toJson, type JsonObject } from "./json.ts";
+import type { Diagnostic } from "./scene.ts";
 import { buildTargetDiagnostics } from "./plan.ts";
 import { buildSceneObjectList, formatIsoTimestamp } from "./backend_utils.ts";
 
@@ -6,7 +7,7 @@ export type BackendBundle = {
   files: Record<string, string>;
   manifest: JsonObject;
   compilePlan: JsonObject;
-  diagnostics: { severity: string; code: string; path: string; message: string }[];
+  diagnostics: Diagnostic[];
 };
 
 export function compileCesium(scene: JsonObject, compilePlan: JsonObject): BackendBundle {
@@ -84,23 +85,30 @@ function buildCesiumClock(objects: JsonObject[]): JsonObject | null {
 }
 
 function buildCesiumEntityPacket(object: JsonObject): JsonObject {
-  const position = asObject(asObject(object.pose).position);
+  const pose = asObject(object.pose);
+  const position = asObject(pose.position);
   const cartographic = asArray(position.cartographicDegrees);
-  const properties = {
-    ...asObject(object.properties),
+  const objectProperties = asObject(object.properties);
+  const properties: JsonObject = {
+    ...objectProperties,
     ...(object.kind ? { bridgeKind: object.kind } : {}),
-    ...(asObject(object.properties).platformType ? { category: asObject(object.properties).platformType } : {}),
-    ...(object.properties?.source ? { source: object.properties.source } : {}),
+    ...(objectProperties.platformType ? { category: objectProperties.platformType } : {}),
+    ...(objectProperties.source ? { source: objectProperties.source } : {}),
     ...(object.path ? { path: asObject(object.path) } : {}),
     ...(object.timestamp ? { timestamp: formatIsoTimestamp(object.timestamp) } : {})
   };
-  if (asObject(object.pose).orientation) {
+  if (pose.orientation) {
+    const orientation = asObject(pose.orientation);
     properties.orientationDegrees = {
-      heading: Number(asObject(object.pose).orientation.headingDeg ?? 0),
-      pitch: Number(asObject(object.pose).orientation.pitchDeg ?? 0),
-      roll: Number(asObject(object.pose).orientation.rollDeg ?? 0)
+      heading: Number(orientation.headingDeg ?? 0),
+      pitch: Number(orientation.pitchDeg ?? 0),
+      roll: Number(orientation.rollDeg ?? 0)
     };
   }
+  const point: JsonObject = {
+    pixelSize: 10,
+    outlineWidth: 1
+  };
   const packet: JsonObject = {
     id: object.id,
     name: object.name,
@@ -112,26 +120,24 @@ function buildCesiumEntityPacket(object: JsonObject): JsonObject {
       ]
     },
     properties,
-    point: {
-      pixelSize: 10,
-      outlineWidth: 1
-    }
+    point
   };
   const style = asObject(object.style);
   const rgba = asArray(style.colorRgba);
   if (style.label) {
-    packet.label = {
+    const label: JsonObject = {
       text: style.label,
       horizontalOrigin: "LEFT",
       pixelOffset: { cartesian2: [12, 0] }
     };
     if (rgba.length >= 4) {
-      packet.label.fillColor = { rgba: rgba.map((component) => Number(component)) };
+      label.fillColor = { rgba: rgba.map((component) => Number(component)) };
     }
+    packet.label = label;
   }
   if (rgba.length >= 4) {
-    packet.point.color = { rgba: rgba.map((component) => Number(component)) };
-    packet.point.outlineColor = { rgba: [255, 255, 255, 255] };
+    point.color = { rgba: rgba.map((component) => Number(component)) };
+    point.outlineColor = { rgba: [255, 255, 255, 255] };
   }
   return packet;
 }
@@ -158,17 +164,18 @@ function buildCesiumOverlayPacket(object: JsonObject): JsonObject {
     }
   };
   if (style.label) {
-    packet.label = {
+    const label: JsonObject = {
       text: style.label,
       horizontalOrigin: "LEFT",
       pixelOffset: { cartesian2: [12, 0] }
     };
     if (rgba.length >= 4) {
-      packet.label.fillColor = { rgba: rgba.map((component) => Number(component)) };
+      label.fillColor = { rgba: rgba.map((component) => Number(component)) };
     }
+    packet.label = label;
   }
   if (String(object.kind || "") === "polyline") {
-    packet.polyline = {
+    const polyline: JsonObject = {
       positions: {
         cartographicDegrees: flattenCesiumPositions(asArray(geometry.positions).map(asObject))
       },
@@ -176,10 +183,11 @@ function buildCesiumOverlayPacket(object: JsonObject): JsonObject {
       clampToGround: Boolean(geometry.clampToGround ?? false)
     };
     if (rgba.length >= 4) {
-      packet.polyline.material = { solidColor: { color: { rgba: rgba.map((component) => Number(component)) } } };
+      polyline.material = { solidColor: { color: { rgba: rgba.map((component) => Number(component)) } } };
     }
+    packet.polyline = polyline;
   } else if (String(object.kind || "") === "polygon") {
-    packet.polygon = {
+    const polygon: JsonObject = {
       positions: {
         cartographicDegrees: flattenCesiumPositions(asArray(asArray(geometry.rings)[0]).map(asObject))
       },
@@ -187,8 +195,9 @@ function buildCesiumOverlayPacket(object: JsonObject): JsonObject {
       arcType: "GEODESIC"
     };
     if (rgba.length >= 4) {
-      packet.polygon.material = { solidColor: { color: { rgba: rgba.map((component) => Number(component)) } } };
+      polygon.material = { solidColor: { color: { rgba: rgba.map((component) => Number(component)) } } };
     }
+    packet.polygon = polygon;
   }
   return packet;
 }

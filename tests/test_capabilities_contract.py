@@ -7,10 +7,12 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 
-from vss.capabilities import _load_scene_feature_count_rules
-from vss.capabilities import get_cesium_capabilities
-from vss.capabilities import get_simdis_capabilities
-from vss.capabilities import get_soap_capabilities
+from vss.capabilities import (
+    _load_scene_feature_count_rules,
+    get_cesium_capabilities,
+    get_simdis_capabilities,
+    get_soap_capabilities,
+)
 
 
 def _load_ts_cesium_kind_targets() -> dict[str, dict[str, str]]:

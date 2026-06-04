@@ -3,8 +3,13 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 
-from vss import assess_scene_for_target, get_cesium_capabilities, get_simdis_capabilities, get_soap_capabilities, load_scene_file
-
+from vss import (
+    assess_scene_for_target,
+    get_cesium_capabilities,
+    get_simdis_capabilities,
+    get_soap_capabilities,
+    load_scene_file,
+)
 
 SCENE_EXAMPLE_PATH = Path("examples/scenes/air-pair.scene.json")
 MIXED_SCENE_EXAMPLE_PATH = Path("examples/scenes/mixed-ops.scene.json")

@@ -1,4 +1,5 @@
 import { asArray, asNumber, asObject, asString, type JsonObject } from "./json.ts";
+import type { Diagnostic } from "./scene.ts";
 import { flattenObjects, isShown } from "./scene.ts";
 
 export function dedupeByIdAndKind(objects: JsonObject[]): JsonObject[] {
@@ -126,8 +127,8 @@ export function sensorHost(object: JsonObject): string | undefined {
   return undefined;
 }
 
-export function buildSceneDiagnostics(objects: JsonObject[], target: "simdis" | "soap"): JsonObject[] {
-  const diagnostics: JsonObject[] = [];
+export function buildSceneDiagnostics(objects: JsonObject[], target: "simdis" | "soap"): Diagnostic[] {
+  const diagnostics: Diagnostic[] = [];
   for (const object of objects) {
     if (object.kind === "track" && !object.timestamp) {
       const code = target === "simdis" ? "SIMDIS-SCENE-MISSING-TIMESTAMP" : "SOAP-SCENE-MISSING-TIMESTAMP";

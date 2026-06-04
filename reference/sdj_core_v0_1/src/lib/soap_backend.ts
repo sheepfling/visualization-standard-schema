@@ -1,4 +1,5 @@
 import { asArray, asObject, toJson, type JsonObject } from "./json.ts";
+import type { Diagnostic } from "./scene.ts";
 import {
   buildAssetManifest,
   buildSceneDiagnostics,
@@ -16,7 +17,7 @@ export type BackendBundle = {
   files: Record<string, string>;
   manifest: JsonObject;
   compilePlan: JsonObject;
-  diagnostics: { severity: string; code: string; path: string; message: string }[];
+  diagnostics: Diagnostic[];
 };
 
 export function compileSoap(scene: JsonObject, compilePlan: JsonObject): BackendBundle {
@@ -154,7 +155,7 @@ function toSoapOverlay(object: JsonObject): JsonObject {
     id: object.id,
     name: object.name,
     kind: object.kind,
-    style: normalizeSoapOverlayStyle(object.style, geometry),
+    style: normalizeSoapOverlayStyle(asObject(object.style), geometry),
     positions: positions.map((position) => {
       const lla = toLonLatAlt(position);
       return lla ? { longitudeDeg: lla.lon, latitudeDeg: lla.lat, altitudeM: lla.alt } : position;

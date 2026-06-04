@@ -4,13 +4,26 @@ from pathlib import Path
 from typing import Any
 from xml.etree import ElementTree
 
-from ..models import EntityUpsertMessage, EntityUpsertPayload, SceneEntity, VssScene, Wgs84Position, scene_entity_from_message
+from ..models import (
+    EntityUpsertMessage,
+    EntityUpsertPayload,
+    SceneEntity,
+    VssScene,
+    Wgs84Position,
+    scene_entity_from_message,
+)
 from ..soap import compile_soap_envelope, load_soap_bundle
 from ..util import parse_iso_datetime, to_float, utc_now_isoformat
 from .categories import _coerce_entity_category
-from .scene import _build_scene
 from .points import _dict_position_to_lat_lon_alt, _latest_point, _soap_trajectory_point
-from .text import _collect_list_values, _coerce_scalar_text, _find_child, _local_name, _text, _value_to_primitive
+from .scene import _build_scene
+from .text import (
+    _collect_list_values,
+    _find_child,
+    _local_name,
+    _text,
+    _value_to_primitive,
+)
 
 
 def _first_entity_message(scene: VssScene) -> EntityUpsertMessage:

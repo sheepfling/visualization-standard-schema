@@ -3,6 +3,7 @@
  */
 export type JsonObject = Record<string, unknown>;
 
+
 export function asObject(value: unknown): JsonObject {
   if (value && typeof value === "object" && !Array.isArray(value)) {
     return value as JsonObject;

@@ -3,8 +3,14 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
+import pytest
 
 PACKAGE_DIR = Path("reference/sdj_v0_5_advanced_cesium_profile")
+
+pytestmark = pytest.mark.skipif(
+    not PACKAGE_DIR.exists(),
+    reason="optional SDJ v0.5 advanced Cesium profile fixture package is not checked in",
+)
 
 
 def _load_json(path: Path) -> dict:
