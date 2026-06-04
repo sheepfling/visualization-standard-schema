@@ -15,14 +15,7 @@
   "executionEnvironments": [
     {
       "root": "./",
-      "extraPaths": [
-        "./src"
-      ]
+      "extraPaths": ["./src"]
     }
-  ],
-  "reportArgumentType": "none",
-  "reportCallIssue": "none",
-  "reportReturnType": "none",
-  "reportGeneralTypeIssues": "none",
-  "reportIndexIssue": "none"
+  ]
 }

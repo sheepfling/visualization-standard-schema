@@ -7,7 +7,7 @@
     ".": "./src/index.ts"
   },
   "scripts": {
-    "check": "node ../../node_modules/typescript/bin/tsc -p tsconfig.json"
+    "check": "tsc -p tsconfig.json"
   },
   "devDependencies": {
     "typescript": "^6.0.3"

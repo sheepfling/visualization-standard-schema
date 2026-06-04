@@ -1,4 +1,5 @@
 import { asArray, asNumber, asObject, asString, toJson, type JsonObject } from "./json.ts";
+import type { Diagnostic } from "./scene.ts";
 import {
   buildAssetManifest,
   buildSceneDiagnostics,
@@ -22,7 +23,7 @@ export type BackendBundle = {
   files: Record<string, string>;
   manifest: JsonObject;
   compilePlan: JsonObject;
-  diagnostics: JsonObject[];
+  diagnostics: Diagnostic[];
 };
 
 export function compileSimdis(scene: JsonObject, compilePlan: JsonObject): BackendBundle {
@@ -192,7 +193,7 @@ function toVectorStateFromOverlay(object: JsonObject): JsonObject {
         return lla ? { lon: lla.lon, lat: lla.lat, alt: lla.alt } : position;
       })
     },
-    style: normalizeOverlayStyle(object.style),
+    style: normalizeOverlayStyle(asObject(object.style)),
     show: isShown(object.show)
   };
 }
@@ -275,7 +276,8 @@ function buildSimdisPlatformLines(object: JsonObject): string[] {
     `PLATFORM ${entityId} NAME "${name}" CATEGORY ${category}`,
     `PlatformIcon ${entityId} "${icon}"`
   ];
-  const label = asString(object.label?.text ?? object.label?.label ?? object.label);
+  const labelObject = asObject(object.label);
+  const label = asString(labelObject.text ?? labelObject.label ?? object.label);
   if (label) {
     lines.push(`PLATFORM_LABEL ${entityId} "${label}"`);
   }
@@ -339,18 +341,22 @@ function buildSimdisPresentation(scene: JsonObject): JsonObject {
 }
 
 function buildSimdisAnnotationGog(object: JsonObject): string[] {
-  const label = asString(object.label?.text ?? object.label?.label ?? object.label);
-  const point = asObject(object.pose).position;
-  const lla = toLonLatAlt(asObject(point));
+  const labelObject = asObject(object.label);
+  const label = asString(labelObject.text ?? labelObject.label ?? object.label);
+  const posePoint = asObject(object.pose).position;
+  const lla = toLonLatAlt(asObject(posePoint));
   const lines = [`start_annotation ${object.id}`, `  name "${object.name || object.id}"`];
   if (label) {
     lines.push(`  label "${label}"`);
   }
-  if (object.billboard?.image) {
-    lines.push(`  billboard "${object.billboard.image}"`);
+  const billboard = asObject(object.billboard);
+  if (billboard.image) {
+    lines.push(`  billboard "${billboard.image}"`);
   }
-  if (object.point?.color && Array.isArray(object.point.color) && object.point.color.length >= 3) {
-    lines.push(`  pointcolor ${object.point.color[0]} ${object.point.color[1]} ${object.point.color[2]}`);
+  const pointStyle = asObject(object.point);
+  const pointColor = asArray(pointStyle.color);
+  if (pointColor.length >= 3) {
+    lines.push(`  pointcolor ${pointColor[0]} ${pointColor[1]} ${pointColor[2]}`);
   }
   if (lla) {
     lines.push(`  position ${lla.lat.toFixed(8)} ${lla.lon.toFixed(8)} ${lla.alt.toFixed(3)}`);
@@ -365,10 +371,11 @@ function buildSimdisPolylineGog(object: JsonObject): string[] {
   if (positions.length < 2) {
     return [];
   }
-  const rgba = styleRgba(object.style, [255, 255, 255, 255]);
+  const style = asObject(object.style);
+  const rgba = styleRgba(style, [255, 255, 255, 255]);
   const lines = [`start_gog ${object.id}`, "polyline", `  linecolor ${rgba[0]} ${rgba[1]} ${rgba[2]}`, `  linewidth ${(Number(asNumber(geometry.widthPx) ?? 2)).toFixed(1)}`];
-  if (object.style?.label) {
-    lines.push(`  label "${object.style.label}"`);
+  if (style.label) {
+    lines.push(`  label "${style.label}"`);
   }
   for (const position of positions) {
     const lla = toLonLatAlt(position);
@@ -387,10 +394,11 @@ function buildSimdisPolygonGog(object: JsonObject): string[] {
   if (positions.length < 3) {
     return [];
   }
-  const rgba = styleRgba(object.style, [255, 255, 255, 255]);
+  const style = asObject(object.style);
+  const rgba = styleRgba(style, [255, 255, 255, 255]);
   const lines = [`start_gog ${object.id}`, "polygon", `  linecolor ${rgba[0]} ${rgba[1]} ${rgba[2]}`, `  fillcolor ${rgba[0]} ${rgba[1]} ${rgba[2]}`];
-  if (object.style?.label) {
-    lines.push(`  label "${object.style.label}"`);
+  if (style.label) {
+    lines.push(`  label "${style.label}"`);
   }
   for (const position of positions) {
     const lla = toLonLatAlt(position);
